@@ -1,0 +1,39 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOFLUXOEXECUCAO",
+		"campos": [ {"nome" : "ID", "valor": ""},
+			{
+				"nome": "DTULTALTER",
+				"valor": ""
+			},
+			{
+				"nome": "CODEMPALTER",
+				"valor": ""
+			},
+			{
+				"nome": "ORDEMEXECUCAO",
+				"valor": "6"
+			},
+			{
+				"nome": "IDROTASERVICO",
+				"valor": "PDVSYNC - Atualizar status caixa"
+			},
+			{
+				"nome": "IDINTEGRACAOCLASSEMETODO",
+				"valor": "EnvioIntegracaoStatusProcessado"
+			},
+			{
+				"nome": "IDFLUXO",
+				"valor": "15"
+			},
+			{
+				"nome": "ATIVO",
+				"valor": "N"
+			},
+			{
+				"nome": "IDDEPENDENTE",
+				"valor": "PDVSync - Buscar movimentacoes caixa"
+			}
+		]
+	}
+}

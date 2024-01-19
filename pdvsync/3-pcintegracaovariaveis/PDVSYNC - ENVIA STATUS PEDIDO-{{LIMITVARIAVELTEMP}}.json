@@ -1,0 +1,39 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOVARIAVEIS",
+		"campos": [
+			{
+				"nome": "DTULTALTER",
+				"valor": ""
+			},
+			{
+				"nome": "ID",
+				"valor": "PDVSYNC - ENVIA STATUS PEDIDO-{{:LIMITVARIAVELTEMP}}"
+			},
+			{
+				"nome": "CHAVE",
+				"valor": "{{:LIMITVARIAVELTEMP}}"
+			},
+			{
+				"nome": "TIPOCHAVE",
+				"valor": "BODY"
+			},
+			{
+				"nome": "TIPOVALOR",
+				"valor": "STRING"
+			},
+			{
+				"nome": "IDROTASERVICO",
+				"valor": "PDVSYNC - ENVIA STATUS PEDIDO"
+			},
+			{
+				"nome": "VALOR",
+				"valor": "5000"
+			},
+			{
+				"nome": "CODEMPALTER",
+				"valor": ""
+			}
+		]
+	}
+}

@@ -1,0 +1,39 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOVARIAVEIS",
+		"campos": [
+			{
+				"nome": "DTULTALTER",
+				"valor": ""
+			},
+			{
+				"nome": "ID",
+				"valor": "PDVSYNC - SALVAR PERFIL-{{URL_ENVIAR_PERFIL}}"
+			},
+			{
+				"nome": "CHAVE",
+				"valor": "{{URL_ENVIAR_PERFIL}}"
+			},
+			{
+				"nome": "TIPOCHAVE",
+				"valor": "BODY"
+			},
+			{
+				"nome": "TIPOVALOR",
+				"valor": "STRING"
+			},
+			{
+				"nome": "IDROTASERVICO",
+				"valor": "PDVSYNC - SALVAR PERFIL"
+			},
+			{
+				"nome": "VALOR",
+				"valor": "https://pdvsync-core-dadosbasicos-qa-f5xaxliefa-ue.a.run.app/api/retaguarda/perfis"
+			},
+			{
+				"nome": "CODEMPALTER",
+				"valor": ""
+			}
+		]
+	}
+}

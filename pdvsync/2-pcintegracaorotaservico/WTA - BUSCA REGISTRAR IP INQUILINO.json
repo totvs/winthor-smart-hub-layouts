@@ -1,0 +1,62 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOROTASERVICO",
+		"campos": [
+			{
+				"nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+				"valor": "S"
+			},
+			{
+				"nome": "ID",
+				"valor": "WTA - Busca Registrar IP Inquilino"
+			},
+			{
+				"nome": "IDEMPRESAAPI",
+				"valor": "WINTHOR-WTA"
+			},
+			{
+				"nome": "SERVICO",
+				"valor": "WTA - Busca Registrar IP Inquilino"
+			},
+			{
+				"nome": "LAYOUTCOMUNICACAO",
+				"valor": {
+					"idExterno": [
+						"pdvsync-registrar-ip"
+					],
+					"_attr_access": "itens",
+					"itens": [
+						{
+							"serviceName": "{{ID_INQUILINO}}"
+						}
+					]
+				}
+			},
+			{
+				"nome": "LAYOUTTRANSFORMACAO",
+				"valor": [
+					{
+						"operation": "default",
+						"spec": {}
+					}
+				]
+			},
+			{
+				"nome": "ATIVO",
+				"valor": "S"
+			},
+			{
+				"nome": "AUTENTICADOR",
+				"valor": "N"
+			},
+			{
+				"nome": "DATASINCRONISMO",
+				"valor": "16-NOV-23"
+			},
+			{
+				"nome": "REFRESHTOKEN",
+				"valor": "N"
+			}
+		]
+	}
+}

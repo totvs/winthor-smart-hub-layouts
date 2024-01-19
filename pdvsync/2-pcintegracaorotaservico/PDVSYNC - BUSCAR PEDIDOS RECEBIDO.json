@@ -1,0 +1,130 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOROTASERVICO",
+		"campos": [
+			{
+				"nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+				"valor": "N"
+			},
+			{
+				"nome": "ID",
+				"valor": "PDVSync - Buscar Pedidos RECEBIDO"
+			},
+			{
+				"nome": "IDEMPRESAAPI",
+				"valor": "PDVSYNC"
+			},
+			{
+				"nome": "SERVICO",
+				"valor": "PDVSync - Buscar Pedidos RECEBIDO"
+			},
+			{
+				"nome": "LAYOUTCOMUNICACAO",
+				"valor": {
+					"name": "PDVSync - Buscar vendas",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{URL_CONSULTA_VENDAS}}/{{ID_INQUILINO}}?{{IDSPROPRIETARIO}}",
+							"query": []
+						}
+					},
+					"response": []
+				}
+			},
+			{
+				"nome": "LAYOUTTRANSFORMACAO",
+				"valor": [
+					{
+						"operation": "br.com.totvs.integracao.winthosmarthube.infra.jolt.custom.JoltModifyCustomOperation",
+						"spec": {
+							"data": {
+								"*": {
+									"conteudo": "=base64ToObject"
+								}
+							}
+						}
+					},
+					{
+						"operation": "shift",
+						"spec": {
+							"data": {
+								"*": {
+									"conteudo": {
+										"situacaoPreVenda": {
+											"CANCELADA": {
+												"@3": "data_ignore[]"
+											},
+											"*": {
+												"@3": "data[]"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"operation": "modify-overwrite-beta",
+						"spec": {
+							"data": {
+								"*": {
+									"idExterno": "=concat('pdvsync-status-prevenda-',@(1,id),'-',@(1,conteudo.data))",
+									"idPdv": "@(1,id)"
+								}
+							}
+						}
+					},
+					{
+						"operation": "shift",
+						"spec": {
+							"data": {
+								"*": {
+									"idExterno": "idExterno",
+									"conteudo": "items[]",
+									"idPdv": "items[&1].idPdv"
+								}
+							}
+						}
+					},
+					{
+						"operation": "default",
+						"spec": {
+							"_attr_access": "items"
+						}
+					}
+				]
+			},
+			{
+				"nome": "ATIVO",
+				"valor": "S"
+			},
+			{
+				"nome": "AUTENTICADOR",
+				"valor": "N"
+			},
+			{
+				"nome": "DATASINCRONISMO",
+				"valor": "14-NOV-23"
+			},
+			{
+				"nome": "REFRESHTOKEN",
+				"valor": ""
+			}
+		]
+	}
+}

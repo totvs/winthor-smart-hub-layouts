@@ -1,0 +1,39 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOVARIAVEIS",
+		"campos": [
+			{
+				"nome": "DTULTALTER",
+				"valor": "19-SEP-23"
+			},
+			{
+				"nome": "ID",
+				"valor": "PDVSYNC - ENVIAR LOJAS-{{URL_ENVIAR_LOJAS}}"
+			},
+			{
+				"nome": "CHAVE",
+				"valor": "{{URL_ENVIAR_LOJAS}}"
+			},
+			{
+				"nome": "TIPOCHAVE",
+				"valor": "BODY"
+			},
+			{
+				"nome": "TIPOVALOR",
+				"valor": "STRING"
+			},
+			{
+				"nome": "IDROTASERVICO",
+				"valor": "PDVSYNC - ENVIAR LOJAS"
+			},
+			{
+				"nome": "VALOR",
+				"valor": "https://pdvsync-core-dadosbasicos-qa-f5xaxliefa-ue.a.run.app/api/retaguarda/lojas"
+			},
+			{
+				"nome": "CODEMPALTER",
+				"valor": ""
+			}
+		]
+	}
+}

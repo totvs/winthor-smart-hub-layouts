@@ -1,0 +1,39 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOVARIAVEIS",
+		"campos": [
+			{
+				"nome": "DTULTALTER",
+				"valor": ""
+			},
+			{
+				"nome": "ID",
+				"valor": "WTA - BUSCAR PRODUTO PDV-{{DATAMENOS60DIAS}}"
+			},
+			{
+				"nome": "CHAVE",
+				"valor": "{{DATAMENOS60DIAS}}"
+			},
+			{
+				"nome": "TIPOCHAVE",
+				"valor": "BODY"
+			},
+			{
+				"nome": "TIPOVALOR",
+				"valor": "SELECT"
+			},
+			{
+				"nome": "IDROTASERVICO",
+				"valor": "WTA - BUSCAR PRODUTO PDV"
+			},
+			{
+				"nome": "VALOR",
+				"valor": "SELECT TO_CHAR(SYSDATE - 60, 'RRRR-MM-DD\"T\"HH24:MI:SS') FROM DUAL"
+			},
+			{
+				"nome": "CODEMPALTER",
+				"valor": ""
+			}
+		]
+	}
+}

@@ -1,0 +1,39 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOVARIAVEIS",
+		"campos": [
+			{
+				"nome": "DTULTALTER",
+				"valor": ""
+			},
+			{
+				"nome": "ID",
+				"valor": "WTA - PDVSYNC COMPARTILHAMENTO MASTER-{{CURRENT_DATE}}"
+			},
+			{
+				"nome": "CHAVE",
+				"valor": "{{CURRENT_DATE}}"
+			},
+			{
+				"nome": "TIPOCHAVE",
+				"valor": "BODY"
+			},
+			{
+				"nome": "TIPOVALOR",
+				"valor": "SELECT"
+			},
+			{
+				"nome": "IDROTASERVICO",
+				"valor": "WTA - PDVSYNC COMPARTILHAMENTO MASTER"
+			},
+			{
+				"nome": "VALOR",
+				"valor": "SELECT TO_CHAR(SYSDATE, 'RRRR-MM-DD') || 'T' || TO_CHAR(SYSDATE, 'HH24:MI:SS') || '.000Z' FROM DUAL"
+			},
+			{
+				"nome": "CODEMPALTER",
+				"valor": ""
+			}
+		]
+	}
+}

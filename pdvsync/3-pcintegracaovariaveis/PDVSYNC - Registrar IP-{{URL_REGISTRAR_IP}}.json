@@ -1,0 +1,39 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOVARIAVEIS",
+		"campos": [
+			{
+				"nome": "DTULTALTER",
+				"valor": "16-NOV-23"
+			},
+			{
+				"nome": "ID",
+				"valor": "PDVSYNC - REGISTRAR IP-{{URL_REGISTRAR_IP}}"
+			},
+			{
+				"nome": "CHAVE",
+				"valor": "{{URL_REGISTRAR_IP}}"
+			},
+			{
+				"nome": "TIPOCHAVE",
+				"valor": "BODY"
+			},
+			{
+				"nome": "TIPOVALOR",
+				"valor": "STRING"
+			},
+			{
+				"nome": "IDROTASERVICO",
+				"valor": "PDVSYNC - REGISTRAR IP"
+			},
+			{
+				"nome": "VALOR",
+				"valor": "http://34.136.178.251/api/v1/client/ip"
+			},
+			{
+				"nome": "CODEMPALTER",
+				"valor": ""
+			}
+		]
+	}
+}

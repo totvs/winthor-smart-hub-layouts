@@ -1,0 +1,39 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOVARIAVEIS",
+		"campos": [
+			{
+				"nome": "DTULTALTER",
+				"valor": ""
+			},
+			{
+				"nome": "ID",
+				"valor": "PDVSYNC - ENVIAR PRECO PRODUTO-{{FILIAL_ID_PROPRIETARIO}}"
+			},
+			{
+				"nome": "CHAVE",
+				"valor": "{{FILIAL_ID_PROPRIETARIO}}"
+			},
+			{
+				"nome": "TIPOCHAVE",
+				"valor": "BODY"
+			},
+			{
+				"nome": "TIPOVALOR",
+				"valor": "STRING"
+			},
+			{
+				"nome": "IDROTASERVICO",
+				"valor": "PDVSYNC - ENVIAR PRECO PRODUTO"
+			},
+			{
+				"nome": "VALOR",
+				"valor": "2"
+			},
+			{
+				"nome": "CODEMPALTER",
+				"valor": ""
+			}
+		]
+	}
+}

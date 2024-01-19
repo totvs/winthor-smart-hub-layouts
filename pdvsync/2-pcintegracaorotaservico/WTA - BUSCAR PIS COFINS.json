@@ -1,0 +1,132 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOROTASERVICO",
+		"campos": [
+			{
+				"nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+				"valor": "N"
+			},
+			{
+				"nome": "ID",
+				"valor": "WTA - Buscar Pis Cofins"
+			},
+			{
+				"nome": "IDEMPRESAAPI",
+				"valor": "WINTHOR-WTA"
+			},
+			{
+				"nome": "SERVICO",
+				"valor": "WTA - Buscar Pis Cofins"
+			},
+			{
+				"nome": "LAYOUTCOMUNICACAO",
+				"valor": {
+					"name": "WTA - Buscar Pis Cofins",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{URL_BASE}}/winthor/tributacao/v0/saida/piscofins/consultar",
+							"query": [
+								{
+									"key": "tamanho",
+									"value": "{{PAGE_SIZE}}"
+								},
+								{
+									"key": "pagina",
+									"value": "{{PAGE}}"
+								},
+								{
+									"key": "ultAlter",
+									"value": "{{LAST_CHANGE}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			},
+			{
+				"nome": "LAYOUTTRANSFORMACAO",
+				"valor": [
+					{
+						"operation": "modify-overwrite-beta",
+						"spec": {
+							"items": {
+								"*": {
+									"CEM": 100,
+									"idExterno": "=concat('pdvsync-piscofins-', @(1,codTribPisCofins),'-', @(1,dtUltAlt))",
+									"valorInverso": "=divide(1, @(1,CEM))",
+									"aliquotaPisPercentual": "=divideAndRound(4, @(1,aliquotaPis), @(1,valorInverso))",
+									"aliquotaCofinsPercentual": "=divideAndRound(4, @(1,aliquotaCofins), @(1,valorInverso))",
+									"aliquotaPisPercentualStr": "=toString(@(1,aliquotaPisPercentual))",
+									"aliquotaCofinsPercentualStr": "=toString(@(1,aliquotaCofinsPercentual))",
+									"aliquotaPisPercentualArr": "=split('\\.',@(1,aliquotaPisPercentualStr))",
+									"aliquotaCofinsPercentualArr": "=split('\\.',@(1,aliquotaCofinsPercentualStr))",
+									"aliquotaPis": "=join(',', @(1,aliquotaPisPercentualArr))",
+									"aliquotaCofins": "=join(',', @(1,aliquotaCofinsPercentualArr))"
+								}
+							}
+						}
+					},
+					{
+						"operation": "shift",
+						"spec": {
+							"items": {
+								"*": {
+									"idExterno": "idExterno",
+									"cst": [
+										"items[&1].cstPis",
+										"items[&1].cstCofins"
+									],
+									"aliquotaPis": "items[&1].aliquotaPis",
+									"aliquotaCofins": "items[&1].aliquotaCofins",
+									"codTribPisCofins": "items[&1].idRetaguarda"
+								}
+							}
+						}
+					},
+					{
+						"operation": "default",
+						"spec": {
+							"_attr_access": "items",
+							"items[]": {
+								"*": {
+									"idInquilino": "{{ID_INQUILINO}}",
+									"idProprietario": "{{MASTER_ID_PROPRIETARIO}}",
+									"loteOrigem": "{{LOTE_ORIGEM}}",
+									"situacao": 1
+								}
+							}
+						}
+					}
+				]
+			},
+			{
+				"nome": "ATIVO",
+				"valor": "S"
+			},
+			{
+				"nome": "AUTENTICADOR",
+				"valor": "N"
+			},
+			{
+				"nome": "DATASINCRONISMO",
+				"valor": "23-MAY-22"
+			},
+			{
+				"nome": "REFRESHTOKEN",
+				"valor": ""
+			}
+		]
+	}
+}

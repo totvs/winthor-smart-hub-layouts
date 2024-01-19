@@ -1,0 +1,39 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOVARIAVEIS",
+		"campos": [
+			{
+				"nome": "DTULTALTER",
+				"valor": ""
+			},
+			{
+				"nome": "ID",
+				"valor": "PDVSYNC - ENVIAR PLANOS DE PGTO-{{URL_ENVIAR_CONDICAO_PGMT}}"
+			},
+			{
+				"nome": "CHAVE",
+				"valor": "{{URL_ENVIAR_CONDICAO_PGMT}}"
+			},
+			{
+				"nome": "TIPOCHAVE",
+				"valor": "BODY"
+			},
+			{
+				"nome": "TIPOVALOR",
+				"valor": "STRING"
+			},
+			{
+				"nome": "IDROTASERVICO",
+				"valor": "PDVSYNC - ENVIAR PLANOS DE PGTO"
+			},
+			{
+				"nome": "VALOR",
+				"valor": "https://pdvsync-core-formapagto-qa-f5xaxliefa-ue.a.run.app/api/retaguarda/condicaopagtos"
+			},
+			{
+				"nome": "CODEMPALTER",
+				"valor": ""
+			}
+		]
+	}
+}

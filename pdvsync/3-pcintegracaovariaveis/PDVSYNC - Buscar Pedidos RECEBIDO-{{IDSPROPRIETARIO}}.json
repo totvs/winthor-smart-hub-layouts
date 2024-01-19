@@ -1,0 +1,39 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOVARIAVEIS",
+		"campos": [
+			{
+				"nome": "DTULTALTER",
+				"valor": ""
+			},
+			{
+				"nome": "ID",
+				"valor": "PDVSYNC - BUSCAR PEDIDOS RECEBIDO-{{IDSPROPRIETARIO}}"
+			},
+			{
+				"nome": "CHAVE",
+				"valor": "{{IDSPROPRIETARIO}}"
+			},
+			{
+				"nome": "TIPOCHAVE",
+				"valor": "BODY"
+			},
+			{
+				"nome": "TIPOVALOR",
+				"valor": "SELECT"
+			},
+			{
+				"nome": "IDROTASERVICO",
+				"valor": "PDVSYNC - BUSCAR PEDIDOS RECEBIDO"
+			},
+			{
+				"nome": "VALOR",
+				"valor": " SELECT IDSPROPRIETARIO FROM( SELECT SYS_CONNECT_BY_PATH(CODIGO,'&listIdProprietario=') IDSPROPRIETARIO FROM PCFILIAL p CONNECT BY PRIOR CODIGO < CODIGO ORDER BY LENGTH(IDSPROPRIETARIO) DESC ) WHERE ROWNUM = 1 "
+			},
+			{
+				"nome": "CODEMPALTER",
+				"valor": ""
+			}
+		]
+	}
+}

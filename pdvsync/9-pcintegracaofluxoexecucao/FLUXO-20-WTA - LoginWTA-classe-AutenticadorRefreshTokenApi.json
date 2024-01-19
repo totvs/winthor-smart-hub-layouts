@@ -1,0 +1,39 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOFLUXOEXECUCAO",
+		"campos": [ {"nome" : "ID", "valor": ""},
+			{
+				"nome": "DTULTALTER",
+				"valor": ""
+			},
+			{
+				"nome": "CODEMPALTER",
+				"valor": ""
+			},
+			{
+				"nome": "ORDEMEXECUCAO",
+				"valor": "3"
+			},
+			{
+				"nome": "IDROTASERVICO",
+				"valor": "WTA - LoginWTA"
+			},
+			{
+				"nome": "IDINTEGRACAOCLASSEMETODO",
+				"valor": "AutenticadorRefreshTokenApi"
+			},
+			{
+				"nome": "IDFLUXO",
+				"valor": "20"
+			},
+			{
+				"nome": "ATIVO",
+				"valor": "N"
+			},
+			{
+				"nome": "IDDEPENDENTE",
+				"valor": ""
+			}
+		]
+	}
+}

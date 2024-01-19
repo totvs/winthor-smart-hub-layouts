@@ -1,0 +1,73 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOROTASERVICO",
+		"campos": [
+			{
+				"nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+				"valor": "N"
+			},
+			{
+				"nome": "ID",
+				"valor": "WTA - PDVSYNC Compartilhamento Master"
+			},
+			{
+				"nome": "IDEMPRESAAPI",
+				"valor": "WINTHOR-WTA"
+			},
+			{
+				"nome": "SERVICO",
+				"valor": "WTA - PDVSYNC Compartilhamento Master"
+			},
+			{
+				"nome": "LAYOUTCOMUNICACAO",
+				"valor": {
+					"idExterno": [
+						"pdvsync-compartilhamento-9999-master"
+					],
+					"_attr_access": "itens",
+					"itens": [
+						[
+							{
+								"idRetaguarda": "{{MASTER_ID_RETAGUARDA}}",
+								"idProprietario": "{{MASTER_ID_PROPRIETARIO}}",
+								"nomeCompartilhamento": "Master 01",
+								"nivel": 0,
+								"idRetaguardaPai": "",
+								"idRetaguardaLoja": "",
+								"idInquilino": "{{ID_INQUILINO}}",
+								"loteOrigem": "{{LOTE_ORIGEM}}"
+							}
+						]
+					]
+				}
+			},
+			{
+				"nome": "LAYOUTTRANSFORMACAO",
+				"valor": [
+					{
+						"operation": "default",
+						"spec": {
+							"default": "true"
+						}
+					}
+				]
+			},
+			{
+				"nome": "ATIVO",
+				"valor": "S"
+			},
+			{
+				"nome": "AUTENTICADOR",
+				"valor": "N"
+			},
+			{
+				"nome": "DATASINCRONISMO",
+				"valor": "21-SEP-22"
+			},
+			{
+				"nome": "REFRESHTOKEN",
+				"valor": ""
+			}
+		]
+	}
+}
