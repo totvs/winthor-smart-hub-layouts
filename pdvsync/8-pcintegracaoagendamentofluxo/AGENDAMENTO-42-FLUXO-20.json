@@ -1,0 +1,1 @@
+{ "tabela" : { "nome" : "PCINTEGRACAOAGENDAMENTOFLUXO", "campos" : [{"nome" : "IDAGENDAMENTO", "valor" : "42"},{"nome" : "IDFLUXO", "valor" : "20"} ] } }

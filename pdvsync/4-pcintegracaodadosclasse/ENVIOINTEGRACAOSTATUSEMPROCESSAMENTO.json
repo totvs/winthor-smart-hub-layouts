@@ -1,0 +1,1 @@
+{ "tabela" : { "nome" : "PCINTEGRACAODADOSCLASSE", "campos" : [{"nome" : "ID", "valor" : "8"},{"nome" : "NOME", "valor" : "EnvioIntegracaoStatusEmProcessamento"},{"nome" : "DESCRICAO", "valor" : "EnvioIntegracaoStatusEmProcessamento"} ] }, "versaoArquivo" : "1.0.0", "nomeArquivo" : "teste" }

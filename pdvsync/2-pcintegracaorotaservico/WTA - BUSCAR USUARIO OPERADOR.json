@@ -1,0 +1,157 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOROTASERVICO",
+		"campos": [
+			{
+				"nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+				"valor": "N"
+			},
+			{
+				"nome": "ID",
+				"valor": "WTA - Buscar Usuario Operador"
+			},
+			{
+				"nome": "IDEMPRESAAPI",
+				"valor": "WINTHOR-WTA"
+			},
+			{
+				"nome": "SERVICO",
+				"valor": "WTA - Buscar Usuario Operador"
+			},
+			{
+				"nome": "LAYOUTCOMUNICACAO",
+				"valor": {
+					"name": "WTA - Buscar Usuario Operador",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{URL_BASE}}/winthor/ferramenta/usuario/v1/listar/detalhes",
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "{{PAGE_SIZE}}"
+								},
+								{
+									"key": "page",
+									"value": "{{PAGE}}"
+								},
+								{
+									"key": "lastChange",
+									"value": "{{LAST_CHANGE}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			},
+			{
+				"nome": "LAYOUTTRANSFORMACAO",
+				"valor": [
+					{
+						"operation": "default",
+						"spec": {
+							"_attr_access": "items",
+							"items[]": {
+								"*": {
+									"dtUltAlter": "1900-01-01T00:00:00"
+								}
+							}
+						}
+					},
+					{
+						"operation": "modify-overwrite-beta",
+						"spec": {
+							"items": {
+								"*": {
+									"idExterno": "=concat('pdvsync-usuario-operador-', @(1,matricula),'-', @(1,dtUltAlter))",
+									"cpf_array": "=split('\\D',@(1,cpf))",
+									"cpf_": "=join('', @(1,cpf_array))"
+								}
+							}
+						}
+					},
+					{
+						"operation": "shift",
+						"spec": {
+							"items": {
+								"*": {
+									"idExterno": "idExterno",
+									"matricula": "items.[&1].idRetaguarda",
+									"situacao": {
+										"ATIVO": {
+											"#1": "items.[&3].situacao"
+										},
+										"*": {
+											"#0": "items.[&3].situacao"
+										}
+									},
+									"login": "items[&1].login",
+									"senha": "items[&1].senhaCriptografada",
+									"nome": "items[&1].nome",
+									"dtUltAlter": "items[&1].dtUltAlter",
+									"cpf_": [
+										"items[&1].cpf"
+									],
+									"perfil": {
+										"FISCALDECAIXA": {
+											"#0": "items.[&3].idRetaguardaPerfil",
+											"#1": "items.[&3].administrador"
+										},
+										"OPERADORDECAIXA": {
+											"#1": "items.[&3].idRetaguardaPerfil"
+										},
+										"VENDEDOR": {
+											"#2": "items.[&3].idRetaguardaPerfil"
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"operation": "default",
+						"spec": {
+							"_attr_access": "items",
+							"items[]": {
+								"*": {
+									"idInquilino": "{{ID_INQUILINO}}",
+									"idProprietario": "{{MASTER_ID_PROPRIETARIO}}",
+									"loteOrigem": "{{LOTE_ORIGEM}}",
+									"administrador": 0,
+									"senhaCriptografada": "winthor"
+								}
+							}
+						}
+					}
+				]
+			},
+			{
+				"nome": "ATIVO",
+				"valor": "S"
+			},
+			{
+				"nome": "AUTENTICADOR",
+				"valor": "N"
+			},
+			{
+				"nome": "DATASINCRONISMO",
+				"valor": "14-NOV-23"
+			},
+			{
+				"nome": "REFRESHTOKEN",
+				"valor": ""
+			}
+		]
+	}
+}

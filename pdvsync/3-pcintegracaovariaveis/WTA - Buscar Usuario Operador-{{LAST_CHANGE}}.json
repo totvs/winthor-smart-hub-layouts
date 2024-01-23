@@ -1,0 +1,39 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOVARIAVEIS",
+		"campos": [
+			{
+				"nome": "DTULTALTER",
+				"valor": ""
+			},
+			{
+				"nome": "ID",
+				"valor": "WTA - BUSCAR USUARIO OPERADOR-{{LAST_CHANGE}}"
+			},
+			{
+				"nome": "CHAVE",
+				"valor": "{{LAST_CHANGE}}"
+			},
+			{
+				"nome": "TIPOCHAVE",
+				"valor": "BODY"
+			},
+			{
+				"nome": "TIPOVALOR",
+				"valor": "SELECT"
+			},
+			{
+				"nome": "IDROTASERVICO",
+				"valor": "WTA - BUSCAR USUARIO OPERADOR"
+			},
+			{
+				"nome": "VALOR",
+				"valor": "SELECT NVL(TO_CHAR((SELECT MAX(DATACRIACAO) FROM PCINTEGRACAOCORE WHERE IDROTASERVICO = :IDROTASERVICO AND status = 2),'RRRR-MM-DD\"T\"HH24:MI:SS'),'1900-01-01T00:00:00') AS DT FROM DUAL"
+			},
+			{
+				"nome": "CODEMPALTER",
+				"valor": ""
+			}
+		]
+	}
+}

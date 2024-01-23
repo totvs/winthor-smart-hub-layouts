@@ -1,0 +1,203 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOROTASERVICO",
+		"campos": [
+			{
+				"nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+				"valor": "N"
+			},
+			{
+				"nome": "ID",
+				"valor": "WTA - Buscar planos de pgto"
+			},
+			{
+				"nome": "IDEMPRESAAPI",
+				"valor": "WINTHOR-WTA"
+			},
+			{
+				"nome": "SERVICO",
+				"valor": "WTA - Buscar planos de pgto"
+			},
+			{
+				"nome": "LAYOUTCOMUNICACAO",
+				"valor": {
+					"name": "WTA - Buscar planos de pagamentos",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{URL_BASE}}/winthor/venda/v0/planos-pagamentos",
+							"query": [
+								{
+									"key": "tamanho",
+									"value": "{{PAGE_SIZE}}"
+								},
+								{
+									"key": "pagina",
+									"value": "{{PAGE}}"
+								},
+								{
+									"key": "dataUltimaAlteracao",
+									"value": "{{LAST_CHANGE}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			},
+			{
+				"nome": "LAYOUTTRANSFORMACAO",
+				"valor": [
+					{
+						"operation": "modify-overwrite-beta",
+						"spec": {
+							"items": {
+								"*": {
+									"idExterno": "=concat('pdvsync-plano-pgmt-', @(1,codigo),'-',@(1,codigoFilial),'-',@(1,dataUltimaAtualizacao))"
+								}
+							}
+						}
+					},
+					{
+						"operation": "shift",
+						"spec": {
+							"items": {
+								"*": {
+									"idExterno": "items.[&1].idExterno",
+									"descricao": "items.[&1].descricao",
+									"numeroParcelas": "items.[&1].numeroParcelas",
+									"codigo": "items.[&1].codigo",
+									"ativo": "items.[&1].ativo",
+									"codigoFilial": "items.[&1].codigoFilial",
+									"prazoMedio": "items.[&1].prazoMedio",
+									"planoPagamentoIntegracaoExterna": {
+										"solicitaDataPrimeiraParcela": "items.[&2].solicitaDataPrimeiraParcela",
+										"solicitaDataDemaisParcela": "items.[&2].solicitaDataDemaisParcela",
+										"diasEntreParcelas": "items.[&2].diasEntreParcelas",
+										"prazoMaximoPrimeiraParcela": "items.[&2].prazoMaximoPrimeiraParcela"
+									},
+									"prazos": {
+										"*": {
+											"0": "prazos_ignorados[]",
+											"*": {
+												"@1": "items.[&4].prazos[]"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"operation": "modify-overwrite-beta",
+						"spec": {
+							"items": {
+								"*": {
+									"numeroMaximoParcelas": "=size(@(1,prazos))"
+								}
+							}
+						}
+					},
+					{
+						"operation": "shift",
+						"spec": {
+							"items": {
+								"*": {
+									"idExterno": "idExterno[]",
+									"descricao": "items.[&1].descricao",
+									"numeroParcelas": {
+										"0": {
+											"@(2,numeroMaximoParcelas)": "items.[&3].numeroMaximoParcelas"
+										},
+										"*": {
+											"@1": "items.[&3].numeroMaximoParcelas"
+										}
+									},
+									"codigo": "items.[&1].idRetaguarda",
+									"codigoFilial": {
+										"99": {
+											"#{{MASTER_ID_PROPRIETARIO}}": "items.[&3].idProprietario"
+										},
+										"*": {
+											"@1": "items.[&3].idProprietario"
+										}
+									},
+									"solicitaDataPrimeiraParcela": {
+										"true": {
+											"#1": "items.[&3].solicitaDataPrimeiraParcela"
+										},
+										"*": {
+											"#0": "items.[&3].solicitaDataPrimeiraParcela"
+										}
+									},
+									"solicitaDataDemaisParcela": {
+										"true": {
+											"#1": "items.[&3].solicitaDataDemaisParcela"
+										},
+										"*": {
+											"#0": "items.[&3].solicitaDataDemaisParcela"
+										}
+									},
+									"ativo": {
+										"true": {
+											"#1": "items.[&3].situacao"
+										},
+										"*": {
+											"#0": "items.[&3].situacao"
+										}
+									},
+									"diasEntreParcelas": "items.[&1].diasEntreParcelas",
+									"prazoMaximoPrimeiraParcela": "items.[&1].prazoMaximoPrimeiraParcela"
+								}
+							}
+						}
+					},
+					{
+						"operation": "default",
+						"spec": {
+							"_attr_access": "items",
+							"items[]": {
+								"*[]": {
+									"*": {
+										"idInquilino": "{{ID_INQUILINO}}",
+										"loteOrigem": "{{LOTE_ORIGEM}}",
+										"situacao": 1,
+										"percentualMinimoEntrada": 0,
+										"tipoDadoComplementar": 0,
+										"dadoComplementarDescricao": ""
+									}
+								}
+							}
+						}
+					}
+				]
+			},
+			{
+				"nome": "ATIVO",
+				"valor": "S"
+			},
+			{
+				"nome": "AUTENTICADOR",
+				"valor": "N"
+			},
+			{
+				"nome": "DATASINCRONISMO",
+				"valor": "14-NOV-23"
+			},
+			{
+				"nome": "REFRESHTOKEN",
+				"valor": ""
+			}
+		]
+	}
+}

@@ -1,0 +1,146 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOROTASERVICO",
+		"campos": [
+			{
+				"nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+				"valor": "N"
+			},
+			{
+				"nome": "ID",
+				"valor": "WTA - Buscar Clientes"
+			},
+			{
+				"nome": "IDEMPRESAAPI",
+				"valor": "WINTHOR-WTA"
+			},
+			{
+				"nome": "SERVICO",
+				"valor": "WTA - Buscar Clientes"
+			},
+			{
+				"nome": "LAYOUTCOMUNICACAO",
+				"valor": {
+					"name": "WTA - Buscar Clientes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{URL_BASE}}/api/wholesale/v1/customer/list",
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "{{PAGE_SIZE}}"
+								},
+								{
+									"key": "page",
+									"value": "{{PAGE}}"
+								},
+								{
+									"key": "lastChange",
+									"value": "{{DATAALTERACAO}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			},
+			{
+				"nome": "LAYOUTTRANSFORMACAO",
+				"valor": [
+					{
+						"operation": "modify-overwrite-beta",
+						"spec": {
+							"items": {
+								"*": {
+									"cpf_cnpj_array": "=split('\\D',@(1,personIdentificationNumber))",
+									"cpf_cnpj": "=join('', @(1,cpf_cnpj_array))",
+									"cep_entrega_array": "=split('\\D',@(1,deliveryZipCode))",
+									"cep_entrega": "=join('', @(1,cep_entrega_array))",
+									"telefone_entrega_array": "=split('\\D',@(1,deliveryPhone))",
+									"telefone_entrega": "=join('', @(1,telefone_entrega_array))",
+									"idExterno": "=concat('pdvsync-cliente-',@(1,id),'-',@(1,lastChange))"
+								}
+							}
+						}
+					},
+					{
+						"operation": "shift",
+						"spec": {
+							"items": {
+								"*": {
+									"idExterno": "idExterno[]",
+									"id": "items.[&1].idRetaguarda",
+									"name": "items.[&1].nome",
+									"active": "items.[&1].situacao",
+									"deliveryAddress": "items.[&1].endereco",
+									"addressInfo": "items.[&1].complemento",
+									"deliveryDistrict": "items.[&1].bairro",
+									"businessCity": "items.[&1].cidade",
+									"deliveryState": "items.[&1].estado",
+									"cep_entrega": "items.[&1].cep",
+									"telefone_entrega": "items.[&1].telefone",
+									"email": "items.[&1].email",
+									"cpf_cnpj": "items.[&1].cpfCnpj",
+									"corporate": {
+										"true": {
+											"#0": "items.[&3].pessoaFisica"
+										},
+										"*": {
+											"#1": "items.[&3].pessoaFisica"
+										}
+									},
+									"createDate": "items.[&1].dataCadastro",
+									"deliveryAddressNumber": "items.[&1].numero"
+								}
+							}
+						}
+					},
+					{
+						"operation": "default",
+						"spec": {
+							"_attr_access": "items",
+							"items[]": {
+								"*": {
+									"enviarpnet": 0,
+									"dataNascimento": "1900-01-01T00:00:00",
+									"idInquilino": "{{ID_INQUILINO}}",
+									"idProprietario": "{{MASTER_ID_PROPRIETARIO}}",
+									"loteOrigem": "{{LOTE_ORIGEM}}",
+									"dataCadastro": "1900-01-01T00:00:00",
+									"numero": "S/N"
+								}
+							}
+						}
+					}
+				]
+			},
+			{
+				"nome": "ATIVO",
+				"valor": "S"
+			},
+			{
+				"nome": "AUTENTICADOR",
+				"valor": "N"
+			},
+			{
+				"nome": "DATASINCRONISMO",
+				"valor": "14-NOV-23"
+			},
+			{
+				"nome": "REFRESHTOKEN",
+				"valor": ""
+			}
+		]
+	}
+}

@@ -1,0 +1,81 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOROTASERVICO",
+		"campos": [
+			{
+				"nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+				"valor": "N"
+			},
+			{
+				"nome": "ID",
+				"valor": "WTA - LoginWTA"
+			},
+			{
+				"nome": "IDEMPRESAAPI",
+				"valor": "WINTHOR-WTA"
+			},
+			{
+				"nome": "SERVICO",
+				"valor": "WTA - LoginWTA"
+			},
+			{
+				"nome": "LAYOUTCOMUNICACAO",
+				"valor": {
+					"name": "WTA - LoginWTA - Usuario Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": [
+							{
+								"key": "login",
+								"value": "{{LOGIN}}"
+							},
+							{
+								"key": "senha",
+								"value": "{{SENHA}}"
+							}
+						],
+						"url": {
+							"raw": "{{URL_BASE}}/winthor/autenticacao/v1/login",
+							"host": [
+								"{{URL_BASE}}"
+							],
+							"path": [
+								"winthor",
+								"autenticacao",
+								"v1",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			},
+			{
+				"nome": "LAYOUTTRANSFORMACAO",
+				"valor": ""
+			},
+			{
+				"nome": "ATIVO",
+				"valor": "S"
+			},
+			{
+				"nome": "AUTENTICADOR",
+				"valor": "S"
+			},
+			{
+				"nome": "DATASINCRONISMO",
+				"valor": "11-MAR-22"
+			},
+			{
+				"nome": "REFRESHTOKEN",
+				"valor": ""
+			}
+		]
+	}
+}

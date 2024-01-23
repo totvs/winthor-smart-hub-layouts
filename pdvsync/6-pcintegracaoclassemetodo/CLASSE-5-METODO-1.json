@@ -1,0 +1,1 @@
+{ "tabela" : { "nome" : "PCINTEGRACAOCLASSEMETODO", "campos" : [{"nome" : "ID", "valor" : "5"},{"nome" : "IDINTEGRACAODADOSCLASSE", "valor" : "5"},{"nome" : "IDINTEGRACAODADOSMETODO", "valor" : "1"} ] }, "versaoArquivo" : "1.0.0", "nomeArquivo" : "teste" }

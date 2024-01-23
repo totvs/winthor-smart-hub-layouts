@@ -1,0 +1,369 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOROTASERVICO",
+		"campos": [
+			{
+				"nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+				"valor": "N"
+			},
+			{
+				"nome": "ID",
+				"valor": "PDVSYNC - Buscar vendas"
+			},
+			{
+				"nome": "IDEMPRESAAPI",
+				"valor": "PDVSYNC"
+			},
+			{
+				"nome": "SERVICO",
+				"valor": "PDVSYNC - Buscar vendas"
+			},
+			{
+				"nome": "LAYOUTCOMUNICACAO",
+				"valor": {
+					"name": "PDVSYNC - Buscar vendas",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{URL_CONSULTA_VENDAS}}/{{ID_INQUILINO}}?{{IDSPROPRIETARIO}}",
+							"query": []
+						}
+					},
+					"response": []
+				}
+			},
+			{
+				"nome": "LAYOUTTRANSFORMACAO",
+				"valor": [
+					{
+						"operation": "br.com.totvs.integracao.winthosmarthube.infra.jolt.custom.JoltModifyCustomOperation",
+						"spec": {
+							"data": {
+								"*": {
+									"conteudo": "=base64ToObject"
+								}
+							}
+						}
+					},
+					{
+						"operation": "modify-overwrite-beta",
+						"spec": {
+							"data": {
+								"*": {
+									"idExterno": "=concat('pdvsync-vendamensagem-',@(1,id),'-',@(1,dataAtualizacao))",
+									"numeroCupom": "@(1,conteudo.Coo)",
+									"idPdv": "@(1,id)",
+									"conteudo": {
+										"idPreVenda": [
+											"@(1,IdPreVenda)",
+											"@(1,PreVendaId)"
+										],
+										"VendaPagamentos": {
+											"*": {
+												"PagamentoForma": {
+													"IdRetaguarda_arr": "=split('-POS',@(1,IdRetaguarda))",
+													"IdRetaguarda": "=join('',@(1,IdRetaguarda_arr))"
+												},
+												"VendaPagamentoTefs": {
+													"*": {
+														"NumeroAutorizacao": "=concat('0',@(1,NumeroAutorizacao))"
+													}
+												}
+											}
+										}
+									},
+									"codCob": [
+										"@(1,conteudo.VendaPagamentos.[0].PagamentoForma.IdRetaguarda)",
+										"SENT"
+									]
+								}
+							}
+						}
+					},
+					{
+						"operation": "shift",
+						"spec": {
+							"data": {
+								"*": {
+									"idPdv": "items.[&1].idPdv",
+									"idExterno": [
+										"idExterno",
+										"items.[&1].idExterno"
+									],
+									"codCob": "items.[&1].codCob",
+									"numeroCupom": [
+										"items.[&1].numCupom",
+										"items.[&1].documentoEletronico.numCupom"
+									],
+									"conteudo": {
+										"#WSH-OMNISHOP": "items.[&2].pdvOrigem",
+										"SituacaoVenda": "items.[&2].tipoMovimento",
+										"idPreVenda": "items.[&2].idPreVenda",
+										"MultiplosPedidos": "items.[&2].multiplosPedidos",
+										"NumeroPdv": [
+											"items.[&2].numCaixa",
+											"items.[&2].consumidorFinal.numCaixa",
+											"items.[&2].documentoEletronico.numCaixa"
+										],
+										"IdentificacaoFidelidade": [
+											"items.[&2].numCartaoCrm",
+											"items.[&2].cartaoCrm"
+										],
+										"Chaveacesso": [
+											"items.[&2].chaveNfce",
+											"items.[&2].chaveNfe"
+										],
+										"VendaData": [
+											"items.[&2].data",
+											"items.[&2].dataMovimentoCaixa",
+											"items.[&2].consumidorFinal.data",
+											"items.[&2].documentoEletronico.data"
+										],
+										"IdCaixa": "items.[&2].numFechamentoMovCx",
+										"ValorLiquido": [
+											"items.[&2].vlAtend",
+											"items.[&2].vlTotal"
+										],
+										"ValorBruto": "items.[&2].vlTabela",
+										"Coo": "items.[&2].consumidorFinal.numCupom",
+										"Operador": {
+											"IdRetaguarda": [
+												"items.[&3].codEmitente",
+												"items.[&3].codFuncCx",
+												"items.[&3].documentoEletronico.codFuncCx"
+											]
+										},
+										"Loja": {
+											"IdRetaguarda": {
+												"999": {
+													"#1": [
+														"items.[&5].codFilial",
+														"items.[&5].consumidorFinal.codFilial",
+														"items.[&5].documentoEletronico.codFilial"
+													]
+												},
+												"*": {
+													"@1": [
+														"items.[&5].codFilial",
+														"items.[&5].consumidorFinal.codFilial",
+														"items.[&5].documentoEletronico.codFilial"
+													]
+												}
+											}
+										},
+										"Cliente": {
+											"Nome": "items.[&3].consumidorFinal.cliente",
+											"CpfCnpj": "items.[&3].consumidorFinal.cgcEnt",
+											"Endereco": "items.[&3].consumidorFinal.enderEnt",
+											"Bairro": "items.[&3].consumidorFinal.bairroEnt",
+											"Telefone": "items.[&3].consumidorFinal.telEnt",
+											"Celular": "items.[&3].consumidorFinal.celEnt",
+											"Cidade": "items.[&3].consumidorFinal.municEnt",
+											"Estado": "items.[&3].consumidorFinal.estEnt",
+											"Cep": "items.[&3].consumidorFinal.cepEnt",
+											"Numero": "items.[&3].consumidorFinal.numeroEnt",
+											"DataNascimento": "items.[&3].consumidorFinal.dtNasc",
+											"Email": "items.[&3].consumidorFinal.email",
+											"RgInscricao": "items.[&3].consumidorFinal.rg",
+											"IdRetaguarda": {
+												"*-*-*-*-*": {
+													"": "items.[&5].consumidorFinal.codCli"
+												},
+												"*": {
+													"@(2,IdRetaguarda)": "items.[&5].consumidorFinal.codCli"
+												}
+											}
+										},
+										"VendaCustodiaXml": {
+											"0": {
+												"SerieVenda": "items.[&4].numCaixaFiscal",
+												"Contingencia": "items.[&4].contingenciaServidor",
+												"Xml": "items.[&4].documentoEletronico.xmls[0].xml",
+												"TipoXml": "items.[&4].documentoEletronico.xmls[0].tipo",
+												"NumeroAutorizacao": "items.[&4].documentoEletronico.xmls[&1].numeroAutorizacao"
+											},
+											"*": {
+												"Xml": "items.[&4].documentoEletronico.xmls[&1].xml",
+												"TipoXml": "items.[&4].documentoEletronico.xmls[&1].tipo",
+												"NumeroAutorizacao": "items.[&4].documentoEletronico.xmls[&1].numeroAutorizacao"
+											}
+										},
+										"VendaItems": {
+											"*": {
+												"@(2,Loja.IdRetaguarda)": {
+													"999": {
+														"#1": "items.[&6].produtos[&3].codFilial"
+													},
+													"*": {
+														"@1": "items.[&6].produtos[&3].codFilial"
+													}
+												},
+												"@(2,NumeroPdv)": "items.[&4].produtos[&1].numCaixa",
+												"@(2,VendaCustodiaXml.[0].SerieVenda)": "items.[&4].produtos[&1].numCaixaFiscal",
+												"Sequencia": "items.[&4].produtos.[&1].numSeq",
+												"AliquotaTributo": "items.[&4].produtos.[&1].percIcm",
+												"ValorUnitario": [
+													"items.[&4].produtos.[&1].pVenda",
+													"items.[&4].produtos.[&1].vlItem",
+													"items.[&4].produtos.[&1].pTabela"
+												],
+												"ValorLiquido": "items.[&4].produtos.[&1].vlSubTotItem",
+												"IdProdutoEmbalagemRetaguarda": "items.[&4].produtos.[&1].codAuxiliar",
+												"VendaDescontoAcrescimos": {
+													"*": {
+														"Valor": "items.[&6].produtos[&3].vlDescontoAcrescimo"
+													}
+												},
+												"Qtde": "items.[&4].produtos.[&1].qt",
+												"DataCadastro": "items.[&4].produtos.[&1].data",
+												"Vendedor": {
+													"IdRetaguarda": "items.[&5].produtos.[&2].codFuncCx"
+												},
+												"Produto": {
+													"IdRetaguarda": "items.[&5].produtos.[&2].codProd",
+													"Descricao": "items.[&5].produtos.[&2].descricaopaf"
+												}
+											}
+										},
+										"VendaPagamentos": {
+											"*": {
+												"@(2,Loja.IdRetaguarda)": {
+													"999": {
+														"#1": "items.[&6].pagamentos[&3].codFilial"
+													},
+													"*": {
+														"@1": "items.[&6].pagamentos[&3].codFilial"
+													}
+												},
+												"@(2,Operador.IdRetaguarda)": "items.[&4].pagamentos[&1].codFuncCheckout",
+												"@(2,NumeroPdv)": "items.[&4].pagamentos[&1].numCheckout",
+												"@(2,Ccf)": "items.[&4].pagamentos[&1].duplic",
+												"@(2,VendaCustodiaXml.[0].SerieVenda)": "items.[&4].pagamentos[&1].numCaixaFiscal",
+												"@(2,IdCaixa)": "items.[&4].pagamentos[&1].numFechamentoMovCx",
+												"@(2,VendaData)": [
+													"items.[&4].pagamentos[&1].dtEmissao",
+													"items.[&4].pagamentos[&1].dtEmissaoOrigem",
+													"items.[&4].pagamentos[&1].dtMovimentoCaixa"
+												],
+												"ValorLiquido": "items.[&4].pagamentos[&1].valor",
+												"ValorPago": [
+													"items.[&4].pagamentos[&1].valorOrig",
+													"items.[&4].pagamentos[&1].valorComTroco[]",
+													"items.[&4].vlTotalComTroco[]"
+												],
+												"PagamentoForma": {
+													"IdRetaguarda": [
+														"items.[&5].pagamentos[&2].codCob",
+														"items.[&5].pagamentos[&2].codCobOrigem"
+													]
+												},
+												"VendaPagamentoItems": {
+													"*": {
+														"DataVencimento": [
+															"items.[&6].pagamentos[&3].itensPagamento[&1].dataVencimento",
+															"items.[&6].pagamentos[&3].itensPagamento[&1].dataVencimentoOrigem"
+														],
+														"ValorParcela": "items.[&6].pagamentos[&3].itensPagamento[&1].valor"
+													}
+												},
+												"VendaPagamentoTefs": {
+													"*": {
+														"CodigoRede": "items.[&6].pagamentos[&3].codAdmCartao",
+														"NumeroAutorizacao": "items.[&6].pagamentos[&3].codAutorizacaoTef",
+														"Bandeira": "items.[&6].pagamentos[&3].codBandeiraTef",
+														"NsuHost": "items.[&6].pagamentos[&3].nsuHost",
+														"NumeroBin": "items.[&6].pagamentos[&3].numCartao",
+														"NsuSitef": "items.[&6].pagamentos[&3].nsuTef"
+													}
+												},
+												"VendaPagamentoDadoComplementars": {
+													"*": {
+														"PagamentoDadoComplementar": {
+															"IdRetaguarda": {
+																"11": {
+																	"@(3,Conteudo)": "items.[&9].pagamentos[&6].codAutorizacaoTef"
+																},
+																"12": {
+																	"@(3,Conteudo)": "items.[&9].pagamentos[&6].nsuTef"
+																}
+															}
+														}
+													}
+												}
+											}
+										},
+										"VendaDescontoAcrescimos": {
+											"*": {
+												"Valor": "items.[&4].descontosCabecalho[]"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"operation": "modify-overwrite-beta",
+						"spec": {
+							"items": {
+								"*": {
+									"vlTotalComTroco": "=doubleSum(@(1,vlTotalComTroco))",
+									"pagamentos": {
+										"*": {
+											"valorComTroco": "=doubleSum(@(1,valorComTroco))",
+											"codAutorizacaoTef_arr": "=split('\\D',@(1,codAutorizacaoTef))",
+											"codAutorizacaoTef": "=join('',@(1,codAutorizacaoTef_arr))"
+										}
+									},
+									"produtos": {
+										"*": {
+											"vlDescontoAcrescimo": "=divide(@(1,vlDescontoAcrescimo),@(1,qt))"
+										}
+									},
+									"descontosCabecalho_valorNegativo": "=doubleSum(@(1,descontosCabecalho))",
+									"vlDesconto": "=divide(@(1,descontosCabecalho_valorNegativo),-1)"
+								}
+							}
+						}
+					},
+					{
+						"operation": "default",
+						"spec": {
+							"_attr_access": "items"
+						}
+					}
+				]
+			},
+			{
+				"nome": "ATIVO",
+				"valor": "S"
+			},
+			{
+				"nome": "AUTENTICADOR",
+				"valor": "N"
+			},
+			{
+				"nome": "DATASINCRONISMO",
+				"valor": "26-JUL-23"
+			},
+			{
+				"nome": "REFRESHTOKEN",
+				"valor": ""
+			}
+		]
+	}
+}

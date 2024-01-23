@@ -1,0 +1,39 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOVARIAVEIS",
+		"campos": [
+			{
+				"nome": "DTULTALTER",
+				"valor": ""
+			},
+			{
+				"nome": "ID",
+				"valor": "WTA - BUSCAR FILIAIS COMPARTILHAMENTO-{{LAST_CHANGE}}"
+			},
+			{
+				"nome": "CHAVE",
+				"valor": "{{LAST_CHANGE}}"
+			},
+			{
+				"nome": "TIPOCHAVE",
+				"valor": "BODY"
+			},
+			{
+				"nome": "TIPOVALOR",
+				"valor": "SELECT"
+			},
+			{
+				"nome": "IDROTASERVICO",
+				"valor": "WTA - BUSCAR FILIAIS COMPARTILHAMENTO"
+			},
+			{
+				"nome": "VALOR",
+				"valor": "SELECT (CASE WHEN (SELECT COUNT(1) FROM PCINTEGRACAOCORE WHERE IDROTASERVICO = 36 AND STATUS != 1 AND ROWNUM >= 1) > 0 THEN TO_CHAR(NVL((SELECT MAX(DATACRIACAO) FROM PCINTEGRACAOCORE WHERE IDROTASERVICO = 40 AND STATUS = 2), TO_DATE('01/01/1900')) -1, 'RRRR-MM-DD\"T\"HH24:MI:SS') ELSE TO_CHAR(SYSDATE, 'RRRR-MM-DD\"T\"HH24:MI:SS') END) DT FROM DUAL "
+			},
+			{
+				"nome": "CODEMPALTER",
+				"valor": ""
+			}
+		]
+	}
+}

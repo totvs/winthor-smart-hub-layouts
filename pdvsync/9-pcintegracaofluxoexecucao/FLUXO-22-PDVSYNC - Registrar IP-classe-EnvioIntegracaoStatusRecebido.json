@@ -1,0 +1,39 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOFLUXOEXECUCAO",
+		"campos": [ {"nome" : "ID", "valor": ""},
+			{
+				"nome": "DTULTALTER",
+				"valor": ""
+			},
+			{
+				"nome": "CODEMPALTER",
+				"valor": ""
+			},
+			{
+				"nome": "ORDEMEXECUCAO",
+				"valor": "3"
+			},
+			{
+				"nome": "IDROTASERVICO",
+				"valor": "PDVSYNC - Registrar IP"
+			},
+			{
+				"nome": "IDINTEGRACAOCLASSEMETODO",
+				"valor": "EnvioIntegracaoStatusRecebido"
+			},
+			{
+				"nome": "IDFLUXO",
+				"valor": "22"
+			},
+			{
+				"nome": "ATIVO",
+				"valor": "S"
+			},
+			{
+				"nome": "IDDEPENDENTE",
+				"valor": "WTA - Busca Registrar IP - Inquilino"
+			}
+		]
+	}
+}

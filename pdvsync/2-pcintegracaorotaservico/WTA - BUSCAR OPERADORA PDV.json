@@ -1,0 +1,141 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOROTASERVICO",
+		"campos": [
+			{
+				"nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+				"valor": "N"
+			},
+			{
+				"nome": "ID",
+				"valor": "WTA - Buscar Operadora PDV"
+			},
+			{
+				"nome": "IDEMPRESAAPI",
+				"valor": "WINTHOR-WTA"
+			},
+			{
+				"nome": "SERVICO",
+				"valor": "WTA - Buscar Operadora PDV"
+			},
+			{
+				"nome": "LAYOUTCOMUNICACAO",
+				"valor": {
+					"name": "WTA - Buscar Operadora PDV",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{URL_BASE}}/winthor/venda/v0/operadoras",
+							"query": [
+								{
+									"key": "tamanho",
+									"value": "{{PAGE_SIZE}}"
+								},
+								{
+									"key": "pagina",
+									"value": "{{PAGE}}"
+								},
+								{
+									"key": "ultimaAlteracao",
+									"value": "{{LAST_CHANGE}}"
+								},
+								{
+									"key": "tipoOperacao",
+									"value": "01, 02"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			},
+			{
+				"nome": "LAYOUTTRANSFORMACAO",
+				"valor": [
+					{
+						"operation": "modify-overwrite-beta",
+						"spec": {
+							"items": {
+								"*": {
+									"idExterno": "=concat('pdvsync-operadora-', @(1,codcob),'-',@(1,codfilial),'-',@(1,ultimaAlteracao))"
+								}
+							}
+						}
+					},
+					{
+						"operation": "shift",
+						"spec": {
+							"items": {
+								"*": {
+									"codcob": "items[&1].idRetaguarda",
+									"cobranca": "items[&1].descricao",
+									"codigoOperadora": "items[&1].administradora",
+									"codigoTef": "items[&1].codigoTef",
+									"tipoOperacaoTef": {
+										"codTipoTef": {
+											"01": {
+												"#1": "items[&4].tipoTransacao"
+											},
+											"02": {
+												"#0": "items[&4].tipoTransacao"
+											}
+										}
+									},
+									"idExterno": "idExterno",
+									"codfilial": {
+										"99": {
+											"#{{MASTER_ID_PROPRIETARIO}}": "items[&3].idProprietario"
+										},
+										"*": {
+											"@(2,codfilial)": "items[&3].idProprietario"
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"operation": "default",
+						"spec": {
+							"_attr_access": "items",
+							"items[]": {
+								"*": {
+									"idInquilino": "{{ID_INQUILINO}}",
+									"loteOrigem": "{{LOTE_ORIGEM}}",
+									"situacao": 1,
+									"codigoTef": "0"
+								}
+							}
+						}
+					}
+				]
+			},
+			{
+				"nome": "ATIVO",
+				"valor": "S"
+			},
+			{
+				"nome": "AUTENTICADOR",
+				"valor": "N"
+			},
+			{
+				"nome": "DATASINCRONISMO",
+				"valor": "14-NOV-23"
+			},
+			{
+				"nome": "REFRESHTOKEN",
+				"valor": ""
+			}
+		]
+	}
+}

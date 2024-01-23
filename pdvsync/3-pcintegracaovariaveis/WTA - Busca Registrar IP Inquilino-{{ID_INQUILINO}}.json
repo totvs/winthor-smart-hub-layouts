@@ -1,0 +1,39 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOVARIAVEIS",
+		"campos": [
+			{
+				"nome": "DTULTALTER",
+				"valor": "16-NOV-23"
+			},
+			{
+				"nome": "ID",
+				"valor": "WTA - BUSCA REGISTRAR IP INQUILINO-{{ID_INQUILINO}}"
+			},
+			{
+				"nome": "CHAVE",
+				"valor": "{{ID_INQUILINO}}"
+			},
+			{
+				"nome": "TIPOCHAVE",
+				"valor": "BODY"
+			},
+			{
+				"nome": "TIPOVALOR",
+				"valor": "STRING"
+			},
+			{
+				"nome": "IDROTASERVICO",
+				"valor": "WTA - BUSCA REGISTRAR IP INQUILINO"
+			},
+			{
+				"nome": "VALOR",
+				"valor":"ADICIONAR_INQUILINO"
+			},
+			{
+				"nome": "CODEMPALTER",
+				"valor": ""
+			}
+		]
+	}
+}

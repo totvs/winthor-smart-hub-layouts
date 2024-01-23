@@ -1,0 +1,39 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOFLUXOEXECUCAO",
+		"campos": [ {"nome" : "ID", "valor": ""},
+			{
+				"nome": "DTULTALTER",
+				"valor": ""
+			},
+			{
+				"nome": "CODEMPALTER",
+				"valor": ""
+			},
+			{
+				"nome": "ORDEMEXECUCAO",
+				"valor": "5"
+			},
+			{
+				"nome": "IDROTASERVICO",
+				"valor": "PDVSYNC - Envia status pedido"
+			},
+			{
+				"nome": "IDINTEGRACAOCLASSEMETODO",
+				"valor": "EnvioIntegracaoStatusRecebidoLote"
+			},
+			{
+				"nome": "IDFLUXO",
+				"valor": "18"
+			},
+			{
+				"nome": "ATIVO",
+				"valor": "N"
+			},
+			{
+				"nome": "IDDEPENDENTE",
+				"valor": "WTA - Buscar status pedido"
+			}
+		]
+	}
+}

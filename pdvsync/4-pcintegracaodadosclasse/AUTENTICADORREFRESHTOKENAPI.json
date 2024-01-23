@@ -1,0 +1,1 @@
+{ "tabela" : { "nome" : "PCINTEGRACAODADOSCLASSE", "campos" : [{"nome" : "ID", "valor" : "1"},{"nome" : "NOME", "valor" : "AutenticadorRefreshTokenApi"},{"nome" : "DESCRICAO", "valor" : ""} ] }, "versaoArquivo" : "1.0.0", "nomeArquivo" : "teste" }
