@@ -62,7 +62,7 @@
 									"value": "{{REVENDA}}"
 								},
 								{
-									"key": "merchandiseType",
+									"key": "merchandiseType_old",
 									"value": "{{TIPOMERCADORIA}}"
 								},
 								{

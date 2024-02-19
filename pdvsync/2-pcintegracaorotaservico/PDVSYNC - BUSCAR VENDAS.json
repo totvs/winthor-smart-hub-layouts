@@ -222,7 +222,6 @@
 													"items.[&4].produtos.[&1].pTabela"
 												],
 												"ValorLiquido": "items.[&4].produtos.[&1].vlSubTotItem",
-												"IdProdutoEmbalagemRetaguarda": "items.[&4].produtos.[&1].codAuxiliar",
 												"VendaDescontoAcrescimos": {
 													"*": {
 														"Valor": "items.[&6].produtos[&3].vlDescontoAcrescimo"
@@ -286,22 +285,7 @@
 														"NumeroAutorizacao": "items.[&6].pagamentos[&3].codAutorizacaoTef",
 														"Bandeira": "items.[&6].pagamentos[&3].codBandeiraTef",
 														"NsuHost": "items.[&6].pagamentos[&3].nsuHost",
-														"NumeroBin": "items.[&6].pagamentos[&3].numCartao",
-														"NsuSitef": "items.[&6].pagamentos[&3].nsuTef"
-													}
-												},
-												"VendaPagamentoDadoComplementars": {
-													"*": {
-														"PagamentoDadoComplementar": {
-															"IdRetaguarda": {
-																"11": {
-																	"@(3,Conteudo)": "items.[&9].pagamentos[&6].codAutorizacaoTef"
-																},
-																"12": {
-																	"@(3,Conteudo)": "items.[&9].pagamentos[&6].nsuTef"
-																}
-															}
-														}
+														"NumeroBin": "items.[&6].pagamentos[&3].numCartao"
 													}
 												}
 											}

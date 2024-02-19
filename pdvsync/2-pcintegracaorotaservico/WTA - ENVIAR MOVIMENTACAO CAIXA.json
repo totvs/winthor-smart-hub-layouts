@@ -21,7 +21,7 @@
 			{
 				"nome": "LAYOUTCOMUNICACAO",
 				"valor": {
-					"name": "WTA - Enviar movimentacAo caixa",
+					"name": "WTA - Enviar movimentacao caixa",
 					"request": {
 						"method": "POST",
 						"header": [

@@ -48,6 +48,10 @@
 								{
 									"key": "dataUltimaALteracao",
 									"value": "{{LAST_CHANGE}}"
+								},
+								{
+									"key": "filial",
+									"value": "44"
 								}
 							]
 						}

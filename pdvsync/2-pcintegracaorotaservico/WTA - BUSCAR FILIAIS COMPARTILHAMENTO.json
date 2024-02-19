@@ -48,6 +48,10 @@
 								{
 									"key": "lastChange",
 									"value": "{{LAST_CHANGE}}"
+								},
+								{
+									"key": "id",
+									"value": "44"
 								}
 							]
 						}
@@ -63,7 +67,7 @@
 						"spec": {
 							"items": {
 								"*": {
-									"idExterno": "=concat('pdvsync-compartilhamento-', @(1,id),'-', @(1,lastChange))"
+									"idExterno": "=concat('pdvsync-loja-', @(1,id),'-', @(1,lastChange))"
 								}
 							}
 						}
@@ -78,7 +82,7 @@
 											"@2": "ignore"
 										},
 										"*": {
-											"@2": "items"
+											"@2": "items[]"
 										}
 									}
 								}

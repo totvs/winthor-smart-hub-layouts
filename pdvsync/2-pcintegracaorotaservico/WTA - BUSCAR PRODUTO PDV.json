@@ -66,7 +66,8 @@
 									"value": "{{TIPOMERCADORIA}}"
 								}
 							]
-						}
+						},
+						"bodyraw": ""
 					},
 					"response": []
 				}
@@ -80,20 +81,10 @@
 							"items": {
 								"*": {
 									"produto": {
-										"idRetaguarda": "=toString(@(1,codigo))",
+										"idRetaguarda": "=concat(@(1,codigoDeBarra),'-',@(1,codigo))",
 										"idExterno": "=concat('pdvsync-produto-', @(1,idRetaguarda),'-',@(1,codfilial),'-',@(1,dtultalter))",
 										"codigoProduto": "@(1,idRetaguarda)",
-										"codigoFilial": "{{FILIAL_ID_PROPRIETARIO}}",
-										"embalagens": {
-											"*": {
-												"idRetaguarda": "=concat(@(1,codigoDeBarra),'-',@(1,produto))",
-												"IdProdutoRetaguarda": "=concat(@(3,codigoDeBarra),'-',@(1,produto))",
-												"descricao": [
-													"@(1,descricao)",
-													"=concat(@(3,descricao),' - ',@(1,embalagem))"
-												]
-											}
-										}
+										"codigoFilial": "{{FILIAL_ID_PROPRIETARIO}}"
 									},
 									"ncm": {
 										"*": {
@@ -174,15 +165,12 @@
 												"#0": "items.[&4].situacao"
 											}
 										},
-										"multiplo": {
-											"valor": "items.[&3].quantidadeMovimentacao"
-										},
 										"descricao": "items.[&2].descricao",
 										"@(1,produto.unidade.sigla)": "items.[&2].unidadeMedida",
 										"descontoMaximo": "items.[&2].descontoMaximo",
-										"codigo": "items.[&2].codigoProduto",
+										"codigo": "items.[&2].codigoAlternativo",
 										"codfilial": "items.[&2].idProprietario",
-										"codigoDeBarra": "items.[&2].codigoAlternativo",
+										"codigoDeBarra": "items.[&2].codigoProduto",
 										"origemProd": {
 											"Nacional": {
 												"#0": "items.[&4].origemProduto"
@@ -222,29 +210,7 @@
 												"#true": "items.[&4].fracionado"
 											}
 										},
-										"cnpjFornecedor": "items.[&2].cnpjFornecedor",
-										"embalagens": {
-											"*": {
-												"IdProdutoRetaguarda": "items.[&4].produtoEmbalagens[&1].IdProdutoRetaguarda",
-												"idRetaguarda": "items.[&4].produtoEmbalagens[&1].idRetaguarda",
-												"descricao": "items.[&4].produtoEmbalagens[&1].descricao",
-												"codigoDeBarra": "items.[&4].produtoEmbalagens[&1].codigoBarras",
-												"unidade": {
-													"sigla": "items.[&5].produtoEmbalagens[&2].unidadeMedida"
-												},
-												"fatorConversao": {
-													"valor": "items.[&5].produtoEmbalagens[&2].quantidade"
-												},
-												"inativo": {
-													"false": {
-														"#1": "items.[&6].produtoEmbalagens[&3].situacao"
-													},
-													"*": {
-														"#0": "items.[&6].produtoEmbalagens[&3].situacao"
-													}
-												}
-											}
-										}
+										"cnpjFornecedor": "items.[&2].cnpjFornecedor"
 									},
 									"ncm_old": {
 										"*": {

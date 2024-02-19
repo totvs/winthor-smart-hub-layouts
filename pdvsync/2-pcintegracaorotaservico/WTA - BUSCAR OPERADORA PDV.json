@@ -113,7 +113,7 @@
 									"idInquilino": "{{ID_INQUILINO}}",
 									"loteOrigem": "{{LOTE_ORIGEM}}",
 									"situacao": 1,
-									"codigoTef": "0"
+									"codigoTef": ""
 								}
 							}
 						}

@@ -82,7 +82,6 @@
 									"idExterno": "idExterno[]",
 									"id": "items.[&1].idRetaguarda",
 									"name": "items.[&1].nome",
-									"active": "items.[&1].situacao",
 									"deliveryAddress": "items.[&1].endereco",
 									"addressInfo": "items.[&1].complemento",
 									"deliveryDistrict": "items.[&1].bairro",
@@ -112,6 +111,7 @@
 							"_attr_access": "items",
 							"items[]": {
 								"*": {
+									"situacao": 1,
 									"enviarpnet": 0,
 									"dataNascimento": "1900-01-01T00:00:00",
 									"idInquilino": "{{ID_INQUILINO}}",

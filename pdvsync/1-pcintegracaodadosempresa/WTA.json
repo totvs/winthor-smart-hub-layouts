@@ -16,7 +16,7 @@
 			},
 			{
 				"nome": "URLBASE",
-				"valor": "http://localhost:8989"
+				"valor": "ADICIONAR_URLBASE"
 			},
 			{
 				"nome": "TOKENCLIENTE",

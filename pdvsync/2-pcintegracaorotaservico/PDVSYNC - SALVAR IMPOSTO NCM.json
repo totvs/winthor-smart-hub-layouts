@@ -39,7 +39,7 @@
 							}
 						],
 						"url": {
-							"raw": "https://pdvsync-core-imposto-qa-aadivv24nq-ue.a.run.app/api/retaguarda/ncms",
+							"raw": "{{URL_ENVIAR_NCM}}",
 							"query": []
 						},
 						"bodyraw": "{{CLIENT_JSON}}"
