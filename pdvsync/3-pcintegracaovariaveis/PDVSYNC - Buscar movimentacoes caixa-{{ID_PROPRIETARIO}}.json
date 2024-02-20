@@ -8,11 +8,11 @@
 			},
 			{
 				"nome": "ID",
-				"valor": "PDVSYNC - BUSCAR PEDIDOS RECEBIDO-{{IDSPROPRIETARIO}}"
+				"valor": "PDVSYNC - BUSCAR MOVIMENTACOES CAIXA-{{ID_PROPRIETARIO}}"
 			},
 			{
 				"nome": "CHAVE",
-				"valor": "{{IDSPROPRIETARIO}}"
+				"valor": "{{ID_PROPRIETARIO}}"
 			},
 			{
 				"nome": "TIPOCHAVE",
@@ -24,11 +24,11 @@
 			},
 			{
 				"nome": "IDROTASERVICO",
-				"valor": "PDVSYNC - BUSCAR PEDIDOS RECEBIDO"
+				"valor": "PDVSYNC - BUSCAR MOVIMENTACOES CAIXA"
 			},
 			{
 				"nome": "VALOR",
-				"valor": " SELECT IDSPROPRIETARIO FROM( SELECT SYS_CONNECT_BY_PATH(CODIGO,'&listIdProprietario=') IDSPROPRIETARIO FROM PCFILIAL p CONNECT BY PRIOR CODIGO < CODIGO ORDER BY LENGTH(IDSPROPRIETARIO) DESC ) WHERE ROWNUM = 1 "
+				"valor": "&listIdProprietario=1&listIdProprietario=2"
 			},
 			{
 				"nome": "CODEMPALTER",

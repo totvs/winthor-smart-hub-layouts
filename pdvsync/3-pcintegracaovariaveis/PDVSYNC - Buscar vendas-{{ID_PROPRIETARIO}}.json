@@ -8,11 +8,11 @@
 			},
 			{
 				"nome": "ID",
-				"valor": "PDVSYNC - BUSCAR PEDIDOS CANCELADA-{{IDSPROPRIETARIO}}"
+				"valor": "PDVSYNC - BUSCAR VENDAS-{{ID_PROPRIETARIO}}"
 			},
 			{
 				"nome": "CHAVE",
-				"valor": "{{IDSPROPRIETARIO}}"
+				"valor": "{{ID_PROPRIETARIO}}"
 			},
 			{
 				"nome": "TIPOCHAVE",
@@ -24,11 +24,11 @@
 			},
 			{
 				"nome": "IDROTASERVICO",
-				"valor": "PDVSYNC - BUSCAR PEDIDOS CANCELADA"
+				"valor": "PDVSYNC - BUSCAR VENDAS"
 			},
 			{
 				"nome": "VALOR",
-				"valor": "&listIdProprietario=2"
+				"valor": "&listIdProprietario=1&listIdProprietario=2"
 			},
 			{
 				"nome": "CODEMPALTER",

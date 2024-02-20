@@ -35,7 +35,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{URL_CONSULTA_VENDAS}}/{{ID_INQUILINO}}?{{IDSPROPRIETARIO}}",
+							"raw": "{{URL_CONSULTA_VENDAS}}/{{ID_INQUILINO}}?{{ID_PROPRIETARIO}}",
 							"query": []
 						}
 					},
