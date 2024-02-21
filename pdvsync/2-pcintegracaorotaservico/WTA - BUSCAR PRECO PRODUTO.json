@@ -19,60 +19,6 @@
 				"valor": "WTA - Buscar Preco Produto"
 			},
 			{
-				"nome": "LAYOUTCOMUNICACAO",
-				"valor": {
-					"name": "WTA - Buscar Preco Produto",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{TOKEN}}"
-							},
-							{
-								"key": "Accept",
-								"value": "*/*"
-							}
-						],
-						"url": {
-							"raw": "{{URL_BASE}}/api/wholesale/v1/price/discount-policy",
-							"query": [
-								{
-									"key": "pageSize",
-									"value": "{{PAGE_SIZE}}"
-								},
-								{
-									"key": "page",
-									"value": "{{PAGE}}"
-								},
-								{
-									"key": "branchId",
-									"value": "{{FILIAL}}"
-								},
-								{
-									"key": "lastChange",
-									"value": "{{LAST_CHANGE}}"
-								},
-								{
-									"key": "callOrigin",
-									"value": "WSH"
-								},
-								{
-									"key": "resale",
-									"value": "{{REVENDA}}"
-								},
-								{
-									"key": "typeOfMerchandise",
-									"value": "{{TIPOMERCADORIA}}"
-								}
-							]
-						},
-						"bodyraw": ""
-					},
-					"response": []
-				}
-			},
-			{
 				"nome": "LAYOUTTRANSFORMACAO",
 				"valor": [
 					{
@@ -114,9 +60,20 @@
 											"@(2,idExternoPreco)": "items[&3].[0].idExterno"
 										}
 									},
-									"skuId": "items[&1].[0].idRetaguardaProduto",
+									"erpReferenceKey": [
+										"items[&1].[0].codigoProduto"
+									],
+									"principalSKUId": [
+										"items[&1].[0].idRetaguardaProduto"
+									],
+									"useSaleWithPackaging": {
+										"true": {
+											"@(2,skuId)": "items[&3].[0].idRetaguardaProdutoEmbalagem"
+										}
+									},
 									"priceConverter": "items[&1].[0].valor",
 									"quantity": "items[&1].[0].saldo",
+									"branchId": "items[&1].[0].idProprietario",
 									"active": {
 										"false": {
 											"#0": "items[&3].[0].situacao"
@@ -125,7 +82,6 @@
 											"#1": "items[&3].[0].situacao"
 										}
 									},
-									"ean": "items[&1].[0].codigoProduto",
 									"productId": "items[&1].[0].idRetaguardaProduto",
 									"offerStartDate": "items[&1].[0].dataHoraVigenciaInicial",
 									"offerEndDate": "items[&1].[0].dataHoraVigenciaFinal",
@@ -133,15 +89,18 @@
 										"@(1,idExternoDesconto)": [
 											"items[&2].[1].idExterno"
 										],
-										"@(1,skuId)": [
-											"items[&2].[1].idRetaguardaProduto"
+										"@(1,branchId)": [
+											"items[&2].[1].idProprietario"
 										],
 										"@(1,idRetaguardaDesconto)": [
 											"items[&2].[1].idRetaguarda"
 										],
+										"@(1,erpReferenceKey)": [
+											"items[&2].[1].codigoProduto"
+										],
 										"@(1,quantity)": "items[&2].[1].saldo",
-										"@(1,ean)": "items[&2].[1].codigoProduto",
-										"@(1,productId)": "items[&2].[1].idRetaguardaProduto",
+										"@(1,skuID_)": "items[&2].[1].codigoProduto",
+										"@(1,principalSKUId)": "items[&2].[1].idRetaguardaProduto",
 										"@(1,priceConverter)": "items[&2].[1].valor",
 										"@(1,discountConverter)": "items[&2].[1].precoPromocional",
 										"startDate": "items[&2].[1].dataHoraVigenciaInicial",
@@ -154,6 +113,13 @@
 												"@(2,endDate)": [
 													"items[&4].[1].dataHoraVigenciaFinal"
 												]
+											},
+											"@(2,useSaleWithPackaging)": {
+												"true": {
+													"@(4,skuId)": [
+														"items[&5].[1].idRetaguardaProdutoEmbalagem"
+													]
+												}
 											}
 										}
 									}

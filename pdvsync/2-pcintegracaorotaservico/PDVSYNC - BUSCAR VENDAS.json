@@ -3,6 +3,26 @@
 		"nome": "PCINTEGRACAOROTASERVICO",
 		"campos": [
 			{
+						   
+				
+	 
+	
+							  
+						
+	 
+	
+						   
+			   
+	 
+	
+							
+			   
+	 
+	
+							   
+				
+	 
+	
 				"nome": "SOMENTEATUALIZARINTEGRACAOCORE",
 				"valor": "N"
 			},
@@ -72,6 +92,13 @@
 											"@(1,IdPreVenda)",
 											"@(1,PreVendaId)"
 										],
+									   	"VendaItems": {
+											"*": {
+												"Vendedor": {
+													"idRetaguardaVendedorSemRCA": "=split('RCA-', @(1,IdRetaguarda))"
+												}
+											}
+										},
 										"VendaPagamentos": {
 											"*": {
 												"PagamentoForma": {
@@ -222,6 +249,7 @@
 													"items.[&4].produtos.[&1].pTabela"
 												],
 												"ValorLiquido": "items.[&4].produtos.[&1].vlSubTotItem",
+												"IdProdutoEmbalagemRetaguarda": "items.[&4].produtos.[&1].codAuxiliar",
 												"VendaDescontoAcrescimos": {
 													"*": {
 														"Valor": "items.[&6].produtos[&3].vlDescontoAcrescimo"
@@ -230,7 +258,14 @@
 												"Qtde": "items.[&4].produtos.[&1].qt",
 												"DataCadastro": "items.[&4].produtos.[&1].data",
 												"Vendedor": {
-													"IdRetaguarda": "items.[&5].produtos.[&2].codFuncCx"
+													"IdRetaguarda": {
+														"RCA-*": {
+															"@(2,idRetaguardaVendedorSemRCA.[1])": "items.[&7].produtos.[&4].codUsur"
+														},
+														"*": {
+															"@1": "items.[&7].produtos.[&4].codFuncCx"
+														}
+													}
 												},
 												"Produto": {
 													"IdRetaguarda": "items.[&5].produtos.[&2].codProd",

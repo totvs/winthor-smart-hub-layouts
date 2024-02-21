@@ -90,8 +90,16 @@
 						"spec": {
 							"items": {
 								"*": {
-									"idExterno": "idExterno[]",
-									"id": "items.[&1].idRetaguarda",
+									"idExterno": "items.[&1].idExterno",
+									"id": {
+										"CRED": {
+											"#4": "items.[&3].tipoCliente",
+											"#CRED": "items.[&3].idRetaguarda"
+										},
+										"*": {
+											"@1": "items.[&3].idRetaguarda"
+										}
+									},
 									"codFilial": {
 										"99": {
 											"#{{MASTER_ID_PROPRIETARIO}}": "items.[&3].idProprietario"
@@ -156,6 +164,13 @@
 											}
 										}
 									},
+									"planoPagamentos": {
+										"*": {
+											"idRetaguarda": "items.[&3].formasPagtoCondicoes[&1].idRetaguarda",
+											"@(2,id)": "items.[&3].formasPagtoCondicoes[&1].idRetaguardaFormaPagto",
+											"codigo": "items.[&3].formasPagtoCondicoes[&1].idRetaguardaCondicaoPagto"
+										}
+									},
 									"operadoras": {
 										"*": {
 											"codcob": [
@@ -167,10 +182,12 @@
 											"tipoOperacaoTef": {
 												"codTipoTef": {
 													"01": {
-														"#3": "items.[&6].tipo"
+														"#3": "items.[&6].tipo",
+														"#true": "items.[&6].isCard"
 													},
 													"02": {
-														"#2": "items.[&6].tipo"
+														"#2": "items.[&6].tipo",
+														"#true": "items.[&6].isCard"
 													},
 													"*": {
 														"#0": "items.[&6].tipo"
@@ -179,6 +196,127 @@
 											}
 										}
 									}
+								}
+							}
+						}
+					},
+					{
+						"operation": "shift",
+						"spec": {
+							"items": {
+								"*": {
+									"@": "items[&1][0]",
+									"isCard": {
+										"true": {
+											"@(2,idRetaguarda)": "items[&3][1].idRetaguarda",
+											"#5": "items[&3][1].tipo",
+											"@(2,idExterno)": "items[&3][1].idExterno",
+											"@(2,idProprietario)": "items[&3][1].idProprietario",
+											"@(2,descricaofiscal)": "items[&3][1].descricaofiscal",
+											"@(2,descricao)": "items[&3][1].descricao",
+											"@(2,situacao)": "items[&3][1].situacao",
+											"@(2,codigoSistemaExterno)": "items[&3][1].codigoSistemaExterno",
+											"@(2,formasPagtoOperadoras)": {
+												"*": {
+													"situacao": "items[&5][1].formasPagtoOperadoras[&1].situacao",
+													"idRetaguarda": "items[&5][1].formasPagtoOperadoras[&1].idRetaguarda",
+													"idRetaguardaFormaPagto": "items[&5][1].formasPagtoOperadoras[&1].idRetaguardaFormaPagto",
+													"idRetaguardaOperadoraPagto": "items[&5][1].formasPagtoOperadoras[&1].idRetaguardaOperadoraPagto"
+												}
+											},
+											"@(2,formasPagtoCondicoes)": {
+												"*": {
+													"idRetaguardaFormaPagto": "items[&5][1].formasPagtoCondicoes[&1].idRetaguardaFormaPagto",
+													"idRetaguarda": "items[&5][1].formasPagtoCondicoes[&1].idRetaguarda",
+													"idRetaguardaCondicaoPagto": "items[&5][1].formasPagtoCondicoes[&1].idRetaguardaCondicaoPagto"
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"operation": "shift",
+						"spec": {
+							"items": {
+								"*": {
+									"0": {
+										"@": "items[]"
+									},
+									"1": {
+										"@": "pos[]"
+									}
+								}
+							}
+						}
+					},
+					{
+						"operation": "default",
+						"spec": {
+							"_attr_access": "items",
+							"pos[]": {
+								"*": {
+									"formasPagtoDadosComplementares": [
+										{
+											"idRetaguardaDadoComplementarPagto": "11",
+											"situacao": 1,
+											"ordem": 0
+										},
+										{
+											"idRetaguardaDadoComplementarPagto": "12",
+											"situacao": 1,
+											"ordem": 1
+										}
+									]
+								}
+							}
+						}
+					},
+					{
+						"operation": "modify-overwrite-beta",
+						"spec": {
+							"pos": {
+								"*": {
+									"idRetaguarda": "=concat(@(1,idRetaguarda),'-POS')",
+									"idExterno": "=concat(@(1,idExterno),'-POS')",
+									"descricao": "=concat(@(1,descricao),' - POS')",
+									"formasPagtoOperadoras": {
+										"*": {
+											"idRetaguarda": "=concat(@(1,idRetaguarda),'-POS')",
+											"idRetaguardaFormaPagto": "=concat(@(1,idRetaguardaFormaPagto),'-POS')"
+										}
+									},
+									"formasPagtoCondicoes": {
+										"*": {
+											"idRetaguarda": "=concat(@(1,idRetaguarda),'-POS')",
+											"idRetaguardaFormaPagto": "=concat(@(1,idRetaguardaFormaPagto),'-POS')"
+										}
+									},
+									"formasPagtoDadosComplementares": {
+										"*": {
+											"idRetaguarda": "=concat(@(1,idRetaguardaDadoComplementarPagto),'-',@(3,idRetaguarda))",
+											"idRetaguardaFormaPagto": "@(3,idRetaguarda)"
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"operation": "shift",
+						"spec": {
+							"items": {
+								"*": {
+									"@": "items[]",
+									"idExterno": "idExterno[]"
+								}
+							},
+							"pos": {
+								"*": {
+									"@": "items[]",
+									"idExterno": "idExterno[]"
 								}
 							}
 						}

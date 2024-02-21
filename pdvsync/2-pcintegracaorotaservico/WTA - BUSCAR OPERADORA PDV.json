@@ -21,7 +21,7 @@
 			{
 				"nome": "LAYOUTCOMUNICACAO",
 				"valor": {
-					"name": "WTA - Buscar Operadora PDV",
+					"name": "WTA - Buscar Operadora - PDV",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -113,7 +113,7 @@
 									"idInquilino": "{{ID_INQUILINO}}",
 									"loteOrigem": "{{LOTE_ORIGEM}}",
 									"situacao": 1,
-									"codigoTef": ""
+									"codigoTef": "0"
 								}
 							}
 						}

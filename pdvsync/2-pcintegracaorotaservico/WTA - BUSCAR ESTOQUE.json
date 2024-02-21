@@ -62,15 +62,20 @@
 									"value": "{{REVENDA}}"
 								},
 								{
-									"key": "merchandiseType_old",
+									"key": "merchandiseType",
 									"value": "{{TIPOMERCADORIA}}"
 								},
 								{
 									"key": "callOrigin",
-									"value": "WSH"
+									"value": "W"
+								},
+								{
+									"key": "order",
+									"value": "lastChange"
 								}
 							]
-						}
+						},
+						"bodyraw": ""
 					},
 					"response": []
 				}

@@ -21,7 +21,7 @@
 			{
 				"nome": "LAYOUTCOMUNICACAO",
 				"valor": {
-					"name": "WTA - Buscar Clientes",
+					"name": "WTA -Buscar produtos",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -82,6 +82,7 @@
 									"idExterno": "idExterno[]",
 									"id": "items.[&1].idRetaguarda",
 									"name": "items.[&1].nome",
+									"active": "items.[&1].situacao",
 									"deliveryAddress": "items.[&1].endereco",
 									"addressInfo": "items.[&1].complemento",
 									"deliveryDistrict": "items.[&1].bairro",
