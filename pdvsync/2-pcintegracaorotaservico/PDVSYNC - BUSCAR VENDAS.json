@@ -3,6 +3,26 @@
 		"nome": "PCINTEGRACAOROTASERVICO",
 		"campos": [
 			{
+						   
+				
+	 
+	
+							  
+						
+	 
+	
+						   
+			   
+	 
+	
+							
+			   
+	 
+	
+							   
+				
+	 
+	
 				"nome": "SOMENTEATUALIZARINTEGRACAOCORE",
 				"valor": "N"
 			},
@@ -39,7 +59,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{URL_CONSULTA_VENDAS}}/{{ID_INQUILINO}}?{{IDSPROPRIETARIO}}",
+							"raw": "{{URL_CONSULTA_VENDAS}}/{{ID_INQUILINO}}?{{ID_PROPRIETARIO}}",
 							"query": []
 						}
 					},
@@ -72,6 +92,13 @@
 											"@(1,IdPreVenda)",
 											"@(1,PreVendaId)"
 										],
+									   	"VendaItems": {
+											"*": {
+												"Vendedor": {
+													"idRetaguardaVendedorSemRCA": "=split('RCA-', @(1,IdRetaguarda))"
+												}
+											}
+										},
 										"VendaPagamentos": {
 											"*": {
 												"PagamentoForma": {
@@ -231,7 +258,14 @@
 												"Qtde": "items.[&4].produtos.[&1].qt",
 												"DataCadastro": "items.[&4].produtos.[&1].data",
 												"Vendedor": {
-													"IdRetaguarda": "items.[&5].produtos.[&2].codFuncCx"
+													"IdRetaguarda": {
+														"RCA-*": {
+															"@(2,idRetaguardaVendedorSemRCA.[1])": "items.[&7].produtos.[&4].codUsur"
+														},
+														"*": {
+															"@1": "items.[&7].produtos.[&4].codFuncCx"
+														}
+													}
 												},
 												"Produto": {
 													"IdRetaguarda": "items.[&5].produtos.[&2].codProd",
@@ -286,22 +320,7 @@
 														"NumeroAutorizacao": "items.[&6].pagamentos[&3].codAutorizacaoTef",
 														"Bandeira": "items.[&6].pagamentos[&3].codBandeiraTef",
 														"NsuHost": "items.[&6].pagamentos[&3].nsuHost",
-														"NumeroBin": "items.[&6].pagamentos[&3].numCartao",
-														"NsuSitef": "items.[&6].pagamentos[&3].nsuTef"
-													}
-												},
-												"VendaPagamentoDadoComplementars": {
-													"*": {
-														"PagamentoDadoComplementar": {
-															"IdRetaguarda": {
-																"11": {
-																	"@(3,Conteudo)": "items.[&9].pagamentos[&6].codAutorizacaoTef"
-																},
-																"12": {
-																	"@(3,Conteudo)": "items.[&9].pagamentos[&6].nsuTef"
-																}
-															}
-														}
+														"NumeroBin": "items.[&6].pagamentos[&3].numCartao"
 													}
 												}
 											}

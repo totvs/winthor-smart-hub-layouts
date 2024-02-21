@@ -21,7 +21,7 @@
 			{
 				"nome": "LAYOUTCOMUNICACAO",
 				"valor": {
-					"name": "WTA - Buscar Operadora PDV",
+					"name": "WTA - Buscar Operadora - PDV",
 					"request": {
 						"method": "GET",
 						"header": [

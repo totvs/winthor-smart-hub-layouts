@@ -21,7 +21,7 @@
 			{
 				"nome": "LAYOUTCOMUNICACAO",
 				"valor": {
-					"name": "WTA - Buscar Imposto NCM PDV",
+					"name": "WTA -Buscar Imposto NCM",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -48,6 +48,10 @@
 								{
 									"key": "dataUltimaALteracao",
 									"value": "{{LAST_CHANGE}}"
+								},
+								{
+									"key": "filial",
+									"value": "{{FILIAL}}"
 								}
 							]
 						}

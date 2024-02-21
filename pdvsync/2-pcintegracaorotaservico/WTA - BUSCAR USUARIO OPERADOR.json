@@ -104,11 +104,11 @@
 										"items[&1].cpf"
 									],
 									"perfil": {
-										"FISCALDECAIXA": {
+										"FISCAL DE CAIXA": {
 											"#0": "items.[&3].idRetaguardaPerfil",
 											"#1": "items.[&3].administrador"
 										},
-										"OPERADORDECAIXA": {
+										"OPERADOR DE CAIXA": {
 											"#1": "items.[&3].idRetaguardaPerfil"
 										},
 										"VENDEDOR": {

@@ -21,7 +21,7 @@
 			{
 				"nome": "LAYOUTCOMUNICACAO",
 				"valor": {
-					"name": "WTA - Buscar Produto PDV",
+					"name": "WTA - Buscar Produto - PDV",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -66,7 +66,8 @@
 									"value": "{{TIPOMERCADORIA}}"
 								}
 							]
-						}
+						},
+						"bodyraw": ""
 					},
 					"response": []
 				}
@@ -80,7 +81,7 @@
 							"items": {
 								"*": {
 									"produto": {
-										"idRetaguarda": "=toString(@(1,codigo))",
+										"idRetaguarda": "=concat(@(1,codigoDeBarra),'-',@(1,codigo))",
 										"idExterno": "=concat('pdvsync-produto-', @(1,idRetaguarda),'-',@(1,codfilial),'-',@(1,dtultalter))",
 										"codigoProduto": "@(1,idRetaguarda)",
 										"codigoFilial": "{{FILIAL_ID_PROPRIETARIO}}",
@@ -243,6 +244,18 @@
 														"#0": "items.[&6].produtoEmbalagens[&3].situacao"
 													}
 												}
+											}
+										},
+										"produtoKits": {
+											"*": {
+												"idRetaguardaProduto": "items.[&4].produtoKits[&1].idRetaguardaProduto",
+												"idRetaguardaProdutoKit": "items.[&4].produtoKits[&1].idRetaguardaProdutoKit",
+												"descricao": "items.[&4].produtoKits[&1].descricao",
+												"quantidadeVendaKit": "items.[&4].produtoKits[&1].quantidadeVendaKit",
+												"tipoValorKit": "items.[&4].produtoKits[&1].tipoValorKit",
+												"situacao": "items.[&4].produtoKits[&1].situacao",
+												"valorDesconto": "items.[&4].produtoKits[&1].valorDesconto",
+												"novoValorUnitario": "items.[&4].produtoKits[&1].novoValorUnitario"
 											}
 										}
 									},

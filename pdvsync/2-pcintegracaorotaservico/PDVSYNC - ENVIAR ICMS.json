@@ -21,7 +21,7 @@
 			{
 				"nome": "LAYOUTCOMUNICACAO",
 				"valor": {
-					"name": "PDVSYNC - Enviar ICMS",
+					"name": "Enviar ICMS",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -57,7 +57,6 @@
 					}
 				]
 			},
-			{
 				"nome": "ATIVO",
 				"valor": "S"
 			},

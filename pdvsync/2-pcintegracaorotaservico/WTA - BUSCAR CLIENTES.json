@@ -21,7 +21,7 @@
 			{
 				"nome": "LAYOUTCOMUNICACAO",
 				"valor": {
-					"name": "WTA - Buscar Clientes",
+					"name": "WTA -Buscar produtos",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -112,6 +112,7 @@
 							"_attr_access": "items",
 							"items[]": {
 								"*": {
+									"situacao": 1,
 									"enviarpnet": 0,
 									"dataNascimento": "1900-01-01T00:00:00",
 									"idInquilino": "{{ID_INQUILINO}}",

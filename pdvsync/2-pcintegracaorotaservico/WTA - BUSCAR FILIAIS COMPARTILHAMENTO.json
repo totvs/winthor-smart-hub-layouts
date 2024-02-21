@@ -21,7 +21,7 @@
 			{
 				"nome": "LAYOUTCOMUNICACAO",
 				"valor": {
-					"name": "WTA - Buscar Filiais Compartilhamento",
+					"name": "WTA -Buscar filiais",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -48,6 +48,10 @@
 								{
 									"key": "lastChange",
 									"value": "{{LAST_CHANGE}}"
+								},
+								{
+									"key": "id",
+									"value": "{{FILIAL}}"
 								}
 							]
 						}
@@ -63,7 +67,7 @@
 						"spec": {
 							"items": {
 								"*": {
-									"idExterno": "=concat('pdvsync-compartilhamento-', @(1,id),'-', @(1,lastChange))"
+									"idExterno": "=concat('pdvsync-loja-compartilhamento-', @(1,id),'-', @(1,lastChange))"
 								}
 							}
 						}
@@ -78,7 +82,7 @@
 											"@2": "ignore"
 										},
 										"*": {
-											"@2": "items"
+											"@2": "items[]"
 										}
 									}
 								}

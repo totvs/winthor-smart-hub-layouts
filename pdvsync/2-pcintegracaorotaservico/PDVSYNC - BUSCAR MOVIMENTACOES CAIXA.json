@@ -39,7 +39,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{URL_CONSULTA_MOVIMENTACAO_CAIXA}}/{{ID_INQUILINO}}?{{IDSPROPRIETARIO}}",
+							"raw": "{{URL_CONSULTA_MOVIMENTACAO_CAIXA}}/{{ID_INQUILINO}}?{{ID_PROPRIETARIO}}",
 							"query": []
 						}
 					},
