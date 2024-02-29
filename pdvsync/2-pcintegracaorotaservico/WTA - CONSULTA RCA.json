@@ -1,0 +1,143 @@
+{
+    "tabela": {
+        "campos": [
+            {
+                "nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+                "valor": "N"
+            },
+            {
+                "nome": "ID",
+                "valor": "PDVSYNC - Consultar lote"
+            },
+            {
+                "nome": "IDEMPRESAAPI",
+                "valor": "PDVSYNC"
+            },
+            {
+                "nome": "SERVICO",
+                "valor": "PDVSYNC - Consultar lote"
+            },
+            {
+                "nome": "LAYOUTCOMUNICACAO",
+                "valor": {
+                    "name": "RCA - Consulta Vendedor",
+                    "request": {
+                        "bodyraw": "",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{TOKEN}}"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "*/*"
+                            }
+                        ],
+                        "method": "GET",
+                        "url": {
+                            "query": [
+                                {
+                                    "key": "branchId",
+                                    "value": "{{BRANCHID}}"
+                                }
+                            ],
+                            "raw": "{{URL_BASE}}/winthor/varejo/matcon/v1/rca/consulta"
+                        }
+                    },
+                    "response": [
+                    ]
+                }
+            },
+            {
+                "nome": "LAYOUTTRANSFORMACAO",
+                "valor": [
+                    {
+                        "operation": "default",
+                        "spec": {
+                            "_attr_access": "items",
+                            "items[]": {
+                                "*": {
+                                    "dtUltAlter": "1900-01-01T00:00:00"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "operation": "modify-overwrite-beta",
+                        "spec": {
+                            "data": {
+                                "content": {
+                                    "*": {
+                                        "idExterno": "=concat('pdvsync-usuario-rca-', @(1,matricula),'-', @(1,dtUltAlter))",
+                                        "login_s": "=toString(@(1,codigousur))",
+                                        "matricula_s": "=toString(@(1,codigousur))",
+                                        "senha_s": "=toString(@(1,codigousur))",
+                                        "situacao_s": "=toInt(1)"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "operation": "shift",
+                        "spec": {
+                            "data": {
+                                "content": {
+                                    "*": {
+                                        "codigoSupervisor": "items[&1].idInquilino",
+                                        "cpfCnpj": "items[&1].cpf",
+                                        "dtUltAlter": "items[&1].dtUltAlter",
+                                        "idExterno": "idExterno",
+                                        "login_s": "items[&1].login",
+                                        "matricula_s": [
+                                            "items[&1].matricula",
+                                            "items[&1].idProprietario",
+                                            "items[&1].idRetaguarda"
+                                        ],
+                                        "nome": "items[&1].nome",
+                                        "senha_s": [
+                                            "items[&1].senha",
+                                            "items[&1].senhaCriptografada"
+                                        ],
+                                        "situacao_s": "items[&1].situacao"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "operation": "default",
+                        "spec": {
+                            "_attr_access": "items",
+                            "items[]": {
+                                "*": {
+                                    "administrador": 0,
+                                    "idInquilino": "{{ID_INQUILINO}}",
+                                    "idProprietario": "{{MASTER_ID_PROPRIETARIO}}",
+                                    "senhaCriptografada": "winthor"
+                                }
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "nome": "ATIVO",
+                "valor": "S"
+            },
+            {
+                "nome": "AUTENTICADOR",
+                "valor": "N"
+            },
+            {
+                "nome": "DATASINCRONISMO",
+                "valor": "17-MAR-23"
+            },
+            {
+                "nome": "REFRESHTOKEN",
+                "valor": ""
+            }
+        ],
+        "nome": "PCINTEGRACAOROTASERVICO"
+    }
+}
