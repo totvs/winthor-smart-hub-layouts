@@ -3,8 +3,36 @@
 		"nome": "PCINTEGRACAOVARIAVEIS",
 		"campos": [
 			{
-				"nome": "{{MASTER_ID_PROPRIETARIO}}",
-				"valor": "9999"
+				"nome": "DTULTALTER",
+				"valor": ""
+			},
+			{
+				"nome": "ID",
+				"valor": "WTA - Consulta RCA-{{MASTER_ID_PROPRIETARIO}}"
+			},
+			{
+				"nome": "CHAVE",
+				"valor": "{{MASTER_ID_PROPRIETARIO}}"
+			},
+			{
+				"nome": "TIPOCHAVE",
+				"valor": "BODY"
+			},
+			{
+				"nome": "TIPOVALOR",
+				"valor": "STRING"
+			},
+			{
+				"nome": "IDROTASERVICO",
+				"valor": "WTA - CONSULTA RCA"
+			},
+			{
+				"nome": "VALOR",
+				"valor":"ADICIONAR_INQUILINO"
+			},
+			{
+				"nome": "CODEMPALTER",
+				"valor": ""
 			}
 		]
 	}
