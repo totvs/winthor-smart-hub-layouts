@@ -1,0 +1,11 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOVARIAVEIS",
+		"campos": [
+			{
+				"nome": "{{ID_INQUILINO}}",
+				"valor": "MATCONHML"
+			}
+		]
+	}
+}

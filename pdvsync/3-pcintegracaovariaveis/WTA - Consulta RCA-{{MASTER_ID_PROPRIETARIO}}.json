@@ -1,0 +1,11 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOVARIAVEIS",
+		"campos": [
+			{
+				"nome": "{{MASTER_ID_PROPRIETARIO}}",
+				"valor": "9999"
+			}
+		]
+	}
+}
