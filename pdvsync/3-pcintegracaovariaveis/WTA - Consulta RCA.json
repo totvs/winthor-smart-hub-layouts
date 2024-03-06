@@ -3,24 +3,8 @@
 		"nome": "PCINTEGRACAOVARIAVEIS",
 		"campos": [
 			{
-				"nome": "{{ID_INQUILINO}}",
-				"valor": "mississaugahomologacao"
-			},
-			{
-				"nome": "{{MASTER_ID_PROPRIETARIO}}",
-				"valor": "9999"
-			},
-			{
-				"nome": "{{URL_ENVIAR_CLIENTE_RCA}}",
-				"valor": "https://pdvsync-core-dadosbasicos-qa-f5xaxliefa-ue.a.run.app/dadosbasicos/api/retauarda/v2/usuarios"
-			},
-			{
-				"nome": "{{:LIMITVARIAVELTEMP}}",
-				"valor": "15000"
-			},
-			{
-				"nome": "{{CLIENT_JSON}}",
-				"valor": ":PCINTEGRACAOCORE.DADOSTRANSFORMADOS"
+				"nome": "{{BRANCHID}}",
+				"valor": "1"
 			}
 		]
 	}

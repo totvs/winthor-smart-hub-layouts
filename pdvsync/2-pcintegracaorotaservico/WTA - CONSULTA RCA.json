@@ -39,6 +39,14 @@
                                 {
                                     "key": "branchId",
                                     "value": "{{BRANCHID}}"
+                                },
+                                {
+                                    "key": "page",
+                                    "value": "{{PAGE}}"
+                                },
+                                {
+                                    "key": "pageSize",
+                                    "value": "{{PAGE_SIZE}}"
                                 }
                             ],
                             "raw": "{{URL_BASE}}/winthor/varejo/matcon/v1/rca/consulta"
@@ -65,16 +73,14 @@
                     {
                         "operation": "modify-overwrite-beta",
                         "spec": {
-                            "data": {
-                                "content": {
-                                    "*": {
-                                        "id_retarguada": "=concat('RCA-', @(1,matricula_s))",
-                                        "idExterno": "=concat('pdvsync-usuario-rca-', @(1,matricula),'-', @(1,dtUltAlter))",
-                                        "login_s": "=toString(@(1,codigousur))",
-                                        "matricula_s": "=toString(@(1,codigousur))",
-                                        "senha_s": "=toString(@(1,codigousur))",
-                                        "situacao_s": "=toInt(1)"
-                                    }
+                            "items": {
+                                "*": {
+                                    "id_retarguada": "=concat('RCA-', @(1,matricula_s))",
+                                    "idExterno": "=concat('pdvsync-usuario-rca-', @(1,matricula),'-', @(1,dtUltAlter))",
+                                    "login_s": "=toString(@(1,codigousur))",
+                                    "matricula_s": "=toString(@(1,codigousur))",
+                                    "senha_s": "=toString(@(1,codigousur))",
+                                    "situacao_s": "=toInt(1)"
                                 }
                             }
                         }
@@ -82,26 +88,24 @@
                     {
                         "operation": "shift",
                         "spec": {
-                            "data": {
-                                "content": {
-                                    "*": {
-                                        "codigoSupervisor": "items[&1].idInquilino",
-                                        "cpfCnpj": "items[&1].cpf",
-                                        "dtUltAlter": "items[&1].dtUltAlter",
-                                        "id_retarguada": "items[&1].idRetaguarda",
-                                        "idExterno": "idExterno",
-                                        "login_s": "items[&1].login",
-                                        "matricula_s": [
-                                            "items[&1].matricula",
-                                            "items[&1].idProprietario"
-                                        ],
-                                        "nome": "items[&1].nome",
-                                        "senha_s": [
-                                            "items[&1].senha",
-                                            "items[&1].senhaCriptografada"
-                                        ],
-                                        "situacao_s": "items[&1].situacao"
-                                    }
+                            "items": {
+                                "*": {
+                                    "codigoSupervisor": "items[&1].idInquilino",
+                                    "cpfCnpj": "items[&1].cpf",
+                                    "dtUltAlter": "items[&1].dtUltAlter",
+                                    "id_retarguada": "items[&1].idRetaguarda",
+                                    "idExterno": "idExterno",
+                                    "login_s": "items[&1].login",
+                                    "matricula_s": [
+                                        "items[&1].matricula",
+                                        "items[&1].idProprietario"
+                                    ],
+                                    "nome": "items[&1].nome",
+                                    "senha_s": [
+                                        "items[&1].senha",
+                                        "items[&1].senhaCriptografada"
+                                    ],
+                                    "situacao_s": "items[&1].situacao"
                                 }
                             }
                         }
