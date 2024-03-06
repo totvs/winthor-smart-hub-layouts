@@ -7,20 +7,20 @@
             },
             {
                 "nome": "ID",
-                "valor": "PDVSYNC - Consultar lote"
+                "valor": "WTA - CONSULTA RCA"
             },
             {
                 "nome": "IDEMPRESAAPI",
-                "valor": "PDVSYNC"
+                "valor": "WINTHOR-WTA"
             },
             {
                 "nome": "SERVICO",
-                "valor": "PDVSYNC - Consultar lote"
+                "valor": "WTA - CONSULTA RCA"
             },
             {
                 "nome": "LAYOUTCOMUNICACAO",
                 "valor": {
-                    "name": "RCA - Consulta Vendedor",
+                    "name": "WTA - CONSULTA RCA",
                     "request": {
                         "bodyraw": "",
                         "header": [
