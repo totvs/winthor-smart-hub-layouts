@@ -33,7 +33,12 @@
 			{
 				"nome": "IDDEPENDENTE",
 				"valor": ""
+			},
+			{
+				"nome": "DESCRICAO",
+				"valor": "Pedido Recebido"
 			}
+			
 		]
 	}
 }

@@ -33,7 +33,11 @@
 			{
 				"nome": "IDDEPENDENTE",
 				"valor": ""
-			}
+			},
+			{
+				"nome": "DESCRICAO",
+				"valor": "Registrar IP"
+			} 
 		]
 	}
 }

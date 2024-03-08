@@ -33,7 +33,11 @@
 			{
 				"nome": "IDDEPENDENTE",
 				"valor": "WTA - Busca Registrar IP - Inquilino"
-			}
+			},
+			{
+				"nome": "DESCRICAO",
+				"valor": "Registrar IP"
+			} 
 		]
 	}
 }
