@@ -1,0 +1,15 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOAGENDAMENTOFLUXO",
+		"campos": [
+			{
+				"nome": "IDAGENDAMENTO",
+				"valor": "pdvsync - vendas"
+			},
+			{
+				"nome": "IDFLUXO",
+				"valor": "vendas"
+			}
+		]
+	}
+}

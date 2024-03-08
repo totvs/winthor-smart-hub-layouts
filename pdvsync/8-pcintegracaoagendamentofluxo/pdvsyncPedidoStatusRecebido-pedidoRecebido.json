@@ -1,0 +1,15 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOAGENDAMENTOFLUXO",
+		"campos": [
+			{
+				"nome": "IDAGENDAMENTO",
+				"valor": "pdvsync - pedido status recebido"
+			},
+			{
+				"nome": "IDFLUXO",
+				"valor": "Pedido Recebido"
+			}
+		]
+	}
+}
