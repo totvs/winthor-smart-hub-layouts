@@ -1,1 +1,0 @@
-{ "tabela" : { "nome" : "PCINTEGRACAODADOSCLASSE", "campos" : [{"nome" : "ID", "valor" : "9"},{"nome" : "NOME", "valor" : "ConsultarStatusPosIntegracao"},{"nome" : "DESCRICAO", "valor" : "Consulta os status da integração após já ser enviado"} ] }, "versaoArquivo" : "1.0.0", "nomeArquivo" : "teste" }
