@@ -33,6 +33,10 @@
 			{
 				"nome": "IDDEPENDENTE",
 				"valor": "PDVSync - Buscar vendas"
+			},
+			{
+				"nome": "DESCRICAO",
+				"valor": "Vendas"
 			}
 		]
 	}

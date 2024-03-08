@@ -33,6 +33,10 @@
 			{
 				"nome": "IDDEPENDENTE",
 				"valor": "PDVSync - Buscar Pedidos RECEBIDO"
+			},
+			{
+				"nome": "DESCRICAO",
+				"valor": "Pedido Recebido"
 			}
 		]
 	}

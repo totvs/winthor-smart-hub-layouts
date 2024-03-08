@@ -33,6 +33,10 @@
 			{
 				"nome": "IDDEPENDENTE",
 				"valor": "PDVSync - Buscar Pedidos CANCELADA"
+			},
+			{
+				"nome": "DESCRICAO",
+				"valor": "Pedido Cancelado"
 			}
 		]
 	}
