@@ -12,19 +12,19 @@
 			},
 			{
 				"nome": "ORDEMEXECUCAO",
-				"valor": "4"
+				"valor": "5"
 			},
 			{
 				"nome": "IDROTASERVICO",
-				"valor": "WTA - Enviar venda CANCELADA"
+				"valor": "PDVSYNC - Enviar planos de pgto"
 			},
 			{
 				"nome": "IDINTEGRACAOCLASSEMETODO",
-				"valor": "EnvioIntegracaoStatusRecebido"
+				"valor": "EnvioIntegracaoStatusRecebidoLote"
 			},
 			{
 				"nome": "IDFLUXO",
-				"valor": "20"
+				"valor": "13"
 			},
 			{
 				"nome": "ATIVO",
@@ -32,12 +32,8 @@
 			},
 			{
 				"nome": "IDDEPENDENTE",
-				"valor": "PDVSync - Buscar Pedidos CANCELADA"
-			},
-			{
-				"nome": "DESCRICAO",
-				"valor": "Pedido Cancelado"
-			}S
+				"valor": "WTA - Buscar planos de pgto"
+			}
 		]
 	}
 }

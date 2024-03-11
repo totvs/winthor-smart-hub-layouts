@@ -1,1 +1,0 @@
-{ "tabela" : { "nome" : "PCINTEGRACAOAGENDAMENTO", "campos" : [{"nome" : "ID", "valor" : "22"},{"nome" : "DESCRICAO", "valor" : "pdvsync - vendas"},{"nome" : "AGENDAMENTOSEGUNDOS", "valor" : "30"},{"nome" : "DELAYINICIALSEGUNDOS", "valor" : "5"} ] } }

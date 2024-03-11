@@ -1,0 +1,23 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOAGENDAMENTO",
+		"campos": [
+			{
+				"nome": "ID",
+				"valor": "21"
+			},
+			{
+				"nome": "DESCRICAO",
+				"valor": "pdvsync - registrar IP"
+			},
+			{
+				"nome": "AGENDAMENTOSEGUNDOS",
+				"valor": "300"
+			},
+			{
+				"nome": "DELAYINICIALSEGUNDOS",
+				"valor": "5"
+			}
+		]
+	}
+}
