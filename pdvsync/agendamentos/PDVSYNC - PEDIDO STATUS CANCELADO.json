@@ -1,0 +1,23 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOAGENDAMENTO",
+		"campos": [
+			{
+				"nome": "ID",
+				"valor": "42"
+			},
+			{
+				"nome": "DESCRICAO",
+				"valor": "pdvsync - pedido status cancelado"
+			},
+			{
+				"nome": "AGENDAMENTOSEGUNDOS",
+				"valor": "35"
+			},
+			{
+				"nome": "DELAYINICIALSEGUNDOS",
+				"valor": "5"
+			}
+		]
+	}
+}
