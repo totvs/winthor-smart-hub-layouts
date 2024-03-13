@@ -1,0 +1,172 @@
+{
+	"urlVariaveis": [
+		{
+			"nome": "{{URL_ENVIAR_LOJAS}}",
+			"valor": "https://pdvsync-core-dadosbasicos-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/lojas",
+			"descricao": "PDV-SYNC - Enviar lojas",
+			"rota": "PDV-SYNC - Enviar lojas"
+		},
+		{
+			"nome": "{{BASE_URL_ABRIR_LOTE}}",
+			"valor": "https://pdvsync-core-controle-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/inquilinolotesexternos",
+			"descricao": "Criar variavel temporária",
+			"rota": "Criar variavel temporária"
+		},
+		{
+			"nome": "{{BASE_URL_FECHAR_LOTE}}",
+			"valor": "https://pdvsync-core-controle-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/inquilinolotesexternos",
+			"descricao": "Encerrar variavel temporaria",
+			"rota": "Encerrar variavel temporaria"
+		},
+		{
+			"nome": "{{URL_ENVIAR_PRECO_PRODUTOS}}",
+			"valor": "https://pdvsync-core-preco-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/precos",
+			"descricao": "PDV-SYNC Enviar Preco Produto",
+			"rota": "PDV-SYNC Enviar Preco Produto"
+		},
+		{
+			"nome": "{{URL_ENVIAR_ESTOQUE_DISPONIVEL}}",
+			"valor": "https://pdvsync-core-estoque-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/estoques",
+			"descricao": "PDV-SYNC Enviar Estoque",
+			"rota": "PDV-SYNC Enviar Estoque"
+		},
+		{
+			"nome": "{{URL_ENVIAR_PIS_COFINS}}",
+			"valor": "https://pdvsync-core-imposto-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/piscofins",
+			"descricao": "PDV-SYNC - Enviar Pis/Cofins",
+			"rota": "PDV-SYNC - Enviar Pis/Cofins"
+		},
+		{
+			"nome": "{{URL_ENVIAR_PERFIL}}",
+			"valor": "https://pdvsync-core-dadosbasicos-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/perfis",
+			"descricao": "PDV-SYNC Salvar Perfil",
+			"rota": "PDV-SYNC Salvar Perfil"
+		},
+		{
+			"nome": "{{URL_ENVIAR_USUARIO_OPERADOR}}",
+			"valor": "https://pdvsync-core-dadosbasicos-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/usuarios",
+			"descricao": "PDV-SYNC Salvar Usuario Operador",
+			"rota": "PDV-SYNC Salvar Usuario Operador"
+		},
+		{
+			"nome": "{{URL_ENVIAR_ICMS}}",
+			"valor": "https://pdvsync-core-imposto-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/impostos",
+			"descricao": "PDV-SYNC - Enviar ICMS",
+			"rota": "PDV-SYNC - Enviar ICMS"
+		},
+		{
+			"nome": "{{URL_ENVIAR_PRODUTO}}",
+			"valor": "https://pdvsync-core-produto-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v2/produtos",
+			"descricao": "PDV-SYNC Salvar Produto",
+			"rota": "PDV-SYNC Salvar Produto"
+		},
+		{
+			"nome": "{{URL_ENVIAR_OPERADORA}}",
+			"valor": "https://pdvsync-core-formapagto-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/operadoras",
+			"descricao": "PDV-SYNC Salvar Operadora",
+			"rota": "PDV-SYNC Salvar Operadora"
+		},
+		{
+			"nome": "{{URL_ATUALIZAR_STATUS_CAIXA}}",
+			"valor": "https://pdvsync-core-comercial-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/caixaMensagens",
+			"descricao": "PDVSync -Atualizar status caixa",
+			"rota": "PDVSync -Atualizar status caixa"
+		},
+		{
+			"nome": "{{URL_ATUALIZAR_STATUS_VENDA}}",
+			"valor": "https://pdvsync-core-comercial-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/vendaMensagens",
+			"descricao": "PDVSync -Atualizar status venda",
+			"rota": "PDVSync -Atualizar status venda"
+		},
+		{
+			"nome": "{{URL_CONSULTA_MOVIMENTACAO_CAIXA}}",
+			"valor": "https://pdvsync-core-comercial-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/caixaMensagens",
+			"descricao": "PDVSync - Buscar movimentacoes caixa",
+			"rota": "PDVSync - Buscar movimentacoes caixa"
+		},
+		{
+			"nome": "{{URL_ENVIAR_COMPARTILHAMENTO}}",
+			"valor": "https://pdvsync-core-dadosbasicos-qa-ywc7q7nxya-uc.a.run.app/api/pdvsyncclient/compartilhamentos",
+			"descricao": "PDV-SYNC - Enviar compartilhamentos",
+			"rota": "PDV-SYNC - Enviar compartilhamentos"
+		},
+		{
+			"nome": "{{URL_ENVIAR_NCM}}",
+			"valor": "https://pdvsync-core-imposto-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/ncms",
+			"descricao": "PDV-SYNC Salvar Imposto NCM",
+			"rota": "PDV-SYNC Salvar Imposto NCM"
+		},
+		{
+			"nome": "{{URL_ENVIAR_CONDICAO_PGMT}}",
+			"valor": "https://pdvsync-core-formapagto-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/condicaopagtos",
+			"descricao": "PDV-SYNC Enviar planos de pgmt",
+			"rota": "PDV-SYNC Enviar planos de pgmt"
+		},
+		{
+			"nome": "{{URL_ENVIAR_FORMAS_PGMT}}",
+			"valor": "https://pdvsync-core-formapagto-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/formapagtos",
+			"descricao": "PDV-SYNC Enviar formas de pgmt",
+			"rota": "PDV-SYNC Enviar formas de pgmt"
+		},
+		{
+			"nome": "{{URL_CONSULTAR_LOTE}}",
+			"valor": "https://qua-pdvsync.varejo.totvs.com.br/controleprocesso/api/retaguarda/LoteExternoRetornos",
+			"descricao": "PDV-SYNC Consultar lote",
+			"rota": "PDV-SYNC Consultar lote"
+		},
+		{
+			"nome": "{{URL_ENVIAR_CLIENTE}}",
+			"valor": "https://pdvsync-core-cliente-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/clientes",
+			"descricao": "PDV - SYN - Clientes",
+			"rota": "PDV - SYN - Clientes"
+		},
+		{
+			"nome": "{{URL_CONSULTA_VENDAS}}",
+			"valor": "https://pdvsync-core-comercial-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/vendaMensagens",
+			"descricao": "PDVSync - Buscar vendas",
+			"rota": "PDVSync - Buscar vendas"
+		},
+		{
+			"nome": "{{URL_REGISTRAR_IP}}",
+			"valor": "http://34.173.142.155/api/v1/client/ip",
+			"descricao": "PDV-SYNC Registrar IP",
+			"rota": "PDV-SYNC Registrar IP"
+		},
+		{
+			"nome": "{{URL_ENVIAR_STATUS_PREVENDA}}",
+			"valor": "https://pdvsync-core-comercial-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/preVenda",
+			"descricao": "PDVSync -Envia status pedido",
+			"rota": "PDVSync -Envia status pedido"
+		},
+		{
+			"nome": "{{URL_CONSULTA_VENDAS}}",
+			"valor": "https://pdvsync-core-comercial-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/preVendaMensagens",
+			"descricao": "PDVSync - Buscar Pedidos RECEBIDO",
+			"rota": "PDVSync - Buscar Pedidos RECEBIDO"
+		},
+		{
+			"nome": "{{URL_CONSULTA_VENDAS}}",
+			"valor": "https://pdvsync-core-comercial-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/preVendaMensagens",
+			"descricao": "PDVSync - Buscar Pedidos CANCELADA",
+			"rota": "PDVSync - Buscar Pedidos CANCELADA"
+		},
+		{
+			"nome": "{{URL_ATUALIZAR_STATUS_PEDIDO}}",
+			"valor": "https://pdvsync-core-comercial-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/preVendaMensagens",
+			"descricao": "PDVSync - Atualiza Status",
+			"rota": "PDVSync - Atualiza Status"
+		},
+		{
+			"nome": "{{URL_ENVIAR_DADOS_PAGAMENTO}}",
+			"valor": "https://pdvsync-core-formapagto-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/dadocomplementarpagtos",
+			"descricao": "PDV-SYNC Dados pagamento",
+			"rota": "PDV-SYNC Dados pagamento"
+		},
+		{
+			"nome": "{{URL_RAC_PDVSYNC}}",
+			"valor": "https://pdvsyncwinthor.rac.dev.totvs.app/totvs.rac/connect/token",
+			"descricao": "RAC - LoginPDVSync",
+			"rota": "RAC - LoginPDVSync"
+		}
+	]
+}
