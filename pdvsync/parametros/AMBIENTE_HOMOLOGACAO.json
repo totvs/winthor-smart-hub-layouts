@@ -1,4 +1,5 @@
 {
+	"ambiente" : "HOMOLOGACAO",
 	"urlVariaveis": [
 		{
 			"nome": "{{URL_ENVIAR_LOJAS}}",

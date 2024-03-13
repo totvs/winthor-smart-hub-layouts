@@ -1,4 +1,5 @@
-{
+{ 	
+	"ambiente" : "PRODUCAO",
 	"urlVariaveis": [
 		{
 			"nome": "{{URL_ENVIAR_DADOS_PAGAMENTO}}",
