@@ -34,8 +34,7 @@ Clone o repositório winthor-smart-hub-layouts:
 Crie um novo Branch (mesmo padrão do Azure e Bitbucket "feature/DWSHWTNG-123-criarRotaVendasTeste-develop");
 
 ```bash
-https://github.com/totvs/winthor-smart-hub-layouts/branches 
-  checkout: git checkout feature/DWSHWTNG-123-criarRotaVendasTeste-develop
+https://github.com/totvs/winthor-smart-hub-layouts/branches  
 ```
 Faça o checkout
 
