@@ -9,12 +9,16 @@ A fim de melhorar o controle e o versionamento dos layouts criados e alterados, 
 - Manipulação de variáveis fixas e dinâmicas;
 - Layouts de Transformação: Responsáveis por converter os dados de um formato para outro, adequando-os aos requisitos da API de destino.
 - Layouts de Comunicação: Definem a estrutura e os parâmetros necessários para realizar a comunicação entre as APIs, incluindo autenticação, endpoints e manipulação de erros.
-## Instalação
 
-Instale my-project com npm
+#### Api para instalação do layout
 
-```bash
-  npm install my-project
-  cd my-project
+```http
+  POST /winthor/integracao/fulfillment/v1/layout/
 ```
-    
+
+| Parâmetro   | Tipo       | Descrição                           |
+| :---------- | :--------- | :---------------------------------- |
+| `projetoNome` | `string` | **Obrigatório**. Nome layout a ser instalado |
+| `versao` | `string` | **Obrigatório**. Versão do layout a ser instalado |
+| `caminhoLayout` | `string` | **Não Obrigatório**. Caminho para a pasta de layouts (apenas em modo de desenvolvimento) |
+| `ambiente` | `string` | **Não Obrigatório**. Ambiente de Produção ou Homologação (padão Homologação)|
