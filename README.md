@@ -31,14 +31,24 @@ Clone o repositório winthor-smart-hub-layouts:
 ```bash
   git clone https://github.com/totvs/winthor-smart-hub-layouts.git
 ```
+Crie um novo Branch (mesmo padrão do Azure e Bitbucket "feature/DWSHWTNG-123-criarRotaVendasTeste-develop") e faça o checkout;
+
+```bash
+  Cria: https://github.com/totvs/winthor-smart-hub-layouts/branches
+  
+  checkout: git checkout DWSHWTNG-132-documentacaoReadme-develop
+
+```
+
 Abra a pasta winthor-smart-hub-layouts e escolha o layout:
 
 ```bash
-  C:\fontesGit\winthor-smart-hub-layouts\pdvsync
+ cd C:\fontesGit\winthor-smart-hub-layouts\pdvsync
+
 ```    
 Para cada rota criada, adicione um novo arquivo no formato ".json" dentro da pasta "rotas":
 ```bash
-  C:\fontesGit\winthor-smart-hub-layouts\pdvsync\rotas\PDVSYNC - BUSCAR VENDAS TESTE.json
+ cd C:\fontesGit\winthor-smart-hub-layouts\pdvsync\rotas\PDVSYNC - BUSCAR VENDAS TESTE.json
 ```    
 Considere o conteúdo abaixo para criar o arquivo de rotas:
 ```bash
