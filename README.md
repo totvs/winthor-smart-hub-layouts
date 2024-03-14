@@ -21,4 +21,53 @@ A fim de melhorar o controle e o versionamento dos layouts criados e alterados, 
 | `projetoNome` | `string` | **Obrigatório**. Nome layout a ser instalado |
 | `versao` | `string` | **Obrigatório**. Versão do layout a ser instalado |
 | `caminhoLayout` | `string` | **Não Obrigatório**. Caminho para a pasta de layouts (apenas em modo de desenvolvimento) |
-| `ambiente` | `string` | **Não Obrigatório**. Ambiente de Produção ou Homologação (padão Homologação)|
+| `ambiente` | `string` | **Não Obrigatório**. Ambiente de Produção ou Homologação (padrão Homologação)|
+
+
+## Alteração ou Criação de Layouts
+
+Clone o repositório winthor-smart-hub-layouts:
+
+```bash
+  git clone https://github.com/totvs/winthor-smart-hub-layouts.git
+```
+Abra a pasta winthor-smart-hub-layouts e escolha o layout:
+
+```bash
+  C:\fontesGit\winthor-smart-hub-layouts\pdvsync
+```    
+Para cada rota criada, adicione um novo arquivo no formato ".json" dentro da pasta "rotas":
+```bash
+  C:\fontesGit\winthor-smart-hub-layouts\pdvsync\rotas\PDVSYNC - BUSCAR VENDAS TESTE.json
+```    
+Considere o conteúdo abaixo para criar o arquivo de rotas:
+```bash
+{
+    "tabela": {
+        "nome": "PCINTEGRACAOROTASERVICO",
+        "campos": [
+            {
+                "nome": "ID",
+                "valor": "PDVSYNC - BUSCAR VENDAS TESTE"
+            },
+            {
+                "nome": "IDEMPRESAAPI",
+                "valor": "PDVSYNC"
+            },
+            {
+                "nome": "SERVICO",
+                "valor": "PDVSYNC - BUSCAR VENDAS TESTE"
+            },
+            {
+                "nome": "LAYOUTCOMUNICACAO",
+                "valor": _INSIRA_O_LAYOUT_EXTRAIDO_DO_POSTMAN,
+            {
+                "nome": "LAYOUTTRANSFORMACAO",
+                "valor": _INSIRA_O_LAYOUT_EXTRAIDO_DO_JOLT,
+            {
+                "nome": "ATIVO",
+                "valor": "S"
+            } 
+        ]       
+    }
+}
