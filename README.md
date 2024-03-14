@@ -36,7 +36,7 @@ Crie um novo Branch (mesmo padrão do Azure e Bitbucket "feature/DWSHWTNG-123-cr
 ```bash
   Cria: https://github.com/totvs/winthor-smart-hub-layouts/branches
   
-  checkout: git checkout DWSHWTNG-132-documentacaoReadme-develop
+  checkout: git checkout feature/DWSHWTNG-123-criarRotaVendasTeste-develop
 
 ```
 
