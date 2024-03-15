@@ -103,6 +103,8 @@
 							"items": {
 								"*": {
 									"idExterno": "idExterno[&1]",
+									"idInterno": "items[&1].idRetaguarda",
+								    "tipoIdInterno": "PDVSYNC-ESTOQUE",
 									"id_retaguarda": "items[&1].idRetaguarda",
 									"quantity": "items[&1].saldo",
 									"skuID_": "items[&1].codigoProduto",

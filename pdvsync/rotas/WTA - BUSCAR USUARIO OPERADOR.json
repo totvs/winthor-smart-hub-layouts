@@ -87,6 +87,8 @@
 							"items": {
 								"*": {
 									"idExterno": "idExterno",
+									"idInterno": "items.[&1].idRetaguarda",
+								    "tipoIdInterno": "PDVSYNC-USUARIO-OPERADOR",
 									"matricula": "items.[&1].idRetaguarda",
 									"situacao": {
 										"ATIVO": {

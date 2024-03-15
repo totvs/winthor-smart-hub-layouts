@@ -117,6 +117,8 @@
 										}
 									},
 									"codigo": "items.[&1].[0].idRetaguarda",
+									"idInterno": "items.[&1].[0].idRetaguarda",
+									"tipoIdInterno": "PDVSYNC-PLANO-PAGAMENTO",
 									"codigoFilial": {
 										"99": {
 											"#{{MASTER_ID_PROPRIETARIO}}": "items.[&3].[0].idProprietario"

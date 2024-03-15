@@ -84,6 +84,8 @@
 							"items": {
 								"*": {
 									"idExterno": "idExterno",
+									"idInterno": "items[&1].idRetaguarda",
+									"tipoIdInterno": "PDVSYNC-PIS-CONFINS",
 									"cst": [
 										"items[&1].cstPis",
 										"items[&1].cstCofins"

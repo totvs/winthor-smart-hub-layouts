@@ -80,6 +80,8 @@
 							"items": {
 								"*": {
 									"idExterno": "idExterno[]",
+									"idInterno": "items.[&1].idRetaguarda",
+									"tipoIdInterno": "PDVSYNC-CLIENTE",
 									"id": "items.[&1].idRetaguarda",
 									"name": "items.[&1].nome",
 									"active": "items.[&1].situacao",

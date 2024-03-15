@@ -92,6 +92,8 @@
 										}
 									},
 									"idExterno": "idExterno",
+									"idInterno": "items[&1].idRetaguarda",
+									"tipoIdInterno": "PDVSYNC-OPERADORA",
 									"codfilial": {
 										"99": {
 											"#{{MASTER_ID_PROPRIETARIO}}": "items[&3].idProprietario"

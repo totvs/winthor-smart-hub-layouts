@@ -94,6 +94,8 @@
 									"idExternoIcms": "items.[&1].[0].idExterno",
 									"idExternoSt": "items.[&1].[1].idExterno",
 									"idRetaguardaIcms": "items.[&1].[0].idRetaguarda",
+									"idInterno": "items.[&1].[0].idRetaguarda",
+									"tipoIdInterno": "PDVSYNC-ICMS",
 									"aliquota": "items.[&1].[0].aliquotaTributo",
 									"reducaoBaseCalculo": "items.[&1].[0].reducaoBaseCalculo",
 									"modalidadeVarejo": [

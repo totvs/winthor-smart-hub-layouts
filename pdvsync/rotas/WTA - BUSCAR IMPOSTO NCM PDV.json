@@ -96,6 +96,8 @@
 							"items": {
 								"*": {
 									"idExterno": "idExterno[&1]",
+									"idInterno": "items[&1].idRetaguarda",
+									"tipoIdInterno": "PDVSYNC-IMPOSTO-NCM",
 									"id": "items[&1].idRetaguarda",
 									"codigo_Ncm2": "items[&1].codigoNcm",
 									"codigoExcecao": "items[&1].codigoExcecao",
