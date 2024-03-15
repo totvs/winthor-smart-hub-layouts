@@ -48,7 +48,7 @@ Abra a pasta winthor-smart-hub-layouts e escolha o layout:
  cd C:\fontesGit\winthor-smart-hub-layouts\pdvsync
 
 ```    
-Para cada rota criada, adicione um novo arquivo no formato ".json" dentro da pasta "rotas":
+Para cada rota criada, adicione um novo arquivo no formato ".json", dentro da pasta "rotas":
 ```bash
  cd C:\fontesGit\winthor-smart-hub-layouts\pdvsync\rotas\PDVSYNC - BUSCAR VENDAS TESTE.json
 ```    
@@ -85,7 +85,7 @@ Considere o conteúdo abaixo para criar o arquivo de rotas:
 }
 
 ``` 
-Para criar as variáveis dos layout de comunicação e transferência, adicione um novo arquivo no formato ".json" dentro da pasta "variaveis" com o nome da rota seguido do nome da variável:
+Para criar as variáveis dos layout de comunicação e transferência, adicione um novo arquivo no formato ".json", dentro da pasta "variaveis", com o nome da rota seguido do nome da variável:
 ```bash
  cd C:\fontesGit\winthor-smart-hub-layouts\pdvsync\variaveis\PDVSYNC - Buscar vendas teste-{{URL_CONSULTA_VENDAS-TESTE}}.json
 ```  
@@ -123,3 +123,47 @@ Considere o conteúdo abaixo para criar o arquivo de variaveis:
 	}
 }
 ```  
+
+Para criar os fluxos, siga o mesmo padrão das anteriores, adicione um novo arquivo no formato ".json", dentro da pasta "fluxos":
+```bash
+ cd C:\fontesGit\winthor-smart-hub-layouts\pdvsync\fluxos\PDVSYNC - Buscar vendas teste-classe-BuscaRotaServicoNaoPaginada.json
+```  
+
+Considere o conteúdo abaixo para criar o arquivo de fluxo:
+```bash
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOFLUXOEXECUCAO",
+		"campos": [ 
+			{
+				"nome": "ORDEMEXECUCAO",
+				"valor": "2"
+			},
+			{
+				"nome": "IDROTASERVICO",
+				"valor": "PDVSYNC - Buscar vendas teste"
+			},
+			{
+				"nome": "IDINTEGRACAOCLASSEMETODO",
+				"valor": "BuscaRotaServicoNaoPaginada"
+			},
+			{
+				"nome": "IDFLUXO",
+				"valor": "16"
+			},
+			{
+				"nome": "ATIVO",
+				"valor": "N"
+			},
+			{
+				"nome": "IDDEPENDENTE",
+				"valor": ""
+			},
+			{
+				"nome": "DESCRICAO",
+				"valor": "Vendas"
+			}
+		]
+	}
+}
+``` 
