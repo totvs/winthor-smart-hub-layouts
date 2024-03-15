@@ -77,7 +77,6 @@
 						"spec": {
 							"items": {
 								"*": {
-									"codcob": "items[&1].idRetaguarda",
 									"cobranca": "items[&1].descricao",
 									"codigoOperadora": "items[&1].administradora",
 									"codigoTef": "items[&1].codigoTef",
@@ -91,9 +90,9 @@
 											}
 										}
 									},
-									"idExterno": "idExterno",
-									"idInterno": "items[&1].idRetaguarda",
-									"tipoIdInterno": "PDVSYNC-OPERADORA",
+									"idExterno": "idExterno",									
+									"#PDVSYNC-OPERADORA": "items[&1].tipoIdInterno",
+									"codcob": ["items[&1].idRetaguarda", "items[&1].idInterno"],								
 									"codfilial": {
 										"99": {
 											"#{{MASTER_ID_PROPRIETARIO}}": "items[&3].idProprietario"

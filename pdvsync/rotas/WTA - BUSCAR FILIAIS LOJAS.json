@@ -95,12 +95,12 @@
 							"items": {
 								"*": {
 									"idExterno": "idExterno",
-									"idInterno": "items[&1].[0].idRetaguarda",
-									"tipoIdInterno": "PDVSYNC-FILIAIS-LOJA",
+									"#PDVSYNC-FILIAIS-LOJA": "items[&1].[0].tipoIdInterno",									
 									"id": [
 										"items[&1].[0].numeroLoja",
 										"items[&1].[0].codigoIdentificacaoLoja",
-										"items[&1].[0].idRetaguarda"
+										"items[&1].[0].idRetaguarda",
+										"items[&1].[0].idInterno"
 									],
 									"corporateName": [
 										"items[&1].[0].razaoSocial",

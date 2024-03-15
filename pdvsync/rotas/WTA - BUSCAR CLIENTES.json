@@ -80,9 +80,8 @@
 							"items": {
 								"*": {
 									"idExterno": "idExterno[]",
-									"idInterno": "items.[&1].idRetaguarda",
-									"tipoIdInterno": "PDVSYNC-CLIENTE",
-									"id": "items.[&1].idRetaguarda",
+									"#PDVSYNC-CLIENTE": "items.[&1].tipoIdInterno",
+									"id": ["items.[&1].idRetaguarda", "items.[&1].idInterno"],
 									"name": "items.[&1].nome",
 									"active": "items.[&1].situacao",
 									"deliveryAddress": "items.[&1].endereco",

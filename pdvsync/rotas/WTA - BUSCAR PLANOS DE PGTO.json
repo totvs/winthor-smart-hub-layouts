@@ -116,9 +116,8 @@
 											"@1": "items.[&3].[0].numeroMaximoParcelas"
 										}
 									},
-									"codigo": "items.[&1].[0].idRetaguarda",
-									"idInterno": "items.[&1].[0].idRetaguarda",
-									"tipoIdInterno": "PDVSYNC-PLANO-PAGAMENTO",
+									"#PDVSYNC-PLANO-PAGAMENTO": "items.[&1].[0].tipoIdInterno",
+									"codigo": ["items.[&1].[0].idRetaguarda", "items.[&1].[0].idInterno"],									
 									"codigoFilial": {
 										"99": {
 											"#{{MASTER_ID_PROPRIETARIO}}": "items.[&3].[0].idProprietario"
