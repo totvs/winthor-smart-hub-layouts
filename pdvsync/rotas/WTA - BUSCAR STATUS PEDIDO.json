@@ -89,10 +89,9 @@
 						"spec": {
 							"items": {
 								"*": {
-									"idExterno": "idExterno[]",
-									"idInterno": "items.[&1].idRetaguarda",
-									"tipoIdInterno": "PDVSYNC-STATUS-PEDIDO",
-									"orderId": "items.[&1].idRetaguarda",
+									"idExterno": "idExterno[]",									
+									"#PDVSYNC-STATUS-PEDIDO": "items.[&2].tipoIdInterno",
+									"orderId": ["items.[&1].idRetaguarda", "items.[&1].idInterno"],
 									"branchId": "items.[&1].idProprietario",
 									"orderStatus": {
 										"C": {

@@ -83,16 +83,15 @@
 						"spec": {
 							"items": {
 								"*": {
-									"idExterno": "idExterno",
-									"idInterno": "items[&1].idRetaguarda",
-									"tipoIdInterno": "PDVSYNC-PIS-CONFINS",
+									"idExterno": "idExterno",							
+									"#PDVSYNC-PIS-CONFINS": "items[&1].tipoIdInterno",
+									"codTribPisCofins": ["items[&1].idRetaguarda", "items[&1].idInterno"],								
 									"cst": [
 										"items[&1].cstPis",
 										"items[&1].cstCofins"
 									],
 									"aliquotaPis": "items[&1].aliquotaPis",
-									"aliquotaCofins": "items[&1].aliquotaCofins",
-									"codTribPisCofins": "items[&1].idRetaguarda"
+									"aliquotaCofins": "items[&1].aliquotaCofins"
 								}
 							}
 						}

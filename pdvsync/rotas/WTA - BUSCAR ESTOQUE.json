@@ -102,10 +102,9 @@
 						"spec": {
 							"items": {
 								"*": {
-									"idExterno": "idExterno[&1]",
-									"idInterno": "items[&1].idRetaguarda",
-								    "tipoIdInterno": "PDVSYNC-ESTOQUE",
-									"id_retaguarda": "items[&1].idRetaguarda",
+									"idExterno": "idExterno[&1]",									
+									"#PDVSYNC-ESTOQUE": "items[&1].tipoIdInterno",
+									"id_retaguarda": ["items[&1].idRetaguarda", "items[&1].idInterno"],
 									"quantity": "items[&1].saldo",
 									"skuID_": "items[&1].codigoProduto",
 									"productId": "items[&1].idRetaguardaProduto"

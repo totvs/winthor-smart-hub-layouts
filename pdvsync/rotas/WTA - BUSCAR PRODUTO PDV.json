@@ -169,9 +169,8 @@
 										"@(1,icms[0].cst)": "items.[&2].cstIcms",
 										"codigoCest": "items.[&2].cest",
 										"idExterno": "idExterno",
-										"idInterno": "items.[&2].idRetaguarda",
-								        "tipoIdInterno": "PDVSYNC-PRODUTO",
-										"idRetaguarda": "items.[&2].idRetaguarda",
+										"#PDVSYNC-PRODUTO": "items.[&2].tipoIdInterno",
+										"idRetaguarda": ["items.[&2].idRetaguarda", "items.[&2].idInterno"],
 										"situacao": {
 											"Inativo": {
 												"#0": "items.[&4].situacao"

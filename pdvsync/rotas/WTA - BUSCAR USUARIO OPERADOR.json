@@ -86,10 +86,9 @@
 						"spec": {
 							"items": {
 								"*": {
-									"idExterno": "idExterno",
-									"idInterno": "items.[&1].idRetaguarda",
-								    "tipoIdInterno": "PDVSYNC-USUARIO-OPERADOR",
-									"matricula": "items.[&1].idRetaguarda",
+									"idExterno": "idExterno",									
+									"#PDVSYNC-USUARIO-OPERADOR": "items.[&1].tipoIdInterno",
+									"matricula": ["items.[&1].idRetaguarda", "items.[&1].idInterno"],
 									"situacao": {
 										"ATIVO": {
 											"#1": "items.[&3].situacao"

@@ -52,16 +52,16 @@
 								"*": {
 									"origin": {
 										"357": {
-											"@(2,idRetaguarda357)": "items[&3].[0].idRetaguarda",
-											"@(2,idExternoPreco357)": "items[&3].[0].idExterno"
+											"@(2,idExternoPreco357)": "items[&3].[0].idExterno",
+											"#PDVSYNC-PRECO-PRODUTO": "items[&3].[0].tipoIdInterno",
+											"@(2,idRetaguarda357)": ["items[&3].[0].idRetaguarda", "items[&3].[0].idInterno"]											
 										},
 										"*": {
-											"@(2,skuId)": "items[&3].[0].idRetaguarda",
-											"@(2,idExternoPreco)": "items[&3].[0].idExterno"
+											"@(2,idExternoPreco)": "items[&3].[0].idExterno",
+											"#PDVSYNC-PRECO-PRODUTO": "items[&3].[0].tipoIdInterno",
+											"@(2,skuId)": ["items[&3].[0].idRetaguarda", "items[&3].[0].idInterno"]											
 										}
 									},
-									"idInterno": "items[&3].[0].idRetaguarda",
-									"tipoIdInterno": "PDVSYNC-PRECO-PRODUTO",
 									"erpReferenceKey": [
 										"items[&1].[0].codigoProduto"
 									],
