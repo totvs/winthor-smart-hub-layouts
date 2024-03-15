@@ -60,6 +60,8 @@
 											"@(2,idExternoPreco)": "items[&3].[0].idExterno"
 										}
 									},
+									"idInterno": "items[&3].[0].idRetaguarda",
+									"tipoIdInterno": "PDVSYNC-PRECO-PRODUTO",
 									"erpReferenceKey": [
 										"items[&1].[0].codigoProduto"
 									],

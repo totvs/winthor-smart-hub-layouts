@@ -95,6 +95,8 @@
 							"items": {
 								"*": {
 									"idExterno": "idExterno",
+									"idInterno": "items[&1].[0].idRetaguarda",
+									"tipoIdInterno": "PDVSYNC-FILIAIS-COMPARTILHAMENTO",
 									"id": [
 										"items[&1].[0].idRetaguarda",
 										"items[&1].[0].idProprietario",

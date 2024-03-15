@@ -95,6 +95,8 @@
 							"items": {
 								"*": {
 									"idExterno": "idExterno",
+									"idInterno": "items[&1].[0].idRetaguarda",
+									"tipoIdInterno": "PDVSYNC-FILIAIS-LOJA",
 									"id": [
 										"items[&1].[0].numeroLoja",
 										"items[&1].[0].codigoIdentificacaoLoja",
