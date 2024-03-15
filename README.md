@@ -126,7 +126,7 @@ Considere o conteúdo abaixo para criar o arquivo de variaveis:
 }
 ```  
 
-Para criar os fluxos, siga o mesmo padrão das anteriores, adicione um novo arquivo no formato ".json", dentro da pasta "fluxos":
+Para criar os fluxos, siga o mesmo padrão das anteriores (PDVSYNC - Buscar vendas teste-classe-BuscaRotaServicoNaoPaginada), adicione um novo arquivo no formato ".json", dentro da pasta "fluxos":
 ```bash
  cd C:\fontesGit\winthor-smart-hub-layouts\pdvsync\fluxos\PDVSYNC - Buscar vendas teste-classe-BuscaRotaServicoNaoPaginada.json
 ```  
