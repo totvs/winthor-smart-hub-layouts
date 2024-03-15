@@ -13,7 +13,7 @@ A fim de melhorar o controle e o versionamento dos layouts criados e alterados, 
 #### Api para instalação do layout
 
 ```http
-  POST /winthor/integracao/fulfillment/v1/layout/
+  POST /winthor/integracao/fulfillment/v1/layout/instalar-layout
 ```
 
 | Parâmetro   | Tipo       | Descrição                           |
@@ -31,43 +31,141 @@ Clone o repositório winthor-smart-hub-layouts:
 ```bash
   git clone https://github.com/totvs/winthor-smart-hub-layouts.git
 ```
+Crie um novo Branch (mesmo padrão do Azure e Bitbucket "feature/DWSHWTNG-123-criarRotaVendasTeste-develop");
+
+```bash
+https://github.com/totvs/winthor-smart-hub-layouts/branches  
+```
+Faça o checkout
+
+```bash
+git checkout feature/DWSHWTNG-123-criarRotaVendasTeste-develop
+```
+
 Abra a pasta winthor-smart-hub-layouts e escolha o layout:
 
 ```bash
-  C:\fontesGit\winthor-smart-hub-layouts\pdvsync
+ cd C:\fontesGit\winthor-smart-hub-layouts\pdvsync
+
 ```    
-Para cada rota criada, adicione um novo arquivo no formato ".json" dentro da pasta "rotas":
+Para cada rota criada, adicione um novo arquivo no formato ".json", dentro da pasta "rotas":
 ```bash
-  C:\fontesGit\winthor-smart-hub-layouts\pdvsync\rotas\PDVSYNC - BUSCAR VENDAS TESTE.json
+ cd C:\fontesGit\winthor-smart-hub-layouts\pdvsync\rotas\PDVSYNC - BUSCAR VENDAS TESTE.json
 ```    
 Considere o conteúdo abaixo para criar o arquivo de rotas:
 ```bash
 {
-    "tabela": {
-        "nome": "PCINTEGRACAOROTASERVICO",
-        "campos": [
-            {
-                "nome": "ID",
-                "valor": "PDVSYNC - BUSCAR VENDAS TESTE"
-            },
-            {
-                "nome": "IDEMPRESAAPI",
-                "valor": "PDVSYNC"
-            },
-            {
-                "nome": "SERVICO",
-                "valor": "PDVSYNC - BUSCAR VENDAS TESTE"
-            },
-            {
-                "nome": "LAYOUTCOMUNICACAO",
-                "valor": _INSIRA_O_LAYOUT_EXTRAIDO_DO_POSTMAN,
-            {
-                "nome": "LAYOUTTRANSFORMACAO",
-                "valor": _INSIRA_O_LAYOUT_EXTRAIDO_DO_JOLT,
-            {
-                "nome": "ATIVO",
-                "valor": "S"
-            } 
-        ]       
-    }
+	"tabela": {
+		"nome": "PCINTEGRACAOROTASERVICO",
+		"campos": [
+			{
+				"nome": "ID",
+				"valor": "PDVSYNC - BUSCAR VENDAS TESTE"
+			},
+			{
+				"nome": "IDEMPRESAAPI",
+				"valor": "PDVSYNC"
+			},
+			{
+				"nome": "SERVICO",
+				"valor": "PDVSYNC - BUSCAR VENDAS TESTE"
+			},
+			{
+				"nome": "LAYOUTCOMUNICACAO",
+				"valor": "_INSIRA_O_LAYOUT_EXTRAIDO_DO_POSTMAN"
+			},
+			{
+				"nome": "LAYOUTTRANSFORMACAO",
+				"valor": "_INSIRA_O_LAYOUT_EXTRAIDO_DO_JOLT"
+			},
+			{
+				"nome": "ATIVO",
+				"valor": "S"
+			}
+		]
+	}
 }
+
+``` 
+Para criar as variáveis dos layout de comunicação e transferência, adicione um novo arquivo no formato ".json", dentro da pasta "variaveis", com o nome da rota seguido do nome da variável:
+```bash
+ cd C:\fontesGit\winthor-smart-hub-layouts\pdvsync\variaveis\PDVSYNC - Buscar vendas teste-{{URL_CONSULTA_VENDAS-TESTE}}.json
+```  
+Considere o conteúdo abaixo para criar o arquivo de variaveis:
+```bash
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOVARIAVEIS",
+		"campos": [ 
+			{
+				"nome": "ID",
+				"valor": "PDVSYNC - BUSCAR VENDAS TESTE-{{URL_CONSULTA_VENDAS_TESTE}}"
+			},
+			{
+				"nome": "CHAVE",
+				"valor": "{{URL_CONSULTA_VENDAS_TESTE}}"
+			},
+			{
+				"nome": "TIPOCHAVE",
+				"valor": "BODY"
+			},
+			{
+				"nome": "TIPOVALOR",
+				"valor": "STRING"
+			},
+			{
+				"nome": "IDROTASERVICO",
+				"valor": "PDVSYNC - BUSCAR VENDAS TESTE"
+			},
+			{
+				"nome": "VALOR",
+				"valor": "_INFORME_O_VALOR_DA_VARIAVEL"
+			} 
+		]
+	}
+}
+```  
+
+Para criar os fluxos, siga o mesmo padrão das anteriores (PDVSYNC - Buscar vendas teste-classe-BuscaRotaServicoNaoPaginada), adicione um novo arquivo no formato ".json", dentro da pasta "fluxos":
+```bash
+ cd C:\fontesGit\winthor-smart-hub-layouts\pdvsync\fluxos\PDVSYNC - Buscar vendas teste-classe-BuscaRotaServicoNaoPaginada.json
+```  
+
+Considere o conteúdo abaixo para criar o arquivo de fluxo:
+```bash
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOFLUXOEXECUCAO",
+		"campos": [ 
+			{
+				"nome": "ORDEMEXECUCAO",
+				"valor": "2"
+			},
+			{
+				"nome": "IDROTASERVICO",
+				"valor": "PDVSYNC - Buscar vendas teste"
+			},
+			{
+				"nome": "IDINTEGRACAOCLASSEMETODO",
+				"valor": "BuscaRotaServicoNaoPaginada"
+			},
+			{
+				"nome": "IDFLUXO",
+				"valor": "16"
+			},
+			{
+				"nome": "ATIVO",
+				"valor": "N"
+			},
+			{
+				"nome": "IDDEPENDENTE",
+				"valor": ""
+			},
+			{
+				"nome": "DESCRICAO",
+				"valor": "Vendas"
+			}
+		]
+	}
+}
+``` 
