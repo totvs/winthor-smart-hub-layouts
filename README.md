@@ -87,9 +87,39 @@ Considere o conteúdo abaixo para criar o arquivo de rotas:
 ``` 
 Para criar as variáveis dos layout de comunicação e transferência, adicione um novo arquivo no formato ".json" dentro da pasta "variaveis" com o nome da rota seguido do nome da variável:
 ```bash
- cd C:\fontesGit\winthor-smart-hub-layouts\pdvsync\rotas\PDVSYNC - Buscar vendas teste-{{URL_CONSULTA_VENDAS}}.json
+ cd C:\fontesGit\winthor-smart-hub-layouts\pdvsync\variaveis\PDVSYNC - Buscar vendas teste-{{URL_CONSULTA_VENDAS-TESTE}}.json
 ```  
 Considere o conteúdo abaixo para criar o arquivo de variaveis:
 ```bash
- cd C:\fontesGit\winthor-smart-hub-layouts\pdvsync\rotas\PDVSYNC - Buscar vendas teste-{{URL_CONSULTA_VENDAS}}.json
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOVARIAVEIS",
+		"campos": [ 
+			{
+				"nome": "ID",
+				"valor": "PDVSYNC - BUSCAR VENDAS TESTE-{{URL_CONSULTA_VENDAS_TESTE}}"
+			},
+			{
+				"nome": "CHAVE",
+				"valor": "{{URL_CONSULTA_VENDAS_TESTE}}"
+			},
+			{
+				"nome": "TIPOCHAVE",
+				"valor": "BODY"
+			},
+			{
+				"nome": "TIPOVALOR",
+				"valor": "STRING"
+			},
+			{
+				"nome": "IDROTASERVICO",
+				"valor": "PDVSYNC - BUSCAR VENDAS TESTE"
+			},
+			{
+				"nome": "VALOR",
+				"valor": "_INFORME_O_VALOR_DA_VARIAVEL"
+			} 
+		]
+	}
+}
 ```  
