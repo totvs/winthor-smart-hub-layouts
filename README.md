@@ -55,33 +55,35 @@ Para cada rota criada, adicione um novo arquivo no formato ".json", dentro da pa
 Considere o conteúdo abaixo para criar o arquivo de rotas:
 ```bash
 {
-    "tabela": {
-        "nome": "PCINTEGRACAOROTASERVICO",
-        "campos": [
-            {
-                "nome": "ID",
-                "valor": "PDVSYNC - BUSCAR VENDAS TESTE"
-            },
-            {
-                "nome": "IDEMPRESAAPI",
-                "valor": "PDVSYNC"
-            },
-            {
-                "nome": "SERVICO",
-                "valor": "PDVSYNC - BUSCAR VENDAS TESTE"
-            },
-            {
-                "nome": "LAYOUTCOMUNICACAO",
-                "valor": _INSIRA_O_LAYOUT_EXTRAIDO_DO_POSTMAN,
-            {
-                "nome": "LAYOUTTRANSFORMACAO",
-                "valor": _INSIRA_O_LAYOUT_EXTRAIDO_DO_JOLT,
-            {
-                "nome": "ATIVO",
-                "valor": "S"
-            } 
-        ]       
-    }
+	"tabela": {
+		"nome": "PCINTEGRACAOROTASERVICO",
+		"campos": [
+			{
+				"nome": "ID",
+				"valor": "PDVSYNC - BUSCAR VENDAS TESTE"
+			},
+			{
+				"nome": "IDEMPRESAAPI",
+				"valor": "PDVSYNC"
+			},
+			{
+				"nome": "SERVICO",
+				"valor": "PDVSYNC - BUSCAR VENDAS TESTE"
+			},
+			{
+				"nome": "LAYOUTCOMUNICACAO",
+				"valor": "_INSIRA_O_LAYOUT_EXTRAIDO_DO_POSTMAN"
+			},
+			{
+				"nome": "LAYOUTTRANSFORMACAO",
+				"valor": "_INSIRA_O_LAYOUT_EXTRAIDO_DO_JOLT"
+			},
+			{
+				"nome": "ATIVO",
+				"valor": "S"
+			}
+		]
+	}
 }
 
 ``` 
