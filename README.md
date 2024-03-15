@@ -13,7 +13,7 @@ A fim de melhorar o controle e o versionamento dos layouts criados e alterados, 
 #### Api para instalação do layout
 
 ```http
-  POST /winthor/integracao/fulfillment/v1/layout/
+  POST /winthor/integracao/fulfillment/v1/layout/instalar-layout
 ```
 
 | Parâmetro   | Tipo       | Descrição                           |
