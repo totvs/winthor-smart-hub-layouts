@@ -250,6 +250,22 @@
                                                 }
                                             }
                                         },
+										"Kit": {
+											"*": {
+											  "Itens": {
+												"*": {
+												  "Produto": {
+													"IdRetaguarda": "kit[&2].codProdItemKit"
+												  },
+												  "Sequencial": "kit[&1].numSeqItemKit",
+												  "Quantidade": "kit[&1].quantidade",
+												  "ValorLiquido": "kit[&1].valor",
+												  "@(2,Item)": "kit[&1].numSeqKit",
+												  "@(2,Produto.IdRetaguarda)": "kit[&1].codProdKit"
+												}
+											  }
+											}
+										},
                                         "VendaPagamentos": {
                                             "*": {
                                                 "@(2,Ccf)": "items.[&4].pagamentos[&1].duplic",
