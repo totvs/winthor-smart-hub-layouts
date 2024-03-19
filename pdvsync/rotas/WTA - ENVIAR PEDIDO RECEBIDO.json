@@ -8,7 +8,7 @@
 			},
 			{
 				"nome": "ID",
-				"valor": "WTA - Enviar venda RECEBIDO"
+				"valor": "WTA - ENVIAR PEDIDO RECEBIDO"
 			},
 			{
 				"nome": "IDEMPRESAAPI",
@@ -16,12 +16,12 @@
 			},
 			{
 				"nome": "SERVICO",
-				"valor": "WTA - Enviar venda RECEBIDO"
+				"valor": "WTA - ENVIAR PEDIDO RECEBIDO"
 			},
 			{
 				"nome": "LAYOUTCOMUNICACAO",
 				"valor": {
-					"name": "WTA - Enviar Pedido Recebido",
+					"name": "WTA - ENVIAR PEDIDO RECEBIDO",
 					"request": {
 						"method": "POST",
 						"header": [
