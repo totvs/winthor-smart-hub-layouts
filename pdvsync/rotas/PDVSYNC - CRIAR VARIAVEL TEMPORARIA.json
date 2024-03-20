@@ -8,7 +8,7 @@
 			},
 			{
 				"nome": "ID",
-				"valor": "PDVSYNC - Criar variavel temporária"
+				"valor": "PDVSYNC - Criar variavel temporaria"
 			},
 			{
 				"nome": "IDEMPRESAAPI",
@@ -16,12 +16,12 @@
 			},
 			{
 				"nome": "SERVICO",
-				"valor": "PDVSYNC - Criar variavel temporária"
+				"valor": "PDVSYNC - Criar variavel temporaria"
 			},
 			{
 				"nome": "LAYOUTCOMUNICACAO",
 				"valor": {
-					"name": "PDVSYNC - Criar variavel temporária",
+					"name": "PDVSYNC - Criar variavel temporaria",
 					"request": {
 						"method": "POST",
 						"header": [
