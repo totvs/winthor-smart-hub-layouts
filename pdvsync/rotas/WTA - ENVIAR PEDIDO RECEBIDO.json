@@ -16,7 +16,8 @@
 			},
 			{
 				"nome": "SERVICO",
-				"valor": "WTA - ENVIAR PEDIDO RECEBIDO"
+				"valor": "WTA - ENVIAR PEDIDO RECEBIDO",
+				"valorAnterior":"WTA - ENVIAR VENDA RECEBIDO"
 			},
 			{
 				"nome": "LAYOUTCOMUNICACAO",
