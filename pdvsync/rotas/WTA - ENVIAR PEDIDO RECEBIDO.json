@@ -40,7 +40,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{URL_BASE}}/api/wholesale/v1/orders/pdvsync",
+							"raw": "{{URL_BASE}}/winthor/varejo/matcon/v1/orders/pdvsync",
 							"query": []
 						},
 						"bodyraw": "{{CLIENT_JSON}}"
