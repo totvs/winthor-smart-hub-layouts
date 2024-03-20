@@ -1,0 +1,47 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOERROREQUISICAO",
+		"campos": [
+			{
+				"nome": "LAYOUTERROTRANSFORMADO",
+				"valor": [
+					{
+						"operation": "modify-overwrite-beta",
+						"spec": {
+							"lote_remove_prefix": "=split('Não é possível solicitar um novo lote. Lote', @(1,message))",
+							"lote_remove_sufix": "=split('em andamento', @(1,lote_remove_prefix[1]))",
+							"lote_remove_espacos": "=split(' ', @(1,lote_remove_sufix[0]))",
+							"lote": "=join('',  @(1,lote_remove_espacos))"
+						}
+					},
+					{
+						"operation": "shift",
+						"spec": {
+							"message": {
+								"*Lote * em andamento": {
+									"#true": "executar"
+								}
+							},
+							"lote": {
+								"#{{LOTE_ORIGEM}}": "variaveis[0].chave",
+								"@(1,lote)": "variaveis[0].valor"
+							}
+						}
+					}
+				]
+			},
+			{
+				"nome": "IDROTAERRO",
+				"valor": "PDVSYNC - CRIAR VARIAVEL TEMPORARIA"
+			},
+			{
+				"nome": "IDROTAEXEC",
+				"valor": "PDVSYNC - ENCERRAR VARIAVEL TEMPORARIA"
+			},
+			{
+				"nome": "HTTPSTATUS",
+				"valor": "200"
+			}
+		]
+	}
+}

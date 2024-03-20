@@ -8,7 +8,7 @@
 			},
 			{
 				"nome": "ID",
-				"valor": "WTA - ENVIAR VENDA CANCELADA-{{CLIENT_JSON}}"
+				"valor": "WTA - ENVIAR PEDIDO RECEBIDO-{{CLIENT_JSON}}"
 			},
 			{
 				"nome": "CHAVE",
@@ -24,7 +24,7 @@
 			},
 			{
 				"nome": "IDROTASERVICO",
-				"valor": "WTA - ENVIAR VENDA CANCELADA"
+				"valor": "WTA - ENVIAR PEDIDO RECEBIDO" 
 			},
 			{
 				"nome": "VALOR",

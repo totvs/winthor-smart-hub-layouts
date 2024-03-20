@@ -8,7 +8,7 @@
 			},
 			{
 				"nome": "ID",
-				"valor": "PDVSYNC - Encerrar variavel temporária"
+				"valor": "PDVSYNC - Encerrar variavel temporaria"
 			},
 			{
 				"nome": "IDEMPRESAAPI",
@@ -16,12 +16,12 @@
 			},
 			{
 				"nome": "SERVICO",
-				"valor": "PDVSYNC - Encerrar variavel temporária"
+				"valor": "PDVSYNC - Encerrar variavel temporaria"
 			},
 			{
 				"nome": "LAYOUTCOMUNICACAO",
 				"valor": {
-					"name": "PDVSYNC - Encerrar variavel temporária",
+					"name": "PDVSYNC - Encerrar variavel temporaria",
 					"request": {
 						"method": "PUT",
 						"header": [

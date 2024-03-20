@@ -8,20 +8,21 @@
 			},
 			{
 				"nome": "ID",
-				"valor": "WTA - Enviar venda CANCELADA"
+				"valor": "WTA - ENVIAR PEDIDO CANCELADO"
 			},
 			{
 				"nome": "IDEMPRESAAPI",
 				"valor": "WINTHOR-WTA"
-			},
+			},		
 			{
 				"nome": "SERVICO",
-				"valor": "WTA - Enviar venda CANCELADA"
+				"valor": "WTA - ENVIAR PEDIDO CANCELADO",
+				"valorAnterior":"WTA - ENVIAR VENDA CANCELADA"
 			},
 			{
 				"nome": "LAYOUTCOMUNICACAO",
 				"valor": {
-					"name": "WTA - Enviar Pedido Cancelada",
+					"name": "WTA - ENVIAR PEDIDO CANCELADO",
 					"request": {
 						"method": "DELETE",
 						"header": [
@@ -39,7 +40,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{URL_BASE}}/api/wholesale/v1/orders/pdvsync",
+							"raw": "{{URL_BASE}}/winthor/varejo/matcon/v1/orders/pdvsync",
 							"query": []
 						},
 						"bodyraw": "{{CLIENT_JSON}}"

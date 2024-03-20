@@ -8,7 +8,7 @@
 			},
 			{
 				"nome": "ID",
-				"valor": "PDVSYNC - CRIAR VARIAVEL TEMPORÁRIA-{{TIPO_LOTE}}"
+				"valor": "PDVSYNC - CRIAR VARIAVEL TEMPORARIA-{{TIPO_LOTE}}"
 			},
 			{
 				"nome": "CHAVE",
@@ -24,7 +24,7 @@
 			},
 			{
 				"nome": "IDROTASERVICO",
-				"valor": "PDVSYNC - CRIAR VARIAVEL TEMPORÁRIA"
+				"valor": "PDVSYNC - CRIAR VARIAVEL TEMPORARIA"
 			},
 			{
 				"nome": "VALOR",

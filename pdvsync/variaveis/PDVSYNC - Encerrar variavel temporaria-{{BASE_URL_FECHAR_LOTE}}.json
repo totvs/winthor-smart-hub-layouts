@@ -8,7 +8,7 @@
 			},
 			{
 				"nome": "ID",
-				"valor": "PDVSYNC - ENCERRAR VARIAVEL TEMPORÁRIA-{{BASE_URL_FECHAR_LOTE}}"
+				"valor": "PDVSYNC - ENCERRAR VARIAVEL TEMPORARIA-{{BASE_URL_FECHAR_LOTE}}"
 			},
 			{
 				"nome": "CHAVE",
@@ -24,7 +24,7 @@
 			},
 			{
 				"nome": "IDROTASERVICO",
-				"valor": "PDVSYNC - ENCERRAR VARIAVEL TEMPORÁRIA"
+				"valor": "PDVSYNC - ENCERRAR VARIAVEL TEMPORARIA"
 			},
 			{
 				"nome": "VALOR",
