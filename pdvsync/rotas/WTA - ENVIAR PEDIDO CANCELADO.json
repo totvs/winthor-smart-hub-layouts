@@ -16,7 +16,8 @@
 			},		
 			{
 				"nome": "SERVICO",
-				"valor": "WTA - ENVIAR PEDIDO CANCELADO"
+				"valor": "WTA - ENVIAR PEDIDO CANCELADO",
+				"valorAnterior":"WTA - ENVIAR VENDA CANCELADA"
 			},
 			{
 				"nome": "LAYOUTCOMUNICACAO",
