@@ -67,7 +67,9 @@
 						"spec": {
 							"items": {
 								"*": {
-									"idExterno": "=concat('pdvsync-loja-compartilhamento-', @(1,id),'-', @(1,lastChange))"
+									"idExterno": "=concat('pdvsync-loja-compartilhamento-', @(1,id),'-', @(1,lastChange))",
+								 	"idInterno":"=concat('', @(1,id))",
+							        "tipoIdInterno":"PDVSYNC-FILIAIS-COMPARTILHAMENTO"
 								}
 							}
 						}
@@ -95,12 +97,12 @@
 							"items": {
 								"*": {
 									"idExterno": "idExterno",
-									"#PDVSYNC-FILIAIS-COMPARTILHAMENTO": "items[&1].[0].tipoIdInterno",		
+							        "idInterno": "idInterno",
+							        "tipoIdInterno":"tipoIdInterno",	
 									"id": [
 										"items[&1].[0].idRetaguarda",
 										"items[&1].[0].idProprietario",
-										"items[&1].[0].idRetaguardaLoja",
-										"items.[&2].idInterno"
+										"items[&1].[0].idRetaguardaLoja"
 									],
 									"corporateName": "items[&1].[0].nomeCompartilhamento"
 								}

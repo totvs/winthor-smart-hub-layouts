@@ -92,7 +92,9 @@
 									"id_retaguarda": "=concat(@(1,productId),'-', @(1,warehouseBranchId))",
 									"situacao": 1,
 									"skuId__": "=split('-', @(1,productId))",
-									"skuID_": "=lastElement(@(1,skuId__))"
+									"skuID_": "=lastElement(@(1,skuId__))",
+									"idInterno":"=concat('', @(1,id_retaguarda))",
+							        "tipoIdInterno":"PDVSYNC-ESTOQUE"
 								}
 							}
 						}
@@ -103,8 +105,9 @@
 							"items": {
 								"*": {
 									"idExterno": "idExterno[&1]",									
-									"#PDVSYNC-ESTOQUE": "items[&1].tipoIdInterno",
-									"id_retaguarda": ["items[&1].idRetaguarda", "items[&1].idInterno"],
+									"idInterno": "idInterno",
+							        "tipoIdInterno":"tipoIdInterno",
+									"id_retaguarda": "items[&1].idRetaguarda",
 									"quantity": "items[&1].saldo",
 									"skuID_": "items[&1].codigoProduto",
 									"productId": "items[&1].idRetaguardaProduto"

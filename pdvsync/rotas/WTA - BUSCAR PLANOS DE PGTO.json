@@ -63,7 +63,9 @@
 						"spec": {
 							"items": {
 								"*": {
-									"idExterno": "=concat('pdvsync-plano-pgmt-', @(1,codigo),'-',@(1,codigoFilial),'-',@(1,dataUltimaAtualizacao))"
+									"idExterno": "=concat('pdvsync-plano-pgmt-', @(1,codigo),'-',@(1,codigoFilial),'-',@(1,dataUltimaAtualizacao))",
+									"idInterno":"=concat('', @(1,codigo))",
+							        "tipoIdInterno":"PDVSYNC-PLANO-PAGAMENTO"
 								}
 							}
 						}
@@ -116,8 +118,9 @@
 											"@1": "items.[&3].[0].numeroMaximoParcelas"
 										}
 									},
-									"#PDVSYNC-PLANO-PAGAMENTO": "items.[&1].[0].tipoIdInterno",
-									"codigo": ["items.[&1].[0].idRetaguarda", "items.[&1].[0].idInterno"],									
+									"idInterno": "idInterno",
+							        "tipoIdInterno":"tipoIdInterno",
+									"codigo": "items.[&1].[0].idRetaguarda",									
 									"codigoFilial": {
 										"99": {
 											"#{{MASTER_ID_PROPRIETARIO}}": "items.[&3].[0].idProprietario"

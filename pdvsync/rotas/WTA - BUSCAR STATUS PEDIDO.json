@@ -79,7 +79,9 @@
 						"spec": {
 							"items": {
 								"*": {
-									"idExterno": "=concat('pdvsync-status-prevenda-',@(1,orderId),'-',@(1,lastChange))"
+									"idExterno": "=concat('pdvsync-status-prevenda-',@(1,orderId),'-',@(1,lastChange))",
+									"idInterno":"=concat('', @(1,orderId))",
+							        "tipoIdInterno":"PDVSYNC-STATUS-PEDIDO"
 								}
 							}
 						}
@@ -90,8 +92,9 @@
 							"items": {
 								"*": {
 									"idExterno": "idExterno[]",									
-									"#PDVSYNC-STATUS-PEDIDO": "items.[&2].tipoIdInterno",
-									"orderId": ["items.[&1].idRetaguarda", "items.[&1].idInterno"],
+									"idInterno": "idInterno",
+							        "tipoIdInterno":"tipoIdInterno",
+									"orderId": "items.[&1].idRetaguarda",
 									"branchId": "items.[&1].idProprietario",
 									"orderStatus": {
 										"C": {

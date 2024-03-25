@@ -67,7 +67,9 @@
 						"spec": {
 							"items": {
 								"*": {
-									"idExterno": "=concat('pdvsync-loja-', @(1,id),'-', @(1,lastChange))"
+									"idExterno": "=concat('pdvsync-loja-', @(1,id),'-', @(1,lastChange))",
+									"idInterno":"=concat('', @(1,id))",
+							        "tipoIdInterno":"PDVSYNC-FILIAIS-LOJA"
 								}
 							}
 						}
@@ -95,12 +97,12 @@
 							"items": {
 								"*": {
 									"idExterno": "idExterno",
-									"#PDVSYNC-FILIAIS-LOJA": "items[&1].[0].tipoIdInterno",									
+									"idInterno": "idInterno",
+							        "tipoIdInterno":"tipoIdInterno",								
 									"id": [
 										"items[&1].[0].numeroLoja",
 										"items[&1].[0].codigoIdentificacaoLoja",
-										"items[&1].[0].idRetaguarda",
-										"items[&1].[0].idInterno"
+										"items[&1].[0].idRetaguarda"
 									],
 									"corporateName": [
 										"items[&1].[0].razaoSocial",
