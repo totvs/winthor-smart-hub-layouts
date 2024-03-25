@@ -75,6 +75,8 @@
 							"items": {
 								"*": {
 									"idExterno": "=concat('pdvsync-usuario-operador-', @(1,matricula),'-', @(1,dtUltAlter))",
+									"idInterno":"=concat('', @(1,matricula))",
+							        "tipoIdInterno":"PDVSYNC-USUARIO-OPERADOR",
 									"cpf_array": "=split('\\D',@(1,cpf))",
 									"cpf_": "=join('', @(1,cpf_array))"
 								}
@@ -86,9 +88,10 @@
 						"spec": {
 							"items": {
 								"*": {
-									"idExterno": "idExterno",									
-									"#PDVSYNC-USUARIO-OPERADOR": "items.[&1].tipoIdInterno",
-									"matricula": ["items.[&1].idRetaguarda", "items.[&1].idInterno"],
+									"idExterno": "idExterno",	
+                                    "idInterno": "idInterno",
+							        "tipoIdInterno":"tipoIdInterno",									
+									"matricula": "items.[&1].idRetaguarda",
 									"situacao": {
 										"ATIVO": {
 											"#1": "items.[&3].situacao"

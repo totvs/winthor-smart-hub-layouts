@@ -67,7 +67,9 @@
 						"spec": {
 							"items": {
 								"*": {
-									"idExterno": "=concat('pdvsync-operadora-', @(1,codcob),'-',@(1,codfilial),'-',@(1,ultimaAlteracao))"
+									"idExterno": "=concat('pdvsync-operadora-', @(1,codcob),'-',@(1,codfilial),'-',@(1,ultimaAlteracao))",
+									"idInterno":"=concat('', @(1,codcob))",
+							        "tipoIdInterno":"PDVSYNC-OPERADORA"
 								}
 							}
 						}
@@ -91,8 +93,9 @@
 										}
 									},
 									"idExterno": "idExterno",									
-									"#PDVSYNC-OPERADORA": "items[&1].tipoIdInterno",
-									"codcob": ["items[&1].idRetaguarda", "items[&1].idInterno"],								
+									"idInterno": "idInterno",
+							        "tipoIdInterno":"tipoIdInterno",
+									"codcob": ["items[&1].idRetaguarda"],								
 									"codfilial": {
 										"99": {
 											"#{{MASTER_ID_PROPRIETARIO}}": "items[&3].idProprietario"

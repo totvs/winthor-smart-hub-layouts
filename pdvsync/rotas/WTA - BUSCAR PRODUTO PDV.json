@@ -83,6 +83,8 @@
 									"produto": {
 										"idRetaguarda": "=concat(@(1,codigoDeBarra),'-',@(1,codigo))",
 										"idExterno": "=concat('pdvsync-produto-', @(1,idRetaguarda),'-',@(1,codfilial),'-',@(1,dtultalter))",
+										"idInterno": "=concat(@(1,codigoDeBarra),'-',@(1,codigo))",
+							            "tipoIdInterno":"PDVSYNC-PRODUTO-PDV",
 										"codigoProduto": "@(1,idRetaguarda)",
 										"codigoFilial": "{{FILIAL_ID_PROPRIETARIO}}",
 										"embalagens": {
@@ -169,8 +171,9 @@
 										"@(1,icms[0].cst)": "items.[&2].cstIcms",
 										"codigoCest": "items.[&2].cest",
 										"idExterno": "idExterno",
-										"#PDVSYNC-PRODUTO": "items.[&2].tipoIdInterno",
-										"idRetaguarda": ["items.[&2].idRetaguarda", "items.[&2].idInterno"],
+										"idInterno": "idInterno",
+							            "tipoIdInterno":"tipoIdInterno",
+										"idRetaguarda": "items.[&2].idRetaguarda",
 										"situacao": {
 											"Inativo": {
 												"#0": "items.[&4].situacao"

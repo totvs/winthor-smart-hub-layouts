@@ -67,6 +67,8 @@
 									"idExternoSt": "=concat('pdvsync-st-', @(1,id),'-', @(1,dataUltimaAlteracao))",
 									"idRetaguardaIcms": "=concat(@(1,id),'-ICMS')",
 									"idRetaguardaSt": "=concat(@(1,id),'-ST')",
+									"idInterno": "=concat(@(1,id),'-ICMS')",
+							        "tipoIdInterno": "PDVSYNC-ICMS",
 									"aliquota_check_modalidate": "=concat(@(1,aliquota),'')",
 									"aliquota_str": "=concat(@(1,aliquota), '')",
 									"aliquota_arr": "=split('\\.',@(1,aliquota_str))",
@@ -93,8 +95,9 @@
 								"*": {
 									"idExternoIcms": "items.[&1].[0].idExterno",
 									"idExternoSt": "items.[&1].[1].idExterno",									
-									"#PDVSYNC-ICMS": "items.[&1].[0].tipoIdInterno",
-									"idRetaguardaIcms": ["items.[&1].[0].idRetaguarda", "items.[&1].[0].idInterno"],								
+									"idInterno": "idInterno",
+							        "tipoIdInterno":"tipoIdInterno",
+									"idRetaguardaIcms": "items.[&1].[0].idRetaguarda",								
 									"aliquota": "items.[&1].[0].aliquotaTributo",
 									"reducaoBaseCalculo": "items.[&1].[0].reducaoBaseCalculo",
 									"modalidadeVarejo": [

@@ -71,6 +71,8 @@
 									"codigo_Ncm": "=join('', @(1,codigoNcm_))",
 									"codigo_Ncm2": "=substring(@(1,codigo_Ncm),0,8)",
 									"idExterno": "=concat('pdvsync-ncm-', @(1,id),'-', @(1,dataUltimaAtualizacao))",
+									"idInterno":"=concat('', @(1,id))",
+							        "tipoIdInterno":"PDVSYNC-IMPOSTO-NCM",
 									"chave": null,
 									"fonte": null,
 									"situacao": 1,
@@ -96,8 +98,10 @@
 							"items": {
 								"*": {
 									"idExterno": "idExterno[&1]",
+									"idInterno": "idInterno",
+							        "tipoIdInterno":"tipoIdInterno",
 									"#PDVSYNC-IMPOSTO-NCM": "items[&1].tipoIdInterno",
-									"id": ["items[&1].idRetaguarda", "items[&1].idInterno"],
+									"id": ["items[&1].idRetaguarda"],
 									"codigo_Ncm2": "items[&1].codigoNcm",
 									"codigoExcecao": "items[&1].codigoExcecao",
 									"aliquotaNacional": "items[&1].aliquotaNacional",
