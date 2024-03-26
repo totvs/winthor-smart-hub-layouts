@@ -12,7 +12,8 @@
 			},
 			{
 				"nome": "ORDEMEXECUCAO",
-				"valor": "3"
+				"valor": "3",
+				"valorAnterior": "4"
 			},
 			{
 				"nome": "IDROTASERVICO",
