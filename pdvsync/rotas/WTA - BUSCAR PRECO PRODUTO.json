@@ -19,6 +19,60 @@
 				"valor": "WTA - Buscar Preco Produto"
 			},
 			{
+				"nome": "LAYOUTCOMUNICACAO",
+				"valor": {
+					"name": "WTA - Buscar Preco Produto",
+					"request": {
+					  "method": "GET",
+					  "header": [
+						{
+						  "key": "Authorization",
+						  "value": "Bearer {{TOKEN}}"
+						},
+						{
+						  "key": "Accept",
+						  "value": "*/*"
+						}
+					  ],
+					  "url": {
+						"raw": "{{URL_BASE}}/api/wholesale/v1/price/discount-policy",
+						"query": [
+						  {
+							"key": "pageSize",
+							"value": "{{PAGE_SIZE}}"
+						  },
+						  {
+							"key": "page",
+							"value": "{{PAGE}}"
+						  },
+						  {
+							"key": "branchId",
+							"value": "{{FILIAL}}"
+						  },
+						  {
+							"key": "lastChange",
+							"value": "{{LAST_CHANGE}}"
+						  },
+						  {
+							"key": "callOrigin",
+							"value": "WSH"
+						  },
+						  {
+							"key": "resale",
+							"value": "{{REVENDA}}"
+						  },
+						  {
+							"key": "typeOfMerchandise",
+							"value": "{{TIPOMERCADORIA}}"
+						  }
+						]
+					  },
+					  "bodyraw": ""
+					},
+					"response": []
+				}
+			},			
+			{
 				"nome": "LAYOUTTRANSFORMACAO",
 				"valor": [
 					{
@@ -40,7 +94,11 @@
 									"idRetaguarda357": "=concat(@(1,skuId),'-357-',@(1,fixedPriceId))",
 									"discount": "=toString(@(1,discountPolicy.discount))",
 									"discountConverter_": "=split('\\.', @(1,discount))",
-									"discountConverter": "=join(',', @(1,discountConverter_))"
+									"discountConverter": "=join(',', @(1,discountConverter_))",
+									"idInterno357": "=concat(@(1,skuId),'-357-',@(1,fixedPriceId))",
+									"idInternoSku": "=concat('', @(1,skuId))",
+							        "tipoIdInterno":"PDVSYNC-PRECO-PRODUTO"
+									
 								}
 							}
 						}
@@ -53,13 +111,15 @@
 									"origin": {
 										"357": {
 											"@(2,idExternoPreco357)": "items[&3].[0].idExterno",
-											"#PDVSYNC-PRECO-PRODUTO": "items[&3].[0].tipoIdInterno",
-											"@(2,idRetaguarda357)": ["items[&3].[0].idRetaguarda", "items[&3].[0].idInterno"]											
+											"@(2,idInterno357)": "items[&3].[0].idInterno",
+							                "@(2,tipoIdInterno)":"items[&3].[0].tipoIdInterno",
+											"@(2,idRetaguarda357)": "items[&3].[0].idRetaguarda"											
 										},
 										"*": {
 											"@(2,idExternoPreco)": "items[&3].[0].idExterno",
-											"#PDVSYNC-PRECO-PRODUTO": "items[&3].[0].tipoIdInterno",
-											"@(2,skuId)": ["items[&3].[0].idRetaguarda", "items[&3].[0].idInterno"]											
+											"@(2,idInternoSku)": "items[&3].[0].idInterno",
+											"@(2,tipoIdInterno)":"items[&3].[0].tipoIdInterno",
+											"@(2,skuId)": "items[&3].[0].idRetaguarda"											
 										}
 									},
 									"erpReferenceKey": [
@@ -136,7 +196,9 @@
 								"*": {
 									"*": {
 										"@": "items",
-										"idExterno": "idExterno[]"
+										"idExterno": "idExterno[]",
+										"idInterno": "idInterno[]",
+							            "tipoIdInterno":"tipoIdInterno[]"
 									}
 								}
 							}

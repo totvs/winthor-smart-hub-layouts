@@ -56,97 +56,103 @@
 				}
 			},
 			{
-				"nome": "LAYOUTTRANSFORMACAO",
-				"valor": [
-					{
-						"operation": "modify-overwrite-beta",
-						"spec": {
-							"items": {
-								"*": {
-									"idExternoIcms": "=concat('pdvsync-icms-', @(1,id),'-', @(1,dataUltimaAlteracao))",
-									"idExternoSt": "=concat('pdvsync-st-', @(1,id),'-', @(1,dataUltimaAlteracao))",
-									"idRetaguardaIcms": "=concat(@(1,id),'-ICMS')",
-									"idRetaguardaSt": "=concat(@(1,id),'-ST')",
-									"idInterno": "=concat(@(1,id),'-ICMS')",
-							        "tipoIdInterno": "PDVSYNC-ICMS",
-									"aliquota_check_modalidate": "=concat(@(1,aliquota),'')",
-									"aliquota_str": "=concat(@(1,aliquota), '')",
-									"aliquota_arr": "=split('\\.',@(1,aliquota_str))",
-									"aliquota": "=join(',', @(1,aliquota_arr))",
-									"reducaoBaseCalculo_str": "=concat(@(1,reducaoBaseCalculo), '')",
-									"reducaoBaseCalculo_arr": "=split('\\.',@(1,reducaoBaseCalculo_str))",
-									"reducaoBaseCalculo": "=join(',', @(1,reducaoBaseCalculo_arr))",
-									"substituicaoTributaria": {
-										"icmsInterno_str": "=concat(@(1,icmsInterno), '')",
-										"icmsInterno_arr": "=split('\\.',@(1,icmsInterno_str))",
-										"icmsInterno": "=join(',', @(1,icmsInterno_arr))",
-										"ireducaoBaseCalculo_str": "=concat(@(1,reducaoBaseCalculo), '')",
-										"reducaoBaseCalculo_arr": "=split('\\.',@(1,ireducaoBaseCalculo_str))",
-										"reducaoBaseCalculo": "=join(',', @(1,reducaoBaseCalculo_arr))"
-									}
-								}
-							}
-						}
-					},
-					{
-						"operation": "shift",
-						"spec": {
-							"items": {
-								"*": {
-									"idExternoIcms": "items.[&1].[0].idExterno",
-									"idExternoSt": "items.[&1].[1].idExterno",									
-									"idInterno": "idInterno",
-							        "tipoIdInterno":"tipoIdInterno",
-									"idRetaguardaIcms": "items.[&1].[0].idRetaguarda",								
-									"aliquota": "items.[&1].[0].aliquotaTributo",
-									"reducaoBaseCalculo": "items.[&1].[0].reducaoBaseCalculo",
-									"modalidadeVarejo": [
-										"items.[&1].[0].modalidade",
-										"items.[&1].[1].modalidade"
-									],
-									"simboloVarejo": [
-										"items.[&1].[0].simbolo",
-										"items.[&1].[1].simbolo"
-									],
-									"idRetaguardaSt": "items.[&1].[1].idRetaguarda",
-									"substituicaoTributaria": {
-										"icmsInterno": "items.[&2].[1].aliquotaTributo",
-										"reducaoBaseCalculo": "items.[&2].[1].reducaoBaseCalculo"
-									}
-								}
-							}
-						}
-					},
-					{
-						"operation": "shift",
-						"spec": {
-							"items": {
-								"*": {
-									"*": {
-										"@": "items",
-										"idExterno": "idExterno[]"
-									}
-								}
-							}
-						}
-					},
-					{
-						"operation": "default",
-						"spec": {
-							"_attr_access": "items",
-							"items[]": {
-								"*": {
-									"idInquilino": "{{ID_INQUILINO}}",
-									"idProprietario": "{{MASTER_ID_PROPRIETARIO}}",
-									"loteOrigem": "{{LOTE_ORIGEM}}",
-									"indiceTributoImpressora": "",
-									"tipo": 0,
-									"situacao": 1
+			"nome": "LAYOUTTRANSFORMACAO",
+			"valor": [
+				{
+					"operation": "modify-overwrite-beta",
+					"spec": {
+						"items": {
+							"*": {
+								"idExternoIcms": "=concat('pdvsync-icms-', @(1,id),'-', @(1,dataUltimaAlteracao))",
+								"idExternoSt": "=concat('pdvsync-st-', @(1,id),'-', @(1,dataUltimaAlteracao))",
+								"idRetaguardaIcms": "=concat(@(1,id),'-ICMS')",
+								"idRetaguardaSt": "=concat(@(1,id),'-ST')",
+								"idInternoIcms": "=concat(@(1,id),'-ICMS')",
+								"idInternoSt": "=concat(@(1,id),'-ST')",
+								"tipoIdInternoIcms": "PDVSYNC-ICMS",
+								"tipoIdInternoSt": "PDVSYNC-ICMS",
+								"aliquota_check_modalidate": "=concat(@(1,aliquota),'')",
+								"aliquota_str": "=concat(@(1,aliquota), '')",
+								"aliquota_arr": "=split('\\.',@(1,aliquota_str))",
+								"aliquota": "=join(',', @(1,aliquota_arr))",
+								"reducaoBaseCalculo_str": "=concat(@(1,reducaoBaseCalculo), '')",
+								"reducaoBaseCalculo_arr": "=split('\\.',@(1,reducaoBaseCalculo_str))",
+								"reducaoBaseCalculo": "=join(',', @(1,reducaoBaseCalculo_arr))",
+								"substituicaoTributaria": {
+									"icmsInterno_str": "=concat(@(1,icmsInterno), '')",
+									"icmsInterno_arr": "=split('\\.',@(1,icmsInterno_str))",
+									"icmsInterno": "=join(',', @(1,icmsInterno_arr))",
+									"ireducaoBaseCalculo_str": "=concat(@(1,reducaoBaseCalculo), '')",
+									"reducaoBaseCalculo_arr": "=split('\\.',@(1,ireducaoBaseCalculo_str))",
+									"reducaoBaseCalculo": "=join(',', @(1,reducaoBaseCalculo_arr))"
 								}
 							}
 						}
 					}
-				]
+				},
+				{
+					"operation": "shift",
+					"spec": {
+						"items": {
+							"*": {
+								"idExternoIcms": "items.[&1].[0].idExterno",
+								"idExternoSt": "items.[&1].[1].idExterno",									
+								"idInternoIcms": "items.[&1].[0].idInterno",
+								"idInternoSt": "items.[&1].[1].idInterno",
+								"tipoIdInternoIcms": "items.[&1].[0].tipoIdInterno",
+								"tipoIdInternoSt": "items.[&1].[1].tipoIdInterno",
+								"idRetaguardaIcms": "items.[&1].[0].idRetaguarda",								
+								"aliquota": "items.[&1].[0].aliquotaTributo",
+								"reducaoBaseCalculo": "items.[&1].[0].reducaoBaseCalculo",
+								"modalidadeVarejo": [
+									"items.[&1].[0].modalidade",
+									"items.[&1].[1].modalidade"
+								],
+								"simboloVarejo": [
+									"items.[&1].[0].simbolo",
+									"items.[&1].[1].simbolo"
+								],
+								"idRetaguardaSt": "items.[&1].[1].idRetaguarda",
+								"substituicaoTributaria": {
+									"icmsInterno": "items.[&2].[1].aliquotaTributo",
+									"reducaoBaseCalculo": "items.[&2].[1].reducaoBaseCalculo"
+								}
+							}
+						}
+					}
+				},
+				{
+					"operation": "shift",
+					"spec": {
+						"items": {
+							"*": {
+								"*": {
+									"@": "items",
+									"idExterno": "idExterno[]",
+									"idInterno": "idInterno[]",
+									"tipoIdInterno":"tipoIdInterno[]"
+								}
+							}
+						}
+					}
+				},
+				{
+					"operation": "default",
+					"spec": {
+						"_attr_access": "items",
+						"items[]": {
+							"*": {
+								"idInquilino": "{{ID_INQUILINO}}",
+								"idProprietario": "{{MASTER_ID_PROPRIETARIO}}",
+								"loteOrigem": "{{LOTE_ORIGEM}}",
+								"indiceTributoImpressora": "",
+								"tipo": 0,
+								"situacao": 1
+							}
+						}
+					}
+				}
+			  ]
 			},
 			{
 				"nome": "ATIVO",
