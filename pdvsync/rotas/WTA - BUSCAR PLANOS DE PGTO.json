@@ -76,6 +76,8 @@
 							"items": {
 								"*": {
 									"idExterno": "items.[&1].idExterno",
+									"idInterno": "items.[&1].idInterno",
+							        "tipoIdInterno":"items.[&1].tipoIdInterno",
 									"descricao": "items.[&1].descricao",
 									"numeroParcelas": "items.[&1].numeroParcelas",
 									"codigo": "items.[&1].codigo",
@@ -109,6 +111,8 @@
 							"items": {
 								"*": {
 									"idExterno": "idExterno[]",
+									"idInterno": "idInterno[]",
+							        "tipoIdInterno":"tipoIdInterno[]",
 									"descricao": "items.[&1].[0].descricao",
 									"numeroParcelas": {
 										"0": {
@@ -118,8 +122,6 @@
 											"@1": "items.[&3].[0].numeroMaximoParcelas"
 										}
 									},
-									"idInterno": "idInterno",
-							        "tipoIdInterno":"tipoIdInterno",
 									"codigo": "items.[&1].[0].idRetaguarda",									
 									"codigoFilial": {
 										"99": {

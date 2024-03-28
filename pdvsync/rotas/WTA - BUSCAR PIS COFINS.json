@@ -73,7 +73,9 @@
 									"aliquotaPisPercentualArr": "=split('\\.',@(1,aliquotaPisPercentualStr))",
 									"aliquotaCofinsPercentualArr": "=split('\\.',@(1,aliquotaCofinsPercentualStr))",
 									"aliquotaPis": "=join(',', @(1,aliquotaPisPercentualArr))",
-									"aliquotaCofins": "=join(',', @(1,aliquotaCofinsPercentualArr))"
+									"aliquotaCofins": "=join(',', @(1,aliquotaCofinsPercentualArr))",
+									"idInterno":"=concat('', @(1,codTribPisCofins))",
+							        "tipoIdInterno":"PDVSYNC-PIS-CONFINS"
 								}
 							}
 						}
@@ -84,8 +86,9 @@
 							"items": {
 								"*": {
 									"idExterno": "idExterno",							
-									"#PDVSYNC-PIS-CONFINS": "items[&1].tipoIdInterno",
-									"codTribPisCofins": ["items[&1].idRetaguarda", "items[&1].idInterno"],								
+									"idInterno": "idInterno",
+							        "tipoIdInterno":"tipoIdInterno",
+									"codTribPisCofins": "items[&1].idRetaguarda",								
 									"cst": [
 										"items[&1].cstPis",
 										"items[&1].cstCofins"
