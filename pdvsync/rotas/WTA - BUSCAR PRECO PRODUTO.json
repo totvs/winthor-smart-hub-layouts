@@ -23,55 +23,54 @@
 				"valor": {
 					"name": "WTA - Buscar Preco Produto",
 					"request": {
-					  "method": "GET",
-					  "header": [
-						{
-						  "key": "Authorization",
-						  "value": "Bearer {{TOKEN}}"
-						},
-						{
-						  "key": "Accept",
-						  "value": "*/*"
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{URL_BASE}}/api/wholesale/v1/price/discount-policy",
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "{{PAGE_SIZE}}"
+								},
+								{
+									"key": "page",
+									"value": "{{PAGE}}"
+								},
+								{
+									"key": "branchId",
+									"value": "{{FILIAL}}"
+								},
+								{
+									"key": "lastChange",
+									"value": "{{LAST_CHANGE}}"
+								},
+								{
+									"key": "callOrigin",
+									"value": "WSH"
+								},
+								{
+									"key": "resale",
+									"value": "{{REVENDA}}"
+								},
+								{
+									"key": "typeOfMerchandise",
+									"value": "{{TIPOMERCADORIA}}"
+								}
+							]
 						}
-					  ],
-					  "url": {
-						"raw": "{{URL_BASE}}/api/wholesale/v1/price/discount-policy",
-						"query": [
-						  {
-							"key": "pageSize",
-							"value": "{{PAGE_SIZE}}"
-						  },
-						  {
-							"key": "page",
-							"value": "{{PAGE}}"
-						  },
-						  {
-							"key": "branchId",
-							"value": "{{FILIAL}}"
-						  },
-						  {
-							"key": "lastChange",
-							"value": "{{LAST_CHANGE}}"
-						  },
-						  {
-							"key": "callOrigin",
-							"value": "WSH"
-						  },
-						  {
-							"key": "resale",
-							"value": "{{REVENDA}}"
-						  },
-						  {
-							"key": "typeOfMerchandise",
-							"value": "{{TIPOMERCADORIA}}"
-						  }
-						]
-					  },
-					  "bodyraw": ""
 					},
 					"response": []
 				}
-			},			
+			},
 			{
 				"nome": "LAYOUTTRANSFORMACAO",
 				"valor": [
@@ -94,12 +93,7 @@
 									"idRetaguarda357": "=concat(@(1,skuId),'-357-',@(1,fixedPriceId))",
 									"discount": "=toString(@(1,discountPolicy.discount))",
 									"discountConverter_": "=split('\\.', @(1,discount))",
-									"discountConverter": "=join(',', @(1,discountConverter_))",
-									"idInterno357": "=concat(@(1,skuId),'-357-',@(1,fixedPriceId))",
-									"idInternoSku": "=concat('', @(1,skuId))",
-									"idInternoDesconto": "=concat(@(1,skuId),'-561-',@(1,discountPolicy.id))",
-							        "tipoIdInterno":"PDVSYNC-PRECO-PRODUTO"
-									
+									"discountConverter": "=join(',', @(1,discountConverter_))"
 								}
 							}
 						}
@@ -112,15 +106,19 @@
 									"origin": {
 										"357": {
 											"@(2,idExternoPreco357)": "items[&3].[0].idExterno",
-											"@(2,idInterno357)": "items[&3].[0].idInterno",
-							                "@(2,tipoIdInterno)":"items[&3].[0].tipoIdInterno",
-											"@(2,idRetaguarda357)": "items[&3].[0].idRetaguarda"											
+											"#PDVSYNC-PRECO-PRODUTO": "items[&3].[0].tipoIdInterno",
+											"@(2,idRetaguarda357)": [
+												"items[&3].[0].idRetaguarda",
+												"items[&3].[0].idInterno"
+											]
 										},
 										"*": {
 											"@(2,idExternoPreco)": "items[&3].[0].idExterno",
-											"@(2,idInternoSku)": "items[&3].[0].idInterno",
-											"@(2,tipoIdInterno)":"items[&3].[0].tipoIdInterno",
-											"@(2,skuId)": "items[&3].[0].idRetaguarda"											
+											"#PDVSYNC-PRECO-PRODUTO": "items[&3].[0].tipoIdInterno",
+											"@(2,skuId)": [
+												"items[&3].[0].idRetaguarda",
+												"items[&3].[0].idInterno"
+											]
 										}
 									},
 									"erpReferenceKey": [
@@ -161,8 +159,6 @@
 										"@(1,erpReferenceKey)": [
 											"items[&2].[1].codigoProduto"
 										],
-										"@(1,idInternoDesconto)": "items[&2].[1].idInterno",
-							            "@(1,tipoIdInterno)":"items[&2].[1].tipoIdInterno",
 										"@(1,quantity)": "items[&2].[1].saldo",
 										"@(1,skuID_)": "items[&2].[1].codigoProduto",
 										"@(1,principalSKUId)": "items[&2].[1].idRetaguardaProduto",
@@ -199,9 +195,7 @@
 								"*": {
 									"*": {
 										"@": "items",
-										"idExterno": "idExterno[]",
-										"idInterno": "idInterno[]",
-							            "tipoIdInterno":"tipoIdInterno[]"
+										"idExterno": "idExterno[]"
 									}
 								}
 							}
