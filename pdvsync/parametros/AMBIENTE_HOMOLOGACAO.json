@@ -129,7 +129,7 @@
 		},
 		{
 			"nome": "{{URL_REGISTRAR_IP}}",
-			"valor": "http://34.173.142.155/api/v1/client/ip",
+			"valor": "http://qa-ipfixo.pdvsync.varejo.totvs.com.br/api/v1/client/ip",
 			"descricao": "PDV-SYNC Registrar IP",
 			"rota": "PDVSYNC - Registrar IP"
 		},
