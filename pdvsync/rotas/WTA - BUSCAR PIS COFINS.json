@@ -38,11 +38,11 @@
 							"raw": "{{URL_BASE}}/winthor/tributacao/v0/saida/piscofins/consultar",
 							"query": [
 								{
-									"key": "pageSize",
+									"key": "tamanho",
 									"value": "{{PAGE_SIZE}}"
 								},
 								{
-									"key": "page",
+									"key": "pagina",
 									"value": "{{PAGE}}"
 								},
 								{
