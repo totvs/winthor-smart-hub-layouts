@@ -20,7 +20,7 @@
 			},
 			{
 				"nome": "TIPOVALOR",
-				"valor": "ENCRYPTED"
+				"valor": "STRING"
 			},
 			{
 				"nome": "IDROTASERVICO",

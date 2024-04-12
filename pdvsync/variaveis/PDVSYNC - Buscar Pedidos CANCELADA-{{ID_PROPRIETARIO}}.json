@@ -28,7 +28,7 @@
 			},
 			{
 				"nome": "VALOR",
-				"valor": "&listIdProprietario=2"
+				"valor": "&listIdProprietario=ADICIONAR_ID_PROPRIETARIO"
 			},
 			{
 				"nome": "CODEMPALTER",
