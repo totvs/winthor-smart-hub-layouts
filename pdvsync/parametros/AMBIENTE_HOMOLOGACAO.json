@@ -9,7 +9,7 @@
 		},
 		{
 			"nome": "{{BASE_URL_ABRIR_LOTE}}",
-			"valor": "https://pdvsync-core-controle-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/inquilinolotesexternos"
+			"valor": "https://pdvsync-core-controle-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/inquilinolotesexternos",
 			"descricao": "Criar variavel temporária",
 			"rota": "PDVSYNC - Criar variavel temporaria"
 		},
