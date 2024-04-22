@@ -8,11 +8,11 @@
 			},
 			{
 				"nome": "ID",
-				"valor": "WTA - BUSCAR FILIAIS COMPARTILHAMENTO-{{LAST_CHANGE}}"
+				"valor": "WTA - BUSCAR FILIAIS COMPARTILHAMENTO-{{FILIAL}}"
 			},
 			{
 				"nome": "CHAVE",
-				"valor": "{{LAST_CHANGE}}"
+				"valor": "{{FILIAL}}"
 			},
 			{
 				"nome": "TIPOCHAVE",
@@ -20,7 +20,7 @@
 			},
 			{
 				"nome": "TIPOVALOR",
-				"valor": "SELECT"
+				"valor": "STRING"
 			},
 			{
 				"nome": "IDROTASERVICO",
@@ -28,7 +28,7 @@
 			},
 			{
 				"nome": "VALOR",
-				"valor": "SELECT TO_CHAR( NVL((SELECT MAX(DATACRIACAO) FROM PCINTEGRACAOCORE WHERE IDROTASERVICO = :IDROTASERVICO AND STATUS = 2), TO_DATE('01/01/1900')) -1, 'RRRR-MM-DD\"T\"HH24:MI:SS' ) DT FROM DUAL"				
+				"valor": "ADICIONAR_FILIAL"				
 			},
 			{
 				"nome": "CODEMPALTER",

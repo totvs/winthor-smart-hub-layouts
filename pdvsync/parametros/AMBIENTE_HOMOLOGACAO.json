@@ -87,7 +87,7 @@
 		},
 		{
 			"nome": "{{URL_ENVIAR_COMPARTILHAMENTO}}",
-			"valor": "https://pdvsync-core-dadosbasicos-qa-ywc7q7nxya-uc.a.run.app/api/pdvsyncclient/compartilhamentos",
+			"valor": "https://pdvsync-core-dadosbasicos-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v2/compartilhamentos",	
 			"descricao": "PDV-SYNC - Enviar compartilhamentos",
 			"rota": "PDVSYNC - Enviar compartilhamentos"
 		},
