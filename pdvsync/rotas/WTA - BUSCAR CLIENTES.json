@@ -96,6 +96,8 @@
 							   "telefone_entrega":"items.[&1].telefone",
 							   "email":"items.[&1].email",
 							   "cpf_cnpj":"items.[&1].cpfCnpj",
+							   "dataNascimento": "items.[&1].dataNascimento",
+							   "sexo": "items.[&1].sexo",
 							   "corporate":{
 								  "true":{
 									 "#0":"items.[&3].pessoaFisica"
@@ -118,7 +120,6 @@
 							"*":{
 							   "situacao":1,
 							   "enviarpnet":0,
-							   "dataNascimento":"1900-01-01T00:00:00",
 							   "idInquilino":"{{ID_INQUILINO}}",
 							   "idProprietario":"{{MASTER_ID_PROPRIETARIO}}",
 							   "loteOrigem":"{{LOTE_ORIGEM}}",
