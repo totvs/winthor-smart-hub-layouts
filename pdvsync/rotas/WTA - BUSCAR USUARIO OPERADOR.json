@@ -132,7 +132,7 @@
 									"idInquilino": "{{ID_INQUILINO}}",
 									"idProprietario": "{{MASTER_ID_PROPRIETARIO}}",
 									"loteOrigem": "{{LOTE_ORIGEM}}",
-									"cpf": "12345678912",
+									"cpf": "12345678912", 
 									"administrador": 0,
 									"senhaCriptografada": "winthor"
 								}

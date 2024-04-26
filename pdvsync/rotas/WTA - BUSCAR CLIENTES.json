@@ -97,7 +97,7 @@
 							   "email":"items.[&1].email",
 							   "cpf_cnpj":"items.[&1].cpfCnpj",
 							   "dataNascimento": "items.[&1].dataNascimento",
-							   "sexo": "items.[&1].sexo",
+							   "sexo": "items.[&1].sexo", 
 							   "corporate":{
 								  "true":{
 									 "#0":"items.[&3].pessoaFisica"
