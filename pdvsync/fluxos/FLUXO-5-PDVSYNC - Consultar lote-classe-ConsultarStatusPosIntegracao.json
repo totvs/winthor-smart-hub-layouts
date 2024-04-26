@@ -33,6 +33,10 @@
 			{
 				"nome": "IDDEPENDENTE",
 				"valor": ""
+			},
+			{
+				"nome": "DESCRICAO",
+				"valor": "NCM CEST"
 			}
 		]
 	}

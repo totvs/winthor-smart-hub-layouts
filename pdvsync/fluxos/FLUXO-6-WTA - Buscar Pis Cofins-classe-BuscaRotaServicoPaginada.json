@@ -12,27 +12,31 @@
 			},
 			{
 				"nome": "ORDEMEXECUCAO",
-				"valor": "6"
+				"valor": "2"
 			},
 			{
 				"nome": "IDROTASERVICO",
-				"valor": "PDVSYNC - Encerrar variavel temporaria"
+				"valor": "WTA - Buscar Pis Cofins"
 			},
 			{
 				"nome": "IDINTEGRACAOCLASSEMETODO",
-				"valor": "FinalizaVariavelTemporaria"
+				"valor": "BuscaRotaServicoPaginada"
 			},
 			{
 				"nome": "IDFLUXO",
-				"valor": "25"
+				"valor": "6"
 			},
 			{
 				"nome": "ATIVO",
-				"valor": "S"
+				"valor": "N"
 			},
 			{
 				"nome": "IDDEPENDENTE",
-				"valor": "WTA - CONSULTA RCA"
+				"valor": ""
+			},
+			{
+				"nome": "DESCRICAO",
+				"valor": "Pis/Cofins"
 			}
 		]
 	}

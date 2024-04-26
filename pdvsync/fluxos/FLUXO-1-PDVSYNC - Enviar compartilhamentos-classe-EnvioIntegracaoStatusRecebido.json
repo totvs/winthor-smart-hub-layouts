@@ -37,6 +37,10 @@
 			{
 				"nome": "IDDEPENDENTE",
 				"valor": "WTA - PDV-SYNC Compartilhamento Master"
+			},
+			{
+				"nome": "DESCRICAO",
+				"valor": "Compartilhamento Master"
 			}
 		]
 	}

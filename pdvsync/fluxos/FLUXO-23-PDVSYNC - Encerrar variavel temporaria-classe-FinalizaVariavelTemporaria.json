@@ -12,19 +12,19 @@
 			},
 			{
 				"nome": "ORDEMEXECUCAO",
-				"valor": "4"
+				"valor": "6"
 			},
 			{
 				"nome": "IDROTASERVICO",
-				"valor": "WTA - Atualizar status lote PDV"
+				"valor": "PDVSYNC - Encerrar variavel temporaria"
 			},
 			{
 				"nome": "IDINTEGRACAOCLASSEMETODO",
-				"valor": "EnvioIntegracaoStatusRecebido"
+				"valor": "FinalizaVariavelTemporaria"
 			},
 			{
 				"nome": "IDFLUXO",
-				"valor": "26"
+				"valor": "23"
 			},
 			{
 				"nome": "ATIVO",
@@ -32,7 +32,11 @@
 			},
 			{
 				"nome": "IDDEPENDENTE",
-				"valor": "PDVSYNC - Consultar status lote"
+				"valor": "WTA - CONSULTA RCA"
+			},
+			{
+				"nome": "DESCRICAO",
+				"valor": "Rca"
 			}
 		]
 	}

@@ -33,6 +33,10 @@
 			{
 				"nome": "IDDEPENDENTE",
 				"valor": "WTA - Buscar tipos cobranCas"
+			},
+			{
+				"nome": "DESCRICAO",
+				"valor": "Cobrancas/Forma Pgto"
 			}
 		]
 	}

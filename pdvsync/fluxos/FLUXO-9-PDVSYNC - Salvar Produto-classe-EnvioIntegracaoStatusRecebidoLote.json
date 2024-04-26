@@ -33,6 +33,10 @@
 			{
 				"nome": "IDDEPENDENTE",
 				"valor": "WTA - Buscar Produto - PDV"
+			},
+			{
+				"nome": "DESCRICAO",
+				"valor": "Produto"
 			}
 		]
 	}
