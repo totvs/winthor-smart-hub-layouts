@@ -177,6 +177,13 @@
                                                 "items.[&3].documentoEletronico.codFuncCx"
                                             ]
                                         },
+                                        "Periferico": {
+                                            "ModeloPeriferico": {
+                                                "Tipo": "items.[&4].equipamento.tipo"
+                                            },
+                                            "NumeroSerie": "items.[&3].equipamento.numeroSerie"
+                                        },
+                                        "EstadoConsumidor": "items.[&2].estadoConsumidor",
                                         "SituacaoVenda": "items.[&2].tipoMovimento",
                                         "ValorBruto": "items.[&2].vlTabela",
                                         "ValorLiquido": [
@@ -187,14 +194,18 @@
                                             "*": {
                                                 "NumeroAutorizacao": "items.[&4].documentoEletronico.xmls[&1].numeroAutorizacao",
                                                 "TipoXml": "items.[&4].documentoEletronico.xmls[&1].tipo",
-                                                "Xml": "items.[&4].documentoEletronico.xmls[&1].xml"
+                                                "Xml": "items.[&4].documentoEletronico.xmls[&1].xml",
+                                                "CodigoRetorno": "items.[&4].documentoEletronico.xmls[&1].codigoRetorno",
+                                                "DataAutorizacao": "items.[&4].documentoEletronico.xmls[&1].dataAutorizacao"
                                             },
                                             "0": {
                                                 "Contingencia": "items.[&4].contingenciaServidor",
                                                 "NumeroAutorizacao": "items.[&4].documentoEletronico.xmls[&1].numeroAutorizacao",
                                                 "SerieVenda": "items.[&4].numCaixaFiscal",
                                                 "TipoXml": "items.[&4].documentoEletronico.xmls[0].tipo",
-                                                "Xml": "items.[&4].documentoEletronico.xmls[0].xml"
+                                                "Xml": "items.[&4].documentoEletronico.xmls[0].xml",
+                                                "CodigoRetorno": "items.[&4].documentoEletronico.xmls[&1].codigoRetorno",
+                                                "DataAutorizacao": "items.[&4].documentoEletronico.xmls[&1].dataAutorizacao"
                                             }
                                         },
                                         "VendaData": [
