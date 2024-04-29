@@ -119,6 +119,16 @@
 						 }
 					  }
 				   },
+					{
+						"operation": "modify-overwrite-beta",
+						"spec": {
+							"items": {
+								"*": {
+									"sexo": "=toInteger"
+								}
+							}
+						}
+					}
 				   {
 					  "operation":"default",
 					  "spec":{
