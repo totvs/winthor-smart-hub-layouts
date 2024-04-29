@@ -28,7 +28,7 @@
 			},
 			{
 				"nome": "VALOR",
-				"valor": "https://pdvsync-core-produto-qa-f5xaxliefa-ue.a.run.app/api/retaguarda/produtos"
+				"valor": "https://pdvsync-core-produto-qa-ywc7q7nxya-ue.a.run.app/api/retaguarda/v2/produtos"
 			},
 			{
 				"nome": "CODEMPALTER",

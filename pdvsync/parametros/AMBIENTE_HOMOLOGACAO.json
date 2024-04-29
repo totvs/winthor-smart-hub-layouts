@@ -1,6 +1,6 @@
 {
 	"ambiente" : "HOMOLOGACAO",
-	"urlVariaveis": [
+	"parametrosVariaveis": [
 		{
 			"nome": "{{URL_ENVIAR_LOJAS}}",
 			"valor": "https://pdvsync-core-dadosbasicos-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v2/lojas",
@@ -167,6 +167,18 @@
 			"nome": "{{URL_RAC_PDVSYNC}}",
 			"valor": "https://pdvsyncwinthor.rac.dev.totvs.app/totvs.rac/connect/token",
 			"descricao": "RAC - LoginPDVSync",
+			"rota": "PDVSYNC - RAC LoginPDVSync"
+		},
+		{
+			"nome": "{{CLIENT_ID}}",
+			"valor": "iDHLOJ/Nuzxca8/gfE/Za87jXC8uQM3LPglhKVSN/Kw=",
+			"descricao": "CLIENT_ID - RAC - LoginPDVSync",
+			"rota": "PDVSYNC - RAC LoginPDVSync"
+		},
+		{
+			"nome": "{{CLIENT_SECRET}}",
+			"valor": "adFhEn6/iX2pqQljcdsJHNbdV2J8f3XLTZf0eyrJVCd89OG+ifM1D0D4AjG0/nPP",
+			"descricao": "CLIENT_SECRET - RAC - LoginPDVSync",
 			"rota": "PDVSYNC - RAC LoginPDVSync"
 		}
 	]

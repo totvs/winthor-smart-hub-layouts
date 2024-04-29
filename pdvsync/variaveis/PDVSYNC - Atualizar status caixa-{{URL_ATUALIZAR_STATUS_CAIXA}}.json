@@ -28,7 +28,7 @@
 			},
 			{
 				"nome": "VALOR",
-				"valor": "https://pdvsync-core-comercial-qa-f5xaxliefa-ue.a.run.app/api/retaguarda/caixaMensagens"
+				"valor": "https://pdvsync-core-comercial-qa-ywc7q7nxya-ue.a.run.app/api/retaguarda/v2/caixaMensagens"
 			},
 			{
 				"nome": "CODEMPALTER",

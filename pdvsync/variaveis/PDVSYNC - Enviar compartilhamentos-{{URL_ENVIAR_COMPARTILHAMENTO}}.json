@@ -28,7 +28,7 @@
 			},
 			{
 				"nome": "VALOR",
-				"valor": "https://pdvsync-core-controle-qa-f5xaxliefa-ue.a.run.app/api/retaguarda/compartilhamentos"
+				"valor": "https://pdvsync-core-controle-qa-ywc7q7nxya-ue.a.run.app/api/retaguarda/v2/compartilhamentos"
 			},
 			{
 				"nome": "CODEMPALTER",

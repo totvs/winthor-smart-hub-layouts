@@ -1,6 +1,6 @@
 { 	
 	"ambiente" : "PRODUCAO",
-	"urlVariaveis": [
+	"parametrosVariaveis": [
 		{
 			"nome": "{{URL_ENVIAR_DADOS_PAGAMENTO}}",
 			"valor": "https://pdvsync-core-formapagto-qa-f5xaxliefa-ue.a.run.app/api/retaguarda/dadocomplementarpagtos",
@@ -169,6 +169,18 @@
 			"valor": "https://pdvsync.varejo.totvs.com.br/dadosbasicos/api/retaguarda/lojas",
 			"descricao": "PDVSYNC - Enviar lojas",
 			"rota": "PDVSYNC - Enviar lojas"
+		},
+		{
+			"nome": "{{CLIENT_ID}}",
+			"valor": "iDHLOJ/Nuzxca8/gfE/Za87jXC8uQM3LPglhKVSN/Kw=",
+			"descricao": "CLIENT_ID - RAC - LoginPDVSync",
+			"rota": "PDVSYNC - RAC LoginPDVSync"
+		},
+		{
+			"nome": "{{CLIENT_SECRET}}",
+			"valor": "adFhEn6/iX2pqQljcdsJHNbdV2J8f3XLTZf0eyrJVCd89OG+ifM1D0D4AjG0/nPP",
+			"descricao": "CLIENT_SECRET - RAC - LoginPDVSync",
+			"rota": "PDVSYNC - RAC LoginPDVSync"
 		}		
 	]
 }
