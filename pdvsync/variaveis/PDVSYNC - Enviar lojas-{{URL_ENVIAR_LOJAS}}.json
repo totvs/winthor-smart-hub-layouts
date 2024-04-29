@@ -28,7 +28,7 @@
 			},
 			{
 				"nome": "VALOR",
-				"valor": "https://pdvsync-core-dadosbasicos-qa-f5xaxliefa-ue.a.run.app/api/retaguarda/lojas"
+				"valor": "https://pdvsync-core-dadosbasicos-qa-ywc7q7nxya-ue.a.run.app/api/retaguarda/v2/lojas"
 			},
 			{
 				"nome": "CODEMPALTER",

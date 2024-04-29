@@ -28,7 +28,7 @@
 			},
 			{
 				"nome": "VALOR",
-				"valor": " https://pdvsync-core-estoque-qa-f5xaxliefa-ue.a.run.app/api/retaguarda/estoques"
+				"valor": " https://pdvsync-core-estoque-qa-ywc7q7nxya-ue.a.run.app/api/retaguarda/v2/estoques"
 			},
 			{
 				"nome": "CODEMPALTER",

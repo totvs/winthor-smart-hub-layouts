@@ -1,4 +1,4 @@
-{
+	{
 	"tabela": {
 		"nome": "PCINTEGRACAOFLUXOEXECUCAO",
 		"campos": [ {"nome" : "ID", "valor": ""},
@@ -12,19 +12,20 @@
 			},
 			{
 				"nome": "ORDEMEXECUCAO",
-				"valor": "3"
+				"valor": "4",
+				"valorAnterior": "3"
 			},
 			{
 				"nome": "IDROTASERVICO",
-				"valor": "PDVSYNC - Consultar status lote"
+				"valor": "PDVSYNC - Criar variavel temporaria"
 			},
 			{
 				"nome": "IDINTEGRACAOCLASSEMETODO",
-				"valor": "BuscaRotaServicoNaoPaginada"
+				"valor": "CriaVariavelTemporaria"
 			},
 			{
 				"nome": "IDFLUXO",
-				"valor": "26"
+				"valor": "23"
 			},
 			{
 				"nome": "ATIVO",
@@ -32,7 +33,11 @@
 			},
 			{
 				"nome": "IDDEPENDENTE",
-				"valor": "WTA - Buscar lote PDV"
+				"valor": ""
+			},
+			{
+				"nome": "DESCRICAO",
+				"valor": "Rca"
 			}
 		]
 	}

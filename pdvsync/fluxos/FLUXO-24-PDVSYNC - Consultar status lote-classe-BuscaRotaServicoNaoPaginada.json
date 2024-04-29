@@ -12,28 +12,31 @@
 			},
 			{
 				"nome": "ORDEMEXECUCAO",
-				"valor": "3",
-				"valorAnterior": "4"
+				"valor": "3"
 			},
 			{
 				"nome": "IDROTASERVICO",
-				"valor": "PDVSYNC - RAC LoginPDVSync"
+				"valor": "PDVSYNC - Consultar status lote"
 			},
 			{
 				"nome": "IDINTEGRACAOCLASSEMETODO",
-				"valor": "AutenticadorRefreshTokenApi"
+				"valor": "BuscaRotaServicoNaoPaginada"
 			},
 			{
 				"nome": "IDFLUXO",
-				"valor": "25"
+				"valor": "24"
 			},
 			{
 				"nome": "ATIVO",
-				"valor": "S"
+				"valor": "N"
 			},
 			{
 				"nome": "IDDEPENDENTE",
-				"valor": ""
+				"valor": "WTA - Buscar lote PDV"
+			},
+			{
+				"nome": "DESCRICAO",
+				"valor": "Atualizar Status Lote Retaguarda"
 			}
 		]
 	}

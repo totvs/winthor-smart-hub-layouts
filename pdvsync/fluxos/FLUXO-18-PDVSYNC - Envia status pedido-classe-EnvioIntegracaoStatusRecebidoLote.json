@@ -33,6 +33,10 @@
 			{
 				"nome": "IDDEPENDENTE",
 				"valor": "WTA - Buscar status pedido"
+			},
+			{
+				"nome": "DESCRICAO",
+				"valor": "Status pedido"
 			}
 		]
 	}

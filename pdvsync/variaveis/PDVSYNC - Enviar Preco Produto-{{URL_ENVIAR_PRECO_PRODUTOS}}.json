@@ -28,7 +28,7 @@
 			},
 			{
 				"nome": "VALOR",
-				"valor": "https://pdvsync-core-preco-qa-f5xaxliefa-ue.a.run.app/api/retaguarda/precos"
+				"valor": "https://pdvsync-core-preco-qa-ywc7q7nxya-ue.a.run.app/api/retaguarda/v2/precos"
 			},
 			{
 				"nome": "CODEMPALTER",

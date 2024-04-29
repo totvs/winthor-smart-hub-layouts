@@ -12,27 +12,31 @@
 			},
 			{
 				"nome": "ORDEMEXECUCAO",
-				"valor": "1"
+				"valor": "2"
 			},
 			{
 				"nome": "IDROTASERVICO",
-				"valor": "WTA - LoginWTA"
+				"valor": "WTA - CONSULTA RCA"
 			},
 			{
 				"nome": "IDINTEGRACAOCLASSEMETODO",
-				"valor": "AutenticadorRefreshTokenApi"
+				"valor": "BuscaRotaServicoNaoPaginada"
 			},
 			{
 				"nome": "IDFLUXO",
-				"valor": "26"
+				"valor": "23"
 			},
 			{
 				"nome": "ATIVO",
-				"valor": "S"
+				"valor": "N"
 			},
 			{
 				"nome": "IDDEPENDENTE",
 				"valor": ""
+			},
+			{
+				"nome": "DESCRICAO",
+				"valor": "Rca"
 			}
 		]
 	}

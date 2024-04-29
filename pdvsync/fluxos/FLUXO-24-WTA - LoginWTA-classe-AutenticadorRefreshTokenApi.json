@@ -24,15 +24,19 @@
 			},
 			{
 				"nome": "IDFLUXO",
-				"valor": "25"
+				"valor": "24"
 			},
 			{
 				"nome": "ATIVO",
-				"valor": "S"
+				"valor": "N"
 			},
 			{
 				"nome": "IDDEPENDENTE",
 				"valor": ""
+			},
+			{
+				"nome": "DESCRICAO",
+				"valor": "Atualizar Status Lote Retaguarda"
 			}
 		]
 	}

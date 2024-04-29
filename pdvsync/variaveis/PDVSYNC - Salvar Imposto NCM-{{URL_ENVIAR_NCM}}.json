@@ -28,7 +28,7 @@
 			},
 			{
 				"nome": "VALOR",
-				"valor": "https://pdvsync-core-imposto-qa-f5xaxliefa-ue.a.run.app/api/retaguarda/ncms"
+				"valor": "https://pdvsync-core-imposto-qa-ywc7q7nxya-ue.a.run.app/api/retaguarda/v2/ncms"
 			},
 			{
 				"nome": "CODEMPALTER",

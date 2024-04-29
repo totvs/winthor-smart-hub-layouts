@@ -12,19 +12,20 @@
 			},
 			{
 				"nome": "ORDEMEXECUCAO",
-				"valor": "2"
+				"valor": "3",
+				"valorAnterior": "4"
 			},
 			{
 				"nome": "IDROTASERVICO",
-				"valor": "WTA - Buscar Pis Cofins"
+				"valor": "PDVSYNC - RAC LoginPDVSync"
 			},
 			{
 				"nome": "IDINTEGRACAOCLASSEMETODO",
-				"valor": "BuscaRotaServicoNaoPaginada"
+				"valor": "AutenticadorRefreshTokenApi"
 			},
 			{
 				"nome": "IDFLUXO",
-				"valor": "6"
+				"valor": "23"
 			},
 			{
 				"nome": "ATIVO",
@@ -33,6 +34,10 @@
 			{
 				"nome": "IDDEPENDENTE",
 				"valor": ""
+			},
+			{
+				"nome": "DESCRICAO",
+				"valor": "Rca"
 			}
 		]
 	}

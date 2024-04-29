@@ -28,11 +28,15 @@
 			},
 			{
 				"nome": "ATIVO",
-				"valor": "S"
+				"valor": "N"
 			},
 			{
 				"nome": "IDDEPENDENTE",
 				"valor": ""
+			},
+			{
+				"nome": "DESCRICAO",
+				"valor": "Produto"
 			}
 		]
 	}

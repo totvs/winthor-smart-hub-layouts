@@ -12,27 +12,31 @@
 			},
 			{
 				"nome": "ORDEMEXECUCAO",
-				"valor": "2"
+				"valor": "5"
 			},
 			{
 				"nome": "IDROTASERVICO",
-				"valor": "WTA - CONSULTA RCA"
+				"valor": "PDVSYNC - Salvar Usuario Operador"
 			},
 			{
 				"nome": "IDINTEGRACAOCLASSEMETODO",
-				"valor": "BuscaRotaServicoNaoPaginada"
+				"valor": "EnvioIntegracaoStatusRecebidoLote"
 			},
 			{
 				"nome": "IDFLUXO",
-				"valor": "25"
+				"valor": "23"
 			},
 			{
 				"nome": "ATIVO",
-				"valor": "S"
+				"valor": "N"
 			},
 			{
 				"nome": "IDDEPENDENTE",
-				"valor": ""
+				"valor": "WTA - CONSULTA RCA"
+			},
+			{
+				"nome": "DESCRICAO",
+				"valor": "Rca"
 			}
 		]
 	}

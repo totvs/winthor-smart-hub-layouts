@@ -4,7 +4,7 @@
 		"campos": [
 			{
 				"nome": "TOKENTEMPOEXPIRACAO",
-				"valor": "3600"
+				"valor": "7200"
 			},
 			{
 				"nome": "ID",

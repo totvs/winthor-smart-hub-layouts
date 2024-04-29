@@ -37,6 +37,10 @@
 			{
 				"nome": "IDDEPENDENTE",
 				"valor": ""
+			},
+			{
+				"nome": "DESCRICAO",
+				"valor": "Compartilhamento Master"
 			}
 		]
 	}

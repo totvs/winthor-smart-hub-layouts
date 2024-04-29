@@ -33,6 +33,10 @@
 			{
 				"nome": "IDDEPENDENTE",
 				"valor": "WTA - Buscar planos de pgto"
+			},
+			{
+				"nome": "DESCRICAO",
+				"valor": "Planos de pagamentos"
 			}
 		]
 	}
