@@ -172,13 +172,13 @@
 		},
 		{
 			"nome": "{{CLIENT_ID}}",
-			"valor": "iDHLOJ/Nuzxca8/gfE/Za87jXC8uQM3LPglhKVSN/Kw=",
+			"valor": "xFxvsGJF/bPu8EsB3HpJcz2s2hyv5QlWjMtHnPspn3A=",
 			"descricao": "CLIENT_ID - RAC - LoginPDVSync",
 			"rota": "PDVSYNC - RAC LoginPDVSync"
 		},
 		{
 			"nome": "{{CLIENT_SECRET}}",
-			"valor": "adFhEn6/iX2pqQljcdsJHNbdV2J8f3XLTZf0eyrJVCd89OG+ifM1D0D4AjG0/nPP",
+			"valor": "p1HFHhokxeLiWEj4zXTHgUMvOTV4EcN/+HXVhkiyif2O9Vp/UsOhHOYZaxJlqQe+",
 			"descricao": "CLIENT_SECRET - RAC - LoginPDVSync",
 			"rota": "PDVSYNC - RAC LoginPDVSync"
 		}		
