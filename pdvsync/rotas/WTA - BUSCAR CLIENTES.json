@@ -104,9 +104,9 @@
 									"F": {
 										"#2": "items.[&3].sexo"
 									},
-									"*": {
-									  "#0": "items.[&3].sexo"
-									}
+							"*": {
+							  "#0": "items.[&3].sexo"
+							}
 								}, 
 							   "corporate":{
 								  "true":{
