@@ -126,9 +126,9 @@ Considere o conteúdo abaixo para criar o arquivo de variaveis:
 }
 ```  
 
-Para criar os fluxos, siga o mesmo padrão das anteriores (PDVSYNC - Buscar vendas teste-classe-BuscaRotaServicoNaoPaginada), adicione um novo arquivo no formato ".json", dentro da pasta "fluxos":
+Para criar os fluxos, siga o seguinte padrão: FLUXO-{{SEQUENCIAL}}-{{DESCRICAO}}-{{ORDEMEXECUCAO}}-{{ROTASERVICO}}, onde o **SEQUENCIAL** (01, 02, 03...) deverá representar a ordem em que o fluxo deve ser inserido na tabela, a **DESCRICAO** deve ser a identificação unívoca do fluxo, a **ORDEMEXECUCAO** deverá representar a ordem em que as rotas serão executadas dentro do fluxo e por último a **ROTASERVICO** deverá ser o nome da rota. Adicione um novo arquivo no formato ".json", dentro da pasta "fluxos":
 ```bash
- cd C:\fontesGit\winthor-smart-hub-layouts\pdvsync\fluxos\PDVSYNC - Buscar vendas teste-classe-BuscaRotaServicoNaoPaginada.json
+ cd C:\fontesGit\winthor-smart-hub-layouts\pdvsync\fluxos\FLUXO-01-Compartilhamento Master-1-WTA - LoginWTA.json
 ```  
 
 Considere o conteúdo abaixo para criar o arquivo de fluxo:
@@ -150,10 +150,6 @@ Considere o conteúdo abaixo para criar o arquivo de fluxo:
 				"valor": "BuscaRotaServicoNaoPaginada"
 			},
 			{
-				"nome": "IDFLUXO",
-				"valor": "16"
-			},
-			{
 				"nome": "ATIVO",
 				"valor": "N"
 			},
@@ -169,3 +165,4 @@ Considere o conteúdo abaixo para criar o arquivo de fluxo:
 	}
 }
 ``` 
+A coluna "IDFLUXO" será controlada pela aplicação, no entanto se é necessário que haja uma sequência a ser inserida essa ordenação deverá ocorrer na nomeação do arquivo, conforme dito anteriormente;
