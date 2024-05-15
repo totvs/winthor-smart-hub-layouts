@@ -3,10 +3,6 @@
 		"nome": "PCINTEGRACAOAGENDAMENTO",
 		"campos": [
 			{
-				"nome": "ID",
-				"valor": "21"
-			},
-			{
 				"nome": "DESCRICAO",
 				"valor": "pdvsync - movimento caixas"
 			},

@@ -3,10 +3,6 @@
 		"nome": "PCINTEGRACAOAGENDAMENTO",
 		"campos": [
 			{
-				"nome": "ID",
-				"valor": "41"
-			},
-			{
 				"nome": "DESCRICAO",
 				"valor": "pdvsync - pedido status recebido"
 			},
