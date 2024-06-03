@@ -116,6 +116,10 @@
                                             "items.[&2].chaveNfce",
                                             "items.[&2].chaveNfe"
                                         ],
+						                "PreVenda": {
+							                "Id": "items.[&3].idPreVenda",
+							                "IdRetaguarda": "items.[&3].numeroPedidoRIVendaAssistida"
+						                },										
                                         "Cliente": {
                                             "Bairro": "items.[&3].consumidorFinal.bairroEnt",
                                             "Celular": "items.[&3].consumidorFinal.celEnt",
