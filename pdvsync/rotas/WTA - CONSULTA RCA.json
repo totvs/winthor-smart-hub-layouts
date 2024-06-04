@@ -60,26 +60,16 @@
                 "nome": "LAYOUTTRANSFORMACAO",
                 "valor": [
                     {
-                        "operation": "default",
-                        "spec": {
-                            "_attr_access": "items",
-                            "items[]": {
-                                "*": {
-                                    "dtUltAlter": "1900-01-01T00:00:00"
-                                }
-                            }
-                        }
-                    },
-                    {
                         "operation": "modify-overwrite-beta",
                         "spec": {
                             "items": {
                                 "*": {
-                                    "id_retarguada": "=concat('RCA-', @(1,matricula_s))",
-                                    "idExterno": "=concat('pdvsync-usuario-rca-', @(1,matricula),'-', @(1,dtUltAlter))",
-                                    "login_s": "=toString(@(1,codigousur))",
                                     "matricula_s": "=toString(@(1,codigousur))",
+                                    "idExterno": "=concat('pdvsync-usuario-rca-', @(1,matricula_s),'-', @(1,dtAlteracao), 'T00:00:00')",
+									"dtUltAlter": "=concat(@(1,dtAlteracao),'T00:00:00')",
+                                    "login_s": "=toString(@(1,codigousur))",
                                     "senha_s": "=toString(@(1,codigousur))",
+                                    "id_retarguada": "=concat('RCA-', @(1,matricula_s))",
                                     "situacao_s": "=toInt(1)"
                                 }
                             }
