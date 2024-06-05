@@ -96,6 +96,11 @@
 													"=concat(@(3,descricao),' - ',@(1,embalagem))"
 												]
 											}
+										},
+										"produtoKits": {
+											"*": {
+												"idRetaguarda": "=concat(@(1,codigoDeBarraItemKit),'-',@(1,idRetaguardaProdutoKit))"
+											}
 										}
 									},
 									"ncm": {
@@ -252,6 +257,7 @@
 										},
 										"produtoKits": {
 											"*": {
+												"idRetaguarda": "items.[&4].produtoKits[&1].idRetaguarda",
 												"idRetaguardaProduto": "items.[&4].produtoKits[&1].idRetaguardaProduto",
 												"idRetaguardaProdutoKit": "items.[&4].produtoKits[&1].idRetaguardaProdutoKit",
 												"descricao": "items.[&4].produtoKits[&1].descricao",
