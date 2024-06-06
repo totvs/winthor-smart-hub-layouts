@@ -257,9 +257,8 @@
 										},
 										"produtoKits": {
 											"*": {
-												"idRetaguarda": "items.[&4].produtoKits[&1].idRetaguarda",
-												"idRetaguardaProduto": "items.[&4].produtoKits[&1].idRetaguardaProduto",
-												"idRetaguardaProdutoKit": "items.[&4].produtoKits[&1].idRetaguardaProdutoKit",
+												"idRetaguarda": ["items.[&4].produtoKits[&1].idRetaguarda", "items.[&4].produtoKits[&1].idRetaguardaProdutoKit"],																				
+												"@(3,produto.idRetaguarda)": "items.[&4].produtoKits[&1].idRetaguardaProduto",
 												"descricao": "items.[&4].produtoKits[&1].descricao",
 												"quantidadeVendaKit": "items.[&4].produtoKits[&1].quantidadeVendaKit",
 												"tipoValorKit": "items.[&4].produtoKits[&1].tipoValorKit",
