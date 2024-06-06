@@ -107,6 +107,7 @@
                             "items[]": {
                                 "*": {
                                     "administrador": 0,
+									"idRetaguardaPerfil": 2,
                                     "idInquilino": "{{ID_INQUILINO}}",
                                     "idProprietario": "{{MASTER_ID_PROPRIETARIO}}",
                                     "senhaCriptografada": "winthor"
