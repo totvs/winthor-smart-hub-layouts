@@ -101,7 +101,7 @@
 										  "*": {
 											"idRetaguarda": "=concat(@(1,codigoDeBarraItemKit),'-',@(1,idRetaguardaProdutoKit))",
 											"idRetaguardaProduto": "@(3,idRetaguarda)",
-											"idRetaguardaProdutoKit": "=toString(@(1,idRetaguardaProdutoKit))"
+											"idRetaguardaProdutoKit": "=concat(@(1,codigoDeBarraItemKit),'-',@(1,idRetaguardaProdutoKit))"
 										  }
 										}
 									},
