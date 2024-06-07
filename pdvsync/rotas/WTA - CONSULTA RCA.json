@@ -47,6 +47,18 @@
                                 {
                                     "key": "pageSize",
                                     "value": "{{PAGE_SIZE}}"
+                                },
+								{
+                                    "key": "DATEEND",
+                                    "value": "{{DATEEND}}"
+                                },
+								{
+                                    "key": "DATEINITIAL",
+                                    "value": "{{DATEINITIAL}}"
+                                },
+								{
+                                    "key": "DATECAD",
+                                    "value": "{{DATECAD}}"
                                 }
                             ],
                             "raw": "{{URL_BASE}}/winthor/varejo/matcon/v1/rca/consulta"
@@ -64,12 +76,12 @@
                         "spec": {
                             "items": {
                                 "*": {
-                                    "matricula_s": "=toString(@(1,codigousur))",
-                                    "idExterno": "=concat('pdvsync-usuario-rca-', @(1,matricula_s),'-', @(1,dtAlteracao), 'T00:00:00')",
-									"dtUltAlter": "=concat(@(1,dtAlteracao),'T00:00:00')",
-                                    "login_s": "=toString(@(1,codigousur))",
-                                    "senha_s": "=toString(@(1,codigousur))",
+                                    "dtUltAlter": "=concat(@(1,dtAlteracao),'T00:00:00')",
                                     "id_retarguada": "=concat('RCA-', @(1,matricula_s))",
+                                    "idExterno": "=concat('pdvsync-usuario-rca-', @(1,matricula_s),'-', @(1,dtAlteracao), 'T00:00:00')",
+                                    "login_s": "=toString(@(1,codigousur))",
+                                    "matricula_s": "=toString(@(1,codigousur))",
+                                    "senha_s": "=toString(@(1,codigousur))",
                                     "situacao_s": "=toInt(1)"
                                 }
                             }
@@ -80,21 +92,15 @@
                         "spec": {
                             "items": {
                                 "*": {
-                                    "codigoSupervisor": "items[&1].idInquilino",
+                                    "codigoSupervisor": "items[&1].codigoSupervisor",
                                     "cpfCnpj": "items[&1].cpf",
                                     "dtUltAlter": "items[&1].dtUltAlter",
                                     "id_retarguada": "items[&1].idRetaguarda",
                                     "idExterno": "idExterno",
                                     "login_s": "items[&1].login",
-                                    "matricula_s": [
-                                        "items[&1].matricula",
-                                        "items[&1].idProprietario"
-                                    ],
+                                    "matricula_s": "items[&1].matricula",
                                     "nome": "items[&1].nome",
-                                    "senha_s": [
-                                        "items[&1].senha",
-                                        "items[&1].senhaCriptografada"
-                                    ],
+                                    "senha_s": "items[&1].senha",
                                     "situacao_s": "items[&1].situacao"
                                 }
                             }
@@ -107,10 +113,11 @@
                             "items[]": {
                                 "*": {
                                     "administrador": 0,
-									"idRetaguardaPerfil": 2,
                                     "idInquilino": "{{ID_INQUILINO}}",
                                     "idProprietario": "{{MASTER_ID_PROPRIETARIO}}",
-                                    "senhaCriptografada": "winthor"
+                                    "idRetaguardaPerfil": 2,
+                                    "lote": "{{LOTE_ORIGEM}}",
+                                    "loteOrigem": "{{LOTE_ORIGEM}}"
                                 }
                             }
                         }
