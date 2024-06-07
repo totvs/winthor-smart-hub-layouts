@@ -49,12 +49,8 @@
                                     "value": "{{PAGE_SIZE}}"
                                 },
 								{
-                                    "key": "DATEEND",
-                                    "value": "{{DATEEND}}"
-                                },
-								{
-                                    "key": "DATEINITIAL",
-                                    "value": "{{DATEINITIAL}}"
+                                    "key": "LASTCHANGE",
+                                    "value": "{{LASTCHANGE}}"
                                 },
 								{
                                     "key": "DATECAD",
@@ -76,11 +72,11 @@
                         "spec": {
                             "items": {
                                 "*": {
-                                    "dtUltAlter": "=concat(@(1,dtAlteracao),'T00:00:00')",
+									"matricula_s": "=toString(@(1,codigousur))",
+									"dtUltAlter": "=toString(@(1,dtAlteracao))",
                                     "id_retarguada": "=concat('RCA-', @(1,matricula_s))",
-                                    "idExterno": "=concat('pdvsync-usuario-rca-', @(1,matricula_s),'-', @(1,dtAlteracao), 'T00:00:00')",
+									"idExterno": "=concat('pdvsync-usuario-rca-', @(1,matricula_s),'-', @(1,dtAlteracao))",
                                     "login_s": "=toString(@(1,codigousur))",
-                                    "matricula_s": "=toString(@(1,codigousur))",
                                     "senha_s": "=toString(@(1,codigousur))",
                                     "situacao_s": "=toInt(1)"
                                 }
