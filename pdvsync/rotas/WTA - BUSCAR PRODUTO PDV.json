@@ -98,9 +98,11 @@
 											}
 										},
 										"produtoKits": {
-											"*": {
-												"idRetaguarda": "=concat(@(1,codigoDeBarraItemKit),'-',@(1,idRetaguardaProdutoKit))"
-											}
+										  "*": {
+											"idRetaguarda": "=concat(@(1,codigoDeBarraItemKit),'-',@(1,idRetaguardaProdutoKit))",
+											"idRetaguardaProduto": "@(3,idRetaguarda)",
+											"idRetaguardaProdutoKit": "=toString(@(1,idRetaguardaProdutoKit))"
+										  }
 										}
 									},
 									"ncm": {
@@ -257,8 +259,9 @@
 										},
 										"produtoKits": {
 											"*": {
-												"idRetaguarda": ["items.[&4].produtoKits[&1].idRetaguarda", "items.[&4].produtoKits[&1].idRetaguardaProdutoKit"],																				
-												"@(3,produto.idRetaguarda)": "items.[&4].produtoKits[&1].idRetaguardaProduto",
+												"idRetaguarda": "items.[&4].produtoKits[&1].idRetaguarda",
+												"idRetaguardaProduto": "items.[&4].produtoKits[&1].idRetaguardaProduto",
+												"idRetaguardaProdutoKit": "items.[&4].produtoKits[&1].idRetaguardaProdutoKit",
 												"descricao": "items.[&4].produtoKits[&1].descricao",
 												"quantidadeVendaKit": "items.[&4].produtoKits[&1].quantidadeVendaKit",
 												"tipoValorKit": "items.[&4].produtoKits[&1].tipoValorKit",
