@@ -49,12 +49,8 @@
                                     "value": "{{PAGE_SIZE}}"
                                 },
 								{
-                                    "key": "LASTCHANGE",
+                                    "key": "lastChange",
                                     "value": "{{LASTCHANGE}}"
-                                },
-								{
-                                    "key": "DATECAD",
-                                    "value": "{{DATECAD}}"
                                 }
                             ],
                             "raw": "{{URL_BASE}}/winthor/varejo/matcon/v1/rca/consulta"
