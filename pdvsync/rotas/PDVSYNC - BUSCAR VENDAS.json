@@ -96,10 +96,10 @@
                                         }
                                     },
                                     "idExterno": "=concat('pdvsync-vendamensagem-',@(1,id),'-',@(1,dataAtualizacao))",
-									"idInterno":"=concat('', @(1,chaveAcesso))",
-							        "tipoIdInterno":"PDVSYNC-MONITOR-VENDA",
+                                    "idInterno": "=concat('', @(1,chaveAcesso))",
                                     "idPdv": "@(1,id)",
-                                    "numeroCupom": "@(1,conteudo.Coo)"
+                                    "numeroCupom": "@(1,conteudo.Coo)",
+                                    "tipoIdInterno": "PDVSYNC-MONITOR-VENDA"
                                 }
                             }
                         }
@@ -116,10 +116,6 @@
                                             "items.[&2].chaveNfce",
                                             "items.[&2].chaveNfe"
                                         ],
-						                "PreVenda": {
-							                "Id": "items.[&3].idPreVenda",
-							                "IdRetaguarda": "items.[&3].numeroPedidoRIVendaAssistida"
-						                },										
                                         "Cliente": {
                                             "Bairro": "items.[&3].consumidorFinal.bairroEnt",
                                             "Celular": "items.[&3].consumidorFinal.celEnt",
@@ -144,12 +140,29 @@
                                             "Telefone": "items.[&3].consumidorFinal.telEnt"
                                         },
                                         "Coo": "items.[&2].consumidorFinal.numCupom",
+                                        "EstadoConsumidor": "items.[&2].estadoConsumidor",
                                         "IdCaixa": "items.[&2].numFechamentoMovCx",
                                         "IdentificacaoFidelidade": [
                                             "items.[&2].numCartaoCrm",
                                             "items.[&2].cartaoCrm"
                                         ],
                                         "idPreVenda": "items.[&2].idPreVenda",
+                                        "Kit": {
+                                            "*": {
+                                                "Itens": {
+                                                    "*": {
+                                                        "@(2,Item)": "items.[&6].kit[&1].numSeqKit",
+                                                        "@(2,Produto.IdRetaguarda)": "items.[&6].kit[&1].codProdKit",
+                                                        "Produto": {
+                                                            "IdRetaguarda": "items.[&7].kit[&2].codProdItemKit"
+                                                        },
+                                                        "Quantidade": "items.[&6].kit[&1].quantidade",
+                                                        "Sequencial": "items.[&6].kit[&1].numSeqItemKit",
+                                                        "ValorLiquido": "items.[&6].kit[&1].valor"
+                                                    }
+                                                }
+                                            }
+                                        },
                                         "Loja": {
                                             "IdRetaguarda": {
                                                 "*": {
@@ -187,7 +200,10 @@
                                             },
                                             "NumeroSerie": "items.[&3].equipamento.numeroSerie"
                                         },
-                                        "EstadoConsumidor": "items.[&2].estadoConsumidor",
+                                        "PreVenda": {
+                                            "Id": "items.[&3].idPreVenda",
+                                            "IdRetaguarda": "items.[&3].numeroPedidoRIVendaAssistida"
+                                        },
                                         "SituacaoVenda": "items.[&2].tipoMovimento",
                                         "ValorBruto": "items.[&2].vlTabela",
                                         "ValorLiquido": [
@@ -196,20 +212,20 @@
                                         ],
                                         "VendaCustodiaXml": {
                                             "*": {
+                                                "CodigoRetorno": "items.[&4].documentoEletronico.xmls[&1].codigoRetorno",
+                                                "DataAutorizacao": "items.[&4].documentoEletronico.xmls[&1].dataAutorizacao",
                                                 "NumeroAutorizacao": "items.[&4].documentoEletronico.xmls[&1].numeroAutorizacao",
                                                 "TipoXml": "items.[&4].documentoEletronico.xmls[&1].tipo",
-                                                "Xml": "items.[&4].documentoEletronico.xmls[&1].xml",
-                                                "CodigoRetorno": "items.[&4].documentoEletronico.xmls[&1].codigoRetorno",
-                                                "DataAutorizacao": "items.[&4].documentoEletronico.xmls[&1].dataAutorizacao"
+                                                "Xml": "items.[&4].documentoEletronico.xmls[&1].xml"
                                             },
                                             "0": {
+                                                "CodigoRetorno": "items.[&4].documentoEletronico.xmls[&1].codigoRetorno",
                                                 "Contingencia": "items.[&4].contingenciaServidor",
+                                                "DataAutorizacao": "items.[&4].documentoEletronico.xmls[&1].dataAutorizacao",
                                                 "NumeroAutorizacao": "items.[&4].documentoEletronico.xmls[&1].numeroAutorizacao",
                                                 "SerieVenda": "items.[&4].numCaixaFiscal",
                                                 "TipoXml": "items.[&4].documentoEletronico.xmls[0].tipo",
-                                                "Xml": "items.[&4].documentoEletronico.xmls[0].xml",
-                                                "CodigoRetorno": "items.[&4].documentoEletronico.xmls[&1].codigoRetorno",
-                                                "DataAutorizacao": "items.[&4].documentoEletronico.xmls[&1].dataAutorizacao"
+                                                "Xml": "items.[&4].documentoEletronico.xmls[0].xml"
                                             }
                                         },
                                         "VendaData": [
@@ -267,22 +283,6 @@
                                                 }
                                             }
                                         },
-										"Kit": {
-											"*": {
-											  "Itens": {
-												"*": {
-												  "Produto": {
-													"IdRetaguarda": "kit[&2].codProdItemKit"
-												  },
-												  "Sequencial": "kit[&1].numSeqItemKit",
-												  "Quantidade": "kit[&1].quantidade",
-												  "ValorLiquido": "kit[&1].valor",
-												  "@(2,Item)": "kit[&1].numSeqKit",
-												  "@(2,Produto.IdRetaguarda)": "kit[&1].codProdKit"
-												}
-											  }
-											}
-										},
                                         "VendaPagamentos": {
                                             "*": {
                                                 "@(2,Ccf)": "items.[&4].pagamentos[&1].duplic",
@@ -340,18 +340,18 @@
                                         "idExterno",
                                         "items.[&1].idExterno"
                                     ],
-									"idInterno": [
+                                    "idInterno": [
                                         "idInterno",
                                         "items.[&1].idInterno"
                                     ],
-									"tipoIdInterno": [
-                                        "tipoIdInterno",
-                                        "items.[&1].tipoIdInterno"
-                                    ],									
                                     "idPdv": "items.[&1].idPdv",
                                     "numeroCupom": [
                                         "items.[&1].numCupom",
                                         "items.[&1].documentoEletronico.numCupom"
+                                    ],
+                                    "tipoIdInterno": [
+                                        "tipoIdInterno",
+                                        "items.[&1].tipoIdInterno"
                                     ]
                                 }
                             }
