@@ -74,6 +74,20 @@
                                             "@(1,IdPreVenda)",
                                             "@(1,PreVendaId)"
                                         ],
+                                        "Kit": {
+                                            "*": {
+                                                "Itens": {
+                                                    "*": {
+                                                        "idQuantidade": "@(1,Quantidade)",
+                                                        "idSequencial": "@(1,Sequencial)",
+                                                        "idValorLiquido": "@(1,ValorLiquido)",
+                                                        "Produto": {
+                                                            "IdRetaguarda": "@(1,IdRetaguarda)"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        },
                                         "VendaItems": {
                                             "*": {
                                                 "Vendedor": {
@@ -151,14 +165,14 @@
                                             "*": {
                                                 "Itens": {
                                                     "*": {
-                                                        "@(2,Item)": "items.[&6].kit[&1].numSeqKit",
-                                                        "@(2,Produto.IdRetaguarda)": "items.[&6].kit[&1].codProdKit",
+                                                        "@(2,Item)": "items.[&6].kit[&3].itens[&1].numSeqKit",
+                                                        "@(2,Produto.IdRetaguarda)": "items.[&6].kit[&3].itens[&1].codProdKit",
+                                                        "idQuantidade": "items.[&6].kit[&3].itens[&1].quantidade",
+                                                        "idSequencial": "items.[&6].kit[&3].itens[&1].numSeqItemKit",
+                                                        "idValorLiquido": "items.[&6].kit[&3].itens[&1].valor",
                                                         "Produto": {
-                                                            "IdRetaguarda": "items.[&7].kit[&2].codProdItemKit"
-                                                        },
-                                                        "Quantidade": "items.[&6].kit[&1].quantidade",
-                                                        "Sequencial": "items.[&6].kit[&1].numSeqItemKit",
-                                                        "ValorLiquido": "items.[&6].kit[&1].valor"
+                                                            "IdRetaguarda": "items.[&7].kit[&4].itens[&2].codProdItemKit"
+                                                        }
                                                     }
                                                 }
                                             }
