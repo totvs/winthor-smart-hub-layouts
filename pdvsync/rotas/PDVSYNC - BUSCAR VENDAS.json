@@ -166,7 +166,17 @@
                                                 "Itens": {
                                                     "*": {
                                                         "@(2,Item)": "items.[&6].kit[&3].itens[&1].numSeqKit",
-                                                        "@(2,Produto.IdRetaguarda)": "items.[&6].kit[&3].itens[&1].codProdKit",
+                                                        "@(2,Produto.CodigoProduto)": "items.[&6].kit[&3].itens[&1].produto[&1].CodigoProduto",
+                                                        "@(2,Produto.DataAtualizacao)": "items.[&6].kit[&3].itens[&1].produto[&1].DataAtualizacao",
+                                                        "@(2,Produto.DataCadastro)": "items.[&6].kit[&3].itens[&1].produto[&1].DataCadastro",
+                                                        "@(2,Produto.Descricao)": "items.[&6].kit[&3].itens[&1].produto[&1].Descricao",
+                                                        "@(2,Produto.Id)": "items.[&6].kit[&3].itens[&1].produto[&1].Id",
+                                                        "@(2,Produto.IdRetaguarda)": "items.[&6].kit[&3].itens[&1].produto[&1].codProdKit",
+                                                        "@(2,Produto.QuantidadeVendaKit)": "items.[&6].kit[&3].itens[&1].produto[&1].QuantidadeVendaKit",
+                                                        "@(2,Produto.Situacao)": "items.[&6].kit[&3].itens[&1].produto[&1].Situacao",
+                                                        "@(2,Produto.TipoValorKit)": "items.[&6].kit[&3].itens[&1].produto[&1].TipoValorKit",
+                                                        "@(2,Produto.ValorDesconto)": "items.[&6].kit[&3].itens[&1].produto[&1].ValorDesconto",
+                                                        "@(2,ValorLiquidoTotal)": "items.[&6].kit[&3].itens[&1].produto[&1].ValorLiquidoTotal",
                                                         "idQuantidade": "items.[&6].kit[&3].itens[&1].quantidade",
                                                         "idSequencial": "items.[&6].kit[&3].itens[&1].numSeqItemKit",
                                                         "idValorLiquido": "items.[&6].kit[&3].itens[&1].valor",
@@ -268,12 +278,14 @@
                                                 "AliquotaTributo": "items.[&4].produtos.[&1].percIcm",
                                                 "DataCadastro": "items.[&4].produtos.[&1].data",
                                                 "IdProdutoEmbalagemRetaguarda": "items.[&4].produtos.[&1].codAuxiliar",
+                                                "IdProdutoKit": "items.[&4].produtos[&1].IdProdutoKit",
                                                 "Produto": {
                                                     "Descricao": "items.[&5].produtos.[&2].descricaopaf",
                                                     "IdRetaguarda": "items.[&5].produtos.[&2].codProd"
                                                 },
                                                 "Qtde": "items.[&4].produtos.[&1].qt",
                                                 "Sequencia": "items.[&4].produtos.[&1].numSeq",
+                                                "SequenciaKit": "items.[&4].produtos[&1].SequenciaKit",
                                                 "ValorLiquido": "items.[&4].produtos.[&1].vlSubTotItem",
                                                 "ValorUnitario": [
                                                     "items.[&4].produtos.[&1].pVenda",
