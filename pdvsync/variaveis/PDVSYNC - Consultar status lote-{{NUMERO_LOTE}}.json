@@ -28,7 +28,7 @@
 			},
 			{
 				"nome": "VALOR",
-				"valor": ":PCINTEGRACAOCORE.DADOSTRANSFORMADOS"
+				"valor": ":PCINTEGRACAOCORE.DADOSTRANSFORMADOS->numeroLote"
 			},
 			{
 				"nome": "CODEMPALTER",
