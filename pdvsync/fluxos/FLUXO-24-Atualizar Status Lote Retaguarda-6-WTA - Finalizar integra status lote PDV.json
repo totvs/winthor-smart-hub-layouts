@@ -1,7 +1,11 @@
 {
 	"tabela": {
 		"nome": "PCINTEGRACAOFLUXOEXECUCAO",
-		"campos": [ {"nome" : "ID", "valor": ""},
+		"campos": [
+			{
+				"nome": "ID",
+				"valor": ""
+			},
 			{
 				"nome": "DTULTALTER",
 				"valor": ""
@@ -12,7 +16,8 @@
 			},
 			{
 				"nome": "ORDEMEXECUCAO",
-				"valor": "5"
+				"valor": "6",
+				"valorAnterior": "5"
 			},
 			{
 				"nome": "IDROTASERVICO",
