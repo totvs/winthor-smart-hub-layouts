@@ -46,7 +46,7 @@
 				"nome": "LAYOUTTRANSFORMACAO",
 				"valor": [
 					{
-						"operation": "br.com.totvs.integracao.winthosmarthube.infra.jolt.custom.JoltModifyCustomOperation",
+						"operation": "custom-totvs",
 						"spec": {
 							"data": {
 								"*": {
