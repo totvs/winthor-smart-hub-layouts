@@ -1,0 +1,52 @@
+#name: Validate JSON
+
+#on:
+#  push:
+#    branches:
+#      - main  # Ou a branch que deseja monitorar
+
+#jobs:
+#   validate-json:
+#    runs-on: ubuntu-latest
+
+#    steps:
+#     - name: Checkout code
+#        uses: actions/checkout@v2
+
+#      - name: Validate JSON
+#        run: |
+#          if jq -e .field_to_check $GITHUB_WORKSPACE/path/to/your/json.json > /dev/null; then
+#            echo "Field 'field_to_check' exists."
+#           else
+#             echo "Field 'field_to_check' does not exist."
+#             exit 1
+#           fi
+# 
+
+
+name: Validate JSON
+
+on: [push, pull_request]
+
+jobs:
+  validate-json:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+
+    - name: Install jq
+      run: sudo apt-get install jq
+
+    - name: Validate JSON files
+      run: |
+        for file in $(find . -type f -name '*.json'); do
+          echo "Validating $file"
+          jq empty $file
+        done
