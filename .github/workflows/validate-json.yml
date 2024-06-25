@@ -23,7 +23,6 @@
 #           fi
 # 
 
-
 name: Validate JSON
 
 on: [push, pull_request]
@@ -42,9 +41,12 @@ jobs:
         node-version: '14'
 
     - name: Install jq
-      run: sudo apt-get install jq
+      run: sudo apt-get install jq -y
 
     - name: Validate JSON files
       run: |
         # Encontra todos os arquivos JSON e os valida
-        find . -type f -name '*.json' -exec sh -c 'jq empty {} || exit 1' \;
+        for file in $(find . -type f -name '*.json'); do
+          echo "Validating $file"
+          jq empty "$file" || { echo "Invalid JSON: $file"; exit 1; }
+        done
