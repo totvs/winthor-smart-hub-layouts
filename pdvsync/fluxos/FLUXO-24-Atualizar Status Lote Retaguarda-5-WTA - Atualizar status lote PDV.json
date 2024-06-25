@@ -12,15 +12,16 @@
 			},
 			{
 				"nome": "ORDEMEXECUCAO",
-				"valor": "3"
+				"valor": "5",				
+				"valorAnterior": "4"
 			},
 			{
 				"nome": "IDROTASERVICO",
-				"valor": "PDVSYNC - Consultar status lote"
+				"valor": "WTA - Atualizar status lote PDV"
 			},
 			{
 				"nome": "IDINTEGRACAOCLASSEMETODO",
-				"valor": "BuscaRotaServicoNaoPaginada"
+				"valor": "EnvioIntegracaoStatusRecebido"
 			},
 			{
 				"nome": "ATIVO",
@@ -28,7 +29,7 @@
 			},
 			{
 				"nome": "IDDEPENDENTE",
-				"valor": "WTA - Buscar lote PDV"
+				"valor": "PDVSYNC - Consultar status lote"
 			},
 			{
 				"nome": "DESCRICAO",

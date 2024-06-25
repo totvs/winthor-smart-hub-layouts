@@ -56,31 +56,11 @@
 				"nome": "LAYOUTTRANSFORMACAO",
 				"valor": [
 					{
-						"operation": "shift",
-						"spec": {
-							"items": "items"
-						}
-					},
-					{
-						"operation": "shift",
-						"spec": {
-							"items": {
-								"*": {
-									"numeroLote": [
-										"items[&1].loteOrigem",
-										"items[&1].idExterno"
-									],
-									"dataConsulta": "items[&1].dataConsulta"
-								}
-							}
-						}
-					},
-					{
 						"operation": "modify-overwrite-beta",
 						"spec": {
 							"items": {
 								"*": {
-									"idExterno": "=concat('pdvsync-get-status-lote-', @(1,idExterno),'-data-', @(1,dataConsulta))"
+									"idExterno": "=concat('pdvsync-get-status-lote-', @(1,numeroLote))"
 								}
 							}
 						}
@@ -90,7 +70,7 @@
 						"spec": {
 							"items": {
 								"*": {
-									"loteOrigem": "items[&1]",
+									"numeroLote": "items[&1].numeroLote",
 									"idExterno": "idExterno"
 								}
 							}
