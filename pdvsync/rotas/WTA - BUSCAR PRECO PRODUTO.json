@@ -93,7 +93,12 @@
 									"idRetaguarda357": "=concat(@(1,skuId),'-357-',@(1,fixedPriceId))",
 									"discount": "=toString(@(1,discountPolicy.discount))",
 									"discountConverter_": "=split('\\.', @(1,discount))",
-									"discountConverter": "=join(',', @(1,discountConverter_))"
+									"discountConverter": "=join(',', @(1,discountConverter_))",
+									"idInterno357": "=concat(@(1,skuId),'-357-',@(1,fixedPriceId))",
+									"idInternoSku": "=concat('', @(1,skuId))",
+									"idInternoDesconto": "=concat(@(1,skuId),'-561-',@(1,discountPolicy.id))",
+							        "tipoIdInterno":"PDVSYNC-PRECO-PRODUTO"
+									
 								}
 							}
 						}
@@ -106,19 +111,15 @@
 									"origin": {
 										"357": {
 											"@(2,idExternoPreco357)": "items[&3].[0].idExterno",
-											"#PDVSYNC-PRECO-PRODUTO": "items[&3].[0].tipoIdInterno",
-											"@(2,idRetaguarda357)": [
-												"items[&3].[0].idRetaguarda",
-												"items[&3].[0].idInterno"
-											]
+											"@(2,idInterno357)": "items[&3].[0].idInterno",
+							                "@(2,tipoIdInterno)":"items[&3].[0].tipoIdInterno",
+											"@(2,idRetaguarda357)": "items[&3].[0].idRetaguarda"											
 										},
 										"*": {
 											"@(2,idExternoPreco)": "items[&3].[0].idExterno",
-											"#PDVSYNC-PRECO-PRODUTO": "items[&3].[0].tipoIdInterno",
-											"@(2,skuId)": [
-												"items[&3].[0].idRetaguarda",
-												"items[&3].[0].idInterno"
-											]
+											"@(2,idInternoSku)": "items[&3].[0].idInterno",
+											"@(2,tipoIdInterno)":"items[&3].[0].tipoIdInterno",
+											"@(2,skuId)": "items[&3].[0].idRetaguarda"											
 										}
 									},
 									"erpReferenceKey": [
@@ -159,6 +160,8 @@
 										"@(1,erpReferenceKey)": [
 											"items[&2].[1].codigoProduto"
 										],
+										"@(1,idInternoDesconto)": "items[&2].[1].idInterno",
+							            "@(1,tipoIdInterno)":"items[&2].[1].tipoIdInterno",
 										"@(1,quantity)": "items[&2].[1].saldo",
 										"@(1,skuID_)": "items[&2].[1].codigoProduto",
 										"@(1,principalSKUId)": "items[&2].[1].idRetaguardaProduto",
@@ -195,7 +198,9 @@
 								"*": {
 									"*": {
 										"@": "items",
-										"idExterno": "idExterno[]"
+										"idExterno": "idExterno[]",
+										"idInterno": "idInterno[]",
+							            "tipoIdInterno":"tipoIdInterno[]"
 									}
 								}
 							}
