@@ -39,8 +39,17 @@
 							}
 						],
 						"url": {
-							"raw": "{{BASE_URL_STATUS_LOTE}}/{{ID_INQUILINO}}/{{NUMERO_LOTE}}",
-							"query": []
+							"raw": "{{BASE_URL_STATUS_LOTE}}",
+							"query": [
+								{
+									"key": "inquilino",
+									"value": "{{ID_INQUILINO}}"
+								},
+								{
+									"key": "loteOrigem",
+									"value": "{{NUMERO_LOTE}}"
+								}
+							]
 						}
 					},
 					"response": []
@@ -49,96 +58,80 @@
 			{
 				"nome": "LAYOUTTRANSFORMACAO",
 				"valor": [
-					{
-						"operation": "shift",
-						"spec": {
-							"data": {
-								"*": {
-									"loteOrigem": [
-										"items[&1].numeroLote",
-										"items[&1].idExterno"
-									],
-									"status": {
-										"2": {
-											"#11": "items[&3].status"
-										},
-										"2.0": {
-											"#11": "items[&3].status"
-										},
-										"4": {
-											"#11": "items[&3].status"
-										},
-										"4.0": {
-											"#11": "items[&3].status"
-										},
-										"5": {
-											"#12": "items[&3].status"
-										},
-										"5.0": {
-											"#12": "items[&3].status"
-										},
-										"6": {
-											"#13": "items[&3].status"
-										},
-										"6.0": {
-											"#13": "items[&3].status"
-										},
-										"*": {
-											"#99": "items[&3].origem"
-										}
-									},
-									"errosIdentificados": {
-										"*": {
-											"idRetaguarda": "items[&3].erros[&1].idInterno",
-											"erro": "items[&3].erros[&1].erro"
-										}
-									}
-								}
+				  {
+					"operation": "shift",
+					"spec": {
+					  "data": {
+						"loteOrigem": ["items[0].numeroLote", "items[0].idExterno"],
+						"lojaLotes": {
+						  "*": {
+							"status": {
+							  "2": { "#11": "items[0].filiais[&3].status" },
+							  "2.0": { "#11": "items[0].filiais[&3].status" },
+							  "4": { "#11": "items[0].filiais[&3].status" },
+							  "4.0": { "#11": "items[0].filiais[&3].status" },
+							  "5": { "#12": "items[0].filiais[&3].status" },
+							  "5.0": { "#12": "items[0].filiais[&3].status" },
+							  "6": { "#13": "items[0].filiais[&3].status" },
+							  "6.0": { "#13": "items[0].filiais[&3].status" },
+							  "*": {
+								"#99": "items[0].filiais[&3].status"
+							  }
+							},
+							"idRetaguardaLoja": "items[0].filiais[&1].codigoFilial",
+							"errosIdentificados": {
+							  "*": {
+								"idRetaguarda": "items[0].filiais[&3].erros[&1].idInterno",
+								"erro": "items[0].filiais[&3].erros[&1].erro"
+							  }
 							}
+						  }
 						}
-					},
-					{
-						"operation": "modify-overwrite-beta",
-						"spec": {
-							"items": {
-								"*": {
-									"idExterno": "=concat('pdvsync-post-status-', @(1,status),'-lote-', @(1,idExterno))"
-								}
-							}
-						}
-					},
-					{
-						"operation": "shift",
-						"spec": {
-							"items": {
-								"*": {
-									"numeroLote": "items[&1].numeroLote",
-									"idExterno": "idExterno",
-									"status": "items[&1].status",
-									"erros": "items[&1].erros"
-								}
-							}
-						}
-					},
-					{
-						"operation": "modify-overwrite-beta",
-						"spec": {
-							"items": {
-								"*": {
-									"status": [
-										"=toInteger",
-										11
-									]
-								}
-							}
-						}
-					},
-					{
-						"operation": "default",
-						"spec": {
-							"_attr_access": "items"
-						}
+					  }
 					}
+				  },
+				  {
+					"operation": "modify-overwrite-beta",
+					"spec": {
+					  "items": {
+						"*": {
+						  "idExterno": "=concat('pdvsync-post-status-lote-', @(1,idExterno))"
+						}
+					  }
+					}
+				  },
+				  {
+					"operation": "shift",
+					"spec": {
+					  "items": {
+						"*": {
+						  "numeroLote": "items[&1].numeroLote",
+						  "idExterno": "idExterno",
+						  "filiais": "items[&1].filiais"
+						}
+					  }
+					}
+				  },
+				  {
+					"operation": "modify-overwrite-beta",
+					"spec": {
+					  "items": {
+						"*": {
+						  "filiais": {
+							"*": {
+							  "status": ["=toInteger", 0]
+							}
+						  }
+						}
+					  }
+					}
+				  },
+				  {
+					"operation": "default",
+					"spec": {
+					  "_attr_access": "items"
+					}
+				  }
 				]
 			},
 			{
