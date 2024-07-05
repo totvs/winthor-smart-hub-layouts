@@ -58,81 +58,101 @@
 			{
 				"nome": "LAYOUTTRANSFORMACAO",
 				"valor": [
-				  {
-					"operation": "shift",
-					"spec": {
-					  "data": {
-						"loteOrigem": ["items[0].numeroLote", "items[0].idExterno"],
-						"lojaLotes": {
-						  "*": {
-							"status": {
-							  "2": { "#11": "items[0].filiais[&3].status" },
-							  "2.0": { "#11": "items[0].filiais[&3].status" },
-							  "4": { "#11": "items[0].filiais[&3].status" },
-							  "4.0": { "#11": "items[0].filiais[&3].status" },
-							  "5": { "#12": "items[0].filiais[&3].status" },
-							  "5.0": { "#12": "items[0].filiais[&3].status" },
-							  "6": { "#13": "items[0].filiais[&3].status" },
-							  "6.0": { "#13": "items[0].filiais[&3].status" },
+					  {
+						"operation": "shift",
+						"spec": {
+						  "data": {
+							"loteOrigem": ["data.numeroLote", "data.idExterno"],
+							"lojaLotes": {
 							  "*": {
-								"#99": "items[0].filiais[&3].status"
-							  }
-							},
-							"idRetaguardaLoja": "items[0].filiais[&1].codigoFilial",
-							"errosIdentificados": {
-							  "*": {
-								"idRetaguarda": "items[0].filiais[&3].erros[&1].idInterno",
-								"erro": "items[0].filiais[&3].erros[&1].erro"
+								"status": {
+								  "2": { "#11": "data.lojaLotes[&3].status" },
+								  "2.0": { "#11": "data.lojaLotes[&3].status" },
+								  "4": { "#11": "data.lojaLotes[&3].status" },
+								  "4.0": { "#11": "data.lojaLotes[&3].status" },
+								  "5": { "#12": "data.lojaLotes[&3].status" },
+								  "5.0": { "#12": "data.lojaLotes[&3].status" },
+								  "6": { "#13": "data.lojaLotes[&3].status" },
+								  "6.0": { "#13": "data.lojaLotes[&3].status" },
+								  "*": {
+									"#99": "data.lojaLotes[&3].status"
+								  }
+								},
+								"idRetaguardaLoja": "data.lojaLotes[&1].codigoFilial",
+								"errosIdentificados": {
+								  "*": {
+									"idRetaguarda": "data.lojaLotes[&3].errosIdentificados[&1].idInterno",
+									"erro": "data.lojaLotes[&3].errosIdentificados[&1].erro"
+								  }
+								}
 							  }
 							}
 						  }
 						}
-					  }
-					}
-				  },
-				  {
-					"operation": "modify-overwrite-beta",
-					"spec": {
-					  "items": {
-						"*": {
-						  "idExterno": "=concat('pdvsync-post-status-lote-', @(1,idExterno))"
+					  },
+					  {
+						"operation": "shift",
+						"spec": {
+						  "data": {
+							"numeroLote": "data.numeroLote",
+							"idExterno": "data.idExterno",
+							"lojaLotes": {
+							  "*": {
+								"status": ["data.filiais[&1].status", "data.status"],
+								"codigoFilial": "data.filiais[&1].codigoFilial",
+								"errosIdentificados": "data.filiais[&1].erros"
+							  }
+							}
+						  }
 						}
-					  }
-					}
-				  },
-				  {
-					"operation": "shift",
-					"spec": {
-					  "items": {
-						"*": {
-						  "numeroLote": "items[&1].numeroLote",
-						  "idExterno": "idExterno",
-						  "filiais": "items[&1].filiais"
+					  },
+					  {
+						"operation": "modify-overwrite-beta",
+						"spec": {
+						  "data": {
+							"menorStatus": "=min(@(1,status))"
+						  }
 						}
-					  }
-					}
-				  },
-				  {
-					"operation": "modify-overwrite-beta",
-					"spec": {
-					  "items": {
-						"*": {
-						  "filiais": {
+					  },
+					  {
+						"operation": "modify-overwrite-beta",
+						"spec": {
+						  "data": {
+							"idExterno": "=concat('pdvsync-post-status-', @(1,menorStatus),'-lote-loja-', @(1,idExterno))"
+						  }
+						}
+					  },
+					  {
+						"operation": "shift",
+						"spec": {
+						  "data": {
+							"numeroLote": "items[0].numeroLote",
+							"idExterno": "idExterno",
+							"filiais": "items[0].filiais"
+						  }
+						}
+					  },
+					  {
+						"operation": "modify-overwrite-beta",
+						"spec": {
+						  "items": {
 							"*": {
-							  "status": ["=toInteger", 0]
+							  "filiais": {
+								"*": {
+								  "status": ["=toInteger", 0]
+								}
+							  }
 							}
 						  }
 						}
+					  },
+					  {
+						"operation": "default",
+						"spec": {
+						  "_attr_access": "items"
+						}
 					  }
-					}
-				  },
-				  {
-					"operation": "default",
-					"spec": {
-					  "_attr_access": "items"
-					}
-				  }
-				]
+					]
 			},
 			{
 				"nome": "ATIVO",
