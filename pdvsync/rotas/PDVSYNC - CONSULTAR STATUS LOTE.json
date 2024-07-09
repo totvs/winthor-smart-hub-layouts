@@ -59,6 +59,28 @@
 				"nome": "LAYOUTTRANSFORMACAO",
 				"valor": [
 					  {
+						"operation": "default",
+						"spec": {
+						  "data": {
+							"temp": {
+							  "status": 99,
+							  "errosIdentificados": []
+							}
+						  }
+						}
+						},
+					  {
+						"operation": "shift",
+						"spec": {
+						  "data": {
+							"lote": "data.lote",
+							"loteOrigem": "data.loteOrigem",
+							"lojaLotes": "data.lojaLotes",
+							"temp": "data.lojaLotes[]"
+						  }
+						}
+					  },				
+					  {
 						"operation": "shift",
 						"spec": {
 						  "data": {
