@@ -39,7 +39,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{BASE_URL_STATUS_LOTE}}/{{ID_INQUILINO}}/{{LOTE_ORIGEM}}",
+							"raw": "{{BASE_URL_STATUS_LOTE}}/{{ID_INQUILINO}}/{{NUMERO_LOTE}}",
 							"query": []
 						}
 					},
