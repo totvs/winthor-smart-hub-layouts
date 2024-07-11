@@ -60,7 +60,7 @@
 						"spec": {
 							"items": {
 								"*": {
-									"idExterno": "=concat('pdvsync-get-status-lote-', @(1,numeroLote))"
+									"idExterno": "=concat('wta-get-status-lote-', @(1,numeroLote))"
 								}
 							}
 						}
@@ -99,6 +99,10 @@
 			{
 				"nome": "REFRESHTOKEN",
 				"valor": "N"
+			},
+			{
+				"nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+				"valor": "S"
 			}
 		]
 	}
