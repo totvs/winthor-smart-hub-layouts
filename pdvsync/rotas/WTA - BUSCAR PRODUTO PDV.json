@@ -195,14 +195,7 @@
 										"codigo": "items.[&2].codigoProduto",
 										"codfilial": "items.[&2].idProprietario",
 										"codigoDeBarra": "items.[&2].codigoAlternativo",
-										"origemProd": {
-											"Nacional": {
-												"#0": "items.[&4].origemProduto"
-											},
-											"*": {
-												"#1": "items.[&4].origemProduto"
-											}
-										},
+										"origemProd": "items.[&2].origemProduto",
 										"tipoMercadoria": {
 											"PRODUTO_ACABADO": {
 												"#5": "items.[&4].tipoProduto"
