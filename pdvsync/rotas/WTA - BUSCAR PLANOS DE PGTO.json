@@ -56,108 +56,72 @@
 				}
 			},
 			{
-				"nome": "LAYOUTTRANSFORMACAO",
-				"valor": [
-					{
-						"operation": "modify-overwrite-beta",
-						"spec": {
-							"items": {
-								"*": {
-									"idExterno": "=concat('pdvsync-plano-pgmt-', @(1,codigo),'-',@(1,codigoFilial),'-',@(1,dataUltimaAtualizacao))",
-									"idInterno":"=concat('', @(1,codigo))",
-							        "tipoIdInterno":"PDVSYNC-PLANO-PAGAMENTO"
-								}
-							}
+			"nome": "LAYOUTTRANSFORMACAO",
+			"valor": [
+				  {
+					"operation": "modify-overwrite-beta",
+					"spec": {
+					  "items": {
+						"*": {
+						  "idExterno": "=concat('pdvsync-plano-pgmt-', @(1,codigo),'-',@(1,codigoFilial),'-',@(1,dataUltimaAtualizacao))",
+						  "idInterno": "=concat('', @(1,codigo))",
+						  "tipoIdInterno": "PDVSYNC-PLANO-PAGAMENTO",
+						  "codigoFilial": "=concat('', @(1,codigoFilial))",
+						  "codigo": "=toInteger(=concat('', @(1,codigo)))",
+						  "idInquilino": "{{ID_INQUILINO}}",
+						  "situacao": 1,
+						  "loteOrigem": "{{LOTE_ORIGEM}}",
+						  "diasEntreParcelas": 30,
+						  "percentualMinimoEntrada": 100,
+						  "solicitaDataDemaisParcelas": 0,
+						  "solicitaDataPrimeiraParcela": 0,
+						  "tipoDadoComplementar": 0,
+						  "dadoComplementarDescricao": "",
+						  "idProprietarioDesc": "{{{MASTER_ID_PROPRIETARIO}}",
+						  "numeroMaximoParcelas": "=size(@(1,prazos))"
 						}
-					},
-					{
-						"operation": "shift",
-						"spec": {
-							"items": {
-								"*": {
-									"idExterno": "items.[&1].idExterno",
-									"idInterno": "items.[&1].idInterno",
-							        "tipoIdInterno":"items.[&1].tipoIdInterno",
-									"descricao": "items.[&1].descricao",
-									"numeroParcelas": "items.[&1].numeroParcelas",
-									"codigo": "items.[&1].codigo",
-									"codigoFilial": "items.[&1].codigoFilial",
-									"prazoMedio": "items.[&1].prazoMedio",
-									"prazos": {
-										"*": {
-											"0": "prazos_ignorados[]",
-											"*": {
-												"@1": "items.[&4].prazos[]"
-											}
-										}
-									}
-								}
-							}
-						}
-					},
-					{
-						"operation": "modify-overwrite-beta",
-						"spec": {
-							"items": {
-								"*": {
-									"numeroMaximoParcelas": "=size(@(1,prazos))"
-								}
-							}
-						}
-					},
-					{
-						"operation": "shift",
-						"spec": {
-							"items": {
-								"*": {
-									"idExterno": "idExterno[]",
-									"idInterno": "idInterno[]",
-							        "tipoIdInterno":"tipoIdInterno[]",
-									"descricao": "items.[&1].[0].descricao",
-									"numeroParcelas": {
-										"0": {
-											"@(2,numeroMaximoParcelas)": "items.[&3].[0].numeroMaximoParcelas"
-										},
-										"*": {
-											"@1": "items.[&3].[0].numeroMaximoParcelas"
-										}
-									},
-									"codigo": "items.[&1].[0].idRetaguarda",									
-									"codigoFilial": {
-										"99": {
-											"#{{MASTER_ID_PROPRIETARIO}}": "items.[&3].[0].idProprietario"
-										},
-										"*": {
-											"@1": "items.[&3].[0].idProprietario"
-										}
-									},
-									"prazoMedio": "items.[&3].[0].diasEntreParcelas"
-								}
-							}
-						}
-					},
-					{
-						"operation": "default",
-						"spec": {
-							"_attr_access": "items",
-							"items[]": {
-								"*[]": {
-									"*": {
-										"idInquilino": "{{ID_INQUILINO}}",
-										"loteOrigem": "{{LOTE_ORIGEM}}",
-										"situacao": 1,
-										"diasEntreParcelas": 30,
-										"percentualMinimoEntrada": 100,
-										"solicitaDataDemaisParcelas": 0,
-										"solicitaDataPrimeiraParcela": 0,
-										"tipoDadoComplementar": 0,
-										"dadoComplementarDescricao": ""
-									}
-								}
-							}
-						}
+					  }
 					}
-				]
+				  },
+				  {
+					"operation": "shift",
+					"spec": {
+					  "items": {
+						"*": {
+						  "idExterno": "idExterno[]",
+						  "idInterno": "idInterno[]",
+						  "tipoIdInterno": "tipoIdInterno[]",
+						  "descricao": "items.[&1].descricao",
+						  "numeroMaximoParcelas": "items.[&1].numeroMaximoParcelas",
+						  "codigo": "items.[&1].idRetaguarda",
+						  "codigoFilial": {
+							"99": {
+							  "#{{MASTER_ID_PROPRIETARIO}}": "items[&3].idProprietario"
+							},
+							"*": {
+							  "@1": "items[&3].idProprietario"
+							}
+						  },
+						  "idInquilino": "items.[&1].idInquilino",
+						  "diasEntreParcelas": "items.[&1].diasEntreParcelas",
+						  "solicitaDataPrimeiraParcela": "items.[&1].solicitaDataPrimeiraParcela",
+						  "solicitaDataDemaisParcelas": "items.[&1].solicitaDataDemaisParcelas",
+						  "percentualMinimoEntrada": "items.[&1].percentualMinimoEntrada",
+						  "dadoComplementarDescricao": "items.[&1].dadoComplementarDescricao",
+						  "loteOrigem": "items.[&1].loteOrigem",
+						  "situacao": "items.[&1].situacao",
+						  "tipoDadoComplementar": "items.[&1].tipoDadoComplementar"
+						}
+					  }
+					}
+				  },
+				  {
+					"operation": "default",
+					"spec": {
+					  "_attr_access": "items"
+					}
+				  }
+			  ]
 			},
 			{
 				"nome": "ATIVO",
