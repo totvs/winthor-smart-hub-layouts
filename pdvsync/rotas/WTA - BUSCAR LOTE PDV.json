@@ -38,6 +38,10 @@
 							"raw": "{{URL_BASE}}/winthor/integracao/fulfillment/v1/lote",
 							"query": [
 								{
+									"key": "dataInicial",
+									"value": "{{DATA_INICIAL}}"
+								},
+								{
 									"key": "pageSize",
 									"value": "{{PAGE_SIZE}}"
 								},
