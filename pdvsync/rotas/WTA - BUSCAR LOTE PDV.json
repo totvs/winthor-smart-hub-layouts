@@ -107,6 +107,10 @@
 			{
 				"nome": "SOMENTEATUALIZARINTEGRACAOCORE",
 				"valor": "S"
+			},
+			{
+				"nome": "TIPOPROCESSO",
+				"valor": "BUSCAR"
 			}
 		]
 	}

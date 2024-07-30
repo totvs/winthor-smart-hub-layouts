@@ -165,6 +165,10 @@
 			{
 				"nome": "REFRESHTOKEN",
 				"valor": ""
+			},
+			{
+				"nome": "TIPOPROCESSO",
+				"valor": "BUSCAR"
 			}
 		]
 	}

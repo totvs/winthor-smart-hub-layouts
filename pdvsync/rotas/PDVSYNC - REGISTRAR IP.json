@@ -66,6 +66,10 @@
 			{
 				"nome": "REFRESHTOKEN",
 				"valor": "N"
+			},
+			{
+				"nome": "TIPOPROCESSO",
+				"valor": "ENVIAR"
 			}
 		]
 	}
