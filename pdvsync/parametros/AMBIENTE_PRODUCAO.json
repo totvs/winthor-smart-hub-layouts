@@ -58,7 +58,7 @@
 		},
 		{
 			"nome": "{{URL_RAC_PDVSYNC}}",
-			"valor": "https://pdvsyncwinthor.rac.dev.totvs.app/totvs.rac/connect/token",
+			"valor": "https://pdvsyncwinthor.rac.totvs.app/totvs.rac/connect/token",
 			"descricao": "RAC - LoginPDVSync",
 			"rota": "PDVSYNC - RAC LoginPDVSync"
 		},
