@@ -3,16 +3,16 @@
 		"nome": "PCINTEGRACAOVARIAVEIS",
 		"campos": [
 			{
-				"nome": "DTULTALTER",
+				"nome": "PAGE_SIZE",
 				"valor": ""
 			},
 			{
 				"nome": "ID",
-				"valor": "WTA - Consulta RCA-{{DATECAD}}"
+				"valor": "WTA - Consulta RCA-{{PAGE_SIZE}}"
 			},
 			{
 				"nome": "CHAVE",
-				"valor": "{{DATECAD}}"
+				"valor": "{{PAGE_SIZE}}"
 			},
 			{
 				"nome": "TIPOCHAVE",
@@ -28,7 +28,7 @@
 			},
 			{
 				"nome": "VALOR",
-				"valor": "2004-06-08 00:00:00.000"
+				"valor": "100"
 			},
 			{
 				"nome": "CODEMPALTER",
