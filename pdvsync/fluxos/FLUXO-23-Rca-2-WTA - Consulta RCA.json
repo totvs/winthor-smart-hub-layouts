@@ -20,7 +20,7 @@
 			},
 			{
 				"nome": "IDINTEGRACAOCLASSEMETODO",
-				"valor": "BuscaRotaServicoNaoPaginada"
+				"valor": "BuscaRotaServicoPaginada"
 			},
 			{
 				"nome": "ATIVO",
