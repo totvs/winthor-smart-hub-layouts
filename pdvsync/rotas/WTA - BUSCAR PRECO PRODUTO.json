@@ -1,0 +1,267 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOROTASERVICO",
+		"campos": [
+			{
+				"nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+				"valor": "N"
+			},
+			{
+				"nome": "ID",
+				"valor": "WTA - Buscar Preco Produto"
+			},
+			{
+				"nome": "IDEMPRESAAPI",
+				"valor": "WINTHOR-WTA"
+			},
+			{
+				"nome": "SERVICO",
+				"valor": "WTA - Buscar Preco Produto"
+			},
+			{
+				"nome": "LAYOUTCOMUNICACAO",
+				"valor": {
+					"name": "WTA - Buscar Preco Produto",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{URL_BASE}}/api/wholesale/v1/price/discount-policy",
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "{{PAGE_SIZE}}"
+								},
+								{
+									"key": "page",
+									"value": "{{PAGE}}"
+								},
+								{
+									"key": "branchId",
+									"value": "{{FILIAL}}"
+								},
+								{
+									"key": "lastChange",
+									"value": "{{LAST_CHANGE}}"
+								},
+								{
+									"key": "callOrigin",
+									"value": "WSH"
+								},
+								{
+									"key": "resale",
+									"value": "{{REVENDA}}"
+								},
+								{
+									"key": "typeOfMerchandise",
+									"value": "{{TIPOMERCADORIA}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			},
+			{
+				"nome": "LAYOUTTRANSFORMACAO",
+				"valor": [
+					{
+						"operation": "modify-overwrite-beta",
+						"spec": {
+							"items": {
+								"*": {
+									"idExternoPreco": "=concat('pdvsync-preco-', @(1,skuId),'-',@(1,branchId),'-', @(1,lastChange))",
+									"idExternoPreco357": "=concat('pdvsync-preco-357-', @(1,fixedPriceId),'-', @(1,skuId),'-',@(1,branchId),'-', @(1,lastChange))",
+									"idExternoDesconto": "=concat('pdvsync-preco-desconto-', @(1,skuId),'-',@(1,branchId),'-', @(1,lastChange))",
+									"situacao": 0,
+									"skuId__": "=split('-', @(1,productId))",
+									"skuID_": "=lastElement(@(1,skuId__))",
+									"price": "=toString",
+									"priceConverter_": "=split('\\.', @(1,price))",
+									"priceConverter": "=join(',', @(1,priceConverter_))",
+									"erpReferenceKey": "=toString",
+									"idRetaguardaDesconto": "=concat(@(1,skuId),'-561-',@(1,discountPolicy.id))",
+									"idRetaguarda357": "=concat(@(1,skuId),'-357-',@(1,fixedPriceId))",
+									"discount": "=toString(@(1,discountPolicy.discount))",
+									"discountConverter_": "=split('\\.', @(1,discount))",
+									"discountConverter": "=join(',', @(1,discountConverter_))",
+									"idInterno357": "=concat(@(1,skuId),'-357-',@(1,fixedPriceId))",
+									"idInternoSku": "=concat('', @(1,skuId))",
+									"idInternoDesconto": "=concat(@(1,skuId),'-561-',@(1,discountPolicy.id))",
+							        "tipoIdInterno":"PDVSYNC-PRECO-PRODUTO"
+									
+								}
+							}
+						}
+					},
+					{
+						"operation": "shift",
+						"spec": {
+							"items": {
+								"*": {
+									"origin": {
+										"357": {
+											"@(2,idExternoPreco357)": "items[&3].[0].idExterno",
+											"@(2,idInterno357)": "items[&3].[0].idInterno",
+							                "@(2,tipoIdInterno)":"items[&3].[0].tipoIdInterno",
+											"@(2,idRetaguarda357)": "items[&3].[0].idRetaguarda"											
+										},
+										"*": {
+											"@(2,idExternoPreco)": "items[&3].[0].idExterno",
+											"@(2,idInternoSku)": "items[&3].[0].idInterno",
+											"@(2,tipoIdInterno)":"items[&3].[0].tipoIdInterno",
+											"@(2,skuId)": "items[&3].[0].idRetaguarda"											
+										}
+									},
+									"erpReferenceKey": [
+										"items[&1].[0].codigoProduto"
+									],
+									"principalSKUId": [
+										"items[&1].[0].idRetaguardaProduto"
+									],
+									"useSaleWithPackaging": {
+										"true": {
+											"@(2,skuId)": "items[&3].[0].idRetaguardaProdutoEmbalagem"
+										}
+									},
+									"priceConverter": "items[&1].[0].valor",
+									"quantity": "items[&1].[0].saldo",
+									"branchId": "items[&1].[0].idProprietario",
+									"active": {
+										"false": {
+											"#0": "items[&3].[0].situacao"
+										},
+										"*": {
+											"#1": "items[&3].[0].situacao"
+										}
+									},
+									"productId": "items[&1].[0].idRetaguardaProduto",
+									"offerStartDate": "items[&1].[0].dataHoraVigenciaInicial",
+									"offerEndDate": "items[&1].[0].dataHoraVigenciaFinal",
+									"discountPolicy": {
+										"@(1,idExternoDesconto)": [
+											"items[&2].[1].idExterno"
+										],
+										"@(1,branchId)": [
+											"items[&2].[1].idProprietario"
+										],
+										"@(1,idRetaguardaDesconto)": [
+											"items[&2].[1].idRetaguarda"
+										],
+										"@(1,erpReferenceKey)": [
+											"items[&2].[1].codigoProduto"
+										],
+										"@(1,idInternoDesconto)": "items[&2].[1].idInterno",
+							            "@(1,tipoIdInterno)":"items[&2].[1].tipoIdInterno",
+										"@(1,quantity)": "items[&2].[1].saldo",
+										"@(1,skuID_)": "items[&2].[1].codigoProduto",
+										"@(1,principalSKUId)": "items[&2].[1].idRetaguardaProduto",
+										"@(1,priceConverter)": "items[&2].[1].valor",
+										"@(1,discountConverter)": "items[&2].[1].precoPromocional",
+										"startDate": "items[&2].[1].dataHoraVigenciaInicial",
+										"deleted": {
+											"true": {
+												"#0": "items[&4].[1].situacao",
+												"@(2,endDate)": "items[&4].[1].dataHoraVigenciaFinal"
+											},
+											"*": {
+												"@(2,endDate)": [
+													"items[&4].[1].dataHoraVigenciaFinal"
+												]
+											},
+											"@(2,useSaleWithPackaging)": {
+												"true": {
+													"@(4,skuId)": [
+														"items[&5].[1].idRetaguardaProdutoEmbalagem"
+													]
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"operation": "shift",
+						"spec": {
+							"items": {
+								"*": {
+									"*": {
+										"@": "items",
+										"idExterno": "idExterno[]",
+										"idInterno": "idInterno[]",
+							            "tipoIdInterno":"tipoIdInterno[]"
+									}
+								}
+							}
+						}
+					},
+					{
+						"operation": "default",
+						"spec": {
+							"_attr_access": "items",
+							"items[]": {
+								"*": {
+									"idInquilino": "{{ID_INQUILINO}}",
+									"idProprietario": "{{FILIAL_ID_PROPRIETARIO}}",
+									"loteOrigem": "{{LOTE_ORIGEM}}",
+									"situacao": 1,
+									"sequencial": 0,
+									"sincronizadoEtiquetaEletronica": 0,
+									"dataHoraVigenciaInicial": "{{DATA_HORA_AGORA}}",
+									"dataHoraVigenciaFinal": "{{D_MAIS_365}}"
+								}
+							}
+						}
+					},
+					{
+						"operation": "default",
+						"spec": {
+							"_attr_access": "items",
+							"items": {
+								"idInquilino": "{{ID_INQUILINO}}",
+								"idProprietario": "{{FILIAL_ID_PROPRIETARIO}}",
+								"loteOrigem": "{{LOTE_ORIGEM}}",
+								"situacao": 1,
+								"sequencial": 0,
+								"sincronizadoEtiquetaEletronica": 0,
+								"dataHoraVigenciaInicial": "{{DATA_HORA_AGORA}}",
+								"dataHoraVigenciaFinal": "{{D_MAIS_365}}"
+							}
+						}
+					}
+				]
+			},
+			{
+				"nome": "ATIVO",
+				"valor": "S"
+			},
+			{
+				"nome": "AUTENTICADOR",
+				"valor": "N"
+			},
+			{
+				"nome": "DATASINCRONISMO",
+				"valor": "14-NOV-23"
+			},
+			{
+				"nome": "REFRESHTOKEN",
+				"valor": ""
+			},
+			{
+				"nome": "TIPOPROCESSO",
+				"valor": "BUSCAR"
+			}
+		]
+	}
+}

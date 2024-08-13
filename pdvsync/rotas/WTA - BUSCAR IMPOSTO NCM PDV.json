@@ -1,0 +1,156 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOROTASERVICO",
+		"campos": [
+			{
+				"nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+				"valor": "N"
+			},
+			{
+				"nome": "ID",
+				"valor": "WTA - Buscar Imposto NCM PDV"
+			},
+			{
+				"nome": "IDEMPRESAAPI",
+				"valor": "WINTHOR-WTA"
+			},
+			{
+				"nome": "SERVICO",
+				"valor": "WTA - Buscar Imposto NCM PDV"
+			},
+			{
+				"nome": "LAYOUTCOMUNICACAO",
+				"valor": {
+					"name": "WTA -Buscar Imposto NCM",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{URL_BASE}}/winthor/tributacao/v0/saida/ncm/consultar",
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "{{PAGE_SIZE}}"
+								},
+								{
+									"key": "page",
+									"value": "{{PAGE}}"
+								},
+								{
+									"key": "dataUltimaALteracao",
+									"value": "{{LAST_CHANGE}}"
+								},
+								{
+									"key": "filial",
+									"value": "{{FILIAL}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			},
+			{
+				"nome": "LAYOUTTRANSFORMACAO",
+				"valor": [
+					{
+						"operation": "modify-overwrite-beta",
+						"spec": {
+							"items": {
+								"*": {
+									"codigoNcm_": "=split('\\.', @(1,codigoNcm))",
+									"codigo_Ncm": "=join('', @(1,codigoNcm_))",
+									"codigo_Ncm2": "=substring(@(1,codigo_Ncm),0,8)",
+									"idExterno": "=concat('pdvsync-ncm-', @(1,id),'-', @(1,dataUltimaAtualizacao))",
+									"idInterno":"=concat('', @(1,id))",
+							        "tipoIdInterno":"PDVSYNC-IMPOSTO-NCM",
+									"chave": null,
+									"fonte": null,
+									"situacao": 1,
+									"aliquotaNacional_str": "=toString(@(1,aliquotaNacional))",
+									"aliquotaNacional_arr": "=split('\\.',@(1,aliquotaNacional_str))",
+									"aliquotaNacional": "=join(',',@(1,aliquotaNacional_arr))",
+									"aliquotaEstadual_str": "=toString(@(1,aliquotaEstadual))",
+									"aliquotaEstadual_arr": "=split('\\.',@(1,aliquotaEstadual_str))",
+									"aliquotaEstadual": "=join(',',@(1,aliquotaEstadual_arr))",
+									"aliquotaImportada_str": "=toString(@(1,aliquotaImportada))",
+									"aliquotaImportada_arr": "=split('\\.',@(1,aliquotaImportada_str))",
+									"aliquotaImportada": "=join(',',@(1,aliquotaImportada_arr))",
+									"aliquotaMunicipal_str": "=toString(@(1,aliquotaMunicipal))",
+									"aliquotaMunicipal_arr": "=split('\\.',@(1,aliquotaMunicipal_str))",
+									"aliquotaMunicipal": "=join(',',@(1,aliquotaMunicipal_arr))"
+								}
+							}
+						}
+					},
+					{
+						"operation": "shift",
+						"spec": {
+							"items": {
+								"*": {
+									"idExterno": "idExterno[&1]",
+									"idInterno": "idInterno",
+							        "tipoIdInterno":"tipoIdInterno",
+									"id": "items[&1].idRetaguarda",
+									"codigo_Ncm2": "items[&1].codigoNcm",
+									"codigoExcecao": "items[&1].codigoExcecao",
+									"aliquotaNacional": "items[&1].aliquotaNacional",
+									"aliquotaEstadual": "items[&1].aliquotaEstadual",
+									"codigoCest": "items[&1].codigoCest",
+									"aliquotaImportada": "items[&1].aliquotaImportada",
+									"aliquotaMunicipal": "items[&1].aliquotaMunicipal",
+									"chave": "items[&1].chave",
+									"fonte": "items[&1].fonte",
+									"situacao": "items[&1].situacao"
+								}
+							}
+						}
+					},
+					{
+						"operation": "default",
+						"spec": {
+							"_attr_access": "items",
+							"items[]": {
+								"*": {
+									"idInquilino": "{{ID_INQUILINO}}",
+									"idProprietario": "{{MASTER_ID_PROPRIETARIO}}",
+									"loteOrigem": "{{LOTE_ORIGEM}}",
+									"situacao": 1
+								}
+							}
+						}
+					}
+				]
+			},
+			{
+				"nome": "ATIVO",
+				"valor": "S"
+			},
+			{
+				"nome": "AUTENTICADOR",
+				"valor": "N"
+			},
+			{
+				"nome": "DATASINCRONISMO",
+				"valor": "14-NOV-23"
+			},
+			{
+				"nome": "REFRESHTOKEN",
+				"valor": ""
+			},
+			{
+				"nome": "TIPOPROCESSO",
+				"valor": "BUSCAR"
+			}
+		]
+	}
+}

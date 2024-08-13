@@ -1,0 +1,39 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOVARIAVEIS",
+		"campos": [
+			{
+				"nome": "DTULTALTER",
+				"valor": ""
+			},
+			{
+				"nome": "ID",
+				"valor": "PDVSYNC - CRIAR VARIAVEL TEMPORARIA-{{INQUILINO}}"
+			},
+			{
+				"nome": "CHAVE",
+				"valor": "{{INQUILINO}}"
+			},
+			{
+				"nome": "TIPOCHAVE",
+				"valor": "PARAMS"
+			},
+			{
+				"nome": "TIPOVALOR",
+				"valor": "STRING"
+			},
+			{
+				"nome": "IDROTASERVICO",
+				"valor": "PDVSYNC - CRIAR VARIAVEL TEMPORARIA"
+			},
+			{
+				"nome": "VALOR",
+				"valor":"ADICIONAR_INQUILINO"
+			},
+			{
+				"nome": "CODEMPALTER",
+				"valor": ""
+			}
+		]
+	}
+}

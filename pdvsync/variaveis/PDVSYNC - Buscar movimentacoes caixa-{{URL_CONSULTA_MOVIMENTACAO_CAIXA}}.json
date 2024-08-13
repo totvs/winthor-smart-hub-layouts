@@ -1,0 +1,39 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOVARIAVEIS",
+		"campos": [
+			{
+				"nome": "DTULTALTER",
+				"valor": ""
+			},
+			{
+				"nome": "ID",
+				"valor": "PDVSYNC - BUSCAR MOVIMENTACOES CAIXA-{{URL_CONSULTA_MOVIMENTACAO_CAIXA}}"
+			},
+			{
+				"nome": "CHAVE",
+				"valor": "{{URL_CONSULTA_MOVIMENTACAO_CAIXA}}"
+			},
+			{
+				"nome": "TIPOCHAVE",
+				"valor": "BODY"
+			},
+			{
+				"nome": "TIPOVALOR",
+				"valor": "STRING"
+			},
+			{
+				"nome": "IDROTASERVICO",
+				"valor": "PDVSYNC - BUSCAR MOVIMENTACOES CAIXA"
+			},
+			{
+				"nome": "VALOR",
+				"valor": "https://pdvsync-core-comercial-qa-ywc7q7nxya-ue.a.run.app/api/retaguarda/v2/caixaMensagens"
+			},
+			{
+				"nome": "CODEMPALTER",
+				"valor": ""
+			}
+		]
+	}
+}

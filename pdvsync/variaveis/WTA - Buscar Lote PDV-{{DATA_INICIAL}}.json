@@ -1,0 +1,39 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOVARIAVEIS",
+		"campos": [
+			{
+				"nome": "DTULTALTER",
+				"valor": ""
+			},
+			{
+				"nome": "ID",
+				"valor": "WTA - BUSCAR LOTE PDV-{{DATA_INICIAL}}"
+			},
+			{
+				"nome": "CHAVE",
+				"valor": "{{DATA_INICIAL}}"
+			},
+			{
+				"nome": "TIPOCHAVE",
+				"valor": "BODY"
+			},
+			{
+				"nome": "TIPOVALOR",
+				"valor": "SELECT"
+			},
+			{
+				"nome": "IDROTASERVICO",
+				"valor": "WTA - BUSCAR LOTE PDV"
+			},
+			{
+				"nome": "VALOR",
+				"valor": "SELECT TO_CHAR (SYSDATE-7, 'YYYY-MM-DD') || 'T00:00:00' DT from dual"
+			},
+			{
+				"nome": "CODEMPALTER",
+				"valor": ""
+			}
+		]
+	}
+}

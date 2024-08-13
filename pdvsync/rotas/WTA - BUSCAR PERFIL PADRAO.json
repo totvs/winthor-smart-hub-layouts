@@ -1,0 +1,104 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOROTASERVICO",
+		"campos": [
+			{
+				"nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+				"valor": "N"
+			},
+			{
+				"nome": "ID",
+				"valor": "WTA - Buscar Perfil PADRAO"
+			},
+			{
+				"nome": "IDEMPRESAAPI",
+				"valor": "WINTHOR-WTA"
+			},
+			{
+				"nome": "SERVICO",
+				"valor": "WTA - Buscar Perfil PADRAO"
+			},
+			{
+				"nome": "LAYOUTCOMUNICACAO",
+				"valor": {
+					"idExterno": [
+						"pdvsync-perfil-0",
+						"pdvsync-perfil-1",
+						"pdvsync-perfil-2"
+					],
+					"_attr_access": "itens",
+					"itens": [
+						[
+							{
+								"nome": "Administrador WTA",
+								"situacao": 0,
+								"tipoPerfil": "Administrador",
+								"sequencial": 0,
+								"id": 0,
+								"idInquilino": "{{ID_INQUILINO}}",
+								"idRetaguarda": 0,
+								"idProprietario": "{{MASTER_ID_PROPRIETARIO}}",
+								"loteOrigem": "{{LOTE_ORIGEM}}"
+							}
+						],
+						[
+							{
+								"nome": "Operador WTA",
+								"situacao": 0,
+								"tipoPerfil": "Operador",
+								"sequencial": 0,
+								"id": 1,
+								"idInquilino": "{{ID_INQUILINO}}",
+								"idRetaguarda": 1,
+								"idProprietario": "{{MASTER_ID_PROPRIETARIO}}",
+								"loteOrigem": "{{LOTE_ORIGEM}}"
+							}
+						],
+						[
+							{
+								"nome": "Vendedor WTA",
+								"situacao": 0,
+								"tipoPerfil": "Vendedor ",
+								"sequencial": 0,
+								"id": 2,
+								"idInquilino": "{{ID_INQUILINO}}",
+								"idRetaguarda": 2,
+								"idProprietario": "{{MASTER_ID_PROPRIETARIO}}",
+								"loteOrigem": "{{LOTE_ORIGEM}}"
+							}
+						]
+					]
+				}
+			},
+			{
+				"nome": "LAYOUTTRANSFORMACAO",
+				"valor": [
+					{
+						"operation": "default",
+						"spec": {}
+					}
+				]
+			},
+			{
+				"nome": "ATIVO",
+				"valor": "S"
+			},
+			{
+				"nome": "AUTENTICADOR",
+				"valor": "N"
+			},
+			{
+				"nome": "DATASINCRONISMO",
+				"valor": "14-NOV-23"
+			},
+			{
+				"nome": "REFRESHTOKEN",
+				"valor": ""
+			},
+			{
+				"nome": "TIPOPROCESSO",
+				"valor": "BUSCAR"
+			}
+		]
+	}
+}

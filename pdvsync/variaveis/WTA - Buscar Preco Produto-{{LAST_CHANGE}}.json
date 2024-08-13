@@ -1,0 +1,39 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOVARIAVEIS",
+		"campos": [
+			{
+				"nome": "DTULTALTER",
+				"valor": ""
+			},
+			{
+				"nome": "ID",
+				"valor": "WTA - BUSCAR PRECO PRODUTO-{{LAST_CHANGE}}"
+			},
+			{
+				"nome": "CHAVE",
+				"valor": "{{LAST_CHANGE}}"
+			},
+			{
+				"nome": "TIPOCHAVE",
+				"valor": "BODY"
+			},
+			{
+				"nome": "TIPOVALOR",
+				"valor": "SELECT"
+			},
+			{
+				"nome": "IDROTASERVICO",
+				"valor": "WTA - BUSCAR PRECO PRODUTO"
+			},
+			{
+				"nome": "VALOR",
+				"valor": "SELECT TO_CHAR(NVL((SELECT MAX(DATACRIACAO) FROM PCINTEGRACAOCORE WHERE IDROTASERVICO = :IDROTASERVICO AND STATUS IN (2,11,12,13)), TO_DATE('01/01/1900', 'DD/MM/YYYY')) - (1/60/5), 'RRRR-MM-DD\"T\"HH24:MI:SS') DT FROM DUAL"
+			},
+			{
+				"nome": "CODEMPALTER",
+				"valor": ""
+			}
+		]
+	}
+}

@@ -1,0 +1,39 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOVARIAVEIS",
+		"campos": [
+			{
+				"nome": "DTULTALTER",
+				"valor": ""
+			},
+			{
+				"nome": "ID",
+				"valor": "PDVSYNC - RAC LOGINPDVSYNC-{{URL_RAC_PDVSYNC}}"
+			},
+			{
+				"nome": "CHAVE",
+				"valor": "{{URL_RAC_PDVSYNC}}"
+			},
+			{
+				"nome": "TIPOCHAVE",
+				"valor": "BODY"
+			},
+			{
+				"nome": "TIPOVALOR",
+				"valor": "STRING"
+			},
+			{
+				"nome": "IDROTASERVICO",
+				"valor": "PDVSYNC - RAC LOGINPDVSYNC"
+			},
+			{
+				"nome": "VALOR",
+				"valor": "https://pdvsyncwinthor.rac.dev.totvs.app/totvs.rac/connect/token"
+			},
+			{
+				"nome": "CODEMPALTER",
+				"valor": ""
+			}
+		]
+	}
+}

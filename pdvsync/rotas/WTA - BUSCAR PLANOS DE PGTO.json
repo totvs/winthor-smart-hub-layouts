@@ -1,0 +1,148 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOROTASERVICO",
+		"campos": [
+			{
+				"nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+				"valor": "N"
+			},
+			{
+				"nome": "ID",
+				"valor": "WTA - Buscar planos de pgto"
+			},
+			{
+				"nome": "IDEMPRESAAPI",
+				"valor": "WINTHOR-WTA"
+			},
+			{
+				"nome": "SERVICO",
+				"valor": "WTA - Buscar planos de pgto"
+			},
+			{
+				"nome": "LAYOUTCOMUNICACAO",
+				"valor": {
+					"name": "WTA - Buscar planos de pagamentos",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{URL_BASE}}/winthor/venda/v0/planos-pagamentos",
+							"query": [
+								{
+									"key": "tamanho",
+									"value": "{{PAGE_SIZE}}"
+								},
+								{
+									"key": "pagina",
+									"value": "{{PAGE}}"
+								},
+								{
+									"key": "dataUltimaAlteracao",
+									"value": "{{LAST_CHANGE}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			},
+			{
+			"nome": "LAYOUTTRANSFORMACAO",
+			"valor": [
+				  {
+					"operation": "modify-overwrite-beta",
+					"spec": {
+					  "items": {
+						"*": {
+						  "idExterno": "=concat('pdvsync-plano-pgmt-', @(1,codigo),'-',@(1,codigoFilial),'-',@(1,dataUltimaAtualizacao))",
+						  "idInterno": "=concat('', @(1,codigo))",
+						  "tipoIdInterno": "PDVSYNC-PLANO-PAGAMENTO",
+						  "codigoFilial": "=concat('', @(1,codigoFilial))",
+						  "codigo": "=toInteger(=concat('', @(1,codigo)))",
+						  "idInquilino": "{{ID_INQUILINO}}",
+						  "situacao": 1,
+						  "loteOrigem": "{{LOTE_ORIGEM}}",
+						  "diasEntreParcelas": 30,
+						  "percentualMinimoEntrada": 100,
+						  "solicitaDataDemaisParcelas": 0,
+						  "solicitaDataPrimeiraParcela": 0,
+						  "tipoDadoComplementar": 0,
+						  "dadoComplementarDescricao": "",
+						  "idProprietarioDesc": "{{{MASTER_ID_PROPRIETARIO}}",
+						  "numeroMaximoParcelas": "=size(@(1,prazos))"
+						}
+					  }
+					}
+				  },
+				  {
+					"operation": "shift",
+					"spec": {
+					  "items": {
+						"*": {
+						  "idExterno": "idExterno[]",
+						  "idInterno": "idInterno[]",
+						  "tipoIdInterno": "tipoIdInterno[]",
+						  "descricao": "items.[&1].descricao",
+						  "numeroMaximoParcelas": "items.[&1].numeroMaximoParcelas",
+						  "codigo": "items.[&1].idRetaguarda",
+						  "codigoFilial": {
+							"99": {
+							  "#{{MASTER_ID_PROPRIETARIO}}": "items[&3].idProprietario"
+							},
+							"*": {
+							  "@1": "items[&3].idProprietario"
+							}
+						  },
+						  "idInquilino": "items.[&1].idInquilino",
+						  "diasEntreParcelas": "items.[&1].diasEntreParcelas",
+						  "solicitaDataPrimeiraParcela": "items.[&1].solicitaDataPrimeiraParcela",
+						  "solicitaDataDemaisParcelas": "items.[&1].solicitaDataDemaisParcelas",
+						  "percentualMinimoEntrada": "items.[&1].percentualMinimoEntrada",
+						  "dadoComplementarDescricao": "items.[&1].dadoComplementarDescricao",
+						  "loteOrigem": "items.[&1].loteOrigem",
+						  "situacao": "items.[&1].situacao",
+						  "tipoDadoComplementar": "items.[&1].tipoDadoComplementar"
+						}
+					  }
+					}
+				  },
+				  {
+					"operation": "default",
+					"spec": {
+					  "_attr_access": "items"
+					}
+				  }
+			  ]
+			},
+			{
+				"nome": "ATIVO",
+				"valor": "S"
+			},
+			{
+				"nome": "AUTENTICADOR",
+				"valor": "N"
+			},
+			{
+				"nome": "DATASINCRONISMO",
+				"valor": "14-NOV-23"
+			},
+			{
+				"nome": "REFRESHTOKEN",
+				"valor": ""
+			},
+			{
+				"nome": "TIPOPROCESSO",
+				"valor": "BUSCAR"
+			}
+		]
+	}
+}

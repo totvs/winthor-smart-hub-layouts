@@ -1,0 +1,186 @@
+{ 	
+	"ambiente" : "PRODUCAO",
+	"parametrosVariaveis": [
+		{
+			"nome": "{{URL_ENVIAR_DADOS_PAGAMENTO}}",
+			"valor": "https://pdvsync-core-formapagto-qa-f5xaxliefa-ue.a.run.app/api/retaguarda/dadocomplementarpagtos",
+			"descricao": "PDV-SYNC Dados pagamento",
+			"rota": "PDVSYNC - Dados pagamento"
+		},
+		{
+			"nome": "{{URL_REGISTRAR_IP}}",
+			"valor": "http://ipfixo.pdvsync.varejo.totvs.com.br/api/v1/client/ip",
+			"descricao": "PDV-SYNC Registrar IP",
+			"rota": "PDVSYNC - Registrar IP"
+			
+		},
+		{
+			"nome": "{{URL_ENVIAR_PERFIL}}",
+			"valor": "https://pdvsync.varejo.totvs.com.br/dadosbasicos/api/retaguarda/perfis",
+			"descricao": "PDV-SYNC Salvar Perfil",
+			"rota": "PDVSYNC - Salvar Perfil"
+		},
+		{
+			"nome": "{{URL_ENVIAR_NCM}}",
+			"valor": "https://pdvsync.varejo.totvs.com.br/imposto/api/retaguarda/ncms",
+			"descricao": "PDV-SYNC Salvar Imposto NCM",
+			"rota": "PDVSYNC - Salvar Imposto NCM"
+		},
+		{
+			"nome": "{{URL_ENVIAR_PIS_COFINS}}",
+			"valor": "https://pdvsync.varejo.totvs.com.br/imposto/api/retaguarda/piscofins",
+			"descricao": "PDV-SYNC - Enviar Pis/Cofins",
+			"rota": "PDVSYNC - Enviar Pis Cofins"
+		},
+		{
+			"nome": "{{URL_ENVIAR_USUARIO_OPERADOR}}",
+			"valor": "https://pdvsync.varejo.totvs.com.br/dadosbasicos/api/retaguarda/usuarios",
+			"descricao": "PDV-SYNC Salvar Usuario Operador",
+			"rota": "PDVSYNC - Salvar Usuario Operador"
+		},
+		{
+			"nome": "{{URL_ENVIAR_ICMS}}",
+			"valor": "https://pdvsync.varejo.totvs.com.br/imposto/api/retaguarda/impostos",
+			"descricao": "PDV-SYNC - Enviar ICMS",
+			"rota": "PDVSYNC - Enviar ICMS"
+		},
+		{
+			"nome": "{{URL_ENVIAR_PRODUTO}}",
+			"valor": "https://pdvsync.varejo.totvs.com.br/produto/api/retaguarda/produtos",
+			"descricao": "PDV-SYNC Salvar Produto",
+			"rota": "PDVSYNC - Salvar Produto"
+		},
+		{
+			"nome": "{{URL_CONSULTA_MOVIMENTACAO_CAIXA}}",
+			"valor": "https://pdvsync.varejo.totvs.com.br/comercial/api/retaguarda/caixaMensagens",
+			"descricao": "PDVSync - Buscar movimentacoes caixa",
+			"rota": "PDVSync - Buscar movimentacoes caixa"
+		},
+		{
+			"nome": "{{URL_RAC_PDVSYNC}}",
+			"valor": "https://pdvsyncwinthor.rac.totvs.app/totvs.rac/connect/token",
+			"descricao": "RAC - LoginPDVSync",
+			"rota": "PDVSYNC - RAC LoginPDVSync"
+		},
+		{
+			"nome": "{{URL_ATUALIZAR_STATUS_VENDA}}",
+			"valor": "https://pdvsync.varejo.totvs.com.br/comercial/api/retaguarda/vendaMensagens",
+			"descricao": "PDVSync -Atualizar status venda",
+			"rota": "PDVSYNC - Atualizar status venda"
+		},
+		{
+			"nome": "{{URL_CONSULTA_VENDAS}}",
+			"valor": "https://pdvsync.varejo.totvs.com.br/comercial/api/retaguarda/preVendaMensagens",
+			"descricao": "PDVSync - Buscar Pedidos RECEBIDO",
+			"rota": "PDVSync - Buscar Pedidos RECEBIDO"
+		},
+		{
+			"nome": "{{URL_ATUALIZAR_STATUS_CAIXA}}",
+			"valor": "https://pdvsync.varejo.totvs.com.br/comercial/api/retaguarda/caixaMensagens",
+			"descricao": "PDVSync -Atualizar status caixa",
+			"rota": "PDVSYNC - Atualizar status caixa"
+		},
+		{
+			"nome": "{{URL_CONSULTA_VENDAS}}",
+			"valor": "https://pdvsync.varejo.totvs.com.br/comercial/api/retaguarda/preVendaMensagens",
+			"descricao": "PDVSync - Buscar Pedidos CANCELADA",
+			"rota": "PDVSYNC - Buscar Pedidos CANCELADA"
+		},
+		{
+			"nome": "{{BASE_URL_ABRIR_LOTE}}",
+			"valor": "https://pdvsync.varejo.totvs.com.br/controleprocesso/api/retaguarda/inquilinolotesexternos",
+			"descricao": "Criar variavel temporária",
+			"rota": "PDVSYNC - Criar variavel temporaria"
+		},
+		{
+			"nome": "{{URL_ENVIAR_COMPARTILHAMENTO}}",
+			"valor": "https://pdvsync.varejo.totvs.com.br/dadosbasicos/api/retaguarda/compartilhamentos",
+			"descricao": "PDV-SYNC - Enviar compartilhamentos",
+			"rota": "PDVSYNC - Enviar compartilhamentos"
+		},
+		{
+			"nome": "{{BASE_URL_FECHAR_LOTE}}",
+			"valor": "https://pdvsync.varejo.totvs.com.br/controleprocesso/api/retaguarda/inquilinolotesexternos",
+			"descricao": "Encerrar variavel temporaria",
+			"rota": "PDVSYNC - Encerrar variavel temporaria"
+		},
+		{
+			"nome": "{{URL_ENVIAR_PRECO_PRODUTOS}}",
+			"valor": "https://pdvsync.varejo.totvs.com.br/preco/api/retaguarda/precos",
+			"descricao": "PDV-SYNC Enviar Preco Produto",
+			"rota": "PDVSYNC - Enviar Preco Produto"
+		},
+		{
+			"nome": "{{URL_ENVIAR_CLIENTE}}",
+			"valor": "https://pdvsync.varejo.totvs.com.br/cliente/api/retaguarda/clientes",
+			"descricao": "PDV - SYN - Clientes",
+			"rota": "PDVSYNC - Salvar Clientes"
+		},
+		{
+			"nome": "{{URL_ENVIAR_ESTOQUE_DISPONIVEL}}",
+			"valor": "https://pdvsync.varejo.totvs.com.br/estoque/api/retaguarda/estoques",
+			"descricao": "PDV-SYNC Enviar Estoque",
+			"rota": "PDVSYNC - Enviar Estoque Disponivel"
+		},
+		{
+			"nome": "{{URL_ENVIAR_OPERADORA}}",
+			"valor": "https://pdvsync.varejo.totvs.com.br/formapagto/api/retaguarda/operadoras",
+			"descricao": "PDV-SYNC Salvar Operadora",
+			"rota": "PDVSYNC - Salvar Operadora"
+		},
+		{
+			"nome": "{{URL_ENVIAR_CONDICAO_PGMT}}",
+			"valor": "https://pdvsync.varejo.totvs.com.br/formapagto/api/retaguarda/condicaopagtos",
+			"descricao": "PDV-SYNC Enviar planos de pgmt",
+			"rota": "PDVSYNC - Enviar planos de pgto"
+		},
+		{
+			"nome": "{{URL_ENVIAR_FORMAS_PGMT}}",
+			"valor": "https://pdvsync.varejo.totvs.com.br/formapagto/api/retaguarda/formapagtos",
+			"descricao": "PDV-SYNC Enviar formas de pgmt",
+			"rota": "PDVSYNC - Enviar formas de pgto"
+		},
+		{
+			"nome": "{{URL_CONSULTAR_LOTE}}",
+			"valor": "https://pdvsync.varejo.totvs.com.br/controleprocesso/api/retaguarda/LoteExternoRetornos",
+			"descricao": "PDV-SYNC Consultar lote",
+			"rota": "PDVSYNC - Consultar lote"
+		},
+		{
+			"nome": "{{URL_ENVIAR_STATUS_PREVENDA}}",
+			"valor": "https://pdvsync.varejo.totvs.com.br/comercial/api/retaguarda/preVenda",
+			"descricao": "PDVSync -Envia status pedido",
+			"rota": "PDVSYNC - Envia status pedido"
+		},
+		{
+			"nome": "{{URL_CONSULTA_VENDAS}}",
+			"valor": "https://pdvsync.varejo.totvs.com.br/comercial/api/retaguarda/vendaMensagens",
+			"descricao": "PDVSync - Buscar vendas",
+			"rota": "PDVSYNC - Buscar vendas"
+		},
+		{
+			"nome": "{{URL_ATUALIZAR_STATUS_PEDIDO}}",
+			"valor": "https://pdvsync.varejo.totvs.com.br/comercial/api/retaguarda/preVendaMensagens",
+			"descricao": "PDVSync - Atualiza Status",
+			"rota": "PDVSYNC - Atualizar Status"
+		},
+		{
+			"nome": "{{URL_ENVIAR_LOJAS}}",
+			"valor": "https://pdvsync.varejo.totvs.com.br/dadosbasicos/api/retaguarda/lojas",
+			"descricao": "PDVSYNC - Enviar lojas",
+			"rota": "PDVSYNC - Enviar lojas"
+		},
+		{
+			"nome": "{{CLIENT_ID}}",
+			"valor": "xFxvsGJF/bPu8EsB3HpJcz2s2hyv5QlWjMtHnPspn3A=",
+			"descricao": "CLIENT_ID - RAC - LoginPDVSync",
+			"rota": "PDVSYNC - RAC LoginPDVSync"
+		},
+		{
+			"nome": "{{CLIENT_SECRET}}",
+			"valor": "p1HFHhokxeLiWEj4zXTHgUMvOTV4EcN/+HXVhkiyif2O9Vp/UsOhHOYZaxJlqQe+",
+			"descricao": "CLIENT_SECRET - RAC - LoginPDVSync",
+			"rota": "PDVSYNC - RAC LoginPDVSync"
+		}		
+	]
+}

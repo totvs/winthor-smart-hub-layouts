@@ -1,0 +1,39 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOVARIAVEIS",
+		"campos": [
+			{
+				"nome": "DTULTALTER",
+				"valor": ""
+			},
+			{
+				"nome": "ID",
+				"valor": "PDVSYNC - CRIAR VARIAVEL TEMPORARIA-{{TIPO_LOTE}}"
+			},
+			{
+				"nome": "CHAVE",
+				"valor": "{{TIPO_LOTE}}"
+			},
+			{
+				"nome": "TIPOCHAVE",
+				"valor": "BODY"
+			},
+			{
+				"nome": "TIPOVALOR",
+				"valor": "SELECT"
+			},
+			{
+				"nome": "IDROTASERVICO",
+				"valor": "PDVSYNC - CRIAR VARIAVEL TEMPORARIA"
+			},
+			{
+				"nome": "VALOR",
+				"valor": "SELECT (CASE WHEN :IDROTASERVICO = (SELECT id FROM pcintegracaorotaservico WHERE replace(UPPER(servico), ' ', '') = 'WTA-BUSCARCLIENTES')/*30*/ THEN '0' WHEN :IDROTASERVICO = (SELECT id FROM pcintegracaorotaservico WHERE replace(UPPER(servico), ' ', '') = 'WTA-BUSCARFILIAISLOJAS')/*38*/ THEN '1' WHEN :IDROTASERVICO = (SELECT id FROM pcintegracaorotaservico WHERE replace(UPPER(servico), ' ', '') = 'WTA-PDVSYNCCOMPARTILHAMENTOMASTER')/*36, 40*/ THEN '6' WHEN :IDROTASERVICO = (SELECT id FROM pcintegracaorotaservico WHERE replace(UPPER(servico), ' ', '') = 'WTA-BUSCARFILIAISCOMPARTILHAMENTO')/*36, 40*/ THEN '6' WHEN :IDROTASERVICO = (SELECT id FROM pcintegracaorotaservico WHERE replace(UPPER(servico), ' ', '') = 'WTA-BUSCARPISCOFINS')/*45*/ THEN '9' WHEN :IDROTASERVICO = (SELECT id FROM pcintegracaorotaservico WHERE replace(UPPER(servico), ' ', '') = 'WTA-BUSCARPERFILPADRAO')/*41*/ THEN '3' WHEN :IDROTASERVICO = (SELECT id FROM pcintegracaorotaservico WHERE replace(UPPER(servico), ' ', '') = 'WTA-BUSCARIMPOSTONCMPDV')/*43*/ THEN '8' WHEN :IDROTASERVICO = (SELECT id FROM pcintegracaorotaservico WHERE replace(UPPER(servico), ' ', '') = 'WTA-BUSCARUSUARIOOPERADOR')/*49*/ THEN '4' WHEN :IDROTASERVICO = (SELECT id FROM pcintegracaorotaservico WHERE replace(UPPER(servico), ' ', '') = 'WTA-BUSCARICMS')/*47*/ THEN '7' WHEN :IDROTASERVICO = (SELECT id FROM pcintegracaorotaservico WHERE replace(UPPER(servico), ' ', '') = 'WTA-BUSCARPRODUTOPDV')/*51*/ THEN '12' WHEN :IDROTASERVICO = (SELECT id FROM pcintegracaorotaservico WHERE replace(UPPER(servico), ' ', '') = 'WTA-BUSCARESTOQUE')/*53*/ THEN '14' WHEN :IDROTASERVICO = (SELECT id FROM pcintegracaorotaservico WHERE replace(UPPER(servico), ' ', '') = 'WTA-BUSCARPRECOPRODUTO')/*55*/ THEN '13' WHEN :IDROTASERVICO = (SELECT id FROM pcintegracaorotaservico WHERE replace(UPPER(servico), ' ', '') = 'WTA-BUSCAROPERADORAPDV')/*57*/ THEN '15' WHEN :IDROTASERVICO = (SELECT id FROM pcintegracaorotaservico WHERE replace(UPPER(servico), ' ', '') = 'WTA-BUSCARPLANOSDEPGTO')/*59*/ THEN '17' WHEN :IDROTASERVICO = (SELECT id FROM pcintegracaorotaservico WHERE replace(UPPER(servico), ' ', '') = 'WTA-BUSCARTIPOSCOBRANCAS')/*61*/ THEN '18' WHEN :IDROTASERVICO = (SELECT id FROM pcintegracaorotaservico WHERE replace(UPPER(servico), ' ', '') = 'WTA-BUSCARSTATUSPEDIDO')/*73*/ THEN '55' ELSE '0,1,6,9,11,5,4,7,14,18,12,15,8,20,3' END) T FROM DUAL"
+			},
+			{
+				"nome": "CODEMPALTER",
+				"valor": ""
+			}
+		]
+	}
+}

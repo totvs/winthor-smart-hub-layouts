@@ -1,0 +1,39 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOVARIAVEIS",
+		"campos": [
+			{
+				"nome": "DTULTALTER",
+				"valor": ""
+			},
+			{
+				"nome": "ID",
+				"valor": "WTA - BUSCAR PERFIL PADRAO-{{DATA.UPDATE}}"
+			},
+			{
+				"nome": "CHAVE",
+				"valor": "{{DATA.UPDATE}}"
+			},
+			{
+				"nome": "TIPOCHAVE",
+				"valor": "BODY"
+			},
+			{
+				"nome": "TIPOVALOR",
+				"valor": "SELECT"
+			},
+			{
+				"nome": "IDROTASERVICO",
+				"valor": "WTA - BUSCAR PERFIL PADRAO"
+			},
+			{
+				"nome": "VALOR",
+				"valor": "SELECT TO_CHAR(SYSDATE, 'RRRR-MM-DD') || 'T' || TO_CHAR(SYSDATE, 'HH24:MI:SS') || '.480Z' FROM DUAL"
+			},
+			{
+				"nome": "CODEMPALTER",
+				"valor": ""
+			}
+		]
+	}
+}

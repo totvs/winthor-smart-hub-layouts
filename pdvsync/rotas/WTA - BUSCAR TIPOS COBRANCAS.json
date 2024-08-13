@@ -1,0 +1,364 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOROTASERVICO",
+		"campos": [
+			{
+				"nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+				"valor": "N"
+			},
+			{
+				"nome": "ID",
+				"valor": "WTA - Buscar tipos cobrancas"
+			},
+			{
+				"nome": "IDEMPRESAAPI",
+				"valor": "WINTHOR-WTA"
+			},
+			{
+				"nome": "SERVICO",
+				"valor": "WTA - Buscar tipos cobrancas"
+			},
+			{
+				"nome": "LAYOUTCOMUNICACAO",
+				"valor": {
+					"name": "WTA - Buscar tipos cobranças",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{URL_BASE}}/winthor/venda/v0/tipos-cobrancas",
+							"query": [
+								{
+									"key": "tamanho",
+									"value": "{{PAGE_SIZE}}"
+								},
+								{
+									"key": "pagina",
+									"value": "{{PAGE}}"
+								},
+								{
+									"key": "dataUltimaAlteracao",
+									"value": "{{LAST_CHANGE}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			},
+			{
+				"nome": "LAYOUTTRANSFORMACAO",
+				"valor": [
+					{
+						"operation": "default",
+						"spec": {
+							"items[]": {
+								"*": {
+									"codOperadoraCartao": "cartao_null"
+								}
+							}
+						}
+					},
+					{
+						"operation": "modify-overwrite-beta",
+						"spec": {
+							"items": {
+								"*": {
+									"idExterno": "=concat('pdvsync-cobranca-', @(1,id),'-',@(1,dataAtualizacao))",
+									"id": "=toUpper",
+									"id_verifica_troco": "@(1,id)",
+									"codigoSistemaExterno": "@(1,id)",
+									"descricao": "=concat(@(1,id),' - ',@(1,cobranca))",
+									"valorMinimoPedido_str": "=toString(@(1,valorMinimoPedido))",
+									"valorMinimoPedido_arr": "=split('\\.',@(1,valorMinimoPedido_str))",
+									"valorMinimoPedido": "=join(',',@(1,valorMinimoPedido_arr))"
+								}
+							}
+						}
+					},
+					{
+						"operation": "shift",
+						"spec": {
+							"items": {
+								"*": {
+									"idExterno": "items.[&1].idExterno",
+									"id": {
+										"CRED": {
+											"#4": "items.[&3].tipoCliente",
+											"#CRED": "items.[&3].idRetaguarda"
+										},
+										"*": {
+											"@1": "items.[&3].idRetaguarda"
+										}
+									},
+									"codFilial": {
+										"99": {
+											"#{{MASTER_ID_PROPRIETARIO}}": "items.[&3].idProprietario"
+										},
+										"*": {
+											"@1": "items.[&3].idProprietario"
+										}
+									},
+									"cobranca": "items.[&1].descricaofiscal",
+									"descricao": "items.[&1].descricao",
+									"nivelvenda": {
+										"0": {
+											"#0": "items.[&3].situacao"
+										},
+										"*": {
+											"#1": "items.[&3].situacao"
+										}
+									},
+									"id_verifica_troco": {
+										"D": {
+											"#1": "items.[&3].permiteTroco",
+											"#TR": "items.[&3].idRetaguardaFormaPagTroco"
+										},
+										"DH": {
+											"#1": "items.[&3].permiteTroco",
+											"#TR": "items.[&3].idRetaguardaFormaPagTroco"
+										},
+										"CH*": {
+											"#1": "items.[&3].permiteTroco",
+											"#TR": "items.[&3].idRetaguardaFormaPagTroco"
+										}
+									},
+									"valorMinimoPedido": "items.[&1].valorMinimoAceito",
+									"codigoSistemaExterno": "items.[&1].codigoSistemaExterno",
+									"codOperadoraCartao": {
+										"cartao_null": {
+											"@(2,id)": {
+												"D": {
+													"#1": "items.[&5].tipo"
+												},
+												"DH": {
+													"#1": "items.[&5].tipo"
+												},
+												"TR": {
+													"#0": "items.[&5].tipo"
+												},
+												"CH": {
+													"#4": "items.[&5].tipo"
+												},
+												"CH*": {
+													"#4": "items.[&5].tipo"
+												},
+												"PIX": {
+													"#8": "items.[&5].tipo"
+												},
+												"PIX*": {
+													"#8": "items.[&5].tipo"
+												},
+												"*": {
+													"#0": "items.[&5].tipo"
+												}
+											}
+										}
+									},
+									"planoPagamentos": {
+										"*": {
+											"idRetaguarda": "items.[&3].formasPagtoCondicoes[&1].idRetaguarda",
+											"@(2,id)": "items.[&3].formasPagtoCondicoes[&1].idRetaguardaFormaPagto",
+											"codigo": "items.[&3].formasPagtoCondicoes[&1].idRetaguardaCondicaoPagto"
+										}
+									},
+									"operadoras": {
+										"*": {
+											"codcob": [
+												"items.[&3].formasPagtoOperadoras[&1].idRetaguarda",
+												"items.[&3].formasPagtoOperadoras[&1].idRetaguardaFormaPagto",
+												"items.[&3].formasPagtoOperadoras[&1].idRetaguardaOperadoraPagto"
+											],
+											"#1": "items.[&3].formasPagtoOperadoras[&1].situacao",
+											"tipoOperacaoTef": {
+												"codTipoTef": {
+													"01": {
+														"#3": "items.[&6].tipo",
+														"#true": "items.[&6].isCard"
+													},
+													"02": {
+														"#2": "items.[&6].tipo",
+														"#true": "items.[&6].isCard"
+													},
+													"*": {
+														"#0": "items.[&6].tipo"
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"operation": "shift",
+						"spec": {
+							"items": {
+								"*": {
+									"@": "items[&1][0]",
+									"isCard": {
+										"true": {
+											"@(2,idRetaguarda)": "items[&3][1].idRetaguarda",
+											"#5": "items[&3][1].tipo",
+											"@(2,idExterno)": "items[&3][1].idExterno",
+											"@(2,idProprietario)": "items[&3][1].idProprietario",
+											"@(2,descricaofiscal)": "items[&3][1].descricaofiscal",
+											"@(2,descricao)": "items[&3][1].descricao",
+											"@(2,situacao)": "items[&3][1].situacao",
+											"@(2,codigoSistemaExterno)": "items[&3][1].codigoSistemaExterno",
+											"@(2,formasPagtoOperadoras)": {
+												"*": {
+													"situacao": "items[&5][1].formasPagtoOperadoras[&1].situacao",
+													"idRetaguarda": "items[&5][1].formasPagtoOperadoras[&1].idRetaguarda",
+													"idRetaguardaFormaPagto": "items[&5][1].formasPagtoOperadoras[&1].idRetaguardaFormaPagto",
+													"idRetaguardaOperadoraPagto": "items[&5][1].formasPagtoOperadoras[&1].idRetaguardaOperadoraPagto"
+												}
+											},
+											"@(2,formasPagtoCondicoes)": {
+												"*": {
+													"idRetaguardaFormaPagto": "items[&5][1].formasPagtoCondicoes[&1].idRetaguardaFormaPagto",
+													"idRetaguarda": "items[&5][1].formasPagtoCondicoes[&1].idRetaguarda",
+													"idRetaguardaCondicaoPagto": "items[&5][1].formasPagtoCondicoes[&1].idRetaguardaCondicaoPagto"
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"operation": "shift",
+						"spec": {
+							"items": {
+								"*": {
+									"0": {
+										"@": "items[]"
+									},
+									"1": {
+										"@": "pos[]"
+									}
+								}
+							}
+						}
+					},
+					{
+						"operation": "default",
+						"spec": {
+							"_attr_access": "items",
+							"pos[]": {
+								"*": {
+									"formasPagtoDadosComplementares": [
+										{
+											"idRetaguardaDadoComplementarPagto": "11",
+											"situacao": 1,
+											"ordem": 0
+										},
+										{
+											"idRetaguardaDadoComplementarPagto": "12",
+											"situacao": 1,
+											"ordem": 1
+										}
+									]
+								}
+							}
+						}
+					},
+					{
+						"operation": "modify-overwrite-beta",
+						"spec": {
+							"pos": {
+								"*": {
+									"idRetaguarda": "=concat(@(1,idRetaguarda),'-POS')",
+									"idExterno": "=concat(@(1,idExterno),'-POS')",
+									"descricao": "=concat(@(1,descricao),' - POS')",
+									"formasPagtoOperadoras": {
+										"*": {
+											"idRetaguarda": "=concat(@(1,idRetaguarda),'-POS')",
+											"idRetaguardaFormaPagto": "=concat(@(1,idRetaguardaFormaPagto),'-POS')"
+										}
+									},
+									"formasPagtoCondicoes": {
+										"*": {
+											"idRetaguarda": "=concat(@(1,idRetaguarda),'-POS')",
+											"idRetaguardaFormaPagto": "=concat(@(1,idRetaguardaFormaPagto),'-POS')"
+										}
+									},
+									"formasPagtoDadosComplementares": {
+										"*": {
+											"idRetaguarda": "=concat(@(1,idRetaguardaDadoComplementarPagto),'-',@(3,idRetaguarda))",
+											"idRetaguardaFormaPagto": "@(3,idRetaguarda)"
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"operation": "shift",
+						"spec": {
+							"items": {
+								"*": {
+									"@": "items[]",
+									"idExterno": "idExterno[]"
+								}
+							},
+							"pos": {
+								"*": {
+									"@": "items[]",
+									"idExterno": "idExterno[]"
+								}
+							}
+						}
+					},
+					{
+						"operation": "default",
+						"spec": {
+							"_attr_access": "items",
+							"items[]": {
+								"*": {
+									"idInquilino": "{{ID_INQUILINO}}",
+									"loteOrigem": "{{LOTE_ORIGEM}}",
+									"idProprietario": "{{MASTER_ID_PROPRIETARIO}}",
+									"situacao": 0,
+									"permiteTroco": 0,
+									"valorMinimoAceito": 0
+								}
+							}
+						}
+					}
+				]
+			},
+			{
+				"nome": "ATIVO",
+				"valor": "S"
+			},
+			{
+				"nome": "AUTENTICADOR",
+				"valor": "N"
+			},
+			{
+				"nome": "DATASINCRONISMO",
+				"valor": "14-NOV-23"
+			},
+			{
+				"nome": "REFRESHTOKEN",
+				"valor": ""
+			},
+			{
+				"nome": "TIPOPROCESSO",
+				"valor": "BUSCAR"
+			}
+		]
+	}
+}

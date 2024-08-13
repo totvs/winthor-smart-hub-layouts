@@ -1,0 +1,129 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOROTASERVICO",
+		"campos": [
+			{
+				"nome": "ID",
+				"valor": "PDVSYNC - Buscar Pedidos CANCELADA"
+			},
+			{
+				"nome": "IDEMPRESAAPI",
+				"valor": "PDVSYNC"
+			},
+			{
+				"nome": "SERVICO",
+				"valor": "PDVSYNC - Buscar Pedidos CANCELADA"
+			},
+			{
+				"nome": "LAYOUTCOMUNICACAO",
+				"valor": {
+					"name": "PDVSYNC - Buscar Pedidos CANCELADA",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{URL_CONSULTA_VENDAS}}/{{ID_INQUILINO}}?{{ID_PROPRIETARIO}}",
+							"query": []
+						}
+					},
+					"response": []
+				}
+			},
+			{
+				"nome": "LAYOUTTRANSFORMACAO",
+				"valor": [
+					{
+						"operation": "custom-totvs",
+						"spec": {
+							"data": {
+								"*": {
+									"conteudo": "=base64ToObject"
+								}
+							}
+						}
+					},
+					{
+						"operation": "shift",
+						"spec": {
+							"data": {
+								"*": {
+									"conteudo": {
+										"situacaoPreVenda": {
+											"CANCELADA": {
+												"@3": "data[]"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"operation": "modify-overwrite-beta",
+						"spec": {
+							"data": {
+								"*": {
+									"idExterno": "=concat('pdvsync-status-prevenda-cancelamento-',@(1,id),'-',@(1,conteudo.data))",
+									"idPdv": "@(1,id)",
+									"offline": true
+								}
+							}
+						}
+					},
+					{
+						"operation": "shift",
+						"spec": {
+							"data": {
+								"*": {
+									"idExterno": "idExterno",
+									"conteudo": "items[]",
+									"idPdv": "items[&1].idPdv",
+									"offline": "items[&1].offline"
+								}
+							}
+						}
+					},
+					{
+						"operation": "default",
+						"spec": {
+							"_attr_access": "items"
+						}
+					}
+				]
+			},
+			{
+				"nome": "ATIVO",
+				"valor": "S"
+			},
+			{
+				"nome": "AUTENTICADOR",
+				"valor": "N"
+			},
+			{
+				"nome": "DATASINCRONISMO",
+				"valor": "14-NOV-23"
+			},
+			{
+				"nome": "REFRESHTOKEN",
+				"valor": ""
+			},
+			{
+				"nome": "TIPOPROCESSO",
+				"valor": "BUSCAR"
+			}
+		]
+	}
+}

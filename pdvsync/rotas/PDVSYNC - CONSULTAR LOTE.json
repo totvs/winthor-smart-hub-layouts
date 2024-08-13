@@ -1,0 +1,134 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOROTASERVICO",
+		"campos": [
+			{
+				"nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+				"valor": "N"
+			},
+			{
+				"nome": "ID",
+				"valor": "PDVSYNC - Consultar lote"
+			},
+			{
+				"nome": "IDEMPRESAAPI",
+				"valor": "PDVSYNC"
+			},
+			{
+				"nome": "SERVICO",
+				"valor": "PDVSYNC - Consultar lote"
+			},
+			{
+				"nome": "LAYOUTCOMUNICACAO",
+				"valor": {
+					"name": "PDVSYNC - Consultar lote",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{URL_CONSULTAR_LOTE}}/{{ID_INQUILINO}}/{{LOTE_ORIGEM}}",
+							"query": []
+						}
+					},
+					"response": []
+				}
+			},
+			{
+				"nome": "LAYOUTTRANSFORMACAO",
+				"valor": [
+					{
+						"operation": "shift",
+						"spec": {
+							"data": {
+								"0": {
+									"loteOrigem": "loteOrigem",
+									"status": {
+										"0": {
+											"#1": "status",
+											"#Lote: EmPreparacao": "mensagem"
+										},
+										"1": {
+											"#4": "status",
+											"#Lote: EmProcessamento": "mensagem"
+										},
+										"2": {
+											"#2": "status",
+											"#Lote: Disponivel": "mensagem"
+										},
+										"3": {
+											"#3": "status",
+											"#Lote: Indisponivel": "mensagem"
+										},
+										"4": {
+											"#4": "status",
+											"#Lote: EmProcessoDeBaixa": "mensagem"
+										},
+										"5": {
+											"#2": "status",
+											"#Lote: BaixadoComSucesso": "mensagem"
+										},
+										"6": {
+											"#3": "status",
+											"#Lote: BaixadoComErro": "mensagem"
+										},
+										"7": {
+											"#2": "status",
+											"#Lote: EnviadoComSucesso": "mensagem"
+										},
+										"8": {
+											"#3": "status",
+											"#Lote: EnviadoComErro": "mensagem"
+										},
+										"9": {
+											"#3": "status",
+											"#Lote: ComProblemaVerificar": "mensagem"
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"operation": "modify-overwrite-beta",
+						"spec": {
+							"mensagem": "=concat(@(1,mensagem),' - ',@(1,loteOrigem))"
+						}
+					}
+				]
+			},
+			{
+				"nome": "ATIVO",
+				"valor": "N"
+			},
+			{
+				"nome": "AUTENTICADOR",
+				"valor": "N"
+			},
+			{
+				"nome": "DATASINCRONISMO",
+				"valor": "17-MAR-23"
+			},
+			{
+				"nome": "REFRESHTOKEN",
+				"valor": ""
+			},
+			{
+				"nome": "TIPOPROCESSO",
+				"valor": "BUSCAR"
+			}
+		]
+	}
+}

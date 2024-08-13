@@ -1,0 +1,142 @@
+{
+    "tabela": {
+        "campos": [
+            {
+                "nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+                "valor": "N"
+            },
+            {
+                "nome": "ID",
+                "valor": "WTA - CONSULTA RCA"
+            },
+            {
+                "nome": "IDEMPRESAAPI",
+                "valor": "WINTHOR-WTA"
+            },
+            {
+                "nome": "SERVICO",
+                "valor": "WTA - CONSULTA RCA"
+            },
+            {
+                "nome": "LAYOUTCOMUNICACAO",
+                "valor": {
+                    "name": "WTA - CONSULTA RCA",
+                    "request": {
+                        "bodyraw": "",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{TOKEN}}"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "*/*"
+                            }
+                        ],
+                        "method": "GET",
+                        "url": {
+                            "query": [
+                                {
+                                    "key": "branchId",
+                                    "value": "{{BRANCHID}}"
+                                },
+                                {
+                                    "key": "page",
+                                    "value": "{{PAGE}}"
+                                },
+                                {
+                                    "key": "pageSize",
+                                    "value": "{{PAGE_SIZE}}"
+                                },
+								{
+                                    "key": "lastChange",
+                                    "value": "{{LASTCHANGE}}"
+                                }
+                            ],
+                            "raw": "{{URL_BASE}}/winthor/varejo/matcon/v1/rca/consulta"
+                        }
+                    },
+                    "response": [
+                    ]
+                }
+            },
+            {
+                "nome": "LAYOUTTRANSFORMACAO",
+                "valor": [
+                    {
+                        "operation": "modify-overwrite-beta",
+                        "spec": {
+                            "items": {
+                                "*": {
+									"matricula_s": "=toString(@(1,codigousur))",
+									"dtUltAlter": "=toString(@(1,dtAlteracao))",
+                                    "id_retarguada": "=concat('RCA-', @(1,matricula_s))",
+									"idExterno": "=concat('pdvsync-usuario-rca-', @(1,matricula_s),'-', @(1,dtAlteracao))",
+                                    "login_s": "=toString(@(1,codigousur))",
+                                    "senha_s": "=toString(@(1,codigousur))",
+                                    "situacao_s": "=toInt(1)"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "operation": "shift",
+                        "spec": {
+                            "items": {
+                                "*": {
+                                    "codigoSupervisor": "items[&1].codigoSupervisor",
+                                    "cpfCnpj": "items[&1].cpf",
+                                    "dtUltAlter": "items[&1].dtUltAlter",
+                                    "id_retarguada": "items[&1].idRetaguarda",
+                                    "idExterno": "idExterno",
+                                    "login_s": "items[&1].login",
+                                    "matricula_s": "items[&1].matricula",
+                                    "nome": "items[&1].nome",
+                                    "senha_s": "items[&1].senha",
+                                    "situacao_s": "items[&1].situacao"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "operation": "default",
+                        "spec": {
+                            "_attr_access": "items",
+                            "items[]": {
+                                "*": {
+                                    "administrador": 0,
+                                    "idInquilino": "{{ID_INQUILINO}}",
+                                    "idProprietario": "{{MASTER_ID_PROPRIETARIO}}",
+                                    "idRetaguardaPerfil": 2,
+                                    "lote": "{{LOTE_ORIGEM}}",
+                                    "loteOrigem": "{{LOTE_ORIGEM}}"
+                                }
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "nome": "ATIVO",
+                "valor": "S"
+            },
+            {
+                "nome": "AUTENTICADOR",
+                "valor": "N"
+            },
+            {
+                "nome": "DATASINCRONISMO",
+                "valor": "17-MAR-23"
+            },
+            {
+                "nome": "REFRESHTOKEN",
+                "valor": ""
+            },
+			{
+				"nome": "TIPOPROCESSO",
+				"valor": "BUSCAR"
+			}
+        ],
+        "nome": "PCINTEGRACAOROTASERVICO"
+    }
+}

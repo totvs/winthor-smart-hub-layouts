@@ -1,0 +1,157 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOROTASERVICO",
+		"campos": [
+			{
+				"nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+				"valor": "N"
+			},
+			{
+				"nome": "ID",
+				"valor": "PDVSync - Buscar movimentacoes caixa"
+			},
+			{
+				"nome": "IDEMPRESAAPI",
+				"valor": "PDVSYNC"
+			},
+			{
+				"nome": "SERVICO",
+				"valor": "PDVSync - Buscar movimentacoes caixa"
+			},
+			{
+				"nome": "LAYOUTCOMUNICACAO",
+				"valor": {
+					"name": "PDVSync - Buscar movimentacoes caixa",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{URL_CONSULTA_MOVIMENTACAO_CAIXA}}/{{ID_INQUILINO}}?{{ID_PROPRIETARIO}}",
+							"query": []
+						}
+					},
+					"response": []
+				}
+			},
+			{
+				"nome": "LAYOUTTRANSFORMACAO",
+				"valor": [
+					{
+						"operation": "custom-totvs",
+						"spec": {
+							"data": {
+								"*": {
+									"conteudo": "=base64ToObject(@(1,conteudo))"
+								}
+							}
+						}
+					},
+					{
+						"operation": "modify-overwrite-beta",
+						"spec": {
+							"data": {
+								"*": {
+									"conteudo": {
+										"idExterno": "=concat('pdvsync-caixamensagem-',@(1,Loja.IdRetaguarda),'-',@(1,TipoMovimento),'-',@(2,id))",
+										"idExterno_Tipo_0_1_varejo": "=concat('pdvsync-caixamensagem-',@(1,Loja.IdRetaguarda),'-',@(1,Id))"
+									}
+								}
+							}
+						}
+					},
+					{
+						"operation": "shift",
+						"spec": {
+							"data": {
+								"*": {
+									"id": "items.[&1].idPdv",
+									"conteudo": {
+										"idExterno": [
+											"idExterno[&2]"
+										],
+										"TipoMovimento": {
+											"0": {
+												"@(2,idExterno_Tipo_0_1_varejo)": "items.[&4].idExterno",
+												"@(2,TipoMovimento)": "items.[&4].tipoMovimento"
+											},
+											"1": {
+												"@(2,idExterno_Tipo_0_1_varejo)": "items.[&4].idExterno",
+												"@(2,TipoMovimento)": "items.[&4].tipoMovimento"
+											},
+											"*": {
+												"@(2,idExterno)": "items.[&4].idExterno",
+												"@(2,TipoMovimento)": "items.[&4].tipoMovimento"
+											}
+										},
+										"Loja": {
+											"IdRetaguarda": {
+												"999": {
+													"#1": "items.[&5].filial"
+												},
+												"*": {
+													"@(2,IdRetaguarda)": "items.[&5].filial"
+												}
+											}
+										},
+										"Operador": {
+											"IdRetaguarda": "items.[&3].codFunc"
+										},
+										"DataHora": [
+											"items.[&2].dtLanc",
+											"items.[&2].dtMovimentoCx"
+										],
+										"NumeroCaixa": "items.[&2].numCaixa",
+										"Id": "items.[&2].numvale",
+										"Valor": "items.[&2].valor",
+										"#D": "items.[&2].codCob",
+										"#WSH-OMNISHOP": "items.[&2].pdvOrigem",
+										"IdCaixaoperacao": "items.[&2].numFechamentoMovCx"
+									}
+								}
+							}
+						}
+					},
+					{
+						"operation": "default",
+						"spec": {
+							"_attr_access": "items"
+						}
+					}
+				]
+			},
+			{
+				"nome": "ATIVO",
+				"valor": "S"
+			},
+			{
+				"nome": "AUTENTICADOR",
+				"valor": "N"
+			},
+			{
+				"nome": "DATASINCRONISMO",
+				"valor": "26-JUL-23"
+			},
+			{
+				"nome": "REFRESHTOKEN",
+				"valor": ""
+			},
+			{
+				"nome": "TIPOPROCESSO",
+				"valor": "BUSCAR"
+			}
+		]
+	}
+}

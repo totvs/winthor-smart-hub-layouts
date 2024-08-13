@@ -1,0 +1,35 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAODADOSEMPRESA",
+		"campos": [
+			{
+				"nome": "TOKENTEMPOEXPIRACAO",
+				"valor": "7200"
+			},
+			{
+				"nome": "ID",
+				"valor": "WINTHOR-WTA"
+			},
+			{
+				"nome": "NOME",
+				"valor": "WINTHOR-WTA"
+			},
+			{
+				"nome": "URLBASE",
+				"valor": "ADICIONAR_URLBASE"
+			},
+			{
+				"nome": "TOKENCLIENTE",
+				"valor": ""
+			},
+			{
+				"nome": "WTA",
+				"valor": "S"
+			},
+			{
+				"nome": "DTSOLICITACAOTOKEN",
+				"valor": "15-OCT-23"
+			}
+		]
+	} 
+}

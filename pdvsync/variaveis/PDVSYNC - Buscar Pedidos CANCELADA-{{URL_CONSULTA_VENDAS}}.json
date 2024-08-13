@@ -1,0 +1,39 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOVARIAVEIS",
+		"campos": [
+			{
+				"nome": "DTULTALTER",
+				"valor": "19-SEP-23"
+			},
+			{
+				"nome": "ID",
+				"valor": "PDVSYNC - BUSCAR PEDIDOS CANCELADA-{{URL_CONSULTA_VENDAS}}"
+			},
+			{
+				"nome": "CHAVE",
+				"valor": "{{URL_CONSULTA_VENDAS}}"
+			},
+			{
+				"nome": "TIPOCHAVE",
+				"valor": "BODY"
+			},
+			{
+				"nome": "TIPOVALOR",
+				"valor": "STRING"
+			},
+			{
+				"nome": "IDROTASERVICO",
+				"valor": "PDVSYNC - BUSCAR PEDIDOS CANCELADA"
+			},
+			{
+				"nome": "VALOR",
+				"valor": "https://pdvsync-core-comercial-qa-ywc7q7nxya-ue.a.run.app/api/retaguarda/v2/preVendaMensagens"
+			},
+			{
+				"nome": "CODEMPALTER",
+				"valor": ""
+			}
+		]
+	}
+}

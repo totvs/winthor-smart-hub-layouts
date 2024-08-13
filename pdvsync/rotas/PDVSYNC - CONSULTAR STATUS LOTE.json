@@ -1,0 +1,201 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOROTASERVICO",
+		"campos": [
+			{
+				"nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+				"valor": "N"
+			},
+			{
+				"nome": "ID",
+				"valor": "PDVSYNC - Consultar status lote"
+			},
+			{
+				"nome": "IDEMPRESAAPI",
+				"valor": "PDVSYNC"
+			},
+			{
+				"nome": "SERVICO",
+				"valor": "PDVSYNC - Consultar status lote"
+			},
+			{
+				"nome": "LAYOUTCOMUNICACAO",
+				"valor": {
+					"name": "PDVSYNC - Consultar status lote",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL_STATUS_LOTE}}",
+							"query": [
+								{
+									"key": "inquilino",
+									"value": "{{ID_INQUILINO}}"
+								},
+								{
+									"key": "loteOrigem",
+									"value": "{{NUMERO_LOTE}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			},
+			{
+				"nome": "LAYOUTTRANSFORMACAO",
+				"valor": [
+					  {
+						"operation": "default",
+						"spec": {
+						  "data": {
+							"temp": {
+							  "status": 99,
+							  "errosIdentificados": []
+							}
+						  }
+						}
+						},
+					  {
+						"operation": "shift",
+						"spec": {
+						  "data": {
+							"lote": "data.lote",
+							"loteOrigem": "data.loteOrigem",
+							"lojaLotes": "data.lojaLotes",
+							"temp": "data.lojaLotes[]"
+						  }
+						}
+					  },				
+					  {
+						"operation": "shift",
+						"spec": {
+						  "data": {
+							"loteOrigem": ["data.numeroLote", "data.idExterno"],
+							"lojaLotes": {
+							  "*": {
+								"status": {
+								  "2": { "#11": "data.lojaLotes[&3].status" },
+								  "2.0": { "#11": "data.lojaLotes[&3].status" },
+								  "4": { "#11": "data.lojaLotes[&3].status" },
+								  "4.0": { "#11": "data.lojaLotes[&3].status" },
+								  "5": { "#12": "data.lojaLotes[&3].status" },
+								  "5.0": { "#12": "data.lojaLotes[&3].status" },
+								  "6": { "#13": "data.lojaLotes[&3].status" },
+								  "6.0": { "#13": "data.lojaLotes[&3].status" },
+								  "*": {
+									"#99": "data.lojaLotes[&3].status"
+								  }
+								},
+								"idRetaguardaLoja": "data.lojaLotes[&1].codigoFilial",
+								"errosIdentificados": {
+								  "*": {
+									"idRetaguarda": "data.lojaLotes[&3].errosIdentificados[&1].idInterno",
+									"erro": "data.lojaLotes[&3].errosIdentificados[&1].erro"
+								  }
+								}
+							  }
+							}
+						  }
+						}
+					  },
+					  {
+						"operation": "shift",
+						"spec": {
+						  "data": {
+							"numeroLote": "data.numeroLote",
+							"idExterno": "data.idExterno",
+							"lojaLotes": {
+							  "*": {
+								"status": ["data.filiais[&1].status", "data.status"],
+								"codigoFilial": "data.filiais[&1].codigoFilial",
+								"errosIdentificados": "data.filiais[&1].erros"
+							  }
+							}
+						  }
+						}
+					  },
+					  {
+						"operation": "modify-overwrite-beta",
+						"spec": {
+						  "data": {
+							"menorStatus": "=min(@(1,status))"
+						  }
+						}
+					  },
+					  {
+						"operation": "modify-overwrite-beta",
+						"spec": {
+						  "data": {
+							"idExterno": "=concat('pdvsync-post-status-', @(1,menorStatus),'-lote-loja-', @(1,idExterno))"
+						  }
+						}
+					  },
+					  {
+						"operation": "shift",
+						"spec": {
+						  "data": {
+							"numeroLote": "items[0].numeroLote",
+							"idExterno": "idExterno",
+							"filiais": "items[0].filiais"
+						  }
+						}
+					  },
+					  {
+						"operation": "modify-overwrite-beta",
+						"spec": {
+						  "items": {
+							"*": {
+							  "filiais": {
+								"*": {
+								  "status": ["=toInteger", 0]
+								}
+							  }
+							}
+						  }
+						}
+					  },
+					  {
+						"operation": "default",
+						"spec": {
+						  "_attr_access": "items"
+						}
+					  }
+					]
+			},
+			{
+				"nome": "ATIVO",
+				"valor": "S"
+			},
+			{
+				"nome": "AUTENTICADOR",
+				"valor": "N"
+			},
+			{
+				"nome": "DATASINCRONISMO",
+				"valor": "17-MAR-23"
+			},
+			{
+				"nome": "REFRESHTOKEN",
+				"valor": ""
+			},
+			{
+				"nome": "TIPOPROCESSO",
+				"valor": "BUSCAR"
+			}
+		]
+	}
+}

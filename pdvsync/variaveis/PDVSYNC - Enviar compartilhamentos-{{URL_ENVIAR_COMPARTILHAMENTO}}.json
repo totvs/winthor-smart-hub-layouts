@@ -1,0 +1,39 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOVARIAVEIS",
+		"campos": [
+			{
+				"nome": "DTULTALTER",
+				"valor": "19-SEP-23"
+			},
+			{
+				"nome": "ID",
+				"valor": "PDVSYNC - ENVIAR COMPARTILHAMENTOS-{{URL_ENVIAR_COMPARTILHAMENTO}}"
+			},
+			{
+				"nome": "CHAVE",
+				"valor": "{{URL_ENVIAR_COMPARTILHAMENTO}}"
+			},
+			{
+				"nome": "TIPOCHAVE",
+				"valor": "BODY"
+			},
+			{
+				"nome": "TIPOVALOR",
+				"valor": "STRING"
+			},
+			{
+				"nome": "IDROTASERVICO",
+				"valor": "PDVSYNC - ENVIAR COMPARTILHAMENTOS"
+			},
+			{
+				"nome": "VALOR",
+				"valor": "https://pdvsync-core-controle-qa-ywc7q7nxya-ue.a.run.app/api/retaguarda/v2/compartilhamentos"
+			},
+			{
+				"nome": "CODEMPALTER",
+				"valor": ""
+			}
+		]
+	}
+}

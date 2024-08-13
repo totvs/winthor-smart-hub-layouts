@@ -1,0 +1,149 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOROTASERVICO",
+		"campos": [
+			{
+				"nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+				"valor": "N"
+			},
+			{
+				"nome": "ID",
+				"valor": "WTA - Buscar status pedido"
+			},
+			{
+				"nome": "IDEMPRESAAPI",
+				"valor": "WINTHOR-WTA"
+			},
+			{
+				"nome": "SERVICO",
+				"valor": "WTA - Buscar status pedido"
+			},
+			{
+				"nome": "LAYOUTCOMUNICACAO",
+				"valor": {
+					"name": "WTA - Buscar status pedido",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{URL_BASE}}/api/wholesale/v1/orders/list",
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "{{PAGE_SIZE}}"
+								},
+								{
+									"key": "page",
+									"value": "{{PAGE}}"
+								},
+								{
+									"key": "lastChange",
+									"value": "{{DATAALTERACAO}}"
+								},
+								{
+									"key": "branchId",
+									"value": "{{FILIAL}}"
+								},
+								{
+									"key": "daysOfSearch",
+									"value": "{{DAYSOFSEARCH}}"
+								},
+								{
+									"key": "orderStatus",
+									"value": "{{ORDERSTATUS}}"
+								},
+								{
+									"key": "integrationOrigin",
+									"value": "PDVSYNC"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			},
+			{
+				"nome": "LAYOUTTRANSFORMACAO",
+				"valor": [
+					{
+						"operation": "modify-overwrite-beta",
+						"spec": {
+							"items": {
+								"*": {
+									"idExterno": "=concat('pdvsync-status-prevenda-',@(1,orderId),'-',@(1,lastChange))",
+									"idInterno":"=concat('', @(1,orderId))",
+							        "tipoIdInterno":"PDVSYNC-STATUS-PEDIDO"
+								}
+							}
+						}
+					},
+					{
+						"operation": "shift",
+						"spec": {
+							"items": {
+								"*": {
+									"idExterno": "idExterno[]",									
+									"idInterno": "idInterno",
+							        "tipoIdInterno":"tipoIdInterno",
+									"orderId": "items.[&1].idRetaguarda",
+									"branchId": "items.[&1].idProprietario",
+									"orderStatus": {
+										"C": {
+											"#0": "items.[&3].situacao",
+											"#CANCELADA": "items.[&3].situacaoPreVenda"
+										},
+										"F": {
+											"#1": "items.[&3].situacao",
+											"#RESGATADA": "items.[&3].situacaoPreVenda"
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"operation": "default",
+						"spec": {
+							"_attr_access": "items",
+							"items[]": {
+								"*": {
+									"idInquilino": "{{ID_INQUILINO}}",
+									"loteOrigem": "{{LOTE_ORIGEM}}"
+								}
+							}
+						}
+					}
+				]
+			},
+			{
+				"nome": "ATIVO",
+				"valor": "S"
+			},
+			{
+				"nome": "AUTENTICADOR",
+				"valor": "N"
+			},
+			{
+				"nome": "DATASINCRONISMO",
+				"valor": "14-NOV-23"
+			},
+			{
+				"nome": "REFRESHTOKEN",
+				"valor": ""
+			},
+			{
+				"nome": "TIPOPROCESSO",
+				"valor": "BUSCAR"
+			}
+		]
+	}
+}

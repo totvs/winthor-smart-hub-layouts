@@ -1,0 +1,16 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOAGENDAMENTOFLUXO",
+		"campos": [
+			{
+				"nome": "IDAGENDAMENTO",
+				"valor": "pdvsync - movimento caixas"
+			},
+			{
+				"nome": "IDFLUXO",
+				"valor": "Movimentacoes Caixa"
+			} 
+		]
+	}
+}
+

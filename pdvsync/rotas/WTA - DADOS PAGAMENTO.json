@@ -1,0 +1,90 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOROTASERVICO",
+		"campos": [
+			{
+				"nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+				"valor": "N"
+			},
+			{
+				"nome": "ID",
+				"valor": "WTA - Dados pagamento"
+			},
+			{
+				"nome": "IDEMPRESAAPI",
+				"valor": "WINTHOR-WTA"
+			},
+			{
+				"nome": "SERVICO",
+				"valor": "WTA - Dados pagamento"
+			},
+			{
+				"nome": "LAYOUTCOMUNICACAO",
+				"valor": {
+					"idExterno": [
+						"pdvsync-dado-complementar-pagto-11",
+						"pdvsync-dado-complementar-pagto-12"
+					],
+					"_attr_access": "itens",
+					"itens": [
+						[
+							{
+								"descricao": "Código de autorizacAo",
+								"tipoDadoComplementar": 1,
+								"obrigatorio": 1,
+								"tamanho": 25,
+								"situacao": 1,
+								"idInquilino": "{{ID_INQUILINO}}",
+								"idRetaguarda": "11",
+								"idProprietario": "{{MASTER_ID_PROPRIETARIO}}",
+								"loteOrigem": "{{LOTE_ORIGEM}}"
+							}
+						],
+						[
+							{
+								"descricao": "NSU/DOC",
+								"tipoDadoComplementar": 1,
+								"obrigatorio": 1,
+								"tamanho": 25,
+								"situacao": 1,
+								"idInquilino": "{{ID_INQUILINO}}",
+								"idRetaguarda": "12",
+								"idProprietario": "{{MASTER_ID_PROPRIETARIO}}",
+								"loteOrigem": "{{LOTE_ORIGEM}}"
+							}
+						]
+					]
+				}
+			},
+			{
+				"nome": "LAYOUTTRANSFORMACAO",
+				"valor": [
+					{
+						"operation": "default",
+						"spec": {}
+					}
+				]
+			},
+			{
+				"nome": "ATIVO",
+				"valor": "S"
+			},
+			{
+				"nome": "AUTENTICADOR",
+				"valor": "N"
+			},
+			{
+				"nome": "DATASINCRONISMO",
+				"valor": "14-NOV-23"
+			},
+			{
+				"nome": "REFRESHTOKEN",
+				"valor": ""
+			},
+			{
+				"nome": "TIPOPROCESSO",
+				"valor": "BUSCAR"
+			}
+		]
+	}
+}

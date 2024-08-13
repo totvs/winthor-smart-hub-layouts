@@ -1,0 +1,157 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOROTASERVICO",
+		"campos": [
+			{
+				"nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+				"valor": "N"
+			},
+			{
+				"nome": "ID",
+				"valor": "WTA - Buscar Estoque"
+			},
+			{
+				"nome": "IDEMPRESAAPI",
+				"valor": "WINTHOR-WTA"
+			},
+			{
+				"nome": "SERVICO",
+				"valor": "WTA - Buscar Estoque"
+			},
+			{
+				"nome": "LAYOUTCOMUNICACAO",
+				"valor": {
+					"name": "WTA - Buscar Estoque - Ecommerce",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{URL_BASE}}/api/stock-vtex/v1/available/list",
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "{{PAGE_SIZE}}"
+								},
+								{
+									"key": "page",
+									"value": "{{PAGE}}"
+								},
+								{
+									"key": "branchId",
+									"value": "{{FILIAL}}"
+								},
+								{
+									"key": "lastChange",
+									"value": "{{LAST_CHANGE}}"
+								},
+								{
+									"key": "usesPackagingSales",
+									"value": "{{USESPACKAGINGSALES}}"
+								},
+								{
+									"key": "resale",
+									"value": "{{REVENDA}}"
+								},
+								{
+									"key": "merchandiseType",
+									"value": "{{TIPOMERCADORIA}}"
+								},
+								{
+									"key": "callOrigin",
+									"value": "W"
+								},
+								{
+									"key": "order",
+									"value": "lastChange"
+								}
+							]
+						},
+						"bodyraw": ""
+					},
+					"response": []
+				}
+			},
+			{
+				"nome": "LAYOUTTRANSFORMACAO",
+				"valor": [
+					{
+						"operation": "modify-overwrite-beta",
+						"spec": {
+							"items": {
+								"*": {
+									"idExterno": "=concat('pdvsync-estoque-', @(1,productId),'-',@(1,warehouseBranchId),'-', @(1,lastChange))",
+									"id_retaguarda": "=concat(@(1,productId),'-', @(1,warehouseBranchId))",
+									"situacao": 1,
+									"skuId__": "=split('-', @(1,productId))",
+									"skuID_": "=lastElement(@(1,skuId__))",
+									"idInterno":"=concat('', @(1,id_retaguarda))",
+							        "tipoIdInterno":"PDVSYNC-ESTOQUE"
+								}
+							}
+						}
+					},
+					{
+						"operation": "shift",
+						"spec": {
+							"items": {
+								"*": {
+									"idExterno": "idExterno[&1]",									
+									"idInterno": "idInterno",
+							        "tipoIdInterno":"tipoIdInterno",
+									"id_retaguarda": "items[&1].idRetaguarda",
+									"quantity": "items[&1].saldo",
+									"skuID_": "items[&1].codigoProduto",
+									"productId": "items[&1].idRetaguardaProduto"
+								}
+							}
+						}
+					},
+					{
+						"operation": "default",
+						"spec": {
+							"_attr_access": "items",
+							"items[]": {
+								"*": {
+									"idInquilino": "{{ID_INQUILINO}}",
+									"idProprietario": "{{FILIAL_ID_PROPRIETARIO}}",
+									"loteOrigem": "{{LOTE_ORIGEM}}",
+									"situacao": 1,
+									"sequencial": 0
+								}
+							}
+						}
+					}
+				]
+			},
+			{
+				"nome": "ATIVO",
+				"valor": "N"
+			},
+			{
+				"nome": "AUTENTICADOR",
+				"valor": "N"
+			},
+			{
+				"nome": "DATASINCRONISMO",
+				"valor": "14-NOV-23"
+			},
+			{
+				"nome": "REFRESHTOKEN",
+				"valor": ""
+			},
+			{
+				"nome": "TIPOPROCESSO",
+				"valor": "BUSCAR"
+			}
+		]
+	}
+}
