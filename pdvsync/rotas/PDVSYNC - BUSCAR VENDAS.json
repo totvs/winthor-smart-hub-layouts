@@ -160,7 +160,6 @@
                                             "items.[&2].numCartaoCrm",
                                             "items.[&2].cartaoCrm"
                                         ],
-                                        "idPreVenda": "items.[&2].idPreVenda",
                                         "Kit": {
                                             "*": {
                                                 "Itens": {
