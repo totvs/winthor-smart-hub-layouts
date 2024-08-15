@@ -65,10 +65,8 @@
                         "spec": {
                             "data": {
                                 "*": {
-                                    "codCob": [
-                                        "@(1,conteudo.VendaPagamentos.[0].PagamentoForma.IdRetaguarda)",
-                                        "SENT"
-                                    ],
+                                    "codCob_arr": "=split('-POS',@(1,conteudo.VendaPagamentos.[0].PagamentoForma.IdRetaguarda))",
+									"codCob": "=join('',@(1,codCob_arr))",
                                     "conteudo": {
                                         "idPreVenda": [
                                             "@(1,IdPreVenda)",
@@ -329,10 +327,8 @@
                                                     "items.[&4].pagamentos[&1].dtMovimentoCaixa"
                                                 ],
                                                 "PagamentoForma": {
-                                                    "IdRetaguarda": [
-                                                        "items.[&5].pagamentos[&2].codCob",
-                                                        "items.[&5].pagamentos[&2].codCobOrigem"
-                                                    ]
+                                                    "IdRetaguarda_arr": "=split('-POS',@(1,IdRetaguarda))",       
+													"IdRetaguarda": "=join('',@(1,IdRetaguarda_arr))"      
                                                 },
                                                 "ValorLiquido": "items.[&4].pagamentos[&1].valor",
                                                 "ValorPago": [
