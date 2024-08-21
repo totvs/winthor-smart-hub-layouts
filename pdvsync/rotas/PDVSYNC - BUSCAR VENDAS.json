@@ -65,8 +65,8 @@
                         "spec": {
                             "data": {
                                 "*": {
+                                    "codCob": "=join('',@(1,codCob_arr))",
                                     "codCob_arr": "=split('-POS',@(1,conteudo.VendaPagamentos.[0].PagamentoForma.IdRetaguarda))",
-									"codCob": "=join('',@(1,codCob_arr))",
                                     "conteudo": {
                                         "idPreVenda": [
                                             "@(1,IdPreVenda)",
@@ -97,7 +97,7 @@
                                             "*": {
                                                 "PagamentoForma": {
                                                     "IdRetaguarda": "=join('',@(1,IdRetaguarda_arr))",
-                                                    "IdRetaguarda_arr": "=split('-POS',@(1,IdRetaguarda))"
+                                                    "IdRetaguarda_arr": "=split('-POS', @(1,IdRetaguarda))"
                                                 },
                                                 "VendaPagamentoTefs": {
                                                     "*": {
@@ -327,8 +327,7 @@
                                                     "items.[&4].pagamentos[&1].dtMovimentoCaixa"
                                                 ],
                                                 "PagamentoForma": {
-                                                    "IdRetaguarda_arr": "=split('-POS',@(1,IdRetaguarda))",       
-													"IdRetaguarda": "=join('',@(1,IdRetaguarda_arr))"      
+                                                    "IdRetaguarda": "items.[&5].pagamentos[&2].IdRetaguarda"
                                                 },
                                                 "ValorLiquido": "items.[&4].pagamentos[&1].valor",
                                                 "ValorPago": [
@@ -426,10 +425,10 @@
                 "nome": "REFRESHTOKEN",
                 "valor": ""
             },
-			{
-				"nome": "TIPOPROCESSO",
-				"valor": "BUSCAR"
-			}
+            {
+                "nome": "TIPOPROCESSO",
+                "valor": "BUSCAR"
+            }
         ],
         "nome": "PCINTEGRACAOROTASERVICO"
     }
