@@ -65,8 +65,8 @@
                         "spec": {
                             "data": {
                                 "*": {
-                                    "codCob": "=join('',@(1,codCob_arr))",
-                                    "codCob_arr": "=split('-POS',@(1,conteudo.VendaPagamentos.[0].PagamentoForma.IdRetaguarda))",
+									"codCob_arr": "=split('-POS',@(1,conteudo.VendaPagamentos.[0].PagamentoForma.IdRetaguarda))",
+                                    "codCob": "=join('',@(1,codCob_arr))"
                                     "conteudo": {
                                         "idPreVenda": [
                                             "@(1,IdPreVenda)",
@@ -96,8 +96,8 @@
                                         "VendaPagamentos": {
                                             "*": {
                                                 "PagamentoForma": {
-                                                    "IdRetaguarda": "=join('',@(1,IdRetaguarda_arr))",
-                                                    "IdRetaguarda_arr": "=split('-POS', @(1,IdRetaguarda))"
+													"IdRetaguarda_arr": "=split('-POS', @(1,IdRetaguarda))",
+                                                    "IdRetaguarda": "=join('',@(1,IdRetaguarda_arr))"
                                                 },
                                                 "VendaPagamentoTefs": {
                                                     "*": {
