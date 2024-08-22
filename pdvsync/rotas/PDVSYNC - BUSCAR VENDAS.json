@@ -66,7 +66,7 @@
                             "data": {
                                 "*": {
 									"codCob_arr": "=split('-POS',@(1,conteudo.VendaPagamentos.[0].PagamentoForma.IdRetaguarda))",
-                                    "codCob": "=join('',@(1,codCob_arr))"
+                                    "codCob": "=join('',@(1,codCob_arr))",
                                     "conteudo": {
                                         "idPreVenda": [
                                             "@(1,IdPreVenda)",
@@ -96,8 +96,9 @@
                                         "VendaPagamentos": {
                                             "*": {
                                                 "PagamentoForma": {
-													"IdRetaguarda_arr": "=split('-POS', @(1,IdRetaguarda))",
+													"IdRetaguarda_arr": "=split('-POS',@(1,IdRetaguarda))",
                                                     "IdRetaguarda": "=join('',@(1,IdRetaguarda_arr))"
+                                                    
                                                 },
                                                 "VendaPagamentoTefs": {
                                                     "*": {
@@ -327,7 +328,10 @@
                                                     "items.[&4].pagamentos[&1].dtMovimentoCaixa"
                                                 ],
                                                 "PagamentoForma": {
-                                                    "IdRetaguarda": "items.[&5].pagamentos[&2].IdRetaguarda"
+                                                    "IdRetaguarda": [
+                                                        "items.[&5].pagamentos[&2].codCob",
+                                                        "items.[&5].pagamentos[&2].codCobOrigem"
+                                                    ]
                                                 },
                                                 "ValorLiquido": "items.[&4].pagamentos[&1].valor",
                                                 "ValorPago": [
