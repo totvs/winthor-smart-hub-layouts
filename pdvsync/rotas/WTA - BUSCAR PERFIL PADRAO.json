@@ -24,14 +24,15 @@
 					"idExterno": [
 						"pdvsync-perfil-0",
 						"pdvsync-perfil-1",
-						"pdvsync-perfil-2"
+						"pdvsync-perfil-2",
+						"pdvsync-perfil-3"
 					],
 					"_attr_access": "itens",
 					"itens": [
 						[
 							{
 								"nome": "Administrador WTA",
-								"situacao": 0,
+								"situacao": 1,
 								"tipoPerfil": "Administrador",
 								"sequencial": 0,
 								"id": 0,
@@ -44,7 +45,7 @@
 						[
 							{
 								"nome": "Operador WTA",
-								"situacao": 0,
+								"situacao": 1,
 								"tipoPerfil": "Operador",
 								"sequencial": 0,
 								"id": 1,
@@ -57,12 +58,25 @@
 						[
 							{
 								"nome": "Vendedor WTA",
-								"situacao": 0,
-								"tipoPerfil": "Vendedor ",
+								"situacao": 1,
+								"tipoPerfil": "Vendedor",
 								"sequencial": 0,
 								"id": 2,
 								"idInquilino": "{{ID_INQUILINO}}",
 								"idRetaguarda": 2,
+								"idProprietario": "{{MASTER_ID_PROPRIETARIO}}",
+								"loteOrigem": "{{LOTE_ORIGEM}}"
+							}
+						],
+						[
+							{
+								"nome": "Profissional WTA",
+								"situacao": 1,
+								"tipoPerfil": "Profissional",
+								"sequencial": 0,
+								"id": 3,
+								"idInquilino": "{{ID_INQUILINO}}",
+								"idRetaguarda": 3,
 								"idProprietario": "{{MASTER_ID_PROPRIETARIO}}",
 								"loteOrigem": "{{LOTE_ORIGEM}}"
 							}
