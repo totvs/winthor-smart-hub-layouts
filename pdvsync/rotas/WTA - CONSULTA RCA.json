@@ -93,7 +93,13 @@
                                     "matricula_s": "items[&1].matricula",
                                     "nome": "items[&1].nome",
                                     "senha_s": "items[&1].senha",
-                                    "situacao_s": "items[&1].situacao"
+                                    "situacao_s": "items[&1].situacao",
+									"tipoVenda": {	
+										"P": { "#3": "items[&3].idRetaguardaPerfil" },
+										"*": {
+										  "#2": "items[&3].idRetaguardaPerfil"
+										}
+									}
                                 }
                             }
                         }
