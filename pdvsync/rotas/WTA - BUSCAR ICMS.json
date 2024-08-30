@@ -59,6 +59,31 @@
 			"nome": "LAYOUTTRANSFORMACAO",
 			"valor": [
 				{
+				"operation": "shift",
+				"spec": {
+				  "items": {
+					"*": {
+					  "id": "items.[&1].&",
+					  "baseCalculo": "items.[&1].&",
+					  "aliquota": "items.[&1].&",
+					  "reducaoBaseCalculo": "items.[&1].&",
+					  "dataUltimaAlteracao": "items.[&1].&",
+					  "substituicaoTributaria": "items.[&1].&",
+					  "fcp": "items.[&1].&",
+					  "modalidadeVarejo": "items.[&1].&",
+					  "indiceTributoImpressoraVarejo": "items.[&1].&",
+					  "simboloVarejo": "items.[&1].&",
+					  "codFilial": {
+						"99": { "#{{MASTER_ID_PROPRIETARIO}}": "items.[&3].idProprietario" },
+						"*": {
+						  "@1": "items.[&3].idProprietario"
+						}
+					  }
+					}
+				  }
+				}
+				},			
+				{
 					"operation": "modify-overwrite-beta",
 					"spec": {
 						"items": {
@@ -116,7 +141,11 @@
 								"substituicaoTributaria": {
 									"icmsInterno": "items.[&2].[1].aliquotaTributo",
 									"reducaoBaseCalculo": "items.[&2].[1].reducaoBaseCalculo"
-								}
+								},
+								"idProprietario": [
+									"items.[&1].[0].idProprietario",
+									"items.[&1].[1].idProprietario"
+								]
 							}
 						}
 					}
@@ -143,7 +172,6 @@
 						"items[]": {
 							"*": {
 								"idInquilino": "{{ID_INQUILINO}}",
-								"idProprietario": "{{MASTER_ID_PROPRIETARIO}}",
 								"loteOrigem": "{{LOTE_ORIGEM}}",
 								"indiceTributoImpressora": "",
 								"tipo": 0,
