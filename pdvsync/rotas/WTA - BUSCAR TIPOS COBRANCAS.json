@@ -110,8 +110,8 @@
 									},
 									"cobranca": "items.[&1].descricaofiscal",
 									"descricao": "items.[&1].descricao",
-									"nivelvenda": {
-										"0": {
+									"exportaecf": {
+										"N": {
 											"#0": "items.[&3].situacao"
 										},
 										"*": {
