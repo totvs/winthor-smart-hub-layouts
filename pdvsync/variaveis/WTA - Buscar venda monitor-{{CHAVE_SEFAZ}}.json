@@ -1,0 +1,39 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOVARIAVEIS",
+		"campos": [
+			{
+				"nome": "DTULTALTER",
+				"valor": ""
+			},
+			{
+				"nome": "ID",
+				"valor": "WTA - BUSCAR VENDA MONITOR-{{CHAVE_SEFAZ}}"
+			},
+			{
+				"nome": "CHAVE",
+				"valor": "{{CHAVE_SEFAZ}}"
+			},
+			{
+				"nome": "TIPOCHAVE",
+				"valor": "BODY"
+			},
+			{
+				"nome": "TIPOVALOR",
+				"valor": "STRING"
+			},
+			{
+				"nome": "IDROTASERVICO",
+				"valor": "WTA - BUSCAR VENDA MONITOR"
+			},
+			{
+				"nome": "VALOR",
+				"valor": ":PCINTEGRACAOCORE.DADOSTRANSFORMADOS->chaveNfe"
+			},
+			{
+				"nome": "CODEMPALTER",
+				"valor": ""
+			}
+		]
+	}
+}

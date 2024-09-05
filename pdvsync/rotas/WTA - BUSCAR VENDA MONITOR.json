@@ -1,0 +1,141 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOROTASERVICO",
+		"campos": [
+			{
+				"nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+				"valor": "S"
+			},
+			{
+				"nome": "ID",
+				"valor": "WTA - Buscar Venda Monitor"
+			},
+			{
+				"nome": "IDEMPRESAAPI",
+				"valor": "WINTHOR-WTA"
+			},
+			{
+				"nome": "SERVICO",
+				"valor": "WTA - Buscar Venda Monitor"
+			},
+			{
+				"nome": "LAYOUTCOMUNICACAO",
+				"valor": {
+					"name": "WTA - Buscar Venda Monitor",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{URL_BASE}}/winthor/varejo/v1/retorno/venda",
+							"query": [
+								{
+									"key": "codigoFilial",
+									"value": "{{FILIAL}}"
+								},
+								{
+									"key": "dataHoraInicio",
+									"value": "{{DATA_HORA-INICIO}}"
+								},
+								{
+									"key": "dataHoraFim",
+									"value": "{{DATA_HORA-FIM}}"
+								},
+								{
+									"key": "tipoDado",
+									"value": "{{TIPO_DADO}}"
+								},
+								{
+									"key": "chaveSefaz",
+									"value": "{{CHAVE_SEFAZ}}"
+								},
+								{
+									"key": "valorReferencia",
+									"value": "{{ID_MENSAGEM}}"
+								}
+							]
+						},
+						"bodyraw": ""
+					},
+					"response": []
+				}
+			},
+			{
+				"nome": "LAYOUTTRANSFORMACAO",
+				"valor": 	[
+				  {
+					"operation": "modify-overwrite-beta",
+					"spec": {
+					  "items": {
+						"*": {
+						  "idExterno": "=concat('wta-get-status-venda-', @(1,id))"
+						}
+					  }
+					}
+			      },
+				  {
+					"operation": "shift",
+					"spec": {
+					  "items": {
+						"*": {
+						  "idExterno": "idExterno",
+						  "mensagem": "items.[&1].observacao",
+						  "idInterno": "items.[&1].idInterno",
+						  "valorReferencia": "items.[&1].idMensagem",
+						  "situacaoVenda": {
+							"PROCESSADO": {
+							  "#1": "items[&3].statusPDV",
+							  "#12": "items[&3].statusWTA"
+							},
+							"*": {
+							  "#2": "items[&3].statusPDV",
+							  "#13": "items[&3].statusWTA"
+							}
+						  }
+						}
+					  }
+					}
+				  },
+				  {
+					"operation": "default",
+					"spec": {
+					  "_attr_access": "items"
+					}
+				  }
+				]
+			},
+			{
+				"nome": "ATIVO",
+				"valor": "S"
+			},
+			{
+				"nome": "AUTENTICADOR",
+				"valor": "N"
+			},
+			{
+				"nome": "DATASINCRONISMO",
+				"valor": "13-NOV-23"
+			},
+			{
+				"nome": "REFRESHTOKEN",
+				"valor": "N"
+			},
+			{
+				"nome": "TIPOPROCESSO",
+				"valor": "BUSCAR"
+			}
+		]
+	}
+}

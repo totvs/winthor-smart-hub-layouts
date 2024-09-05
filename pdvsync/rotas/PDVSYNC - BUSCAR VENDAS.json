@@ -109,7 +109,7 @@
                                         }
                                     },
                                     "idExterno": "=concat('pdvsync-vendamensagem-',@(1,id),'-',@(1,dataAtualizacao))",
-                                    "idInterno": "=concat('', @(1,chaveAcesso))",
+                                    "idInterno": "=concat(@(1,conteudo.Loja.IdRetaguarda),'-',@(1,serieNota),'-',@(1,conteudo.Coo))",
                                     "idPdv": "@(1,id)",
                                     "numeroCupom": "@(1,conteudo.Coo)",
                                     "tipoIdInterno": "PDVSYNC-MONITOR-VENDA"

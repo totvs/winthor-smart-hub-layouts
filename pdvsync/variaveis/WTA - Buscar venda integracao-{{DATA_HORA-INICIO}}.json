@@ -1,0 +1,39 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOVARIAVEIS",
+		"campos": [
+			{
+				"nome": "DTULTALTER",
+				"valor": ""
+			},
+			{
+				"nome": "ID",
+				"valor": "WTA - BUSCAR VENDA INTEGRACAO-{{DATA_HORA-INICIO}}"
+			},
+			{
+				"nome": "CHAVE",
+				"valor": "{{DATA_HORA-INICIO}}"
+			},
+			{
+				"nome": "TIPOCHAVE",
+				"valor": "BODY"
+			},
+			{
+				"nome": "TIPOVALOR",
+				"valor": "SELECT"
+			},
+			{
+				"nome": "IDROTASERVICO",
+				"valor": "WTA - BUSCAR VENDA INTEGRACAO"
+			},
+			{
+				"nome": "VALOR",
+				"valor": "SELECT TO_CHAR( NVL((SELECT MIN(DATACRIACAO) FROM PCINTEGRACAOCORE WHERE TIPODOCUMENTO = 'PDVSYNC-MONITOR-VENDA' AND STATUS IN (2,11)), TO_DATE('01/01/1900')), 'RRRR-MM-DD\"T\"HH24:MI:SS' ) DT FROM DUAL"
+			},
+			{
+				"nome": "CODEMPALTER",
+				"valor": ""
+			}
+		]
+	}
+}
