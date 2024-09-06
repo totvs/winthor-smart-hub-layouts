@@ -74,9 +74,9 @@
 								"situacao": 1,
 								"tipoPerfil": "Profissional",
 								"sequencial": 0,
-								"id": 3,
+								"id": 5,
 								"idInquilino": "{{ID_INQUILINO}}",
-								"idRetaguarda": 3,
+								"idRetaguarda": 5,
 								"idProprietario": "{{MASTER_ID_PROPRIETARIO}}",
 								"loteOrigem": "{{LOTE_ORIGEM}}"
 							}
