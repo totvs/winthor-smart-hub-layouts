@@ -95,7 +95,7 @@
                                     "senha_s": "items[&1].senha",
                                     "situacao_s": "items[&1].situacao",
 									"tipoVenda": {	
-										"P": { "#3": "items[&3].idRetaguardaPerfil" },
+										"P": { "#5": "items[&3].idRetaguardaPerfil" },
 										"*": {
 										  "#2": "items[&3].idRetaguardaPerfil"
 										}
