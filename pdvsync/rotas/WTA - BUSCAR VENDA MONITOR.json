@@ -58,9 +58,13 @@
 									"value": "{{TIPO_DADO}}"
 								},
 								{
-									"key": "chaveSefaz",
-									"value": "{{CHAVE_SEFAZ}}"
+									"key": "numNota",
+									"value": "{{NUMERO_NOTA}}"
 								},
+								{
+									"key": "serie",
+									"value": "{{SERIE_NOTA}}"
+								},								
 								{
 									"key": "valorReferencia",
 									"value": "{{ID_MENSAGEM}}"

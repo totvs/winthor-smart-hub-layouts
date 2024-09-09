@@ -111,6 +111,7 @@
                                     "idExterno": "=concat('pdvsync-vendamensagem-',@(1,id),'-',@(1,dataAtualizacao))",
                                     "idInterno": "=concat(@(1,conteudo.Loja.IdRetaguarda),'-',@(1,serieNota),'-',@(1,conteudo.Coo))",
                                     "idPdv": "@(1,id)",
+									"serieNota": "@(1,serieNota)",
                                     "numeroCupom": "@(1,conteudo.Coo)",
                                     "tipoIdInterno": "PDVSYNC-MONITOR-VENDA"
                                 }
@@ -369,6 +370,7 @@
                                         "items.[&1].idInterno"
                                     ],
                                     "idPdv": "items.[&1].idPdv",
+									"serieNota": "items.[&1].serieNota",
                                     "numeroCupom": [
                                         "items.[&1].numCupom",
                                         "items.[&1].documentoEletronico.numCupom"

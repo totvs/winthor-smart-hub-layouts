@@ -8,11 +8,11 @@
 			},
 			{
 				"nome": "ID",
-				"valor": "WTA - BUSCAR VENDA MONITOR-{{CHAVE_SEFAZ}}"
+				"valor": "WTA - BUSCAR VENDA MONITOR-{{NUMERO_NOTA}}"
 			},
 			{
 				"nome": "CHAVE",
-				"valor": "{{CHAVE_SEFAZ}}"
+				"valor": "{{NUMERO_NOTA}}"
 			},
 			{
 				"nome": "TIPOCHAVE",
@@ -28,7 +28,7 @@
 			},
 			{
 				"nome": "VALOR",
-				"valor": ":PCINTEGRACAOCORE.DADOSTRANSFORMADOS->chaveNfe"
+				"valor": ":PCINTEGRACAOCORE.DADOSTRANSFORMADOS->numCupom"
 			},
 			{
 				"nome": "CODEMPALTER",
