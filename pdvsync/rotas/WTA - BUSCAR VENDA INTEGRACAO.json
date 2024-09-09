@@ -108,8 +108,7 @@
 							  "idPdv": "items.[&2].idPdv",
 							  "numCupom": "items.[&2].numCupom",
 							  "serieNota": "items.[&2].serieNota",
-							  "codFilial": "items.[&2].codFilial",
-							  "chaveNfe": "items.[&2].chaveNfe"
+							  "codFilial": "items.[&2].codFilial"
 							}
 						}
 					  }
