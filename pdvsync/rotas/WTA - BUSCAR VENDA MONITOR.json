@@ -104,7 +104,7 @@
 							  "#12": "items[&3].statusWTA"
 							},
 							"RECEBIDO": {
-							  "#0": "items[&3].statusPDV",
+							  "#1": "items[&3].statusPDV",
 							  "#11": "items[&3].statusWTA"
 							},							
 							"*": {
