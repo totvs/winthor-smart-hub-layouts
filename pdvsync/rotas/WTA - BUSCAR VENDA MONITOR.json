@@ -100,7 +100,7 @@
 						  "valorReferencia": "items.[&1].idMensagem",
 						  "situacaoVenda": {
 							"PROCESSADO": {
-							  "#1": "items[&3].statusPDV",
+							  "#4": "items[&3].statusPDV",
 							  "#12": "items[&3].statusWTA"
 							},
 							"RECEBIDO": {
