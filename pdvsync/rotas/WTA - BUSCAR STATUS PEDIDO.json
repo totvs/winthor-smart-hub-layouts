@@ -94,16 +94,16 @@
 									"idExterno": "idExterno[]",									
 									"idInterno": "idInterno",
 							        "tipoIdInterno":"tipoIdInterno",
-									"orderId": "items.[&1].idRetaguarda",
-									"branchId": "items.[&1].idProprietario",
+									"orderId": "items.[&1].[0].idRetaguarda",
+									"branchId": "items.[&1].[0].idProprietario",
 									"orderStatus": {
 										"C": {
-											"#0": "items.[&3].situacao",
-											"#CANCELADA": "items.[&3].situacaoPreVenda"
+										  "#0": "items.[&3].[0].situacao",
+										  "#CANCELADA": "items.[&3].[0].situacaoPreVenda"
 										},
 										"F": {
-											"#1": "items.[&3].situacao",
-											"#RESGATADA": "items.[&3].situacaoPreVenda"
+										  "#1": "items.[&3].[0].situacao",
+										  "#RESGATADA": "items.[&3].[0].situacaoPreVenda"
 										}
 									}
 								}
