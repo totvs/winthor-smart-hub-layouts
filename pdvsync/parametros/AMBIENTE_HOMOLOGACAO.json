@@ -135,7 +135,7 @@
 		},
 		{
 			"nome": "{{URL_ENVIAR_STATUS_PREVENDA}}",
-			"valor": "https://pdvsync-core-comercial-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v2/preVenda",
+			"valor": "https://pdvsync-core-comercial-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/preVenda",
 			"descricao": "PDVSync -Envia status pedido",
 			"rota": "PDVSYNC - Envia status pedido"
 		},
