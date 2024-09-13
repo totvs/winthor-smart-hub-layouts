@@ -81,9 +81,7 @@
 								"*": {
 									"idExterno": "=concat('pdvsync-status-prevenda-',@(1,orderId),'-',@(1,lastChange))",
 									"idInterno":"=concat('', @(1,orderId))",
-							        "tipoIdInterno":"PDVSYNC-STATUS-PEDIDO",
-									"idInquilino": "{{ID_INQUILINO}}",
-									"loteOrigem": "{{LOTE_ORIGEM}}"
+							        "tipoIdInterno":"PDVSYNC-STATUS-PEDIDO"
 								}
 							}
 						}
@@ -96,20 +94,18 @@
 									"idExterno": "idExterno[]",									
 									"idInterno": "idInterno",
 							        "tipoIdInterno":"tipoIdInterno",
-									"orderId": "items.[&1].[0].idRetaguarda",
-									"branchId": "items.[&1].[0].idProprietario",
+									"orderId": "items.[&1].idRetaguarda",
+									"branchId": "items.[&1].idProprietario",
 									"orderStatus": {
 										"C": {
-										  "#0": "items.[&3].[0].situacao",
-										  "#CANCELADA": "items.[&3].[0].situacaoPreVenda"
+											"#0": "items.[&3].situacao",
+											"#CANCELADA": "items.[&3].situacaoPreVenda"
 										},
 										"F": {
-										  "#1": "items.[&3].[0].situacao",
-										  "#RESGATADA": "items.[&3].[0].situacaoPreVenda"
+											"#1": "items.[&3].situacao",
+											"#RESGATADA": "items.[&3].situacaoPreVenda"
 										}
-									},
-									"idInquilino": "items.[&1].[0].idInquilino",
-									"loteOrigem": "items.[&1].[0].loteOrigem"																
+									}
 								}
 							}
 						}
@@ -117,7 +113,13 @@
 					{
 						"operation": "default",
 						"spec": {
-							"_attr_access": "items"
+							"_attr_access": "items",
+							"items[]": {
+								"*": {
+									"idInquilino": "{{ID_INQUILINO}}",
+									"loteOrigem": "{{LOTE_ORIGEM}}"
+								}
+							}
 						}
 					}
 				]
