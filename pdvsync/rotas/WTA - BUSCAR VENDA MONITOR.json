@@ -107,7 +107,7 @@
 							  "#1": "items[&3].statusPDV",
 							  "#11": "items[&3].statusWTA"
 							},							
-							"*": {
+							"ERRO": {
 							  "#2": "items[&3].statusPDV",
 							  "#13": "items[&3].statusWTA"
 							}
