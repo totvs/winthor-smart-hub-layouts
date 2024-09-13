@@ -81,7 +81,9 @@
 								"*": {
 									"idExterno": "=concat('pdvsync-status-prevenda-',@(1,orderId),'-',@(1,lastChange))",
 									"idInterno":"=concat('', @(1,orderId))",
-							        "tipoIdInterno":"PDVSYNC-STATUS-PEDIDO"
+							        "tipoIdInterno":"PDVSYNC-STATUS-PEDIDO",
+									"idInquilino": "{{ID_INQUILINO}}",
+									"loteOrigem": "{{LOTE_ORIGEM}}"
 								}
 							}
 						}
@@ -105,7 +107,9 @@
 										  "#1": "items.[&3].[0].situacao",
 										  "#RESGATADA": "items.[&3].[0].situacaoPreVenda"
 										}
-									}
+									},
+									"idInquilino": "items.[&1].[0].idInquilino",
+									"loteOrigem": "items.[&1].[0].loteOrigem"																
 								}
 							}
 						}
@@ -113,13 +117,7 @@
 					{
 						"operation": "default",
 						"spec": {
-							"_attr_access": "items",
-							"items[]": {
-								"*": {
-									"idInquilino": "{{ID_INQUILINO}}",
-									"loteOrigem": "{{LOTE_ORIGEM}}"
-								}
-							}
+							"_attr_access": "items"
 						}
 					}
 				]
