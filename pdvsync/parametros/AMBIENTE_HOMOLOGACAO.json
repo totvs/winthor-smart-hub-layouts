@@ -135,19 +135,19 @@
 		},
 		{
 			"nome": "{{URL_ENVIAR_STATUS_PREVENDA}}",
-			"valor": "https://pdvsync-core-comercial-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v2/preVenda",
+			"valor": "https://pdvsync-core-comercial-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/preVenda",
 			"descricao": "PDVSync -Envia status pedido",
 			"rota": "PDVSYNC - Envia status pedido"
 		},
 		{
 			"nome": "{{URL_CONSULTA_VENDAS}}",
-			"valor": "https://pdvsync-core-comercial-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v2/preVendaMensagens",
+			"valor": "https://pdvsync-core-comercial-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/preVendaMensagens",
 			"descricao": "PDVSync - Buscar Pedidos RECEBIDO",
 			"rota": "PDVSync - Buscar Pedidos RECEBIDO"
 		},
 		{
 			"nome": "{{URL_CONSULTA_VENDAS}}",
-			"valor": "https://pdvsync-core-comercial-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v2/preVendaMensagens",
+			"valor": "https://pdvsync-core-comercial-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/preVendaMensagens",
 			"descricao": "PDVSync - Buscar Pedidos CANCELADA",
 			"rota": "PDVSYNC - Buscar Pedidos CANCELADA"
 		},
