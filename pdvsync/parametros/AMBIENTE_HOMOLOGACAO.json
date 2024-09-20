@@ -170,6 +170,12 @@
 			"rota": "PDVSYNC - RAC LoginPDVSync"
 		},
 		{
+			"nome": "{{URL_STATUS_VENDA_MONITOR}}",
+			"valor": "https://pdvsync-core-comercial-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v2/vendaMensagens",
+			"descricao": "PDV-SYNC - ATUALIZAR STATUS VENDA MONITOR",
+			"rota": "PDVSYNC - ATUALIZAR STATUS VENDA MONITOR"
+		},		
+		{
 			"nome": "{{CLIENT_ID}}",
 			"valor": "iDHLOJ/Nuzxca8/gfE/Za87jXC8uQM3LPglhKVSN/Kw=",
 			"descricao": "CLIENT_ID - RAC - LoginPDVSync",
