@@ -9,13 +9,13 @@
 		},
 		{
 			"nome": "{{BASE_URL_ABRIR_LOTE}}",
-			"valor": "https://pdvsync-core-controle-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v2/inquilinolotesexternos",
+			"valor": "https://qua-pdvsync.varejo.totvs.com.br/controleprocesso/api/retaguarda/v2/inquilinolotesexternos",
 			"descricao": "Criar variavel temporária",
 			"rota": "PDVSYNC - Criar variavel temporaria"
 		},
 		{
 			"nome": "{{BASE_URL_FECHAR_LOTE}}",
-			"valor": "https://pdvsync-core-controle-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v2/inquilinolotesexternos",
+			"valor": "https://qua-pdvsync.varejo.totvs.com.br/controleprocesso/api/retaguarda/v2/inquilinolotesexternos",
 			"descricao": "Encerrar variavel temporaria",
 			"rota": "PDVSYNC - Encerrar variavel temporaria"
 		},
