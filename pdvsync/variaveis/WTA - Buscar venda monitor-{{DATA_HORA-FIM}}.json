@@ -1,0 +1,39 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOVARIAVEIS",
+		"campos": [
+			{
+				"nome": "DTULTALTER",
+				"valor": ""
+			},
+			{
+				"nome": "ID",
+				"valor": "WTA - BUSCAR VENDA MONITOR-{{DATA_HORA-FIM}}"
+			},
+			{
+				"nome": "CHAVE",
+				"valor": "{{DATA_HORA-FIM}}"
+			},
+			{
+				"nome": "TIPOCHAVE",
+				"valor": "BODY"
+			},
+			{
+				"nome": "TIPOVALOR",
+				"valor": "SELECT"
+			},
+			{
+				"nome": "IDROTASERVICO",
+				"valor": "WTA - BUSCAR VENDA MONITOR"
+			},
+			{
+				"nome": "VALOR",
+				"valor": "SELECT TO_CHAR( NVL((SYSDATE), TO_DATE('01/01/1900')), 'RRRR-MM-DD\"T\"HH24:MI:SS') DT FROM DUAL"
+			},
+			{
+				"nome": "CODEMPALTER",
+				"valor": ""
+			}
+		]
+	}
+}
