@@ -175,7 +175,13 @@
 			"valor": "https://pdvsync.varejo.totvs.com.br/comercial/api/retaguarda/vendaMensagens",
 			"descricao": "PDV-SYNC - ATUALIZAR STATUS VENDA MONITOR",
 			"rota": "PDVSYNC - ATUALIZAR STATUS VENDA MONITOR"
-		},			
+		},		
+		{
+		    "nome": "{{URL_ENVIAR_REGIAO}}",
+			"valor": "https://pdvsync.varejo.totvs.com.br/api/retaguarda/v3/dadosdinamicos/down/100/1",
+			"descricao": "PDV-SYNC - SALVAR REGIAO",
+			"rota": "PDVSYNC - SALVAR REGIAO"
+		},		
 		{
 			"nome": "{{CLIENT_ID}}",
 			"valor": "xFxvsGJF/bPu8EsB3HpJcz2s2hyv5QlWjMtHnPspn3A=",

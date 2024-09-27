@@ -1,0 +1,144 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOROTASERVICO",
+		"campos": [
+			{
+				"nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+				"valor": "N"
+			},
+			{
+				"nome": "ID",
+				"valor": "WTA - Buscar Regiao PDV"
+			},
+			{
+				"nome": "IDEMPRESAAPI",
+				"valor": "WINTHOR-WTA"
+			},
+			{
+				"nome": "SERVICO",
+				"valor": "WTA - Buscar Regiao PDV"
+			},
+			{
+				"nome": "LAYOUTCOMUNICACAO",
+				"valor": {
+					"name": "WTA - Buscar Regiao - PDV",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{URL_BASE}}/winthor/cliente/v1/regiao",
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "{{PAGE_SIZE}}"
+								},
+								{
+									"key": "page",
+									"value": "{{PAGE}}"
+								},
+								{
+									"key": "branchId",
+									"value": "{{FILIAL}}"
+								},
+								{
+									"key": "lastChange",
+									"value": "{{LAST_CHANGE}}"
+								}
+							]
+						},
+						"bodyraw": ""
+					},
+					"response": []
+				}
+			},
+			{
+				"nome": "LAYOUTTRANSFORMACAO",
+				"valor": [
+				  {
+					"operation": "modify-overwrite-beta",
+					"spec": {
+					  "items": {
+						"*": {
+						  "idRetaguarda": "=concat(@(1,branchId),'-',@(1,regionId))",	
+						  "idExterno": "=concat('pdvsync-regiao-', @(1,idRetaguarda),'-',@(1,branchId),'-',@(1,lastChangeDate))",
+						  "idInterno": "=concat(@(1,branchId),'-',@(1,regionId))",
+						  "tipoIdInterno":"PDVSYNC-REGIAO-PDV"
+						}
+					  }
+					}
+				  },
+				  {
+					"operation": "shift",
+					"spec": {
+					  "items": {
+						"*": {
+						  "idExterno": "idExterno",
+						  "idInterno": "idInterno",
+						  "tipoIdInterno":"tipoIdInterno",
+						  "idRetaguarda": "items.[&1].idRetaguarda",
+						  "description": "items.[&1].descricao",
+						  "freightPercentage": "items.[&1].fretePercentual",
+						  "thirdPartyFreightPercentage": "items.[&1].freteTerceiros",
+						  "specialFreightPercentage": "items.[&1].freteEspecial",
+						  "shippingCostByKg": "items.[&1].freteKg",
+						  "idRetaguardaLoja": "items.[&1].branchId",
+						  "status": {
+							"ativo": {
+							  "#1": "items[&3].situacao"
+							},							
+							"inativo": {
+							  "#0": "items[&3].situacao"
+							}
+						  },
+						  "federationUnity": "items.[&1].uf"
+						}
+					  }
+					}
+				  },
+				  {
+					"operation": "default",
+					"spec": {
+						"_attr_access": "items",
+						"items[]": {
+							"*": {
+								"idInquilino": "{{ID_INQUILINO}}",
+								"idProprietario": "{{FILIAL_ID_PROPRIETARIO}}",
+								"loteOrigem": "{{LOTE_ORIGEM}}"
+							}
+						}
+					}
+				  }				
+				]
+			},
+			{
+				"nome": "ATIVO",
+				"valor": "S"
+			},
+			{
+				"nome": "AUTENTICADOR",
+				"valor": "N"
+			},
+			{
+				"nome": "DATASINCRONISMO",
+				"valor": "13-NOV-23"
+			},
+			{
+				"nome": "REFRESHTOKEN",
+				"valor": "N"
+			},
+			{
+				"nome": "TIPOPROCESSO",
+				"valor": "BUSCAR"
+			}
+		]
+	}
+}

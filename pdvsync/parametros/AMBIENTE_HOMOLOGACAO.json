@@ -176,6 +176,12 @@
 			"rota": "PDVSYNC - ATUALIZAR STATUS VENDA MONITOR"
 		},		
 		{
+		    "nome": "{{URL_ENVIAR_REGIAO}}",
+			"valor": "https://pdvsync-core-dadosbasicos-dev-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/dadosdinamicos/down/100/1",
+			"descricao": "PDV-SYNC - SALVAR REGIAO",
+			"rota": "PDVSYNC - SALVAR REGIAO"
+		},			
+		{
 			"nome": "{{CLIENT_ID}}",
 			"valor": "iDHLOJ/Nuzxca8/gfE/Za87jXC8uQM3LPglhKVSN/Kw=",
 			"descricao": "CLIENT_ID - RAC - LoginPDVSync",
@@ -189,3 +195,5 @@
 		}
 	]
 }
+
+
