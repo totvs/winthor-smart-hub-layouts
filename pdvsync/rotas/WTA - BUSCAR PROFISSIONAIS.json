@@ -1,0 +1,138 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOROTASERVICO",
+		"campos": [
+			{
+				"nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+				"valor": "N"
+			},
+			{
+				"nome": "ID",
+				"valor": "WTA - Buscar Profissionais"
+			},
+			{
+				"nome": "IDEMPRESAAPI",
+				"valor": "WINTHOR-WTA"
+			},
+			{
+				"nome": "SERVICO",
+				"valor": "WTA - Buscar Profissionais"
+			},
+			{
+				"nome": "LAYOUTCOMUNICACAO",
+				"valor": {
+					"name": "WTA - Buscar Profissionais",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{URL_BASE}}/winthor/cadastros/v1/profissional",
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "{{PAGE_SIZE}}"
+								},
+								{
+									"key": "page",
+									"value": "{{PAGE}}"
+								},
+								{
+									"key": "lastChange",
+									"value": "{{LAST_CHANGE}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			},
+			{
+				"nome": "LAYOUTTRANSFORMACAO",
+				"valor": [
+					{
+						"operation": "modify-overwrite-beta",
+						"spec": {
+						  "items": {
+							"*": {
+							  "cpf_cnpj_array": "=split('\\D',@(1,personIdentificationNumber))",
+							  "cpfCnpj": "=join('', @(1,cpf_cnpj_array))",
+							  "idExterno": "=concat('pdvsync-profissional-',@(1,professionalId),'-',@(1,lastChangeDate))",
+							  "idInterno": "=concat('PRO-',@(1,professionalId))",
+							  "idRetaguarda": "=concat('PRO-',@(1,professionalId))",
+							  "tipoIdInterno": "PDVSYNC-PROFISSIONAL",
+							  "login_s": "=concat('PRO-',@(1,professionalId))",
+							  "senha_s": "=concat('PRO-',@(1,professionalId))",
+							  "matricula_s": "=concat('PRO-',@(1,professionalId))"
+							}
+						  }
+						}
+						},
+					  {
+						"operation": "shift",
+						"spec": {
+						  "items": {
+							"*": {
+							  "idRetaguarda": "items[&1].idRetaguarda",
+							  "idInterno": "idInterno",
+							  "tipoIdInterno": "tipoIdInterno",
+							  "description": "items[&1].nome",
+							  "cpfCnpj": "items[&1].cpf",
+							  "dtUltAlter": "items[&1].dtUltAlter",
+							  "idExterno": "idExterno",
+							  "login_s": "items[&1].login",
+							  "matricula_s": "items[&1].matricula",
+							  "senha_s": "items[&1].senha"
+							}
+						  }
+						}
+					  },
+					  {
+						"operation": "default",
+						"spec": {
+						  "_attr_access": "items",
+						  "items[]": {
+							"*": {
+							  "administrador": 0,
+							  "idInquilino": "{{ID_INQUILINO}}",
+							  "idProprietario": "{{MASTER_ID_PROPRIETARIO}}",
+							  "idRetaguardaPerfil": 5,
+							  "loteOrigem": "{{LOTE_ORIGEM}}",
+							  "situacao": 1
+							}
+						  }
+						}
+					  }
+				]
+			},
+			{
+				"nome": "ATIVO",
+				"valor": "N"
+			},
+			{
+				"nome": "AUTENTICADOR",
+				"valor": "N"
+			},
+			{
+				"nome": "DATASINCRONISMO",
+				"valor": "14-NOV-23"
+			},
+			{
+				"nome": "REFRESHTOKEN",
+				"valor": ""
+			},
+			{
+				"nome": "TIPOPROCESSO",
+				"valor": "BUSCAR"
+			}
+		]
+	}
+}
