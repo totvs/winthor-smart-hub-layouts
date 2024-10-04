@@ -1,0 +1,147 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOROTASERVICO",
+		"campos": [
+			{
+				"nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+				"valor": "S"
+			},
+			{
+				"nome": "ID",
+				"valor": "WTA - Buscar Venda Integracao"
+			},
+			{
+				"nome": "IDEMPRESAAPI",
+				"valor": "WINTHOR-WTA"
+			},
+			{
+				"nome": "SERVICO",
+				"valor": "WTA - Buscar Venda Integracao"
+			},
+			{
+				"nome": "LAYOUTCOMUNICACAO",
+				"valor": {
+					"name": "WTA - Buscar Venda Integracao",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{URL_BASE}}/winthor/integracao/fulfillment/v1/integracao/filtro",
+							"query": [
+								{
+									"key": "page",
+									"value": "{{PAGE}}"
+								},							
+								{
+									"key": "pageSize",
+									"value": "{{PAGE_SIZE}}"
+								},
+								{
+									"key": "dataInicio",
+									"value": "{{DATA_HORA-INICIO}}"
+								},
+								{
+									"key": "dataFim",
+									"value": "{{DATA_HORA-FIM}}"
+								},
+								{
+									"key": "listaStatus",
+									"value": "2,11"
+								},
+								{
+									"key": "idRotaServico",
+									"value": "{{ROTA_SERVICO}}"
+								},
+								{
+									"key": "jsonDadosTransformadoBase64",
+									"value": "true"
+								}								
+							]
+						},
+						"bodyraw": ""
+					},
+					"response": []
+				}
+			},
+			{
+			"nome": "LAYOUTTRANSFORMACAO",
+			"valor":  [
+				  {
+					"operation": "custom-totvs",
+					"spec": {
+						"items": {
+							"*": {
+								"dadosTransformados": "=base64ToObject"
+							}
+						}
+					}
+				  },	
+				  {
+					"operation": "modify-overwrite-beta",
+					"spec": {
+					  "items": {
+						"*": {
+						  "idExterno": "=concat('wta-get-venda-integracao-', @(1,idInterno))"
+						}
+					  }
+					}
+				  },
+				  {
+					"operation": "shift",
+					"spec": {
+					  "items": {
+						"*": {
+							"idExterno": "idExterno",
+							"id": "items.[&1].idIntegracaoCore",
+							"idInterno": "items.[&1].idInterno",
+							"status": "items.[&1].status",
+							"dadosTransformados": {
+							  "idPdv": "items.[&2].idPdv",
+							  "numCupom": "items.[&2].numCupom",
+							  "serieNota": "items.[&2].serieNota",
+							  "codFilial": "items.[&2].codFilial"
+							}
+						}
+					  }
+					}
+				  },
+				  {
+					"operation": "default",
+					"spec": {
+					  "_attr_access": "items"
+					}
+				  }
+				]
+			},
+			{
+				"nome": "ATIVO",
+				"valor": "S"
+			},
+			{
+				"nome": "AUTENTICADOR",
+				"valor": "N"
+			},
+			{
+				"nome": "DATASINCRONISMO",
+				"valor": "13-NOV-23"
+			},
+			{
+				"nome": "REFRESHTOKEN",
+				"valor": "N"
+			},
+			{
+				"nome": "TIPOPROCESSO",
+				"valor": "BUSCAR"
+			}
+		]
+	}
+}

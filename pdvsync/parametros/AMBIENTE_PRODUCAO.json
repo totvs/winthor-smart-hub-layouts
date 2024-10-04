@@ -171,6 +171,12 @@
 			"rota": "PDVSYNC - Enviar lojas"
 		},
 		{
+			"nome": "{{URL_STATUS_VENDA_MONITOR}}",
+			"valor": "https://pdvsync.varejo.totvs.com.br/comercial/api/retaguarda/vendaMensagens",
+			"descricao": "PDV-SYNC - ATUALIZAR STATUS VENDA MONITOR",
+			"rota": "PDVSYNC - ATUALIZAR STATUS VENDA MONITOR"
+		},			
+		{
 			"nome": "{{CLIENT_ID}}",
 			"valor": "xFxvsGJF/bPu8EsB3HpJcz2s2hyv5QlWjMtHnPspn3A=",
 			"descricao": "CLIENT_ID - RAC - LoginPDVSync",
