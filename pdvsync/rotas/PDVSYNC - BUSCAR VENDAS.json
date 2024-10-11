@@ -40,7 +40,7 @@
                         "url": {
                             "query": [
                             ],
-                            "raw": "{{URL_CONSULTA_VENDAS}}/{{ID_INQUILINO}}?{{ID_PROPRIETARIO}}"
+                            "raw": "{{URL_CONSULTA_VENDAS}}/{{ID_INQUILINO}}"
                         }
                     },
                     "response": [
