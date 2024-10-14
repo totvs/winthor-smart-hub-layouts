@@ -28,7 +28,7 @@
 			},
 			{
 				"nome": "VALOR",
-				"valor": " https://pdvsync-core-estoque-qa-ywc7q7nxya-ue.a.run.app/api/retaguarda/v2/estoques"
+				"valor": "https://pdvsync.varejo.totvs.com.br/estoque/api/retaguarda/v2/estoques"
 			},
 			{
 				"nome": "CODEMPALTER",
