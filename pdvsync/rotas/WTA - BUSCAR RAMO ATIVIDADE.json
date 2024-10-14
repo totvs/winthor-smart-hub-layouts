@@ -1,0 +1,140 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOROTASERVICO",
+		"campos": [
+			{
+				"nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+				"valor": "N"
+			},
+			{
+				"nome": "ID",
+				"valor": "WTA - Buscar Ramo Atividade"
+			},
+			{
+				"nome": "IDEMPRESAAPI",
+				"valor": "WINTHOR-WTA"
+			},
+			{
+				"nome": "SERVICO",
+				"valor": "WTA - Buscar Ramo Atividade"
+			},
+			{
+				"nome": "LAYOUTCOMUNICACAO",
+				"valor": {
+					"name": "WTA -Buscar Ramo Atividade",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{URL_BASE}}/winthor/cliente/v1/ramoatividade",
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "{{PAGE_SIZE}}"
+								},
+								{
+									"key": "page",
+									"value": "{{PAGE}}"
+								},
+								{
+									"key": "lastChange",
+									"value": "{{DATAALTERACAO}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			},
+			{
+				"nome": "LAYOUTTRANSFORMACAO",
+				"valor": [
+					{
+						"operation": "modify-overwrite-beta",
+						"spec": {
+							"items": {
+								"*": {
+									"dadosTransformados": "=base64ToObject"
+								}
+							}
+						}
+					}, {
+						"operation": "modify-overwrite-beta",
+						"spec": {
+							"items": {
+								"*": {
+									"idExterno": "=concat('pdvsync-ramo-atividade-', @(1,lastChangeDate))",
+									"tipoIdInterno": "PDVSYNC-RAMO-ATIVIDADE"
+								}
+							}
+						}
+					}, {
+						"operation": "shift",
+						"spec": {
+							"items": {
+								"*": {
+									"idExterno": "idExterno",
+									"branchActivityId": "items.[&1].IdRetaguarda",
+									"description": "items.[&1].Descricao",
+									"feePercentage": "items.[&1].PercentualTaxa",
+									"mainBranchActivityId": "items.[&1].IdRetaguardaAtividadePrincipal",
+									"registrationDate": "items.[&1].DataCadastro",
+									"lastChangeDate": "items.[&1].DataAtualizacao",
+									"active": {
+										"true": {
+											"#1": "items.[&3].Situacao"
+										},
+										"*": {
+											"#0": "items.[&3].Situacao"
+										}
+									}
+								}
+							}
+						}
+					}, {
+						"operation": "default",
+						"spec": {
+							"_attr_access": "items",
+							"items[]": {
+								"*": {
+									"idInquilino": "{{ID_INQUILINO}}",
+									"idProprietario": "{{MASTER_ID_PROPRIETARIO}}",
+									"loteOrigem": "{{LOTE_ORIGEM}}"
+								}
+							}
+						}
+					}
+				]
+			},
+			{
+				"nome": "ATIVO",
+				"valor": "N"
+			},
+			{
+				"nome": "AUTENTICADOR",
+				"valor": "N"
+			},
+			{
+				"nome": "DATASINCRONISMO",
+				"valor": "14-NOV-23"
+			},
+			{
+				"nome": "REFRESHTOKEN",
+				"valor": ""
+			},
+			{
+				"nome": "TIPOPROCESSO",
+				"valor": "BUSCAR"
+			}
+		]
+	}
+}
