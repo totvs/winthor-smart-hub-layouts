@@ -28,7 +28,7 @@
 			},
 			{
 				"nome": "VALOR",
-				"valor": "http://34.136.178.251/api/v1/client/ip"
+				"valor": "http://ipfixo.pdvsync.varejo.totvs.com.br/api/v1/client/ip"
 			},
 			{
 				"nome": "CODEMPALTER",
