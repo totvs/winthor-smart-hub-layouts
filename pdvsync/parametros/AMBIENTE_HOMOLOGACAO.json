@@ -204,6 +204,12 @@
 			"valor": "adFhEn6/iX2pqQljcdsJHNbdV2J8f3XLTZf0eyrJVCd89OG+ifM1D0D4AjG0/nPP",
 			"descricao": "CLIENT_SECRET - RAC - LoginPDVSync",
 			"rota": "PDVSYNC - RAC LoginPDVSync"
+		},
+		{
+			"nome": "{{URL_ENVIAR_RAMO_ATIVIDADE}}",
+			"valor": "https://pdvsync-core-dadosbasicos-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/dadosdinamicos/down/58/1",
+			"descricao": "PDVSYNC - Salvar Ramo Atividade",
+			"rota": "PDVSYNC - Salvar Ramo Atividade"
 		}
 	]
 }
