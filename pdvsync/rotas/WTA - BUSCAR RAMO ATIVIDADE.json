@@ -72,7 +72,8 @@
 						"spec": {
 							"items": {
 								"*": {
-									"idExterno": "=concat('pdvsync-ramo-atividade-', @(1,lastChangeDate))",
+									"idExterno": "=concat('pdvsync-ramo-atividade-', @(1,lastChange))",
+									"idInterno": "=concat('', @(1,branchActivityId))",
 									"tipoIdInterno": "PDVSYNC-RAMO-ATIVIDADE"
 								}
 							}
@@ -82,7 +83,9 @@
 						"spec": {
 							"items": {
 								"*": {
+									"tipoIdInterno": "tipoIdInterno",
 									"idExterno": "idExterno",
+									"idInterno": "idInterno",
 									"branchActivityId": "items.[&1].IdRetaguarda",
 									"description": "items.[&1].Descricao",
 									"feePercentage": "items.[&1].PercentualTaxa",
