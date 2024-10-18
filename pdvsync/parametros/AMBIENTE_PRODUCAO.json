@@ -164,6 +164,12 @@
 			"rota": "PDVSYNC - Atualizar Status"
 		},
 		{
+			"nome": "{{URL_ENVIAR_RAMO_ATIVIDADE}}",
+			"valor": "https://pdvsync.varejo.totvs.com.br/api/retaguarda/v3/dadosdinamicos/down/58/1",
+			"descricao": "PDVSYNC - Salvar Ramo Atividade",
+			"rota": "PDVSYNC - Salvar Ramo Atividade"
+		},
+		{
 			"nome": "{{URL_ENVIAR_LOJAS}}",
 			"valor": "https://pdvsync.varejo.totvs.com.br/dadosbasicos/api/retaguarda/v2/lojas",
 			"descricao": "PDVSYNC - Enviar lojas",
@@ -204,6 +210,6 @@
 			"valor": "p1HFHhokxeLiWEj4zXTHgUMvOTV4EcN/+HXVhkiyif2O9Vp/UsOhHOYZaxJlqQe+",
 			"descricao": "CLIENT_SECRET - RAC - LoginPDVSync",
 			"rota": "PDVSYNC - RAC LoginPDVSync"
-		}		
+		}
 	]
 }
