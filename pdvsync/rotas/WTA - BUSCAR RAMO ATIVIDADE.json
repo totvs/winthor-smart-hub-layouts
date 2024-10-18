@@ -72,7 +72,7 @@
 						"spec": {
 							"items": {
 								"*": {
-									"idExterno": "=concat('pdvsync-ramo-atividade-', @(1,lastChange))",
+									"idExterno": "=concat('pdvsync-ramo-atividade-', @(1,lastChangeDate))",
 									"idInterno": "=concat('', @(1,branchActivityId))",
 									"tipoIdInterno": "PDVSYNC-RAMO-ATIVIDADE"
 								}
