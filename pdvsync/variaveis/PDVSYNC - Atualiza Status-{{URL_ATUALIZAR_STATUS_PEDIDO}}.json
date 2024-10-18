@@ -28,7 +28,7 @@
 			},
 			{
 				"nome": "VALOR",
-				"valor": "https://pdvsync-core-comercial-qa-ywc7q7nxya-ue.a.run.app/api/retaguarda/v2/preVendaMensagens"
+				"valor": "https://pdvsync.varejo.totvs.com.br/comercial/api/retaguarda/v2/preVendaMensagens"
 			},
 			{
 				"nome": "CODEMPALTER",

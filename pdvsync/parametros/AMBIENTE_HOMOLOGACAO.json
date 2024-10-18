@@ -135,19 +135,19 @@
 		},
 		{
 			"nome": "{{URL_ENVIAR_STATUS_PREVENDA}}",
-			"valor": "https://pdvsync-core-comercial-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/preVenda",
+			"valor": "https://pdvsync-core-comercial-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v2/preVenda",
 			"descricao": "PDVSync -Envia status pedido",
 			"rota": "PDVSYNC - Envia status pedido"
 		},
 		{
 			"nome": "{{URL_CONSULTA_VENDAS}}",
-			"valor": "https://pdvsync-core-comercial-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/preVendaMensagens",
+			"valor": "https://pdvsync-core-comercial-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v2/preVendaMensagens",
 			"descricao": "PDVSync - Buscar Pedidos RECEBIDO",
 			"rota": "PDVSync - Buscar Pedidos RECEBIDO"
 		},
 		{
 			"nome": "{{URL_CONSULTA_VENDAS}}",
-			"valor": "https://pdvsync-core-comercial-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/preVendaMensagens",
+			"valor": "https://pdvsync-core-comercial-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v2/preVendaMensagens",
 			"descricao": "PDVSync - Buscar Pedidos CANCELADA",
 			"rota": "PDVSYNC - Buscar Pedidos CANCELADA"
 		},
@@ -180,7 +180,19 @@
 			"valor": "https://pdvsync-core-dadosbasicos-dev-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/usuarios",
 			"descricao": "PDV-SYNC Salvar Profissional",
 			"rota": "PDV-SYNC Salvar Profissional"
+		},	
+		{
+			"nome": "{{BASE_URL_STATUS_LOTE}}",
+			"valor": "https://qua-pdvsync.varejo.totvs.com.br/controleprocesso/api/retaguarda/v2/LojaLoteStatusretorno",
+			"descricao": "PDV-SYNC Consultar Status Lote",
+			"rota": "PDVSYNC - Consultar Status Lote"
 		},		
+		{
+		    "nome": "{{URL_ENVIAR_REGIAO}}",
+			"valor": "https://pdvsync-core-dadosbasicos-dev-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/dadosdinamicos/down/100/1",
+			"descricao": "PDV-SYNC - SALVAR REGIAO",
+			"rota": "PDVSYNC - SALVAR REGIAO"
+		},			
 		{
 			"nome": "{{CLIENT_ID}}",
 			"valor": "iDHLOJ/Nuzxca8/gfE/Za87jXC8uQM3LPglhKVSN/Kw=",
@@ -192,6 +204,12 @@
 			"valor": "adFhEn6/iX2pqQljcdsJHNbdV2J8f3XLTZf0eyrJVCd89OG+ifM1D0D4AjG0/nPP",
 			"descricao": "CLIENT_SECRET - RAC - LoginPDVSync",
 			"rota": "PDVSYNC - RAC LoginPDVSync"
+		},
+		{
+			"nome": "{{URL_ENVIAR_RAMO_ATIVIDADE}}",
+			"valor": "https://pdvsync-core-dadosbasicos-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/dadosdinamicos/down/58/1",
+			"descricao": "PDVSYNC - Salvar Ramo Atividade",
+			"rota": "PDVSYNC - Salvar Ramo Atividade"
 		}
 	]
 }
