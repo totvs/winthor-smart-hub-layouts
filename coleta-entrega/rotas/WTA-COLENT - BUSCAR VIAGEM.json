@@ -1,1 +1,116 @@
-{"tabela":{"nome":"PCINTEGRACAOROTASERVICO","campos":[{"nome":"DATASINCRONISMO","valor":""},{"nome":"REFRESHTOKEN","valor":"N"},{"nome":"SOMENTEATUALIZARINTEGRACAOCORE","valor":"N"},{"nome":"ID","valor":"WTA-COLENT - Buscar Viagem"},{"nome":"IDEMPRESAAPI","valor":"WTA-COLETA-ENTREGA"},{"nome":"SERVICO","valor":"WTA-COLENT - Buscar Viagem"},{"nome":"LAYOUTCOMUNICACAO","valor":{"name":"WTA-COLENT - Buscar Viagem","request":{"method":"GET","header":[{"key":"Authorization","value":"Bearer {{TOKEN}}"}],"url":{"raw":"{{URL_BASE}}/logistica/apis/v1/viagens/buscar","query":[{"key":"page","value":"{{PAGE}}"},{"key":"pageSize","value":"{{PAGE_SIZE}}"}],"host":["{{URL_BASE}}"],"path":["logistica","apis","v1","viagens","buscar"]}},"response":[]}},{"nome":"LAYOUTTRANSFORMACAO","valor":[{"operation":"modify-overwrite-beta","spec":{"*":{"idExterno":"\u003dconcat(\u0027coleta-entrega-viagem-numcar-\u0027,@(1,externalId))"}}},{"operation":"shift","spec":{"*":{"externalId":"items[\u00261].externalId","descricao":"items[\u00261].descricao","identificacao":"items[\u00261].identificacao","motoristaId":"items[\u00261].motoristaId","tarefas":"items[\u00261].tarefas","unidadeCadastroId":"items[\u00261].unidadeCadastroId","unidadeOperacionalId":"items[\u00261].unidadeOperacionalId","idExterno":"idExterno"}}},{"operation":"default","spec":{"_attr_access":"items"}}]},{"nome":"ATIVO","valor":"N"},{"nome":"TIPOPROCESSO","valor":""},{"nome":"AUTENTICADOR","valor":"N"}]}}
+{
+    "tabela": {
+        "nome": "PCINTEGRACAOROTASERVICO",
+        "campos": [
+            {
+                "nome": "DATASINCRONISMO",
+                "valor": ""
+            },
+            {
+                "nome": "REFRESHTOKEN",
+                "valor": "N"
+            },
+            {
+                "nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+                "valor": "N"
+            },
+            {
+                "nome": "ID",
+                "valor": "WTA-COLENT - Buscar Viagem"
+            },
+            {
+                "nome": "IDEMPRESAAPI",
+                "valor": "WTA-COLETA-ENTREGA"
+            },
+            {
+                "nome": "SERVICO",
+                "valor": "WTA-COLENT - Buscar Viagem"
+            },
+            {
+                "nome": "LAYOUTCOMUNICACAO",
+                "valor": {
+                    "name": "WTA-COLENT - Buscar Viagem",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{TOKEN}}"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{URL_BASE}}/logistica/apis/v1/viagens/buscar",
+                            "query": [
+                                {
+                                    "key": "page",
+                                    "value": "{{PAGE}}"
+                                },
+                                {
+                                    "key": "pageSize",
+                                    "value": "{{PAGE_SIZE}}"
+                                }
+                            ],
+                            "host": [
+                                "{{URL_BASE}}"
+                            ],
+                            "path": [
+                                "logistica",
+                                "apis",
+                                "v1",
+                                "viagens",
+                                "buscar"
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            },
+            {
+                "nome": "LAYOUTTRANSFORMACAO",
+                "valor": [
+                    {
+                        "operation": "modify-overwrite-beta",
+                        "spec": {
+                            "*": {
+                                "idExterno": "\u003dconcat(\u0027coleta-entrega-viagem-numcar-\u0027,@(1,externalId))"
+                            }
+                        }
+                    },
+                    {
+                        "operation": "shift",
+                        "spec": {
+                            "*": {
+                                "externalId": "items[\u00261].externalId",
+                                "descricao": "items[\u00261].descricao",
+                                "identificacao": "items[\u00261].identificacao",
+                                "motoristaId": "items[\u00261].motoristaId",
+                                "tarefas": "items[\u00261].tarefas",
+                                "unidadeCadastroId": "items[\u00261].unidadeCadastroId",
+                                "unidadeOperacionalId": "items[\u00261].unidadeOperacionalId",
+                                "idExterno": "idExterno"
+                            }
+                        }
+                    },
+                    {
+                        "operation": "default",
+                        "spec": {
+                            "_attr_access": "items"
+                        }
+                    }
+                ]
+            },
+            {
+                "nome": "ATIVO",
+                "valor": "S"
+            },
+            {
+                "nome": "TIPOPROCESSO",
+                "valor": ""
+            },
+            {
+                "nome": "AUTENTICADOR",
+                "valor": "N"
+            }
+        ]
+    }
+}

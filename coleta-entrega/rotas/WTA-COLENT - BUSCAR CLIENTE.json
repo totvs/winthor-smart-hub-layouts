@@ -1,1 +1,105 @@
-{"tabela":{"nome":"PCINTEGRACAOROTASERVICO","campos":[{"nome":"DATASINCRONISMO","valor":""},{"nome":"REFRESHTOKEN","valor":"N"},{"nome":"SOMENTEATUALIZARINTEGRACAOCORE","valor":"N"},{"nome":"ID","valor":"WTA-COLENT - Buscar Cliente"},{"nome":"IDEMPRESAAPI","valor":"WTA-COLETA-ENTREGA"},{"nome":"SERVICO","valor":"WTA-COLENT - Buscar Cliente"},{"nome":"LAYOUTCOMUNICACAO","valor":{"name":"WTA-COLENT - Buscar Cliente","request":{"method":"GET","header":[{"key":"Authorization","value":"Bearer {{TOKEN}}"}],"url":{"raw":"{{URL_BASE}}/logistica/apis/v1/clientes/buscar","query":[],"host":["{{URL_BASE}}"],"path":["logistica","apis","v1","clientes","buscar"]}},"response":[]}},{"nome":"LAYOUTTRANSFORMACAO","valor":[{"operation":"modify-overwrite-beta","spec":{"*":{"idExterno":"\u003dconcat(\u0027coleta-entrega-cliente-nome-\u0027,@(1,nome))"}}},{"operation":"shift","spec":{"*":{"idExterno":"idExterno","nome":"items[\u00261].nome","nomeFantasia":"items[\u00261].nomeFantasia","documentoIdentificacao":"items[\u00261].documentoIdentificacao","horarioFuncionamento":"items[\u00261].horarioFuncionamento","enderecos":"items[\u00261].enderecos"}}},{"operation":"default","spec":{"_attr_access":"items"}}]},{"nome":"ATIVO","valor":"N"},{"nome":"TIPOPROCESSO","valor":""},{"nome":"AUTENTICADOR","valor":"N"}]}}
+{
+    "tabela": {
+        "nome": "PCINTEGRACAOROTASERVICO",
+        "campos": [
+            {
+                "nome": "DATASINCRONISMO",
+                "valor": ""
+            },
+            {
+                "nome": "REFRESHTOKEN",
+                "valor": "N"
+            },
+            {
+                "nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+                "valor": "N"
+            },
+            {
+                "nome": "ID",
+                "valor": "WTA-COLENT - Buscar Cliente"
+            },
+            {
+                "nome": "IDEMPRESAAPI",
+                "valor": "WTA-COLETA-ENTREGA"
+            },
+            {
+                "nome": "SERVICO",
+                "valor": "WTA-COLENT - Buscar Cliente"
+            },
+            {
+                "nome": "LAYOUTCOMUNICACAO",
+                "valor": {
+                    "name": "WTA-COLENT - Buscar Cliente",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{TOKEN}}"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{URL_BASE}}/logistica/apis/v1/clientes/buscar",
+                            "query": [],
+                            "host": [
+                                "{{URL_BASE}}"
+                            ],
+                            "path": [
+                                "logistica",
+                                "apis",
+                                "v1",
+                                "clientes",
+                                "buscar"
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            },
+            {
+                "nome": "LAYOUTTRANSFORMACAO",
+                "valor": [
+                    {
+                        "operation": "modify-overwrite-beta",
+                        "spec": {
+                            "*": {
+                                "idExterno": "\u003dconcat(\u0027coleta-entrega-cliente-nome-\u0027,@(1,nome))"
+                            }
+                        }
+                    },
+                    {
+                        "operation": "shift",
+                        "spec": {
+                            "*": {
+                                "idExterno": "idExterno",
+                                "nome": "items[\u00261].nome",
+                                "nomeFantasia": "items[\u00261].nomeFantasia",
+                                "documentoIdentificacao": "items[\u00261].documentoIdentificacao",
+                                "horarioFuncionamento": "items[\u00261].horarioFuncionamento",
+                                "enderecos": "items[\u00261].enderecos"
+                            }
+                        }
+                    },
+                    {
+                        "operation": "default",
+                        "spec": {
+                            "_attr_access": "items"
+                        }
+                    }
+                ]
+            },
+            {
+                "nome": "ATIVO",
+                "valor": "S"
+            },
+            {
+                "nome": "TIPOPROCESSO",
+                "valor": ""
+            },
+            {
+                "nome": "AUTENTICADOR",
+                "valor": "N"
+            }
+        ]
+    }
+}
