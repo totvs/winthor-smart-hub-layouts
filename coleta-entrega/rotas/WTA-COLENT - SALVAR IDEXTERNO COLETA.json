@@ -1,1 +1,93 @@
-{"tabela":{"nome":"PCINTEGRACAOROTASERVICO","campos":[{"nome":"DATASINCRONISMO","valor":""},{"nome":"REFRESHTOKEN","valor":"N"},{"nome":"SOMENTEATUALIZARINTEGRACAOCORE","valor":"N"},{"nome":"ID","valor":"WTA-COLENT - Salvar IdExterno Coleta"},{"nome":"IDEMPRESAAPI","valor":"WTA-COLETA-ENTREGA"},{"nome":"SERVICO","valor":"WTA-COLENT - Salvar IdExterno Coleta"},{"nome":"LAYOUTCOMUNICACAO","valor":{"name":"WTA-COLENT - Salvar IdExterno Coleta","request":{"method":"POST","header":[{"key":"Authorization","value":"Bearer {{TOKEN}}"},{"key":"Accept","value":"*/*"},{"key":"Content-Type","value":"application/json"}],"url":{"raw":"{{URL_BASE}}/logistica/apis/v1/coletas/salvar-id-coleta-entrega","query":[],"host":["{{URL_BASE}}"],"path":["logistica","apis","v1","coletas","salvar-id-coleta-entrega"]},"bodyraw":"{{CLIENT_JSON}}"},"response":[]}},{"nome":"LAYOUTTRANSFORMACAO","valor":[{"operation":"default","spec":{"status":2}}]},{"nome":"ATIVO","valor":"N"},{"nome":"TIPOPROCESSO","valor":""},{"nome":"AUTENTICADOR","valor":"N"}]}}
+{
+    "tabela": {
+        "nome": "PCINTEGRACAOROTASERVICO",
+        "campos": [
+            {
+                "nome": "DATASINCRONISMO",
+                "valor": ""
+            },
+            {
+                "nome": "REFRESHTOKEN",
+                "valor": "N"
+            },
+            {
+                "nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+                "valor": "N"
+            },
+            {
+                "nome": "ID",
+                "valor": "WTA-COLENT - Salvar IdExterno Coleta"
+            },
+            {
+                "nome": "IDEMPRESAAPI",
+                "valor": "WTA-COLETA-ENTREGA"
+            },
+            {
+                "nome": "SERVICO",
+                "valor": "WTA-COLENT - Salvar IdExterno Coleta"
+            },
+            {
+                "nome": "LAYOUTCOMUNICACAO",
+                "valor": {
+                    "name": "WTA-COLENT - Salvar IdExterno Coleta",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{TOKEN}}"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "*/*"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{URL_BASE}}/logistica/apis/v1/coletas/salvar-id-coleta-entrega",
+                            "query": [],
+                            "host": [
+                                "{{URL_BASE}}"
+                            ],
+                            "path": [
+                                "logistica",
+                                "apis",
+                                "v1",
+                                "coletas",
+                                "salvar-id-coleta-entrega"
+                            ]
+                        },
+                        "bodyraw": "{{CLIENT_JSON}}"
+                    },
+                    "response": []
+                }
+            },
+            {
+                "nome": "LAYOUTTRANSFORMACAO",
+                "valor": [
+                    {
+                        "operation": "default",
+                        "spec": {
+                            "status": 2
+                        }
+                    }
+                ]
+            },
+            {
+                "nome": "ATIVO",
+                "valor": "S"
+            },
+            {
+                "nome": "TIPOPROCESSO",
+                "valor": ""
+            },
+            {
+                "nome": "AUTENTICADOR",
+                "valor": "N"
+            }
+        ]
+    }
+}
