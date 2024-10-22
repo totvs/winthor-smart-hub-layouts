@@ -228,6 +228,8 @@
 											}
 										},
 										"cnpjFornecedor": "items.[&2].cnpjFornecedor",
+										"codProdPrinc": "items.[&2].idProdutoPrincipal",
+										"gatilhoAtacado": "items.[&2].quantidadeValorAtacado",
 										"embalagens": {
 											"*": {
 												"IdProdutoRetaguarda": "items.[&4].produtoEmbalagens[&1].IdProdutoRetaguarda",
