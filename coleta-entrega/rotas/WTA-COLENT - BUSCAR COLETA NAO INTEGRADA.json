@@ -1,0 +1,110 @@
+{
+    "tabela": {
+        "nome": "PCINTEGRACAOROTASERVICO",
+        "campos": [
+            {
+                "nome": "DATASINCRONISMO",
+                "valor": ""
+            },
+            {
+                "nome": "REFRESHTOKEN",
+                "valor": "N"
+            },
+            {
+                "nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+                "valor": "N"
+            },
+            {
+                "nome": "ID",
+                "valor": "WTA-COLENT - Buscar Coleta Nao Integrada"
+            },
+            {
+                "nome": "IDEMPRESAAPI",
+                "valor": "WTA-COLETA-ENTREGA"
+            },
+            {
+                "nome": "SERVICO",
+                "valor": "WTA-COLENT - Buscar Coleta Nao Integrada"
+            },
+            {
+                "nome": "LAYOUTCOMUNICACAO",
+                "valor": {
+                    "name": "WTA-COLENT - Buscar Coleta Nao Integrada",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{TOKEN}}"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{URL_BASE}}/logistica/apis/v1/coletas/buscar-nao-integradas",
+                            "query": [
+                                {
+                                    "key": "page",
+                                    "value": "{{PAGE}}"
+                                },
+                                {
+                                    "key": "pageSize",
+                                    "value": "{{PAGE_SIZE}}"
+                                }
+                            ],
+                            "host": [
+                                "{{URL_BASE}}"
+                            ],
+                            "path": [
+                                "logistica",
+                                "apis",
+                                "v1",
+                                "coletas",
+                                "buscar-nao-integradas"
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            },
+            {
+                "nome": "LAYOUTTRANSFORMACAO",
+                "valor": [
+                    {
+                        "operation": "modify-overwrite-beta",
+                        "spec": {
+                            "*": {
+                                "idExterno": "\u003dconcat(\u0027coleta-entrega-coleta-numtransent-\u0027,@(1,numTransEnt))"
+                            }
+                        }
+                    },
+                    {
+                        "operation": "shift",
+                        "spec": {
+                            "*": {
+                                "numTransEnt": "items[\u00261].numTransEnt",
+                                "idExterno": "idExterno"
+                            }
+                        }
+                    },
+                    {
+                        "operation": "default",
+                        "spec": {
+                            "_attr_access": "items"
+                        }
+                    }
+                ]
+            },
+            {
+                "nome": "ATIVO",
+                "valor": "S"
+            },
+            {
+                "nome": "TIPOPROCESSO",
+                "valor": ""
+            },
+            {
+                "nome": "AUTENTICADOR",
+                "valor": "N"
+            }
+        ]
+    }
+}

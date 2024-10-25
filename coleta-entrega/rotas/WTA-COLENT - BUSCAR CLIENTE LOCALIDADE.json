@@ -1,0 +1,175 @@
+{
+    "tabela": {
+        "nome": "PCINTEGRACAOROTASERVICO",
+        "campos": [
+            {
+                "nome": "DATASINCRONISMO",
+                "valor": ""
+            },
+            {
+                "nome": "REFRESHTOKEN",
+                "valor": "N"
+            },
+            {
+                "nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+                "valor": "N"
+            },
+            {
+                "nome": "ID",
+                "valor": "WTA-COLENT - Buscar Cliente Localidade"
+            },
+            {
+                "nome": "IDEMPRESAAPI",
+                "valor": "WTA-COLETA-ENTREGA"
+            },
+            {
+                "nome": "SERVICO",
+                "valor": "WTA-COLENT - Buscar Cliente Localidade"
+            },
+            {
+                "nome": "LAYOUTCOMUNICACAO",
+                "valor": {
+                    "name": "WTA COLENT - Buscar Cliente Localidade",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{TOKEN}}"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{URL_BASE}}/api/wholesale/v1/customer/list",
+                            "query": [
+                                {
+                                    "key": "page",
+                                    "value": "{{PAGE}}"
+                                },
+                                {
+                                    "key": "pageSize",
+                                    "value": "{{PAGE_SIZE}}"
+                                },
+                                {
+                                    "key": "withDeliveryAddress",
+                                    "value": "true"
+                                }
+                            ],
+                            "host": [
+                                "{{URL_BASE}}"
+                            ],
+                            "path": [
+                                "api",
+                                "wholesale",
+                                "v1",
+                                "customer",
+                                "list"
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            },
+            {
+                "nome": "LAYOUTTRANSFORMACAO",
+                "valor": [
+                    {
+                        "operation": "shift",
+                        "spec": {
+                            "items": {
+                                "*": {
+                                    "id": "items.[\u00261].enderecos.codCli",
+                                    "deliveryAddress": "items.[\u00261].enderecos.logradouro",
+                                    "deliveryZipCode": "items.[\u00261].enderecos.cep",
+                                    "deliveryAddressNumber": "items.[\u00261].enderecos.numero",
+                                    "deliveryAddresses": {
+                                        "*": {
+                                            "id": "items[\u00263].enderecosAlternativos[\u00261].codEndEntCli",
+                                            "customerId": "items[\u00263].enderecosAlternativos[\u00261].codCli",
+                                            "address": "items[\u00263].enderecosAlternativos[\u00261].logradouro",
+                                            "zipCode": "items[\u00263].enderecosAlternativos[\u00261].cep",
+                                            "number": "items[\u00263].enderecosAlternativos[\u00261].numero"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "operation": "shift",
+                        "spec": {
+                            "items": {
+                                "*": {
+                                    "enderecos": "items[\u00261].enderecos[]",
+                                    "enderecosAlternativos": {
+                                        "*": "items[\u00262].enderecos[]"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "operation": "modify-overwrite-beta",
+                        "spec": {
+                            "items": {
+                                "*": {
+                                    "enderecos": {
+                                        "*": {
+                                            "idExterno": "\u003dconcat(\u0027coleta-entrega-codcli-codendentcli-\u0027,@(1,codCli),\u0027|\u0027,@(1,codEndEntCli))",
+                                            "concatLocalidade": "\u003dconcat(@(1,codCli),\u0027|\u0027,@(1,codEndEntCli))"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "operation": "shift",
+                        "spec": {
+                            "items": {
+                                "*": {
+                                    "enderecos": {
+                                        "*": "items"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "operation": "shift",
+                        "spec": {
+                            "items": {
+                                "*": {
+                                    "codEndEntCli": "items[\u00261].codEndEntCli",
+                                    "codCli": "items[\u00261].codCli",
+                                    "logradouro": "items[\u00261].logradouro",
+                                    "cep": "items[\u00261].cep",
+                                    "numero": "items[\u00261].numero",
+                                    "concatLocalidade": "items[\u00261].concatLocalidade",
+                                    "idExterno": "idExterno"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "operation": "default",
+                        "spec": {
+                            "_attr_access": "items"
+                        }
+                    }
+                ]
+            },
+            {
+                "nome": "ATIVO",
+                "valor": "S"
+            },
+            {
+                "nome": "TIPOPROCESSO",
+                "valor": ""
+            },
+            {
+                "nome": "AUTENTICADOR",
+                "valor": "N"
+            }
+        ]
+    }
+}
