@@ -68,7 +68,6 @@
 					"spec": {
 					  "items": {
 						"*": {
-						  "idRetaguarda": "=concat(@(1,branchId),'-',@(1,regionId))",	
 						  "idExterno": "=concat('pdvsync-regiao-', @(1,idRetaguarda),'-',@(1,branchId),'-',@(1,lastChangeDate))",
 						  "idInterno": "=concat(@(1,branchId),'-',@(1,regionId))",
 						  "tipoIdInterno":"PDVSYNC-REGIAO-PDV"
@@ -90,7 +89,8 @@
 						  "thirdPartyFreightPercentage": "items.[&1].freteTerceiros",
 						  "specialFreightPercentage": "items.[&1].freteEspecial",
 						  "shippingCostByKg": "items.[&1].freteKg",
-						  "idRetaguardaLoja": "items.[&1].branchId",
+						  "branchId": "items.[&1].idRetaguardaLoja",
+                          "regionId": "items.[&1].idRetaguarda",
 						  "status": {
 							"A": {
 							  "#1": "items[&3].situacao"
