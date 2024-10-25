@@ -68,7 +68,7 @@
 					"spec": {
 					  "items": {
 						"*": {
-						  "idExterno": "=concat('pdvsync-regiao-', @(1,idRetaguarda),'-',@(1,branchId),'-',@(1,lastChangeDate))",
+						  "idExterno": "=concat('pdvsync-regiao-', @(1,regionId),'-',@(1,branchId),'-',@(1,lastChangeDate))",
 						  "idInterno": "=concat(@(1,branchId),'-',@(1,regionId))",
 						  "tipoIdInterno":"PDVSYNC-REGIAO-PDV"
 						}
