@@ -210,6 +210,12 @@
 			"valor": "https://pdvsync-core-dadosbasicos-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/dadosdinamicos/down/58/1",
 			"descricao": "PDVSYNC - Salvar Ramo Atividade",
 			"rota": "PDVSYNC - Salvar Ramo Atividade"
+		},
+		{
+			"nome": "{{URL_ENVIAR_PRECO_REGIAO}}",
+			"valor": "https://pdvsync-core-preco-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/precos",
+			"descricao": "PDV-SYNC Enviar Preco Regiao",
+			"rota": "PDVSYNC - Enviar Preco Regiao"
 		}
 	]
 }
