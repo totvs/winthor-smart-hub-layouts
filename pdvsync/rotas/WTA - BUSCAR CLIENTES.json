@@ -119,7 +119,21 @@
 							   },
 							   "createDate":"items.[&1].dataCadastro",
 							   "deliveryAddressNumber":"items.[&1].numero",
-							   "profissionalRetaguarda": "items.[&1].IdProfissionalRetaguarda"
+                               "profissionalRetaguarda": "items.[&1].IdProfissionalRetaguarda",
+							   "professionalId":"items.[&1].IdProfissionalRetaguarda",
+							   "customerNetId": "items.[&1].IdRetaguardaRedeCliente",
+							   "mainClientId": "items.[&1].IdClientePrincipal",
+							   "squareId": "items.[&1].IdRetaguardaPraca",
+							   "regionId": "items.[&1].IdRegiao",
+							   "activityId": "items.[&1].IdRamoAtividade",
+							   "wholesalePriceUses": {
+								 "N": {
+								   "#False": "items.[&3].UtilizaPrecoAtacado"
+								 },
+								 "S": {
+								   "#True": "items.[&3].UtilizaPrecoAtacado"
+								 }
+							   }
 							}
 						 }
 					  }

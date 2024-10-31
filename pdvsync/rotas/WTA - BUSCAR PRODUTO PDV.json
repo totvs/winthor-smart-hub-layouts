@@ -228,6 +228,14 @@
 											}
 										},
 										"cnpjFornecedor": "items.[&2].cnpjFornecedor",
+										"codProdPrinc": "items.[&2].idProdutoPrincipal",
+										"gatilhoAtacado": "items.[&2].quantidadeValorAtacado",
+										"codigoFornecedor": "items.[&2].Id_retaguarda_fornecedor",
+										"codigoDepartamento": "items.[&2].id_retaguarda_departamento",
+										"codigoSecao": "items.[&2].id_retaguarda_secao",
+										"codigoCategoria": "items.[&2].id_retaguarda_categoria",
+										"codigoSubCategoria": "items.[&2].id_retaguarda_sub_categoria",
+										"codigoMarca": "items.[&2].id_retaguarda_marca",
 										"embalagens": {
 											"*": {
 												"IdProdutoRetaguarda": "items.[&4].produtoEmbalagens[&1].IdProdutoRetaguarda",
