@@ -74,6 +74,7 @@
               "items": {
                 "*": {
                   "idExterno": "=concat('pdvsync-grupo-campanha-cliente-', @(1,lastChange))",
+                  "idInterno": "=concat('', @(1,branchId))",
                   "tipoIdInterno": "PDVSYNC-GRUPO-CAMPANHA-CLIENTE"
                 }
               }
@@ -84,15 +85,17 @@
             "spec": {
               "items": {
                 "*": {
-                  "idExterno": "idExterno",
                   "groupCampaignItems": {
                     "*": {
-                      "itemId": "items.[&3].listRetaguarda[&1].idRetaguardaCliente",
+                      "@(2,active)": "items.[&3].listRetaguarda[&1].situacao",
                       "@(2,branchId)": "items.[&3].listRetaguarda[&1].idRetaguardaLoja",
-                      "@(2,groupType)": "items.[&3].listRetaguarda[&1].idRetaguarda",
-                      "@(2,active)": "items.[&3].listRetaguarda[&1].SituacaoItem"
+                      "@(2,groupId)": "items.[&3].listRetaguarda[&1].idRetaguardaGrupo",
+                      "itemId": "items.[&3].listRetaguarda[&1].idRetaguardaCliente"
                     }
-                  }
+                  },
+                  "idExterno": "idExterno",
+                  "idInterno": "idInterno",
+                  "tipoIdInterno": "tipoIdInterno"
                 }
               }
             }
@@ -101,11 +104,47 @@
             "operation": "shift",
             "spec": {
               "idExterno": "idExterno",
+              "idInterno": "idInterno",
               "items": {
                 "*": {
                   "listRetaguarda": {
-                    "*": "items"
+                    "*": "items[]"
                   }
+                }
+              },
+              "tipoIdInterno": "tipoIdInterno"
+            }
+          },
+          {
+            "operation": "shift",
+            "spec": {
+              "idExterno": "idExterno",
+              "idInterno": "idInterno",
+              "idRetaguarda": "idRetaguarda",
+              "items": {
+                "*": {
+                  "idRetaguardaCliente": "items.[&1].idRetaguardaCliente",
+                  "idRetaguardaGrupo": "items.[&1].idRetaguardaGrupo",
+                  "idRetaguardaLoja": "items.[&1].idRetaguardaLoja",
+                  "situacao": {
+                    "false": {
+                      "#0": "items.[&3].situacao"
+                    },
+                    "true": {
+                      "#1": "items.[&3].situacao"
+                    }
+                  }
+                }
+              },
+              "tipoIdInterno": "tipoIdInterno"
+            }
+          },
+          {
+            "operation": "modify-overwrite-beta",
+            "spec": {
+              "items": {
+                "*": {
+                  "idRetaguarda": "=concat(@(1,idRetaguardaGrupo), '-', @(1,idRetaguardaCliente))"
                 }
               }
             }
@@ -114,21 +153,18 @@
             "operation": "shift",
             "spec": {
               "idExterno": "idExterno",
+              "idInterno": "idInterno",
+              "idRetaguarda": "idRetaguarda",
               "items": {
                 "*": {
-                  "idRetaguardaCliente": "items.[&1].idRetaguardaCliente",
-                  "idRetaguardaLoja": "items.[&1].idRetaguardaLoja",
                   "idRetaguarda": "items.[&1].idRetaguarda",
-                  "SituacaoItem": {
-                    "true": {
-                      "#1": "items.[&3].SituacaoItem"
-                    },
-                    "false": {
-                      "#0": "items.[&3].SituacaoItem"
-                    }
-                  }
+                  "idRetaguardaCliente": "items.[&1].idRetaguardaCliente",
+                  "idRetaguardaGrupo": "items.[&1].idRetaguardaGrupo",
+                  "idRetaguardaLoja": "items.[&1].idRetaguardaLoja",
+                  "situacao": "items.[&1].situacao"
                 }
-              }
+              },
+              "tipoIdInterno": "tipoIdInterno"
             }
           },
           {
@@ -148,7 +184,7 @@
       },
       {
         "nome": "ATIVO",
-        "valor": "N"
+        "valor": "S"
       },
       {
         "nome": "AUTENTICADOR",
