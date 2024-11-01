@@ -228,7 +228,7 @@
 											}
 										},
 										"cnpjFornecedor": "items.[&2].cnpjFornecedor",
-										"codProdPrinc": "items.[&2].idProdutoPrincipal",
+										"codigoProdutoPrincipal": "items.[&2].idProdutoPrincipal",
 										"quantidadeMinimaAtacado": {
 											"valor": "items.[&3].quantidadeValorAtacado"
 										},
