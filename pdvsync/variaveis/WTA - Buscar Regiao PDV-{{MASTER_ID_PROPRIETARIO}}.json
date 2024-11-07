@@ -8,11 +8,11 @@
 			},
 			{
 				"nome": "ID",
-				"valor": "PDVSYNC - SALVAR REGIAO-{{FILIAL_ID_PROPRIETARIO}}"
+				"valor": "WTA - BUSCAR REGIAO PDV-{{MASTER_ID_PROPRIETARIO}}"
 			},
 			{
 				"nome": "CHAVE",
-				"valor": "{{FILIAL_ID_PROPRIETARIO}}"
+				"valor": "{{MASTER_ID_PROPRIETARIO}}"
 			},
 			{
 				"nome": "TIPOCHAVE",
@@ -24,11 +24,11 @@
 			},
 			{
 				"nome": "IDROTASERVICO",
-				"valor": "PDVSYNC - SALVAR REGIAO"
+				"valor": "WTA - BUSCAR REGIAO PDV"
 			},
 			{
 				"nome": "VALOR",
-				"valor": "ADICIONAR_FILIAL"
+				"valor": "9999"
 			},
 			{
 				"nome": "CODEMPALTER",
