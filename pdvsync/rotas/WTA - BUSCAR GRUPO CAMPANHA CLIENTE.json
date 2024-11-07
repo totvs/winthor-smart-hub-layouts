@@ -69,18 +69,6 @@
             }
           },
           {
-            "operation": "modify-overwrite-beta",
-            "spec": {
-              "items": {
-                "*": {
-                  "idExterno": "=concat('pdvsync-grupo-campanha-cliente-', @(1,lastChange))",
-                  "idInterno": "=concat('', @(1,branchId))",
-                  "tipoIdInterno": "PDVSYNC-GRUPO-CAMPANHA-CLIENTE"
-                }
-              }
-            }
-          },
-          {
             "operation": "shift",
             "spec": {
               "items": {
@@ -90,12 +78,10 @@
                       "@(2,active)": "items.[&3].listRetaguarda[&1].situacao",
                       "@(2,branchId)": "items.[&3].listRetaguarda[&1].idRetaguardaLoja",
                       "@(2,groupId)": "items.[&3].listRetaguarda[&1].idRetaguardaGrupo",
+                      "@(2,lastChange)": "items.[&3].listRetaguarda[&1].lastChange",
                       "itemId": "items.[&3].listRetaguarda[&1].idRetaguardaCliente"
                     }
-                  },
-                  "idExterno": "idExterno",
-                  "idInterno": "idInterno",
-                  "tipoIdInterno": "tipoIdInterno"
+                  }
                 }
               }
             }
@@ -103,29 +89,25 @@
           {
             "operation": "shift",
             "spec": {
-              "idExterno": "idExterno",
-              "idInterno": "idInterno",
               "items": {
                 "*": {
                   "listRetaguarda": {
                     "*": "items[]"
                   }
                 }
-              },
-              "tipoIdInterno": "tipoIdInterno"
+              }
             }
           },
           {
             "operation": "shift",
             "spec": {
-              "idExterno": "idExterno",
-              "idInterno": "idInterno",
               "idRetaguarda": "idRetaguarda",
               "items": {
                 "*": {
                   "idRetaguardaCliente": "items.[&1].idRetaguardaCliente",
                   "idRetaguardaGrupo": "items.[&1].idRetaguardaGrupo",
                   "idRetaguardaLoja": "items.[&1].idRetaguardaLoja",
+                  "lastChange": "items.[&1].lastChange",
                   "situacao": {
                     "false": {
                       "#0": "items.[&3].situacao"
@@ -135,8 +117,7 @@
                     }
                   }
                 }
-              },
-              "tipoIdInterno": "tipoIdInterno"
+              }
             }
           },
           {
@@ -144,7 +125,10 @@
             "spec": {
               "items": {
                 "*": {
-                  "idRetaguarda": "=concat(@(1,idRetaguardaGrupo), '-', @(1,idRetaguardaCliente))"
+                  "idExterno": "=concat('pdvsync-grupo-campanha-cliente-', @(1,lastChange))",
+                  "idInterno": "=concat('', @(1,idRetaguardaCliente))",
+                  "idRetaguarda": "=concat(@(1,idRetaguardaGrupo), '-', @(1,idRetaguardaCliente))",
+                  "tipoIdInterno": "PDVSYNC-GRUPO-CAMPANHA-CLIENTE"
                 }
               }
             }
@@ -152,19 +136,19 @@
           {
             "operation": "shift",
             "spec": {
-              "idExterno": "idExterno",
-              "idInterno": "idInterno",
               "idRetaguarda": "idRetaguarda",
               "items": {
                 "*": {
+                  "idExterno": "idExterno[]",
+                  "idInterno": "idInterno[]",
                   "idRetaguarda": "items.[&1].idRetaguarda",
                   "idRetaguardaCliente": "items.[&1].idRetaguardaCliente",
                   "idRetaguardaGrupo": "items.[&1].idRetaguardaGrupo",
                   "idRetaguardaLoja": "items.[&1].idRetaguardaLoja",
-                  "situacao": "items.[&1].situacao"
+                  "situacao": "items.[&1].situacao",
+                  "tipoIdInterno": "tipoIdInterno[]"
                 }
-              },
-              "tipoIdInterno": "tipoIdInterno"
+              }
             }
           },
           {
