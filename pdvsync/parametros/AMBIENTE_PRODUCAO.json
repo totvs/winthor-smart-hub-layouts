@@ -216,6 +216,12 @@
 			"valor": "https://pdvsync.varejo.totvs.com.br/preco/api/retaguarda/v3/precos",
 			"descricao": "PDV-SYNC Enviar Preco Regiao",
 			"rota": "PDVSYNC - Enviar Preco Regiao"
+    },
+    {
+			"nome": "{{URL_ENVIAR_PRECO_EMBALAGEM}}",
+			"valor": "https://pdvsync.varejo.totvs.com.br/preco/api/retaguarda/v3/precos",
+			"descricao": "PDV-SYNC Enviar Preco Embalagem",
+			"rota": "PDVSYNC - Enviar Preco Embalagem"
 		}
 	]
 }

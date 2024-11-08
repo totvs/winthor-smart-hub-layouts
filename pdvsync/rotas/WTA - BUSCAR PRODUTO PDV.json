@@ -228,8 +228,10 @@
 											}
 										},
 										"cnpjFornecedor": "items.[&2].cnpjFornecedor",
-										"codProdPrinc": "items.[&2].idProdutoPrincipal",
-										"gatilhoAtacado": "items.[&2].quantidadeValorAtacado",
+										"codigoProdutoPrincipal": "items.[&2].idProdutoPrincipal",
+										"quantidadeMinimaAtacado": {
+											"valor": "items.[&3].quantidadeValorAtacado"
+										},
 										"codigoFornecedor": "items.[&2].Id_retaguarda_fornecedor",
 										"codigoDepartamento": "items.[&2].id_retaguarda_departamento",
 										"codigoSecao": "items.[&2].id_retaguarda_secao",
