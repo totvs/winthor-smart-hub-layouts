@@ -8,7 +8,7 @@
 			},
 			{
 				"nome": "ID",
-				"valor": "WTA - BUSCAR REGIAO PDV-{{MASTER_ID_PROPRIETARIO}}"
+				"valor": "PDVSYNC - Salvar Regiao-{{MASTER_ID_PROPRIETARIO}}"
 			},
 			{
 				"nome": "CHAVE",
@@ -24,7 +24,7 @@
 			},
 			{
 				"nome": "IDROTASERVICO",
-				"valor": "WTA - BUSCAR REGIAO PDV"
+				"valor": "PDVSYNC - Salvar Regiao"
 			},
 			{
 				"nome": "VALOR",
