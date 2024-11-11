@@ -28,7 +28,7 @@
 			},
 			{
 				"nome": "VALOR",
-				"valor": "https://pdvsync-core-formapagto-qa-ywc7q7nxya-ue.a.run.app/api/retaguarda/v2/dadocomplementarpagtos"
+				"valor": "https://pdvsync.varejo.totvs.com.br/imposto/api/retaguarda/v2/dadocomplementarpagtos"
 			},
 			{
 				"nome": "CODEMPALTER",

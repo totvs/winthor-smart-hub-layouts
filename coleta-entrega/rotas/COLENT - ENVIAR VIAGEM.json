@@ -1,0 +1,95 @@
+{
+    "tabela": {
+        "nome": "PCINTEGRACAOROTASERVICO",
+        "campos": [
+            {
+                "nome": "DATASINCRONISMO",
+                "valor": ""
+            },
+            {
+                "nome": "REFRESHTOKEN",
+                "valor": "N"
+            },
+            {
+                "nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+                "valor": "N"
+            },
+            {
+                "nome": "ID",
+                "valor": "COLENT - Enviar Viagem"
+            },
+            {
+                "nome": "IDEMPRESAAPI",
+                "valor": "COLETA-ENTREGA"
+            },
+            {
+                "nome": "SERVICO",
+                "valor": "COLENT - Enviar Viagem"
+            },
+            {
+                "nome": "LAYOUTCOMUNICACAO",
+                "valor": {
+                    "name": "COLENT - Enviar Viagem",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{TOKEN}}"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "*/*"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "https://winthor-log.logistica.totvs.app/coletaentrega/core/api/v1/viagens",
+                            "query": [],
+                            "host": [
+                                "https:"
+                            ],
+                            "path": [
+                                "",
+                                "winthor-log.logistica.totvs.app",
+                                "coletaentrega",
+                                "core",
+                                "api",
+                                "v1",
+                                "viagens"
+                            ]
+                        },
+                        "bodyraw": "{{CLIENT_JSON}}"
+                    },
+                    "response": []
+                }
+            },
+            {
+                "nome": "LAYOUTTRANSFORMACAO",
+                "valor": [
+                    {
+                        "operation": "default",
+                        "spec": {
+                            "status": 2
+                        }
+                    }
+                ]
+            },
+            {
+                "nome": "ATIVO",
+                "valor": "S"
+            },
+            {
+                "nome": "TIPOPROCESSO",
+                "valor": ""
+            },
+            {
+                "nome": "AUTENTICADOR",
+                "valor": "N"
+            }
+        ]
+    }
+}

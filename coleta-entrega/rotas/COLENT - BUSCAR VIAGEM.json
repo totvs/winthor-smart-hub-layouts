@@ -1,0 +1,110 @@
+{
+    "tabela": {
+        "nome": "PCINTEGRACAOROTASERVICO",
+        "campos": [
+            {
+                "nome": "DATASINCRONISMO",
+                "valor": ""
+            },
+            {
+                "nome": "REFRESHTOKEN",
+                "valor": "N"
+            },
+            {
+                "nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+                "valor": "N"
+            },
+            {
+                "nome": "ID",
+                "valor": "COLENT - Buscar Viagem"
+            },
+            {
+                "nome": "IDEMPRESAAPI",
+                "valor": "COLETA-ENTREGA"
+            },
+            {
+                "nome": "SERVICO",
+                "valor": "COLENT - Buscar Viagem"
+            },
+            {
+                "nome": "LAYOUTCOMUNICACAO",
+                "valor": {
+                    "name": "COLENT - Buscar Viagem",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{TOKEN}}"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": " */*"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "https://winthor-log.logistica.totvs.app/coletaentrega/query/api/v1/viagens",
+                            "query": [
+                                {
+                                    "key": "page",
+                                    "value": "{{PAGE}}"
+                                },
+                                {
+                                    "key": "pageSize",
+                                    "value": "{{PAGE_SIZE}}"
+                                },
+                                {
+                                    "key": "externalIdViagem",
+                                    "value": "{{NUMCAR}}"
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            },
+            {
+                "nome": "LAYOUTTRANSFORMACAO",
+                "valor": [
+                    {
+                        "operation": "shift",
+                        "spec": {
+                            "items": {
+                                "*": {
+                                    "externalId": "items.[\u00261].numcar",
+                                    "id": [
+                                        "items.[\u00261].idExterno",
+                                        "idExterno"
+                                    ],
+                                    "dataSituacao": "items.[\u00261].dataSituacao"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "operation": "default",
+                        "spec": {
+                            "_attr_access": "items"
+                        }
+                    }
+                ]
+            },
+            {
+                "nome": "ATIVO",
+                "valor": "S"
+            },
+            {
+                "nome": "TIPOPROCESSO",
+                "valor": ""
+            },
+            {
+                "nome": "AUTENTICADOR",
+                "valor": "N"
+            }
+        ]
+    }
+}

@@ -28,7 +28,7 @@
 			},
 			{
 				"nome": "VALOR",
-				"valor": "https://qua-pdvsync.varejo.totvs.com.br/controleprocesso/api/retaguarda/v2/LoteExternoRetornos"
+				"valor": "https://pdvsync.varejo.totvs.com.br/controleprocesso/api/retaguarda/v2/LoteExternoRetornos"
 			},
 			{
 				"nome": "CODEMPALTER",
