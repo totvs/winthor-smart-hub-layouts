@@ -170,6 +170,12 @@
 			"rota": "PDVSYNC - RAC LoginPDVSync"
 		},
 		{
+			"nome": "{{URL_ENVIAR_GRUPO_CAMPANHA_CLIENTE}}",
+			"valor": "https://pdvsync-core-cliente-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/dadosdinamicos/down/21/1",
+			"descricao": "PDVSYNC - Salvar Grupo Campanha Cliente",
+			"rota": "PDVSYNC - Salvar Grupo Campanha Cliente"
+		},
+		{
 			"nome": "{{URL_STATUS_VENDA_MONITOR}}",
 			"valor": "https://pdvsync-core-comercial-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v2/vendaMensagens",
 			"descricao": "PDV-SYNC - ATUALIZAR STATUS VENDA MONITOR",
@@ -192,12 +198,6 @@
 			"valor": "adFhEn6/iX2pqQljcdsJHNbdV2J8f3XLTZf0eyrJVCd89OG+ifM1D0D4AjG0/nPP",
 			"descricao": "CLIENT_SECRET - RAC - LoginPDVSync",
 			"rota": "PDVSYNC - RAC LoginPDVSync"
-		},
-		{
-			"nome": "{{URL_ENVIAR_GRUPO_CAMPANHA_CLIENTE}}",
-			"valor": "https://pdvsync-core-cliente-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/dadosdinamicos/down/21/1",
-			"descricao": "PDVSYNC - Salvar Grupo Campanha Cliente",
-			"rota": "PDVSYNC - Salvar Grupo Campanha Cliente"
 		}
 	]
 }

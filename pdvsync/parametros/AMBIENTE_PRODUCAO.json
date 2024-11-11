@@ -153,6 +153,12 @@
 			"rota": "PDVSYNC - Envia status pedido"
 		},
 		{
+			"nome": "{{URL_ENVIAR_GRUPO_CAMPANHA_CLIENTE}}",
+			"valor": "https://pdvsync-core-cliente-dev-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/dadosdinamicos/down/21/1",
+			"descricao": "PDVSYNC - Salvar Grupo Campanha Cliente",
+			"rota": "PDVSYNC - Salvar Grupo Campanha Cliente"
+		},
+		{
 			"nome": "{{URL_CONSULTA_VENDAS}}",
 			"valor": "https://pdvsync.varejo.totvs.com.br/comercial/api/retaguarda/vendaMensagens",
 			"descricao": "PDVSync - Buscar vendas",
@@ -187,12 +193,6 @@
 			"valor": "p1HFHhokxeLiWEj4zXTHgUMvOTV4EcN/+HXVhkiyif2O9Vp/UsOhHOYZaxJlqQe+",
 			"descricao": "CLIENT_SECRET - RAC - LoginPDVSync",
 			"rota": "PDVSYNC - RAC LoginPDVSync"
-		},
-		{
-			"nome": "{{URL_ENVIAR_GRUPO_CAMPANHA_CLIENTE}}",
-			"valor": "https://pdvsync-core-cliente-dev-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/dadosdinamicos/down/21/1",
-			"descricao": "PDVSYNC - Salvar Grupo Campanha Cliente",
-			"rota": "PDVSYNC - Salvar Grupo Campanha Cliente"
 		}
 	]
 }
