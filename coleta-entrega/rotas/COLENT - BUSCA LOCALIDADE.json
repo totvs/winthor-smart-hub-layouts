@@ -127,8 +127,8 @@
                             "items": {
                                 "*": {
                                     "idExterno": "idExterno[]",
-                                    "id": "items[0].idExterno",
-                                    "idInterno": "items[0].idInterno"
+                                    "id": "items[0].idexterno",
+                                    "idInterno": "items[0].idinterno"
                                 }
                             }
                         }
