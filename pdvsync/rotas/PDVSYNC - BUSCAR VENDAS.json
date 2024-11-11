@@ -156,6 +156,7 @@
                                         "Coo": "items.[&2].consumidorFinal.numCupom",
                                         "EstadoConsumidor": "items.[&2].estadoConsumidor",
                                         "IdCaixa": "items.[&2].numFechamentoMovCx",
+										"IdProfissionalRetaguarda": "items.[&2].idProfissional",
                                         "IdentificacaoFidelidade": [
                                             "items.[&2].numCartaoCrm",
                                             "items.[&2].cartaoCrm"

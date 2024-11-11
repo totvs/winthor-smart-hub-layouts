@@ -70,7 +70,8 @@
 						"*": {
 						  "idExterno": "=concat('pdvsync-regiao-', @(1,regionId),'-',@(1,branchId),'-',@(1,lastChangeDate))",
 						  "idInterno": "=concat(@(1,branchId),'-',@(1,regionId))",
-						  "tipoIdInterno":"PDVSYNC-REGIAO-PDV"
+						  "tipoIdInterno":"PDVSYNC-REGIAO-PDV",
+						  "idRetaguardaLoja": "@(1,branchId)"
 						}
 					  }
 					}
@@ -89,8 +90,16 @@
 						  "thirdPartyFreightPercentage": "items.[&1].freteTerceiros",
 						  "specialFreightPercentage": "items.[&1].freteEspecial",
 						  "shippingCostByKg": "items.[&1].freteKg",
-						  "branchId": "items.[&1].idRetaguardaLoja",
+						  "idRetaguardaLoja": "items.[&1].idRetaguardaLoja",
                           "regionId": "items.[&1].idRetaguarda",
+						  "branchId": {
+							"99": {
+								"#{{MASTER_ID_PROPRIETARIO}}": "items[&3].idProprietario"
+								},
+								"*": {
+								"@(2,branchId)": "items[&3].idProprietario"
+								}
+							},
 						  "status": {
 							"A": {
 							  "#1": "items[&3].situacao"
@@ -111,7 +120,6 @@
 						"items[]": {
 							"*": {
 								"idInquilino": "{{ID_INQUILINO}}",
-								"idProprietario": "{{FILIAL_ID_PROPRIETARIO}}",
 								"loteOrigem": "{{LOTE_ORIGEM}}"
 							}
 						}
