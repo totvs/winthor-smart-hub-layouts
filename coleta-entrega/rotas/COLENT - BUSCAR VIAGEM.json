@@ -50,14 +50,6 @@
                             "raw": "https://winthor-log.logistica.totvs.app/coletaentrega/query/api/v1/viagens",
                             "query": [
                                 {
-                                    "key": "page",
-                                    "value": "{{PAGE}}"
-                                },
-                                {
-                                    "key": "pageSize",
-                                    "value": "{{PAGE_SIZE}}"
-                                },
-                                {
                                     "key": "externalIdViagem",
                                     "value": "{{NUMCAR}}"
                                 }

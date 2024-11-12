@@ -50,14 +50,6 @@
                             "raw": "https://winthor-log.logistica.totvs.app/coletaentrega/query/api/v1/coletasEntregas",
                             "query": [
                                 {
-                                    "key": "page",
-                                    "value": "{{PAGE}}"
-                                },
-                                {
-                                    "key": "pageSize",
-                                    "value": "{{PAGE_SIZE}}"
-                                },
-                                {
                                     "key": "tipo",
                                     "value": "ENTREGA"
                                 },
