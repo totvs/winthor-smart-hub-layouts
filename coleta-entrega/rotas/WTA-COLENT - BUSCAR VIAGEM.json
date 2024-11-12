@@ -40,16 +40,7 @@
                         ],
                         "url": {
                             "raw": "{{URL_BASE}}/logistica/apis/v1/viagens/buscar",
-                            "query": [
-                                {
-                                    "key": "page",
-                                    "value": "{{PAGE}}"
-                                },
-                                {
-                                    "key": "pageSize",
-                                    "value": "{{PAGE_SIZE}}"
-                                }
-                            ],
+                            "query": [],
                             "host": [
                                 "{{URL_BASE}}"
                             ],

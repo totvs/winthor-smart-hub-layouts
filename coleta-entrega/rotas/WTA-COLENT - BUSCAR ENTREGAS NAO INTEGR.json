@@ -40,16 +40,7 @@
                         ],
                         "url": {
                             "raw": "{{URL_BASE}}/logistica/apis/v1/entregas/buscar-nao-integradas",
-                            "query": [
-                                {
-                                    "key": "page",
-                                    "value": "{{PAGE}}"
-                                },
-                                {
-                                    "key": "pageSize",
-                                    "value": "{{PAGE_SIZE}}"
-                                }
-                            ]
+                            "query": []
                         }
                     },
                     "response": []
