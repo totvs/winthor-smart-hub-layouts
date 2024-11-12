@@ -105,7 +105,7 @@
 							}
 						  },
 						  "promotionId": "items.[&1].idRetaguarda",
-						  "branchId": "items.[&1].IdRetaguardaLoja",
+						  "branchId": ["items.[&1].IdRetaguardaLoja","items.[&1].idProprietario"],
 						  "startDate": "items.[&1].DataHoraVigenciaInicial",
 						  "endDate": "items.[&1].DataHoraVigenciaFinal",
 						  "clientId": ["items.[&1].IdRetaguardaCliente", "items.[&1].IdRetaguardaClientePrincipal"],
@@ -135,7 +135,6 @@
 					  "items[]": {
 						"*": {
 						  "idInquilino": "{{ID_INQUILINO}}",
-						  "idProprietario": "{{MASTER_ID_PROPRIETARIO}}",
 						  "loteOrigem": "{{LOTE_ORIGEM}}"
 						}
 					  }
