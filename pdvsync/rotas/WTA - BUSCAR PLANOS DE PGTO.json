@@ -69,7 +69,6 @@
 						  "codigoFilial": "=concat('', @(1,codigoFilial))",
 						  "codigo": "=toInteger(=concat('', @(1,codigo)))",
 						  "idInquilino": "{{ID_INQUILINO}}",
-						  "situacao": 1,
 						  "loteOrigem": "{{LOTE_ORIGEM}}",
 						  "diasEntreParcelas": 30,
 						  "percentualMinimoEntrada": 100,
@@ -197,8 +196,21 @@
 						  "percentualMinimoEntrada": "items.[&1].percentualMinimoEntrada",
 						  "dadoComplementarDescricao": "items.[&1].dadoComplementarDescricao",
 						  "loteOrigem": "items.[&1].loteOrigem",
-						  "situacao": "items.[&1].situacao",
-						  "tipoDadoComplementar": "items.[&1].tipoDadoComplementar",
+						  "tipoDadoComplementar": "items.[&1].tipoDadoComplementar",						  
+						  "numColunaPreco": "items.[&1].indicePreco",
+						  "planoPagamentoIntegracaoExterna": {
+							"prazoMaximoPrimeiraParcela": "items.[&2].prazoMaximoPrimeiraParcela"
+						  },
+						  "percentualAcrescimo": "items.[&1].taxa",
+						  "diaFixo": "items.[&1].diaFixoPagamento",
+						  "diasCarencia": "items.[&1].diasCarenciaPrimeiroVencimento",
+						  "numeroParcelasDiaFixo": "items.[&1].fixaNumeroparcelas",
+						  "numeroParcelas": "items.[&1].quantidadeParcelas",
+						  "valorMinimoPedido": "items.[&1].valorMinimoParcela",
+						  "ativo": {
+							"true": { "#1": "items.[&3].situacao" },
+							"false": { "#0": "items.[&3].situacao" }
+						  },						  
 						  "condicaoPagtoRestricoes": "items.[&1].condicaoPagtoRestricoes"
 							}
 						  }
