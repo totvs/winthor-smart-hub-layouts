@@ -40,16 +40,7 @@
 						],
 						"url": {
 							"raw": "{{URL_ENVIAR_GRUPO_CAMPANHA_CLIENTE}}",
-							"query": [
-								{
-									"key": "pageSize",
-									"value": "{{PAGE_SIZE}}"
-								},
-								{
-									"key": "page",
-									"value": "{{PAGE}}"
-								}
-							]
+							"query": []
 						},
 						"bodyraw": "{{CLIENT_JSON}}"
 					},
