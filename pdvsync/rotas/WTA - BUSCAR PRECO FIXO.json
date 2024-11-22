@@ -1,0 +1,167 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOROTASERVICO",
+		"campos": [
+			{
+				"nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+				"valor": "N"
+			},
+			{
+				"nome": "ID",
+				"valor": "WTA - Buscar Preco Fixo"
+			},
+			{
+				"nome": "IDEMPRESAAPI",
+				"valor": "WINTHOR-WTA"
+			},
+			{
+				"nome": "SERVICO",
+				"valor": "WTA - Buscar Preco Fixo"
+			},
+			{
+				"nome": "LAYOUTCOMUNICACAO",
+				"valor": {
+					"name": "WTA - Buscar Preco Fixo",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{URL_BASE}}/winthor/precos/v1/precos-fixos",
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "{{PAGE_SIZE}}"
+								},
+								{
+									"key": "page",
+									"value": "{{PAGE}}"
+								},
+								{
+									"key": "lastChange",
+									"value": "{{LAST_CHANGE}}"
+								},
+								{
+									"key": "numRegiao",
+									"value": "{{NUMREGIAO}}"
+								},
+								{
+									"key": "activeOnly",
+									"value": "{{ACTIVEONLY}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			},
+			{
+				"nome": "LAYOUTTRANSFORMACAO",
+				"valor": [
+				  {
+					"operation": "modify-overwrite-beta",
+					"spec": {
+					  "items": {
+						"*": {
+						  "idExterno": "=concat('pdvsync-precofixo-', @(1,promotionId),'-',@(1,branchId),'-',@(1,lastChangeDate))",
+						  "idInterno": "=concat(@(1,branchId),'-',@(1,promotionId))",
+						  "tipoIdInterno": "PDVSYNC-PRECO-FIXO",
+						  "retaguardaProduto": "=concat(@(1,barCode),'-',@(1,productId))"
+						}
+					  }
+					}
+					},
+				   {
+					"operation": "shift",
+					"spec": {
+					  "items": {
+						"*": {
+						  "idExterno": "idExterno[]",
+						  "idInterno": "idInterno",
+						  "tipoIdInterno": "tipoIdInterno",
+						  "id": "items.[&1].idRetaguarda",
+						  "priority": {
+							"N": {
+							  "#false": "items.[&3].Prioritaria"
+							},
+							"*": {
+							  "#true": "items.[&3].Prioritaria"
+							}
+						  },
+						  "allPackages": {
+							"N": {
+							  "#false": "items.[&3].UsarTodasEmbalagens"
+							},
+							"*": {
+							  "#true": "items.[&3].UsarTodasEmbalagens"
+							}
+						  },
+						  "promotionId": "items.[&1].idRetaguarda",
+						  "branchId": ["items.[&1].IdRetaguardaLoja","items.[&1].idProprietario"],
+						  "startDate": "items.[&1].DataHoraVigenciaInicial",
+						  "endDate": "items.[&1].DataHoraVigenciaFinal",
+						  "clientId": ["items.[&1].IdRetaguardaCliente", "items.[&1].IdRetaguardaClientePrincipal"],
+						  "paymentTermsId": "items.[&1].IdRetaguardaPagamentoCondicao",
+						  "retaguardaProduto": "items.[&1].IdRetaguardaProduto",
+						  "branchActivityId": "items.[&1].IdRetaguardaRamoAtividade",
+						  "squareId": "items.[&1].IdRetaguardaPraca",
+						  "clientNetId": "items.[&1].IdRetaguardaRedeCliente",
+                          "groupClientId": "items.[&1].IdRetaguardaGrupoCliente",
+						  "fixedPrice": "items.[&1].Valor",
+						  "active": {
+							"true": {
+							  "#1": "items.[&3].Situacao"
+							},
+							"*": {
+							  "#0": "items.[&3].Situacao"
+							}
+						  }
+						}
+					  }
+					}
+					},
+				   {
+					"operation": "default",
+					"spec": {
+					  "_attr_access": "items",
+					  "items[]": {
+						"*": {
+						  "idInquilino": "{{ID_INQUILINO}}",
+						  "loteOrigem": "{{LOTE_ORIGEM}}"
+						}
+					  }
+					}
+				  }				
+				]
+			},
+			{
+				"nome": "ATIVO",
+				"valor": "S"
+			},
+			{
+				"nome": "AUTENTICADOR",
+				"valor": "N"
+			},
+			{
+				"nome": "DATASINCRONISMO",
+				"valor": "14-NOV-23"
+			},
+			{
+				"nome": "REFRESHTOKEN",
+				"valor": ""
+			},
+			{
+				"nome": "TIPOPROCESSO",
+				"valor": "BUSCAR"
+			}
+		]
+	}
+}

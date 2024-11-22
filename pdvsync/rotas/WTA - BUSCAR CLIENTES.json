@@ -120,7 +120,6 @@
 							   "createDate":"items.[&1].dataCadastro",
 							   "deliveryAddressNumber":"items.[&1].numero",
                                "profissionalRetaguarda": "items.[&1].IdProfissionalRetaguarda",
-							   "professionalId":"items.[&1].IdProfissionalRetaguarda",
 							   "customerNetId": "items.[&1].IdRetaguardaRedeCliente",
 							   "mainClientId": "items.[&1].IdClientePrincipal",
 							   "squareId": "items.[&1].IdRetaguardaPraca",
@@ -169,7 +168,7 @@
 			},
 			{
 				"nome": "ATIVO",
-				"valor": "N"
+				"valor": "S"
 			},
 			{
 				"nome": "AUTENTICADOR",

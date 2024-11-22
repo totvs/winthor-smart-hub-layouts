@@ -228,7 +228,7 @@
 											}
 										},
 										"cnpjFornecedor": "items.[&2].cnpjFornecedor",
-										"codigoProdutoPrincipal": "items.[&2].idProdutoPrincipal",
+										"skuProdutoPrincipal": "items.[&2].IdRetaguardaProdutoPrincipal",
 										"quantidadeMinimaAtacado": {
 											"valor": "items.[&3].quantidadeValorAtacado"
 										},

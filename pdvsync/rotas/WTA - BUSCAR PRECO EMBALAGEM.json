@@ -81,8 +81,7 @@
 						  "idRetaguarda": "=concat(@(1,barCodeId),'-',@(1,productId),'-2017-',@(1,branchId))",
 						  "codigoProduto": "=toString(@(1,productId))",
 						  "dataHoraVigenciaInicial": "@(1,startDate)",
-						  "dataHoraVigenciaFinal": "@(1,endDate)",
-						  "idRetaguardaProduto": "=concat(@(1,barCodeId),'-',@(1,productId))"
+						  "dataHoraVigenciaFinal": "@(1,endDate)"
 						}
 					  }
 					}
@@ -117,7 +116,8 @@
 						  "dataHoraVigenciaInicial": "items[&1].&",
 						  "dataHoraVigenciaFinal": "items[&1].&",
 						  "idRetaguarda": "items[&1].&",
-						  "idRetaguardaProduto": "items[&1].&",
+						  "skuId": "items[&1].idRetaguardaProduto",
+						  "packingId": "items[&1].idRetaguardaProdutoEmbalagem",
 						  "branchId": "items[&1].idProprietario",
 						  "situacao": "items[&1].&",
 						  "salePrice": "items[&1].valor",

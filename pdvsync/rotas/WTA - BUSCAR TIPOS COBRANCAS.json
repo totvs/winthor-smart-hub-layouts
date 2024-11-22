@@ -134,6 +134,7 @@
 									},
 									"valorMinimoPedido": "items.[&1].valorMinimoAceito",
 									"codigoSistemaExterno": "items.[&1].codigoSistemaExterno",
+									"clienteConsumidor": "items.[&1].clienteConsumidor",
 									"codOperadoraCartao": {
 										"cartao_null": {
 											"@(2,id)": {
@@ -216,6 +217,7 @@
 											"@(2,descricao)": "items[&3][1].descricao",
 											"@(2,situacao)": "items[&3][1].situacao",
 											"@(2,codigoSistemaExterno)": "items[&3][1].codigoSistemaExterno",
+											"@(2,clienteConsumidor)": "items[&3][1].clienteConsumidor",
 											"@(2,formasPagtoOperadoras)": {
 												"*": {
 													"situacao": "items[&5][1].formasPagtoOperadoras[&1].situacao",

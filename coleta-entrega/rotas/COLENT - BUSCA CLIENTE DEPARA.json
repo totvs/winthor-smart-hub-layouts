@@ -52,14 +52,6 @@
                                 {
                                     "key": "documentoIdentificacao",
                                     "value": "{{DOCUMENTO_IDENTIFICACAO}}"
-                                },
-                                {
-                                    "key": "page",
-                                    "value": "{{PAGE}}"
-                                },
-                                {
-                                    "key": "pageSize",
-                                    "value": "{{PAGE_SIZE}}"
                                 }
                             ]
                         }

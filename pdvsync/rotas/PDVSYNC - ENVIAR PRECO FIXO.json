@@ -8,7 +8,7 @@
 			},
 			{
 				"nome": "ID",
-				"valor": "PDVSYNC - Salvar Ramo Atividade"
+				"valor": "PDVSYNC - Enviar Preco Fixo"
 			},
 			{
 				"nome": "IDEMPRESAAPI",
@@ -16,12 +16,12 @@
 			},
 			{
 				"nome": "SERVICO",
-				"valor": "PDVSYNC - Salvar Ramo Atividade"
+				"valor": "PDVSYNC - Enviar Preco Fixo"
 			},
 			{
 				"nome": "LAYOUTCOMUNICACAO",
 				"valor": {
-					"name": "PDVSYNC - Salvar Ramo Atividade",
+					"name": "PDVSYNC - Enviar Preco Fixo",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -39,17 +39,8 @@
 							}
 						],
 						"url": {
-							"raw": "{{URL_ENVIAR_RAMO_ATIVIDADE}}",
-							"query": [
-								{
-									"key": "pageSize",
-									"value": "{{PAGE_SIZE}}"
-								},
-								{
-									"key": "page",
-									"value": "{{PAGE}}"
-								}
-							]
+							"raw": "{{URL_ENVIAR_PRECO_FIXO}}",
+							"query": []
 						},
 						"bodyraw": "{{CLIENT_JSON}}"
 					},
@@ -77,7 +68,7 @@
 			},
 			{
 				"nome": "DATASINCRONISMO",
-				"valor": "29-JAN-22"
+				"valor": ""
 			},
 			{
 				"nome": "REFRESHTOKEN",

@@ -39,30 +39,17 @@
                             }
                         ],
                         "url": {
-                            "raw": "{{URL_BASE}}/api/wholesale/v1/customer/list",
-                            "query": [
-                                {
-                                    "key": "page",
-                                    "value": "{{PAGE}}"
-                                },
-                                {
-                                    "key": "pageSize",
-                                    "value": "{{PAGE_SIZE}}"
-                                },
-                                {
-                                    "key": "withDeliveryAddress",
-                                    "value": "true"
-                                }
-                            ],
+                            "raw": "{{URL_BASE}}/logistica/apis/v1/localidades/buscar-depara",
+                            "query": [],
                             "host": [
                                 "{{URL_BASE}}"
                             ],
                             "path": [
-                                "api",
-                                "wholesale",
+                                "logistica",
+                                "apis",
                                 "v1",
-                                "customer",
-                                "list"
+                                "localidades",
+                                "buscar-depara"
                             ]
                         }
                     },
@@ -73,80 +60,23 @@
                 "nome": "LAYOUTTRANSFORMACAO",
                 "valor": [
                     {
-                        "operation": "shift",
-                        "spec": {
-                            "items": {
-                                "*": {
-                                    "id": "items.[\u00261].enderecos.codCli",
-                                    "deliveryAddress": "items.[\u00261].enderecos.logradouro",
-                                    "deliveryZipCode": "items.[\u00261].enderecos.cep",
-                                    "deliveryAddressNumber": "items.[\u00261].enderecos.numero",
-                                    "deliveryAddresses": {
-                                        "*": {
-                                            "id": "items[\u00263].enderecosAlternativos[\u00261].codEndEntCli",
-                                            "customerId": "items[\u00263].enderecosAlternativos[\u00261].codCli",
-                                            "address": "items[\u00263].enderecosAlternativos[\u00261].logradouro",
-                                            "zipCode": "items[\u00263].enderecosAlternativos[\u00261].cep",
-                                            "number": "items[\u00263].enderecosAlternativos[\u00261].numero"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    {
-                        "operation": "shift",
-                        "spec": {
-                            "items": {
-                                "*": {
-                                    "enderecos": "items[\u00261].enderecos[]",
-                                    "enderecosAlternativos": {
-                                        "*": "items[\u00262].enderecos[]"
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    {
                         "operation": "modify-overwrite-beta",
                         "spec": {
-                            "items": {
-                                "*": {
-                                    "enderecos": {
-                                        "*": {
-                                            "idExterno": "\u003dconcat(\u0027coleta-entrega-codcli-codendentcli-\u0027,@(1,codCli),\u0027|\u0027,@(1,codEndEntCli))",
-                                            "concatLocalidade": "\u003dconcat(@(1,codCli),\u0027|\u0027,@(1,codEndEntCli))"
-                                        }
-                                    }
-                                }
+                            "*": {
+                                "idExterno": "=concat('colent-codcli-codend-',@(1,codCli),'|',@(1,codEndEntCli))"
                             }
                         }
                     },
                     {
                         "operation": "shift",
                         "spec": {
-                            "items": {
-                                "*": {
-                                    "enderecos": {
-                                        "*": "items"
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    {
-                        "operation": "shift",
-                        "spec": {
-                            "items": {
-                                "*": {
-                                    "codEndEntCli": "items[\u00261].codEndEntCli",
-                                    "codCli": "items[\u00261].codCli",
-                                    "logradouro": "items[\u00261].logradouro",
-                                    "cep": "items[\u00261].cep",
-                                    "numero": "items[\u00261].numero",
-                                    "concatLocalidade": "items[\u00261].concatLocalidade",
-                                    "idExterno": "idExterno"
-                                }
+                            "*": {
+                                "idExterno": "idExterno",
+                                "codCli": "items[&1].codCli",
+                                "codEndEntCli": "items[&1].codEndEntCli",
+                                "logradouro": "items[&1].logradouro",
+                                "cep": "items[&1].cep",
+                                "numero": "items[&1].numero"
                             }
                         }
                     },
