@@ -229,21 +229,22 @@
 										},
 										"cnpjFornecedor": "items.[&2].cnpjFornecedor",
 										"skuProdutoPrincipal": "items.[&2].IdRetaguardaProdutoPrincipal",
-										"quantidadeMinimaAtacado": {
-											"valor": "items.[&3].quantidadeValorAtacado"
-										},
 										"codigoFornecedor": "items.[&2].Id_retaguarda_fornecedor",
 										"codigoDepartamento": "items.[&2].id_retaguarda_departamento",
 										"codigoSecao": "items.[&2].id_retaguarda_secao",
 										"codigoCategoria": "items.[&2].id_retaguarda_categoria",
 										"codigoSubCategoria": "items.[&2].id_retaguarda_sub_categoria",
 										"codigoMarca": "items.[&2].id_retaguarda_marca",
+										"quantidadeMinimaAtacado": {
+											"valor": "items.[&3].quantidadeValorAtacado"
+										},
 										"embalagens": {
 											"*": {
 												"IdProdutoRetaguarda": "items.[&4].produtoEmbalagens[&1].IdProdutoRetaguarda",
 												"idRetaguarda": "items.[&4].produtoEmbalagens[&1].idRetaguarda",
 												"descricao": "items.[&4].produtoEmbalagens[&1].descricao",
 												"codigoDeBarra": "items.[&4].produtoEmbalagens[&1].codigoBarras",
+												"quantidadeMinimaAtacado": "items.[&4].produtoEmbalagens[&1].quantidadeValorAtacado",
 												"unidade": {
 													"sigla": "items.[&5].produtoEmbalagens[&2].unidadeMedida"
 												},
