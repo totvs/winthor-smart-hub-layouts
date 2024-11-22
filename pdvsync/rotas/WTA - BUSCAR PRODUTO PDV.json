@@ -235,6 +235,9 @@
 										"codigoCategoria": "items.[&2].id_retaguarda_categoria",
 										"codigoSubCategoria": "items.[&2].id_retaguarda_sub_categoria",
 										"codigoMarca": "items.[&2].id_retaguarda_marca",
+										"quantidadeMinimaAtacado": {
+											"valor": "items.[&3].quantidadeValorAtacado"
+										},
 										"embalagens": {
 											"*": {
 												"IdProdutoRetaguarda": "items.[&4].produtoEmbalagens[&1].IdProdutoRetaguarda",
