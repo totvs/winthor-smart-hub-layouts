@@ -1,0 +1,77 @@
+name: CI/CD - Atualização de Versão
+
+on:
+  push:
+    paths:
+      - 'pfizer/**'  # Detecta alterações na pasta pfizer
+      - 'pdvsync/**'  # Detecta alterações na pasta pdvsync
+
+jobs:
+  update_version:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout do repositório
+      uses: actions/checkout@v3
+
+    - name: Configuração do Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16'
+
+    - name: Leitura e Atualização da Versão
+      run: |
+        # Definir o caminho dos arquivos versao.json
+        PFIZER_PATH="pfizer/versao.json"
+        PDVSYNC_PATH="pdvsync/versao.json"
+
+        # Função para incrementar a versão
+        increment_version() {
+          local VERSION=$1
+          # Dividir a versão em partes (major.minor.patch.build)
+          IFS='.' read -r -a VERSION_PARTS <<< "$VERSION"
+          PATCH="${VERSION_PARTS[3]}"  # parte de build (4ª parte)
+          PATCH=$((PATCH + 1))  # Incrementar build
+
+          # Atualizar a versão com o novo valor
+          VERSION_PARTS[3]=$PATCH
+          echo "${VERSION_PARTS[0]}.${VERSION_PARTS[1]}.${VERSION_PARTS[2]}.${VERSION_PARTS[3]}"
+        }
+
+        # Função para criar versao.json se não existir
+        create_version_file_if_not_exists() {
+          local FILE_PATH=$1
+          if [ ! -f "$FILE_PATH" ]; then
+            echo "Criando $FILE_PATH com versão inicial"
+            echo '{"projeto": "'$(basename $(dirname $FILE_PATH))'", "versoes": ["2.0.0.0"]}' > $FILE_PATH
+          fi
+        }
+
+        # Verificar se houve alteração nas pastas e atualizar a versão
+        if git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep -q "$PFIZER_PATH"; then
+          echo "Alterações detectadas na pasta pfizer"
+          # Criar o arquivo caso não exista
+          create_version_file_if_not_exists $PFIZER_PATH
+          # Ler o versao.json da pasta pfizer
+          PFIZER_VERSION=$(jq -r '.versoes[-1]' $PFIZER_PATH)
+          NEW_VERSION=$(increment_version $PFIZER_VERSION)
+          jq --arg new_version "$NEW_VERSION" '.versoes += [$new_version]' $PFIZER_PATH > tmp.json && mv tmp.json $PFIZER_PATH
+        fi
+
+        if git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep -q "$PDVSYNC_PATH"; then
+          echo "Alterações detectadas na pasta pdvsync"
+          # Criar o arquivo caso não exista
+          create_version_file_if_not_exists $PDVSYNC_PATH
+          # Ler o versao.json da pasta pdvsync
+          PDVSYNC_VERSION=$(jq -r '.versoes[-1]' $PDVSYNC_PATH)
+          NEW_VERSION=$(increment_version $PDVSYNC_VERSION)
+          jq --arg new_version "$NEW_VERSION" '.versoes += [$new_version]' $PDVSYNC_PATH > tmp.json && mv tmp.json $PDVSYNC_PATH
+        fi
+
+    - name: Commit e Push das mudanças
+      run: |
+        git config --global user.name "GitHub Actions"
+        git config --global user.email "actions@github.com"
+        git add pfizer/versao.json pdvsync/versao.json
+        git commit -m "Incrementando versão nos arquivos versao.json"
+        git push
