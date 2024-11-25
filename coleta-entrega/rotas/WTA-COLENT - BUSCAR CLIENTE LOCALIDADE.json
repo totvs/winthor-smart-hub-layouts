@@ -63,7 +63,7 @@
                         "operation": "modify-overwrite-beta",
                         "spec": {
                             "*": {
-                                "idExterno": "=concat('colent-codcli-codend-',@(1,codCli),'|',@(1,codEndEntCli))"
+                                "idExterno": "=concat('colent-codcli-codend-',@(1,codCli),'|',@(1,codEndEntCli),'-',@(1,dataAtualizacao))"
                             }
                         }
                     },
