@@ -1,0 +1,46 @@
+name: CI/CD - Atualização de Versão com Java
+
+on:
+  push:
+    paths:
+      - 'pfizer/**'
+      - 'pdvsync/**'
+      - '**/versoes.json'  # Isso aciona a action quando o arquivo 'versoes.json' ou qualquer pasta relevante for alterada
+    branches:
+      - '**'  # Isso inclui qualquer branch (por exemplo, 'main', 'dev', 'feature/*', etc.)
+
+jobs:
+  update_version:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout do repositório
+      uses: actions/checkout@v3
+
+    - name: Configuração do Java
+      uses: actions/setup-java@v3
+      with:
+        java-version: '11'  # Use a versão do Java que você está usando
+
+    - name: Configuração do Maven (caso esteja usando Maven)
+      run: sudo apt-get install maven
+
+    - name: Compilar e Empacotar o Código Java
+      working-directory: versao-control  # Defina o diretório correto do seu projeto Java
+      run: mvn clean package  # Isso compila o código e cria o JAR no diretório 'target/'
+
+    - name: Executar código Java para atualizar versoes.json
+      run: |
+        java -cp versao-control/target/versao-control.jar GitRepositoryManager  # Aqui você chama a classe Java que faz as alterações
+
+    - name: Verificar se há alterações nos arquivos
+      run: |
+        git diff --exit-code || echo "Há alterações para commit"
+    
+    - name: Commit e Push das mudanças
+      run: |
+        git config --global user.name "GitHub Actions"
+        git config --global user.email "actions@github.com"
+        git add pfizer/versao.json pdvsync/versao.json
+        git commit -m "Atualizando o arquivo versao.json com nova versão" || echo "Nada para commitar"
+        git push origin HEAD  # Empurra para o branch atual onde a Action foi acionada
