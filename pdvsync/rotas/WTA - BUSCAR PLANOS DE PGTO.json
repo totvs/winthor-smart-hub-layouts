@@ -78,7 +78,7 @@
 						  "dadoComplementarDescricao": "",
 						  "idProprietarioDesc": "{{{MASTER_ID_PROPRIETARIO}}",
 						  "numeroMaximoParcelas": "=size(@(1,prazos))",
-                          "siglaRestricao": "=concat('', @(1,tipoRestricao.sigla))"
+						  "siglaRestricao": "=concat('', @(1,tipoRestricao.sigla))"
 						}
 					  }
 					}
@@ -123,25 +123,25 @@
 						"*": {
 						  "@": "items[]",
 						  "condicoesPagtoRestricoesCA": {
-							"*": "items.[&2].condicoesPagtoRestricoes[].idRetaguardaCategoria"
+							"*": "items.[&2].condicoesPagtoRestricoes_rem[].idRetaguardaCategoria"
 						  },
 						  "condicoesPagtoRestricoesCL": {
-							"*": "items.[&2].condicoesPagtoRestricoes[].idRetaguardaCliente"
+							"*": "items.[&2].condicoesPagtoRestricoes_rem[].idRetaguardaCliente"
 						  },
 						  "condicoesPagtoRestricoesDP": {
-							"*": "items.[&2].condicoesPagtoRestricoes[].idRetaguardaDepartamento"
+							"*": "items.[&2].condicoesPagtoRestricoes_rem[].idRetaguardaDepartamento"
 						  },
 						  "condicoesPagtoRestricoesFO": {
-							"*": "items.[&2].condicoesPagtoRestricoes[].idRetaguardaFornecedor"
+							"*": "items.[&2].condicoesPagtoRestricoes_rem[].idRetaguardaFornecedor"
 						  },
 						  "condicoesPagtoRestricoesRA": {
-							"*": "items.[&2].condicoesPagtoRestricoes[].idRetaguardaRamoAtividade"
+							"*": "items.[&2].condicoesPagtoRestricoes_rem[].idRetaguardaRamoAtividade"
 						  },
 						  "condicoesPagtoRestricoesSB": {
-							"*": "items.[&2].condicoesPagtoRestricoes[].idRetaguardaSubCategoria"
+							"*": "items.[&2].condicoesPagtoRestricoes_rem[].idRetaguardaSubCategoria"
 						  },
 						  "condicoesPagtoRestricoesSE": {
-							"*": "items.[&2].condicoesPagtoRestricoes[].idRetaguardaSecao"
+							"*": "items.[&2].condicoesPagtoRestricoes_rem[].idRetaguardaSecao"
 						  }
 						}
 					  }
@@ -152,10 +152,9 @@
 					"spec": {
 					  "items": {
 						"*": {
-						  "condicoesPagtoRestricoes": {
+						  "condicoesPagtoRestricoes_rem": {
 							"*": {
 							  "situacao": 1,
-							  "idRetaguarda": "=concat('', @(3,codigo))",
 							  "IdRetaguardaCondicaoPagamento": "=concat('', @(3,codigo))",
 							  "idRetaguardaCategoria": "=toString",
 							  "idRetaguardaCliente": "=toString",
@@ -169,7 +168,44 @@
 						}
 					  }
 					}
-				  },				  
+				  },
+				  {
+					"operation": "shift",
+					"spec": {
+					  "items": {
+						"*": {
+						  "@": "items[]",
+						  "condicoesPagtoRestricoes_rem": {
+							"*": {
+							  "IdRetaguardaCondicaoPagamento": "items[&3].condicoesPagtoRestricoes[&1].&",
+							  "situacao": "items[&3].condicoesPagtoRestricoes[&1].&",
+							  "idRetaguardaCategoria": ["items[&3].condicoesPagtoRestricoes[&1].&", "items[&3].condicoesPagtoRestricoes[&1].idRetaguarda_rem"],
+							  "idRetaguardaCliente": ["items[&3].condicoesPagtoRestricoes[&1].&", "items[&3].condicoesPagtoRestricoes[&1].idRetaguarda_rem"],
+							  "idRetaguardaDepartamento": ["items[&3].condicoesPagtoRestricoes[&1].&", "items[&3].condicoesPagtoRestricoes[&1].idRetaguarda_rem"],
+							  "idRetaguardaFornecedor": ["items[&3].condicoesPagtoRestricoes[&1].&", "items[&3].condicoesPagtoRestricoes[&1].idRetaguarda_rem"],
+							  "idRetaguardaRamoAtividade": ["items[&3].condicoesPagtoRestricoes[&1].&", "items[&3].condicoesPagtoRestricoes[&1].idRetaguarda_rem"],
+							  "idRetaguardaSubCategoria": ["items[&3].condicoesPagtoRestricoes[&1].&", "items[&3].condicoesPagtoRestricoes[&1].idRetaguarda_rem"],
+							  "idRetaguardaSecao": ["items[&3].condicoesPagtoRestricoes[&1].&", "items[&3].condicoesPagtoRestricoes[&1].idRetaguarda_rem"]
+							}
+						  }
+						}
+					  }
+					}
+					},
+				  {
+					"operation": "modify-overwrite-beta",
+					"spec": {
+					  "items": {
+						"*": {
+						  "condicoesPagtoRestricoes": {
+							"*": {
+							  "idRetaguarda": "=concat(@(1,IdRetaguardaCondicaoPagamento),'-', @(1,idRetaguarda_rem))"
+							}
+						  }
+						}
+					  }
+					}
+					},
 				  {
 					"operation": "shift",
 					"spec": {
@@ -196,7 +232,7 @@
 						  "percentualMinimoEntrada": "items.[&1].percentualMinimoEntrada",
 						  "dadoComplementarDescricao": "items.[&1].dadoComplementarDescricao",
 						  "loteOrigem": "items.[&1].loteOrigem",
-						  "tipoDadoComplementar": "items.[&1].tipoDadoComplementar",						  
+						  "tipoDadoComplementar": "items.[&1].tipoDadoComplementar",
 						  "numColunaPreco": "items.[&1].indicePreco",
 						  "planoPagamentoIntegracaoExterna": {
 							"prazoMaximoPrimeiraParcela": "items.[&2].prazoMaximoPrimeiraParcela"
@@ -210,19 +246,32 @@
 						  "ativo": {
 							"true": { "#1": "items.[&3].situacao" },
 							"false": { "#0": "items.[&3].situacao" }
-						  },						  
-						  "condicoesPagtoRestricoes": "items.[&1].condicoesPagtoRestricoes"
+						  },
+						  "condicoesPagtoRestricoes": {
+							"*": {
+							  "IdRetaguardaCondicaoPagamento": "items.[&3].condicoesPagtoRestricoes.[&1].&",
+							  "situacao": "items.[&3].condicoesPagtoRestricoes.[&1].&",
+							  "idRetaguarda": "items.[&3].condicoesPagtoRestricoes.[&1].&",
+							  "idRetaguardaCategoria": "items.[&3].condicoesPagtoRestricoes.[&1].&",
+							  "idRetaguardaCliente": "items.[&3].condicoesPagtoRestricoes.[&1].&",
+							  "idRetaguardaDepartamento": "items.[&3].condicoesPagtoRestricoes.[&1].&",
+							  "idRetaguardaFornecedor": "items.[&3].condicoesPagtoRestricoes.[&1].&",
+							  "idRetaguardaRamoAtividade": "items.[&3].condicoesPagtoRestricoes.[&1].&",
+							  "idRetaguardaSubCategoria": "items.[&3].condicoesPagtoRestricoes.[&1].&",
+							  "idRetaguardaSecao": "items.[&3].condicoesPagtoRestricoes.[&1].&"
 							}
 						  }
 						}
-						  },
+					  }
+					}
+				  },
 				  {
 					"operation": "default",
 					"spec": {
 					  "_attr_access": "items"
 					}
 				  }
-			  ]
+				]
 			},
 			{
 				"nome": "ATIVO",
