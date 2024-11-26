@@ -21,7 +21,7 @@ jobs:
       uses: actions/setup-java@v3
       with:
         java-version: '11'
-        distribution: 'adoptopenjdk'  # Indica a distribuição do JDK
+        distribution: 'temurin'  # Usando a distribuição correta (temurin)
         cache: 'maven'  # Optional: cache de dependências do Maven, se necessário
 
 
