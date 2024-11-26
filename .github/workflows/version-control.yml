@@ -2,6 +2,8 @@ name: CI/CD - Atualização de Versão com Java
 
 on:
   push:
+    branches:
+      - '**'  # Isso irá acionar o workflow para qualquer branch (ajustado para todas as branches)
     paths:
       - 'pfizer/**'
       - 'pdvsync/**'
