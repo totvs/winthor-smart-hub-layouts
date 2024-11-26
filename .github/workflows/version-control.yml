@@ -16,11 +16,14 @@ jobs:
     steps:
     - name: Checkout do repositório
       uses: actions/checkout@v3
-
+ 
     - name: Configuração do Java
       uses: actions/setup-java@v3
       with:
-        java-version: '11'  # ou a versão que você está utilizando
+        java-version: '11'
+        distribution: 'adoptopenjdk'  # Indica a distribuição do JDK
+        cache: 'maven'  # Optional: cache de dependências do Maven, se necessário
+
 
     - name: Copiar o JAR do repositório
       run: |
@@ -28,18 +31,18 @@ jobs:
         mkdir -p target  # Cria o diretório onde o JAR será colocado
         cp versao-control/versao-control.jar target/  # Copia o JAR para o diretório target
 
-    - name: Configuração de autenticação no Git
-      run: |
-        git config --global user.name "GitHub Actions"
-        git config --global user.email "actions@github.com"
-        git config --global url."https://${{ secrets.GITHUB_TOKEN }}@github.com".insteadOf "https://github.com"
+   # - name: Configuração de autenticação no Git
+   #   run: |
+   #     git config --global user.name "GitHub Actions"
+   #     git config --global user.email "actions@github.com"
+   #     git config --global url."https://${{ secrets.GITHUB_TOKEN }}@github.com".insteadOf "https://github.com"
 
     - name: Executar o arquivo JAR para atualizar a versão
       run: |
         java -jar target/versao-control.jar  # Executa o arquivo JAR
 
-    - name: Commit e Push das mudanças
-      run: |
-        git add pfizer/versao.json pdvsync/versao.json
-        git commit -m "Incrementando versão nos arquivos versao.json"
-        git push
+    #- name: Commit e Push das mudanças
+    #  run: |
+    #    git add pfizer/versao.json pdvsync/versao.json
+    #    git commit -m "Incrementando versão nos arquivos versao.json"
+    #    git push
