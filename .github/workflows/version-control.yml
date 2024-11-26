@@ -25,13 +25,13 @@ jobs:
 
     - name: Copiar o JAR do repositório
       run: |
-        # Copia o JAR da pasta versao-control para o diretório target (onde será executado)
+        # Copia o JAR da pasta version-control-layouts para o diretório target (onde será executado)
         mkdir -p target  # Cria o diretório onde o JAR será colocado
-        cp versao-control/versao-control.jar target/  # Copia o JAR para o diretório target
+        cp versao-control/version-control-layouts.jar target/  # Copia o JAR para o diretório target
 
     - name: Executar o arquivo JAR para atualizar a versão
       run: |
-        java -jar target/versao-control.jar  # Executa o arquivo JAR
+        java -jar target/version-control-layouts.jar  # Executa o arquivo JAR
 
    # - name: Configuração de autenticação no Git
    #   run: |
