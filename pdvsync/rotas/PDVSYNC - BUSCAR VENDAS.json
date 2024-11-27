@@ -67,6 +67,8 @@
                                 "*": {
 									"codCob_arr": "=split('-POS',@(1,conteudo.VendaPagamentos.[0].PagamentoForma.IdRetaguarda))",
                                     "codCob": "=join('',@(1,codCob_arr))",
+                                    "codPlPag_arr": "=split('//.',@(1,conteudo.VendaPagamentos.[0].PagamentoCondicao.IdRetaguarda))",
+                                    "codPlPag": "=join('',@(1,codPlPag_arr))",
                                     "conteudo": {
                                         "idPreVenda": [
                                             "@(1,IdPreVenda)",
@@ -124,6 +126,7 @@
                             "data": {
                                 "*": {
                                     "codCob": "items.[&1].codCob",
+                                    "codPlPag": "items.[&1].codPlPag",
                                     "conteudo": {
                                         "#WSH-OMNISHOP": "items.[&2].pdvOrigem",
                                         "Chaveacesso": [
