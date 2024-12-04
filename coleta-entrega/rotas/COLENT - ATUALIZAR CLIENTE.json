@@ -47,8 +47,11 @@
                             }
                         ],
                         "url": {
-                            "raw": "https://winthor-log.logistica.totvs.app/coletaentrega/core/api/v1/clientes/{{ID_CLIENTE}}/alterar",
-                            "query": []
+                            "raw": "{{URL_BASE}}/core/api/v1/clientes/{{ID_CLIENTE}}/alterar",
+                            "query": [],
+                            "host": [
+                                "{{URL_BASE}}"
+                            ]
                         },
                         "bodyraw": "{{CLIENT_JSON}}"
                     },

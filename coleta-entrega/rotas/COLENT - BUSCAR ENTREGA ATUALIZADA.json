@@ -47,8 +47,11 @@
                             }
                         ],
                         "url": {
-                            "raw": "https://winthor-log.logistica.totvs.app/coletaentrega/query/api/v1/coletasEntregas/{{IDEXTERNO}}",
-                            "query": []
+                            "raw": "{{URL_BASE}}/query/api/v1/coletasEntregas/{{IDEXTERNO}}",
+                            "query": [],
+                            "host": [
+                                "{{URL_BASE}}"
+                            ]
                         }
                     },
                     "response": []

@@ -47,10 +47,10 @@
                             }
                         ],
                         "url": {
-                            "raw": "https://winthor-log.logistica.totvs.app/coletaentrega/core/api/v1/viagens",
+                            "raw": "{{URL_BASE}}/core/api/v1/viagens",
                             "query": [],
                             "host": [
-                                "https:"
+                                "{{URL_BASE}}"
                             ],
                             "path": [
                                 "",
