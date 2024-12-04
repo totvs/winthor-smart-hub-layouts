@@ -39,7 +39,7 @@
                             }
                         ],
                         "url": {
-                            "raw": "https://winthor-log.rac.totvs.app/totvs.rac/connect/token",
+                            "raw": "{{URL_RAC_COLETA_ENTREGA}}",
                             "query": []
                         },
                         "body": [

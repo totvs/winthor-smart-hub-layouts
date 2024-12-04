@@ -47,7 +47,7 @@
                             }
                         ],
                         "url": {
-                            "raw": "https://winthor-log.logistica.totvs.app/coletaentrega/query/api/v1/coletasEntregas",
+                            "raw": "{{URL_BASE}}/query/api/v1/coletasEntregas",
                             "query": [
                                 {
                                     "key": "tipo",
@@ -57,6 +57,9 @@
                                     "key": "externalId",
                                     "value": "{{NUMTRANSVENDA}}"
                                 }
+                            ],
+                            "host": [
+                                "{{URL_BASE}}"
                             ]
                         }
                     },

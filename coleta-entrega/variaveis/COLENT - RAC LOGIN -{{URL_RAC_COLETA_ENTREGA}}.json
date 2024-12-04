@@ -32,7 +32,7 @@
             },
             {
                 "nome": "VALOR",
-                "valor": "https://winthor-log.rac.totvs.app/totvs.rac/connect/token"
+                "valor": "ADICIONAR_URL_LOGIN_RAC"
             }
         ]
     }

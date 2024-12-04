@@ -47,12 +47,15 @@
                             }
                         ],
                         "url": {
-                            "raw": "https://winthor-log.logistica.totvs.app/coletaentrega/query/api/v1/clientes",
+                            "raw": "{{URL_BASE}}/query/api/v1/clientes",
                             "query": [
                                 {
                                     "key": "documentoIdentificacao",
                                     "value": "{{DOCUMENTO_IDENTIFICACAO}}"
                                 }
+                            ],
+                            "host": [
+                                "{{URL_BASE}}"
                             ]
                         }
                     },
