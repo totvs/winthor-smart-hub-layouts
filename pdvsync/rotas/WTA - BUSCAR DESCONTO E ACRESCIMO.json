@@ -65,8 +65,7 @@
 						"*": {
 						  "idExterno": "=concat('pdvsync-politica-desconto-acrescimo-',@(1,campaignId),'-',@(1,lastChangeDate),'-',@(1,lastChangeDate))",
 						  "idInterno": "=concat(@(1,branchId),'-',@(1,campaignId))",
-						  "tipoIdInterno": "PDVSYNC-POLITICA-DESCONTO-ACRESCIMO",
-						  "retaguardaProduto": "=concat(@(1,barCode),'-',@(1,productId))"
+						  "tipoIdInterno": "PDVSYNC-POLITICA-DESCONTO-ACRESCIMO"
 						}
 					  }
 					}
@@ -98,8 +97,17 @@
 						  "endDate": "items.[&1].DataHoraVigenciaFinal",
 						  "percentageValue": "items.[&1].valor",
 						  "type": "items.[&1].tipo",
-						  "branchId": "items.[&1].idProprietario",
-						  "retaguardaProduto": "items.[&1].idRetaguardaProduto",
+						  "branchId": {
+							"99": {
+							  "#{{MASTER_ID_PROPRIETARIO}}": "items[&3].idProprietario"
+							},
+							"*": {
+							  "@1": "items[&3].idProprietario"
+							}
+						  },
+						  "skuId": "items.[&1].idRetaguardaProduto",
+						  "packingId": "items.[&1].idRetaguardaProdutoEmbalagem",
+						  "allPackages": "items.[&1].usarTodasEmbalagens",
 						  "campaignId": "items.[&1].idRetaguarda",
 						  "active": {
 							"true": {
@@ -132,7 +140,7 @@
 						}
 					  }
 					}
-				  }			
+				  }
 				]
 			},
 			{

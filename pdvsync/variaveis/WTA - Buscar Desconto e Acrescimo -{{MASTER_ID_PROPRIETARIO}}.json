@@ -8,11 +8,11 @@
 			},
 			{
 				"nome": "ID",
-				"valor": "PDVSYNC - ENVIAR DESCONTO E ACRESCIMO-{{URL_ENVIAR_DESCONTO_ACRESCIMO}}"
+				"valor": "WTA - BUSCAR DESCONTO E ACRESCIMO-{{MASTER_ID_PROPRIETARIO}}"
 			},
 			{
 				"nome": "CHAVE",
-				"valor": "{{URL_ENVIAR_DESCONTO_ACRESCIMO}}"
+				"valor": "{{MASTER_ID_PROPRIETARIO}}"
 			},
 			{
 				"nome": "TIPOCHAVE",
@@ -24,11 +24,11 @@
 			},
 			{
 				"nome": "IDROTASERVICO",
-				"valor": "PDVSYNC - ENVIAR DESCONTO E ACRESCIMO"
+				"valor": "WTA - BUSCAR DESCONTO E ACRESCIMO"
 			},
 			{
 				"nome": "VALOR",
-				"valor": "https://pdvsync-core-preco-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/dadosdinamicos/down/59/1"
+				"valor": "9999"
 			},
 			{
 				"nome": "CODEMPALTER",
