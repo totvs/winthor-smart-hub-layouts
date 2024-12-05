@@ -48,6 +48,10 @@
 								{
 									"key": "loteOrigem",
 									"value": "{{NUMERO_LOTE}}"
+								},
+								{
+									"key": "idRetaguardaLoja",
+									"value": "{{FILIAL}}"
 								}
 							]
 						}
