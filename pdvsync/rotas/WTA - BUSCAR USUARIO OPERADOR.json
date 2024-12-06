@@ -101,7 +101,7 @@
 										}
 									},
 									"login": "items[&1].login",
-									"senha": "items[&1].senhaCriptografada",
+									"senha": ["items[&1].senhaCriptografada", "items[&1].senha"],
 									"nome": "items[&1].nome",
 									"dtUltAlter": "items[&1].dtUltAlter",
 									"cpf_": [
