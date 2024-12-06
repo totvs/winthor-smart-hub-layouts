@@ -1,0 +1,39 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOVARIAVEIS",
+		"campos": [
+			{
+				"nome": "DTULTALTER",
+				"valor": ""
+			},
+			{
+				"nome": "ID",
+				"valor": "WTA - BUSCAR DESCONTO E ACRESCIMO-{{MASTER_ID_PROPRIETARIO}}"
+			},
+			{
+				"nome": "CHAVE",
+				"valor": "{{MASTER_ID_PROPRIETARIO}}"
+			},
+			{
+				"nome": "TIPOCHAVE",
+				"valor": "BODY"
+			},
+			{
+				"nome": "TIPOVALOR",
+				"valor": "STRING"
+			},
+			{
+				"nome": "IDROTASERVICO",
+				"valor": "WTA - BUSCAR DESCONTO E ACRESCIMO"
+			},
+			{
+				"nome": "VALOR",
+				"valor": "9999"
+			},
+			{
+				"nome": "CODEMPALTER",
+				"valor": ""
+			}
+		]
+	}
+}
