@@ -8,7 +8,7 @@
 			},
 			{
 				"nome": "ID",
-				"valor": "WTA - BUSCAR DESCONTO E ACRESCIMO-{{MASTER_ID_PROPRIETARIO}}"
+				"valor": "PDVSYNC - ENVIAR DESCONTO E ACRESCIMO-{{MASTER_ID_PROPRIETARIO}}"
 			},
 			{
 				"nome": "CHAVE",
@@ -24,7 +24,7 @@
 			},
 			{
 				"nome": "IDROTASERVICO",
-				"valor": "WTA - BUSCAR DESCONTO E ACRESCIMO"
+				"valor": "PDVSYNC - ENVIAR DESCONTO E ACRESCIMO"
 			},
 			{
 				"nome": "VALOR",
