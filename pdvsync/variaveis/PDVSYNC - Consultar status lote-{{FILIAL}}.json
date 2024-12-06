@@ -8,15 +8,15 @@
 			},
 			{
 				"nome": "ID",
-				"valor": "WTA - BUSCAR PRECO FIXO-{{NUMREGIAO}}"
+				"valor": "PDVSYNC - CONSULTAR STATUS LOTE-{{FILIAL}}"
 			},
 			{
 				"nome": "CHAVE",
-				"valor": "{{NUMREGIAO}}"
+				"valor": "{{FILIAL}}"
 			},
 			{
 				"nome": "TIPOCHAVE",
-				"valor": "BODY"
+				"valor": "PARAMS"
 			},
 			{
 				"nome": "TIPOVALOR",
@@ -24,11 +24,11 @@
 			},
 			{
 				"nome": "IDROTASERVICO",
-				"valor": "WTA - BUSCAR PRECO FIXO"
+				"valor": "PDVSYNC - CONSULTAR STATUS LOTE"
 			},
 			{
 				"nome": "VALOR",
-				"valor": "ADICIONAR_REGIAO"
+				"valor":"ADICIONAR_FILIAL"
 			},
 			{
 				"nome": "CODEMPALTER",

@@ -8,11 +8,11 @@
 			},
 			{
 				"nome": "ID",
-				"valor": "WTA - BUSCAR PRECO FIXO-{{NUMREGIAO}}"
+				"valor": "PDVSYNC - SALVAR GRUPO CAMPANHA CLIENTE-{{URL_ENVIAR_GRUPO_CAMPANHA_CLIENTE}}"
 			},
 			{
 				"nome": "CHAVE",
-				"valor": "{{NUMREGIAO}}"
+				"valor": "{{URL_ENVIAR_GRUPO_CAMPANHA_CLIENTE}}"
 			},
 			{
 				"nome": "TIPOCHAVE",
@@ -24,11 +24,11 @@
 			},
 			{
 				"nome": "IDROTASERVICO",
-				"valor": "WTA - BUSCAR PRECO FIXO"
+				"valor": "PDVSYNC - SALVAR GRUPO CAMPANHA CLIENTE"
 			},
 			{
 				"nome": "VALOR",
-				"valor": "ADICIONAR_REGIAO"
+				"valor": "https://pdvsync-core-cliente-dev-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/dadosdinamicos/down/21/1"
 			},
 			{
 				"nome": "CODEMPALTER",

@@ -69,7 +69,6 @@
 						  "codigoFilial": "=concat('', @(1,codigoFilial))",
 						  "codigo": "=toInteger(=concat('', @(1,codigo)))",
 						  "idInquilino": "{{ID_INQUILINO}}",
-						  "situacao": 1,
 						  "loteOrigem": "{{LOTE_ORIGEM}}",
 						  "diasEntreParcelas": 30,
 						  "percentualMinimoEntrada": 100,
@@ -79,7 +78,7 @@
 						  "dadoComplementarDescricao": "",
 						  "idProprietarioDesc": "{{{MASTER_ID_PROPRIETARIO}}",
 						  "numeroMaximoParcelas": "=size(@(1,prazos))",
-                          "siglaRestricao": "=concat('', @(1,tipoRestricao.sigla))"
+						  "siglaRestricao": "=concat('', @(1,tipoRestricao.sigla))"
 						}
 					  }
 					}
@@ -92,25 +91,25 @@
 						  "@": "items[]",
 						  "siglaRestricao": {
 							"CA": {
-							  "@(2,restricoes)": "items[&3].condicaoPagtoRestricoesCA"
+							  "@(2,restricoes)": "items[&3].condicoesPagtoRestricoesCA"
 							},
 							"CL": {
-							  "@(2,restricoes)": "items[&3].condicaoPagtoRestricoesCL"
+							  "@(2,restricoes)": "items[&3].condicoesPagtoRestricoesCL"
 							},
 							"DP": {
-							  "@(2,restricoes)": "items[&3].condicaoPagtoRestricoesDP"
+							  "@(2,restricoes)": "items[&3].condicoesPagtoRestricoesDP"
 							},
 							"FO": {
-							  "@(2,restricoes)": "items[&3].condicaoPagtoRestricoesFO"
+							  "@(2,restricoes)": "items[&3].condicoesPagtoRestricoesFO"
 							},
 							"RA": {
-							  "@(2,restricoes)": "items[&3].condicaoPagtoRestricoesRA"
+							  "@(2,restricoes)": "items[&3].condicoesPagtoRestricoesRA"
 							},
 							"SB": {
-							  "@(2,restricoes)": "items[&3].condicaoPagtoRestricoesSB"
+							  "@(2,restricoes)": "items[&3].condicoesPagtoRestricoesSB"
 							},
 							"SE": {
-							  "@(2,restricoes)": "items[&3].condicaoPagtoRestricoesSE"
+							  "@(2,restricoes)": "items[&3].condicoesPagtoRestricoesSE"
 							}
 						  }
 						}
@@ -123,26 +122,26 @@
 					  "items": {
 						"*": {
 						  "@": "items[]",
-						  "condicaoPagtoRestricoesCA": {
-							"*": "items.[&2].condicaoPagtoRestricoes[].idRetaguardaCategoria"
+						  "condicoesPagtoRestricoesCA": {
+							"*": "items.[&2].condicoesPagtoRestricoes_rem[].idRetaguardaCategoria"
 						  },
-						  "condicaoPagtoRestricoesCL": {
-							"*": "items.[&2].condicaoPagtoRestricoes[].idRetaguardaCliente"
+						  "condicoesPagtoRestricoesCL": {
+							"*": "items.[&2].condicoesPagtoRestricoes_rem[].idRetaguardaCliente"
 						  },
-						  "condicaoPagtoRestricoesDP": {
-							"*": "items.[&2].condicaoPagtoRestricoes[].idRetaguardaDepartamento"
+						  "condicoesPagtoRestricoesDP": {
+							"*": "items.[&2].condicoesPagtoRestricoes_rem[].idRetaguardaDepartamento"
 						  },
-						  "condicaoPagtoRestricoesFO": {
-							"*": "items.[&2].condicaoPagtoRestricoes[].idRetaguardaFornecedor"
+						  "condicoesPagtoRestricoesFO": {
+							"*": "items.[&2].condicoesPagtoRestricoes_rem[].idRetaguardaFornecedor"
 						  },
-						  "condicaoPagtoRestricoesRA": {
-							"*": "items.[&2].condicaoPagtoRestricoes[].idRetaguardaRamoAtividade"
+						  "condicoesPagtoRestricoesRA": {
+							"*": "items.[&2].condicoesPagtoRestricoes_rem[].idRetaguardaRamoAtividade"
 						  },
-						  "condicaoPagtoRestricoesSB": {
-							"*": "items.[&2].condicaoPagtoRestricoes[].idRetaguardaSubCategoria"
+						  "condicoesPagtoRestricoesSB": {
+							"*": "items.[&2].condicoesPagtoRestricoes_rem[].idRetaguardaSubCategoria"
 						  },
-						  "condicaoPagtoRestricoesSE": {
-							"*": "items.[&2].condicaoPagtoRestricoes[].idRetaguardaSecao"
+						  "condicoesPagtoRestricoesSE": {
+							"*": "items.[&2].condicoesPagtoRestricoes_rem[].idRetaguardaSecao"
 						  }
 						}
 					  }
@@ -153,11 +152,10 @@
 					"spec": {
 					  "items": {
 						"*": {
-						  "condicaoPagtoRestricoes": {
+						  "condicoesPagtoRestricoes_rem": {
 							"*": {
 							  "situacao": 1,
-							  "idRetaguarda": "=concat('', @(3,codigo))",
-							  "idRetaguardaCondicaoPagto": "=concat('', @(3,codigo))",
+							  "IdRetaguardaCondicaoPagamento": "=concat('', @(3,codigo))",
 							  "idRetaguardaCategoria": "=toString",
 							  "idRetaguardaCliente": "=toString",
 							  "idRetaguardaDepartamento": "=toString",
@@ -170,7 +168,44 @@
 						}
 					  }
 					}
-				  },				  
+				  },
+				  {
+					"operation": "shift",
+					"spec": {
+					  "items": {
+						"*": {
+						  "@": "items[]",
+						  "condicoesPagtoRestricoes_rem": {
+							"*": {
+							  "IdRetaguardaCondicaoPagamento": "items[&3].condicoesPagtoRestricoes[&1].&",
+							  "situacao": "items[&3].condicoesPagtoRestricoes[&1].&",
+							  "idRetaguardaCategoria": ["items[&3].condicoesPagtoRestricoes[&1].&", "items[&3].condicoesPagtoRestricoes[&1].idRetaguarda_rem"],
+							  "idRetaguardaCliente": ["items[&3].condicoesPagtoRestricoes[&1].&", "items[&3].condicoesPagtoRestricoes[&1].idRetaguarda_rem"],
+							  "idRetaguardaDepartamento": ["items[&3].condicoesPagtoRestricoes[&1].&", "items[&3].condicoesPagtoRestricoes[&1].idRetaguarda_rem"],
+							  "idRetaguardaFornecedor": ["items[&3].condicoesPagtoRestricoes[&1].&", "items[&3].condicoesPagtoRestricoes[&1].idRetaguarda_rem"],
+							  "idRetaguardaRamoAtividade": ["items[&3].condicoesPagtoRestricoes[&1].&", "items[&3].condicoesPagtoRestricoes[&1].idRetaguarda_rem"],
+							  "idRetaguardaSubCategoria": ["items[&3].condicoesPagtoRestricoes[&1].&", "items[&3].condicoesPagtoRestricoes[&1].idRetaguarda_rem"],
+							  "idRetaguardaSecao": ["items[&3].condicoesPagtoRestricoes[&1].&", "items[&3].condicoesPagtoRestricoes[&1].idRetaguarda_rem"]
+							}
+						  }
+						}
+					  }
+					}
+					},
+				  {
+					"operation": "modify-overwrite-beta",
+					"spec": {
+					  "items": {
+						"*": {
+						  "condicoesPagtoRestricoes": {
+							"*": {
+							  "idRetaguarda": "=concat(@(1,IdRetaguardaCondicaoPagamento),'-', @(1,idRetaguarda_rem))"
+							}
+						  }
+						}
+					  }
+					}
+					},
 				  {
 					"operation": "shift",
 					"spec": {
@@ -197,20 +232,46 @@
 						  "percentualMinimoEntrada": "items.[&1].percentualMinimoEntrada",
 						  "dadoComplementarDescricao": "items.[&1].dadoComplementarDescricao",
 						  "loteOrigem": "items.[&1].loteOrigem",
-						  "situacao": "items.[&1].situacao",
 						  "tipoDadoComplementar": "items.[&1].tipoDadoComplementar",
-						  "condicaoPagtoRestricoes": "items.[&1].condicaoPagtoRestricoes"
+						  "numColunaPreco": "items.[&1].indicePreco",
+						  "planoPagamentoIntegracaoExterna": {
+							"prazoMaximoPrimeiraParcela": "items.[&2].prazoMaximoPrimeiraParcela"
+						  },
+						  "percentualAcrescimo": "items.[&1].taxa",
+						  "diaFixo": "items.[&1].diaFixoPagamento",
+						  "diasCarencia": "items.[&1].diasCarenciaPrimeiroVencimento",
+						  "numeroParcelasDiaFixo": "items.[&1].fixaNumeroparcelas",
+						  "numeroParcelas": "items.[&1].quantidadeParcelas",
+						  "valorMinimoPedido": "items.[&1].valorMinimoParcela",
+						  "ativo": {
+							"true": { "#1": "items.[&3].situacao" },
+							"false": { "#0": "items.[&3].situacao" }
+						  },
+						  "condicoesPagtoRestricoes": {
+							"*": {
+							  "IdRetaguardaCondicaoPagamento": "items.[&3].condicoesPagtoRestricoes.[&1].&",
+							  "situacao": "items.[&3].condicoesPagtoRestricoes.[&1].&",
+							  "idRetaguarda": "items.[&3].condicoesPagtoRestricoes.[&1].&",
+							  "idRetaguardaCategoria": "items.[&3].condicoesPagtoRestricoes.[&1].&",
+							  "idRetaguardaCliente": "items.[&3].condicoesPagtoRestricoes.[&1].&",
+							  "idRetaguardaDepartamento": "items.[&3].condicoesPagtoRestricoes.[&1].&",
+							  "idRetaguardaFornecedor": "items.[&3].condicoesPagtoRestricoes.[&1].&",
+							  "idRetaguardaRamoAtividade": "items.[&3].condicoesPagtoRestricoes.[&1].&",
+							  "idRetaguardaSubCategoria": "items.[&3].condicoesPagtoRestricoes.[&1].&",
+							  "idRetaguardaSecao": "items.[&3].condicoesPagtoRestricoes.[&1].&"
 							}
 						  }
 						}
-						  },
+					  }
+					}
+				  },
 				  {
 					"operation": "default",
 					"spec": {
 					  "_attr_access": "items"
 					}
 				  }
-			  ]
+				]
 			},
 			{
 				"nome": "ATIVO",

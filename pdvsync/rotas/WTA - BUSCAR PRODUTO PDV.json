@@ -228,22 +228,23 @@
 											}
 										},
 										"cnpjFornecedor": "items.[&2].cnpjFornecedor",
-										"codigoProdutoPrincipal": "items.[&2].idProdutoPrincipal",
-										"quantidadeMinimaAtacado": {
-											"valor": "items.[&3].quantidadeValorAtacado"
-										},
+										"skuProdutoPrincipal": "items.[&2].IdRetaguardaProdutoPrincipal",
 										"codigoFornecedor": "items.[&2].Id_retaguarda_fornecedor",
 										"codigoDepartamento": "items.[&2].id_retaguarda_departamento",
 										"codigoSecao": "items.[&2].id_retaguarda_secao",
 										"codigoCategoria": "items.[&2].id_retaguarda_categoria",
 										"codigoSubCategoria": "items.[&2].id_retaguarda_sub_categoria",
 										"codigoMarca": "items.[&2].id_retaguarda_marca",
+										"quantidadeMinimaAtacado": {
+											"valor": "items.[&3].quantidadeValorAtacado"
+										},
 										"embalagens": {
 											"*": {
 												"IdProdutoRetaguarda": "items.[&4].produtoEmbalagens[&1].IdProdutoRetaguarda",
 												"idRetaguarda": "items.[&4].produtoEmbalagens[&1].idRetaguarda",
 												"descricao": "items.[&4].produtoEmbalagens[&1].descricao",
 												"codigoDeBarra": "items.[&4].produtoEmbalagens[&1].codigoBarras",
+												"quantidadeMinimaAtacado": "items.[&4].produtoEmbalagens[&1].quantidadeValorAtacado",
 												"unidade": {
 													"sigla": "items.[&5].produtoEmbalagens[&2].unidadeMedida"
 												},
@@ -321,7 +322,8 @@
 												"@(1,fcp.percentualFcp.percentual_Fcp)": "items.[&4].fcps[&2].percentualFcp",
 												"@(1,fcp.codigoBeneficioFiscal.valor)": "items.[&4].fcps[&2].codigoBeneficioFiscal",
 												"descontaDesoneracaoNf": "items.[&4].fcps[&2].descontaDesoneracaoNf",
-												"@(1,fcp.valorBaseFcp.valorBase_Fcp)": "items.[&4].fcps[&2].valorBaseFcp"
+												"@(1,fcp.valorBaseFcp.valorBase_Fcp)": "items.[&4].fcps[&2].valorBaseFcp",
+												"@(1,fcp.motivoDesoneracaoIcms)": "items.[&4].fcps[&2].motivoDesoneracaoIcms"
 											}
 										}
 									}

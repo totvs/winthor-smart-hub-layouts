@@ -47,12 +47,15 @@
                             }
                         ],
                         "url": {
-                            "raw": "https://winthor-log.logistica.totvs.app/coletaentrega/query/api/v1/viagens",
+                            "raw": "{{URL_BASE}}/query/api/v1/viagens",
                             "query": [
                                 {
                                     "key": "externalIdViagem",
                                     "value": "{{NUMCAR}}"
                                 }
+                            ],
+                            "host": [
+                                "{{URL_BASE}}"
                             ]
                         }
                     },
