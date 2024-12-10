@@ -229,12 +229,12 @@
 										},
 										"cnpjFornecedor": "items.[&2].cnpjFornecedor",
 										"skuProdutoPrincipal": "items.[&2].IdRetaguardaProdutoPrincipal",
-										"codigoFornecedor": "items.[&2].Id_retaguarda_fornecedor",
-										"codigoDepartamento": "items.[&2].id_retaguarda_departamento",
-										"codigoSecao": "items.[&2].id_retaguarda_secao",
-										"codigoCategoria": "items.[&2].id_retaguarda_categoria",
-										"codigoSubCategoria": "items.[&2].id_retaguarda_sub_categoria",
-										"codigoMarca": "items.[&2].id_retaguarda_marca",
+							"codigoFornecedor": "items.[&2].IdRetaguardaFornecedor",
+							"codigoDepartamento": "items.[&2].IdRetaguardaDepartamento",
+							"codigoSecao": "items.[&2].IdRetaguardaSecao",
+							"codigoCategoria": "items.[&2].IdRetaguardaCategoria",
+							"codigoSubCategoria": "items.[&2].IdRetaguardaSubCategoria",
+							"codigoMarca": "items.[&2].IdRetaguardaMarca",
 										"quantidadeMinimaAtacado": {
 											"valor": "items.[&3].quantidadeValorAtacado"
 										},
