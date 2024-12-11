@@ -119,7 +119,7 @@
 							   },
 							   "createDate":"items.[&1].dataCadastro",
 							   "deliveryAddressNumber":"items.[&1].numero",
-                               "profissionalRetaguarda": "items.[&1].IdProfissionalRetaguarda",
+                               "profissionalRetaguarda": "items.[&1].IdRetaguardaProfissional",
 							   "customerNetId": "items.[&1].IdRetaguardaRedeCliente",
 							   "mainClientId": "items.[&1].IdRetaguardaClientePrincipal",
 							   "squareId": "items.[&1].IdRetaguardaPraca",
