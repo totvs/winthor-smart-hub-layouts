@@ -75,299 +75,299 @@
 			{
 				"nome": "LAYOUTTRANSFORMACAO",
 				"valor": [
-					{
-						"operation": "modify-overwrite-beta",
-						"spec": {
-							"items": {
-								"*": {
-									"produto": {
-										"idRetaguarda": "=concat(@(1,codigoDeBarra),'-',@(1,codigo))",
-										"idExterno": "=concat('pdvsync-produto-', @(1,idRetaguarda),'-',@(1,codfilial),'-',@(1,dtultalter))",
-										"idInterno": "=concat(@(1,codigoDeBarra),'-',@(1,codigo))",
-							            "tipoIdInterno":"PDVSYNC-PRODUTO-PDV",
-										"codigoProduto": "@(1,idRetaguarda)",
-										"codigoFilial": "{{FILIAL_ID_PROPRIETARIO}}",
-										"embalagens": {
-											"*": {
-												"idRetaguarda": "=concat(@(1,codigoDeBarra),'-',@(1,produto))",
-												"IdProdutoRetaguarda": "=concat(@(3,codigoDeBarra),'-',@(1,produto))",
-												"descricao": [
-													"@(1,descricao)",
-													"=concat(@(3,descricao),' - ',@(1,embalagem))"
-												]
-											}
-										},
-										"produtoKits": {
-										  "*": {
-											"idRetaguarda": "=concat(@(1,codigoDeBarraItemKit),'-',@(1,idRetaguardaProdutoKit))",
-											"idRetaguardaProduto": "@(3,idRetaguarda)",
-											"idRetaguardaProdutoKit": "=concat(@(1,codigoDeBarraItemKit),'-',@(1,idRetaguardaProdutoKit))"
-										  }
-										}
-									},
-									"ncm": {
-										"*": {
-											"codigoNcm_": "=split('\\.', @(1,codigoNcm))",
-											"codigo_Ncm": "=join('', @(1,codigoNcm_))"
-										}
-									},
-									"icms": {
-										"*": {
-											"idRetaguardaIcms": "=concat(@(1,id),'-ICMS')",
-											"idRetaguardaSt": "=concat(@(1,id),'-ST')",
-											"codigoFilial": "@(3,produto.codfilial)",
-											"fcp": {
-												"percentualFcp": {
-													"valor": "=concat(@(1,valor),'')",
-													"percentualFcp_": "=split('\\.',@(1,valor))",
-													"percentual_Fcp": "=join(',',@(1,percentualFcp_))"
-												},
-												"valorBaseFcp": {
-													"valor": "=concat(@(1,valor),'')",
-													"valorBaseFcp_": "=split('\\.',@(1,valor))",
-													"valorBase_Fcp": "=join(',',@(1,valorBaseFcp_))"
-												}
-											}
-										}
-									}
-								}
+				  {
+					"operation": "modify-overwrite-beta",
+					"spec": {
+					  "items": {
+						"*": {
+						  "produto": {
+							"idRetaguarda": "=concat(@(1,codigoDeBarra),'-',@(1,codigo))",
+							"idExterno": "=concat('pdvsync-produto-', @(1,idRetaguarda),'-',@(1,codfilial),'-',@(1,dtultalter))",
+							"idInterno": "=concat(@(1,codigoDeBarra),'-',@(1,codigo))",
+							"tipoIdInterno": "PDVSYNC-PRODUTO-PDV",
+							"codigoProduto": "@(1,idRetaguarda)",
+							"codigoFilial": "{{FILIAL_ID_PROPRIETARIO}}",
+							"embalagens": {
+							  "*": {
+								"idRetaguarda": "=concat(@(1,codigoDeBarra),'-',@(1,produto))",
+								"IdProdutoRetaguarda": "=concat(@(3,codigoDeBarra),'-',@(1,produto))",
+								"descricao": [
+																	"@(1,descricao)",
+																	"=concat(@(3,descricao),' - ',@(1,embalagem))"
+																]
+							  }
+							},
+							"produtoKits": {
+							  "*": {
+								"idRetaguarda": "=concat(@(1,codigoDeBarraItemKit),'-',@(1,idRetaguardaProdutoKit))",
+								"idRetaguardaProduto": "@(3,idRetaguarda)",
+								"idRetaguardaProdutoKit": "=concat(@(1,codigoDeBarraItemKit),'-',@(1,idRetaguardaProdutoKit))"
+							  }
 							}
+						  },
+						  "ncm": {
+							"*": {
+							  "codigoNcm_": "=split('\\.', @(1,codigoNcm))",
+							  "codigo_Ncm": "=join('', @(1,codigoNcm_))"
+							}
+						  },
+						  "icms": {
+							"*": {
+							  "idRetaguardaIcms": "=concat(@(1,id),'-ICMS')",
+							  "idRetaguardaSt": "=concat(@(1,id),'-ST')",
+							  "codigoFilial": "@(3,produto.codfilial)",
+							  "fcp": {
+								"percentualFcp": {
+								  "valor": "=concat(@(1,valor),'')",
+								  "percentualFcp_": "=split('\\.',@(1,valor))",
+								  "percentual_Fcp": "=join(',',@(1,percentualFcp_))"
+								},
+								"valorBaseFcp": {
+								  "valor": "=concat(@(1,valor),'')",
+								  "valorBaseFcp_": "=split('\\.',@(1,valor))",
+								  "valorBase_Fcp": "=join(',',@(1,valorBaseFcp_))"
+								}
+							  }
+							}
+						  }
 						}
+					  }
+					}
 					},
-					{
-						"operation": "shift",
-						"spec": {
-							"items": {
+				  {
+					"operation": "shift",
+					"spec": {
+					  "items": {
+						"*": {
+						  "produto": "items[&1].produto",
+						  "ncm": "items[&1].ncm",
+						  "piscofins": {
+							"*": {
+							  "codTribPisCofins": {
+								"0": {
+								  "@2": "piscofins_ignorado[]"
+								},
 								"*": {
-									"produto": "items[&1].produto",
-									"ncm": "items[&1].ncm",
-									"piscofins": {
-										"*": {
-											"codTribPisCofins": {
-												"0": {
-													"@2": "piscofins_ignorado[]"
-												},
-												"*": {
-													"@2": "items[&5].piscofins[]"
-												}
-											}
-										}
-									},
-									"icms": {
-										"*": {
-											"id": {
-												"0": {
-													"@2": "icms_ignorado[]"
-												},
-												"*": {
-													"@2": "items[&5].icms[]"
-												}
-											}
-										}
-									}
+								  "@2": "items[&5].piscofins[]"
 								}
+							  }
 							}
+						  },
+						  "icms": {
+							"*": {
+							  "id": {
+								"0": {
+								  "@2": "icms_ignorado[]"
+								},
+								"*": {
+								  "@2": "items[&5].icms[]"
+								}
+							  }
+							}
+						  }
 						}
+					  }
+					}
+									},
+				  {
+					"operation": "shift",
+					"spec": {
+					  "items": {
+						"*": {
+						  "produto": {
+							"@(1,icms[0].cst)": "items.[&2].cstIcms",
+							"codigoCest": "items.[&2].cest",
+							"idExterno": "idExterno",
+							"idInterno": "idInterno",
+							"tipoIdInterno": "tipoIdInterno",
+							"idRetaguarda": "items.[&2].idRetaguarda",
+							"situacao": {
+							  "Inativo": {
+								"#0": "items.[&4].situacao"
+							  }
+							},
+							"multiplo": {
+							  "valor": "items.[&3].quantidadeMovimentacao"
+							},
+							"descricao": "items.[&2].descricao",
+							"@(1,produto.unidade.sigla)": "items.[&2].unidadeMedida",
+							"descontoMaximo": "items.[&2].descontoMaximo",
+							"codigo": "items.[&2].codigoProduto",
+							"codfilial": "items.[&2].idProprietario",
+							"codigoDeBarra": "items.[&2].codigoAlternativo",
+							"origemProd": "items.[&2].origemProduto",
+							"tipoMercadoria": {
+							  "PRODUTO_ACABADO": {
+								"#5": "items.[&4].tipoProduto"
+							  },
+							  "KIT": {
+								"#3": "items.[&4].tipoProduto"
+							  },
+							  "MATERIAL_CONSUMO": {
+								"#1": "items.[&4].tipoProduto"
+							  },
+							  "SERVICOS": {
+								"#6": "items.[&4].tipoProduto"
+							  },
+							  "BOI_CASADO": {
+								"#3": "items.[&4].tipoProduto"
+							  },
+							  "CESTA_BASICA": {
+								"#3": "items.[&4].tipoProduto"
+							  },
+							  "*": {
+								"#0": "items.[&4].tipoProduto"
+							  }
+							},
+							"tipoFracaoProduto": {
+							  "NAO_ACEITA_FRACIONAMENTO": {
+								"#false": "items.[&4].fracionado"
+							  },
+							  "*": {
+								"#true": "items.[&4].fracionado"
+							  }
+							},
+							"cnpjFornecedor": "items.[&2].cnpjFornecedor",
+							"skuProdutoPrincipal": "items.[&2].IdRetaguardaProdutoPrincipal",
+							"codigoFornecedor": "items.[&2].IdRetaguardaFornecedor",
+							"codigoDepartamento": "items.[&2].IdRetaguardaDepartamento",
+							"codigoSecao": "items.[&2].IdRetaguardaSecao",
+							"codigoCategoria": "items.[&2].IdRetaguardaCategoria",
+							"codigoSubCategoria": "items.[&2].IdRetaguardaSubCategoria",
+							"codigoMarca": "items.[&2].IdRetaguardaMarca",
+							"quantidadeMinimaAtacado": {
+							  "valor": "items.[&3].quantidadeValorAtacado"
+							},
+							"embalagens": {
+							  "*": {
+								"IdProdutoRetaguarda": "items.[&4].produtoEmbalagens[&1].IdProdutoRetaguarda",
+								"idRetaguarda": "items.[&4].produtoEmbalagens[&1].idRetaguarda",
+								"descricao": "items.[&4].produtoEmbalagens[&1].descricao",
+								"codigoDeBarra": "items.[&4].produtoEmbalagens[&1].codigoBarras",
+								"quantidadeMinimaAtacado": "items.[&4].produtoEmbalagens[&1].quantidadeValorAtacado",
+								"unidade": {
+								  "sigla": "items.[&5].produtoEmbalagens[&2].unidadeMedida"
+								},
+								"fatorConversao": {
+								  "valor": "items.[&5].produtoEmbalagens[&2].quantidade"
+								},
+								"inativo": {
+								  "false": {
+									"#1": "items.[&6].produtoEmbalagens[&3].situacao"
+								  },
+								  "*": {
+									"#0": "items.[&6].produtoEmbalagens[&3].situacao"
+								  }
+								}
+							  }
+							},
+							"produtoKits": {
+							  "*": {
+								"idRetaguarda": "items.[&4].produtoKits[&1].idRetaguarda",
+								"idRetaguardaProduto": "items.[&4].produtoKits[&1].idRetaguardaProduto",
+								"idRetaguardaProdutoKit": "items.[&4].produtoKits[&1].idRetaguardaProdutoKit",
+								"descricao": "items.[&4].produtoKits[&1].descricao",
+								"quantidadeVendaKit": "items.[&4].produtoKits[&1].quantidadeVendaKit",
+								"tipoValorKit": "items.[&4].produtoKits[&1].tipoValorKit",
+								"situacao": "items.[&4].produtoKits[&1].situacao",
+								"valorDesconto": "items.[&4].produtoKits[&1].valorDesconto",
+								"novoValorUnitario": "items.[&4].produtoKits[&1].novoValorUnitario"
+							  }
+							}
+						  },
+						  "ncm_old": {
+							"*": {
+							  "id": "items[&3].ncms[&1].idRetaguarda",
+							  "@(2,produto.codfilial)": "items.[&3].ncms[&1].idProprietario"
+							}
+						  },
+						  "ncm": {
+							"*": {
+							  "id": {
+								"0": {
+								  "@(2,id)": "ncm_ignorados"
+								},
+								"*": {
+								  "@(2,id)": "items[&5].ncms[&3].idRetaguarda",
+								  "@(4,produto.codfilial)": "items.[&5].ncms[&3].idProprietario"
+								}
+							  }
+							}
+						  },
+						  "piscofins": {
+							"*": {
+							  "codTribPisCofins": "items[&3].pisCofins[&1].idRetaguarda",
+							  "@(2,produto.codfilial)": "items.[&3].pisCofins[&1].idProprietario"
+							}
+						  },
+						  "icms": {
+							"*": {
+							  "substituicaoTributaria": {
+								"icmsExterno": {
+								  "valor": {
+									"0": {
+									  "@(4,idRetaguardaIcms)": "items[&7].impostos[&5].idRetaguarda",
+									  "@(4,codigoFilial)": "items[&7].impostos[&5].idProprietario"
+									},
+									"*": {
+									  "@(4,idRetaguardaSt)": "items[&7].impostos[&5].idRetaguarda",
+									  "@(4,codigoFilial)": "items[&7].impostos[&5].idProprietario"
+									}
+								  }
+								}
+							  },
+							  "fcp": {
+								"id": "items[&4].fcps[&2].idRetaguarda",
+								"@(3,produto.codfilial)": "items.[&4].fcps[&2].idProprietario",
+								"@(1,fcp.percentualFcp.percentual_Fcp)": "items.[&4].fcps[&2].percentualFcp",
+								"@(1,fcp.codigoBeneficioFiscal.valor)": "items.[&4].fcps[&2].codigoBeneficioFiscal",
+								"descontaDesoneracaoNf": "items.[&4].fcps[&2].descontaDesoneracaoNf",
+								"@(1,fcp.valorBaseFcp.valorBase_Fcp)": "items.[&4].fcps[&2].valorBaseFcp",
+								"@(1,fcp.motivoDesoneracaoIcms)": "items.[&4].fcps[&2].motivoDesoneracaoIcms"
+							  }
+							}
+						  }
+						}
+					  }
+					}
 					},
-					{
-						"operation": "shift",
-						"spec": {
-							"items": {
-								"*": {
-									"produto": {
-										"@(1,icms[0].cst)": "items.[&2].cstIcms",
-										"codigoCest": "items.[&2].cest",
-										"idExterno": "idExterno",
-										"idInterno": "idInterno",
-							            "tipoIdInterno":"tipoIdInterno",
-										"idRetaguarda": "items.[&2].idRetaguarda",
-										"situacao": {
-											"Inativo": {
-												"#0": "items.[&4].situacao"
-											}
-										},
-										"multiplo": {
-											"valor": "items.[&3].quantidadeMovimentacao"
-										},
-										"descricao": "items.[&2].descricao",
-										"@(1,produto.unidade.sigla)": "items.[&2].unidadeMedida",
-										"descontoMaximo": "items.[&2].descontoMaximo",
-										"codigo": "items.[&2].codigoProduto",
-										"codfilial": "items.[&2].idProprietario",
-										"codigoDeBarra": "items.[&2].codigoAlternativo",
-										"origemProd": "items.[&2].origemProduto",
-										"tipoMercadoria": {
-											"PRODUTO_ACABADO": {
-												"#5": "items.[&4].tipoProduto"
-											},
-											"KIT": {
-												"#3": "items.[&4].tipoProduto"
-											},
-											"MATERIAL_CONSUMO": {
-												"#1": "items.[&4].tipoProduto"
-											},
-											"SERVICOS": {
-												"#6": "items.[&4].tipoProduto"
-											},
-											"BOI_CASADO": {
-												"#3": "items.[&4].tipoProduto"
-											},
-											"CESTA_BASICA": {
-												"#3": "items.[&4].tipoProduto"
-											},
-											"*": {
-												"#0": "items.[&4].tipoProduto"
-											}
-										},
-										"tipoFracaoProduto": {
-											"NAO_ACEITA_FRACIONAMENTO": {
-												"#false": "items.[&4].fracionado"
-											},
-											"*": {
-												"#true": "items.[&4].fracionado"
-											}
-										},
-										"cnpjFornecedor": "items.[&2].cnpjFornecedor",
-										"skuProdutoPrincipal": "items.[&2].IdRetaguardaProdutoPrincipal",
-										"codigoFornecedor": "items.[&2].Id_retaguarda_fornecedor",
-										"codigoDepartamento": "items.[&2].id_retaguarda_departamento",
-										"codigoSecao": "items.[&2].id_retaguarda_secao",
-										"codigoCategoria": "items.[&2].id_retaguarda_categoria",
-										"codigoSubCategoria": "items.[&2].id_retaguarda_sub_categoria",
-										"codigoMarca": "items.[&2].id_retaguarda_marca",
-										"quantidadeMinimaAtacado": {
-											"valor": "items.[&3].quantidadeValorAtacado"
-										},
-										"embalagens": {
-											"*": {
-												"IdProdutoRetaguarda": "items.[&4].produtoEmbalagens[&1].IdProdutoRetaguarda",
-												"idRetaguarda": "items.[&4].produtoEmbalagens[&1].idRetaguarda",
-												"descricao": "items.[&4].produtoEmbalagens[&1].descricao",
-												"codigoDeBarra": "items.[&4].produtoEmbalagens[&1].codigoBarras",
-												"quantidadeMinimaAtacado": "items.[&4].produtoEmbalagens[&1].quantidadeValorAtacado",
-												"unidade": {
-													"sigla": "items.[&5].produtoEmbalagens[&2].unidadeMedida"
-												},
-												"fatorConversao": {
-													"valor": "items.[&5].produtoEmbalagens[&2].quantidade"
-												},
-												"inativo": {
-													"false": {
-														"#1": "items.[&6].produtoEmbalagens[&3].situacao"
-													},
-													"*": {
-														"#0": "items.[&6].produtoEmbalagens[&3].situacao"
-													}
-												}
-											}
-										},
-										"produtoKits": {
-											"*": {
-												"idRetaguarda": "items.[&4].produtoKits[&1].idRetaguarda",
-												"idRetaguardaProduto": "items.[&4].produtoKits[&1].idRetaguardaProduto",
-												"idRetaguardaProdutoKit": "items.[&4].produtoKits[&1].idRetaguardaProdutoKit",
-												"descricao": "items.[&4].produtoKits[&1].descricao",
-												"quantidadeVendaKit": "items.[&4].produtoKits[&1].quantidadeVendaKit",
-												"tipoValorKit": "items.[&4].produtoKits[&1].tipoValorKit",
-												"situacao": "items.[&4].produtoKits[&1].situacao",
-												"valorDesconto": "items.[&4].produtoKits[&1].valorDesconto",
-												"novoValorUnitario": "items.[&4].produtoKits[&1].novoValorUnitario"
-											}
-										}
-									},
-									"ncm_old": {
-										"*": {
-											"id": "items[&3].ncms[&1].idRetaguarda",
-											"@(2,produto.codfilial)": "items.[&3].ncms[&1].idProprietario"
-										}
-									},
-									"ncm": {
-										"*": {
-											"id": {
-												"0": {
-													"@(2,id)": "ncm_ignorados"
-												},
-												"*": {
-													"@(2,id)": "items[&5].ncms[&3].idRetaguarda",
-													"@(4,produto.codfilial)": "items.[&5].ncms[&3].idProprietario"
-												}
-											}
-										}
-									},
-									"piscofins": {
-										"*": {
-											"codTribPisCofins": "items[&3].pisCofins[&1].idRetaguarda",
-											"@(2,produto.codfilial)": "items.[&3].pisCofins[&1].idProprietario"
-										}
-									},
-									"icms": {
-										"*": {
-											"substituicaoTributaria": {
-												"icmsExterno": {
-													"valor": {
-														"0": {
-															"@(4,idRetaguardaIcms)": "items[&7].impostos[&5].idRetaguarda",
-															"@(4,codigoFilial)": "items[&7].impostos[&5].idProprietario"
-														},
-														"*": {
-															"@(4,idRetaguardaSt)": "items[&7].impostos[&5].idRetaguarda",
-															"@(4,codigoFilial)": "items[&7].impostos[&5].idProprietario"
-														}
-													}
-												}
-											},
-											"fcp": {
-												"id": "items[&4].fcps[&2].idRetaguarda",
-												"@(3,produto.codfilial)": "items.[&4].fcps[&2].idProprietario",
-												"@(1,fcp.percentualFcp.percentual_Fcp)": "items.[&4].fcps[&2].percentualFcp",
-												"@(1,fcp.codigoBeneficioFiscal.valor)": "items.[&4].fcps[&2].codigoBeneficioFiscal",
-												"descontaDesoneracaoNf": "items.[&4].fcps[&2].descontaDesoneracaoNf",
-												"@(1,fcp.valorBaseFcp.valorBase_Fcp)": "items.[&4].fcps[&2].valorBaseFcp",
-												"@(1,fcp.motivoDesoneracaoIcms)": "items.[&4].fcps[&2].motivoDesoneracaoIcms"
-											}
-										}
-									}
-								}
+				  {
+					"operation": "default",
+					"spec": {
+					  "_attr_access": "items",
+					  "items[]": {
+						"*": {
+						  "idInquilino": "{{ID_INQUILINO}}",
+						  "idProprietario": "{{FILIAL_ID_PROPRIETARIO}}",
+						  "loteOrigem": "{{LOTE_ORIGEM}}",
+						  "indiceTributoImpressora": "",
+						  "tipo": 0,
+						  "situacao": 1,
+						  "escalaRelevante": true,
+						  "codigoAlternativo": "0",
+						  "tipoArredondaTrunca": "0",
+						  "cstIcms": "",
+						  "percentualReducaoIcms": 0,
+						  "aliquotaIcms": 0,
+						  "vlicmsret": 0,
+						  "cest": "",
+						  "arredondaTrunca": "0",
+						  "descontoMaximo": 99,
+						  "impostos[]": {
+							"*": {
+							  "idRetaguarda": "0",
+							  "idProprietario": "0"
 							}
-						}
-					},
-					{
-						"operation": "default",
-						"spec": {
-							"_attr_access": "items",
-							"items[]": {
-								"*": {
-									"idInquilino": "{{ID_INQUILINO}}",
-									"idProprietario": "{{FILIAL_ID_PROPRIETARIO}}",
-									"loteOrigem": "{{LOTE_ORIGEM}}",
-									"indiceTributoImpressora": "",
-									"tipo": 0,
-									"situacao": 1,
-									"escalaRelevante": true,
-									"codigoAlternativo": "0",
-									"tipoArredondaTrunca": "0",
-									"cstIcms": "",
-									"percentualReducaoIcms": 0,
-									"aliquotaIcms": 0,
-									"vlicmsret": 0,
-									"cest": "",
-									"arredondaTrunca": "0",
-									"descontoMaximo": 99,
-									"impostos[]": {
-										"*": {
-											"idRetaguarda": "0",
-											"idProprietario": "0"
-										}
-									},
-									"pisCofins[]": {
-										"*": {
-											"idRetaguarda": "0",
-											"idProprietario": "0"
-										}
-									}
-								}
+						  },
+						  "pisCofins[]": {
+							"*": {
+							  "idRetaguarda": "0",
+							  "idProprietario": "0"
 							}
+						  }
 						}
+					  }
+					}
 					}
 				]
 			},
