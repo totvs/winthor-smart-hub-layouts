@@ -395,8 +395,8 @@
                                     "descontosCabecalho_valorNegativo": "=doubleSum(@(1,descontosCabecalho))",
                                     "pagamentos": {
                                         "*": {
-                                            "codAutorizacaoTef": "=join('',@(1,codAutorizacaoTef_arr))",
                                             "codAutorizacaoTef_arr": "=split('\\D',@(1,codAutorizacaoTef))",
+                                            "codAutorizacaoTef": "=join('',@(1,codAutorizacaoTef_arr))",
                                             "valorComTroco": "=doubleSum(@(1,valorComTroco))"
                                         }
                                     },
