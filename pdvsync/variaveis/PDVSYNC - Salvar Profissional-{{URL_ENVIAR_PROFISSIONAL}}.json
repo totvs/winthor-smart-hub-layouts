@@ -28,7 +28,7 @@
 			},
 			{
 				"nome": "VALOR",
-				"valor": "https://pdvsync-core-formapagto-qa-ywc7q7nxya-ue.a.run.app/api/retaguarda/v2/usuarios"
+				"valor": "https://pdvsync-core-formapagto-qa-ywc7q7nxya-ue.a.run.app/api/retaguarda/v3/usuarios"
 			},
 			{
 				"nome": "CODEMPALTER",
