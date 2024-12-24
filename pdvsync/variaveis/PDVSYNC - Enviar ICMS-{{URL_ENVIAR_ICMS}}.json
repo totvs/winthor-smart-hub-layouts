@@ -28,7 +28,7 @@
 			},
 			{
 				"nome": "VALOR",
-				"valor": "https://pdvsync.varejo.totvs.com.br/imposto/api/retaguarda/v2/impostos"
+				"valor": "https://pdvsync.varejo.totvs.com.br/imposto/api/retaguarda/v3/impostos"
 			},
 			{
 				"nome": "CODEMPALTER",
