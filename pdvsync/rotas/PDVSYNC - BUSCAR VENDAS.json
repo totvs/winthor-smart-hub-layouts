@@ -400,11 +400,6 @@
                                             "valorComTroco": "=doubleSum(@(1,valorComTroco))"
                                         }
                                     },
-                                    "produtos": {
-                                        "*": {
-                                            "vlDescontoAcrescimo": "=divide(@(1,vlDescontoAcrescimo),@(1,qt))"
-                                        }
-                                    },
                                     "vlDesconto": "=divide(@(1,descontosCabecalho_valorNegativo),-1)",
                                     "vlTotalComTroco": "=doubleSum(@(1,vlTotalComTroco))"
                                 }
