@@ -1,0 +1,28 @@
+name: Validar todos Arquivos JSON
+
+on: 
+ pull_request:
+    types: [opened, synchronize, reopened]  # Este evento dispara quando o PR é aberto, sincronizado ou reaberto
+jobs:
+  validate-json:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+
+    - name: Install jq
+      run: sudo apt-get install jq
+
+    - name: Validate JSON files
+      run: |
+        # Encontra todos os arquivos JSON e os valida
+        find . -type f -name '*.json' -print0 | while IFS= read -r -d '' file; do
+          echo "Validating $file"
+          jq empty "$file" || { echo "Invalid JSON: $file"; exit 1; }
+        done

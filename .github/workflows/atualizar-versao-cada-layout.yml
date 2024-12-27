@@ -1,0 +1,81 @@
+name: Atualizar Versão de Cada Layout
+on:
+  workflow_run:
+    workflows: ["Criar Tag e Release"]  # Espera a execução do workflow "Criar Tag e Release"
+    types: [completed]  # Executa quando o workflow "Criar Tag e Release" for completado (independentemente de sucesso ou falha)
+
+permissions:
+  contents: read  # Permite ao GITHUB_TOKEN fazer push para o repositório
+
+jobs:
+  executa-script-py:
+    runs-on: ubuntu-latest
+    steps:
+    
+      - uses: actions/checkout@v3
+
+      - name: Set up Python environment
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.x'  # Especifica a versão do Python que você deseja
+
+      - name: Install gitpython
+        run: |
+          pip install gitpython
+
+      - name: Configurar o token do GitHub CLI
+        run: |
+          echo "GITHUB_TOKEN=${{ secrets.GH_TOKEN }}" >> $GITHUB_ENV
+          
+      - name: Listar todas as execuções de workflows
+        run: |
+          gh run list --repo deyvidksc/winthor-smart-hub-layouts  # Lista todas as execuções de workflow no repositório
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}  # Usando o token correto para autenticação
+       
+      - name: Listar todas as execuções de workflows e extrair o nome da branch
+        run: |
+          # Lista todas as execuções de workflow no repositório, filtrando pelo nome do workflow e pelo status de sucesso
+          # workflow_runs=$(gh run list --repo ${{ github.repository }} --workflow "Criar Artefato com Nome da Branch" --json headBranch,status,conclusion -q 'map(select(.status == "completed" and .conclusion == "success")) | .[].headBranch' | sort -u | head -n 1)
+          # workflow_runs=$(gh run list --repo ${{ github.repository }} --workflow "Criar Artefato com Nome da Branch" --json headBranch,status,conclusion -q 'map(select(.status == "completed" and .conclusion == "success")) | .[].headBranch | unique | sort | last')
+          workflow_runs=$(gh run list --repo ${{ github.repository }} --workflow "Criar Artefato com Nome da Branch" --json headBranch,status,conclusion -q 'map(select(.status == "completed" and .conclusion == "success")) | .[].headBranch' | sort | tail -n 1)
+
+          # Exibe o resultado da lista para debug
+          echo "Execuções de workflow 'Criar Artefato com Nome da Branch' bem-sucedidas encontradas: $workflow_runs"
+          
+          # Verifica se a variável workflow_runs contém algum valor
+          if [ -z "$workflow_runs" ]; then
+            echo "Nenhuma execução bem-sucedida do workflow 'Criar Artefato com Nome da Branch' foi encontrada."
+            exit 1
+          fi
+          
+          # Agora, BRANCH_ORIGEM será o valor de workflow_runs (que é o nome da branch)
+          BRANCH_ORIGEM=$workflow_runs
+          
+          # Exibe o nome da branch extraído
+          echo "Nome da branch extraído: $BRANCH_ORIGEM"
+
+          # Exporta BRANCH_ORIGEM como variável de ambiente para ser usado nas próximas etapas
+          echo "BRANCH_ORIGEM=$BRANCH_ORIGEM" >> $GITHUB_ENV
+          
+          # Determinando a branch base
+          if [ -n "${{ github.event.pull_request }}" ]; then
+            # Se for um PR, usamos o base ref (branch de destino do PR)
+            BRANCH_DESTINO="${{ github.base_ref }}"
+          else
+            # Se não for PR, define a branch destino para uma valor fixo ou usa a branch de onde o workflow foi executado
+            BRANCH_DESTINO=${GITHUB_REF##*/}
+          fi
+          
+          echo "BRANCH_DESTINO=$BRANCH_DESTINO" >> $GITHUB_ENV  
+        
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}  # Usando o token correto para autenticação
+
+      - name: Run script atualizar-versao-cada-layout
+        run: |
+          echo "Passando parâmetros para o script Python:"
+          echo "Token: ${{ secrets.GH_TOKEN }}"
+          echo "Branch de Origem: $BRANCH_ORIGEM"
+          echo "Branch de Destino: $BRANCH_DESTINO"
+          python scripts/atualizar-versao-cada-layout.py ${{ secrets.GH_TOKEN }} $BRANCH_ORIGEM $BRANCH_DESTINO

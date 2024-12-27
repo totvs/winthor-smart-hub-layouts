@@ -1,0 +1,112 @@
+name: Criar Tag e Release
+on:
+  workflow_run:
+    workflows: ["Criar Artefato com Nome da Branch"]  # Espera a execução do workflow "Criar Tag e Release"
+    types: [completed]  # Executa quando o workflow "Criar Tag e Release" for completado (independentemente de sucesso ou falha)
+    
+  #pull_request:
+    #types:
+      #- closed
+    #branches:
+      #- main
+      #- develop
+
+permissions:
+  contents: write  # Permite ao GITHUB_TOKEN fazer push para o repositório
+
+jobs:
+  cria-tag-release-on-push:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}  # Use o token correto aqui
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v3
+
+      - name: Ler versão atual
+        id: read_version
+        run: |
+          VERSION_FILE="version.txt"
+          if [[ -f "$VERSION_FILE" ]]; then
+            VERSION=$(cat $VERSION_FILE)
+          else
+            VERSION="1.0.0.0"  # Caso o arquivo de versão não exista, começar com a versão inicial
+          fi
+          echo "VERSAO_ATUAL=$VERSION" >> $GITHUB_ENV
+
+      - name: Incrementar versão
+        id: increment_version
+        run: |
+          VERSION=${{ env.VERSAO_ATUAL }}
+          BRANCH_NAME=${GITHUB_REF#refs/heads/}
+
+          # Extrair os 4 componentes da versão
+          IFS='.' read -r -a version_parts <<< "$VERSION"
+          
+          # Se a versão tem 4 componentes (major.minor.patch.build), processa
+          if [ ${#version_parts[@]} -eq 4 ]; then
+            major=${version_parts[0]}
+            minor=${version_parts[1]}
+            patch=${version_parts[2]}
+            build=${version_parts[3]}
+          else
+            echo "A versão não está no formato esperado (major.minor.patch.build)."
+            exit 1
+          fi
+
+          # Incrementa com base na branch
+          if [[ "$BRANCH_NAME" == "main" ]]; then
+            # Para main, incrementa o build
+            build=$((build + 1))
+          elif [[ "$BRANCH_NAME" == "develop" ]]; then
+            # Para develop, incrementa o patch e o build é resetado para 1
+            patch=$((patch + 1))
+            build=1
+          elif [[ "$BRANCH_NAME" == "release/36" ]]; then
+            # Para develop, incrementa o patch e o build é resetado para 1
+            patch=$((patch + 1))
+            build=1            
+          else
+            echo "Branch não reconhecida para incremento de versão."
+            exit 1
+          fi
+
+          # Cria a nova versão
+          NEW_VERSION="${major}.${minor}.${patch}.${build}"
+          echo "Nova versão: $NEW_VERSION"
+          echo "NEW_VERSION=$NEW_VERSION" >> $GITHUB_ENV
+
+      - name: Atualizar o arquivo de versão
+        run: |
+          echo ${{ env.NEW_VERSION }} > version.txt
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add version.txt
+          git commit -m "Atualizando versão para ${{ env.NEW_VERSION }}"
+          git push origin ${{ github.ref }} 
+
+      - name: Criar Tag com a versão
+        run: |
+          # Criar uma tag usando a versão gerada
+          git tag "v${{ env.NEW_VERSION }}"
+          git push origin "v${{ env.NEW_VERSION }}" --force
+
+      - name: Gerar Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          use_github_release_notes: true
+          tag_name: ${{ env.NEW_VERSION }}
+          release_name: Release ${{ env.NEW_VERSION }}
+          draft: false
+          prerelease: false
+
+          
+     # - name: Gerar Release
+     #   uses: rymndhng/release-on-push-action@master
+     #   with:
+     #     use_github_release_notes: true
+     #     tag_prefix: ""  
+     #     release_name: ${{ env.NEW_VERSION }}
