@@ -402,7 +402,7 @@
                                     },
                                     "produtos": {
                                         "*": {
-                                            "vlDescontoAcrescimo": "=divide(@(1,vlDescontoAcrescimo),@(1,qt))"
+                                            "vlDescontoAcrescimo": "=divide(@(1,vlDescontoAcrescimo),1)"
                                         }
                                     },
                                     "vlDesconto": "=divide(@(1,descontosCabecalho_valorNegativo),-1)",
