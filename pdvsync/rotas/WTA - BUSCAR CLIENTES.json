@@ -121,7 +121,7 @@
 							   "deliveryAddressNumber":"items.[&1].numero",
                                "profissionalRetaguarda": "items.[&1].IdRetaguardaProfissional",
 							   "customerNetId": "items.[&1].IdRetaguardaRedeCliente",
-							   "mainClientId": "items.[&1].IdRetaguardaClientePrincipal",
+							   "optionalMainClientId": "items.[&1].IdRetaguardaClientePrincipal",
 							   "squareId": "items.[&1].IdRetaguardaPraca",
 							   "regionId": "items.[&1].IdRetaguardaRegiao",
 							   "activityId": "items.[&1].IdRetaguardaRamoAtividade",
