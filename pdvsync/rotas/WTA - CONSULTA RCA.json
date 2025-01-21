@@ -73,8 +73,7 @@
                                     "id_retarguada": "=concat('RCA-', @(1,matricula_s))",
 									"idExterno": "=concat('pdvsync-usuario-rca-', @(1,matricula_s),'-', @(1,dtAlteracao))",
                                     "login_s": "=toString(@(1,codigousur))",
-                                    "senha_s": "=toString(@(1,codigousur))",
-                                    "situacao_s": "=toInt(1)"
+                                    "senha_s": "=toString(@(1,codigousur))"
                                 }
                             }
                         }
@@ -93,7 +92,14 @@
                                     "matricula_s": "items[&1].matricula",
                                     "nome": "items[&1].nome",
                                     "senha_s": "items[&1].senha",
-                                    "situacao_s": "items[&1].situacao",
+                                    "status": {
+                                        "FINALIZADO": {
+                                            "#0": "items[&3].situacao"
+                                        },
+                                        "*": {
+                                            "#1": "items[&3].situacao"
+                                        }
+                                    },
 									"tipoVenda": {	
 										"P": { "#5": "items[&3].idRetaguardaPerfil" },
 										"*": {
