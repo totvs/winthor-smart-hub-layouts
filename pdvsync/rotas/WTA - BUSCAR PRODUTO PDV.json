@@ -228,12 +228,23 @@
 											}
 										},
 										"cnpjFornecedor": "items.[&2].cnpjFornecedor",
+										"skuProdutoPrincipal": "items.[&2].IdRetaguardaProdutoPrincipal",
+							"codigoFornecedor": "items.[&2].IdRetaguardaFornecedor",
+							"codigoDepartamento": "items.[&2].IdRetaguardaDepartamento",
+							"codigoSecao": "items.[&2].IdRetaguardaSecao",
+							"codigoCategoria": "items.[&2].IdRetaguardaCategoria",
+							"codigoSubCategoria": "items.[&2].IdRetaguardaSubCategoria",
+							"codigoMarca": "items.[&2].IdRetaguardaMarca",
+										"quantidadeMinimaAtacado": {
+											"valor": "items.[&3].quantidadeValorAtacado"
+										},
 										"embalagens": {
 											"*": {
 												"IdProdutoRetaguarda": "items.[&4].produtoEmbalagens[&1].IdProdutoRetaguarda",
 												"idRetaguarda": "items.[&4].produtoEmbalagens[&1].idRetaguarda",
 												"descricao": "items.[&4].produtoEmbalagens[&1].descricao",
 												"codigoDeBarra": "items.[&4].produtoEmbalagens[&1].codigoBarras",
+												"quantidadeMinimaAtacado": "items.[&4].produtoEmbalagens[&1].quantidadeValorAtacado",
 												"unidade": {
 													"sigla": "items.[&5].produtoEmbalagens[&2].unidadeMedida"
 												},
@@ -311,7 +322,8 @@
 												"@(1,fcp.percentualFcp.percentual_Fcp)": "items.[&4].fcps[&2].percentualFcp",
 												"@(1,fcp.codigoBeneficioFiscal.valor)": "items.[&4].fcps[&2].codigoBeneficioFiscal",
 												"descontaDesoneracaoNf": "items.[&4].fcps[&2].descontaDesoneracaoNf",
-												"@(1,fcp.valorBaseFcp.valorBase_Fcp)": "items.[&4].fcps[&2].valorBaseFcp"
+												"@(1,fcp.valorBaseFcp.valorBase_Fcp)": "items.[&4].fcps[&2].valorBaseFcp",
+												"@(1,fcp.motivoDesoneracaoIcms)": "items.[&4].fcps[&2].motivoDesoneracaoIcms"
 											}
 										}
 									}

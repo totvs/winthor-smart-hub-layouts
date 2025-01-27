@@ -1,0 +1,35 @@
+{
+    "tabela": {
+        "nome": "PCINTEGRACAODADOSEMPRESA",
+        "campos": [
+            {
+                "nome": "ID",
+                "valor": "COLETA-ENTREGA"
+            },
+            {
+                "nome": "NOME",
+                "valor": "COLETA-ENTREGA"
+            },
+            {
+                "nome": "URLBASE",
+                "valor": "ADICIONAR_URLBASE"
+            },
+            {
+                "nome": "TOKENCLIENTE",
+                "valor": ""
+            },
+            {
+                "nome": "WTA",
+                "valor": "N"
+            },
+            {
+                "nome": "DTSOLICITACAOTOKEN",
+                "valor": ""
+            },
+            {
+                "nome": "TOKENTEMPOEXPIRACAO",
+                "valor": "1200"
+            }
+        ]
+    }
+}

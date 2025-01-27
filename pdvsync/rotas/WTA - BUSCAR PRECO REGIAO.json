@@ -1,0 +1,233 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOROTASERVICO",
+		"campos": [
+			{
+				"nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+				"valor": "N"
+			},
+			{
+				"nome": "ID",
+				"valor": "WTA - Buscar Preco Regiao"
+			},
+			{
+				"nome": "IDEMPRESAAPI",
+				"valor": "WINTHOR-WTA"
+			},
+			{
+				"nome": "SERVICO",
+				"valor": "WTA - Buscar Preco Regiao"
+			},
+			{
+				"nome": "LAYOUTCOMUNICACAO",
+				"valor": {
+					"name": "WTA - Buscar Preco Regiao",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{URL_BASE}}/winthor/precos/v1/precos-regioes",
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "{{PAGE_SIZE}}"
+								},
+								{
+									"key": "page",
+									"value": "{{PAGE}}"
+								},
+								{
+									"key": "branchId",
+									"value": "{{BRANCH_ID}}"
+								},
+								{
+									"key": "lastChange",
+									"value": "{{LAST_CHANGE}}"
+								},
+								{
+									"key": "saleType",
+									"value": "{{SALE_TYPE}}"
+								},
+								{
+									"key": "merchanType",
+									"value": "{{MERCHAN_TYPE}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			},
+			{
+				"nome": "LAYOUTTRANSFORMACAO",
+				"valor": [
+					{
+						"operation": "modify-overwrite-beta",
+						"spec": {
+							"items": {
+								"*": {
+									"idExterno201": "=concat('pdvsync-preco-regiao-', @(1,barCodeId),'-',@(1,productId),'-',@(1,regionId))",
+									"idInterno201": "=concat(@(1,barCodeId),'-', @(1,productId),'-201-',@(1,regionId))",
+									"tipoIdInterno": "PDVSYNC-PRECO-REGIAO",
+									"idRetaguarda201": "=concat(@(1,barCodeId),'-',@(1,productId),'-201-',@(1,regionId))",
+									"codigoProduto": "=toString(@(1,productId))",
+									"dataHoraVigenciaInicial": "@(1,startDate)",
+									"dataHoraVigenciaFinal": "@(1,endDate)",
+									"idRetaguardaProduto": "=concat(@(1,barCodeId),'-',@(1,productId))",
+									"idRetaguardaRegiao": "=toString(@(1,regionId))",
+									"prices": {
+										"*": {
+											"IndicePreco": "=toString(@(1,priceIndex))"
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"operation": "shift",
+						"spec": {
+							"items": {
+								"*": {
+									"@": "items[]",
+									"active": {
+										"false": {
+											"#0": "items[&3].situacao"
+										},
+										"*": {
+											"#1": "items[&3].situacao"
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"operation": "shift",
+						"spec": {
+							"items": {
+								"*": {
+									"lastChangeDate": "items[&1].&",
+									"idExterno201": "items[&1].&",
+									"idInterno201": "items[&1].&",
+									"tipoIdInterno": "items[&1].&",
+									"codigoProduto": "items[&1].&",
+									"dataHoraVigenciaInicial": "items[&1].&",
+									"dataHoraVigenciaFinal": "items[&1].&",
+									"idRetaguarda201": "items[&1].&",
+									"idRetaguardaProduto": "items[&1].&",
+									"idRetaguardaRegiao": "items[&1].&",
+									"situacao": "items[&1].&",
+									"prices": {
+										"*": {
+											"IndicePreco": "items[&3].prices[&1].&",
+											"salePrice": "items[&3].prices[&1].valor",
+											"wholesalePrice": "items[&3].prices[&1].ValorAtacado"
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"operation": "modify-overwrite-beta",
+						"spec": {
+							"items": {
+								"*": {
+									"prices": {
+										"*": {
+											"idExterno": "=concat(@(3,idExterno201),'-',@(1,IndicePreco),'-', @(3,lastChangeDate))",
+											"idInterno": "=concat(@(3,idInterno201),'-',@(1,IndicePreco))",
+											"tipoIdInterno": "@(3,tipoIdInterno)",
+											"codigoProduto": "@(3,codigoProduto)",
+											"dataHoraVigenciaInicial": "@(3,dataHoraVigenciaInicial)",
+											"dataHoraVigenciaFinal": "@(3,dataHoraVigenciaFinal)",
+											"idRetaguarda": "=concat(@(3,idRetaguarda201),'-',@(1,IndicePreco))",
+											"idRetaguardaProduto": "@(3,idRetaguardaProduto)",
+											"idRetaguardaRegiao": "@(3,idRetaguardaRegiao)",
+											"situacao": "@(3,situacao)"
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"operation": "shift",
+						"spec": {
+							"items": {
+								"*": {
+									"prices": {
+										"*": "items[]"
+									}
+								}
+							}
+						}
+					},
+					{
+						"operation": "shift",
+						"spec": {
+							"items": {
+								"*": {
+									"@": "items[]",
+									"idExterno": "idExterno[]",
+									"idInterno": "idInterno[]",
+									"tipoIdInterno": "tipoIdInterno[]"
+								}
+							}
+						}
+					},
+					{
+						"operation": "modify-overwrite-beta",
+						"spec": {
+							"items": {
+								"*": {
+									"idInquilino": "{{ID_INQUILINO}}",
+									"idProprietario": "9999",
+									"loteOrigem": "{{LOTE_ORIGEM}}",
+									"PrecoPrincipal": true,
+									"PrecoOrigem": "201"
+								}
+							}
+						}
+					},
+					{
+						"operation": "default",
+						"spec": {
+							"_attr_access": "items"
+						}
+					}
+				]
+			},
+			{
+				"nome": "ATIVO",
+				"valor": "S"
+			},
+			{
+				"nome": "AUTENTICADOR",
+				"valor": "N"
+			},
+			{
+				"nome": "DATASINCRONISMO",
+				"valor": "14-NOV-23"
+			},
+			{
+				"nome": "REFRESHTOKEN",
+				"valor": ""
+			},
+			{
+				"nome": "TIPOPROCESSO",
+				"valor": "BUSCAR"
+			}
+		]
+	}
+}

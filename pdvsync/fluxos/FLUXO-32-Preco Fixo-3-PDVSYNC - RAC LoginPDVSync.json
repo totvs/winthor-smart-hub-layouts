@@ -1,0 +1,40 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOFLUXOEXECUCAO",
+		"campos": [ {"nome" : "ID", "valor": ""},
+			{
+				"nome": "DTULTALTER",
+				"valor": ""
+			},
+			{
+				"nome": "CODEMPALTER",
+				"valor": ""
+			},
+			{
+				"nome": "ORDEMEXECUCAO",
+				"valor": "3",
+				"valorAnterior": "4"
+			},
+			{
+				"nome": "IDROTASERVICO",
+				"valor": "PDVSYNC - RAC LoginPDVSync"
+			},
+			{
+				"nome": "IDINTEGRACAOCLASSEMETODO",
+				"valor": "AutenticadorRefreshTokenApi"
+			},
+			{
+				"nome": "ATIVO",
+				"valor": "N"
+			},
+			{
+				"nome": "IDDEPENDENTE",
+				"valor": ""
+			},
+			{
+				"nome": "DESCRICAO",
+				"valor": "Preco Fixo"
+			}
+		]
+	}
+}

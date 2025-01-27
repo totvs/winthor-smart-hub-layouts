@@ -1,0 +1,111 @@
+{
+    "tabela": {
+        "nome": "PCINTEGRACAOROTASERVICO",
+        "campos": [
+            {
+                "nome": "DATASINCRONISMO",
+                "valor": ""
+            },
+            {
+                "nome": "REFRESHTOKEN",
+                "valor": "N"
+            },
+            {
+                "nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+                "valor": "N"
+            },
+            {
+                "nome": "ID",
+                "valor": "COLENT - Buscar Viagem Atualizada"
+            },
+            {
+                "nome": "IDEMPRESAAPI",
+                "valor": "COLETA-ENTREGA"
+            },
+            {
+                "nome": "SERVICO",
+                "valor": "COLENT - Buscar Viagem Atualizada"
+            },
+            {
+                "nome": "LAYOUTCOMUNICACAO",
+                "valor": {
+                    "name": "COLENT - Buscar Viagem Atualizada",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{TOKEN}}"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": " */*"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{URL_BASE}}/query/api/v1/viagens/{{IDEXTERNO}}",
+                            "query": [],
+                            "host": [
+                                "{{URL_BASE}}"
+                            ],
+                            "path": [
+                                "",
+                                "winthor-log.logistica.totvs.app",
+                                "coletaentrega",
+                                "query",
+                                "api",
+                                "v1",
+                                "viagens",
+                                "{{IDEXTERNO}}"
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            },
+            {
+                "nome": "LAYOUTTRANSFORMACAO",
+                "valor": [
+                    {
+                        "operation": "modify-overwrite-beta",
+                        "spec": {
+                            "idExterno": "\u003dconcat(\u0027coleta-entrega-viagem-atualizada-\u0027,@(1,id))"
+                        }
+                    },
+                    {
+                        "operation": "shift",
+                        "spec": {
+                            "idExterno": "idExterno[]",
+                            "id": "items.[0].idExterno",
+                            "externalId": "items.[0].numCar",
+                            "situacao": "items.[0].situacao",
+                            "dataSituacao": "items.[0].dataUltimaAlteracao"
+                        }
+                    },
+                    {
+                        "operation": "default",
+                        "spec": {
+                            "_attr_access": "items"
+                        }
+                    }
+                ]
+            },
+            {
+                "nome": "ATIVO",
+                "valor": "S"
+            },
+            {
+                "nome": "TIPOPROCESSO",
+                "valor": ""
+            },
+            {
+                "nome": "AUTENTICADOR",
+                "valor": "N"
+            }
+        ]
+    }
+}

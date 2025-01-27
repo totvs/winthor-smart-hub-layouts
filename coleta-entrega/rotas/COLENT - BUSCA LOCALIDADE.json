@@ -1,0 +1,167 @@
+{
+    "tabela": {
+        "nome": "PCINTEGRACAOROTASERVICO",
+        "campos": [
+            {
+                "nome": "DATASINCRONISMO",
+                "valor": ""
+            },
+            {
+                "nome": "REFRESHTOKEN",
+                "valor": "N"
+            },
+            {
+                "nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+                "valor": "N"
+            },
+            {
+                "nome": "ID",
+                "valor": "COLENT - Busca Localidade"
+            },
+            {
+                "nome": "IDEMPRESAAPI",
+                "valor": "COLETA-ENTREGA"
+            },
+            {
+                "nome": "SERVICO",
+                "valor": "COLENT - Busca Localidade"
+            },
+            {
+                "nome": "LAYOUTCOMUNICACAO",
+                "valor": {
+                    "name": "COLENT - Busca Localidade",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{TOKEN}}"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": " */*"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{URL_BASE}}/query/api/v1/localidades",
+                            "query": [
+                                {
+                                    "key": "logradouro",
+                                    "value": "{{LOGRADOURO_LOCALIDADE}}"
+                                },
+                                {
+                                    "key": "cep",
+                                    "value": "{{CEP_LOCALIDADE}}"
+                                },
+                                {
+                                    "key": "numero",
+                                    "value": "{{NUMERO_LOCALIDADE}}"
+                                }
+                            ],
+                            "host": [
+                                "{{URL_BASE}}"
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            },
+            {
+                "nome": "LAYOUTTRANSFORMACAO",
+                "valor": [
+                    {
+                        "operation": "shift",
+                        "spec": {
+                            "items": {
+                                "*": {
+                                    "componentesEnderecos": {
+                                        "*": {
+                                            "tipoComponente": {
+                                                "LOGRADOURO": {
+                                                    "@2,nomeLongo": "items[\u00263].logradouro"
+                                                },
+                                                "CODIGO_POSTAL": {
+                                                    "@2,nomeLongo": "items[\u00263].cep"
+                                                },
+                                                "NUMERO_LOGRADOURO": {
+                                                    "@2,nomeLongo": "items[\u00263].numero"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "id": "items[\u00261].id"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "operation": "shift",
+                        "spec": {
+                            "items": {
+                                "*": {
+                                    "idExterno": "idExterno[]",
+                                    "id": "items[0].id",
+                                    "idInterno": "items[0].idInterno",
+                                    "logradouro": "items[0].logradouro",
+                                    "cep": "items[0].cep",
+                                    "numero": "items[0].numero"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "operation": "modify-overwrite-beta",
+                        "spec": {
+                            "items": {
+                                "*": {
+                                    "idInterno": "\u003dconcat(@(1,logradouro),\u0027|\u0027,@(1,numero),\u0027|\u0027,@(1,cep))",
+                                    "idExterno": "\u003dconcat(\u0027coleta-entrega-id-localizacao-\u0027,@(1,id))"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "operation": "shift",
+                        "spec": {
+                            "items": {
+                                "*": {
+                                    "idExterno": "idExterno[]",
+                                    "id": "items[0].idexterno",
+                                    "idInterno": "items[0].idinterno"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "operation": "default",
+                        "spec": {
+                            "items[]": {
+                                "*": {
+                                    "campo": "LOGRADOURO|NUMERO|CEP",
+                                    "tabela": "PCCLIENT|PCCLIENTENDENT"
+                                }
+                            },
+                            "_attr_access": "items"
+                        }
+                    }
+                ]
+            },
+            {
+                "nome": "ATIVO",
+                "valor": "S"
+            },
+            {
+                "nome": "TIPOPROCESSO",
+                "valor": ""
+            },
+            {
+                "nome": "AUTENTICADOR",
+                "valor": "N"
+            }
+        ]
+    }
+}
