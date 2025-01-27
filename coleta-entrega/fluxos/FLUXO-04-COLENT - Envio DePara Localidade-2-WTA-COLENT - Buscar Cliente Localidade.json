@@ -1,0 +1,43 @@
+{
+    "tabela": {
+        "nome": "PCINTEGRACAOFLUXOEXECUCAO",
+        "campos": [
+            {
+                "nome": "ORDEMEXECUCAO",
+                "valor": "2"
+            },
+            {
+                "nome": "IDROTASERVICO",
+                "valor": "WTA-COLENT - Buscar Cliente Localidade"
+            },
+            {
+                "nome": "IDINTEGRACAOCLASSEMETODO",
+                "valor": "BUSCAROTASERVICONAOPAGINADA"
+            },
+            {
+                "nome": "ATIVO",
+                "valor": "N"
+            },
+            {
+                "nome": "IDDEPENDENTE",
+                "valor": ""
+            },
+            {
+                "nome": "DTULTALTER",
+                "valor": ""
+            },
+            {
+                "nome": "CODEMPALTER",
+                "valor": ""
+            },
+            {
+                "nome": "DESCRICAO",
+                "valor": "COLENT - Envio DePara Localidade"
+            },
+            {
+                "nome": "ID",
+                "valor": ""
+            }
+        ]
+    }
+}

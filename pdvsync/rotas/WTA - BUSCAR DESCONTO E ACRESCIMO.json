@@ -1,0 +1,168 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOROTASERVICO",
+		"campos": [
+			{
+				"nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+				"valor": "N"
+			},
+			{
+				"nome": "ID",
+				"valor": "WTA - Buscar Desconto e Acrescimo"
+			},
+			{
+				"nome": "IDEMPRESAAPI",
+				"valor": "WINTHOR-WTA"
+			},
+			{
+				"nome": "SERVICO",
+				"valor": "WTA - Buscar Desconto e Acrescimo"
+			},
+			{
+				"nome": "LAYOUTCOMUNICACAO",
+				"valor": {
+					"name": "WTA - Buscar Desconto e Acrescimo",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{URL_BASE}}/winthor/precos/v1/politica-desconto",
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "{{PAGE_SIZE}}"
+								},
+								{
+									"key": "page",
+									"value": "{{PAGE}}"
+								},
+								{
+									"key": "lastChange",
+									"value": "{{LAST_CHANGE}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			},
+			{
+				"nome": "LAYOUTTRANSFORMACAO",
+				"valor": [
+				  {
+					"operation": "modify-overwrite-beta",
+					"spec": {
+					  "items": {
+						"*": {
+						  "idExterno": "=concat('pdvsync-politica-desconto-acrescimo-',@(1,campaignId),'-',@(1,lastChangeDate),'-',@(1,lastChangeDate))",
+						  "idInterno": "=concat(@(1,branchId),'-',@(1,campaignId))",
+						  "tipoIdInterno": "PDVSYNC-POLITICA-DESCONTO-ACRESCIMO"
+						}
+					  }
+					}
+				  },
+				  {
+					"operation": "shift",
+					"spec": {
+					  "items": {
+						"*": {
+						  "idExterno": "idExterno[]",
+						  "idInterno": "idInterno",
+						  "tipoIdInterno": "tipoIdInterno",
+						  "regionId": "items.[&1].idRetaguardaRegiao",
+						  "squareId": "items.[&1].idRetaguardaPraca",
+						  "branchActivityId": "items.[&1].idRetaguardaRamoAtividade",
+						  "clientNetId": "items.[&1].idRetaguardaRede",
+						  "clientId": "items.[&1].idRetaguardaCliente",
+						  "supplierId": "items.[&1].idRetaguardaFornecedor",
+						  "codeCategory": "items.[&1].idRetaguardaCategoria",
+						  "codeSubCategory": "items.[&1].idRetaguardaSubCategoria",
+						  "codeDepartment": "items.[&1].idRetaguardaDepartamento",
+						  "brandcode": "items.[&1].idRetaguardaMarca",
+						  "codeSection": "items.[&1].idRetaguardaSecao",
+						  "restrictionTermTypeCode": "items.[&1].idRetaguardaRestricaoPagamentoCondicao",
+						  "paymentTermId": "items.[&1].idRetaguardaPagamentoCondicao",
+						  "startQtd": "items.[&1].quantidadeInicial",
+						  "endQtd": "items.[&1].quantidadeFinal",
+						  "startDate": "items.[&1].DataHoraVigenciaInicial",
+						  "endDate": "items.[&1].DataHoraVigenciaFinal",
+						  "percentageValue": "items.[&1].valor",
+						  "type": "items.[&1].tipo",
+						  "branchId": {
+							"99": {
+							  "#{{MASTER_ID_PROPRIETARIO}}": "items[&3].idProprietario"
+							},
+							"*": {
+							  "@1": "items[&3].idProprietario"
+							}
+						  },
+						  "skuId": "items.[&1].idRetaguardaProduto",
+						  "packingId": "items.[&1].idRetaguardaProdutoEmbalagem",
+						  "allPackages": "items.[&1].usarTodasEmbalagens",
+						  "campaignId": "items.[&1].idRetaguarda",
+						  "active": {
+							"true": {
+							  "#1": "items.[&3].situacao"
+							},
+							"*": {
+							  "#0": "items.[&3].situacao"
+							}
+						  },
+						  "priority": {
+							"S": {
+							  "#true": "items.[&3].prioritaria"
+							},
+							"*": {
+							  "#false": "items.[&3].prioritaria"
+							}
+						  }
+						}
+					  }
+					}
+				  },
+				  {
+					"operation": "default",
+					"spec": {
+					  "_attr_access": "items",
+					  "items[]": {
+						"*": {
+						  "idInquilino": "{{ID_INQUILINO}}",
+						  "loteOrigem": "{{LOTE_ORIGEM}}"
+						}
+					  }
+					}
+				  }
+				]
+			},
+			{
+				"nome": "ATIVO",
+				"valor": "S"
+			},
+			{
+				"nome": "AUTENTICADOR",
+				"valor": "N"
+			},
+			{
+				"nome": "DATASINCRONISMO",
+				"valor": "14-NOV-23"
+			},
+			{
+				"nome": "REFRESHTOKEN",
+				"valor": ""
+			},
+			{
+				"nome": "TIPOPROCESSO",
+				"valor": "BUSCAR"
+			}
+		]
+	}
+}

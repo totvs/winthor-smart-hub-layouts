@@ -1,0 +1,39 @@
+{
+    "tabela": {
+        "nome": "PCINTEGRACAOVARIAVEIS",
+        "campos": [
+            {
+                "nome": "ID",
+                "valor": "COLENT - RAC LOGIN -{{URL_RAC_COLETA_ENTREGA}}"
+            },
+            {
+                "nome": "CHAVE",
+                "valor": "{{URL_RAC_COLETA_ENTREGA}}"
+            },
+            {
+                "nome": "TIPOCHAVE",
+                "valor": "BODY"
+            },
+            {
+                "nome": "TIPOVALOR",
+                "valor": "STRING"
+            },
+            {
+                "nome": "IDROTASERVICO",
+                "valor": "COLENT - RAC LOGIN"
+            },
+            {
+                "nome": "DTULTALTER",
+                "valor": ""
+            },
+            {
+                "nome": "CODEMPALTER",
+                "valor": ""
+            },
+            {
+                "nome": "VALOR",
+                "valor": "ADICIONAR_URL_LOGIN_RAC"
+            }
+        ]
+    }
+}

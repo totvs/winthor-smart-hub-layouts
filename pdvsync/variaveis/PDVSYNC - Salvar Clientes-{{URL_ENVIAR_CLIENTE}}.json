@@ -28,7 +28,7 @@
 			},
 			{
 				"nome": "VALOR",
-				"valor": "https://pdvsync.varejo.totvs.com.br/cliente/api/retaguarda/v2/clientes"
+				"valor": "https://pdvsync.varejo.totvs.com.br/cliente/api/retaguarda/v3/clientes"
 			},
 			{
 				"nome": "CODEMPALTER",

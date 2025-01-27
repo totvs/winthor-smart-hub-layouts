@@ -1,0 +1,84 @@
+{
+    "tabela": {
+        "nome": "PCINTEGRACAOROTASERVICO",
+        "campos": [
+            {
+                "nome": "DATASINCRONISMO",
+                "valor": ""
+            },
+            {
+                "nome": "REFRESHTOKEN",
+                "valor": "S"
+            },
+            {
+                "nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+                "valor": "N"
+            },
+            {
+                "nome": "ID",
+                "valor": "WTA-COLENT - LOGIN"
+            },
+            {
+                "nome": "IDEMPRESAAPI",
+                "valor": "WTA-COLETA-ENTREGA"
+            },
+            {
+                "nome": "SERVICO",
+                "valor": "WTA-COLENT - LOGIN"
+            },
+            {
+                "nome": "LAYOUTCOMUNICACAO",
+                "valor": {
+                    "name": "WTA-COLETA-ENTREGA - LOGIN",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{URL_BASE}}/winthor/autenticacao/v1/login",
+                            "query": []
+                        },
+                        "body": [
+                            {
+                                "key": "login",
+                                "value": "{{LOGIN}}"
+                            },
+                            {
+                                "key": "senha",
+                                "value": "{{SENHA}}"
+                            }
+                        ]
+                    },
+                    "response": []
+                }
+            },
+            {
+                "nome": "LAYOUTTRANSFORMACAO",
+                "valor": [
+                    {
+                        "operation": "shift",
+                        "spec": {
+                            "accessToken": "access_token"
+                        }
+                    }
+                ]
+            },
+            {
+                "nome": "ATIVO",
+                "valor": "S"
+            },
+            {
+                "nome": "TIPOPROCESSO",
+                "valor": ""
+            },
+            {
+                "nome": "AUTENTICADOR",
+                "valor": "S"
+            }
+        ]
+    }
+}

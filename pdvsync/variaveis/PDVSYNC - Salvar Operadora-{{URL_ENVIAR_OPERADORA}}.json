@@ -28,7 +28,7 @@
 			},
 			{
 				"nome": "VALOR",
-				"valor": "https://pdvsync.varejo.totvs.com.br/formapagto/api/retaguarda/v2/operadoras"
+				"valor": "https://pdvsync.varejo.totvs.com.br/formapagto/api/retaguarda/v3/operadoras"
 			},
 			{
 				"nome": "CODEMPALTER",

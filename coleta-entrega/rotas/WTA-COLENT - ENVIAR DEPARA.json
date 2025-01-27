@@ -1,0 +1,93 @@
+{
+    "tabela": {
+        "nome": "PCINTEGRACAOROTASERVICO",
+        "campos": [
+            {
+                "nome": "DATASINCRONISMO",
+                "valor": ""
+            },
+            {
+                "nome": "REFRESHTOKEN",
+                "valor": "N"
+            },
+            {
+                "nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+                "valor": "N"
+            },
+            {
+                "nome": "ID",
+                "valor": "WTA-COLENT - Enviar DePara"
+            },
+            {
+                "nome": "IDEMPRESAAPI",
+                "valor": "WTA-COLETA-ENTREGA"
+            },
+            {
+                "nome": "SERVICO",
+                "valor": "WTA-COLENT - Enviar DePara"
+            },
+            {
+                "nome": "LAYOUTCOMUNICACAO",
+                "valor": {
+                    "name": "Enviar depara",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{TOKEN}}"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "*/*"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{URL_BASE}}/winthor/integracao/fulfillment/v1/depara",
+                            "query": [],
+                            "host": [
+                                "{{URL_BASE}}"
+                            ],
+                            "path": [
+                                "winthor",
+                                "integracao",
+                                "fulfillment",
+                                "v1",
+                                "depara"
+                            ]
+                        },
+                        "bodyraw": "{{CLIENT_JSON}}"
+                    },
+                    "response": []
+                }
+            },
+            {
+                "nome": "LAYOUTTRANSFORMACAO",
+                "valor": [
+                    {
+                        "operation": "default",
+                        "spec": {
+                            "status": 2
+                        }
+                    }
+                ]
+            },
+            {
+                "nome": "ATIVO",
+                "valor": "S"
+            },
+            {
+                "nome": "TIPOPROCESSO",
+                "valor": ""
+            },
+            {
+                "nome": "AUTENTICADOR",
+                "valor": "N"
+            }
+        ]
+    }
+}

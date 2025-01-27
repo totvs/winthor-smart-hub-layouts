@@ -1,0 +1,117 @@
+{
+    "tabela": {
+        "nome": "PCINTEGRACAOROTASERVICO",
+        "campos": [
+            {
+                "nome": "DATASINCRONISMO",
+                "valor": ""
+            },
+            {
+                "nome": "REFRESHTOKEN",
+                "valor": "N"
+            },
+            {
+                "nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+                "valor": "N"
+            },
+            {
+                "nome": "ID",
+                "valor": "COLENT - Buscar Coleta"
+            },
+            {
+                "nome": "IDEMPRESAAPI",
+                "valor": "COLETA-ENTREGA"
+            },
+            {
+                "nome": "SERVICO",
+                "valor": "COLENT - Buscar Coleta"
+            },
+            {
+                "nome": "LAYOUTCOMUNICACAO",
+                "valor": {
+                    "name": "COLENT - Buscar Coleta",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{TOKEN}}"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": " */*"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{URL_BASE}}/query/api/v1/coletasEntregas",
+                            "query": [
+                                {
+                                    "key": "externalId",
+                                    "value": "{{NUMTRANSENT}}"
+                                },
+                                {
+                                    "key": "tipo",
+                                    "value": "COLETA"
+                                }
+                            ],
+                            "host": [
+                                "{{URL_BASE}}"
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            },
+            {
+                "nome": "LAYOUTTRANSFORMACAO",
+                "valor": [
+                    {
+                        "operation": "modify-overwrite-beta",
+                        "spec": {
+                            "items": {
+                                "*": {
+                                    "idExterno": "\u003dconcat(\u0027coleta-entrega-busca-coleta-\u0027,@(1,id), \u0027\u0027, @(1,dataSituacao))"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "operation": "shift",
+                        "spec": {
+                            "items": {
+                                "*": {
+                                    "externalId": "items.[\u00261].numTransEnt",
+                                    "id": "items.[\u00261].idExterno",
+                                    "idExterno": "idExterno",
+                                    "dataSituacao": "items.[\u00261].dataSituacao"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "operation": "default",
+                        "spec": {
+                            "_attr_access": "items"
+                        }
+                    }
+                ]
+            },
+            {
+                "nome": "ATIVO",
+                "valor": "S"
+            },
+            {
+                "nome": "TIPOPROCESSO",
+                "valor": ""
+            },
+            {
+                "nome": "AUTENTICADOR",
+                "valor": "N"
+            }
+        ]
+    }
+}
