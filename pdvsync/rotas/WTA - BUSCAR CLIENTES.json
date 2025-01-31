@@ -71,8 +71,7 @@
 							   "telefone_entrega":"=join('', @(1,telefone_entrega_array))",
 							   "idExterno":"=concat('pdvsync-cliente-',@(1,id),'-',@(1,lastChange))",
 							   "idInterno":"=concat('', @(1,id))",
-							   "tipoIdInterno":"PDVSYNC-CLIENTE",
-							   "profissionalRetaguarda": "=concat('PRO-',@(1,professionalId))"
+							   "tipoIdInterno":"PDVSYNC-CLIENTE"
 							}
 						 }
 					  }
@@ -119,7 +118,7 @@
 							   },
 							   "createDate":"items.[&1].dataCadastro",
 							   "deliveryAddressNumber":"items.[&1].numero",
-                               "profissionalRetaguarda": "items.[&1].IdRetaguardaProfissional",
+                               "idRetaguardaProfissional": "items.[&1].IdRetaguardaProfissional",
 							   "customerNetId": "items.[&1].IdRetaguardaRedeCliente",
 							   "optionalMainClientId": "items.[&1].IdRetaguardaClientePrincipal",
 							   "squareId": "items.[&1].IdRetaguardaPraca",
