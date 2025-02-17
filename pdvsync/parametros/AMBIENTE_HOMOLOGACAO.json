@@ -105,7 +105,7 @@
 		},
 		{
 			"nome": "{{URL_ENVIAR_FORMAS_PGMT}}",
-			"valor": "https://pdvsync-core-formapagto-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/formapagtos",
+			"valor": "https://pdvsync-core-formapagto-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/dadosdinamicos/down/18/2",
 			"descricao": "PDV-SYNC Enviar formas de pgmt",
 			"rota": "PDVSYNC - Enviar formas de pgto"
 		},
