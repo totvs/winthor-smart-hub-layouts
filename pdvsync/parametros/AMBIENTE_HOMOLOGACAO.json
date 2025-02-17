@@ -57,7 +57,7 @@
 		},
 		{
 			"nome": "{{URL_ENVIAR_PRODUTO}}",
-			"valor": "https://pdvsync-core-produto-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/produtos",
+			"valor": "https://pdvsync-core-produto-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/dadosdinamicos/down/12/1",
 			"descricao": "PDV-SYNC Salvar Produto",
 			"rota": "PDVSYNC - Salvar Produto"
 		},
