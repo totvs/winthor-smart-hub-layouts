@@ -116,6 +116,7 @@
 						  "clientNetId": "items.[&1].IdRetaguardaRedeCliente",
                           "groupClientId": "items.[&1].IdRetaguardaGrupoCliente",
 						  "fixedPrice": "items.[&1].Valor",
+						  "packingId": "items.[&1].idRetaguardaProdutoEmbalagem",
 						  "active": {
 							"true": {
 							  "#1": "items.[&3].Situacao"

@@ -135,6 +135,7 @@
 									"valorMinimoPedido": "items.[&1].valorMinimoAceito",
 									"codigoSistemaExterno": "items.[&1].codigoSistemaExterno",
 									"clienteConsumidor": "items.[&1].clienteConsumidor",
+									"validaLimiteCredito": "items.[&1].utilizaLimiteCredito",
 									"codOperadoraCartao": {
 										"cartao_null": {
 											"@(2,id)": {
