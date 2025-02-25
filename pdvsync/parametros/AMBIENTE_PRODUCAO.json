@@ -45,7 +45,7 @@
     },
     {
       "nome": "{{URL_ENVIAR_PRODUTO}}",
-      "valor": "https://pdvsync.varejo.totvs.com.br/produto/api/retaguarda/v3/produtos",
+      "valor": "https://pdvsync.varejo.totvs.com.br/produto/api/retaguarda/v3/dadosdinamicos/down/12/1",
       "descricao": "PDV-SYNC Salvar Produto",
       "rota": "PDVSYNC - Salvar Produto"
     },

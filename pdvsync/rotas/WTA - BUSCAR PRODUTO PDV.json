@@ -196,6 +196,7 @@
 							"codfilial": "items.[&2].idProprietario",
 							"codigoDeBarra": "items.[&2].codigoAlternativo",
 							"origemProd": "items.[&2].origemProduto",
+							"estoquePorLote": "items.[&2].controlaLote",
 							"tipoMercadoria": {
 							  "PRODUTO_ACABADO": {
 								"#5": "items.[&4].tipoProduto"
