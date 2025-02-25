@@ -28,7 +28,7 @@
 			},
 			{
 				"nome": "VALOR",
-				"valor": "https://pdvsync.varejo.totvs.com.br/controleprocesso/api/retaguarda/v2/inquilinolotesexternos"
+				"valor": "https://pdvsync.varejo.totvs.com.br/controleprocesso/api/retaguarda/v3/inquilinolotesexternos"
 			},
 			{
 				"nome": "CODEMPALTER",

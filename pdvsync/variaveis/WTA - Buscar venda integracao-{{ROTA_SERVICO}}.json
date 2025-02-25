@@ -1,0 +1,39 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOVARIAVEIS",
+		"campos": [
+			{
+				"nome": "DTULTALTER",
+				"valor": ""
+			},
+			{
+				"nome": "ID",
+				"valor": "WTA - BUSCAR VENDA INTEGRACAO-{{ROTA_SERVICO}}"
+			},
+			{
+				"nome": "CHAVE",
+				"valor": "{{ROTA_SERVICO}}"
+			},
+			{
+				"nome": "TIPOCHAVE",
+				"valor": "BODY"
+			},
+			{
+				"nome": "TIPOVALOR",
+				"valor": "SELECT"
+			},
+			{
+				"nome": "IDROTASERVICO",
+				"valor": "WTA - BUSCAR VENDA INTEGRACAO"
+			},
+			{
+				"nome": "VALOR",
+				"valor": "SELECT ID FROM PCINTEGRACAOROTASERVICO WHERE SERVICO = 'PDVSYNC - Buscar vendas' AND ROWNUM = 1"
+			},
+			{
+				"nome": "CODEMPALTER",
+				"valor": ""
+			}
+		]
+	}
+}

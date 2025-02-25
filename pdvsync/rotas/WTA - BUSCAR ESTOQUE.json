@@ -67,7 +67,7 @@
 								},
 								{
 									"key": "callOrigin",
-									"value": "W"
+									"value": "{{CALLORIGIN}}"
 								},
 								{
 									"key": "order",
@@ -134,7 +134,7 @@
 			},
 			{
 				"nome": "ATIVO",
-				"valor": "N"
+				"valor": "S"
 			},
 			{
 				"nome": "AUTENTICADOR",

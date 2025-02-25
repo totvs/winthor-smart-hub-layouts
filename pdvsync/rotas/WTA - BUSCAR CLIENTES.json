@@ -104,10 +104,10 @@
 									"F": {
 										"#2": "items.[&3].sexo"
 									},
-							"*": {
-							  "#0": "items.[&3].sexo"
-							}
-								}, 
+								    "*": {
+									    "#0": "items.[&3].sexo"
+								    }
+							   }, 
 							   "corporate":{
 								  "true":{
 									 "#0":"items.[&3].pessoaFisica"
@@ -117,7 +117,21 @@
 								  }
 							   },
 							   "createDate":"items.[&1].dataCadastro",
-							   "deliveryAddressNumber":"items.[&1].numero"
+							   "deliveryAddressNumber":"items.[&1].numero",
+                               "idRetaguardaProfissional": "items.[&1].IdRetaguardaProfissional",
+							   "customerNetId": "items.[&1].IdRetaguardaRedeCliente",
+							   "optionalMainClientId": "items.[&1].IdRetaguardaClientePrincipal",
+							   "squareId": "items.[&1].IdRetaguardaPraca",
+							   "regionId": "items.[&1].IdRetaguardaRegiao",
+							   "activityId": "items.[&1].IdRetaguardaRamoAtividade",
+							   "wholesalePriceUses": {
+								 "N": {
+								   "#False": "items.[&3].UtilizaPrecoAtacado"
+								 },
+								 "S": {
+								   "#True": "items.[&3].UtilizaPrecoAtacado"
+								 }
+							   }
 							}
 						 }
 					  }
@@ -153,7 +167,7 @@
 			},
 			{
 				"nome": "ATIVO",
-				"valor": "N"
+				"valor": "S"
 			},
 			{
 				"nome": "AUTENTICADOR",
