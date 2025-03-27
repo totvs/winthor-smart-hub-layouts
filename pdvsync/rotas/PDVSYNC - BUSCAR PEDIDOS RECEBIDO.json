@@ -96,7 +96,8 @@
 								"*": {
 									"idExterno": "idExterno",
 									"conteudo": "items[]",
-									"idPdv": "items[&1].idPdv"
+									"idPdv": "items[&1].idPdv",
+									"idRetaguardaDeposito": "items[&1].idRetaguardaDeposito"
 								}
 							}
 						}
