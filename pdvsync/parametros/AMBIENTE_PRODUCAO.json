@@ -3,7 +3,7 @@
   "parametrosVariaveis": [
     {
       "nome": "{{URL_ENVIAR_DADOS_PAGAMENTO}}",
-      "valor": "https://pdvsync.varejo.totvs.com.br/imposto/api/retaguarda/v3/dadocomplementarpagtos",
+      "valor": "https://pdvsync.varejo.totvs.com.br/formapagto/api/retaguarda/v3/dadocomplementarpagtos",
       "descricao": "PDV-SYNC Dados pagamento",
       "rota": "PDVSYNC - Dados pagamento"
     },
