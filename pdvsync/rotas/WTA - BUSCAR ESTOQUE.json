@@ -35,7 +35,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{URL_BASE}}/api/stock-vtex/v1/available/list",
+							"raw": "{{URL_BASE}}/api/stock-vtex/v1/available/pdv-sync/list",
 							"query": [
 								{
 									"key": "pageSize",
@@ -64,10 +64,6 @@
 								{
 									"key": "merchandiseType",
 									"value": "{{TIPOMERCADORIA}}"
-								},
-								{
-									"key": "callOrigin",
-									"value": "{{CALLORIGIN}}"
 								},
 								{
 									"key": "order",
