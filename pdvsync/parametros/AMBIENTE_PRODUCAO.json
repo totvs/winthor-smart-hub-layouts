@@ -153,7 +153,7 @@
     },
     {
       "nome": "{{URL_ENVIAR_GRUPO_CAMPANHA_CLIENTE}}",
-      "valor": "https://pdvsync-core-cliente-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/dadosdinamicos/down/21/1",
+      "valor": "https://pdvsync.varejo.totvs.com.br/cliente/api/retaguarda/v3/dadosdinamicos/down/21/1",
       "descricao": "PDVSYNC - Salvar Grupo Campanha Cliente",
       "rota": "PDVSYNC - Salvar Grupo Campanha Cliente"
     },
@@ -171,7 +171,7 @@
     },
     {
       "nome": "{{URL_ENVIAR_RAMO_ATIVIDADE}}",
-      "valor": "https://pdvsync.varejo.totvs.com.br/api/retaguarda/v3/dadosdinamicos/down/58/1",
+      "valor": "https://pdvsync.varejo.totvs.com.br/dadosbasicos/api/retaguarda/v3/dadosdinamicos/down/58/1",
       "descricao": "PDVSYNC - Salvar Ramo Atividade",
       "rota": "PDVSYNC - Salvar Ramo Atividade"
     },
@@ -189,19 +189,19 @@
     },
     {
       "nome": "{{URL_ENVIAR_PROFISSIONAL}}",
-      "valor": "https://pdvsync.varejo.totvs.com.br/comercial/api/retaguarda/v3/usuarios",
+      "valor": "https://pdvsync.varejo.totvs.com.br/dadosbasicos/api/retaguarda/v3/usuarios",
       "descricao": "PDV-SYNC Salvar Profissional",
       "rota": "PDV-SYNC Salvar Profissional"
     },
     {
       "nome": "{{BASE_URL_STATUS_LOTE}}",
-      "valor": "https://pdvsync.varejo.totvs.com.br/comercial/api/retaguarda/v3/LojaLoteStatusretorno",
+      "valor": "https://pdvsync.varejo.totvs.com.br/controle/api/retaguarda/v3/LojaLoteStatusretorno",
       "descricao": "PDV-SYNC Consultar Status Lote",
       "rota": "PDVSYNC - Consultar Status Lote"
     },
     {
       "nome": "{{URL_ENVIAR_REGIAO}}",
-      "valor": "https://pdvsync.varejo.totvs.com.br/api/retaguarda/v3/dadosdinamicos/down/100/1",
+      "valor": "https://pdvsync.varejo.totvs.com.br/dadosbasicos/api/retaguarda/v3/dadosdinamicos/down/100/1",
       "descricao": "PDV-SYNC - SALVAR REGIAO",
       "rota": "PDVSYNC - SALVAR REGIAO"
     },
