@@ -97,6 +97,7 @@
 							   "email":"items.[&1].email",
 							   "cpf_cnpj":"items.[&1].cpfCnpj",
 							   "dataNascimento": "items.[&1].dataNascimento",
+							   "stateInscription": "items.[&1].rgInscricao",
 							   "sexo": {
 									"M": {
 										"#1": "items.[&3].sexo"
