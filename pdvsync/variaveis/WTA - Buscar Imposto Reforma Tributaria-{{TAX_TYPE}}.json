@@ -1,0 +1,39 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOVARIAVEIS",
+		"campos": [
+			{
+				"nome": "DTULTALTER",
+				"valor": ""
+			},
+			{
+				"nome": "ID",
+				"valor": "WTA - Buscar Imposto Reforma Tributaria-{{TAX_TYPE}}"
+			},
+			{
+				"nome": "CHAVE",
+				"valor": "{{TAX_TYPE}}"
+			},
+			{
+				"nome": "TIPOCHAVE",
+				"valor": "BODY"
+			},
+			{
+				"nome": "TIPOVALOR",
+				"valor": "STRING"
+			},
+			{
+				"nome": "IDROTASERVICO",
+				"valor": "WTA - BUSCAR IMPOSTO REFORMA TRIBUTARIA"
+			},
+			{
+				"nome": "VALOR",
+				"valor": "CBS,IS,IBS"
+			},
+			{
+				"nome": "CODEMPALTER",
+				"valor": ""
+			}
+		]
+	}
+}
