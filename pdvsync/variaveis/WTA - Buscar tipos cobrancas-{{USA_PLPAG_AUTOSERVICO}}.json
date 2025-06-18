@@ -1,0 +1,39 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOVARIAVEIS",
+		"campos": [
+			{
+				"nome": "DTULTALTER",
+				"valor": ""
+			},
+			{
+				"nome": "ID",
+				"valor": "WTA - BUSCAR TIPOS COBRANCAS-{{USA_PLPAG_AUTOSERVICO}}"
+			},
+			{
+				"nome": "CHAVE",
+				"valor": "{{USA_PLPAG_AUTOSERVICO}}"
+			},
+			{
+				"nome": "TIPOCHAVE",
+				"valor": "PARAMS"
+			},
+			{
+				"nome": "TIPOVALOR",
+				"valor": "STRING"
+			},
+			{
+				"nome": "IDROTASERVICO",
+				"valor": "WTA - BUSCAR TIPOS COBRANCAS"
+			},
+			{
+				"nome": "VALOR",
+				"valor": "true"
+			},
+			{
+				"nome": "CODEMPALTER",
+				"valor": ""
+			}
+		]
+	}
+}
