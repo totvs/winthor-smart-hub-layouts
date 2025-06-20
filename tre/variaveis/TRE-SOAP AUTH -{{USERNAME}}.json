@@ -1,0 +1,39 @@
+{
+   "tabela":{
+      "nome":"PCINTEGRACAOVARIAVEIS",
+      "campos":[
+         {
+            "nome":"CHAVE",
+            "valor":"{{USERNAME}}"
+         },
+         {
+            "nome":"TIPOCHAVE",
+            "valor":"BODY"
+         },
+         {
+            "nome":"TIPOVALOR",
+            "valor":"STRING"
+         },
+         {
+            "nome":"IDROTASERVICO",
+            "valor":"TRE-SOAP AUTH"
+         },
+         {
+            "nome":"DTULTALTER",
+            "valor":""
+         },
+         {
+            "nome":"CODEMPALTER",
+            "valor":""
+         },
+         {
+            "nome":"VALOR",
+            "valor":"regional.winthor"
+         },
+         {
+            "nome":"ID",
+            "valor":"TRE-SOAP AUTH -{{USERNAME}}"
+         }
+      ]
+   }
+}
