@@ -35,7 +35,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{URL_BASE}}/winthor/venda/v0/tipos-cobrancas",
+							"raw": "{{URL_BASE}}/winthor/venda/v0/tipos-cobrancas/pdv-sync",
 							"query": [
 								{
 									"key": "tamanho",
@@ -48,6 +48,14 @@
 								{
 									"key": "dataUltimaAlteracao",
 									"value": "{{LAST_CHANGE}}"
+								},
+								{
+									"key": "usaPlPagAutoServico",
+									"value": "{{USA_PLPAG_AUTOSERVICO}}"
+								},
+								{
+									"key": "statusPlPag",
+									"value": "{{STATUS_PLPAG}}"
 								}
 							]
 						}
