@@ -176,7 +176,6 @@
 									},
 									"planoPagamentos": {
 										"*": {
-											"idRetaguarda": "items.[&3].formasPagtoCondicoes[&1].idRetaguarda",
 											"@(2,id)": "items.[&3].formasPagtoCondicoes[&1].idRetaguardaFormaPagto",
 											"codigo": "items.[&3].formasPagtoCondicoes[&1].idRetaguardaCondicaoPagto"
 										}
@@ -238,7 +237,6 @@
 											"@(2,formasPagtoCondicoes)": {
 												"*": {
 													"idRetaguardaFormaPagto": "items[&5][1].formasPagtoCondicoes[&1].idRetaguardaFormaPagto",
-													"idRetaguarda": "items[&5][1].formasPagtoCondicoes[&1].idRetaguarda",
 													"idRetaguardaCondicaoPagto": "items[&5][1].formasPagtoCondicoes[&1].idRetaguardaCondicaoPagto"
 												}
 											}
@@ -301,7 +299,6 @@
 									},
 									"formasPagtoCondicoes": {
 										"*": {
-											"idRetaguarda": "=concat(@(1,idRetaguarda),'-POS')",
 											"idRetaguardaFormaPagto": "=concat(@(1,idRetaguardaFormaPagto),'-POS')"
 										}
 									},
