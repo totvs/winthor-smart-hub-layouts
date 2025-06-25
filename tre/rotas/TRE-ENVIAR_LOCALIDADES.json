@@ -17,7 +17,7 @@
          {
             "nome":"LAYOUTCOMUNICACAO",
             "valor":{
-               "urlWsdl":"https://treqa.cloudneolog.com.br/cockpit-gateway/integration/services/LocalityAcquisitionService",
+               "urlWsdl":"https://winthorqa.cloudneolog.com.br/cockpit-gateway/integration/services/LocalityAcquisitionService",
                "header":[
                   {
                      "key":"userToken",
