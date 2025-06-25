@@ -1,0 +1,73 @@
+{
+  "tabela": {
+    "nome": "PCINTEGRACAOROTASERVICO",
+    "campos": [
+      {
+        "nome": "ID",
+        "valor": "TRE-ENVIAR_PRODUTOS"
+      },
+      {
+        "nome": "IDEMPRESAAPI",
+        "valor": "TRE"
+      },
+      {
+        "nome": "SERVICO",
+        "valor": "TRE-ENVIAR_PRODUTOS"
+      },
+      {
+        "nome": "LAYOUTCOMUNICACAO",
+        "valor": {
+          "urlWsdl": "https://winthorqa.cloudneolog.com.br/cockpit-gateway/integration/services/ProductAcquisitionService",
+          "header": [
+            {
+              "key": "key",
+              "value": "value"
+            },
+            {
+              "key": "userToken",
+              "value": "{{TOKEN}}"
+            }
+          ],
+          "operacao": {
+            "request": "e3tDTElFTlRfSlNPTn19"
+          }
+        }
+      },
+      {
+        "nome": "LAYOUTTRANSFORMACAO",
+        "valor": [
+          {
+            "operation": "default",
+            "spec": {
+              "status": 2
+            }
+          }
+        ]
+      },
+      {
+        "nome": "ATIVO",
+        "valor": "N"
+      },
+      {
+        "nome": "TIPOPROCESSO",
+        "valor": "ENVIAR"
+      },
+      {
+        "nome": "AUTENTICADOR",
+        "valor": "N"
+      },
+      {
+        "nome": "DATASINCRONISMO",
+        "valor": ""
+      },
+      {
+        "nome": "REFRESHTOKEN",
+        "valor": "N"
+      },
+      {
+        "nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+        "valor": "N"
+      }
+    ]
+  }
+}

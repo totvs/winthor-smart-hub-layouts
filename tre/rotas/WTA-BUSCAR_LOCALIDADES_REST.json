@@ -45,16 +45,6 @@
                   "key": "pageSize",
                   "value": "{{PAGE_SIZE}}"
                 }
-              ],
-              "host": [
-                "{{URL_BASE}}"
-              ],
-              "path": [
-                "logistica",
-                "apis",
-                "v1",
-                "localidades",
-                "buscar"
               ]
             }
           },
@@ -69,8 +59,8 @@
             "spec": {
               "items": {
                 "*": {
-                  "idExterno": "=concat('SOAP-TRE-',@(1,idLocalidade),'-',@(1,dataUltimaAlteracao))",
-                  "idInterno": "=concat('', @(1,idLocalidade))",
+                  "idExterno": "\u003dconcat(\u0027SOAP-TRE-\u0027,@(1,idLocalidade),\u0027-\u0027,@(1,dataUltimaAlteracao))",
+                  "idInterno": "\u003dconcat(\u0027\u0027, @(1,idLocalidade))",
                   "tipoIdInterno": "TRE-LOCALIDADE"
                 }
               }
@@ -81,7 +71,7 @@
             "spec": {
               "items": {
                 "*": {
-                  "endereco": "=concat(@(1,endereco), ' ', @(1,numero), ' - ', @(1,bairro), ' ', @(1,municipio), ' - ', @(1,estado), ' ', @(1,cep))"
+                  "endereco": "\u003dconcat(@(1,endereco), \u0027 \u0027, @(1,numero), \u0027 - \u0027, @(1,bairro), \u0027 \u0027, @(1,municipio), \u0027 - \u0027, @(1,estado), \u0027 \u0027, @(1,cep))"
                 }
               }
             }
@@ -94,20 +84,20 @@
                   "idExterno": "idExterno[]",
                   "idInterno": "idInterno",
                   "tipoIdInterno": "tipoIdInterno",
-                  "nome": "data.[&1].soapenv:Body.tns:createLocalities.tns:localities.tns:locality.tns:name",
-                  "numero": "data.[&1].soapenv:Body.tns:createLocalities.tns:localities.tns:locality.tns:addressNumber",
-                  "descricao": "data.[&1].soapenv:Body.tns:createLocalities.tns:localities.tns:locality.tns:description",
-                  "municipio": "data.[&1].soapenv:Body.tns:createLocalities.tns:localities.tns:locality.tns:addressCity",
-                  "estado": "data.[&1].soapenv:Body.tns:createLocalities.tns:localities.tns:locality.tns:addressStateAcronym",
-                  "bairro": "data.[&1].soapenv:Body.tns:createLocalities.tns:localities.tns:locality.tns:addressDistrict",
-                  "endereco": "data.[&1].soapenv:Body.tns:createLocalities.tns:localities.tns:locality.tns:addressStreet",
-                  "cep": "data.[&1].soapenv:Body.tns:createLocalities.tns:localities.tns:locality.tns:addressZipCode",
-                  "siglaPais": "data.[&1].soapenv:Body.tns:createLocalities.tns:localities.tns:locality.tns:addressCountryAcronym",
-                  "idLocalidade": "data.[&1].soapenv:Body.tns:createLocalities.tns:localities.tns:locality.tns:identifier",
-                  "tipoEndereco": "data.[&1].soapenv:Body.tns:createLocalities.tns:localities.tns:locality.tns:logisticRoleId",
-                  "#2002": "data.[&1].soapenv:Body.tns:createLocalities.tns:localities.tns:locality.tns:regionSourceId",
-                  "#http://schemas.xmlsoap.org/soap/envelope/": "data.[&1].-xmlns:soapenv",
-                  "#http://www.neolog.com.br/cpl/acquisition/locality/": "data.[&1].-xmlns:tns"
+                  "nome": "data.[\u00261].soapenv:Body.tns:createLocalities.tns:localities.tns:locality.tns:name",
+                  "numero": "data.[\u00261].soapenv:Body.tns:createLocalities.tns:localities.tns:locality.tns:addressNumber",
+                  "descricao": "data.[\u00261].soapenv:Body.tns:createLocalities.tns:localities.tns:locality.tns:description",
+                  "municipio": "data.[\u00261].soapenv:Body.tns:createLocalities.tns:localities.tns:locality.tns:addressCity",
+                  "estado": "data.[\u00261].soapenv:Body.tns:createLocalities.tns:localities.tns:locality.tns:addressStateAcronym",
+                  "bairro": "data.[\u00261].soapenv:Body.tns:createLocalities.tns:localities.tns:locality.tns:addressDistrict",
+                  "endereco": "data.[\u00261].soapenv:Body.tns:createLocalities.tns:localities.tns:locality.tns:addressStreet",
+                  "cep": "data.[\u00261].soapenv:Body.tns:createLocalities.tns:localities.tns:locality.tns:addressZipCode",
+                  "siglaPais": "data.[\u00261].soapenv:Body.tns:createLocalities.tns:localities.tns:locality.tns:addressCountryAcronym",
+                  "idLocalidade": "data.[\u00261].soapenv:Body.tns:createLocalities.tns:localities.tns:locality.tns:identifier",
+                  "tipoEndereco": "data.[\u00261].soapenv:Body.tns:createLocalities.tns:localities.tns:locality.tns:logisticRoleId",
+                  "#2002": "data.[\u00261].soapenv:Body.tns:createLocalities.tns:localities.tns:locality.tns:regionSourceId",
+                  "#http://schemas.xmlsoap.org/soap/envelope/": "data.[\u00261].-xmlns:soapenv",
+                  "#http://www.neolog.com.br/cpl/acquisition/locality/": "data.[\u00261].-xmlns:tns"
                 }
               }
             }

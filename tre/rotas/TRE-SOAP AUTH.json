@@ -17,7 +17,7 @@
          {
             "nome":"LAYOUTCOMUNICACAO",
             "valor":{
-               "urlWsdl":"https://treqa.cloudneolog.com.br/cockpit-gateway/ws/authentication",
+               "urlWsdl":"https://winthorqa.cloudneolog.com.br/cockpit-gateway/ws/authentication",
                "operacao":{
                   "request":"PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHNvYXBlbnY6RW52ZWxvcGUgeG1sbnM6c29hcGVudj0iaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvc29hcC9lbnZlbG9wZS8iIHhtbG5zOnRucz0iaHR0cDovL3d3dy5uZW9sb2cuY29tLmJyL2NwbC9nYXRld2F5L2F1dGhlbnRpY2F0aW9uLyIgeG1sbnM6eHNkPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYSI+CiAgPHNvYXBlbnY6SGVhZGVyLz4KICA8c29hcGVudjpCb2R5PgogICAgPHRuczpjcmVkZW50aWFscz4KICAgICAgPHVzZXJuYW1lPnt7VVNFUk5BTUV9fTwvdXNlcm5hbWU+CiAgICAgIDxwYXNzd29yZD57e1BBU1NXT1JEfX08L3Bhc3N3b3JkPgogICAgICA8cmVnaW9uU291cmNlSWQ+CiAgICAgIDwvcmVnaW9uU291cmNlSWQ+CiAgICA8L3RuczpjcmVkZW50aWFscz4KICA8L3NvYXBlbnY6Qm9keT4KPC9zb2FwZW52OkVudmVsb3BlPg\u003d\u003d"
                }
