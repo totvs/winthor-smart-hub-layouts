@@ -42,7 +42,7 @@
          },
          {
             "nome":"ATIVO",
-            "valor":"N"
+            "valor":"S"
          },
          {
             "nome":"TIPOPROCESSO",
@@ -63,6 +63,10 @@
          {
             "nome":"SOMENTEATUALIZARINTEGRACAOCORE",
             "valor":"N"
+         },
+         {
+            "nome": "ARQUITETURA",
+            "valor": "XML"
          }
       ]
    }
