@@ -71,9 +71,9 @@
                     "temp[\u00261].venda.dataUltimaAlteracao",
                     "temp[\u00261].master.dataUltimaAlteracao"
                   ],
-                  "codigoCategoria": [
-                    "temp[\u00261].venda.codigoCategoria",
-                    "temp[\u00261].master.codigoCategoria"
+                  "idCategoriaExterno": [
+                    "temp[\u00261].venda.idCategoriaExterno",
+                    "temp[\u00261].master.idCategoriaExterno"
                   ],
                   "descricao": [
                     "temp[\u00261].venda.descricaoProduto",
@@ -282,7 +282,7 @@
                   "idInterno": "idInterno[]",
                   "tipoIdInterno": "tipoIdInterno[]",
                   "codigoFilial": "data[\u00261].soapenv:Body.tns:createProducts.tns:product.tns:products.tns:product.tns:shipperId",
-                  "codigoCategoria": "data[\u00261].soapenv:Body.tns:createProducts.tns:product.tns:products.tns:product.tns:productCategoryId",
+                  "idCategoriaExterno": "data[\u00261].soapenv:Body.tns:createProducts.tns:product.tns:products.tns:product.tns:productCategoryId",
                   "codigoBarras": "data[\u00261].soapenv:Body.tns:createProducts.tns:product.tns:products.tns:product.tns:identifier",
                   "descricaoUnidade": "data[\u00261].soapenv:Body.tns:createProducts.tns:product.tns:products.tns:product.tns:description",
                   "descricaoProduto": "data[\u00261].soapenv:Body.tns:createProducts.tns:product.tns:products.tns:product.tns:name",
