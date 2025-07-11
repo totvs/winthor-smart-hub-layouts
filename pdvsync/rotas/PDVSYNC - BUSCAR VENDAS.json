@@ -286,6 +286,7 @@
                                                     "Descricao": "items.[&5].produtos.[&2].descricaopaf",
                                                     "IdRetaguarda": "items.[&5].produtos.[&2].codProd"
                                                 },
+                                                "numeroLote": "items.[&4].produtos.[&1].numLote",
                                                 "Qtde": "items.[&4].produtos.[&1].qt",
                                                 "Sequencia": "items.[&4].produtos.[&1].numSeq",
                                                 "SequenciaKit": "items.[&4].produtos[&1].SequenciaKit",
