@@ -44,6 +44,10 @@
                 {
                   "key": "pageSize",
                   "value": "{{PAGE_SIZE}}"
+                },
+                {
+                  "key": "dataUltimaAlteracao",
+                  "value": "{{LAST_CHANGE}}"
                 }
               ]
             }
