@@ -31,7 +31,7 @@
               },
               {
                 "key": "Authorization",
-                "value": "{{TOKEN}}"
+                "value": "Bearer {{TOKEN}}"
               }
             ],
             "url": {
@@ -44,6 +44,10 @@
                 {
                   "key": "pageSize",
                   "value": "{{PAGE_SIZE}}"
+                },
+                {
+                  "key": "dataUltimaAlteracao",
+                  "value": "{{LAST_CHANGE}}"
                 }
               ]
             }
@@ -279,17 +283,17 @@
               "valores": {
                 "*": {
                   "idExterno": "idExterno[]",
-                  "idInterno": "idInterno[]",
-                  "tipoIdInterno": "tipoIdInterno[]",
-                  "codigoFilial": "data[\u00261].soapenv:Body.tns:createProducts.tns:product.tns:products.tns:product.tns:shipperId",
-                  "idCategoriaExterno": "data[\u00261].soapenv:Body.tns:createProducts.tns:product.tns:products.tns:product.tns:productCategoryId",
-                  "codigoBarras": "data[\u00261].soapenv:Body.tns:createProducts.tns:product.tns:products.tns:product.tns:identifier",
-                  "descricaoUnidade": "data[\u00261].soapenv:Body.tns:createProducts.tns:product.tns:products.tns:product.tns:description",
-                  "descricaoProduto": "data[\u00261].soapenv:Body.tns:createProducts.tns:product.tns:products.tns:product.tns:name",
-                  "unidade": "data[\u00261].soapenv:Body.tns:createProducts.tns:product.tns:products.tns:product.tns:shape",
-                  "#2002": "data[\u00261].soapenv:Body.tns:createProducts.tns:product.tns:products.tns:product.tns:regionSourceId",
-                  "#http://schemas.xmlsoap.org/soap/envelope/": "data[\u00261].-xmlns:soapenv",
-                  "#http://www.neolog.com.br/cpl/acquisition/product/": "data[\u00261].-xmlns:tns"
+                  "idInterno": "idInterno",
+                  "tipoIdInterno": "tipoIdInterno",
+                  "codigoFilial": "data.[\u00261].soapenv:Body.tns:createProducts.tns:product.tns:products.tns:product.tns:shipperId",
+                  "idCategoriaExterno": "data.[\u00261].soapenv:Body.tns:createProducts.tns:product.tns:products.tns:product.tns:productCategoryId",
+                  "codigoBarras": "data.[\u00261].soapenv:Body.tns:createProducts.tns:product.tns:products.tns:product.tns:identifier",
+                  "descricaoUnidade": "data.[\u00261].soapenv:Body.tns:createProducts.tns:product.tns:products.tns:product.tns:description",
+                  "descricaoProduto": "data.[\u00261].soapenv:Body.tns:createProducts.tns:product.tns:products.tns:product.tns:name",
+                  "unidade": "data.[\u00261].soapenv:Body.tns:createProducts.tns:product.tns:products.tns:product.tns:shape",
+                  "#2002": "data.[\u00261].soapenv:Body.tns:createProducts.tns:product.tns:products.tns:product.tns:regionSourceId",
+                  "#http://schemas.xmlsoap.org/soap/envelope/": "data.[\u00261].-xmlns:soapenv",
+                  "#http://www.neolog.com.br/cpl/acquisition/product/": "data.[\u00261].-xmlns:tns"
                 }
               }
             }
