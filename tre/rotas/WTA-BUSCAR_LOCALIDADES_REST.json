@@ -63,7 +63,7 @@
             "spec": {
               "items": {
                 "*": {
-                  "idExterno": "\u003dconcat(\u0027SOAP-TRE-\u0027,@(1,idLocalidade),\u0027-\u0027,@(1,dataUltimaAlteracao))",
+                  "idExterno": "\u003dconcat(\u0027SOAP-TRE-LOCALIDADE\u0027,@(1,idLocalidade),\u0027-\u0027,@(1,dataUltimaAlteracao))",
                   "idInterno": "\u003dconcat(\u0027\u0027, @(1,idLocalidade))",
                   "tipoIdInterno": "TRE-LOCALIDADE"
                 }

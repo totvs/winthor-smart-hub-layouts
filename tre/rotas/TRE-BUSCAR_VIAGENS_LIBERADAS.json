@@ -1,0 +1,137 @@
+{
+  "tabela": {
+    "nome": "PCINTEGRACAOROTASERVICO",
+    "campos": [
+      {
+        "nome": "ID",
+        "valor": "TRE-BUSCAR_VIAGENS_LIBERADAS"
+      },
+      {
+        "nome": "IDEMPRESAAPI",
+        "valor": "TRE"
+      },
+      {
+        "nome": "SERVICO",
+        "valor": "TRE-BUSCAR_VIAGENS_LIBERADAS"
+      },
+      {
+        "nome": "LAYOUTCOMUNICACAO",
+        "valor": {
+          "urlWsdl": "https://winthorqa.cloudneolog.com.br/cockpit-gateway/integration/services/retrieve/RetrieveReleasedTripServiceRequest",
+          "header": [
+            {
+              "key": "userToken",
+              "value": "{{TOKEN}}"
+            }
+          ],
+          "operacao": {
+            "request": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHNvYXBlbnY6RW52ZWxvcGUgeG1sbnM6c29hcGVudj0iaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvc29hcC9lbnZlbG9wZS8iIHhtbG5zOnRucz0idXJuOm5lb2xvZzpjb2NrcGl0OlJldHJpZXZlVHJpcFJlbGVhc2VSZXF1ZXN0UHVibGlzaGluZ1NlcnZpY2UiIHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiPgogIDxzb2FwZW52OkhlYWRlci8+CiAgPHNvYXBlbnY6Qm9keT4KICAgIDx0bnM6cHVibGlzaFJldHJpZXZlUmVsZWFzZWRUcmlwUmVxdWVzdD4KICAgICAgPHJlZ2lvblNvdXJjZUlkPnt7UkVHSU9OX1NPVVJDRV9JRH19PC9yZWdpb25Tb3VyY2VJZD4KICAgIDwvdG5zOnB1Ymxpc2hSZXRyaWV2ZVJlbGVhc2VkVHJpcFJlcXVlc3Q+CiAgPC9zb2FwZW52OkJvZHk+Cjwvc29hcGVudjpFbnZlbG9wZT4\u003d"
+          }
+        }
+      },
+      {
+        "nome": "LAYOUTTRANSFORMACAO",
+        "valor": [
+          {
+            "operation": "shift",
+            "spec": {
+              "soap:Body": {
+                "ns2:publishRetrieveReleasedTripResponse": {
+                  "publishReleasedTrips": {
+                    "publishReleasedTrip": {
+                      "messageId": "idMsg",
+                      "tripReleaseRequests": {
+                        "tripReleaseRequest": {
+                          "identifier": "data.idViagem",
+                          "loads": {
+                            "load": {
+                              "identifier": "data.numcarExterno",
+                              "stops": {
+                                "stop": {
+                                  "*": {
+                                    "subStops": {
+                                      "subStop": {
+                                        "loadedShipmentUnits": {
+                                          "shipmentUnit": {
+                                            "*": {
+                                              "deliveryUnitList": {
+                                                "deliveryUnit": {
+                                                  "orderSourceId": "data.idsPedidos[]"
+                                                }
+                                              }
+                                            },
+                                            "deliveryUnitList": {
+                                              "deliveryUnit": {
+                                                "orderSourceId": "data.idsPedidos[]"
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          {
+            "operation": "default",
+            "spec": {
+              "_attr_access": "data"
+            }
+          },
+          {
+            "operation": "modify-overwrite-beta",
+            "spec": {
+              "idExterno": "\u003dconcat(\u0027SOAP-TRE-VIAGEM-LIBERADA-\u0027,@(1,idMsg))",
+              "idInterno": "\u003dconcat(\u0027\u0027, @(1,idMsg))",
+              "tipoIdInterno": "TRE-VIAGEM-LIBERADA"
+            }
+          },
+          {
+            "operation": "remove",
+            "spec": {
+              "idMsg": ""
+            }
+          }
+        ]
+      },
+      {
+        "nome": "ATIVO",
+        "valor": "S"
+      },
+      {
+        "nome": "TIPOPROCESSO",
+        "valor": "BUSCAR"
+      },
+      {
+        "nome": "AUTENTICADOR",
+        "valor": "N"
+      },
+      {
+        "nome": "DATASINCRONISMO",
+        "valor": ""
+      },
+      {
+        "nome": "REFRESHTOKEN",
+        "valor": "N"
+      },
+      {
+        "nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+        "valor": "N"
+      },
+      {
+        "nome": "ARQUITETURA",
+        "valor": "XML"
+      }
+    ]
+  }
+}

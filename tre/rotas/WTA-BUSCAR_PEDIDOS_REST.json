@@ -68,6 +68,7 @@
                   "dataEntrega": "pedidos[\u00261].dataEntrega",
                   "observacao": "pedidos[\u00261].observacao",
                   "origem": "pedidos[\u00261].origem",
+                  "condVenda": "pedidos[\u00261].condVenda",
                   "codigoLocalidadeExterno": "pedidos[\u00261].codigoLocalidadeExterno",
                   "idItens": "pedidos[\u00261].idItemPedido",
                   "itens": {
@@ -82,7 +83,8 @@
                       "unidade": "pedidos[\u00263].itens[\u00261].unidadeItemPedido",
                       "numeroPedido": "pedidos[\u00263].itens[\u00261].numeroItemPedido",
                       "peso": "pedidos[\u00263].itens[\u00261].pesoItemPedido",
-                      "valorTotal": "pedidos[\u00263].itens[\u00261].valorTotal"
+                      "valorTotal": "pedidos[\u00263].itens[\u00261].valorTotal",
+                      "codigoProduto": "pedidos[\u00263].itens[\u00261].codigoProduto"
                     }
                   }
                 }
@@ -95,12 +97,13 @@
               "pedidos": {
                 "*": {
                   "numeroPedido": "\u003dtoString(@(1,numeroPedido))",
-                  "idExterno": "\u003dconcat(\u0027SOAP-TRE-\u0027,@(1,numeroPedido),\u0027-\u0027,@(1,idItemPedido))",
+                  "tipoPedido": "\u003dconcat(@(1,origem),\u0027-\u0027,@(1,condVenda))",
+                  "idExterno": "\u003dconcat(\u0027SOAP-TRE-PEDIDO-\u0027,@(1,numeroPedido),\u0027-\u0027,@(1,idItemPedido))",
                   "idInterno": "\u003dconcat(@(1,numeroPedido),\u0027-\u0027,@(1,idItemPedido))",
                   "tipoIdInterno": "TRE-PEDIDO",
                   "itens": {
                     "*": {
-                      "idItem": "\u003dconcat(@(1,numeroItemPedido),\u0027-\u0027,@(1,sequenciaItemPedido))"
+                      "idItem": "\u003dconcat(@(1,numeroItemPedido),\u0027-\u0027,@(1,codigoProduto),\u0027-\u0027,@(1,sequenciaItemPedido))"
                     }
                   }
                 }
@@ -118,7 +121,7 @@
                   "numeroPedido": "data[\u00261].soapenv:Body.tns:createOrders.tns:orderList.tns:orders.tns:order.tns:identifier",
                   "data": "data[\u00261].soapenv:Body.tns:createOrders.tns:orderList.tns:orders.tns:order.tns:pickupStart",
                   "dataEntrega": "data[\u00261].soapenv:Body.tns:createOrders.tns:orderList.tns:orders.tns:order.tns:deliveryEnd",
-                  "origem": "data[\u00261].soapenv:Body.tns:createOrders.tns:orderList.tns:orders.tns:order.tns:orderTypeSourceId",
+                  "tipoPedido": "data[\u00261].soapenv:Body.tns:createOrders.tns:orderList.tns:orders.tns:order.tns:orderTypeSourceId",
                   "codigoLocalidadeExterno": "data[\u00261].soapenv:Body.tns:createOrders.tns:orderList.tns:orders.tns:order.tns:destinationId",
                   "observacao": {
                     "*": {
