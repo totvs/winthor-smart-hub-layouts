@@ -59,7 +59,7 @@
             "spec": {
               "items": {
                 "*": {
-                  "idExterno": "\u003dconcat(\u0027SOAP-TRE-\u0027,@(1,numero),\u0027-\u0027,@(1,situacao))",
+                  "idExterno": "\u003dconcat(\u0027SOAP-TRE-NOTAS\u0027,@(1,numero),\u0027-\u0027,@(1,situacao))",
                   "idInterno": "\u003dconcat(\u0027\u0027, @(1,numero))",
                   "tipoIdInterno": "TRE-NOTA-FISCAL",
                   "peso": "\u003ddivideAndRound(0, @(1,peso), 1)",

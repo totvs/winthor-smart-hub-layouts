@@ -270,7 +270,7 @@
             "spec": {
               "valores": {
                 "*": {
-                  "idExterno": "\u003dconcat(\u0027SOAP-TRE-\u0027,@(1,codigoProduto),\u0027-\u0027,@(1,dataUltimaAlteracao), \u0027-\u0027,@(1,codigoBarras))",
+                  "idExterno": "\u003dconcat(\u0027SOAP-TRE-PRODUTO\u0027,@(1,codigoProduto),\u0027-\u0027,@(1,dataUltimaAlteracao), \u0027-\u0027,@(1,codigoBarras))",
                   "idInterno": "\u003dconcat(\u0027\u0027, @(1,codigoProduto))",
                   "tipoIdInterno": "TRE-PRODUTO"
                 }
