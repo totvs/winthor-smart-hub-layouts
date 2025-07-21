@@ -1,0 +1,43 @@
+{
+  "tabela": {
+    "nome": "PCINTEGRACAOFLUXOEXECUCAO",
+    "campos": [
+      {
+        "nome": "ORDEMEXECUCAO",
+        "valor": "1"
+      },
+      {
+        "nome": "IDROTASERVICO",
+        "valor": "TRE-SOAP AUTH"
+      },
+      {
+        "nome": "IDINTEGRACAOCLASSEMETODO",
+        "valor": "SOAPAUTENTICACAO"
+      },
+      {
+        "nome": "ATIVO",
+        "valor": "N"
+      },
+      {
+        "nome": "IDDEPENDENTE",
+        "valor": ""
+      },
+      {
+        "nome": "DTULTALTER",
+        "valor": ""
+      },
+      {
+        "nome": "CODEMPALTER",
+        "valor": ""
+      },
+      {
+        "nome": "DESCRICAO",
+        "valor": "TRE-REPROGRAMAR_VIAGEM"
+      },
+      {
+        "nome": "ID",
+        "valor": ""
+      }
+    ]
+  }
+}

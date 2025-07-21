@@ -70,7 +70,7 @@
                   "origem": "pedidos[\u00261].origem",
                   "condVenda": "pedidos[\u00261].condVenda",
                   "codigoLocalidadeExterno": "pedidos[\u00261].codigoLocalidadeExterno",
-                  "idItens": "pedidos[\u00261].idItemPedido",
+                  "dataUltimaAlteracao": "pedidos[\u00261].dataUltimaAlteracao",
                   "itens": {
                     "*": {
                       "dataUltimaAlteracao": "pedidos[\u00263].itens[\u00261].dataUltimaAlteracaoItemPedido",
@@ -98,8 +98,8 @@
                 "*": {
                   "numeroPedido": "\u003dtoString(@(1,numeroPedido))",
                   "tipoPedido": "\u003dconcat(@(1,origem),\u0027-\u0027,@(1,condVenda))",
-                  "idExterno": "\u003dconcat(\u0027SOAP-TRE-PEDIDO-\u0027,@(1,numeroPedido),\u0027-\u0027,@(1,idItemPedido))",
-                  "idInterno": "\u003dconcat(@(1,numeroPedido),\u0027-\u0027,@(1,idItemPedido))",
+                  "idExterno": "\u003dconcat(\u0027SOAP-TRE-PEDIDO-\u0027,@(1,numeroPedido),\u0027-\u0027,@(1,dataUltimaAlteracao))",
+                  "idInterno": "\u003dconcat(@(1,numeroPedido))",
                   "tipoIdInterno": "TRE-PEDIDO",
                   "itens": {
                     "*": {

@@ -1,0 +1,43 @@
+{
+  "tabela": {
+    "nome": "PCINTEGRACAOFLUXOEXECUCAO",
+    "campos": [
+      {
+        "nome": "ORDEMEXECUCAO",
+        "valor": "4"
+      },
+      {
+        "nome": "IDROTASERVICO",
+        "valor": "WTA-EDITAR_CARGA"
+      },
+      {
+        "nome": "IDINTEGRACAOCLASSEMETODO",
+        "valor": "ENVIOINTEGRACAOSTATUSRECEBIDO"
+      },
+      {
+        "nome": "ATIVO",
+        "valor": "N"
+      },
+      {
+        "nome": "IDDEPENDENTE",
+        "valor": "TRE-BUSCAR_VIAGENS_REPROGRAMADAS"
+      },
+      {
+        "nome": "DTULTALTER",
+        "valor": ""
+      },
+      {
+        "nome": "CODEMPALTER",
+        "valor": ""
+      },
+      {
+        "nome": "DESCRICAO",
+        "valor": "TRE-REPROGRAMAR_VIAGEM"
+      },
+      {
+        "nome": "ID",
+        "valor": ""
+      }
+    ]
+  }
+}
