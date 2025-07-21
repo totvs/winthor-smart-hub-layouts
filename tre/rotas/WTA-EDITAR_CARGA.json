@@ -1,0 +1,93 @@
+{
+  "tabela": {
+    "nome": "PCINTEGRACAOROTASERVICO",
+    "campos": [
+      {
+        "nome": "ID",
+        "valor": "WTA-EDITAR_CARGA"
+      },
+      {
+        "nome": "IDEMPRESAAPI",
+        "valor": "TRE-WTA"
+      },
+      {
+        "nome": "SERVICO",
+        "valor": "WTA-EDITAR_CARGA"
+      },
+      {
+        "nome": "LAYOUTCOMUNICACAO",
+        "valor": {
+          "name": "WTA-EDITAR_CARGA",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{TOKEN}}"
+              }
+            ],
+            "url": {
+              "raw": "{{URL_BASE}}/logistica/apis/v1/carregamento/alteracao",
+              "query": [],
+              "host": [
+                "{{URL_BASE}}"
+              ],
+              "path": [
+                "logistica",
+                "apis",
+                "v1",
+                "carregamento",
+                "alteracao"
+              ]
+            },
+            "bodyraw": "{{CLIENT_JSON}}"
+          },
+          "response": []
+        }
+      },
+      {
+        "nome": "LAYOUTTRANSFORMACAO",
+        "valor": [
+          {
+            "operation": "default",
+            "spec": {
+              "status": 2
+            }
+          }
+        ]
+      },
+      {
+        "nome": "ATIVO",
+        "valor": "S"
+      },
+      {
+        "nome": "TIPOPROCESSO",
+        "valor": "ENVIAR"
+      },
+      {
+        "nome": "AUTENTICADOR",
+        "valor": "N"
+      },
+      {
+        "nome": "DATASINCRONISMO",
+        "valor": ""
+      },
+      {
+        "nome": "REFRESHTOKEN",
+        "valor": "N"
+      },
+      {
+        "nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+        "valor": "N"
+      }
+    ]
+  }
+}
