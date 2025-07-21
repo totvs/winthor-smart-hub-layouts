@@ -12,7 +12,7 @@
 			},
 			{
 				"nome": "CHAVE",
-				"valor": "{{LASTCHANGE}}"
+				"valor": "{{LAST_CHANGE}}"
 			},
 			{
 				"nome": "TIPOCHAVE",
