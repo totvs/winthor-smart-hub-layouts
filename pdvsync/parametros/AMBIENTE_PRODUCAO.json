@@ -228,6 +228,12 @@
       "valor": "https://pdvsync.varejo.totvs.com.br/preco/api/retaguarda/v3/precos",
       "descricao": "PDV-SYNC Enviar Preco Embalagem",
       "rota": "PDVSYNC - Enviar Preco Embalagem"
+    },
+	{
+      "nome": "{{URL_ENVIAR_IMPOSTO_RT}}",
+      "valor": "https://pdvsync.varejo.totvs.com.br/api/retaguarda/v3/dadosdinamicos/down/101/1",
+      "descricao": "PDV-SYNC Enviar Impostos Reforma",
+      "rota": "PDVSYNC - Enviar Imposto Reforma"
     }
   ]
 }
