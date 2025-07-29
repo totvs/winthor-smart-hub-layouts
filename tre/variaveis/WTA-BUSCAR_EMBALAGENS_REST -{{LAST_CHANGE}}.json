@@ -16,7 +16,7 @@
       },
       {
         "nome": "IDROTASERVICO",
-        "valor": "WTA-BUSCAR_PRODUTOS_REST"
+        "valor": "WTA-BUSCAR_EMBALAGENS_REST"
       },
       {
         "nome": "DTULTALTER",
@@ -32,7 +32,7 @@
       },
       {
         "nome": "ID",
-        "valor": "WTA-BUSCAR_PRODUTOS_REST -{{LAST_CHANGE}}"
+        "valor": "WTA-BUSCAR_EMBALAGENS_REST -{{LAST_CHANGE}}"
       }
     ]
   }

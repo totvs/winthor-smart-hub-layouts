@@ -16,7 +16,7 @@
       },
       {
         "nome": "IDROTASERVICO",
-        "valor": "WTA-BUSCAR_PRODUTOS_REST"
+        "valor": "TRE-BUSCAR_TRANSICAO"
       },
       {
         "nome": "DTULTALTER",
@@ -32,7 +32,7 @@
       },
       {
         "nome": "ID",
-        "valor": "WTA-BUSCAR_PRODUTOS_REST -{{LAST_CHANGE}}"
+        "valor": "TRE-BUSCAR_TRANSICAO -{{LAST_CHANGE}}"
       }
     ]
   }

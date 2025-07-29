@@ -4,7 +4,7 @@
     "campos": [
       {
         "nome": "ID",
-        "valor": "WTA-CANCELAR_CARGA"
+        "valor": "WTA-GRAVAR_TRANSICAO"
       },
       {
         "nome": "IDEMPRESAAPI",
@@ -12,12 +12,12 @@
       },
       {
         "nome": "SERVICO",
-        "valor": "WTA-CANCELAR_CARGA"
+        "valor": "WTA-GRAVAR_TRANSICAO"
       },
       {
         "nome": "LAYOUTCOMUNICACAO",
         "valor": {
-          "name": "WTA-CANCELAR_CARGA",
+          "name": "WTA-GRAVAR_TRANSICAO",
           "request": {
             "method": "POST",
             "header": [
@@ -35,8 +35,18 @@
               }
             ],
             "url": {
-              "raw": "{{URL_BASE}}/logistica/apis/v1/carregamento/cancelamento",
-              "query": []
+              "raw": "{{URL_BASE}}/logistica/apis/v1/recado/gravar",
+              "query": [],
+              "host": [
+                "{{URL_BASE}}"
+              ],
+              "path": [
+                "logistica",
+                "apis",
+                "v1",
+                "recado",
+                "gravar"
+              ]
             },
             "bodyraw": "{{CLIENT_JSON}}"
           },

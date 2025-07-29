@@ -1,0 +1,43 @@
+{
+  "tabela": {
+    "nome": "PCINTEGRACAOFLUXOEXECUCAO",
+    "campos": [
+      {
+        "nome": "ORDEMEXECUCAO",
+        "valor": "4"
+      },
+      {
+        "nome": "IDROTASERVICO",
+        "valor": "WTA-GRAVAR_OCORRENCIA"
+      },
+      {
+        "nome": "IDINTEGRACAOCLASSEMETODO",
+        "valor": "ENVIOINTEGRACAOSTATUSRECEBIDO"
+      },
+      {
+        "nome": "ATIVO",
+        "valor": "N"
+      },
+      {
+        "nome": "IDDEPENDENTE",
+        "valor": "TRE-BUSCAR_OCORRENCIA"
+      },
+      {
+        "nome": "DTULTALTER",
+        "valor": ""
+      },
+      {
+        "nome": "CODEMPALTER",
+        "valor": ""
+      },
+      {
+        "nome": "DESCRICAO",
+        "valor": "TRE-PUBLICACAO_OCORRENCIA"
+      },
+      {
+        "nome": "ID",
+        "valor": ""
+      }
+    ]
+  }
+}
