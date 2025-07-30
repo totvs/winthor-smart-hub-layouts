@@ -39,7 +39,7 @@
                 "ns2:publishRetrieveCancelServiceResponse": {
                   "publishCancelTrips": {
                     "publishCancelTrip": {
-                      "messageId": "idMsg",
+                      "messageId": "data.idMensagem",
                       "trips": {
                         "trip": {
                           "tripId": "data.idViagem",
@@ -57,23 +57,17 @@
             }
           },
           {
-            "operation": "default",
-            "spec": {
-              "_attr_access": "data"
-            }
-          },
-          {
             "operation": "modify-overwrite-beta",
             "spec": {
-              "idExterno": "\u003dconcat(\u0027SOAP-TRE-VIAGEM-CANCELADA-\u0027,@(1,idMsg))",
-              "idInterno": "\u003dconcat(\u0027\u0027, @(1,idMsg))",
+              "idExterno": "\u003dconcat(\u0027SOAP-TRE-VIAGEM-CANCELADA-\u0027,@(1,data.idMensagem))",
+              "idInterno": "\u003dconcat(\u0027\u0027, @(1,data.idMensagem))",
               "tipoIdInterno": "TRE-VIAGEM-CANCELADA"
             }
           },
           {
-            "operation": "remove",
+            "operation": "default",
             "spec": {
-              "idMsg": ""
+              "_attr_access": "data"
             }
           }
         ]
