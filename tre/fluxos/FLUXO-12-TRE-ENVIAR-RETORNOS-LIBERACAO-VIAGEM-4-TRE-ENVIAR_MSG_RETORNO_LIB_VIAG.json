@@ -1,0 +1,43 @@
+{
+  "tabela": {
+    "nome": "PCINTEGRACAOFLUXOEXECUCAO",
+    "campos": [
+      {
+        "nome": "ORDEMEXECUCAO",
+        "valor": "4"
+      },
+      {
+        "nome": "IDROTASERVICO",
+        "valor": "TRE-ENVIAR_MSG_RETORNO_LIB_VIAG"
+      },
+      {
+        "nome": "IDINTEGRACAOCLASSEMETODO",
+        "valor": "SOAPWEBSERVICECLIENT"
+      },
+      {
+        "nome": "ATIVO",
+        "valor": "N"
+      },
+      {
+        "nome": "IDDEPENDENTE",
+        "valor": "WTA-BUSCAR_MSG_RETORNO_LIB_VIAG_REST"
+      },
+      {
+        "nome": "DTULTALTER",
+        "valor": ""
+      },
+      {
+        "nome": "CODEMPALTER",
+        "valor": ""
+      },
+      {
+        "nome": "DESCRICAO",
+        "valor": "TRE-ENVIAR-RETORNOS-LIBERACAO-VIAGEM"
+      },
+      {
+        "nome": "ID",
+        "valor": ""
+      }
+    ]
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "tabela": {
+    "nome": "PCINTEGRACAOROTASERVICO",
+    "campos": [
+      {
+        "nome": "ID",
+        "valor": "WTA-BUSCAR_MSG_RETORNO_LIB_VIAG_REST"
+      },
+      {
+        "nome": "IDEMPRESAAPI",
+        "valor": "TRE-WTA"
+      },
+      {
+        "nome": "SERVICO",
+        "valor": "WTA-BUSCAR_MSG_RETORNO_LIB_VIAG_REST"
+      },
+      {
+        "nome": "LAYOUTCOMUNICACAO",
+        "valor": {
+          "name": "WTA-BUSCAR_MSG_RETORNO_LIB_VIAG_REST",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{TOKEN}}"
+              }
+            ],
+            "url": {
+              "raw": "{{URL_BASE}}/logistica/apis/v1/retornotre/buscar",
+              "query": [
+                {
+                  "key": "page",
+                  "value": "{{PAGE}}"
+                },
+                {
+                  "key": "pageSize",
+                  "value": "{{PAGE_SIZE}}"
+                },
+                {
+                  "key": "tipo",
+                  "value": "LIBERACAO_VIAGEM"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      },
+      {
+        "nome": "LAYOUTTRANSFORMACAO",
+        "valor": [
+          {
+            "operation": "modify-overwrite-beta",
+            "spec": {
+              "items": {
+                "*": {
+                  "idExterno": "\u003dconcat(\u0027SOAP-TRE-RET-LIB-VIAG-\u0027,@(1,idMensagem),\u0027-\u0027,@(1,idViagem), \u0027-\u0027, @(1,itemPed))",
+                  "idInterno": "\u003dconcat(\u0027\u0027, @(1,idMensagem), \u0027-\u0027, @(1,itemPed))",
+                  "tipoIdInterno": "TRE-RET-LIB-VIAG"
+                }
+              }
+            }
+          },
+          {
+            "operation": "shift",
+            "spec": {
+              "items": {
+                "*": {
+                  "idExterno": "idExterno[]",
+                  "idInterno": "idInterno",
+                  "tipoIdInterno": "tipoIdInterno",
+                  "#2002": "data.[\u00261].soapenv:Body.tns:doUnblockReleasedTrip.tns:unblockReleasedTrips.tns:unblockReleasedTrips.tns:unblockReleasedTrip.tns:regionSourceId",
+                  "codigoRetorno": "data.[\u00261].soapenv:Body.tns:doUnblockReleasedTrip.tns:unblockReleasedTrips.tns:unblockReleasedTrips.tns:unblockReleasedTrip.tns:tripReleaseResponses.ns4:tripReleaseResponseList.ns4:tripReleaseResponses.ns4:tripReleaseResponse.ns4:status",
+                  "idMensagem": "data.[\u00261].soapenv:Body.tns:doUnblockReleasedTrip.tns:unblockReleasedTrips.tns:unblockReleasedTrips.tns:unblockReleasedTrip.tns:identifier",
+                  "idViagem": "data.[\u00261].soapenv:Body.tns:doUnblockReleasedTrip.tns:unblockReleasedTrips.tns:unblockReleasedTrips.tns:unblockReleasedTrip.tns:tripReleaseResponses.ns4:tripReleaseResponseList.ns4:tripReleaseResponses.ns4:tripReleaseResponse.ns4:tripCode",
+                  "numPed": "data.[\u00261].soapenv:Body.tns:doUnblockReleasedTrip.tns:unblockReleasedTrips.tns:unblockReleasedTrips.tns:unblockReleasedTrip.tns:tripReleaseResponses.ns4:tripReleaseResponseList.ns4:tripReleaseResponses.ns4:tripReleaseResponse.ns4:orderSourceId",
+                  "itemPed": "data.[\u00261].soapenv:Body.tns:doUnblockReleasedTrip.tns:unblockReleasedTrips.tns:unblockReleasedTrips.tns:unblockReleasedTrip.tns:tripReleaseResponses.ns4:tripReleaseResponseList.ns4:tripReleaseResponses.ns4:tripReleaseResponse.ns4:itemId",
+                  "#http://schemas.xmlsoap.org/soap/envelope/": "data.[\u00261].-xmlns:soapenv",
+                  "#http://www.neolog.com.br/cpl/acquisition/unblockRelTrip/": "data.[\u00261].-xmlns:tns",
+                  "#http://www.neolog.com.br/cpl/acquisition/orderBreakResponse/": "data[\u00261].-xmlns:ns3",
+                  "#http://www.neolog.com.br/cpl/acquisition/tripReleaseResponse/": "data[\u00261].-xmlns:ns4"
+                }
+              }
+            }
+          },
+          {
+            "operation": "default",
+            "spec": {
+              "_attr_access": "data"
+            }
+          }
+        ]
+      },
+      {
+        "nome": "ATIVO",
+        "valor": "S"
+      },
+      {
+        "nome": "TIPOPROCESSO",
+        "valor": "BUSCAR"
+      },
+      {
+        "nome": "AUTENTICADOR",
+        "valor": "N"
+      },
+      {
+        "nome": "DATASINCRONISMO",
+        "valor": ""
+      },
+      {
+        "nome": "REFRESHTOKEN",
+        "valor": "N"
+      },
+      {
+        "nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+        "valor": "N"
+      }
+    ]
+  }
+}
