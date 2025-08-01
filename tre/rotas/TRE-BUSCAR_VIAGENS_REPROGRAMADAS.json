@@ -33,19 +33,37 @@
         "nome": "LAYOUTTRANSFORMACAO",
         "valor": [
           {
+            "operation": "modify-overwrite-beta",
+            "spec": {
+              "soap:Body": {
+                "ns2:publishRetrieveReprogrammingServiceResponse": {
+                  "publishReprogrammingTrips": {
+                    "publishReprogrammingTrip": {
+                      "trips": {
+                        "trip": "\u003dtoList(@(1,trip))"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          {
             "operation": "shift",
             "spec": {
               "soap:Body": {
                 "ns2:publishRetrieveReprogrammingServiceResponse": {
                   "publishReprogrammingTrips": {
                     "publishReprogrammingTrip": {
-                      "messageId": "data.idMensagem",
+                      "messageId": "idMensagem",
                       "trips": {
                         "trip": {
-                          "tripId": "data.idViagem",
-                          "loads": {
-                            "load": {
-                              "loadId": "data.numcarExterno"
+                          "*": {
+                            "tripId": "items.[\u00261].idViagem",
+                            "loads": {
+                              "load": {
+                                "loadId": "items.[\u00263].numcarExterno"
+                              }
                             }
                           }
                         }
@@ -59,9 +77,29 @@
           {
             "operation": "modify-overwrite-beta",
             "spec": {
-              "idExterno": "\u003dconcat(\u0027SOAP-TRE-VIAGEM-REPROGRAMADA-\u0027,@(1,data.idMensagem))",
-              "idInterno": "\u003dconcat(\u0027\u0027, @(1,data.idMensagem))",
-              "tipoIdInterno": "TRE-VIAGEM-REPROGRAMADA"
+              "items": {
+                "*": {
+                  "idMensagem": "\u003dconcat(\u0027\u0027, @(3,idMensagem))",
+                  "idExterno": "\u003dconcat(\u0027SOAP-TRE-VIAGEM-REPROGRAMADA-\u0027,@(1,idMensagem),\u0027-\u0027,@(1,idViagem),\u0027-\u0027,@(1,numcarExterno))",
+                  "idInterno": "\u003dconcat(\u0027\u0027, @(1,idMensagem))",
+                  "tipoIdInterno": "TRE-VIAGEM-REPROGRAMADA"
+                }
+              }
+            }
+          },
+          {
+            "operation": "shift",
+            "spec": {
+              "items": {
+                "*": {
+                  "idExterno": "idExterno[]",
+                  "idInterno": "idInterno",
+                  "tipoIdInterno": "tipoIdInterno",
+                  "idMensagem": "data.[\u00261].idMensagem",
+                  "idViagem": "data.[\u00261].idViagem",
+                  "numcarExterno": "data.[\u00261].numcarExterno"
+                }
+              }
             }
           },
           {
