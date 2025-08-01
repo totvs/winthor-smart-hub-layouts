@@ -1,0 +1,265 @@
+{
+  "tabela": {
+    "nome": "PCINTEGRACAOROTASERVICO",
+    "campos": [
+      {
+        "nome": "DATASINCRONISMO",
+        "valor": ""
+      },
+      {
+        "nome": "REFRESHTOKEN",
+        "valor": "N"
+      },
+      {
+        "nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+        "valor": "N"
+      },
+      {
+        "nome": "ID",
+        "valor": "WTA-BUSCAR_PEDIDOS_CORTE_TOT_REST"
+      },
+      {
+        "nome": "IDEMPRESAAPI",
+        "valor": "TRE-WTA"
+      },
+      {
+        "nome": "SERVICO",
+        "valor": "WTA-BUSCAR_PEDIDOS_CORTE_TOT_REST"
+      },
+      {
+        "nome": "LAYOUTCOMUNICACAO",
+        "valor": {
+          "name": "WTA-BUSCAR_PEDIDOS_CORTE_TOT_REST",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{TOKEN}}"
+              }
+            ],
+            "url": {
+              "raw": "{{URL_BASE}}/logistica/apis/v1/pedido/buscar",
+              "query": [
+                {
+                  "key": "page",
+                  "value": "{{PAGE}}"
+                },
+                {
+                  "key": "pageSize",
+                  "value": "{{PAGE_SIZE}}"
+                },
+                {
+                  "key": "status",
+                  "value": "CORTE_TOTAL"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      },
+      {
+        "nome": "LAYOUTTRANSFORMACAO",
+        "valor": [
+          {
+            "operation": "shift",
+            "spec": {
+              "items": {
+                "*": {
+                  "numero": "pedidos[\u00261].numeroPedido",
+                  "data": "pedidos[\u00261].data",
+                  "dataEntrega": "pedidos[\u00261].dataEntrega",
+                  "observacao": "pedidos[\u00261].observacao",
+                  "origem": "pedidos[\u00261].origem",
+                  "condVenda": "pedidos[\u00261].condVenda",
+                  "codigoLocalidadeExterno": "pedidos[\u00261].codigoLocalidadeExterno",
+                  "dataUltimaAlteracao": "pedidos[\u00261].dataUltimaAlteracao",
+                  "itens": {
+                    "*": {
+                      "dataUltimaAlteracao": "pedidos[\u00263].itens[\u00261].dataUltimaAlteracaoItemPedido",
+                      "sequencia": "pedidos[\u00263].itens[\u00261].sequenciaItemPedido",
+                      "volume": "pedidos[\u00263].itens[\u00261].volumeProduto",
+                      "quantidade": "pedidos[\u00263].itens[\u00261].quantidadeItemPedido",
+                      "quantidadeUnitaria": "pedidos[\u00263].itens[\u00261].quantidadeUnitariItemPedido",
+                      "codigoBarras": "pedidos[\u00263].itens[\u00261].codigoBarrasItemPedido",
+                      "idEndereco": "pedidos[\u00263].itens[\u00261].idEnderecoItemPedido",
+                      "unidade": "pedidos[\u00263].itens[\u00261].unidadeItemPedido",
+                      "numeroPedido": "pedidos[\u00263].itens[\u00261].numeroItemPedido",
+                      "peso": "pedidos[\u00263].itens[\u00261].pesoItemPedido",
+                      "valorTotal": "pedidos[\u00263].itens[\u00261].valorTotal",
+                      "codigoProduto": "pedidos[\u00263].itens[\u00261].codigoProduto"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          {
+            "operation": "modify-overwrite-beta",
+            "spec": {
+              "pedidos": {
+                "*": {
+                  "numeroPedido": "\u003dtoString(@(1,numeroPedido))",
+                  "tipoPedido": "\u003dconcat(@(1,origem),\u0027-\u0027,@(1,condVenda))",
+                  "idExterno": "\u003dconcat(\u0027SOAP-TRE-PEDIDO-CORTE-TOTAL-\u0027,@(1,numeroPedido),\u0027-\u0027,@(1,dataUltimaAlteracao))",
+                  "idInterno": "\u003dconcat(@(1,numeroPedido))",
+                  "tipoIdInterno": "TRE-PEDIDO-CORTE-TOTAL",
+                  "itens": {
+                    "*": {
+                      "idItem": "\u003dconcat(@(1,numeroItemPedido),\u0027-\u0027,@(1,codigoProduto),\u0027-\u0027,@(1,sequenciaItemPedido))"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          {
+            "operation": "shift",
+            "spec": {
+              "pedidos": {
+                "*": {
+                  "idExterno": "idExterno[]",
+                  "idInterno": "idInterno",
+                  "tipoIdInterno": "tipoIdInterno",
+                  "numeroPedido": "data[\u00261].soapenv:Body.tns:deleteOrders.tns:orderList.tns:orders.tns:order.tns:identifier",
+                  "data": "data[\u00261].soapenv:Body.tns:deleteOrders.tns:orderList.tns:orders.tns:order.tns:pickupStart",
+                  "dataEntrega": "data[\u00261].soapenv:Body.tns:deleteOrders.tns:orderList.tns:orders.tns:order.tns:deliveryEnd",
+                  "tipoPedido": "data[\u00261].soapenv:Body.tns:deleteOrders.tns:orderList.tns:orders.tns:order.tns:orderTypeSourceId",
+                  "codigoLocalidadeExterno": "data[\u00261].soapenv:Body.tns:deleteOrders.tns:orderList.tns:orders.tns:order.tns:destinationId",
+                  "observacao": {
+                    "*": {
+                      "$": "data[\u00263].soapenv:Body.tns:deleteOrders.tns:orderList.tns:orders.tns:order.tns:observations"
+                    }
+                  },
+                  "itens": {
+                    "*": {
+                      "volumeProduto": "data[\u00263].soapenv:Body.tns:deleteOrders.tns:orderList.tns:orders.tns:order.tns:items.ns2:orderItems.ns3:orderItem[\u00261].ns3:volume",
+                      "idItem": "data[\u00263].soapenv:Body.tns:deleteOrders.tns:orderList.tns:orders.tns:order.tns:items.ns2:orderItems.ns3:orderItem[\u00261].ns3:sourceId",
+                      "quantidadeItemPedido": "data[\u00263].soapenv:Body.tns:deleteOrders.tns:orderList.tns:orders.tns:order.tns:items.ns2:orderItems.ns3:orderItem[\u00261].ns3:quantity",
+                      "quantidadeUnitariItemPedido": "data[\u00263].soapenv:Body.tns:deleteOrders.tns:orderList.tns:orders.tns:order.tns:items.ns2:orderItems.ns3:orderItem[\u00261].ns3:quantityInShipmentUnits",
+                      "codigoBarrasItemPedido": "data[\u00263].soapenv:Body.tns:deleteOrders.tns:orderList.tns:orders.tns:order.tns:items.ns2:orderItems.ns3:orderItem[\u00261].ns3:productId",
+                      "idEnderecoItemPedido": "data[\u00263].soapenv:Body.tns:deleteOrders.tns:orderList.tns:orders.tns:order.tns:items.ns2:orderItems.ns3:orderItem[\u00261].ns3:originId",
+                      "pesoItemPedido": "data[\u00263].soapenv:Body.tns:deleteOrders.tns:orderList.tns:orders.tns:order.tns:items.ns2:orderItems.ns3:orderItem[\u00261].ns3:weight",
+                      "valorTotal": "data[\u00263].soapenv:Body.tns:deleteOrders.tns:orderList.tns:orders.tns:order.tns:items.ns2:orderItems.ns3:orderItem[\u00261].ns3:price",
+                      "unidadeItemPedido": {
+                        "Caixa": {
+                          "#0": "data[\u00265].soapenv:Body.tns:deleteOrders.tns:orderList.tns:orders.tns:order.tns:items.ns2:orderItems.ns3:orderItem[\u00263].ns3:shipmentUnitWrapperCode"
+                        },
+                        "Cartela": {
+                          "#0": "data[\u00265].soapenv:Body.tns:deleteOrders.tns:orderList.tns:orders.tns:order.tns:items.ns2:orderItems.ns3:orderItem[\u00263].ns3:shipmentUnitWrapperCode"
+                        },
+                        "Display": {
+                          "#0": "data[\u00265].soapenv:Body.tns:deleteOrders.tns:orderList.tns:orders.tns:order.tns:items.ns2:orderItems.ns3:orderItem[\u00263].ns3:shipmentUnitWrapperCode"
+                        },
+                        "Fardo": {
+                          "#0": "data[\u00265].soapenv:Body.tns:deleteOrders.tns:orderList.tns:orders.tns:order.tns:items.ns2:orderItems.ns3:orderItem[\u00263].ns3:shipmentUnitWrapperCode"
+                        },
+                        "Pacote": {
+                          "#0": "data[\u00265].soapenv:Body.tns:deleteOrders.tns:orderList.tns:orders.tns:order.tns:items.ns2:orderItems.ns3:orderItem[\u00263].ns3:shipmentUnitWrapperCode"
+                        },
+                        "Kit": {
+                          "#0": "data[\u00265].soapenv:Body.tns:deleteOrders.tns:orderList.tns:orders.tns:order.tns:items.ns2:orderItems.ns3:orderItem[\u00263].ns3:shipmentUnitWrapperCode"
+                        },
+                        "Conjunto": {
+                          "#0": "data[\u00265].soapenv:Body.tns:deleteOrders.tns:orderList.tns:orders.tns:order.tns:items.ns2:orderItems.ns3:orderItem[\u00263].ns3:shipmentUnitWrapperCode"
+                        },
+                        "Cento": {
+                          "#0": "data[\u00265].soapenv:Body.tns:deleteOrders.tns:orderList.tns:orders.tns:order.tns:items.ns2:orderItems.ns3:orderItem[\u00263].ns3:shipmentUnitWrapperCode"
+                        },
+                        "Rolo": {
+                          "#2": "data[\u00265].soapenv:Body.tns:deleteOrders.tns:orderList.tns:orders.tns:order.tns:items.ns2:orderItems.ns3:orderItem[\u00263].ns3:shipmentUnitWrapperCode"
+                        },
+                        "Garrafa": {
+                          "#3": "data[\u00265].soapenv:Body.tns:deleteOrders.tns:orderList.tns:orders.tns:order.tns:items.ns2:orderItems.ns3:orderItem[\u00263].ns3:shipmentUnitWrapperCode"
+                        },
+                        "Galao": {
+                          "#3": "data[\u00265].soapenv:Body.tns:deleteOrders.tns:orderList.tns:orders.tns:order.tns:items.ns2:orderItems.ns3:orderItem[\u00263].ns3:shipmentUnitWrapperCode"
+                        },
+                        "Litro": {
+                          "#3": "data[\u00265].soapenv:Body.tns:deleteOrders.tns:orderList.tns:orders.tns:order.tns:items.ns2:orderItems.ns3:orderItem[\u00263].ns3:shipmentUnitWrapperCode"
+                        },
+                        "Mililitros": {
+                          "#3": "data[\u00265].soapenv:Body.tns:deleteOrders.tns:orderList.tns:orders.tns:order.tns:items.ns2:orderItems.ns3:orderItem[\u00263].ns3:shipmentUnitWrapperCode"
+                        },
+                        "Barril": {
+                          "#3": "data[\u00265].soapenv:Body.tns:deleteOrders.tns:orderList.tns:orders.tns:order.tns:items.ns2:orderItems.ns3:orderItem[\u00263].ns3:shipmentUnitWrapperCode"
+                        },
+                        "Vidro": {
+                          "#3": "data[\u00265].soapenv:Body.tns:deleteOrders.tns:orderList.tns:orders.tns:order.tns:items.ns2:orderItems.ns3:orderItem[\u00263].ns3:shipmentUnitWrapperCode"
+                        },
+                        "Balde": {
+                          "#4": "data[\u00265].soapenv:Body.tns:deleteOrders.tns:orderList.tns:orders.tns:order.tns:items.ns2:orderItems.ns3:orderItem[\u00263].ns3:shipmentUnitWrapperCode"
+                        },
+                        "Barra": {
+                          "#4": "data[\u00265].soapenv:Body.tns:deleteOrders.tns:orderList.tns:orders.tns:order.tns:items.ns2:orderItems.ns3:orderItem[\u00263].ns3:shipmentUnitWrapperCode"
+                        },
+                        "Lata": {
+                          "#4": "data[\u00265].soapenv:Body.tns:deleteOrders.tns:orderList.tns:orders.tns:order.tns:items.ns2:orderItems.ns3:orderItem[\u00263].ns3:shipmentUnitWrapperCode"
+                        },
+                        "Metro": {
+                          "#4": "data[\u00265].soapenv:Body.tns:deleteOrders.tns:orderList.tns:orders.tns:order.tns:items.ns2:orderItems.ns3:orderItem[\u00263].ns3:shipmentUnitWrapperCode"
+                        },
+                        "Milheiro": {
+                          "#4": "data[\u00265].soapenv:Body.tns:deleteOrders.tns:orderList.tns:orders.tns:order.tns:items.ns2:orderItems.ns3:orderItem[\u00263].ns3:shipmentUnitWrapperCode"
+                        },
+                        "Quilo": {
+                          "#4": "data[\u00265].soapenv:Body.tns:deleteOrders.tns:orderList.tns:orders.tns:order.tns:items.ns2:orderItems.ns3:orderItem[\u00263].ns3:shipmentUnitWrapperCode"
+                        },
+                        "Sache": {
+                          "#4": "data[\u00265].soapenv:Body.tns:deleteOrders.tns:orderList.tns:orders.tns:order.tns:items.ns2:orderItems.ns3:orderItem[\u00263].ns3:shipmentUnitWrapperCode"
+                        },
+                        "Saco": {
+                          "#4": "data[\u00265].soapenv:Body.tns:deleteOrders.tns:orderList.tns:orders.tns:order.tns:items.ns2:orderItems.ns3:orderItem[\u00263].ns3:shipmentUnitWrapperCode"
+                        },
+                        "Tablete": {
+                          "#4": "data[\u00265].soapenv:Body.tns:deleteOrders.tns:orderList.tns:orders.tns:order.tns:items.ns2:orderItems.ns3:orderItem[\u00263].ns3:shipmentUnitWrapperCode"
+                        },
+                        "Unidade": {
+                          "#4": "data[\u00265].soapenv:Body.tns:deleteOrders.tns:orderList.tns:orders.tns:order.tns:items.ns2:orderItems.ns3:orderItem[\u00263].ns3:shipmentUnitWrapperCode"
+                        }
+                      },
+                      "@(2,numeroPedido)": "data[\u00263].soapenv:Body.tns:deleteOrders.tns:orderList.tns:orders.tns:order.tns:items.ns2:orderItems.ns3:orderItem[\u00261].ns3:orderId"
+                    }
+                  },
+                  "#2002": "data[\u00261].soapenv:Body.tns:deleteOrders.tns:orderList.tns:orders.tns:order.tns:regionSourceId",
+                  "#http://schemas.xmlsoap.org/soap/envelope/": "data[\u00261].-xmlns:soapenv",
+                  "#http://www.neolog.com.br/cpl/acquisition/order/": "data[\u00261].-xmlns:tns",
+                  "#http://model.neolog.com.br": "data[\u00261].-xmlns:ns1",
+                  "#http://www.neolog.com.br/cpl/acquisition/orderitem/": "data[\u00261].-xmlns:ns2",
+                  "#http://www.neolog.com.br/cpl/acquisition/orderItem/": "data[\u00261].-xmlns:ns3"
+                }
+              }
+            }
+          },
+          {
+            "operation": "default",
+            "spec": {
+              "_attr_access": "data"
+            }
+          }
+        ]
+      },
+      {
+        "nome": "ATIVO",
+        "valor": "S"
+      },
+      {
+        "nome": "TIPOPROCESSO",
+        "valor": "BUSCAR"
+      },
+      {
+        "nome": "AUTENTICADOR",
+        "valor": "N"
+      }
+    ]
+  }
+}
