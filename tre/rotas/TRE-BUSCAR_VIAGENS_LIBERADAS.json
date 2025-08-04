@@ -63,6 +63,7 @@
                             "loads": {
                               "load": {
                                 "identifier": "items.[\u00263].numcarExterno",
+                                "vehicleId": "items.[\u00261].idVeiculo",
                                 "stops": {
                                   "stop": {
                                     "*": {
@@ -124,6 +125,7 @@
                   "idMensagem": "data.[\u00261].idMensagem",
                   "idsPedidos": "data.[\u00261].idsPedidos",
                   "idViagem": "data.[\u00261].idViagem",
+                  "idVeiculo": "data.[\u00261].idVeiculo",
                   "numcarExterno": "data.[\u00261].numcarExterno"
                 }
               }

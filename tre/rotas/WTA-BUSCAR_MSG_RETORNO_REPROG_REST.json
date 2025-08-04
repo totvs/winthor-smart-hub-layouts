@@ -59,13 +59,38 @@
         "nome": "LAYOUTTRANSFORMACAO",
         "valor": [
           {
-            "operation": "modify-overwrite-beta",
+            "operation": "shift",
             "spec": {
               "items": {
                 "*": {
-                  "idExterno": "\u003dconcat(\u0027SOAP-TRE-RET-REPRO-\u0027,@(1,idMensagem),\u0027-\u0027,@(1,idViagem))",
-                  "idInterno": "\u003dconcat(\u0027\u0027, @(1,idMensagem))",
-                  "tipoIdInterno": "TRE-RET-REPRO"
+                  "idMensagem": [
+                    "@1,idMensagem.\u0026",
+                    "@1,idMensagem.viagens.\u00261.\u0026"
+                  ],
+                  "*": "@1,idMensagem.viagens.\u00261.\u0026"
+                }
+              }
+            }
+          },
+          {
+            "operation": "cardinality",
+            "spec": {
+              "*": {
+                "idMensagem": "MANY"
+              }
+            }
+          },
+          {
+            "operation": "shift",
+            "spec": {
+              "*": {
+                "idMensagem": {
+                  "0": "\u00262.\u00261"
+                },
+                "viagens": {
+                  "*": {
+                    "*": "\u00263.\u00262[#2].\u0026"
+                  }
                 }
               }
             }
@@ -73,19 +98,37 @@
           {
             "operation": "shift",
             "spec": {
-              "items": {
-                "*": {
-                  "idExterno": "idExterno[]",
-                  "idInterno": "idInterno",
-                  "tipoIdInterno": "tipoIdInterno",
-                  "idMensagem": "data.[\u00261].soapenv:Body.tns:doUnblockUnreleasedTrip.ns1:unblockUnreleasedTrips.ns1:unblockUnreleasedTripList.ns1:messageId",
-                  "codigoRetorno": "data.[\u00261].soapenv:Body.tns:doUnblockUnreleasedTrip.ns1:unblockUnreleasedTrips.ns1:unblockUnreleasedTripList.ns1:unblockUnreleasedTrips.ns1:unblockReleasedTrip.ns1:status",
-                  "idViagem": "data.[\u00261].soapenv:Body.tns:doUnblockUnreleasedTrip.ns1:unblockUnreleasedTrips.ns1:unblockUnreleasedTripList.ns1:unblockUnreleasedTrips.ns1:unblockReleasedTrip.ns1:tripId",
-                  "#2002": "data.[\u00261].soapenv:Body.tns:doUnblockUnreleasedTrip.ns1:unblockUnreleasedTrips.ns1:unblockUnreleasedTripList.ns1:regionSourceId",
-                  "#http://schemas.xmlsoap.org/soap/envelope/": "data.[\u00261].-xmlns:soapenv",
-                  "#http://www.neolog.com.br/cpl/acquisition/locality/": "data.[\u00261].-xmlns:tns",
-                  "#http://www.neolog.com.br/cpl/acquisition/unblockRelTrip/": "data.[\u00261].-xmlns:ns1"
-                }
+              "*": "[]"
+            }
+          },
+          {
+            "operation": "modify-overwrite-beta",
+            "spec": {
+              "*": {
+                "idExterno": "\u003dconcat(\u0027SOAP-TRE-RET-REPRO-\u0027,@(1,idMensagem))",
+                "idInterno": "\u003dconcat(\u0027\u0027, @(1,idMensagem))",
+                "tipoIdInterno": "TRE-RET-REPRO"
+              }
+            }
+          },
+          {
+            "operation": "shift",
+            "spec": {
+              "*": {
+                "idExterno": "idExterno[]",
+                "idInterno": "idInterno",
+                "tipoIdInterno": "tipoIdInterno",
+                "viagens": {
+                  "*": {
+                    "codigoRetorno": "data[\u00263].soapenv:Body.tns:doUnblockUnreleasedTrip.ns1:unblockUnreleasedTrips.ns1:unblockUnreleasedTripList.ns1:unblockUnreleasedTrips.ns1:unblockReleasedTrip[\u00261].ns1:status",
+                    "idViagem": "data[\u00263].soapenv:Body.tns:doUnblockUnreleasedTrip.ns1:unblockUnreleasedTrips.ns1:unblockUnreleasedTripList.ns1:unblockUnreleasedTrips.ns1:unblockReleasedTrip[\u00261].ns1:tripId"
+                  }
+                },
+                "idMensagem": "data[\u00261].soapenv:Body.tns:doUnblockUnreleasedTrip.ns1:unblockUnreleasedTrips.ns1:unblockUnreleasedTripList.ns1:messageId",
+                "#2002": "data[\u00261].soapenv:Body.tns:doUnblockUnreleasedTrip.ns1:unblockUnreleasedTrips.ns1:unblockUnreleasedTripList.ns1:regionSourceId",
+                "#http://schemas.xmlsoap.org/soap/envelope/": "data[\u00261].-xmlns:soapenv",
+                "#http://www.neolog.com.br/cpl/acquisition/unblockUnrelTrip/": "data[\u00261].-xmlns:tns",
+                "#http://www.neolog.com.br/cpl/acquisition/unblockRelTrip/": "data[\u00261].-xmlns:ns1"
               }
             }
           },
