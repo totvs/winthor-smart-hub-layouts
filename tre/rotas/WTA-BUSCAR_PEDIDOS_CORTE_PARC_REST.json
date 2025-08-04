@@ -29,9 +29,9 @@
       {
         "nome": "LAYOUTCOMUNICACAO",
         "valor": {
-          "name": "",
+          "name": "WTA-BUSCAR_PEDIDOS_CORTE_PARC_REST",
           "request": {
-            "method": "",
+            "method": "GET",
             "header": [
               {
                 "key": "Accept",
@@ -59,7 +59,7 @@
                 },
                 {
                   "key": "status",
-                  "value": "CORTE_TOTAL"
+                  "value": "CORTE_PARCIAL"
                 }
               ]
             }
