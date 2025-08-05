@@ -67,13 +67,55 @@
 				"nome": "LAYOUTTRANSFORMACAO",
 				"valor": [
 					{
+						"operation": "shift",
+						"spec": {
+							"items": {
+								"*": {
+									"codigoTributacao": "items[&1].codigoTributacao",
+									"cst": "items[&1].cst",
+									"descricaoTributacao": "items.[&1].descricaoCst",
+									"classificacaoTributaria": "items.[&1].cclasstrib",
+									"ativo": {
+										"true": {
+											"#1": "items.[&3].situacao"
+										},
+										"*": {
+											"#0": "items.[&3].situacao"
+										}
+									},
+									"dataInicioVigencia": "items.[&1].dataInicioVigencia",
+									"dataFimVigencia": "items.[&1].dataFimVigencia",
+									"dataUltimaAlteracao": "items.[&1].dataUltimaAlteracao",
+									"impostos": {
+										"*": {
+											"tipoDetalheImposto": "items[&3].impostosTmp[&1].tipoImposto",
+											"percentualAliquota": "items[&3].impostosTmp[&1].percentualAliquota",
+											"percentualReducaoAliquota": "items[&3].impostosTmp[&1].percentualReducaoAliquota"
+										}
+									}
+								}
+							}
+						}
+					},
+					{
 						"operation": "modify-overwrite-beta",
 						"spec": {
 							"items": {
 								"*": {
-									"idExterno": "=concat('pdvsync-imposto-rt-',@(1,codigoTributacao),'-',@(1,dataUltimaAlteracao))",
-									"idInterno": "=concat('', @(1,codigoTributacao))",
-									"tipoIdInterno": "PDVSYNC-IMPOSTO-RT"
+									"impostosTmp": {
+										"*": {
+											"idRetaguarda": "=concat(@(3,codigoTributacao),'-',@(1,tipoImposto))",
+											"idExterno": "=concat('pdvsync-imposto-rt-',@(3,codigoTributacao),'-',@(1,tipoImposto),'-',@(3,dataUltimaAlteracao))",
+											"tipoIdInterno": "PDVSYNC-IMPOSTO-RT",
+											"idInterno": "=concat(@(3,codigoTributacao),'-',@(1,tipoImposto))",
+											"cst": "=concat('', @(3,cst))",
+											"descricaoCst": "=concat('', @(3,descricaoCst))",
+											"cclasstrib": "=concat('', @(3,cclasstrib))",
+											"situacao": "=concat('', @(3,situacao))",
+											"dataInicioVigencia": "=concat('', @(3,dataInicioVigencia))",
+											"dataFimVigencia": "=concat('', @(3,dataFimVigencia))"
+										}
+									}
 								}
 							}
 						}
@@ -83,25 +125,9 @@
 						"spec": {
 							"items": {
 								"*": {
-									"idExterno": "idExterno[]",
-									"idInterno": "idInterno",
-									"tipoIdInterno": "tipoIdInterno",
-									"codigoTributacao": "items.[&1].idRetaguarda",
-									"ativo": {
-										"true": {
-										"#1": "items.[&3].situacao"
-										},
-										"*": {
-										"#0": "items.[&3].situacao"
-										}
-									},
-									"tipoImposto": "items.[&1].tipoImposto",
-									"cst": "items.[&1].cst",
-									"descricaoTributacao": "items.[&1].descricaoCst",
-									"classificacaoTributaria": "items.[&1].cclasstrib",
-									"valorAliquota": "items.[&1].percentualAliquota",
-									"dataInicioVigencia": "items.[&1].dataInicioVigencia",
-									"dataFimVigencia": "items.[&1].dataFimVigencia"
+									"impostosTmp": {
+										"*": "items[]"
+									}
 								}
 							}
 						}
@@ -111,10 +137,22 @@
 						"spec": {
 							"items": {
 								"*": {
-									"idRetaguarda": "=toString",
-									"situacao": "=toInteger",
-									"cclasstrib": "=toInteger",
-									"percentualAliquota": "=toDouble"
+									"idInquilino": "{{ID_INQUILINO}}",
+									"idProprietario": "{{MASTER_ID_PROPRIETARIO}}",
+									"loteOrigem": "{{LOTE_ORIGEM}}"
+								}
+							}
+						}
+					},
+					{
+						"operation": "shift",
+						"spec": {
+							"items": {
+								"*": {
+									"@": "items[]",
+									"idExterno": "idExterno[]",
+									"idInterno": "idInterno[]",
+									"tipoIdInterno": "tipoIdInterno[]"
 								}
 							}
 						}
@@ -122,16 +160,9 @@
 					{
 						"operation": "default",
 						"spec": {
-							"_attr_access": "items",
-							"items[]": {
-								"*": {
-									"idInquilino": "{{ID_INQUILINO}}",
-									"idProprietario": "{{MASTER_ID_PROPRIETARIO}}",
-									"loteOrigem": "{{LOTE_ORIGEM}}"
-								}
-							}
+							"_attr_access": "items"
 						}
-					}	
+					}
 				]
 			},
 			{
