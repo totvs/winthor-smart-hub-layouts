@@ -8,11 +8,11 @@
 			},
 			{
 				"nome": "ID",
-				"valor": "PDVSYNC - ENVIAR FILTRO NCM TRIBUTO-{{URL_ENVIAR_FILTRO_NCM_TRIBUTO}}"
+				"valor": "WTA - BUSCAR PRODUTO REFORMA TRIBUTARIA-{{BRANCHID}}"
 			},
 			{
 				"nome": "CHAVE",
-				"valor": "{{URL_ENVIAR_FILTRO_NCM_TRIBUTO}}"
+				"valor": "{{BRANCHID}}"
 			},
 			{
 				"nome": "TIPOCHAVE",
@@ -24,11 +24,11 @@
 			},
 			{
 				"nome": "IDROTASERVICO",
-				"valor": "PDVSYNC - ENVIAR FILTRO NCM TRIBUTO"
+				"valor": "WTA - BUSCAR PRODUTO REFORMA TRIBUTARIA"
 			},
 			{
 				"nome": "VALOR",
-				"valor": "https://pdvsync-core-imposto-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/dadosdinamicos/down/102/1"
+				"valor": "99"
 			},
 			{
 				"nome": "CODEMPALTER",

@@ -12,15 +12,15 @@
 			},
 			{
 				"nome": "ORDEMEXECUCAO",
-				"valor": "2"
+				"valor": "1"
 			},
 			{
 				"nome": "IDROTASERVICO",
-				"valor": "WTA - Buscar Filtro NCM Tributo"
+				"valor": "WTA - LoginWTA"
 			},
 			{
 				"nome": "IDINTEGRACAOCLASSEMETODO",
-				"valor": "BuscaRotaServicoPaginada"
+				"valor": "AutenticadorRefreshTokenApi"
 			},
 			{
 				"nome": "ATIVO",
@@ -32,7 +32,7 @@
 			},
 			{
 				"nome": "DESCRICAO",
-				"valor": "Filtro NCM Tributo"
+				"valor": "Filtro NCM Reforma Tributaria"
 			}
 		]
 	}

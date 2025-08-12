@@ -1,4 +1,4 @@
-{
+ {
 	"tabela": {
 		"nome": "PCINTEGRACAOFLUXOEXECUCAO",
 		"campos": [ {"nome" : "ID", "valor": ""},
@@ -12,16 +12,15 @@
 			},
 			{
 				"nome": "ORDEMEXECUCAO",
-				"valor": "3",
-				"valorAnterior": "4"
+				"valor": "5"
 			},
 			{
 				"nome": "IDROTASERVICO",
-				"valor": "PDVSYNC - RAC LoginPDVSync"
+				"valor": "PDVSYNC - Enviar NCM Reforma Tributaria"
 			},
 			{
 				"nome": "IDINTEGRACAOCLASSEMETODO",
-				"valor": "AutenticadorRefreshTokenApi"
+				"valor": "EnvioIntegracaoStatusRecebidoLote"
 			},
 			{
 				"nome": "ATIVO",
@@ -29,11 +28,11 @@
 			},
 			{
 				"nome": "IDDEPENDENTE",
-				"valor": ""
+				"valor": "WTA - Buscar NCM Reforma Tributaria"
 			},
 			{
 				"nome": "DESCRICAO",
-				"valor": "Filtro Produto Tributo"
+				"valor": "Filtro NCM Reforma Tributaria"
 			}
 		]
 	}

@@ -16,7 +16,7 @@
 			},
 			{
 				"nome": "IDROTASERVICO",
-				"valor": "PDVSYNC - Enviar Filtro NCM Tributo"
+				"valor": "PDVSYNC - Enviar Produto Reforma Tribut"
 			},
 			{
 				"nome": "IDINTEGRACAOCLASSEMETODO",
@@ -28,11 +28,11 @@
 			},
 			{
 				"nome": "IDDEPENDENTE",
-				"valor": "WTA - Buscar Filtro NCM Tributo"
+				"valor": "WTA - Buscar Produto Reforma Tributaria"
 			},
 			{
 				"nome": "DESCRICAO",
-				"valor": "Filtro NCM Tributo"
+				"valor": "Filtro Produto Reforma Tributaria"
 			}
 		]
 	}

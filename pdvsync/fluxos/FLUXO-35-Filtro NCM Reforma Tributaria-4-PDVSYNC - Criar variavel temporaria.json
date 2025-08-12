@@ -1,4 +1,4 @@
- {
+{
 	"tabela": {
 		"nome": "PCINTEGRACAOFLUXOEXECUCAO",
 		"campos": [ {"nome" : "ID", "valor": ""},
@@ -12,15 +12,16 @@
 			},
 			{
 				"nome": "ORDEMEXECUCAO",
-				"valor": "5"
+				"valor": "4",
+				"valorAnterior": "3"
 			},
 			{
 				"nome": "IDROTASERVICO",
-				"valor": "PDVSYNC - Enviar Filtro Produto Tributo"
+				"valor": "PDVSYNC - Criar variavel temporaria"
 			},
 			{
 				"nome": "IDINTEGRACAOCLASSEMETODO",
-				"valor": "EnvioIntegracaoStatusRecebidoLote"
+				"valor": "CriaVariavelTemporaria"
 			},
 			{
 				"nome": "ATIVO",
@@ -28,11 +29,11 @@
 			},
 			{
 				"nome": "IDDEPENDENTE",
-				"valor": "WTA - Buscar Filtro Produto Tributo"
+				"valor": ""
 			},
 			{
 				"nome": "DESCRICAO",
-				"valor": "Filtro Produto Tributo"
+				"valor": "Filtro NCM Reforma Tributaria"
 			}
 		]
 	}

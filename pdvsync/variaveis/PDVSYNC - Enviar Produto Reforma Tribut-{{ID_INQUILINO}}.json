@@ -8,11 +8,11 @@
 			},
 			{
 				"nome": "ID",
-				"valor": "PDVSYNC - ENVIAR FILTRO NCM TRIBUTO-{{CLIENT_JSON}}"
+				"valor": "PDVSYNC - ENVIAR PRODUTO REFORMA TRIBUT-{{ID_INQUILINO}}"
 			},
 			{
 				"nome": "CHAVE",
-				"valor": "{{CLIENT_JSON}}"
+				"valor": "{{ID_INQUILINO}}"
 			},
 			{
 				"nome": "TIPOCHAVE",
@@ -24,11 +24,11 @@
 			},
 			{
 				"nome": "IDROTASERVICO",
-				"valor": "PDVSYNC - ENVIAR FILTRO NCM TRIBUTO"
+				"valor": "PDVSYNC - ENVIAR PRODUTO REFORMA TRIBUT"
 			},
 			{
 				"nome": "VALOR",
-				"valor": ":PCINTEGRACAOCORE.DADOSTRANSFORMADOS"
+				"valor":"ADICIONAR_INQUILINO"
 			},
 			{
 				"nome": "CODEMPALTER",
@@ -36,4 +36,5 @@
 			}
 		]
 	}
+	
 }

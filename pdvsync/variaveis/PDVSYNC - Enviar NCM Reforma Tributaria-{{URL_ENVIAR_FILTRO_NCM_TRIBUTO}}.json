@@ -8,11 +8,11 @@
 			},
 			{
 				"nome": "ID",
-				"valor": "PDVSYNC - ENVIAR FILTRO NCM TRIBUTO-{{MASTER_ID_PROPRIETARIO}}"
+				"valor": "PDVSYNC - ENVIAR NCM REFORMA TRIBUTARIA-{{URL_ENVIAR_NCM_REFORMA_TRIBUTARIA}}"
 			},
 			{
 				"nome": "CHAVE",
-				"valor": "{{MASTER_ID_PROPRIETARIO}}"
+				"valor": "{{URL_ENVIAR_NCM_REFORMA_TRIBUTARIA}}"
 			},
 			{
 				"nome": "TIPOCHAVE",
@@ -24,11 +24,11 @@
 			},
 			{
 				"nome": "IDROTASERVICO",
-				"valor": "PDVSYNC - ENVIAR FILTRO NCM TRIBUTO"
+				"valor": "PDVSYNC - ENVIAR NCM REFORMA TRIBUTARIA"
 			},
 			{
 				"nome": "VALOR",
-				"valor": "9999"
+				"valor": "https://pdvsync-core-imposto-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/dadosdinamicos/down/102/1"
 			},
 			{
 				"nome": "CODEMPALTER",

@@ -12,16 +12,15 @@
 			},
 			{
 				"nome": "ORDEMEXECUCAO",
-				"valor": "3",
-				"valorAnterior": "4"
+				"valor": "6"
 			},
 			{
 				"nome": "IDROTASERVICO",
-				"valor": "PDVSYNC - RAC LoginPDVSync"
+				"valor": "PDVSYNC - Encerrar variavel temporaria"
 			},
 			{
 				"nome": "IDINTEGRACAOCLASSEMETODO",
-				"valor": "AutenticadorRefreshTokenApi"
+				"valor": "FinalizaVariavelTemporaria"
 			},
 			{
 				"nome": "ATIVO",
@@ -29,11 +28,11 @@
 			},
 			{
 				"nome": "IDDEPENDENTE",
-				"valor": ""
+				"valor": "WTA - Buscar NCM Reforma Tributaria"
 			},
 			{
 				"nome": "DESCRICAO",
-				"valor": "Filtro NCM Tributo"
+				"valor": "Filtro NCM Reforma Tributaria"
 			}
 		]
 	}

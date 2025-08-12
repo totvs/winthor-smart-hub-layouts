@@ -8,11 +8,11 @@
 			},
 			{
 				"nome": "ID",
-				"valor": "WTA - BUSCAR FILTRO PRODUTO TRIBUTO-{{EXCEPTION_TYPE}}"
+				"valor": "PDVSYNC - ENVIAR PRODUTO REFORMA TRIBUT-{{MASTER_ID_PROPRIETARIO}}"
 			},
 			{
 				"nome": "CHAVE",
-				"valor": "{{EXCEPTION_TYPE}}"
+				"valor": "{{MASTER_ID_PROPRIETARIO}}"
 			},
 			{
 				"nome": "TIPOCHAVE",
@@ -24,11 +24,11 @@
 			},
 			{
 				"nome": "IDROTASERVICO",
-				"valor": "WTA - BUSCAR FILTRO PRODUTO TRIBUTO"
+				"valor": "PDVSYNC - ENVIAR PRODUTO REFORMA TRIBUT"
 			},
 			{
 				"nome": "VALOR",
-				"valor": "P"
+				"valor": "9999"
 			},
 			{
 				"nome": "CODEMPALTER",

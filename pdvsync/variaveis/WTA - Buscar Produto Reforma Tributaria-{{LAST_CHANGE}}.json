@@ -8,7 +8,7 @@
 			},
 			{
 				"nome": "ID",
-				"valor": "WTA - BUSCAR FILTRO NCM TRIBUTO-{{LAST_CHANGE}}"
+				"valor": "WTA - BUSCAR PRODUTO REFORMA TRIBUTARIA-{{LAST_CHANGE}}"
 			},
 			{
 				"nome": "CHAVE",
@@ -24,7 +24,7 @@
 			},
 			{
 				"nome": "IDROTASERVICO",
-				"valor": "WTA - BUSCAR FILTRO NCM TRIBUTO"
+				"valor": "WTA - BUSCAR PRODUTO REFORMA TRIBUTARIA"
 			},
 			{
 				"nome": "VALOR",

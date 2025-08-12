@@ -8,7 +8,7 @@
 			},
 			{
 				"nome": "ID",
-				"valor": "WTA - BUSCAR FILTRO NCM TRIBUTO-{{EXCEPTION_TYPE}}"
+				"valor": "WTA - BUSCAR PRODUTO REFORMA TRIBUTARIA-{{EXCEPTION_TYPE}}"
 			},
 			{
 				"nome": "CHAVE",
@@ -24,11 +24,11 @@
 			},
 			{
 				"nome": "IDROTASERVICO",
-				"valor": "WTA - BUSCAR FILTRO NCM TRIBUTO"
+				"valor": "WTA - BUSCAR PRODUTO REFORMA TRIBUTARIA"
 			},
 			{
 				"nome": "VALOR",
-				"valor": "N"
+				"valor": "P"
 			},
 			{
 				"nome": "CODEMPALTER",

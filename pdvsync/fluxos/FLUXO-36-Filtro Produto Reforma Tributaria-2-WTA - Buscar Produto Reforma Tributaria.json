@@ -16,7 +16,7 @@
 			},
 			{
 				"nome": "IDROTASERVICO",
-				"valor": "WTA - Buscar Filtro Produto Tributo"
+				"valor": "WTA - Buscar Produto Reforma Tributaria"
 			},
 			{
 				"nome": "IDINTEGRACAOCLASSEMETODO",
@@ -32,7 +32,7 @@
 			},
 			{
 				"nome": "DESCRICAO",
-				"valor": "Filtro Produto Tributo"
+				"valor": "Filtro Produto Reforma Tributaria"
 			}
 		]
 	}

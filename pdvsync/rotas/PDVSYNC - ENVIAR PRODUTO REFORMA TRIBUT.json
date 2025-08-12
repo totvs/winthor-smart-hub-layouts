@@ -8,7 +8,7 @@
 			},
 			{
 				"nome": "ID",
-				"valor": "PDVSYNC - Enviar Filtro NCM Tributo"
+				"valor": "PDVSYNC - Enviar Produto Reforma Tribut"
 			},
 			{
 				"nome": "IDEMPRESAAPI",
@@ -16,12 +16,12 @@
 			},
 			{
 				"nome": "SERVICO",
-				"valor": "PDVSYNC - Enviar Filtro NCM Tributo"
+				"valor": "PDVSYNC - Enviar Produto Reforma Tribut"
 			},
 			{
 				"nome": "LAYOUTCOMUNICACAO",
 				"valor": {
-					"name": "PDVSYNC - Enviar Filtro NCM Tributo",
+					"name": "PDVSYNC - Enviar Produto Reforma Tribut",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -39,7 +39,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{URL_ENVIAR_FILTRO_NCM_TRIBUTO}}",
+							"raw": "{{URL_ENVIAR_PRODUTO_REFORMA_TRIBUT}}",
 							"query": []
 						},
 						"bodyraw": "{{CLIENT_JSON}}"

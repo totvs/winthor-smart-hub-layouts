@@ -12,15 +12,15 @@
 			},
 			{
 				"nome": "ORDEMEXECUCAO",
-				"valor": "6"
+				"valor": "2"
 			},
 			{
 				"nome": "IDROTASERVICO",
-				"valor": "PDVSYNC - Encerrar variavel temporaria"
+				"valor": "WTA - Buscar NCM Reforma Tributaria"
 			},
 			{
 				"nome": "IDINTEGRACAOCLASSEMETODO",
-				"valor": "FinalizaVariavelTemporaria"
+				"valor": "BuscaRotaServicoPaginada"
 			},
 			{
 				"nome": "ATIVO",
@@ -28,11 +28,11 @@
 			},
 			{
 				"nome": "IDDEPENDENTE",
-				"valor": "WTA - Buscar Filtro NCM Tributo"
+				"valor": ""
 			},
 			{
 				"nome": "DESCRICAO",
-				"valor": "Filtro NCM Tributo"
+				"valor": "Filtro NCM Reforma Tributaria"
 			}
 		]
 	}

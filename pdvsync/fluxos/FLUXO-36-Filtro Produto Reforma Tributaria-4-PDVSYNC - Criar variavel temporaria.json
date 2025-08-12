@@ -12,15 +12,16 @@
 			},
 			{
 				"nome": "ORDEMEXECUCAO",
-				"valor": "6"
+				"valor": "4",
+				"valorAnterior": "3"
 			},
 			{
 				"nome": "IDROTASERVICO",
-				"valor": "PDVSYNC - Encerrar variavel temporaria"
+				"valor": "PDVSYNC - Criar variavel temporaria"
 			},
 			{
 				"nome": "IDINTEGRACAOCLASSEMETODO",
-				"valor": "FinalizaVariavelTemporaria"
+				"valor": "CriaVariavelTemporaria"
 			},
 			{
 				"nome": "ATIVO",
@@ -28,11 +29,11 @@
 			},
 			{
 				"nome": "IDDEPENDENTE",
-				"valor": "WTA - Buscar Filtro Produto Tributo"
+				"valor": ""
 			},
 			{
 				"nome": "DESCRICAO",
-				"valor": "Filtro Produto Tributo"
+				"valor": "Filtro Produto Reforma Tributaria"
 			}
 		]
 	}

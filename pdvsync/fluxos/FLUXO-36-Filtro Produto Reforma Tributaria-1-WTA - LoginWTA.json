@@ -12,16 +12,15 @@
 			},
 			{
 				"nome": "ORDEMEXECUCAO",
-				"valor": "4",
-				"valorAnterior": "3"
+				"valor": "1"
 			},
 			{
 				"nome": "IDROTASERVICO",
-				"valor": "PDVSYNC - Criar variavel temporaria"
+				"valor": "WTA - LoginWTA"
 			},
 			{
 				"nome": "IDINTEGRACAOCLASSEMETODO",
-				"valor": "CriaVariavelTemporaria"
+				"valor": "AutenticadorRefreshTokenApi"
 			},
 			{
 				"nome": "ATIVO",
@@ -33,7 +32,7 @@
 			},
 			{
 				"nome": "DESCRICAO",
-				"valor": "Filtro NCM Tributo"
+				"valor": "Filtro Produto Reforma Tributaria"
 			}
 		]
 	}

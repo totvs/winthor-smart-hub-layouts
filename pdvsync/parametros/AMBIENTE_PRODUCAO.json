@@ -236,16 +236,16 @@
       "rota": "PDVSYNC - Enviar Imposto Reforma"
     },
 	{
-      "nome": "{{URL_ENVIAR_FILTRO_NCM_TRIBUTO}}",
-      "valor": "https://pdvsync.varejo.totvs.com.br/api/retaguarda/v3/dadosdinamicos/down/102/1",
-      "descricao": "PDVSYNC - Enviar Filtro NCM Tributo",
-      "rota": "PDVSYNC - Enviar Filtro NCM Tributo"
+      "nome": "{{URL_ENVIAR_NCM_REFORMA_TRIBUTARIA}}",
+      "valor": "https://pdvsync.varejo.totvs.com.br/imposto/api/retaguarda/v3/dadosdinamicos/down/102/1",
+      "descricao": "PDVSYNC - Enviar NCM Reforma Tributaria",
+      "rota": "PDVSYNC - Enviar NCM Reforma Tributaria"
     },
 	{
-      "nome": "{{URL_ENVIAR_FILTRO_PRODUTO_TRIBUTO}}",
-      "valor": "https://pdvsync.varejo.totvs.com.br/api/retaguarda/v3/dadosdinamicos/down/103/1",
-      "descricao": "PDVSYNC - Enviar Filtro Produto Tributo",
-      "rota": "PDVSYNC - Enviar Filtro Produto Tributo"
+      "nome": "{{URL_ENVIAR_PRODUTO_REFORMA_TRIBUT}}",
+      "valor": "https://pdvsync.varejo.totvs.com.br/produto/api/retaguarda/v3/dadosdinamicos/down/103/1",
+      "descricao": "PDVSYNC - Enviar Produto Reforma Tribut",
+      "rota": "PDVSYNC - Enviar Produto Reforma Tribut"
     }
   ]
 }

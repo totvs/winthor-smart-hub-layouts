@@ -8,7 +8,7 @@
 			},
 			{
 				"nome": "ID",
-				"valor": "WTA - Buscar Filtro NCM Tributo"
+				"valor": "WTA - Buscar NCM Reforma Tributaria"
 			},
 			{
 				"nome": "IDEMPRESAAPI",
@@ -16,12 +16,12 @@
 			},
 			{
 				"nome": "SERVICO",
-				"valor": "WTA - Buscar Filtro NCM Tributo"
+				"valor": "WTA - Buscar NCM Reforma Tributaria"
 			},
 			{
 				"nome": "LAYOUTCOMUNICACAO",
 				"valor": {
-					"name": "WTA - Buscar Filtro NCM Tributo",
+					"name": "WTA - Buscar NCM Reforma Tributaria",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -88,8 +88,8 @@
 								"*": {
 									"tiposDetalheImpostoTmp": {
 										"*": {
-											"idExterno": "=concat('pdvsync-filtro-ncm-tributo-', @(3,codigoTributacao),'-',@(1,tipoImposto),'-',@(3,ncm),'-',@(3,dataUltimaAlteracao))",
-											"tipoIdInterno": "PDVSYNC-FILTRO-NCM-TRIBUTO",
+											"idExterno": "=concat('pdvsync-filtro-ncm-reformatributaria-', @(3,codigoTributacao),'-',@(1,tipoImposto),'-',@(3,ncm),'-',@(3,dataUltimaAlteracao))",
+											"tipoIdInterno": "PDVSYNC-FILTRO-NCM-REFORMATRIBUTARIA",
 											"idInterno": "=concat(@(3,codigoTributacao),'-',@(1,tipoImposto),'-',@(3,ncm))",
 											"idRetaguarda": "=concat(@(3,codigoTributacao),'-',@(1,tipoImposto),'-',@(3,ncm))",
 											"idRetaguardaImpostoFiscal": "=concat(@(3,codigoTributacao),'-',@(1,tipoImposto))",
@@ -133,6 +133,24 @@
 									"idExterno": "idExterno[]",
 									"idInterno": "idInterno[]",
 									"tipoIdInterno": "tipoIdInterno[]"
+								}
+							}
+						}
+					},
+					{
+						"operation": "shift",
+						"spec": {
+							"idExterno": "idExterno",
+							"idInterno": "idInterno",
+							"tipoIdInterno": "tipoIdInterno",
+							"items": {
+								"*": {
+									"idRetaguarda": "items[&1].idRetaguarda",
+									"idRetaguardaImpostoFiscal": "items[&1].idRetaguardaImpostoFiscal",
+									"idRetaguardaNcm": "items[&1].idRetaguardaNcm",
+									"idInquilino": "items[&1].idInquilino",
+									"idProprietario": "items[&1].idProprietario",
+									"loteOrigem": "items[&1].loteOrigem"
 								}
 							}
 						}
