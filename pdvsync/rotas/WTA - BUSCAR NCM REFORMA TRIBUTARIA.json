@@ -93,7 +93,7 @@
 											"idInterno": "=concat(@(3,codigoTributacao),'-',@(1,tipoImposto),'-',@(3,ncm))",
 											"idRetaguarda": "=concat(@(3,codigoTributacao),'-',@(1,tipoImposto),'-',@(3,ncm))",
 											"idRetaguardaImpostoFiscal": "=concat(@(3,codigoTributacao),'-',@(1,tipoImposto))",
-											"idRetaguardaNcm": "=concat('',@(3,ncm))"
+											"idRetaguardaNcm": "=concat('',@(3,ncm),'-',@(3,ncm),'.')"
 										}
 									}
 								}
