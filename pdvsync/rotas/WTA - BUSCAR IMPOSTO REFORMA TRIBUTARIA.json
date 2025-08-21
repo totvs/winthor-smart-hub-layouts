@@ -67,6 +67,20 @@
 				"nome": "LAYOUTTRANSFORMACAO",
 				"valor": [
 					{
+						"operation": "modify-overwrite-beta",
+						"spec": {
+							"items": {
+								"*": {
+									"impostos": {
+										"*": {
+											"defaultTmp": "=concat('', @(1,tipoDetalheImposto))"
+										}
+									}
+								}
+							}
+						}
+					},
+					{
 						"operation": "shift",
 						"spec": {
 							"items": {
@@ -90,7 +104,104 @@
 										"*": {
 											"tipoDetalheImposto": "items[&3].impostosTmp[&1].tipoImposto",
 											"percentualAliquota": "items[&3].impostosTmp[&1].percentualAliquota",
-											"percentualReducaoAliquota": "items[&3].impostosTmp[&1].percentualReducaoAliquota"
+											"percentualReducaoAliquota": "items[&3].impostosTmp[&1].percentualReducaoAliquota",
+											"defaultTmp": {
+												"IS": {
+													"#true": "items.[&5].impostosTmp[&3].default"
+												},
+												"*": {
+													"#false": "items.[&5].impostosTmp[&3].default"
+												}
+											}
+										}
+									},
+									"localConsumo": {
+										"BR": {
+											"#1058": "items.[&3].localConsumo"
+										},
+										"AC": {
+											"#12": "items.[&3].localConsumo"
+										},
+										"AL": {
+											"#27": "items.[&3].localConsumo"
+										},
+										"AM": {
+											"#13": "items.[&3].localConsumo"
+										},
+										"AP": {
+											"#16": "items.[&3].localConsumo"
+										},
+										"BA": {
+											"#29": "items.[&3].localConsumo"
+										},
+										"CE": {
+											"#23": "items.[&3].localConsumo"
+										},
+										"DF": {
+											"#53": "items.[&3].localConsumo"
+										},
+										"ES": {
+											"#32": "items.[&3].localConsumo"
+										},
+										"GO": {
+											"#52": "items.[&3].localConsumo"
+										},
+										"MA": {
+											"#21": "items.[&3].localConsumo"
+										},
+										"MG": {
+											"#31": "items.[&3].localConsumo"
+										},
+										"MS": {
+											"#50": "items.[&3].localConsumo"
+										},
+										"MT": {
+											"#51": "items.[&3].localConsumo"
+										},
+										"PA": {
+											"#15": "items.[&3].localConsumo"
+										},
+										"PB": {
+											"#25": "items.[&3].localConsumo"
+										},
+										"PE": {
+											"#26": "items.[&3].localConsumo"
+										},
+										"PI": {
+											"#22": "items.[&3].localConsumo"
+										},
+										"PR": {
+											"#41": "items.[&3].localConsumo"
+										},
+										"RJ": {
+											"#33": "items.[&3].localConsumo"
+										},
+										"RN": {
+											"#24": "items.[&3].localConsumo"
+										},
+										"RO": {
+											"#11": "items.[&3].localConsumo"
+										},
+										"RR": {
+											"#14": "items.[&3].localConsumo"
+										},
+										"RS": {
+											"#43": "items.[&3].localConsumo"
+										},
+										"SC": {
+											"#42": "items.[&3].localConsumo"
+										},
+										"SE": {
+											"#28": "items.[&3].localConsumo"
+										},
+										"SP": {
+											"#35": "items.[&3].localConsumo"
+										},
+										"TO": {
+											"#17": "items.[&3].localConsumo"
+										},
+										"*": {
+											"@(2,localConsumo)": "items.[&3].localConsumo"
 										}
 									}
 								}
@@ -113,7 +224,8 @@
 											"cclasstrib": "=concat('', @(3,cclasstrib))",
 											"situacao": "=concat('', @(3,situacao))",
 											"dataInicioVigencia": "=concat('', @(3,dataInicioVigencia))",
-											"dataFimVigencia": "=concat('', @(3,dataFimVigencia))"
+											"dataFimVigencia": "=concat('', @(3,dataFimVigencia))",
+											"localConsumo": "=concat('', @(3,localConsumo))"
 										}
 									}
 								}
