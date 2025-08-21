@@ -225,7 +225,8 @@
 											"situacao": "=concat('', @(3,situacao))",
 											"dataInicioVigencia": "=concat('', @(3,dataInicioVigencia))",
 											"dataFimVigencia": "=concat('', @(3,dataFimVigencia))",
-											"localConsumo": "=concat('', @(3,localConsumo))"
+											"localConsumo": "=concat('', @(3,localConsumo))",
+											"default": "=toBoolean"
 										}
 									}
 								}
