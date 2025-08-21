@@ -1,9 +1,9 @@
 {
   "ambiente": "PRODUCAO",
   "parametrosVariaveis": [
-    {
+     {
       "nome": "{{URL_ENVIAR_DADOS_PAGAMENTO}}",
-      "valor": "https://pdvsync.varejo.totvs.com.br/formapagto/api/retaguarda/v3/dadosdinamicos/down/16/1",
+      "valor": "https://pdvsync.varejo.totvs.com.br/formapagto/api/retaguarda/v3/dadocomplementarpagtos",
       "descricao": "PDV-SYNC Dados pagamento",
       "rota": "PDVSYNC - Dados pagamento"
     },
@@ -15,31 +15,31 @@
     },
     {
       "nome": "{{URL_ENVIAR_PERFIL}}",
-      "valor": "https://pdvsync.varejo.totvs.com.br/dadosbasicos/api/retaguarda/v3/dadosdinamicos/down/3/1",
+      "valor": "https://pdvsync.varejo.totvs.com.br/dadosbasicos/api/retaguarda/v3/perfis",
       "descricao": "PDV-SYNC Salvar Perfil",
       "rota": "PDVSYNC - Salvar Perfil"
     },
     {
       "nome": "{{URL_ENVIAR_NCM}}",
-      "valor": "https://pdvsync.varejo.totvs.com.br/imposto/api/retaguarda/v3/dadosdinamicos/down/8/1",
+      "valor": "https://pdvsync.varejo.totvs.com.br/imposto/api/retaguarda/v3/ncms",
       "descricao": "PDV-SYNC Salvar Imposto NCM",
       "rota": "PDVSYNC - Salvar Imposto NCM"
     },
     {
       "nome": "{{URL_ENVIAR_PIS_COFINS}}",
-      "valor": "https://pdvsync.varejo.totvs.com.br/imposto/api/retaguarda/v3/dadosdinamicos/down/9/1",
+      "valor": "https://pdvsync.varejo.totvs.com.br/imposto/api/retaguarda/v3/piscofins",
       "descricao": "PDV-SYNC - Enviar Pis/Cofins",
       "rota": "PDVSYNC - Enviar Pis Cofins"
     },
     {
       "nome": "{{URL_ENVIAR_USUARIO_OPERADOR}}",
-      "valor": "https://pdvsync.varejo.totvs.com.br/dadosbasicos/api/retaguarda/v3/dadosdinamicos/down/4/1",
+      "valor": "https://pdvsync.varejo.totvs.com.br/dadosbasicos/api/retaguarda/v3/usuarios",
       "descricao": "PDV-SYNC Salvar Usuario Operador",
       "rota": "PDVSYNC - Salvar Usuario Operador"
     },
     {
       "nome": "{{URL_ENVIAR_ICMS}}",
-      "valor": "https://pdvsync.varejo.totvs.com.br/imposto/api/retaguarda/v3/dadosdinamicos/down/7/1",
+      "valor": "https://pdvsync.varejo.totvs.com.br/imposto/api/retaguarda/v3/impostos",
       "descricao": "PDV-SYNC - Enviar ICMS",
       "rota": "PDVSYNC - Enviar ICMS"
     },
@@ -93,7 +93,7 @@
     },
     {
       "nome": "{{URL_ENVIAR_COMPARTILHAMENTO}}",
-      "valor": "https://pdvsync.varejo.totvs.com.br/dadosbasicos/api/retaguarda/v3/dadosdinamicos/down/6/1",
+      "valor": "https://pdvsync.varejo.totvs.com.br/dadosbasicos/api/retaguarda/v3/compartilhamentos",
       "descricao": "PDV-SYNC - Enviar compartilhamentos",
       "rota": "PDVSYNC - Enviar compartilhamentos"
     },
@@ -105,31 +105,31 @@
     },
     {
       "nome": "{{URL_ENVIAR_PRECO_PRODUTOS}}",
-      "valor": "https://pdvsync.varejo.totvs.com.br/preco/api/retaguarda/v3/dadosdinamicos/down/13/1",
+      "valor": "https://pdvsync.varejo.totvs.com.br/preco/api/retaguarda/v3/precos",
       "descricao": "PDV-SYNC Enviar Preco Produto",
       "rota": "PDVSYNC - Enviar Preco Produto"
     },
     {
       "nome": "{{URL_ENVIAR_CLIENTE}}",
-      "valor": "https://pdvsync.varejo.totvs.com.br/cliente/api/retaguarda/v3/dadosdinamicos/down/0/1",
+      "valor": "https://pdvsync.varejo.totvs.com.br/cliente/api/retaguarda/v3/clientes",
       "descricao": "PDV - SYN - Clientes",
       "rota": "PDVSYNC - Salvar Clientes"
     },
     {
       "nome": "{{URL_ENVIAR_ESTOQUE_DISPONIVEL}}",
-      "valor": "https://pdvsync.varejo.totvs.com.br/estoque/api/retaguarda/v3/dadosdinamicos/down/14/2",
+      "valor": "https://pdvsync.varejo.totvs.com.br/estoque/api/retaguarda/v3/estoques",
       "descricao": "PDV-SYNC Enviar Estoque",
       "rota": "PDVSYNC - Enviar Estoque Disponivel"
     },
     {
       "nome": "{{URL_ENVIAR_OPERADORA}}",
-      "valor": "https://pdvsync.varejo.totvs.com.br/formapagto/api/retaguarda/v3/dadosdinamicos/down/15/1",
+      "valor": "https://pdvsync.varejo.totvs.com.br/formapagto/api/retaguarda/v3/operadoras",
       "descricao": "PDV-SYNC Salvar Operadora",
       "rota": "PDVSYNC - Salvar Operadora"
     },
     {
       "nome": "{{URL_ENVIAR_CONDICAO_PGMT}}",
-      "valor": "https://pdvsync.varejo.totvs.com.br/formapagto/api/retaguarda/v3/dadosdinamicos/down/17/1",
+      "valor": "https://pdvsync.varejo.totvs.com.br/formapagto/api/retaguarda/v3/condicaopagtos",
       "descricao": "PDV-SYNC Enviar planos de pgmt",
       "rota": "PDVSYNC - Enviar planos de pgto"
     },
@@ -177,7 +177,7 @@
     },
     {
       "nome": "{{URL_ENVIAR_LOJAS}}",
-      "valor": "https://pdvsync.varejo.totvs.com.br/dadosbasicos/api/retaguarda/v3/dadosdinamicos/down/1/1",
+      "valor": "https://pdvsync.varejo.totvs.com.br/dadosbasicos/api/retaguarda/v3/lojas",
       "descricao": "PDVSYNC - Enviar lojas",
       "rota": "PDVSYNC - Enviar lojas"
     },
@@ -189,7 +189,7 @@
     },
     {
       "nome": "{{URL_ENVIAR_PROFISSIONAL}}",
-      "valor": "https://pdvsync.varejo.totvs.com.br/dadosbasicos/api/retaguarda/v3/dadosdinamicos/down/4/1",
+      "valor": "https://pdvsync.varejo.totvs.com.br/comercial/api/retaguarda/v3/usuarios",
       "descricao": "PDV-SYNC Salvar Profissional",
       "rota": "PDV-SYNC Salvar Profissional"
     },
@@ -219,13 +219,13 @@
     },
     {
       "nome": "{{URL_ENVIAR_PRECO_REGIAO}}",
-      "valor": "https://pdvsync.varejo.totvs.com.br/preco/api/retaguarda/v3/dadosdinamicos/down/13/1",
+      "valor": "https://pdvsync.varejo.totvs.com.br/preco/api/retaguarda/v3/precos",
       "descricao": "PDV-SYNC Enviar Preco Regiao",
       "rota": "PDVSYNC - Enviar Preco Regiao"
     },
     {
       "nome": "{{URL_ENVIAR_PRECO_EMBALAGEM}}",
-      "valor": "https://pdvsync.varejo.totvs.com.br/preco/api/retaguarda/v3/dadosdinamicos/down/13/1",
+      "valor": "https://pdvsync.varejo.totvs.com.br/preco/api/retaguarda/v3/precos",
       "descricao": "PDV-SYNC Enviar Preco Embalagem",
       "rota": "PDVSYNC - Enviar Preco Embalagem"
     },
