@@ -1,7 +1,7 @@
 {
   "ambiente": "PRODUCAO",
   "parametrosVariaveis": [
-    {
+     {
       "nome": "{{URL_ENVIAR_DADOS_PAGAMENTO}}",
       "valor": "https://pdvsync.varejo.totvs.com.br/formapagto/api/retaguarda/v3/dadocomplementarpagtos",
       "descricao": "PDV-SYNC Dados pagamento",
@@ -153,7 +153,7 @@
     },
     {
       "nome": "{{URL_ENVIAR_GRUPO_CAMPANHA_CLIENTE}}",
-      "valor": "https://pdvsync-core-cliente-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/dadosdinamicos/down/21/1",
+      "valor": "https://pdvsync.varejo.totvs.com.br/cliente/api/retaguarda/v3/dadosdinamicos/down/21/1",
       "descricao": "PDVSYNC - Salvar Grupo Campanha Cliente",
       "rota": "PDVSYNC - Salvar Grupo Campanha Cliente"
     },
@@ -171,7 +171,7 @@
     },
     {
       "nome": "{{URL_ENVIAR_RAMO_ATIVIDADE}}",
-      "valor": "https://pdvsync.varejo.totvs.com.br/api/retaguarda/v3/dadosdinamicos/down/58/1",
+      "valor": "https://pdvsync.varejo.totvs.com.br/dadosbasicos/api/retaguarda/v3/dadosdinamicos/down/58/1",
       "descricao": "PDVSYNC - Salvar Ramo Atividade",
       "rota": "PDVSYNC - Salvar Ramo Atividade"
     },
@@ -201,7 +201,7 @@
     },
     {
       "nome": "{{URL_ENVIAR_REGIAO}}",
-      "valor": "https://pdvsync.varejo.totvs.com.br/api/retaguarda/v3/dadosdinamicos/down/100/1",
+      "valor": "https://pdvsync.varejo.totvs.com.br/dadosbasicos/api/retaguarda/v3/dadosdinamicos/down/100/1",
       "descricao": "PDV-SYNC - SALVAR REGIAO",
       "rota": "PDVSYNC - SALVAR REGIAO"
     },
@@ -229,7 +229,19 @@
       "descricao": "PDV-SYNC Enviar Preco Embalagem",
       "rota": "PDVSYNC - Enviar Preco Embalagem"
     },
-	{
+    {
+      "nome": "{{URL_ENVIAR_DESCONTO_ACRESCIMO}}",
+      "valor": "https://pdvsync.varejo.totvs.com.br/preco/api/retaguarda/v3/dadosdinamicos/down/59/1",
+      "descricao": "PDV-SYNC Enviar Desconto Acrescimo",
+      "rota": "PDVSYNC - Enviar Desconto e Acrescimo"
+    },
+    {
+      "nome": "{{URL_ENVIAR_PRECO_FIXO}}",
+      "valor": "https://pdvsync.varejo.totvs.com.br/preco/api/retaguarda/v3/dadosdinamicos/down/28/1",
+      "descricao": "PDV-SYNC Enviar Preco Fixo",
+      "rota": "PDVSYNC - Enviar Preco Fixo"
+    },
+    {
       "nome": "{{URL_ENVIAR_IMPOSTO_RT}}",
       "valor": "https://pdvsync.varejo.totvs.com.br/api/retaguarda/v3/dadosdinamicos/down/101/1",
       "descricao": "PDV-SYNC Enviar Impostos Reforma",
