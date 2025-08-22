@@ -33,7 +33,7 @@
 		},
 		{
 			"nome": "{{URL_ENVIAR_PIS_COFINS}}",
-			"valor": "https://pdvsync-core-imposto-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/PisCofins",
+			"valor": "https://pdvsync-core-imposto-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/piscofins",
 			"descricao": "PDV-SYNC - Enviar Pis/Cofins",
 			"rota": "PDVSYNC - Enviar Pis Cofins"
 		},
@@ -51,7 +51,7 @@
 		},
 		{
 			"nome": "{{URL_ENVIAR_ICMS}}",
-			"valor": "https://pdvsync-core-imposto-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/Impostos",
+			"valor": "https://pdvsync-core-imposto-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/impostos",
 			"descricao": "PDV-SYNC - Enviar ICMS",
 			"rota": "PDVSYNC - Enviar ICMS"
 		},
@@ -63,7 +63,7 @@
 		},
 		{
 			"nome": "{{URL_ENVIAR_OPERADORA}}",
-			"valor": "https://pdvsync-core-formapagto-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/Operadoras",
+			"valor": "https://pdvsync-core-formapagto-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/operadoras",
 			"descricao": "PDV-SYNC Salvar Operadora",
 			"rota": "PDVSYNC - Salvar Operadora"
 		},
@@ -105,7 +105,7 @@
 		},
 		{
 			"nome": "{{URL_ENVIAR_FORMAS_PGMT}}",
-			"valor": "https://pdvsync-core-formapagto-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/FormaPagtos",
+			"valor": "https://pdvsync-core-formapagto-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/formapagtos",
 			"descricao": "PDV-SYNC Enviar formas de pgmt",
 			"rota": "PDVSYNC - Enviar formas de pgto"
 		},

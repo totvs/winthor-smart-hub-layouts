@@ -27,7 +27,7 @@
     },
     {
       "nome": "{{URL_ENVIAR_PIS_COFINS}}",
-      "valor": "https://pdvsync.varejo.totvs.com.br/imposto/api/retaguarda/v3/PisCofins",
+      "valor": "https://pdvsync.varejo.totvs.com.br/imposto/api/retaguarda/v3/piscofins",
       "descricao": "PDV-SYNC - Enviar Pis/Cofins",
       "rota": "PDVSYNC - Enviar Pis Cofins"
     },
@@ -39,7 +39,7 @@
     },
     {
       "nome": "{{URL_ENVIAR_ICMS}}",
-      "valor": "https://pdvsync.varejo.totvs.com.br/imposto/api/retaguarda/v3/Impostos",
+      "valor": "https://pdvsync.varejo.totvs.com.br/imposto/api/retaguarda/v3/impostos",
       "descricao": "PDV-SYNC - Enviar ICMS",
       "rota": "PDVSYNC - Enviar ICMS"
     },
@@ -123,7 +123,7 @@
     },
     {
       "nome": "{{URL_ENVIAR_OPERADORA}}",
-      "valor": "https://pdvsync.varejo.totvs.com.br/formapagto/api/retaguarda/v3/Operadoras",
+      "valor": "https://pdvsync.varejo.totvs.com.br/formapagto/api/retaguarda/v3/operadoras",
       "descricao": "PDV-SYNC Salvar Operadora",
       "rota": "PDVSYNC - Salvar Operadora"
     },
@@ -135,7 +135,7 @@
     },
     {
       "nome": "{{URL_ENVIAR_FORMAS_PGMT}}",
-      "valor": "https://pdvsync.varejo.totvs.com.br/formapagto/api/retaguarda/v3/FormaPagtos",
+      "valor": "https://pdvsync.varejo.totvs.com.br/formapagto/api/retaguarda/v3/formapagtos",
       "descricao": "PDV-SYNC Enviar formas de pgmt",
       "rota": "PDVSYNC - Enviar formas de pgto"
     },
