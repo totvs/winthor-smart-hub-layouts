@@ -107,10 +107,10 @@
 											"percentualReducaoAliquota": "items[&3].impostosTmp[&1].percentualReducaoAliquota",
 											"defaultTmp": {
 												"IS": {
-													"#true": "items.[&5].impostosTmp[&3].default"
+													"#false": "items.[&5].impostosTmp[&3].default"
 												},
 												"*": {
-													"#false": "items.[&5].impostosTmp[&3].default"
+													"#true": "items.[&5].impostosTmp[&3].default"
 												}
 											}
 										}
