@@ -75,6 +75,14 @@
 									"codigoProduto": "items[&1].codigoProduto",
 									"embalagem": "items[&1].embalagem",
 									"dataUltimaAlteracao": "items[&1].dataUltimaAlteracao",
+									"ativo": {
+										"true": {
+											"#1": "items.[&3].situacao"
+										},
+										"*": {
+											"#0": "items.[&3].situacao"
+										}
+									},
 									"tiposDetalheImposto": {
 										"*": "items[&2].tiposDetalheImpostoTmp[].tipoImposto"
 									}
@@ -94,7 +102,8 @@
 											"idInterno": "=concat(@(3,codigoTributacao),'-',@(1,tipoImposto),'-',@(3,embalagem),'-',@(3,codigoProduto))",
 											"idRetaguarda": "=concat(@(3,codigoTributacao),'-',@(1,tipoImposto),'-',@(3,embalagem),'-',@(3,codigoProduto))",
 											"idRetaguardaImpostoFiscal": "=concat(@(3,codigoTributacao),'-',@(1,tipoImposto))",
-											"idRetaguardaProduto": "=concat(@(3,embalagem),'-',@(3,codigoProduto))"
+											"idRetaguardaProduto": "=concat(@(3,embalagem),'-',@(3,codigoProduto))",
+											"situacao": "=concat('',@(3,situacao))"
 										}
 									}
 								}
@@ -120,7 +129,8 @@
 								"*": {
 									"idInquilino": "{{ID_INQUILINO}}",
 									"idProprietario": "{{MASTER_ID_PROPRIETARIO}}",
-									"loteOrigem": "{{LOTE_ORIGEM}}"
+									"loteOrigem": "{{LOTE_ORIGEM}}",
+									"situacao": "=toInteger"
 								}
 							}
 						}
@@ -151,7 +161,8 @@
 									"idRetaguardaProduto": "items[&1].idRetaguardaProduto",
 									"idInquilino": "items[&1].idInquilino",
 									"idProprietario": "items[&1].idProprietario",
-									"loteOrigem": "items[&1].loteOrigem"
+									"loteOrigem": "items[&1].loteOrigem",
+									"situacao": "items[&1].situacao"
 								}
 							}
 						}
