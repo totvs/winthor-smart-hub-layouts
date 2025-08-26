@@ -246,6 +246,18 @@
 			"valor": "https://pdvsync-core-imposto-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/dadosdinamicos/down/101/1",
 			"descricao": "PDV-SYNC Enviar Impostos Reforma",
 			"rota": "PDVSYNC - Enviar Imposto Reforma"
+		},
+		{
+			"nome": "{{URL_ENVIAR_NCM_REFORMA_TRIBUTARIA}}",
+			"valor": "https://pdvsync-core-imposto-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/dadosdinamicos/down/102/1",
+			"descricao": "PDVSYNC - Enviar NCM Reforma Tributaria",
+			"rota": "PDVSYNC - Enviar NCM Reforma Tributaria"
+		},
+		{
+			"nome": "{{URL_ENVIAR_NCM_REFORMA_TRIBUTARIA}}",
+			"valor": "https://pdvsync-core-produto-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/dadosdinamicos/down/103/1",
+			"descricao": "PDVSYNC - Enviar Produto Reforma Tribut",
+			"rota": "PDVSYNC - Enviar Produto Reforma Tribut"
 		}
 	]
 }
