@@ -73,7 +73,7 @@
 								"*": {
 									"impostos": {
 										"*": {
-											"defaultTmp": "=concat('', @(1,tipoDetalheImposto))"
+											"padraoTmp": "=concat('', @(1,tipoDetalheImposto))"
 										}
 									}
 								}
@@ -105,12 +105,12 @@
 											"tipoDetalheImposto": "items[&3].impostosTmp[&1].tipoImposto",
 											"percentualAliquota": "items[&3].impostosTmp[&1].percentualAliquota",
 											"percentualReducaoAliquota": "items[&3].impostosTmp[&1].percentualReducaoAliquota",
-											"defaultTmp": {
+											"padraoTmp": {
 												"IS": {
-													"#false": "items.[&5].impostosTmp[&3].default"
+													"#false": "items.[&5].impostosTmp[&3].padrao"
 												},
 												"*": {
-													"#true": "items.[&5].impostosTmp[&3].default"
+													"#true": "items.[&5].impostosTmp[&3].padrao"
 												}
 											}
 										}
@@ -226,7 +226,7 @@
 											"dataInicioVigencia": "=concat('', @(3,dataInicioVigencia))",
 											"dataFimVigencia": "=concat('', @(3,dataFimVigencia))",
 											"localConsumo": "=concat('', @(3,localConsumo))",
-											"default": "=toBoolean"
+											"padrao": "=toBoolean"
 										}
 									}
 								}
