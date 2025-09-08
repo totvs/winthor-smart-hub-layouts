@@ -90,7 +90,7 @@
 					"spec": {
 					  "items": {
 						"*": {
-						  "idExterno": "=concat('wta-get-venda-integracao-', @(1,idInterno))"
+						  "idExterno": "=concat('wta-get-venda-integracao-', @(1,idInterno),'-',@(1,id))"
 						}
 					  }
 					}

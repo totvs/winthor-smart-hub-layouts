@@ -88,8 +88,8 @@
 					"spec": {
 						"items": {
 							"*": {
-								"idExternoIcms": "=concat('pdvsync-icms-', @(1,id),'-', @(1,dataUltimaAlteracao))",
-								"idExternoSt": "=concat('pdvsync-st-', @(1,id),'-', @(1,dataUltimaAlteracao))",
+								"idExternoIcms": "=concat('pdvsync-icms-', @(1,id),'-', @(1,idProprietario),'-', @(1,dataUltimaAlteracao))",
+								"idExternoSt": "=concat('pdvsync-st-', @(1,id),'-', @(1,idProprietario),'-', @(1,dataUltimaAlteracao))",
 								"idRetaguardaIcms": "=concat(@(1,id),'-ICMS')",
 								"idRetaguardaSt": "=concat(@(1,id),'-ST')",
 								"idInternoIcms": "=concat(@(1,id),'-ICMS')",
