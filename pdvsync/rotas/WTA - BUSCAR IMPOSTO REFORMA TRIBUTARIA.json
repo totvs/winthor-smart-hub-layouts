@@ -67,20 +67,6 @@
 				"nome": "LAYOUTTRANSFORMACAO",
 				"valor": [
 					{
-						"operation": "modify-overwrite-beta",
-						"spec": {
-							"items": {
-								"*": {
-									"impostos": {
-										"*": {
-											"padraoTmp": "=concat('', @(1,tipoDetalheImposto))"
-										}
-									}
-								}
-							}
-						}
-					},
-					{
 						"operation": "shift",
 						"spec": {
 							"items": {
@@ -97,6 +83,7 @@
 											"#0": "items.[&3].situacao"
 										}
 									},
+									"padrao": "items.[&1].padrao",
 									"dataInicioVigencia": "items.[&1].dataInicioVigencia",
 									"dataFimVigencia": "items.[&1].dataFimVigencia",
 									"dataUltimaAlteracao": "items.[&1].dataUltimaAlteracao",
@@ -104,15 +91,7 @@
 										"*": {
 											"tipoDetalheImposto": "items[&3].impostosTmp[&1].tipoImposto",
 											"percentualAliquota": "items[&3].impostosTmp[&1].percentualAliquota",
-											"percentualReducaoAliquota": "items[&3].impostosTmp[&1].percentualReducaoAliquota",
-											"padraoTmp": {
-												"IS": {
-													"#false": "items.[&5].impostosTmp[&3].padrao"
-												},
-												"*": {
-													"#true": "items.[&5].impostosTmp[&3].padrao"
-												}
-											}
+											"percentualReducaoAliquota": "items[&3].impostosTmp[&1].percentualReducaoAliquota"
 										}
 									},
 									"localConsumo": {
@@ -223,10 +202,10 @@
 											"descricaoCst": "=concat('', @(3,descricaoCst))",
 											"cclasstrib": "=concat('', @(3,cclasstrib))",
 											"situacao": "=concat('', @(3,situacao))",
+											"padrao": "@(3,padrao)",
 											"dataInicioVigencia": "=concat('', @(3,dataInicioVigencia))",
 											"dataFimVigencia": "=concat('', @(3,dataFimVigencia))",
-											"localConsumo": "=concat('', @(3,localConsumo))",
-											"padrao": "=toBoolean"
+											"localConsumo": "=concat('', @(3,localConsumo))"
 										}
 									}
 								}
