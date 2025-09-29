@@ -1,7 +1,7 @@
 {
   "ambiente": "PRODUCAO",
   "parametrosVariaveis": [
-     {
+    {
       "nome": "{{URL_ENVIAR_DADOS_PAGAMENTO}}",
       "valor": "https://pdvsync.varejo.totvs.com.br/formapagto/api/retaguarda/v3/dadocomplementarpagtos",
       "descricao": "PDV-SYNC Dados pagamento",
@@ -45,7 +45,7 @@
     },
     {
       "nome": "{{URL_ENVIAR_PRODUTO}}",
-      "valor": "https://pdvsync.varejo.totvs.com.br/produto/api/retaguarda/v3/dadosdinamicos/down/12/1",
+      "valor": "https://pdvsync.varejo.totvs.com.br/produto/api/retaguarda/v3/produtos",
       "descricao": "PDV-SYNC Salvar Produto",
       "rota": "PDVSYNC - Salvar Produto"
     },
@@ -135,7 +135,7 @@
     },
     {
       "nome": "{{URL_ENVIAR_FORMAS_PGMT}}",
-      "valor": "https://pdvsync.varejo.totvs.com.br/formapagto/api/retaguarda/v3/dadosdinamicos/down/18/2",
+      "valor": "https://pdvsync.varejo.totvs.com.br/formapagto/api/retaguarda/v3/formapagtos",
       "descricao": "PDV-SYNC Enviar formas de pgmt",
       "rota": "PDVSYNC - Enviar formas de pgto"
     },
@@ -189,13 +189,13 @@
     },
     {
       "nome": "{{URL_ENVIAR_PROFISSIONAL}}",
-      "valor": "https://pdvsync.varejo.totvs.com.br/comercial/api/retaguarda/v3/usuarios",
+      "valor": "https://pdvsync.varejo.totvs.com.br/dadosbasicos/api/retaguarda/v3/usuarios",
       "descricao": "PDV-SYNC Salvar Profissional",
       "rota": "PDV-SYNC Salvar Profissional"
     },
     {
       "nome": "{{BASE_URL_STATUS_LOTE}}",
-      "valor": "https://pdvsync.varejo.totvs.com.br/comercial/api/retaguarda/v3/LojaLoteStatusretorno",
+      "valor": "https://pdvsync.varejo.totvs.com.br/controle/api/retaguarda/v3/LojaLoteStatusretorno",
       "descricao": "PDV-SYNC Consultar Status Lote",
       "rota": "PDVSYNC - Consultar Status Lote"
     },
@@ -228,6 +228,19 @@
       "valor": "https://pdvsync.varejo.totvs.com.br/preco/api/retaguarda/v3/precos",
       "descricao": "PDV-SYNC Enviar Preco Embalagem",
       "rota": "PDVSYNC - Enviar Preco Embalagem"
+    },
+    {
+      "nome": "{{URL_ENVIAR_DESCONTO_ACRESCIMO}}",
+      "valor": "https://pdvsync.varejo.totvs.com.br/preco/api/retaguarda/v3/dadosdinamicos/down/59/1",
+      "descricao": "PDV-SYNC Enviar Desconto Acrescimo",
+      "rota": "PDVSYNC - Enviar Desconto e Acrescimo"
+    },
+    {
+			"nome": "{{URL_ENVIAR_PRECO_FIXO}}",
+			"valor": "https://pdvsync.varejo.totvs.com.br/preco/api/retaguarda/v3/dadosdinamicos/down/28/1",
+			"descricao": "PDV-SYNC Enviar Preco Fixo",
+			"rota": "PDVSYNC - Enviar Preco Fixo"
+		}
     },
     {
       "nome": "{{URL_ENVIAR_DESCONTO_ACRESCIMO}}",
