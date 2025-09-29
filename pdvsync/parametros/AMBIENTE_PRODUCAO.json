@@ -230,17 +230,16 @@
       "rota": "PDVSYNC - Enviar Preco Embalagem"
     },
     {
+      "nome": "{{URL_ENVIAR_PRECO_FIXO}}",
+      "valor": "https://pdvsync.varejo.totvs.com.br/preco/api/retaguarda/v3/dadosdinamicos/down/28/1",
+      "descricao": "PDV-SYNC Enviar Preco Fixo",
+      "rota": "PDVSYNC - Enviar Preco Fixo"
+    },
+    {
       "nome": "{{URL_ENVIAR_DESCONTO_ACRESCIMO}}",
       "valor": "https://pdvsync.varejo.totvs.com.br/preco/api/retaguarda/v3/dadosdinamicos/down/59/1",
       "descricao": "PDV-SYNC Enviar Desconto Acrescimo",
       "rota": "PDVSYNC - Enviar Desconto e Acrescimo"
-    },
-    {
-			"nome": "{{URL_ENVIAR_PRECO_FIXO}}",
-			"valor": "https://pdvsync.varejo.totvs.com.br/preco/api/retaguarda/v3/dadosdinamicos/down/28/1",
-			"descricao": "PDV-SYNC Enviar Preco Fixo",
-			"rota": "PDVSYNC - Enviar Preco Fixo"
-		}
     },
     {
       "nome": "{{URL_ENVIAR_DESCONTO_ACRESCIMO}}",
