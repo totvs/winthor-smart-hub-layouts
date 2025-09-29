@@ -66,6 +66,10 @@
 									"value": "{{TIPOMERCADORIA}}"
 								},
 								{
+									"key": "callOrigin",
+									"value": "{{CALLORIGIN}}"
+								},
+								{
 									"key": "order",
 									"value": "lastChange"
 								}
