@@ -1,0 +1,356 @@
+{
+  "tabela": {
+    "nome": "PCINTEGRACAOROTASERVICO",
+    "campos": [
+      {
+        "nome": "ID",
+        "valor": "WTA-BUSCAR_PRODUTOS_REST"
+      },
+      {
+        "nome": "IDEMPRESAAPI",
+        "valor": "TRE-WTA"
+      },
+      {
+        "nome": "SERVICO",
+        "valor": "WTA-BUSCAR_PRODUTOS_REST"
+      },
+      {
+        "nome": "LAYOUTCOMUNICACAO",
+        "valor": {
+          "name": "WTA-BUSCAR_PRODUTOS_REST",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{TOKEN}}"
+              }
+            ],
+            "url": {
+              "raw": "{{URL_BASE}}/logistica/apis/v1/produto/buscar",
+              "query": [
+                {
+                  "key": "page",
+                  "value": "{{PAGE}}"
+                },
+                {
+                  "key": "pageSize",
+                  "value": "{{PAGE_SIZE}}"
+                },
+                {
+                  "key": "dataUltimaAlteracao",
+                  "value": "{{LAST_CHANGE}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      },
+      {
+        "nome": "LAYOUTTRANSFORMACAO",
+        "valor": [
+          {
+            "operation": "shift",
+            "spec": {
+              "items": {
+                "*": {
+                  "codigoFilial": [
+                    "temp[\u00261].venda.codigoFilial",
+                    "temp[\u00261].master.codigoFilial"
+                  ],
+                  "codigoProduto": [
+                    "temp[\u00261].venda.codigoProduto",
+                    "temp[\u00261].master.codigoProduto"
+                  ],
+                  "dataUltimaAlteracao": [
+                    "temp[\u00261].venda.dataUltimaAlteracao",
+                    "temp[\u00261].master.dataUltimaAlteracao"
+                  ],
+                  "idCategoriaExterno": [
+                    "temp[\u00261].venda.idCategoriaExterno",
+                    "temp[\u00261].master.idCategoriaExterno"
+                  ],
+                  "descricao": [
+                    "temp[\u00261].venda.descricaoProduto",
+                    "temp[\u00261].master.descricaoProduto"
+                  ],
+                  "unidadeVenda": {
+                    "codigoBarras": "temp[\u00262].venda.codigoBarras",
+                    "descricao": "temp[\u00262].venda.descricaoUnidade",
+                    "unidadeMedida": {
+                      "Caixa": {
+                        "#0": "temp[\u00264].venda.unidade"
+                      },
+                      "Cartela": {
+                        "#0": "temp[\u00264].venda.unidade"
+                      },
+                      "Display": {
+                        "#0": "temp[\u00264].venda.unidade"
+                      },
+                      "Fardo": {
+                        "#0": "temp[\u00264].venda.unidade"
+                      },
+                      "Pacote": {
+                        "#0": "temp[\u00264].venda.unidade"
+                      },
+                      "Kit": {
+                        "#0": "temp[\u00264].venda.unidade"
+                      },
+                      "Conjunto": {
+                        "#0": "temp[\u00264].venda.unidade"
+                      },
+                      "Cento": {
+                        "#0": "temp[\u00264].venda.unidade"
+                      },
+                      "Rolo": {
+                        "#2": "temp[\u00264].venda.unidade"
+                      },
+                      "Garrafa": {
+                        "#3": "temp[\u00264].venda.unidade"
+                      },
+                      "Galao": {
+                        "#3": "temp[\u00264].venda.unidade"
+                      },
+                      "Litro": {
+                        "#3": "temp[\u00264].venda.unidade"
+                      },
+                      "Mililitros": {
+                        "#3": "temp[\u00264].venda.unidade"
+                      },
+                      "Barril": {
+                        "#3": "temp[\u00264].venda.unidade"
+                      },
+                      "Vidro": {
+                        "#3": "temp[\u00264].venda.unidade"
+                      },
+                      "Balde": {
+                        "#4": "temp[\u00264].venda.unidade"
+                      },
+                      "Barra": {
+                        "#4": "temp[\u00264].venda.unidade"
+                      },
+                      "Lata": {
+                        "#4": "temp[\u00264].venda.unidade"
+                      },
+                      "Metro": {
+                        "#4": "temp[\u00264].venda.unidade"
+                      },
+                      "Milheiro": {
+                        "#4": "temp[\u00264].venda.unidade"
+                      },
+                      "Pe�a": {
+                        "#4": "temp[\u00264].venda.unidade"
+                      },
+                      "Quilo": {
+                        "#4": "temp[\u00264].venda.unidade"
+                      },
+                      "Sach�": {
+                        "#4": "temp[\u00264].venda.unidade"
+                      },
+                      "Saco": {
+                        "#4": "temp[\u00264].venda.unidade"
+                      },
+                      "Tablete": {
+                        "#4": "temp[\u00264].venda.unidade"
+                      },
+                      "Unidade": {
+                        "#4": "temp[\u00264].venda.unidade"
+                      }
+                    }
+                  },
+                  "unidadeMaster": {
+                    "codigoBarras": "temp[\u00262].master.codigoBarras",
+                    "descricao": "temp[\u00262].master.descricaoUnidade",
+                    "unidadeMedida": {
+                      "Caixa": {
+                        "#0": "temp[\u00264].master.unidade"
+                      },
+                      "Cartela": {
+                        "#0": "temp[\u00264].master.unidade"
+                      },
+                      "Display": {
+                        "#0": "temp[\u00264].master.unidade"
+                      },
+                      "Fardo": {
+                        "#0": "temp[\u00264].master.unidade"
+                      },
+                      "Pacote": {
+                        "#0": "temp[\u00264].master.unidade"
+                      },
+                      "Kit": {
+                        "#0": "temp[\u00264].master.unidade"
+                      },
+                      "Conjunto": {
+                        "#0": "temp[\u00264].master.unidade"
+                      },
+                      "Cento": {
+                        "#0": "temp[\u00264].master.unidade"
+                      },
+                      "Rolo": {
+                        "#2": "temp[\u00264].master.unidade"
+                      },
+                      "Garrafa": {
+                        "#3": "temp[\u00264].master.unidade"
+                      },
+                      "Galao": {
+                        "#3": "temp[\u00264].master.unidade"
+                      },
+                      "Litro": {
+                        "#3": "temp[\u00264].master.unidade"
+                      },
+                      "Mililitros": {
+                        "#3": "temp[\u00264].master.unidade"
+                      },
+                      "Barril": {
+                        "#3": "temp[\u00264].master.unidade"
+                      },
+                      "Vidro": {
+                        "#3": "temp[\u00264].master.unidade"
+                      },
+                      "Balde": {
+                        "#4": "temp[\u00264].master.unidade"
+                      },
+                      "Barra": {
+                        "#4": "temp[\u00264].master.unidade"
+                      },
+                      "Lata": {
+                        "#4": "temp[\u00264].master.unidade"
+                      },
+                      "Metro": {
+                        "#4": "temp[\u00264].master.unidade"
+                      },
+                      "Milheiro": {
+                        "#4": "temp[\u00264].master.unidade"
+                      },
+                      "Pe�a": {
+                        "#4": "temp[\u00264].master.unidade"
+                      },
+                      "Quilo": {
+                        "#4": "temp[\u00264].master.unidade"
+                      },
+                      "Sach�": {
+                        "#4": "temp[\u00264].master.unidade"
+                      },
+                      "Saco": {
+                        "#4": "temp[\u00264].master.unidade"
+                      },
+                      "Tablete": {
+                        "#4": "temp[\u00264].master.unidade"
+                      },
+                      "Unidade": {
+                        "#4": "temp[\u00264].master.unidade"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          {
+            "operation": "shift",
+            "spec": {
+              "temp": {
+                "*": {
+                  "*": "valores[]"
+                }
+              }
+            }
+          },
+          {
+            "operation": "modify-overwrite-beta",
+            "spec": {
+              "valores": {
+                "*": {
+                  "idExterno": "\u003dconcat(\u0027SOAP-TRE-PRODUTO\u0027,@(1,codigoProduto),\u0027-\u0027,@(1,dataUltimaAlteracao), \u0027-\u0027,@(1,codigoBarras))",
+                  "idInterno": "\u003dconcat(\u0027\u0027, @(1,codigoProduto))",
+                  "tipoIdInterno": "TRE-PRODUTO"
+                }
+              }
+            }
+          },
+          {
+            "operation": "shift",
+            "spec": {
+              "valores": {
+                "*": {
+                  "idExterno": "idExterno[]",
+                  "idInterno": "idInterno",
+                  "tipoIdInterno": "tipoIdInterno",
+                  "codigoFilial": "data.[\u00261].soapenv:Body.tns:createProducts.tns:product.tns:products.tns:product.tns:shipperId",
+                  "idCategoriaExterno": "data.[\u00261].soapenv:Body.tns:createProducts.tns:product.tns:products.tns:product.tns:productCategoryId",
+                  "codigoBarras": "data.[\u00261].soapenv:Body.tns:createProducts.tns:product.tns:products.tns:product.tns:identifier",
+                  "descricaoUnidade": "data.[\u00261].soapenv:Body.tns:createProducts.tns:product.tns:products.tns:product.tns:description",
+                  "descricaoProduto": "data.[\u00261].soapenv:Body.tns:createProducts.tns:product.tns:products.tns:product.tns:name",
+                  "unidade": "data.[\u00261].soapenv:Body.tns:createProducts.tns:product.tns:products.tns:product.tns:shape",
+                  "#2002": "data.[\u00261].soapenv:Body.tns:createProducts.tns:product.tns:products.tns:product.tns:regionSourceId",
+                  "#http://schemas.xmlsoap.org/soap/envelope/": "data.[\u00261].-xmlns:soapenv",
+                  "#http://www.neolog.com.br/cpl/acquisition/product/": "data.[\u00261].-xmlns:tns"
+                }
+              }
+            }
+          },
+          {
+            "operation": "modify-overwrite-beta",
+            "spec": {
+              "data": {
+                "*": {
+                  "soapenv:Body": {
+                    "tns:createProducts": {
+                      "tns:product": {
+                        "tns:products": {
+                          "tns:product": {
+                            "tns:shape": "\u003dtoInteger",
+                            "tns:productCategoryId": "\u003dtoString"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          {
+            "operation": "default",
+            "spec": {
+              "_attr_access": "data"
+            }
+          }
+        ]
+      },
+      {
+        "nome": "ATIVO",
+        "valor": "S"
+      },
+      {
+        "nome": "TIPOPROCESSO",
+        "valor": "BUSCAR"
+      },
+      {
+        "nome": "AUTENTICADOR",
+        "valor": "N"
+      },
+      {
+        "nome": "DATASINCRONISMO",
+        "valor": ""
+      },
+      {
+        "nome": "REFRESHTOKEN",
+        "valor": "N"
+      },
+      {
+        "nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+        "valor": "N"
+      }
+    ]
+  }
+}

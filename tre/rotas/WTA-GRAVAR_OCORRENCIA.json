@@ -1,0 +1,93 @@
+{
+  "tabela": {
+    "nome": "PCINTEGRACAOROTASERVICO",
+    "campos": [
+      {
+        "nome": "ID",
+        "valor": "WTA-GRAVAR_OCORRENCIA"
+      },
+      {
+        "nome": "IDEMPRESAAPI",
+        "valor": "TRE-WTA"
+      },
+      {
+        "nome": "SERVICO",
+        "valor": "WTA-GRAVAR_OCORRENCIA"
+      },
+      {
+        "nome": "LAYOUTCOMUNICACAO",
+        "valor": {
+          "name": "WTA-GRAVAR_TRANSICAO",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{TOKEN}}"
+              }
+            ],
+            "url": {
+              "raw": "{{URL_BASE}}/logistica/apis/v1/recado/gravar",
+              "query": [],
+              "host": [
+                "{{URL_BASE}}"
+              ],
+              "path": [
+                "logistica",
+                "apis",
+                "v1",
+                "recado",
+                "gravar"
+              ]
+            },
+            "bodyraw": "{{CLIENT_JSON}}"
+          },
+          "response": []
+        }
+      },
+      {
+        "nome": "LAYOUTTRANSFORMACAO",
+        "valor": [
+          {
+            "operation": "default",
+            "spec": {
+              "status": 2
+            }
+          }
+        ]
+      },
+      {
+        "nome": "ATIVO",
+        "valor": "S"
+      },
+      {
+        "nome": "TIPOPROCESSO",
+        "valor": "ENVIAR"
+      },
+      {
+        "nome": "AUTENTICADOR",
+        "valor": "N"
+      },
+      {
+        "nome": "DATASINCRONISMO",
+        "valor": ""
+      },
+      {
+        "nome": "REFRESHTOKEN",
+        "valor": "N"
+      },
+      {
+        "nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+        "valor": "N"
+      }
+    ]
+  }
+}

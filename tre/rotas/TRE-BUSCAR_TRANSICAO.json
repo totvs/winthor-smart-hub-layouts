@@ -1,0 +1,125 @@
+{
+  "tabela": {
+    "nome": "PCINTEGRACAOROTASERVICO",
+    "campos": [
+      {
+        "nome": "ID",
+        "valor": "TRE-BUSCAR_TRANSICAO"
+      },
+      {
+        "nome": "IDEMPRESAAPI",
+        "valor": "TRE"
+      },
+      {
+        "nome": "SERVICO",
+        "valor": "TRE-BUSCAR_TRANSICAO"
+      },
+      {
+        "nome": "LAYOUTCOMUNICACAO",
+        "valor": {
+          "urlWsdl": "https://winthorqa.cloudneolog.com.br/cockpit-gateway/monitoring-integration-publishing-soap/ws/retrieveTransition",
+          "header": [
+            {
+              "key": "userToken",
+              "value": "{{TOKEN}}"
+            }
+          ],
+          "operacao": {
+            "request": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHNvYXBlbnY6RW52ZWxvcGUgeG1sbnM6c29hcGVudj0iaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvc29hcC9lbnZlbG9wZS8iIHhtbG5zOnRucz0iaHR0cDovL3d3dy5uZW9sb2cuY29tLmJyL2NwbC9wdWJsaXNoL21vbml0b3JpbmcvdHJhbnNpdGlvbi8iIHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiPgogIDxzb2FwZW52OkhlYWRlci8+CiAgPHNvYXBlbnY6Qm9keT4KICAgIDx0bnM6cmV0cmlldmVSZXF1ZXN0PgogICAgICA8bGFzdFVwZGF0ZVRpbWVzdGFtcEdyZWF0ZXJUaGFuPnt7TEFTVF9DSEFOR0V9fTwvbGFzdFVwZGF0ZVRpbWVzdGFtcEdyZWF0ZXJUaGFuPgogICAgPC90bnM6cmV0cmlldmVSZXF1ZXN0PgogIDwvc29hcGVudjpCb2R5Pgo8L3NvYXBlbnY6RW52ZWxvcGU+"
+          }
+        }
+      },
+      {
+        "nome": "LAYOUTTRANSFORMACAO",
+        "valor": [
+          {
+            "operation": "shift",
+            "spec": {
+              "SOAP-ENV:Body": {
+                "ns2:retrieveResponse": {
+                  "ns2:messages": {
+                    "ns2:transitionSet": {
+                      "*": {
+                        "ns2:transitions": {
+                          "ns2:transition": {
+                            "ns2:monitorableSourceId": "temp[\u00263].identificador",
+                            "ns2:monitorableType": "temp[\u00263].tipoMonitoravel",
+                            "ns2:status": "temp[\u00263].tipoRecado",
+                            "ns2:executedTimestamp": "temp[\u00263].dataExecutada",
+                            "ns2:name": "temp[\u00263].causa"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          {
+            "operation": "modify-overwrite-beta",
+            "spec": {
+              "temp": {
+                "*": {
+                  "idExterno": "\u003dconcat(\u0027SOAP-TRE-TRANSICAO-\u0027,@(1,tipoMonitoravel),\u0027-\u0027,@(1,identificador), \u0027-\u0027,@(1,dataExecutada))",
+                  "idInterno": "\u003dconcat(\u0027\u0027, @(1,identificador))",
+                  "tipoIdInterno": "TRE-TRANSICAO"
+                }
+              }
+            }
+          },
+          {
+            "operation": "shift",
+            "spec": {
+              "temp": {
+                "*": {
+                  "idExterno": "idExterno[]",
+                  "idInterno": "idInterno[]",
+                  "tipoIdInterno": "tipoIdInterno[]",
+                  "identificador": "data[\u00261].identificador",
+                  "tipoMonitoravel": "data[\u00261].tipoMonitoravel",
+                  "tipoRecado": "data[\u00261].tipoRecado",
+                  "causa": "data[\u00261].causa"
+                }
+              }
+            }
+          },
+          {
+            "operation": "default",
+            "spec": {
+              "_attr_access": "data"
+            }
+          }
+        ]
+      },
+      {
+        "nome": "ATIVO",
+        "valor": "S"
+      },
+      {
+        "nome": "TIPOPROCESSO",
+        "valor": "BUSCAR"
+      },
+      {
+        "nome": "AUTENTICADOR",
+        "valor": "N"
+      },
+      {
+        "nome": "DATASINCRONISMO",
+        "valor": ""
+      },
+      {
+        "nome": "REFRESHTOKEN",
+        "valor": "N"
+      },
+      {
+        "nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+        "valor": "N"
+      },
+      {
+        "nome": "ARQUITETURA",
+        "valor": "XML"
+      }
+    ]
+  }
+}

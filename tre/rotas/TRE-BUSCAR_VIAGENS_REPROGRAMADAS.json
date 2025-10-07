@@ -1,0 +1,143 @@
+{
+  "tabela": {
+    "nome": "PCINTEGRACAOROTASERVICO",
+    "campos": [
+      {
+        "nome": "ID",
+        "valor": "TRE-BUSCAR_VIAGENS_REPROGRAMADAS"
+      },
+      {
+        "nome": "IDEMPRESAAPI",
+        "valor": "TRE"
+      },
+      {
+        "nome": "SERVICO",
+        "valor": "TRE-BUSCAR_VIAGENS_REPROGRAMADAS"
+      },
+      {
+        "nome": "LAYOUTCOMUNICACAO",
+        "valor": {
+          "urlWsdl": "https://winthorqa.cloudneolog.com.br/cockpit-gateway/integration/services/retrieve/RetrieveReprogrammingServiceRequest",
+          "header": [
+            {
+              "key": "userToken",
+              "value": "{{TOKEN}}"
+            }
+          ],
+          "operacao": {
+            "request": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHNvYXBlbnY6RW52ZWxvcGUgeG1sbnM6c29hcGVudj0iaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvc29hcC9lbnZlbG9wZS8iIHhtbG5zOnRucz0idXJuOm5lb2xvZzpjb2NrcGl0OlJldHJpZXZlVHJpcFJlcHJvZ3JhbW1pbmdSZXF1ZXN0U2VydmljZSIgeG1sbnM6eHNkPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYSI+ICA8c29hcGVudjpIZWFkZXIvPiAgPHNvYXBlbnY6Qm9keT4gICAgPHRuczpwdWJsaXNoUmV0cmlldmVSZXByb2dyYW1taW5nU2VydmljZVJlcXVlc3Q+ICAgICAgPHJlZ2lvblNvdXJjZUlkPnt7UkVHSU9OX1NPVVJDRV9JRH19PC9yZWdpb25Tb3VyY2VJZD4gICAgPC90bnM6cHVibGlzaFJldHJpZXZlUmVwcm9ncmFtbWluZ1NlcnZpY2VSZXF1ZXN0PiAgPC9zb2FwZW52OkJvZHk+Cjwvc29hcGVudjpFbnZlbG9wZT4\u003d"
+          }
+        }
+      },
+      {
+        "nome": "LAYOUTTRANSFORMACAO",
+        "valor": [
+          {
+            "operation": "modify-overwrite-beta",
+            "spec": {
+              "soap:Body": {
+                "ns2:publishRetrieveReprogrammingServiceResponse": {
+                  "publishReprogrammingTrips": {
+                    "publishReprogrammingTrip": {
+                      "trips": {
+                        "trip": "\u003dtoList(@(1,trip))"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          {
+            "operation": "shift",
+            "spec": {
+              "soap:Body": {
+                "ns2:publishRetrieveReprogrammingServiceResponse": {
+                  "publishReprogrammingTrips": {
+                    "publishReprogrammingTrip": {
+                      "messageId": "idMensagem",
+                      "trips": {
+                        "trip": {
+                          "*": {
+                            "tripId": "items.[\u00261].idViagem",
+                            "loads": {
+                              "load": {
+                                "loadId": "items.[\u00263].numcarExterno"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          {
+            "operation": "modify-overwrite-beta",
+            "spec": {
+              "items": {
+                "*": {
+                  "idMensagem": "\u003dconcat(\u0027\u0027, @(3,idMensagem))",
+                  "idExterno": "\u003dconcat(\u0027SOAP-TRE-VIAGEM-REPROGRAMADA-\u0027,@(1,idMensagem),\u0027-\u0027,@(1,idViagem),\u0027-\u0027,@(1,numcarExterno))",
+                  "idInterno": "\u003dconcat(\u0027\u0027, @(1,idMensagem))",
+                  "tipoIdInterno": "TRE-VIAGEM-REPROGRAMADA"
+                }
+              }
+            }
+          },
+          {
+            "operation": "shift",
+            "spec": {
+              "items": {
+                "*": {
+                  "idExterno": "idExterno[]",
+                  "idInterno": "idInterno",
+                  "tipoIdInterno": "tipoIdInterno",
+                  "idMensagem": "data.[\u00261].idMensagem",
+                  "idViagem": "data.[\u00261].idViagem",
+                  "numcarExterno": "data.[\u00261].numcarExterno"
+                }
+              }
+            }
+          },
+          {
+            "operation": "default",
+            "spec": {
+              "_attr_access": "data"
+            }
+          }
+        ]
+      },
+      {
+        "nome": "ATIVO",
+        "valor": "S"
+      },
+      {
+        "nome": "TIPOPROCESSO",
+        "valor": "BUSCAR"
+      },
+      {
+        "nome": "AUTENTICADOR",
+        "valor": "N"
+      },
+      {
+        "nome": "DATASINCRONISMO",
+        "valor": ""
+      },
+      {
+        "nome": "REFRESHTOKEN",
+        "valor": "N"
+      },
+      {
+        "nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+        "valor": "N"
+      },
+      {
+        "nome": "ARQUITETURA",
+        "valor": "XML"
+      }
+    ]
+  }
+}

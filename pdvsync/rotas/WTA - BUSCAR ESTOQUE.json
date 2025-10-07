@@ -35,7 +35,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{URL_BASE}}/api/stock-vtex/v1/available/list",
+							"raw": "{{URL_BASE}}/api/stock-vtex/v1/available/pdv-sync/list",
 							"query": [
 								{
 									"key": "pageSize",

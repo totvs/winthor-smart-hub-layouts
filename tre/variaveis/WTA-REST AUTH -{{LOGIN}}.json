@@ -1,0 +1,39 @@
+{
+   "tabela":{
+      "nome":"PCINTEGRACAOVARIAVEIS",
+      "campos":[
+         {
+            "nome":"CHAVE",
+            "valor":"{{LOGIN}}"
+         },
+         {
+            "nome":"TIPOCHAVE",
+            "valor":"BODY"
+         },
+         {
+            "nome":"TIPOVALOR",
+            "valor":"STRING"
+         },
+         {
+            "nome":"IDROTASERVICO",
+            "valor":"WTA-REST AUTH"
+         },
+         {
+            "nome":"DTULTALTER",
+            "valor":""
+         },
+         {
+            "nome":"CODEMPALTER",
+            "valor":""
+         },
+         {
+            "nome":"VALOR",
+            "valor":"PCADMIN"
+         },
+         {
+            "nome":"ID",
+            "valor":"WTA-REST AUTH -{{LOGIN}}"
+         }
+      ]
+   }
+}

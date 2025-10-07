@@ -230,16 +230,34 @@
       "rota": "PDVSYNC - Enviar Preco Embalagem"
     },
     {
+      "nome": "{{URL_ENVIAR_PRECO_FIXO}}",
+      "valor": "https://pdvsync.varejo.totvs.com.br/preco/api/retaguarda/v3/dadosdinamicos/down/28/1",
+      "descricao": "PDV-SYNC Enviar Preco Fixo",
+      "rota": "PDVSYNC - Enviar Preco Fixo"
+    },
+    {
       "nome": "{{URL_ENVIAR_DESCONTO_ACRESCIMO}}",
       "valor": "https://pdvsync.varejo.totvs.com.br/preco/api/retaguarda/v3/dadosdinamicos/down/59/1",
       "descricao": "PDV-SYNC Enviar Desconto Acrescimo",
       "rota": "PDVSYNC - Enviar Desconto e Acrescimo"
     },
     {
-			"nome": "{{URL_ENVIAR_PRECO_FIXO}}",
-			"valor": "https://pdvsync.varejo.totvs.com.br/preco/api/retaguarda/v3/dadosdinamicos/down/28/1",
-			"descricao": "PDV-SYNC Enviar Preco Fixo",
-			"rota": "PDVSYNC - Enviar Preco Fixo"
-		}
+      "nome": "{{URL_ENVIAR_IMPOSTO_RT}}",
+      "valor": "https://pdvsync.varejo.totvs.com.br/api/retaguarda/v3/dadosdinamicos/down/101/1",
+      "descricao": "PDV-SYNC Enviar Impostos Reforma",
+      "rota": "PDVSYNC - Enviar Imposto Reforma"
+    },
+	{
+      "nome": "{{URL_ENVIAR_NCM_REFORMA_TRIBUTARIA}}",
+      "valor": "https://pdvsync.varejo.totvs.com.br/imposto/api/retaguarda/v3/dadosdinamicos/down/102/1",
+      "descricao": "PDVSYNC - Enviar NCM Reforma Tributaria",
+      "rota": "PDVSYNC - Enviar NCM Reforma Tributaria"
+    },
+	{
+      "nome": "{{URL_ENVIAR_PRODUTO_REFORMA_TRIBUT}}",
+      "valor": "https://pdvsync.varejo.totvs.com.br/produto/api/retaguarda/v3/dadosdinamicos/down/103/1",
+      "descricao": "PDVSYNC - Enviar Produto Reforma Tribut",
+      "rota": "PDVSYNC - Enviar Produto Reforma Tribut"
+    }
   ]
 }

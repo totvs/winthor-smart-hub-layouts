@@ -1,0 +1,199 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOROTASERVICO",
+		"campos": [
+			{
+				"nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+				"valor": "N"
+			},
+			{
+				"nome": "ID",
+				"valor": "WTA - Buscar NCM Reforma Tributaria"
+			},
+			{
+				"nome": "IDEMPRESAAPI",
+				"valor": "WINTHOR-WTA"
+			},
+			{
+				"nome": "SERVICO",
+				"valor": "WTA - Buscar NCM Reforma Tributaria"
+			},
+			{
+				"nome": "LAYOUTCOMUNICACAO",
+				"valor": {
+					"name": "WTA - Buscar NCM Reforma Tributaria",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{URL_BASE}}/winthor/tributacao/v0/saida/tributacao/excecao/consultar/pdvsync",
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "{{PAGE_SIZE}}"
+								},
+								{
+									"key": "page",
+									"value": "{{PAGE}}"
+								},
+								{
+									"key": "lastChange",
+									"value": "{{LAST_CHANGE}}"
+								},
+								{
+									"key": "branchId",
+									"value": "{{BRANCHID}}"
+								},
+								{
+									"key": "exceptionType",
+									"value": "{{EXCEPTION_TYPE}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			},
+			{
+				"nome": "LAYOUTTRANSFORMACAO",
+				"valor": [
+					{
+						"operation": "shift",
+						"spec": {
+							"items": {
+								"*": {
+									"codigoTributacao": "items[&1].codigoTributacao",
+									"ncm": "items[&1].ncm",
+									"dataUltimaAlteracao": "items[&1].dataUltimaAlteracao",
+									"ativo": {
+										"true": {
+											"#1": "items.[&3].situacao"
+										},
+										"*": {
+											"#0": "items.[&3].situacao"
+										}
+									},
+									"tiposDetalheImposto": {
+										"*": "items[&2].tiposDetalheImpostoTmp[].tipoImposto"
+									}
+								}
+							}
+						}
+					},
+					{
+						"operation": "modify-overwrite-beta",
+						"spec": {
+							"items": {
+								"*": {
+									"tiposDetalheImpostoTmp": {
+										"*": {
+											"idExterno": "=concat('pdvsync-filtro-ncm-reformatributaria-', @(3,codigoTributacao),'-',@(1,tipoImposto),'-',@(3,ncm),'-',@(3,dataUltimaAlteracao))",
+											"tipoIdInterno": "PDVSYNC-FILTRO-NCM-REFORMATRIBUTARIA",
+											"idInterno": "=concat(@(3,codigoTributacao),'-',@(1,tipoImposto),'-',@(3,ncm))",
+											"idRetaguarda": "=concat(@(3,codigoTributacao),'-',@(1,tipoImposto),'-',@(3,ncm))",
+											"idRetaguardaImpostoFiscal": "=concat(@(3,codigoTributacao),'-',@(1,tipoImposto))",
+											"idRetaguardaNcm": "=concat('',@(3,ncm),'-',@(3,ncm),'.')",
+											"situacao": "=concat('',@(3,situacao))"
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"operation": "shift",
+						"spec": {
+							"items": {
+								"*": {
+									"tiposDetalheImpostoTmp": {
+										"*": "items[]"
+									}
+								}
+							}
+						}
+					},
+					{
+						"operation": "modify-overwrite-beta",
+						"spec": {
+							"items": {
+								"*": {
+									"idInquilino": "{{ID_INQUILINO}}",
+									"idProprietario": "{{MASTER_ID_PROPRIETARIO}}",
+									"loteOrigem": "{{LOTE_ORIGEM}}",
+									"situacao": "=toInteger"
+								}
+							}
+						}
+					},
+					{
+						"operation": "shift",
+						"spec": {
+							"items": {
+								"*": {
+									"@": "items[]",
+									"idExterno": "idExterno[]",
+									"idInterno": "idInterno[]",
+									"tipoIdInterno": "tipoIdInterno[]"
+								}
+							}
+						}
+					},
+					{
+						"operation": "shift",
+						"spec": {
+							"idExterno": "idExterno",
+							"idInterno": "idInterno",
+							"tipoIdInterno": "tipoIdInterno",
+							"items": {
+								"*": {
+									"idRetaguarda": "items[&1].idRetaguarda",
+									"idRetaguardaImpostoFiscal": "items[&1].idRetaguardaImpostoFiscal",
+									"idRetaguardaNcm": "items[&1].idRetaguardaNcm",
+									"idInquilino": "items[&1].idInquilino",
+									"idProprietario": "items[&1].idProprietario",
+									"loteOrigem": "items[&1].loteOrigem",
+									"situacao": "items[&1].situacao"
+								}
+							}
+						}
+					},
+					{
+						"operation": "default",
+						"spec": {
+							"_attr_access": "items"
+						}
+					}
+				]
+			},
+			{
+				"nome": "ATIVO",
+				"valor": "S"
+			},
+			{
+				"nome": "AUTENTICADOR",
+				"valor": "N"
+			},
+			{
+				"nome": "DATASINCRONISMO",
+				"valor": "14-NOV-23"
+			},
+			{
+				"nome": "REFRESHTOKEN",
+				"valor": ""
+			},
+			{
+				"nome": "TIPOPROCESSO",
+				"valor": "BUSCAR"
+			}
+		]
+	}
+}

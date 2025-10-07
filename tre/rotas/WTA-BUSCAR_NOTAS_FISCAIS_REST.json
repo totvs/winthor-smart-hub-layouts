@@ -1,0 +1,147 @@
+{
+  "tabela": {
+    "nome": "PCINTEGRACAOROTASERVICO",
+    "campos": [
+      {
+        "nome": "ID",
+        "valor": "WTA-BUSCAR_NOTAS_FISCAIS_REST"
+      },
+      {
+        "nome": "IDEMPRESAAPI",
+        "valor": "TRE-WTA"
+      },
+      {
+        "nome": "SERVICO",
+        "valor": "WTA-BUSCAR_NOTAS_FISCAIS_REST"
+      },
+      {
+        "nome": "LAYOUTCOMUNICACAO",
+        "valor": {
+          "name": "WTA-BUSCAR_LOCALIDADES_REST",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{TOKEN}}"
+              }
+            ],
+            "url": {
+              "raw": "{{URL_BASE}}/logistica/apis/v1/nota/buscar",
+              "query": [
+                {
+                  "key": "page",
+                  "value": "{{PAGE}}"
+                },
+                {
+                  "key": "pageSize",
+                  "value": "{{PAGE_SIZE}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      },
+      {
+        "nome": "LAYOUTTRANSFORMACAO",
+        "valor": [
+          {
+            "operation": "modify-overwrite-beta",
+            "spec": {
+              "items": {
+                "*": {
+                  "idExterno": "\u003dconcat(\u0027SOAP-TRE-NOTAS\u0027,@(1,numero),\u0027-\u0027,@(1,situacao))",
+                  "idInterno": "\u003dconcat(\u0027\u0027, @(1,numero))",
+                  "tipoIdInterno": "TRE-NOTA-FISCAL",
+                  "peso": "\u003ddivideAndRound(0, @(1,peso), 1)",
+                  "valor": "\u003ddivideAndRound(0, @(1,valor), 1)",
+                  "numero": "\u003dtoString",
+                  "pedido": {
+                    "*": "\u003dtoString"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "operation": "modify-overwrite-beta",
+            "spec": {
+              "items": {
+                "*": {
+                  "peso": "\u003dtoInteger",
+                  "valor": "\u003dtoInteger"
+                }
+              }
+            }
+          },
+          {
+            "operation": "shift",
+            "spec": {
+              "items": {
+                "*": {
+                  "idExterno": "idExterno[]",
+                  "idInterno": "idInterno",
+                  "tipoIdInterno": "tipoIdInterno",
+                  "numero": "data.[\u00261].soapenv:Body.tns:createInvoices.tns:invoices.tns:invoice.tns:identifier",
+                  "peso": "data.[\u00261].soapenv:Body.tns:createInvoices.tns:invoices.tns:invoice.tns:totalWeight",
+                  "valor": "data.[\u00261].soapenv:Body.tns:createInvoices.tns:invoices.tns:invoice.tns:totalValue",
+                  "cliente": "data.[\u00261].soapenv:Body.tns:createInvoices.tns:invoices.tns:invoice.tns:name",
+                  "chave": {
+                    "*": {
+                      "$": "data.[\u00263].soapenv:Body.tns:createInvoices.tns:invoices.tns:invoice.tns:NFeKey"
+                    }
+                  },
+                  "pedido": {
+                    "*": "data.[\u00262].soapenv:Body.tns:createInvoices.tns:invoices.tns:invoice.tns:orderSourceIds.tns:string[\u0026]"
+                  },
+                  "#2002": "data.[\u00261].soapenv:Body.tns:createInvoices.tns:invoices.tns:invoice.tns:regionSourceId",
+                  "#http://schemas.xmlsoap.org/soap/envelope/": "data.[\u00261].-xmlns:soapenv",
+                  "#http://www.neolog.com.br/cpl/acquisition/invoice/": "data.[\u00261].-xmlns:tns"
+                }
+              }
+            }
+          },
+          {
+            "operation": "default",
+            "spec": {
+              "_attr_access": "data"
+            }
+          }
+        ]
+      },
+      {
+        "nome": "ATIVO",
+        "valor": "S"
+      },
+      {
+        "nome": "TIPOPROCESSO",
+        "valor": "BUSCAR"
+      },
+      {
+        "nome": "AUTENTICADOR",
+        "valor": "N"
+      },
+      {
+        "nome": "DATASINCRONISMO",
+        "valor": ""
+      },
+      {
+        "nome": "REFRESHTOKEN",
+        "valor": "N"
+      },
+      {
+        "nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+        "valor": "N"
+      }
+    ]
+  }
+}

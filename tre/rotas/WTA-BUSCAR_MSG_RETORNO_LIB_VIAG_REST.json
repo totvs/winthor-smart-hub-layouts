@@ -1,0 +1,172 @@
+{
+  "tabela": {
+    "nome": "PCINTEGRACAOROTASERVICO",
+    "campos": [
+      {
+        "nome": "ID",
+        "valor": "WTA-BUSCAR_MSG_RETORNO_LIB_VIAG_REST"
+      },
+      {
+        "nome": "IDEMPRESAAPI",
+        "valor": "TRE-WTA"
+      },
+      {
+        "nome": "SERVICO",
+        "valor": "WTA-BUSCAR_MSG_RETORNO_LIB_VIAG_REST"
+      },
+      {
+        "nome": "LAYOUTCOMUNICACAO",
+        "valor": {
+          "name": "WTA-BUSCAR_MSG_RETORNO_LIB_VIAG_REST",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{TOKEN}}"
+              }
+            ],
+            "url": {
+              "raw": "{{URL_BASE}}/logistica/apis/v1/retornotre/buscar",
+              "query": [
+                {
+                  "key": "page",
+                  "value": "{{PAGE}}"
+                },
+                {
+                  "key": "pageSize",
+                  "value": "{{PAGE_SIZE}}"
+                },
+                {
+                  "key": "tipo",
+                  "value": "LIBERACAO_VIAGEM"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      },
+      {
+        "nome": "LAYOUTTRANSFORMACAO",
+        "valor": [
+          {
+            "operation": "shift",
+            "spec": {
+              "items": {
+                "*": {
+                  "idMensagem": [
+                    "@1,idMensagem.\u0026",
+                    "@1,idMensagem.viagens.\u00261.\u0026"
+                  ],
+                  "*": "@1,idMensagem.viagens.\u00261.\u0026"
+                }
+              }
+            }
+          },
+          {
+            "operation": "cardinality",
+            "spec": {
+              "*": {
+                "idMensagem": "MANY"
+              }
+            }
+          },
+          {
+            "operation": "shift",
+            "spec": {
+              "*": {
+                "idMensagem": {
+                  "0": "\u00262.\u00261"
+                },
+                "viagens": {
+                  "*": {
+                    "*": "\u00263.\u00262[#2].\u0026"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "operation": "shift",
+            "spec": {
+              "*": "[]"
+            }
+          },
+          {
+            "operation": "modify-overwrite-beta",
+            "spec": {
+              "*": {
+                "idExterno": "\u003dconcat(\u0027SOAP-TRE-RET-LIB-VIAG-\u0027,@(1,idMensagem))",
+                "idInterno": "\u003dconcat(\u0027\u0027, @(1,idMensagem))",
+                "tipoIdInterno": "TRE-RET-LIB-VIAG"
+              }
+            }
+          },
+          {
+            "operation": "shift",
+            "spec": {
+              "*": {
+                "idExterno": "idExterno[]",
+                "idInterno": "idInterno",
+                "tipoIdInterno": "tipoIdInterno",
+                "viagens": {
+                  "*": {
+                    "codigoRetorno": "data[\u00263].soapenv:Body.tns:doUnblockReleasedTrip.tns:unblockReleasedTrips.tns:unblockReleasedTrips.tns:unblockReleasedTrip.tns:tripReleaseResponses.ns4:tripReleaseResponseList.ns4:tripReleaseResponses.ns4:tripReleaseResponse[\u00261].ns4:status",
+                    "idViagem": "data[\u00263].soapenv:Body.tns:doUnblockReleasedTrip.tns:unblockReleasedTrips.tns:unblockReleasedTrips.tns:unblockReleasedTrip.tns:tripReleaseResponses.ns4:tripReleaseResponseList.ns4:tripReleaseResponses.ns4:tripReleaseResponse[\u00261].ns4:tripCode",
+                    "numPed": "data[\u00263].soapenv:Body.tns:doUnblockReleasedTrip.tns:unblockReleasedTrips.tns:unblockReleasedTrips.tns:unblockReleasedTrip.tns:tripReleaseResponses.ns4:tripReleaseResponseList.ns4:tripReleaseResponses.ns4:tripReleaseResponse[\u00261].ns4:orderSourceId",
+                    "itemPed": "data[\u00263].soapenv:Body.tns:doUnblockReleasedTrip.tns:unblockReleasedTrips.tns:unblockReleasedTrips.tns:unblockReleasedTrip.tns:tripReleaseResponses.ns4:tripReleaseResponseList.ns4:tripReleaseResponses.ns4:tripReleaseResponse[\u00261].ns4:itemId"
+                  }
+                },
+                "idMensagem": "data[\u00261].soapenv:Body.tns:doUnblockReleasedTrip.tns:unblockReleasedTrips.tns:unblockReleasedTrips.tns:unblockReleasedTrip.tns:identifier",
+                "#2002": "data[\u00261].soapenv:Body.tns:doUnblockReleasedTrip.tns:unblockReleasedTrips.tns:unblockReleasedTrips.tns:unblockReleasedTrip.tns:regionSourceId",
+                "#http://schemas.xmlsoap.org/soap/envelope/": "data[\u00261].-xmlns:soapenv",
+                "#http://www.neolog.com.br/cpl/acquisition/unblockRelTrip/": "data[\u00261].-xmlns:tns",
+                "#http://www.neolog.com.br/cpl/acquisition/orderBreakResponse/": "data[\u00261].-xmlns:ns3",
+                "#http://www.neolog.com.br/cpl/acquisition/tripReleaseResponse/": "data[\u00261].-xmlns:ns4"
+              }
+            }
+          },
+          {
+            "operation": "default",
+            "spec": {
+              "_attr_access": "data"
+            }
+          }
+        ]
+      },
+      {
+        "nome": "ATIVO",
+        "valor": "S"
+      },
+      {
+        "nome": "TIPOPROCESSO",
+        "valor": "BUSCAR"
+      },
+      {
+        "nome": "AUTENTICADOR",
+        "valor": "N"
+      },
+      {
+        "nome": "DATASINCRONISMO",
+        "valor": ""
+      },
+      {
+        "nome": "REFRESHTOKEN",
+        "valor": "N"
+      },
+      {
+        "nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+        "valor": "N"
+      }
+    ]
+  }
+}

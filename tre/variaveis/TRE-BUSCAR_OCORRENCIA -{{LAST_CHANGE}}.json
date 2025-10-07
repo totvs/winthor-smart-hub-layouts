@@ -1,0 +1,39 @@
+{
+  "tabela": {
+    "nome": "PCINTEGRACAOVARIAVEIS",
+    "campos": [
+      {
+        "nome": "CHAVE",
+        "valor": "{{LAST_CHANGE}}"
+      },
+      {
+        "nome": "TIPOCHAVE",
+        "valor": "BODY"
+      },
+      {
+        "nome": "TIPOVALOR",
+        "valor": "SELECT"
+      },
+      {
+        "nome": "IDROTASERVICO",
+        "valor": "TRE-BUSCAR_OCORRENCIA"
+      },
+      {
+        "nome": "DTULTALTER",
+        "valor": ""
+      },
+      {
+        "nome": "CODEMPALTER",
+        "valor": ""
+      },
+      {
+        "nome": "VALOR",
+        "valor": "SELECT TO_CHAR(NVL((SELECT MAX(DATACRIACAO) FROM PCINTEGRACAOCORE WHERE IDROTASERVICO \u003d :IDROTASERVICO AND STATUS IN (2)), TO_DATE(\u002701/01/1900\u0027, \u0027DD/MM/YYYY\u0027)) - (1/60/5), \u0027RRRR-MM-DD\"T\"HH24:MI:SS\u0027) DT FROM DUAL"
+      },
+      {
+        "nome": "ID",
+        "valor": "TRE-BUSCAR_OCORRENCIA -{{LAST_CHANGE}}"
+      }
+    ]
+  }
+}

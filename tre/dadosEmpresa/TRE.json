@@ -1,0 +1,35 @@
+{
+   "tabela":{
+      "nome":"PCINTEGRACAODADOSEMPRESA",
+      "campos":[
+         {
+            "nome":"ID",
+            "valor":"TRE"
+         },
+         {
+            "nome":"NOME",
+            "valor":"TRE"
+         },
+         {
+            "nome":"URLBASE",
+            "valor":""
+         },
+         {
+            "nome":"TOKENCLIENTE",
+            "valor":""
+         },
+         {
+            "nome":"WTA",
+            "valor":"S"
+         },
+         {
+            "nome":"DTSOLICITACAOTOKEN",
+            "valor":""
+         },
+         {
+            "nome":"TOKENTEMPOEXPIRACAO",
+            "valor":"1200"
+         }
+      ]
+   }
+}

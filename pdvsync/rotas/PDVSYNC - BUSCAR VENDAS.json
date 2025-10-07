@@ -284,7 +284,15 @@
                                                 "IdProdutoKit": "items.[&4].produtos[&1].IdProdutoKit",
                                                 "Produto": {
                                                     "Descricao": "items.[&5].produtos.[&2].descricaopaf",
-                                                    "IdRetaguarda": "items.[&5].produtos.[&2].codProd"
+                                                    "IdRetaguarda": "items.[&5].produtos.[&2].codProd",
+                                                    "ProdutoLote": {
+                                                      "IdentificacaoLote": "items.[&6].produtos.[&3].numLote"
+                                                    },
+                                                    "ImpostoFiscal": {
+                                                        "*": {
+                                                            "IdRetaguarda": "items.[&7].produtos.[&4].impostoFiscal.[&1].codigoTributacao"
+                                                        }
+                                                    }													
                                                 },
                                                 "Qtde": "items.[&4].produtos.[&1].qt",
                                                 "Sequencia": "items.[&4].produtos.[&1].numSeq",

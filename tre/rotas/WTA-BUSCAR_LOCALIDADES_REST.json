@@ -1,0 +1,143 @@
+{
+  "tabela": {
+    "nome": "PCINTEGRACAOROTASERVICO",
+    "campos": [
+      {
+        "nome": "ID",
+        "valor": "WTA-BUSCAR_LOCALIDADES_REST"
+      },
+      {
+        "nome": "IDEMPRESAAPI",
+        "valor": "TRE-WTA"
+      },
+      {
+        "nome": "SERVICO",
+        "valor": "WTA-BUSCAR_LOCALIDADES_REST"
+      },
+      {
+        "nome": "LAYOUTCOMUNICACAO",
+        "valor": {
+          "name": "WTA-BUSCAR_LOCALIDADES_REST",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{TOKEN}}"
+              }
+            ],
+            "url": {
+              "raw": "{{URL_BASE}}/logistica/apis/v1/localidades/buscar",
+              "query": [
+                {
+                  "key": "page",
+                  "value": "{{PAGE}}"
+                },
+                {
+                  "key": "pageSize",
+                  "value": "{{PAGE_SIZE}}"
+                },
+                {
+                  "key": "dataUltimaAlteracao",
+                  "value": "{{LAST_CHANGE}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      },
+      {
+        "nome": "LAYOUTTRANSFORMACAO",
+        "valor": [
+          {
+            "operation": "modify-overwrite-beta",
+            "spec": {
+              "items": {
+                "*": {
+                  "idExterno": "\u003dconcat(\u0027SOAP-TRE-LOCALIDADE\u0027,@(1,idLocalidade),\u0027-\u0027,@(1,dataUltimaAlteracao))",
+                  "idInterno": "\u003dconcat(\u0027\u0027, @(1,idLocalidade))",
+                  "tipoIdInterno": "TRE-LOCALIDADE"
+                }
+              }
+            }
+          },
+          {
+            "operation": "modify-overwrite-beta",
+            "spec": {
+              "items": {
+                "*": {
+                  "endereco": "\u003dconcat(@(1,endereco), \u0027 \u0027, @(1,numero), \u0027 - \u0027, @(1,bairro), \u0027 \u0027, @(1,municipio), \u0027 - \u0027, @(1,estado), \u0027 \u0027, @(1,cep))"
+                }
+              }
+            }
+          },
+          {
+            "operation": "shift",
+            "spec": {
+              "items": {
+                "*": {
+                  "idExterno": "idExterno[]",
+                  "idInterno": "idInterno",
+                  "tipoIdInterno": "tipoIdInterno",
+                  "nome": "data.[\u00261].soapenv:Body.tns:createLocalities.tns:localities.tns:locality.tns:name",
+                  "numero": "data.[\u00261].soapenv:Body.tns:createLocalities.tns:localities.tns:locality.tns:addressNumber",
+                  "descricao": "data.[\u00261].soapenv:Body.tns:createLocalities.tns:localities.tns:locality.tns:description",
+                  "municipio": "data.[\u00261].soapenv:Body.tns:createLocalities.tns:localities.tns:locality.tns:addressCity",
+                  "estado": "data.[\u00261].soapenv:Body.tns:createLocalities.tns:localities.tns:locality.tns:addressStateAcronym",
+                  "bairro": "data.[\u00261].soapenv:Body.tns:createLocalities.tns:localities.tns:locality.tns:addressDistrict",
+                  "endereco": "data.[\u00261].soapenv:Body.tns:createLocalities.tns:localities.tns:locality.tns:addressStreet",
+                  "cep": "data.[\u00261].soapenv:Body.tns:createLocalities.tns:localities.tns:locality.tns:addressZipCode",
+                  "siglaPais": "data.[\u00261].soapenv:Body.tns:createLocalities.tns:localities.tns:locality.tns:addressCountryAcronym",
+                  "idLocalidade": "data.[\u00261].soapenv:Body.tns:createLocalities.tns:localities.tns:locality.tns:identifier",
+                  "tipoEndereco": "data.[\u00261].soapenv:Body.tns:createLocalities.tns:localities.tns:locality.tns:logisticRoleId",
+                  "#2002": "data.[\u00261].soapenv:Body.tns:createLocalities.tns:localities.tns:locality.tns:regionSourceId",
+                  "#http://schemas.xmlsoap.org/soap/envelope/": "data.[\u00261].-xmlns:soapenv",
+                  "#http://www.neolog.com.br/cpl/acquisition/locality/": "data.[\u00261].-xmlns:tns"
+                }
+              }
+            }
+          },
+          {
+            "operation": "default",
+            "spec": {
+              "_attr_access": "data"
+            }
+          }
+        ]
+      },
+      {
+        "nome": "ATIVO",
+        "valor": "S"
+      },
+      {
+        "nome": "TIPOPROCESSO",
+        "valor": "BUSCAR"
+      },
+      {
+        "nome": "AUTENTICADOR",
+        "valor": "N"
+      },
+      {
+        "nome": "DATASINCRONISMO",
+        "valor": ""
+      },
+      {
+        "nome": "REFRESHTOKEN",
+        "valor": "N"
+      },
+      {
+        "nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+        "valor": "N"
+      }
+    ]
+  }
+}
