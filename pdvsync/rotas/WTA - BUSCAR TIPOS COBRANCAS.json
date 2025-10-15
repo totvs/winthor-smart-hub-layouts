@@ -330,6 +330,20 @@
 						}
 					},
 					{
+						"operation": "modify-overwrite-beta",
+						"spec": {
+							"items": {
+								"*": {
+									"formasPagtoCondicoes": {
+										"*": {
+											"idRetaguarda": "=concat(@(1,idRetaguardaFormaPagto),'-',@(1,idRetaguardaCondicaoPagto))"
+										}
+									}
+								}
+							}
+						}
+					},
+					{
 						"operation": "default",
 						"spec": {
 							"_attr_access": "items",
