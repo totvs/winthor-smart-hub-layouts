@@ -17,7 +17,7 @@
       {
         "nome": "LAYOUTCOMUNICACAO",
         "valor": {
-          "urlWsdl": "https://winthorqa.cloudneolog.com.br/cockpit-gateway/integration/services/retrieve/RetrieveCancelServiceRequest",
+          "urlWsdl": "{{URL_BASE}}/cockpit-gateway/integration/services/retrieve/RetrieveCancelServiceRequest",
           "header": [
             {
               "key": "userToken",

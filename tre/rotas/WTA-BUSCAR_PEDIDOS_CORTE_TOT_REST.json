@@ -230,7 +230,7 @@
                       "@(2,numeroPedido)": "data[\u00263].soapenv:Body.tns:deleteOrders.tns:orderList.tns:orders.tns:order.tns:items.ns2:orderItems.ns3:orderItem[\u00261].ns3:orderId"
                     }
                   },
-                  "#2002": "data[\u00261].soapenv:Body.tns:deleteOrders.tns:orderList.tns:orders.tns:order.tns:regionSourceId",
+                  "#{{REGION_SOURCE_ID}}": "data[\u00261].soapenv:Body.tns:deleteOrders.tns:orderList.tns:orders.tns:order.tns:regionSourceId",
                   "#http://schemas.xmlsoap.org/soap/envelope/": "data[\u00261].-xmlns:soapenv",
                   "#http://www.neolog.com.br/cpl/acquisition/order/": "data[\u00261].-xmlns:tns",
                   "#http://model.neolog.com.br": "data[\u00261].-xmlns:ns1",

@@ -125,7 +125,7 @@
                   }
                 },
                 "idMensagem": "data[\u00261].soapenv:Body.tns:doUnblockCancelTrip.tns:unblockCancelTrips.tns:unblockCancelTripList.tns:messageId",
-                "#2002": "data[\u00261].soapenv:Body.tns:doUnblockCancelTrip.tns:unblockCancelTrips.tns:unblockCancelTripList.tns:regionSourceId",
+                "#{{REGION_SOURCE_ID}}": "data[\u00261].soapenv:Body.tns:doUnblockCancelTrip.tns:unblockCancelTrips.tns:unblockCancelTripList.tns:regionSourceId",
                 "#http://schemas.xmlsoap.org/soap/envelope/": "data[\u00261].-xmlns:soapenv",
                 "#http://www.neolog.com.br/cpl/acquisition/unblockCancelTrip/": "data[\u00261].-xmlns:tns"
               }

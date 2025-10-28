@@ -291,7 +291,7 @@
                   "descricaoUnidade": "data.[\u00261].soapenv:Body.tns:createProducts.tns:product.tns:products.tns:product.tns:description",
                   "descricaoProduto": "data.[\u00261].soapenv:Body.tns:createProducts.tns:product.tns:products.tns:product.tns:name",
                   "unidade": "data.[\u00261].soapenv:Body.tns:createProducts.tns:product.tns:products.tns:product.tns:shape",
-                  "#2002": "data.[\u00261].soapenv:Body.tns:createProducts.tns:product.tns:products.tns:product.tns:regionSourceId",
+                  "#{{REGION_SOURCE_ID}}": "data.[\u00261].soapenv:Body.tns:createProducts.tns:product.tns:products.tns:product.tns:regionSourceId",
                   "#http://schemas.xmlsoap.org/soap/envelope/": "data.[\u00261].-xmlns:soapenv",
                   "#http://www.neolog.com.br/cpl/acquisition/product/": "data.[\u00261].-xmlns:tns"
                 }

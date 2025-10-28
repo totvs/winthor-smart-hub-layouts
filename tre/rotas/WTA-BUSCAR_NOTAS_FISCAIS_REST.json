@@ -103,7 +103,7 @@
                   "pedido": {
                     "*": "data.[\u00262].soapenv:Body.tns:createInvoices.tns:invoices.tns:invoice.tns:orderSourceIds.tns:string[\u0026]"
                   },
-                  "#2002": "data.[\u00261].soapenv:Body.tns:createInvoices.tns:invoices.tns:invoice.tns:regionSourceId",
+                  "#{{REGION_SOURCE_ID}}": "data.[\u00261].soapenv:Body.tns:createInvoices.tns:invoices.tns:invoice.tns:regionSourceId",
                   "#http://schemas.xmlsoap.org/soap/envelope/": "data.[\u00261].-xmlns:soapenv",
                   "#http://www.neolog.com.br/cpl/acquisition/invoice/": "data.[\u00261].-xmlns:tns"
                 }
