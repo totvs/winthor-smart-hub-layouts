@@ -17,7 +17,7 @@
         {
           "nome": "LAYOUTCOMUNICACAO",
           "valor": {
-            "urlWsdl": "https://winthorqa.cloudneolog.com.br/cockpit-gateway/integration/services/ProductAcquisitionService",
+            "urlWsdl": "{{URL_BASE}}/cockpit-gateway/integration/services/ProductAcquisitionService",
             "header": [
               {
                 "key": "userToken",

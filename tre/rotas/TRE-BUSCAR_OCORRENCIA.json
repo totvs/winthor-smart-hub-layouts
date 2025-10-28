@@ -17,7 +17,7 @@
       {
         "nome": "LAYOUTCOMUNICACAO",
         "valor": {
-          "urlWsdl": "https://winthorqa.cloudneolog.com.br/cockpit-gateway/monitoring-integration-publishing-soap/ws/retrieveOccurrence",
+          "urlWsdl": "{{URL_BASE}}/cockpit-gateway/monitoring-integration-publishing-soap/ws/retrieveOccurrence",
           "header": [
             {
               "key": "userToken",

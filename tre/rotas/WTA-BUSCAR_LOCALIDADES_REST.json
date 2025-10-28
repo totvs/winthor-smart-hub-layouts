@@ -63,7 +63,7 @@
             "spec": {
               "items": {
                 "*": {
-                  "idExterno": "\u003dconcat(\u0027SOAP-TRE-LOCALIDADE\u0027,@(1,idLocalidade),\u0027-\u0027,@(1,dataUltimaAlteracao))",
+                  "idExterno": "\u003dconcat(\u0027SOAP-TRE-LOCALIDADE-\u0027,@(1,idLocalidade),\u0027-\u0027,@(1,dataUltimaAlteracao))",
                   "idInterno": "\u003dconcat(\u0027\u0027, @(1,idLocalidade))",
                   "tipoIdInterno": "TRE-LOCALIDADE"
                 }
@@ -99,7 +99,7 @@
                   "siglaPais": "data.[\u00261].soapenv:Body.tns:createLocalities.tns:localities.tns:locality.tns:addressCountryAcronym",
                   "idLocalidade": "data.[\u00261].soapenv:Body.tns:createLocalities.tns:localities.tns:locality.tns:identifier",
                   "tipoEndereco": "data.[\u00261].soapenv:Body.tns:createLocalities.tns:localities.tns:locality.tns:logisticRoleId",
-                  "#2002": "data.[\u00261].soapenv:Body.tns:createLocalities.tns:localities.tns:locality.tns:regionSourceId",
+                  "#{{REGION_SOURCE_ID}}": "data.[\u00261].soapenv:Body.tns:createLocalities.tns:localities.tns:locality.tns:regionSourceId",
                   "#http://schemas.xmlsoap.org/soap/envelope/": "data.[\u00261].-xmlns:soapenv",
                   "#http://www.neolog.com.br/cpl/acquisition/locality/": "data.[\u00261].-xmlns:tns"
                 }
