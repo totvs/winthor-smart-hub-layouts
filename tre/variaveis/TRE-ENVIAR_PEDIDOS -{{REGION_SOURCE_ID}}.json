@@ -16,7 +16,7 @@
       },
       {
         "nome": "IDROTASERVICO",
-        "valor": "TRE-BUSCAR_VIAGENS_REPROGRAMADAS"
+        "valor": "TRE-ENVIAR_PEDIDOS"
       },
       {
         "nome": "DTULTALTER",
@@ -32,7 +32,7 @@
       },
       {
         "nome": "ID",
-        "valor": "TRE-BUSCAR_VIAGENS_REPROGRAMADAS -{{REGION_SOURCE_ID}}"
+        "valor": "TRE-ENVIAR_PEDIDOS -{{REGION_SOURCE_ID}}"
       }
     ]
   }
