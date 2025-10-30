@@ -12,7 +12,7 @@
          },
          {
             "nome":"URLBASE",
-            "valor":"ADICIONAR_URLBASE"
+            "valor":"ADICIONAR_VALOR"
          },
          {
             "nome":"TOKENCLIENTE",
@@ -28,7 +28,7 @@
          },
          {
             "nome":"TOKENTEMPOEXPIRACAO",
-            "valor":"14400"
+            "valor":"7200"
          }
       ]
    }

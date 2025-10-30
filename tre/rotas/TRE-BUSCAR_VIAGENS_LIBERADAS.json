@@ -17,7 +17,7 @@
       {
         "nome": "LAYOUTCOMUNICACAO",
         "valor": {
-          "urlWsdl": "https://winthorqa.cloudneolog.com.br/cockpit-gateway/integration/services/retrieve/RetrieveReleasedTripServiceRequest",
+          "urlWsdl": "{{URL_BASE}}/cockpit-gateway/integration/services/retrieve/RetrieveReleasedTripServiceRequest",
           "header": [
             {
               "key": "userToken",
@@ -60,10 +60,10 @@
                         "tripReleaseRequest": {
                           "*": {
                             "identifier": "items.[\u00261].idViagem",
+                            "vehicleId": "items.[\u00261].idVeiculo",
                             "loads": {
                               "load": {
                                 "identifier": "items.[\u00263].numcarExterno",
-                                "vehicleId": "items.[\u00261].idVeiculo",
                                 "stops": {
                                   "stop": {
                                     "*": {
