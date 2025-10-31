@@ -70,6 +70,7 @@
                                     "codPlPag_arr": "=split('//.',@(1,conteudo.VendaPagamentos.[0].PagamentoCondicao.IdRetaguarda))",
                                     "codPlPag": "=join('',@(1,codPlPag_arr))",
                                     "conteudo": {
+                                        "SituacaoVendaMonitor": "=concat('',@(1,SituacaoVenda))",
                                         "idPreVenda": [
                                             "@(1,IdPreVenda)",
                                             "@(1,PreVendaId)"
@@ -232,6 +233,29 @@
                                             "IdRetaguarda": "items.[&3].numeroPedidoRIVendaAssistida"
                                         },
                                         "SituacaoVenda": "items.[&2].tipoMovimento",
+                                        "SituacaoVendaMonitor": {
+                                          "0": {
+                                            "#1": "items.[&4].tipoDadoMonitor"
+                                          },
+                                          "0.0": {
+                                            "#1": "items.[&4].tipoDadoMonitor"
+                                          },
+                                          "1": {
+                                            "#2": "items.[&4].tipoDadoMonitor"
+                                          },
+                                          "1.0": {
+                                            "#2": "items.[&4].tipoDadoMonitor"
+                                          },
+                                          "3": {
+                                            "#3": "items.[&4].tipoDadoMonitor"
+                                          },
+                                          "3.0": {
+                                            "#3": "items.[&4].tipoDadoMonitor"
+                                          },
+                                          "*": {
+                                            "#0": "items.[&4].tipoDadoMonitor"
+                                          }
+                                        },										
                                         "ValorBruto": "items.[&2].vlTabela",
                                         "ValorLiquido": [
                                             "items.[&2].vlAtend",
