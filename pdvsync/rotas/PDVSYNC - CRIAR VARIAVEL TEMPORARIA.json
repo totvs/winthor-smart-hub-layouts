@@ -47,7 +47,7 @@
 								"{{TIPO_LOTE}}"
 							],
 							"idInquilino": "{{INQUILINO}}",
-							"status": "InicioEnvio"
+							"status": "0"
 						}
 					},
 					"response": []
