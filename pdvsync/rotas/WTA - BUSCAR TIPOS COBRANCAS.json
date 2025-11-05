@@ -144,6 +144,7 @@
 									"codigoSistemaExterno": "items.[&1].codigoSistemaExterno",
 									"clienteConsumidor": "items.[&1].clienteConsumidor",
 									"validaLimiteCredito": "items.[&1].utilizaLimiteCredito",
+									"cobAntecipada": "items.[&1].recebimentoAntecipado",
 									"codOperadoraCartao": {
 										"cartao_null": {
 											"@(2,id)": {
