@@ -108,7 +108,8 @@
 							  "idPdv": "items.[&2].idPdv",
 							  "numCupom": "items.[&2].numCupom",
 							  "serieNota": "items.[&2].serieNota",
-							  "codFilial": "items.[&2].codFilial"
+							  "codFilial": "items.[&2].codFilial",
+							  "tipoDadoMonitor": "items.[&2].tipoDadoMonitor"
 							}
 						}
 					  }
