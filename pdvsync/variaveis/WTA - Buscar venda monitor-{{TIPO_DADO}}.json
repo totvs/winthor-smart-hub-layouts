@@ -28,7 +28,7 @@
 			},
 			{
 				"nome": "VALOR",
-				"valor": "1,2,3"
+				"valor": ":PCINTEGRACAOCORE.DADOSTRANSFORMADOS->tipoDadoMonitor"
 			},
 			{
 				"nome": "CODEMPALTER",
