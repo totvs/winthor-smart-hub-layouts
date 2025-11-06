@@ -105,7 +105,7 @@
             "operation": "modify-overwrite-beta",
             "spec": {
               "*": {
-                "idExterno": "\u003dconcat(\u0027SOAP-TRE-RET-CANCEL\u0027',@(1,idMensagem))",
+                "idExterno": "\u003dconcat(\u0027SOAP-TRE-RET-CANCEL-\u0027,@(1,idMensagem))",
                 "idInterno": "\u003dconcat(\u0027\u0027, @(1,idMensagem))",
                 "tipoIdInterno": "TRE-RET-CANCEL"
               }
