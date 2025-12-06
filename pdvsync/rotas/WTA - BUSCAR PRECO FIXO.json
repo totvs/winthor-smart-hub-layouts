@@ -105,7 +105,10 @@
 							}
 						  },
 						  "promotionId": "items.[&1].idRetaguarda",
-						  "branchId": ["items.[&1].IdRetaguardaLoja","items.[&1].idProprietario"],
+						  "branchId": {
+							"99": { "#{{MASTER_ID_PROPRIETARIO}}": ["items.[&3].idProprietario", "items.[&3].IdRetaguardaLoja"] },
+							"*": { "@1": ["items.[&3].idProprietario", "items.[&3].IdRetaguardaLoja"] }
+						  },
 						  "startDate": "items.[&1].DataHoraVigenciaInicial",
 						  "endDate": "items.[&1].DataHoraVigenciaFinal",
 						  "clientId": ["items.[&1].IdRetaguardaCliente", "items.[&1].IdRetaguardaClientePrincipal"],
