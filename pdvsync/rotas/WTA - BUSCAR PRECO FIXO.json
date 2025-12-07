@@ -50,7 +50,7 @@
 									"value": "{{LAST_CHANGE}}"
 								},
 								{
-									"key": "numRegiao",
+									"key": "regionId",
 									"value": "{{NUMREGIAO}}"
 								},
 								{
