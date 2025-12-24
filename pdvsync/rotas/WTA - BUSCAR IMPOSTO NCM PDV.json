@@ -110,7 +110,18 @@
 									"aliquotaMunicipal": "items[&1].aliquotaMunicipal",
 									"chave": "items[&1].chave",
 									"fonte": "items[&1].fonte",
-									"situacao": "items[&1].situacao"
+									"situacao": "items[&1].situacao",
+									"codFilial": {
+										"99": {
+											"#{{MASTER_ID_PROPRIETARIO}}": "items.[&3].idProprietario"
+										},
+										"": {
+											"#{{MASTER_ID_PROPRIETARIO}}": "items.[&3].idProprietario"
+										},
+										"*": {
+											"@1": "items.[&3].idProprietario"
+										}
+									}
 								}
 							}
 						}
