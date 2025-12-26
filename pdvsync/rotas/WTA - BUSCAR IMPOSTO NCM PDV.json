@@ -74,7 +74,7 @@
 									"idInterno":"=concat('', @(1,id))",
 							        "tipoIdInterno":"PDVSYNC-IMPOSTO-NCM",
 									"chave": null,
-									"fonte": null,
+									"fonte": "IBPT",
 									"situacao": 1,
 									"aliquotaNacional_str": "=toString(@(1,aliquotaNacional))",
 									"aliquotaNacional_arr": "=split('\\.',@(1,aliquotaNacional_str))",
