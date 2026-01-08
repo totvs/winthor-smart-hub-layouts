@@ -393,6 +393,14 @@
                                                         "NumeroAutorizacao": "items.[&6].pagamentos[&3].codAutorizacaoTef",
                                                         "NumeroBin": "items.[&6].pagamentos[&3].numCartao"
                                                     }
+                                                },
+                                                "VendaPagamentoDadoComplementars": {
+                                                    "*": {
+                                                        "Conteudo": "items.[&6].pagamentos[&3].conteudoDadoComplementar",
+                                                        "PagamentoDadoComplementar": {
+                                                            "Descricao": "items.[&7].pagamentos[&4].descricaoDadoComplementar"
+                                                        }
+                                                    }
                                                 }
                                             }
                                         }
