@@ -395,9 +395,9 @@
                                                 },
                                                 "VendaPagamentoDadoComplementars": {
                                                     "*": {
-                                                        "Conteudo": "items.[&6].pagamentos[&3].conteudoDadoComplementar",
+                                                        "Conteudo": "items.[&6].pagamentos[&3].conteudo",
                                                         "PagamentoDadoComplementar": {
-                                                            "Descricao": "items.[&7].pagamentos[&4].descricaoDadoComplementar"
+                                                            "Descricao": "items.[&7].pagamentos[&4].descricao"
                                                         }
                                                     }
                                                 }
