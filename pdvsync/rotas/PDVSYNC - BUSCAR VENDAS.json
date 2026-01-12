@@ -396,9 +396,13 @@
                                                 },
                                                 "VendaPagamentoDadoComplementars": {
                                                     "*": {
-                                                        "Conteudo": "items.[&6].pagamentos[&3].conteudo",
                                                         "PagamentoDadoComplementar": {
-                                                            "Descricao": "items.[&7].pagamentos[&4].descricao"
+                                                            "Descricao": {
+                                                                "NSU/DOC": {
+                                                                    "@(3,Conteudo)": "items.[&9].pagamentos[&6].conteudo",
+                                                                    "$": "items.[&9].pagamentos[&6].descricao"
+                                                                }
+                                                            },
                                                         }
                                                     }
                                                 }
