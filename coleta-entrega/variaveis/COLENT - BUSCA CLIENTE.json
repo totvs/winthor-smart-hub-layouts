@@ -1,0 +1,39 @@
+{
+  "tabela": {
+    "nome": "PCINTEGRACAOVARIAVEIS",
+    "campos": [
+      {
+        "nome": "CHAVE",
+        "valor": "{{ID_CLIENTE}}"
+      },
+      {
+        "nome": "TIPOCHAVE",
+        "valor": "REQUEST"
+      },
+      {
+        "nome": "TIPOVALOR",
+        "valor": "STRING"
+      },
+      {
+        "nome": "IDROTASERVICO",
+        "valor": "COLENT - BUSCA CLIENTE"
+      },
+      {
+        "nome": "DTULTALTER",
+        "valor": ""
+      },
+      {
+        "nome": "CODEMPALTER",
+        "valor": ""
+      },
+      {
+        "nome": "VALOR",
+        "valor": ":PCINTEGRACAOCORE.DADOSTRANSFORMADOS->idExterno"
+      },
+      {
+        "nome": "ID",
+        "valor": "COLENT - BUSCA CLIENTE -{{ID_CLIENTE}}"
+      }
+    ]
+  }
+}
