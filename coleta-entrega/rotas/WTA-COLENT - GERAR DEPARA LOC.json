@@ -16,7 +16,7 @@
             },
             {
                 "nome": "ID",
-                "valor": "WTA-COLENT - Buscar Viagem"
+                "valor": "WTA-COLENT - GERAR DEPARA LOC"
             },
             {
                 "nome": "IDEMPRESAAPI",
@@ -24,22 +24,30 @@
             },
             {
                 "nome": "SERVICO",
-                "valor": "WTA-COLENT - Buscar Viagem"
+                "valor": "WTA-COLENT - GERAR DEPARA LOC"
             },
             {
                 "nome": "LAYOUTCOMUNICACAO",
                 "valor": {
-                    "name": "WTA-COLENT - Buscar Viagem",
+                    "name": "WTA-COLENT - GERAR DEPARA LOC",
                     "request": {
-                        "method": "GET",
+                        "method": "POST",
                         "header": [
                             {
                                 "key": "Authorization",
                                 "value": "Bearer {{TOKEN}}"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": " */*"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
                             }
                         ],
                         "url": {
-                            "raw": "{{URL_BASE}}/logistica/apis/v1/viagens/buscar",
+                            "raw": "{{URL_BASE}}/query/api/v1/localidades/gerar-depara",
                             "query": [],
                             "host": [
                                 "{{URL_BASE}}"
@@ -48,10 +56,11 @@
                                 "logistica",
                                 "apis",
                                 "v1",
-                                "viagens",
-                                "buscar"
+                                "localidades",
+                                "gerar-depara"
                             ]
-                        }
+                        },
+                        "bodyraw": "{{CLIENT_JSON}}"
                     },
                     "response": []
                 }
@@ -62,30 +71,17 @@
                     {
                         "operation": "modify-overwrite-beta",
                         "spec": {
-                            "*": {
-                                "idExterno": "\u003dconcat(\u0027coleta-entrega-viagem-numcar-\u0027,@(1,externalId),\u0027-\u0027,@(1,dataConsulta))"
-                            }
+                            "idExterno": "\u003dconcat(\u0027loc-depara-\u0027,@(1,idinterno),\u0027-\u0027,@(1,idexterno))"
                         }
                     },
                     {
                         "operation": "shift",
                         "spec": {
-                            "*": {
-                                "externalId": "items[\u00261].externalId",
-                                "descricao": "items[\u00261].descricao",
-                                "identificacao": "items[\u00261].identificacao",
-                                "motoristaId": "items[\u00261].motoristaId",
-                                "tarefas": "items[\u00261].tarefas",
-                                "unidadeCadastroId": "items[\u00261].unidadeCadastroId",
-                                "unidadeOperacionalId": "items[\u00261].unidadeOperacionalId",
-                                "idExterno": "idExterno"
-                            }
-                        }
-                    },
-                    {
-                        "operation": "default",
-                        "spec": {
-                            "_attr_access": "items"
+                            "idExterno": "idExterno",
+                            "tabela": "items[0].tabela",
+                            "campo": "items[0].campo",
+                            "idinterno": "items[0].idinterno",
+                            "idexterno": "items[0].idexterno"
                         }
                     }
                 ]
@@ -96,7 +92,7 @@
             },
             {
                 "nome": "TIPOPROCESSO",
-                "valor": ""
+                "valor": "BUSCAR"
             },
             {
                 "nome": "AUTENTICADOR",

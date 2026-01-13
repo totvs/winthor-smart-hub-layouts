@@ -63,7 +63,7 @@
                         "operation": "modify-overwrite-beta",
                         "spec": {
                             "*": {
-                                "idExterno": "\u003dconcat(\u0027coleta-entrega-entrega-numtransvenda-\u0027,@(1,friendlyId))"
+                                "idExterno": "\u003dconcat(\u0027coleta-entrega-entrega-numtransvenda-\u0027,@(1,friendlyId),\u0027-\u0027,@(1,dataConsulta))"
                             }
                         }
                     },

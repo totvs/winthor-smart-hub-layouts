@@ -53,7 +53,7 @@
                         "operation": "modify-overwrite-beta",
                         "spec": {
                             "*": {
-                                "idExterno": "\u003dconcat(\u0027coleta-entrega-entrega-numTransVenda-\u0027,@(1,numTransVenda))"
+                                "idExterno": "\u003dconcat(\u0027coleta-entrega-entrega-numTransVenda-\u0027,@(1,numTransVenda),\u0027-\u0027,@(1,dataConsulta))"
                             }
                         }
                     },
