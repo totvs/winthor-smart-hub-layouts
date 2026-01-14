@@ -65,7 +65,7 @@
                         "spec": {
                             "data": {
                                 "*": {
-									"codCob_arr": "=split('-POS',@(1,conteudo.VendaPagamentos.[0].PagamentoForma.IdRetaguarda))",
+                                    "codCob_arr": "=split('-POS',@(1,conteudo.VendaPagamentos.[0].PagamentoForma.IdRetaguarda))",
                                     "codCob": "=join('',@(1,codCob_arr))",
                                     "codPlPag_arr": "=split('//.',@(1,conteudo.VendaPagamentos.[0].PagamentoCondicao.IdRetaguarda))",
                                     "codPlPag": "=join('',@(1,codPlPag_arr))",
@@ -99,9 +99,9 @@
                                         "VendaPagamentos": {
                                             "*": {
                                                 "PagamentoForma": {
-													"IdRetaguarda_arr": "=split('-POS',@(1,IdRetaguarda))",
+                                                    "IdRetaguarda_arr": "=split('-POS',@(1,IdRetaguarda))",
                                                     "IdRetaguarda": "=join('',@(1,IdRetaguarda_arr))"
-                                                    
+
                                                 },
                                                 "VendaPagamentoTefs": {
                                                     "*": {
@@ -114,7 +114,7 @@
                                     "idExterno": "=concat('pdvsync-vendamensagem-',@(1,id),'-',@(1,dataAtualizacao))",
                                     "idInterno": "=concat(@(1,conteudo.Loja.IdRetaguarda),'-',@(1,serieNota),'-',@(1,conteudo.Coo))",
                                     "idPdv": "@(1,id)",
-									"serieNota": "@(1,serieNota)",
+                                    "serieNota": "@(1,serieNota)",
                                     "numeroCupom": "@(1,conteudo.Coo)",
                                     "tipoIdInterno": "PDVSYNC-MONITOR-VENDA"
                                 }
@@ -160,7 +160,7 @@
                                         "Coo": "items.[&2].consumidorFinal.numCupom",
                                         "EstadoConsumidor": "items.[&2].estadoConsumidor",
                                         "IdCaixa": "items.[&2].numFechamentoMovCx",
-										"IdRetaguardaProfissional": "items.[&2].idProfissional",
+                                        "IdRetaguardaProfissional": "items.[&2].idProfissional",
                                         "IdentificacaoFidelidade": [
                                             "items.[&2].numCartaoCrm",
                                             "items.[&2].cartaoCrm"
@@ -234,28 +234,28 @@
                                         },
                                         "SituacaoVenda": "items.[&2].tipoMovimento",
                                         "SituacaoVendaMonitor": {
-                                          "0": {
-                                            "#1": "items.[&4].tipoDadoMonitor"
-                                          },
-                                          "0.0": {
-                                            "#1": "items.[&4].tipoDadoMonitor"
-                                          },
-                                          "1": {
-                                            "#2": "items.[&4].tipoDadoMonitor"
-                                          },
-                                          "1.0": {
-                                            "#2": "items.[&4].tipoDadoMonitor"
-                                          },
-                                          "3": {
-                                            "#3": "items.[&4].tipoDadoMonitor"
-                                          },
-                                          "3.0": {
-                                            "#3": "items.[&4].tipoDadoMonitor"
-                                          },
-                                          "*": {
-                                            "#0": "items.[&4].tipoDadoMonitor"
-                                          }
-                                        },										
+                                            "0": {
+                                                "#1": "items.[&4].tipoDadoMonitor"
+                                            },
+                                            "0.0": {
+                                                "#1": "items.[&4].tipoDadoMonitor"
+                                            },
+                                            "1": {
+                                                "#2": "items.[&4].tipoDadoMonitor"
+                                            },
+                                            "1.0": {
+                                                "#2": "items.[&4].tipoDadoMonitor"
+                                            },
+                                            "3": {
+                                                "#3": "items.[&4].tipoDadoMonitor"
+                                            },
+                                            "3.0": {
+                                                "#3": "items.[&4].tipoDadoMonitor"
+                                            },
+                                            "*": {
+                                                "#0": "items.[&4].tipoDadoMonitor"
+                                            }
+                                        },
                                         "ValorBruto": "items.[&2].vlTabela",
                                         "ValorLiquido": [
                                             "items.[&2].vlAtend",
@@ -310,13 +310,13 @@
                                                     "Descricao": "items.[&5].produtos.[&2].descricaopaf",
                                                     "IdRetaguarda": "items.[&5].produtos.[&2].codProd",
                                                     "ProdutoLote": {
-                                                      "IdentificacaoLote": "items.[&6].produtos.[&3].numLote"
+                                                        "IdentificacaoLote": "items.[&6].produtos.[&3].numLote"
                                                     },
                                                     "ImpostoFiscal": {
                                                         "*": {
                                                             "IdRetaguarda": "items.[&7].produtos.[&4].impostoFiscal.[&1].codigoTributacao"
                                                         }
-                                                    }													
+                                                    }
                                                 },
                                                 "Qtde": "items.[&4].produtos.[&1].qt",
                                                 "Sequencia": "items.[&4].produtos.[&1].numSeq",
@@ -393,6 +393,18 @@
                                                         "NumeroAutorizacao": "items.[&6].pagamentos[&3].codAutorizacaoTef",
                                                         "NumeroBin": "items.[&6].pagamentos[&3].numCartao"
                                                     }
+                                                },
+                                                "VendaPagamentoDadoComplementars": {
+                                                    "*": {
+                                                        "PagamentoDadoComplementar": {
+                                                            "Descricao": {
+                                                                "NSU/DOC": {
+                                                                    "@(3,Conteudo)": "items.[&9].pagamentos[&6].conteudo",
+                                                                    "$": "items.[&9].pagamentos[&6].descricao"
+                                                                }
+                                                            }
+                                                        }
+                                                    }
                                                 }
                                             }
                                         }
@@ -406,7 +418,7 @@
                                         "items.[&1].idInterno"
                                     ],
                                     "idPdv": "items.[&1].idPdv",
-									"serieNota": "items.[&1].serieNota",
+                                    "serieNota": "items.[&1].serieNota",
                                     "numeroCupom": [
                                         "items.[&1].numCupom",
                                         "items.[&1].documentoEletronico.numCupom"
@@ -428,7 +440,7 @@
                                     "pagamentos": {
                                         "*": {
                                             "codAutorizacaoTef_arr": "=split('\\D',@(1,codAutorizacaoTef))",
-											"codAutorizacaoTef": "=join('',@(1,codAutorizacaoTef_arr))",
+                                            "codAutorizacaoTef": "=join('',@(1,codAutorizacaoTef_arr))",
                                             "valorComTroco": "=doubleSum(@(1,valorComTroco))"
                                         }
                                     },
