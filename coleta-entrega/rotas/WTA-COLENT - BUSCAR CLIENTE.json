@@ -63,7 +63,7 @@
                         "operation": "modify-overwrite-beta",
                         "spec": {
                             "*": {
-                                "idExterno": "\u003dconcat(\u0027coleta-entrega-cliente-nome-\u0027,@(1,nome))"
+                                "idExterno": "\u003dconcat(\u0027coleta-entrega-cliente-nome-\u0027,@(1,nome),\u0027-\u0027,@(1,dataAtualizacao))"
                             }
                         }
                     },
