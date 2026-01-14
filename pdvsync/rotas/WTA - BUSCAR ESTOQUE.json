@@ -107,6 +107,7 @@
 									"idExterno": "idExterno[&1]",									
 									"idInterno": "idInterno",
 							        "tipoIdInterno":"tipoIdInterno",
+									"warehouseBranchId": "items[&1].idProprietario",
 									"id_retaguarda": "items[&1].idRetaguarda",
 									"quantity": "items[&1].saldo",
 									"skuID_": "items[&1].codigoProduto",
@@ -122,7 +123,6 @@
 							"items[]": {
 								"*": {
 									"idInquilino": "{{ID_INQUILINO}}",
-									"idProprietario": "{{FILIAL_ID_PROPRIETARIO}}",
 									"loteOrigem": "{{LOTE_ORIGEM}}",
 									"situacao": 1,
 									"sequencial": 0
