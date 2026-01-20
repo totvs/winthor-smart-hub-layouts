@@ -108,6 +108,7 @@
 									"idInterno": "idInterno",
 							        "tipoIdInterno":"tipoIdInterno",
 									"id_retaguarda": "items[&1].idRetaguarda",
+									"warehouseBranchId": "items[&1].idProprietario",
 									"quantity": "items[&1].saldo",
 									"skuID_": "items[&1].codigoProduto",
 									"productId": "items[&1].idRetaguardaProduto"
@@ -122,7 +123,6 @@
 							"items[]": {
 								"*": {
 									"idInquilino": "{{ID_INQUILINO}}",
-									"idProprietario": "{{FILIAL_ID_PROPRIETARIO}}",
 									"loteOrigem": "{{LOTE_ORIGEM}}",
 									"situacao": 1,
 									"sequencial": 0
