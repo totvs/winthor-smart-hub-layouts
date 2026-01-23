@@ -164,12 +164,6 @@
 			"rota": "PDVSYNC - Dados pagamento"
 		},
 		{
-			"nome": "{{URL_RAC_PDVSYNC}}",
-			"valor": "https://pdvsyncwinthor.rac.dev.totvs.app/totvs.rac/connect/token",
-			"descricao": "RAC - LoginPDVSync",
-			"rota": "PDVSYNC - RAC LoginPDVSync"
-		},
-		{
 			"nome": "{{URL_STATUS_VENDA_MONITOR}}",
 			"valor": "https://pdvsync-core-comercial-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/vendaMensagens",
 			"descricao": "PDV-SYNC - ATUALIZAR STATUS VENDA MONITOR",
