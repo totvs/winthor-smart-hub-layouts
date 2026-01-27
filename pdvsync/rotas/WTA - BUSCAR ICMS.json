@@ -78,7 +78,9 @@
 						"*": {
 						  "@1": "items.[&3].idProprietario"
 						}
-					  }
+					  },
+					  "cstExcecaoPdv": "items.[&1].&",
+					  "cfopExcecaoPdv": "items.[&1].&"
 					}
 				  }
 				}
@@ -145,7 +147,9 @@
 								"idProprietario": [
 									"items.[&1].[0].idProprietario",
 									"items.[&1].[1].idProprietario"
-								]
+								],
+								"cstExcecaoPdv": "items.[&1].[0].cstcsosn",
+								"cfopExcecaoPdv": "items.[&1].[0].cfop"
 							}
 						}
 					}
