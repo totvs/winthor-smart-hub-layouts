@@ -332,7 +332,21 @@
 					  }
 					}
 					},
-				  {
+				    {
+						"operation": "modify-overwrite-beta",
+						"spec": {
+							"items": {
+								"*": {
+									"produtoEmbalagens": {
+										"*": {
+											"situacao": "=toInteger"
+										}
+									}
+								}
+							}
+						}
+					},
+				    {
 					"operation": "default",
 					"spec": {
 					  "_attr_access": "items",
