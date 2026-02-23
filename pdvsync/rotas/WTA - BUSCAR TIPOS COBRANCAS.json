@@ -345,6 +345,20 @@
 						}
 					},
 					{
+						"operation": "modify-overwrite-beta",
+						"spec": {
+							"items": {
+								"*": {
+									"formasPagtoOperadoras": {
+										"*": {
+											"situacao": "=toInteger"
+										}
+									}
+								}
+							}
+						}
+					},
+					{
 						"operation": "default",
 						"spec": {
 							"_attr_access": "items",
