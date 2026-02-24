@@ -28,7 +28,7 @@
 			},
 			{
 				"nome": "VALOR",
-				"valor": "https://pdvsync.varejo.totvs.com.br/preco/api/retaguarda/v3/precos"
+				"valor": "https://pdvsync.varejo.totvs.com.br/preco/api/retaguarda/v3/dadosdinamicos/down/13/2"
 			},
 			{
 				"nome": "CODEMPALTER",
