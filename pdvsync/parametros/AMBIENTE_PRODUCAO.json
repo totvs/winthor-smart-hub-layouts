@@ -247,11 +247,23 @@
       "descricao": "PDVSYNC - Enviar NCM Reforma Tributaria",
       "rota": "PDVSYNC - Enviar NCM Reforma Tributaria"
     },
-	{
+	  {
       "nome": "{{URL_ENVIAR_PRODUTO_REFORMA_TRIBUT}}",
       "valor": "https://pdvsync.varejo.totvs.com.br/produto/api/retaguarda/v3/dadosdinamicos/down/103/1",
       "descricao": "PDVSYNC - Enviar Produto Reforma Tribut",
       "rota": "PDVSYNC - Enviar Produto Reforma Tribut"
-    }
+    },
+		{
+			"nome": "{{URL_CONSULTA_CLIENTES}}",
+			"valor": "https://pdvsync.varejo.totvs.com.br/cliente/api/retaguarda/v3/clientemensagens",
+			"descricao": "PDVSYNC - Buscar clientes",
+			"rota": "PDVSYNC - Buscar clientes"
+		},
+		{
+			"nome": "{{URL_ATUALIZAR_STATUS_CLIENTE}}",
+			"valor": "https://pdvsync.varejo.totvs.com.br/cliente/api/retaguarda/v3/clientemensagens",
+			"descricao": "PDVSYNC - atualizar status cliente",
+			"rota": "PDVSYNC - atualizar status cliente"
+		}		    
   ]
 }
