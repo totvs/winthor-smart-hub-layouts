@@ -1,0 +1,36 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOVARIAVEIS",
+		"campos": [
+			{
+				"nome": "ID",
+				"valor": "PDVSYNC - BUSCAR CLIENTES-{{URL_CONSULTA_CLIENTES}}"
+			},
+			{
+				"nome": "CHAVE",
+				"valor": "{{URL_CONSULTA_CLIENTES}}"
+			},
+			{
+				"nome": "TIPOCHAVE",
+				"valor": "BODY"
+			},
+			{
+				"nome": "TIPOVALOR",
+				"valor": "STRING"
+			},
+			{
+				"nome": "IDROTASERVICO",
+				"valor": "PDVSYNC - BUSCAR CLIENTES"
+			},
+			{
+				"nome": "VALOR",
+				"valor":"https://pdvsync-core-comercial-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/clientemensagens"
+			},
+			{
+				"nome": "CODEMPALTER",
+				"valor": ""
+			}
+		]
+	}
+	
+}
