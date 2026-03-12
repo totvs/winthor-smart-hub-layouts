@@ -255,13 +255,13 @@
 		},
 		{
 			"nome": "{{URL_CONSULTA_CLIENTES}}",
-			"valor": "https://pdvsync-core-comercial-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/clientemensagens",
+			"valor": "https://pdvsync-core-cliente-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/clientemensagens",
 			"descricao": "PDVSYNC - Buscar clientes",
 			"rota": "PDVSYNC - Buscar clientes"
 		},
 		{
 			"nome": "{{URL_ATUALIZAR_STATUS_CLIENTE}}",
-			"valor": "https://pdvsync-core-comercial-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/clientemensagens",
+			"valor": "https://pdvsync-core-cliente-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/clientemensagens",
 			"descricao": "PDVSYNC - atualizar status cliente",
 			"rota": "PDVSYNC - atualizar status cliente"
 		}				
