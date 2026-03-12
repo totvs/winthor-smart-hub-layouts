@@ -1,0 +1,39 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOVARIAVEIS",
+		"campos": [
+			{
+				"nome": "DTULTALTER",
+				"valor": ""
+			},
+			{
+				"nome": "ID",
+				"valor": "PDVSYNC - ATUALIZAR STATUS CLIENTE-{{STATUS_INTEGRACAO}}"
+			},
+			{
+				"nome": "CHAVE",
+				"valor": "{{STATUS_INTEGRACAO}}"
+			},
+			{
+				"nome": "TIPOCHAVE",
+				"valor": "BODY"
+			},
+			{
+				"nome": "TIPOVALOR",
+				"valor": "STRING"
+			},
+			{
+				"nome": "IDROTASERVICO",
+				"valor": "PDVSYNC - ATUALIZAR STATUS CLIENTE"
+			},
+			{
+				"nome": "VALOR",
+				"valor": "SELECT (CASE WHEN STATUS IN (1,2,11,12,13) THEN 1 ELSE 2 END) AS RESULT FROM PCINTEGRACAOCORE p WHERE ID = :IDINTEGRACAOCORE"
+			},
+			{
+				"nome": "CODEMPALTER",
+				"valor": ""
+			}
+		]
+	}
+}
