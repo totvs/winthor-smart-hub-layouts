@@ -1,0 +1,107 @@
+{
+    "tabela": {
+        "campos": [
+            {
+                "nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+                "valor": "S"
+            },
+            {
+                "nome": "ID",
+                "valor": "PDVSYNC - Buscar clientes"
+            },
+            {
+                "nome": "IDEMPRESAAPI",
+                "valor": "PDVSYNC"
+            },
+            {
+                "nome": "SERVICO",
+                "valor": "PDVSYNC - Buscar clientes"
+            },
+            {
+                "nome": "LAYOUTCOMUNICACAO",
+                "valor": {
+                    "name": "PDVSYNC - Buscar clientes",
+                    "request": {
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{TOKEN}}"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "*/*"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "method": "GET",
+                        "url": {
+                            "query": [
+                            ],
+                            "raw": "{{URL_CONSULTA_CLIENTES}}/{{ID_INQUILINO}}"
+                        }
+                    },
+                    "response": [
+                    ]
+                }
+            },
+            {
+                "nome": "LAYOUTTRANSFORMACAO",
+                "valor": [
+                            {
+                                "operation": "custom-totvs",
+                                "spec": {
+                                    "data": {
+                                        "*": {
+                                            "conteudo": "=base64ToObject"
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "operation": "shift",
+                                "spec": {
+                                    "data": {
+                                        "*": {
+                                            "id": "idMensagem",
+                                            "conteudo": {
+                                                "*": "&"
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "operation": "default",
+                                "spec": {
+                                    "_attr_access": "items"
+                                }
+                            }
+                        ]
+            },
+            {
+                "nome": "ATIVO",
+                "valor": "S"
+            },
+            {
+                "nome": "AUTENTICADOR",
+                "valor": "N"
+            },
+            {
+                "nome": "DATASINCRONISMO",
+                "valor": "26-JUL-23"
+            },
+            {
+                "nome": "REFRESHTOKEN",
+                "valor": ""
+            },
+            {
+                "nome": "TIPOPROCESSO",
+                "valor": "BUSCAR"
+            }
+        ],
+        "nome": "PCINTEGRACAOROTASERVICO"
+    }
+}
