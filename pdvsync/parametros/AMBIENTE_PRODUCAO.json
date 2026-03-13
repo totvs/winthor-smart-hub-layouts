@@ -264,6 +264,12 @@
 			"valor": "https://pdvsync.varejo.totvs.com.br/cliente/api/retaguarda/v3/clientemensagens",
 			"descricao": "PDVSYNC - atualizar status cliente",
 			"rota": "PDVSYNC - atualizar status cliente"
-		}		    
+		},
+	{
+      "nome": "{{URL_ENVIAR_CFOP_REFORMA_TRIBUTARIA}}",
+      "valor": "https://pdvsync.varejo.totvs.com.br/imposto/api/retaguarda/v3/dadosdinamicos/down/29/1",
+      "descricao": "PDVSYNC - Enviar CFOP Reforma Tributaria",
+      "rota": "PDVSYNC - Enviar CFOP Reforma Tributaria"
+    }
   ]
 }
