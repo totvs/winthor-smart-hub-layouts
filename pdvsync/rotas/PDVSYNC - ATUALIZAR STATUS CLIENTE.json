@@ -39,7 +39,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{URL_ATUALIZAR_STATUS_CLIENTE}}/{{ID_INQUILINO}}",
+							"raw": "{{URL_ATUALIZAR_STATUS_CLIENTE}}",
 							"query": []
 						},
 						"bodyraw": [
