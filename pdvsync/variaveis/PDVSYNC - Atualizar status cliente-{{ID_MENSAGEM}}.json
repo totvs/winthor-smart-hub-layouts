@@ -28,7 +28,7 @@
 			},
 			{
 				"nome": "VALOR",
-				"valor": ":PCINTEGRACAOCORE.DADOSTRANSFORMADOS->idMensagem"
+				"valor": ":PCINTEGRACAOCORE.DADOSTRANSFORMADOS->Id"
 			},
 			{
 				"nome": "CODEMPALTER",
