@@ -20,7 +20,7 @@
 			},
 			{
 				"nome": "TIPOVALOR",
-				"valor": "STRING"
+				"valor": "SELECT"
 			},
 			{
 				"nome": "IDROTASERVICO",
