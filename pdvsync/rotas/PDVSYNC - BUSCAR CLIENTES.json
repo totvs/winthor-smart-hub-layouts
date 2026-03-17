@@ -50,36 +50,103 @@
             {
                 "nome": "LAYOUTTRANSFORMACAO",
                 "valor": [
-                            {
-                                "operation": "custom-totvs",
-                                "spec": {
-                                    "data": {
-                                        "*": {
-                                            "conteudo": "=base64ToObject"
-                                        }
-                                    }
-                                }
-                            },
-                            {
-                                "operation": "shift",
-                                "spec": {
-                                    "data": {
-                                        "*": {
-                                            "id": "idMensagem",
-                                            "conteudo": {
-                                                "*": "&"
-                                            }
-                                        }
-                                    }
-                                }
-                            },
-                            {
-                                "operation": "default",
-                                "spec": {
-                                    "_attr_access": "items"
-                                }
-                            }
-                        ]
+						  {
+							"operation": "custom-totvs",
+							"spec": {
+								"data": {
+									"*": {
+										"conteudo": "=base64ToObject"
+									}
+								}
+							}
+						  },
+						  {
+							"operation": "shift",
+							"spec": {
+							  "data": {
+								"*": {
+								  "id": "items.[&1].idMensagem",
+								  "dataAtualizacao": "items.[&1].dataAtualizacao",
+								  "conteudo": {
+									"*": "items.[&2].&"
+								  }
+								}
+							  }
+							}
+							},
+						  {
+							"operation": "shift",
+							"spec": {
+							  "items": {
+								"*": {
+										"idMensagem": "items.[&1].Id",
+										"Endereco": "items.[&1].&",
+										"Numero": "items.[&1].&",
+										"Complemento": "items.[&1].&",
+										"Bairro": "items.[&1].&",
+										"Cidade": "items.[&1].&",
+										"Estado": "items.[&1].&",
+										"Cep": "items.[&1].&",
+										"Telefone": "items.[&1].&",
+										"Celular": "items.[&1].&",
+										"Email": "items.[&1].&",
+										"EmailNfe": "items.[&1].&",
+										"PessoaFisica": "items.[&1].&",
+										"CpfCnpj": "items.[&1].&",
+										"RgInscricao": "items.[&1].&",
+										"IdRetaguarda": {
+											"*": {
+												"@1": "items.[&3].IdRetaguarda"
+											},
+											"*-*-*-*-*": {
+												"#0": "items.[&3].IdRetaguarda"
+											}
+										},
+										"ClienteAlterado": "items.[&1].&",
+										"EstadoCivil": "items.[&1].&",
+										"Nome": "items.[&1].&",
+										"Sexo": "items.[&1].&",
+										"Situacao": "items.[&1].&",
+										"IdRetaguardaProfissional": "items.[&1].&",
+										"Loja": "items.[&1].&",
+										"DataNascimento": "items.[&1].&",
+										"dataAtualizacao": "items.[&1].DataAtualizacao"
+									}
+									}
+								}
+							},
+							{
+								"operation": "modify-overwrite-beta",
+								"spec": {
+									"items": {
+										"*": {
+											"idExterno": "=concat('pdvsync-cliente-',@(1,Id),'-',@(1,DataAtualizacao))",
+											"idInterno": "=concat('', @(1,IdRetaguarda))",
+											"tipoIdInterno": "PDVSYNC-CLIENTE"
+										}
+									}
+								}
+							},
+							{
+								"operation": "shift",
+								"spec": {
+									"items": {
+										"*": {
+											"@": "items",
+											"idExterno": "idExterno[]",
+											"idInterno": "idInterno[]",
+											"tipoIdInterno": "tipoIdInterno[]"
+										}
+									}
+								}
+							},
+							{
+								"operation": "default",
+								"spec": {
+									"_attr_access": "items"
+								}
+							}
+					]
             },
             {
                 "nome": "ATIVO",
