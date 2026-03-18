@@ -125,7 +125,6 @@
 									],
 									"descricaoCobSefaz": "items.[&1].formaPagtoModeloFiscal[0].descricaoFiscal",
 									"#NFCe": "items.[&1].formaPagtoModeloFiscal[0].modeloFiscal",
-
 									"exportaecf": {
 										"N": {
 											"#0": [
