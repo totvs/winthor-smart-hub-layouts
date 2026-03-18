@@ -8,11 +8,11 @@
 			},
 			{
 				"nome": "ID",
-				"valor": "WTA - BUSCAR PRODUTO PDV-{{TIPOMERCADORIA}}"
+				"valor": "PDVSYNC - BUSCAR CLIENTES-{{ID_INQUILINO}}"
 			},
 			{
 				"nome": "CHAVE",
-				"valor": "{{TIPOMERCADORIA}}"
+				"valor": "{{ID_INQUILINO}}"
 			},
 			{
 				"nome": "TIPOCHAVE",
@@ -24,11 +24,11 @@
 			},
 			{
 				"nome": "IDROTASERVICO",
-				"valor": "WTA - BUSCAR PRODUTO PDV"
+				"valor": "PDVSYNC - BUSCAR CLIENTES"
 			},
 			{
 				"nome": "VALOR",
-				"valor": "CB,KT,L,PA,TM"
+				"valor":"ADICIONAR_INQUILINO"
 			},
 			{
 				"nome": "CODEMPALTER",
@@ -36,4 +36,5 @@
 			}
 		]
 	}
+	
 }

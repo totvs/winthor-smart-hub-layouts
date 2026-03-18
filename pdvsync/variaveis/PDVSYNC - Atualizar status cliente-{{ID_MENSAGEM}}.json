@@ -8,11 +8,11 @@
 			},
 			{
 				"nome": "ID",
-				"valor": "WTA - BUSCAR PRODUTO PDV-{{TIPOMERCADORIA}}"
+				"valor": "PDVSYNC - ATUALIZAR STATUS CLIENTE-{{ID_MENSAGEM}}"
 			},
 			{
 				"nome": "CHAVE",
-				"valor": "{{TIPOMERCADORIA}}"
+				"valor": "{{ID_MENSAGEM}}"
 			},
 			{
 				"nome": "TIPOCHAVE",
@@ -24,11 +24,11 @@
 			},
 			{
 				"nome": "IDROTASERVICO",
-				"valor": "WTA - BUSCAR PRODUTO PDV"
+				"valor": "PDVSYNC - ATUALIZAR STATUS CLIENTE"
 			},
 			{
 				"nome": "VALOR",
-				"valor": "CB,KT,L,PA,TM"
+				"valor": ":PCINTEGRACAOCORE.DADOSTRANSFORMADOS->Id"
 			},
 			{
 				"nome": "CODEMPALTER",

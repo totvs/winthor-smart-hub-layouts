@@ -8,11 +8,11 @@
 			},
 			{
 				"nome": "ID",
-				"valor": "WTA - BUSCAR PRODUTO PDV-{{TIPOMERCADORIA}}"
+				"valor": "PDVSYNC - ATUALIZAR STATUS CLIENTE-{{STATUS_INTEGRACAO}}"
 			},
 			{
 				"nome": "CHAVE",
-				"valor": "{{TIPOMERCADORIA}}"
+				"valor": "{{STATUS_INTEGRACAO}}"
 			},
 			{
 				"nome": "TIPOCHAVE",
@@ -20,15 +20,15 @@
 			},
 			{
 				"nome": "TIPOVALOR",
-				"valor": "STRING"
+				"valor": "SELECT"
 			},
 			{
 				"nome": "IDROTASERVICO",
-				"valor": "WTA - BUSCAR PRODUTO PDV"
+				"valor": "PDVSYNC - ATUALIZAR STATUS CLIENTE"
 			},
 			{
 				"nome": "VALOR",
-				"valor": "CB,KT,L,PA,TM"
+				"valor": "SELECT (CASE WHEN STATUS IN (1,2,11,12,13) THEN 1 ELSE 2 END) AS RESULT FROM PCINTEGRACAOCORE p WHERE ID = :IDINTEGRACAOCORE"
 			},
 			{
 				"nome": "CODEMPALTER",

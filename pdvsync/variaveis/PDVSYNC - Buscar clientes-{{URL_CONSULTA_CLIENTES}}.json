@@ -3,16 +3,12 @@
 		"nome": "PCINTEGRACAOVARIAVEIS",
 		"campos": [
 			{
-				"nome": "DTULTALTER",
-				"valor": ""
-			},
-			{
 				"nome": "ID",
-				"valor": "WTA - BUSCAR PRODUTO PDV-{{TIPOMERCADORIA}}"
+				"valor": "PDVSYNC - BUSCAR CLIENTES-{{URL_CONSULTA_CLIENTES}}"
 			},
 			{
 				"nome": "CHAVE",
-				"valor": "{{TIPOMERCADORIA}}"
+				"valor": "{{URL_CONSULTA_CLIENTES}}"
 			},
 			{
 				"nome": "TIPOCHAVE",
@@ -24,11 +20,11 @@
 			},
 			{
 				"nome": "IDROTASERVICO",
-				"valor": "WTA - BUSCAR PRODUTO PDV"
+				"valor": "PDVSYNC - BUSCAR CLIENTES"
 			},
 			{
 				"nome": "VALOR",
-				"valor": "CB,KT,L,PA,TM"
+				"valor":"https://pdvsync-core-cliente-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/clientemensagens"
 			},
 			{
 				"nome": "CODEMPALTER",
@@ -36,4 +32,5 @@
 			}
 		]
 	}
+	
 }
