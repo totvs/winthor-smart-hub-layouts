@@ -50,7 +50,7 @@
 									"value": "{{DATAALTERACAO}}"
 								},
 								{
-									"key": "ignoreClientPDVOmni"
+									"key": "ignoreClientPDVOmni",
 									"value": "true"
 								}
 							]
