@@ -105,7 +105,10 @@
 											"#CRED": "items.[&3].idRetaguarda"
 										},
 										"*": {
-											"@1": "items.[&3].idRetaguarda"
+											"@1": [
+												"items.[&3].idRetaguarda",
+												"items.[&3].formaPagtoModeloFiscal[0].idRetaguarda"
+											]
 										}
 									},
 									"codFilial": {
@@ -118,12 +121,21 @@
 									},
 									"cobranca": "items.[&1].descricaofiscal",
 									"descricao": "items.[&1].descricao",
+									"codCobSefaz": "items.[&1].formaPagtoModeloFiscal[0].codigoFiscal",
+									"descricaoCobSefaz": "items.[&1].formaPagtoModeloFiscal[0].descricaoFiscal",
+									"#NFCe": "items.[&1].formaPagtoModeloFiscal[0].modeloFiscal",
 									"exportaecf": {
 										"N": {
-											"#0": "items.[&3].situacao"
+											"#0": [
+												"items[&3].situacao",
+												"items[&3].formaPagtoModeloFiscal[0].situacao"
+											]
 										},
 										"*": {
-											"#1": "items.[&3].situacao"
+											"#1": [
+												"items[&3].situacao",
+												"items[&3].formaPagtoModeloFiscal[0].situacao"
+											]
 										}
 									},
 									"id_verifica_troco": {
@@ -350,6 +362,11 @@
 							"items": {
 								"*": {
 									"situacao": "=toInteger",
+									"formaPagtoModeloFiscal": {
+										"*": {
+											"situacao": "=toInteger"
+										}
+									},
 									"formasPagtoOperadoras": {
 										"*": {
 											"situacao": "=toInteger"
