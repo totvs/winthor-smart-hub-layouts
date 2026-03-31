@@ -48,6 +48,10 @@
 								{
 									"key": "lastChange",
 									"value": "{{DATAALTERACAO}}"
+								},
+								{
+									"key": "ignoreClientPDVOmni",
+									"value": "true"
 								}
 							]
 						}

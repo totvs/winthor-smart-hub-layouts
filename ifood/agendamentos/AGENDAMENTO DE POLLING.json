@@ -1,0 +1,1 @@
+{"tabela":{"nome":"PCINTEGRACAOAGENDAMENTO","campos":[{"nome":"DESCRICAO","valor":"Agendamento de polling"},{"nome":"AGENDAMENTOSEGUNDOS","valor":"30"},{"nome":"DELAYINICIALSEGUNDOS","valor":"5"}]}}

@@ -332,7 +332,7 @@
 					  }
 					}
 					},
-					{
+				    {
 						"operation": "modify-overwrite-beta",
 						"spec": {
 							"items": {

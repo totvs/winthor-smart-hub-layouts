@@ -1,0 +1,132 @@
+{
+    "tabela": {
+        "nome": "PCINTEGRACAOROTASERVICO",
+        "campos": [
+            {
+                "nome": "DATASINCRONISMO",
+                "valor": ""
+            },
+            {
+                "nome": "REFRESHTOKEN",
+                "valor": "N"
+            },
+            {
+                "nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+                "valor": "N"
+            },
+            {
+                "nome": "ID",
+                "valor": "COLENT - Busca Cliente"
+            },
+            {
+                "nome": "IDEMPRESAAPI",
+                "valor": "COLETA-ENTREGA"
+            },
+            {
+                "nome": "SERVICO",
+                "valor": "COLENT - Busca Cliente"
+            },
+            {
+                "nome": "LAYOUTCOMUNICACAO",
+                "valor": {
+                    "name": "COLETA-ENTREGA - Busca Cliente",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{TOKEN}}"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": " */*"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{URL_BASE}}/query/api/v1/clientes/{{IDEXTERNO}}",
+                            "query": [],
+                            "host": [
+                                "{{URL_BASE}}"
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            },
+            {
+                "nome": "LAYOUTTRANSFORMACAO",
+                "valor": [
+                    {
+                        "operation": "modify-overwrite-beta",
+                        "spec": {
+                            "idExterno": "\u003dconcat(\u0027cli-loc-princ-\u0027,@(1,documentoIdentificacao),\u0027-\u0027,@(1,id))"
+                        }
+                    },
+                    {
+                        "operation": "shift",
+                        "spec": {
+                            "idExterno": "idExterno",
+                            "id": "items[0].idExterno",
+                            "documentoIdentificacao": "items[0].cgc",
+                            "enderecos": {
+                              "*": {
+                                "tipoEndereco": "enderecos[\u00261].tipoEndereco",
+                                "localidade": {
+                                  "id": "enderecos[\u00261].id",
+                                  "componentesEnderecos": {
+                                    "*": {
+                                      "nomeLongo": "enderecos[\u00264].componentes.@(1,tipoComponente)"
+                                    }
+                                }
+                              }
+                            }
+                        }
+                    }
+                  },
+                  {
+                    "operation": "shift",
+                    "spec": {
+                      "idExterno": "idExterno",
+                      "items": {
+                        "*": {
+                          "idExterno": "items[0].idExterno",
+                          "cgc": "items[0].cgc"
+                        }
+                      },
+                      "enderecos": {
+                        "*": {
+                          "tipoEndereco": "items[0].enderecos[\u00261].tipoEndereco",
+                          "id": "items[0].enderecos[\u00261].id",
+                          "componentes": {
+                            "BAIRRO": "items[0].enderecos[\u00262].bairro",
+                            "LOGRADOURO": "items[0].enderecos[\u00262].logradouro",
+                            "MUNICIPIO": "items[0].enderecos[\u00262].municipio",
+                            "ESTADO": "items[0].enderecos[\u00262].estado",
+                            "NUMERO_LOGRADOURO": "items[0].enderecos[\u00262].numero",
+                            "CODIGO_POSTAL": "items[0].enderecos[\u00262].cep"
+                          }
+                        }
+                      }
+                    }
+                  }
+                ]
+            },
+            {
+                "nome": "ATIVO",
+                "valor": "S"
+            },
+            {
+                "nome": "TIPOPROCESSO",
+                "valor": "BUSCAR"
+            },
+            {
+                "nome": "AUTENTICADOR",
+                "valor": "N"
+            }
+        ]
+    }
+}

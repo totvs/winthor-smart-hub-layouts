@@ -1,0 +1,29 @@
+{
+	"ambiente" : "HOMOLOGACAO",
+	"parametrosVariaveis": [
+		{
+			"nome": "{{CLIENT_ID}}",
+			"valor": "Lds6vLkVdtQ9yw5dnDJUK+Vbo9e1tLz1+hIlOQAew02oo5zcI27CL0h/Z/DSpKmR",
+			"descricao": "IFOOD- Autenticacao AUTH TOKEN -{{CLIENT_ID}}",
+			"rota": "IFOOD- Autenticacao AUTH TOKEN"
+		},
+		{
+			"nome": "{{CLIENT_SECRET}}",
+			"valor": "WYni2HQymfEC13y7zspjKoKjBlOx4Y3nLvZU0HNnJKTIzjI/qWJt0LwQyQHktd2SLqgQaV5Xpl+S2Ar0n3r31kI99Fxo/JzBnavdTeRit81gLyQ7CxhJeSQiomftTp65N2oR0u/PNWgGIesStIj5vA==",
+			"descricao": "IFOOD- Autenticacao AUTH TOKEN -{{CLIENT_SECRET}}",
+			"rota": "IFOOD- Autenticacao AUTH TOKEN"
+		},
+		{
+			"nome": "{{CLIENT_ID}}",
+			"valor": "Lds6vLkVdtQ9yw5dnDJUK+Vbo9e1tLz1+hIlOQAew02oo5zcI27CL0h/Z/DSpKmR",
+			"descricao": "IFOOD- Autenticacao REFRESH TOKEN -{{CLIENT_ID}}",
+			"rota": "IFOOD- Autenticacao REFRESH TOKEN"
+		},
+		{
+			"nome": "{{CLIENT_SECRET}}",
+			"valor": "WYni2HQymfEC13y7zspjKoKjBlOx4Y3nLvZU0HNnJKTIzjI/qWJt0LwQyQHktd2SLqgQaV5Xpl+S2Ar0n3r31kI99Fxo/JzBnavdTeRit81gLyQ7CxhJeSQiomftTp65N2oR0u/PNWgGIesStIj5vA==",
+			"descricao": "IFOOD- Autenticacao REFRESH TOKEN -{{CLIENT_SECRET}}",
+			"rota": "IFOOD- Autenticacao REFRESH TOKEN"
+		}
+	]
+}

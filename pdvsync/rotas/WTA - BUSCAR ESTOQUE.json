@@ -107,6 +107,7 @@
 									"idExterno": "idExterno[&1]",									
 									"idInterno": "idInterno",
 							        "tipoIdInterno":"tipoIdInterno",
+									"warehouseBranchId": "items[&1].idProprietario",
 									"id_retaguarda": "items[&1].idRetaguarda",
 									"warehouseBranchId": "items[&1].idProprietario",
 									"quantity": "items[&1].saldo",

@@ -1,0 +1,103 @@
+{
+    "tabela": {
+        "nome": "PCINTEGRACAOROTASERVICO",
+        "campos": [
+            {
+                "nome": "DATASINCRONISMO",
+                "valor": ""
+            },
+            {
+                "nome": "REFRESHTOKEN",
+                "valor": "N"
+            },
+            {
+                "nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+                "valor": "N"
+            },
+            {
+                "nome": "ID",
+                "valor": "WTA-COLENT - GERAR DEPARA LOC"
+            },
+            {
+                "nome": "IDEMPRESAAPI",
+                "valor": "WTA-COLETA-ENTREGA"
+            },
+            {
+                "nome": "SERVICO",
+                "valor": "WTA-COLENT - GERAR DEPARA LOC"
+            },
+            {
+                "nome": "LAYOUTCOMUNICACAO",
+                "valor": {
+                    "name": "WTA-COLENT - GERAR DEPARA LOC",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{TOKEN}}"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": " */*"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{URL_BASE}}/query/api/v1/localidades/gerar-depara",
+                            "query": [],
+                            "host": [
+                                "{{URL_BASE}}"
+                            ],
+                            "path": [
+                                "logistica",
+                                "apis",
+                                "v1",
+                                "localidades",
+                                "gerar-depara"
+                            ]
+                        },
+                        "bodyraw": "{{CLIENT_JSON}}"
+                    },
+                    "response": []
+                }
+            },
+            {
+                "nome": "LAYOUTTRANSFORMACAO",
+                "valor": [
+                    {
+                        "operation": "modify-overwrite-beta",
+                        "spec": {
+                            "idExterno": "\u003dconcat(\u0027loc-depara-\u0027,@(1,idinterno),\u0027-\u0027,@(1,idexterno))"
+                        }
+                    },
+                    {
+                        "operation": "shift",
+                        "spec": {
+                            "idExterno": "idExterno",
+                            "tabela": "items[0].tabela",
+                            "campo": "items[0].campo",
+                            "idinterno": "items[0].idinterno",
+                            "idexterno": "items[0].idexterno"
+                        }
+                    }
+                ]
+            },
+            {
+                "nome": "ATIVO",
+                "valor": "S"
+            },
+            {
+                "nome": "TIPOPROCESSO",
+                "valor": "BUSCAR"
+            },
+            {
+                "nome": "AUTENTICADOR",
+                "valor": "N"
+            }
+        ]
+    }
+}

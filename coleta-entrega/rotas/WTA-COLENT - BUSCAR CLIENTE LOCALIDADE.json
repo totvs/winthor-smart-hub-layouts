@@ -74,9 +74,7 @@
                                 "idExterno": "idExterno",
                                 "codCli": "items[&1].codCli",
                                 "codEndEntCli": "items[&1].codEndEntCli",
-                                "logradouro": "items[&1].logradouro",
-                                "cep": "items[&1].cep",
-                                "numero": "items[&1].numero"
+                                "idExternoCliente": "items[&1].idExterno"
                             }
                         }
                     },
