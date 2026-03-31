@@ -109,6 +109,7 @@
 							        "tipoIdInterno":"tipoIdInterno",
 									"warehouseBranchId": "items[&1].idProprietario",
 									"id_retaguarda": "items[&1].idRetaguarda",
+									"warehouseBranchId": "items[&1].idProprietario",
 									"quantity": "items[&1].saldo",
 									"skuID_": "items[&1].codigoProduto",
 									"productId": "items[&1].idRetaguardaProduto"
