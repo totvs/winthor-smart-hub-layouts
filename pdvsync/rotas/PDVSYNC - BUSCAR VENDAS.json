@@ -155,7 +155,11 @@
                                             "Nome": "items.[&3].consumidorFinal.cliente",
                                             "Numero": "items.[&3].consumidorFinal.numeroEnt",
                                             "RgInscricao": "items.[&3].consumidorFinal.rg",
-                                            "Telefone": "items.[&3].consumidorFinal.telEnt"
+											"Telefone": "items.[&3].consumidorFinal.telEnt",
+                                            "complemento": "items.[&3].consumidorFinal.complemento",
+											"sexo": "items.[&3].consumidorFinal.sexo",
+											"pessoaFisica":  "items.[&3].consumidorFinal.pessoaFisica",
+											"estadoCivil":  "items.[&3].consumidorFinal.estadoCivil"
                                         },
                                         "Coo": "items.[&2].consumidorFinal.numCupom",
                                         "EstadoConsumidor": "items.[&2].estadoConsumidor",
