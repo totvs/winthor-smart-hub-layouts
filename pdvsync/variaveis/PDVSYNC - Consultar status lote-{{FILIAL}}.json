@@ -33,7 +33,11 @@
 			{
 				"nome": "CODEMPALTER",
 				"valor": ""
-			}
+			},
+			{
+                "nome": "VISIVELWIZARD",
+                "valor": "S"
+            }
 		]
 	}
 }
