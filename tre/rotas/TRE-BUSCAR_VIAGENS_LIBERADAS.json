@@ -38,9 +38,23 @@
               "soap:Body": {
                 "ns2:publishRetrieveReleasedTripResponse": {
                   "publishReleasedTrips": {
+                    "publishReleasedTrip": "\u003dtoList(@(1,publishReleasedTrip))"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "operation": "modify-overwrite-beta",
+            "spec": {
+              "soap:Body": {
+                "ns2:publishRetrieveReleasedTripResponse": {
+                  "publishReleasedTrips": {
                     "publishReleasedTrip": {
-                      "tripReleaseRequests": {
-                        "tripReleaseRequest": "\u003dtoList(@(1,tripReleaseRequest))"
+                      "*": {
+                        "tripReleaseRequests": {
+                          "tripReleaseRequest": "\u003dtoList(@(1,tripReleaseRequest))"
+                        }
                       }
                     }
                   }
@@ -55,32 +69,34 @@
                 "ns2:publishRetrieveReleasedTripResponse": {
                   "publishReleasedTrips": {
                     "publishReleasedTrip": {
-                      "messageId": "idMensagem",
-                      "tripReleaseRequests": {
-                        "tripReleaseRequest": {
-                          "*": {
-                            "identifier": "items.[\u00261].idViagem",
-                            "vehicleId": "items.[\u00261].idVeiculo",
-                            "loads": {
-                              "load": {
-                                "identifier": "items.[\u00263].numcarExterno",
-                                "stops": {
-                                  "stop": {
-                                    "*": {
-                                      "subStops": {
-                                        "subStop": {
-                                          "loadedShipmentUnits": {
-                                            "shipmentUnit": {
-                                              "*": {
+                      "*": {
+                        "messageId": "publishReleasedTripTemp.[\u00261].idMensagem",
+                        "tripReleaseRequests": {
+                          "tripReleaseRequest": {
+                            "*": {
+                              "identifier": "publishReleasedTripTemp.[\u00264].trips.[\u00261].idViagem",
+                              "vehicleId": "publishReleasedTripTemp.[\u00264].trips.[\u00261].idVeiculo",
+                              "loads": {
+                                "load": {
+                                  "identifier": "publishReleasedTripTemp.[\u00266].trips.[\u00263].numcarExterno",
+                                  "stops": {
+                                    "stop": {
+                                      "*": {
+                                        "subStops": {
+                                          "subStop": {
+                                            "loadedShipmentUnits": {
+                                              "shipmentUnit": {
+                                                "*": {
+                                                  "deliveryUnitList": {
+                                                    "deliveryUnit": {
+                                                      "orderSourceId": "publishReleasedTripTemp.[\u002616].trips.[\u002613].idsPedidos[]"
+                                                    }
+                                                  }
+                                                },
                                                 "deliveryUnitList": {
                                                   "deliveryUnit": {
-                                                    "orderSourceId": "items.[\u002613].idsPedidos[]"
+                                                    "orderSourceId": "publishReleasedTripTemp.[\u002615].trips.[\u002612].idsPedidos[]"
                                                   }
-                                                }
-                                              },
-                                              "deliveryUnitList": {
-                                                "deliveryUnit": {
-                                                  "orderSourceId": "items.[\u002612].idsPedidos[]"
                                                 }
                                               }
                                             }
@@ -102,11 +118,26 @@
             }
           },
           {
+            "operation" : "shift",
+            "spec" : {
+              "publishReleasedTripTemp" : {
+                "*": {
+                  "idMensagem": "items.[\u00261].idMensagem",
+                    "*": {
+                      "idViagem": "items.[\u00263].idViagem",
+                      "idVeiculo": "items.[\u00263].idVeiculo",
+                      "numcarExterno": "items.[\u00263].numcarExterno",
+                      "idsPedidos": "items.[\u00263].idsPedidos"
+                    }
+                }
+              }
+            }
+          },
+          {
             "operation": "modify-overwrite-beta",
             "spec": {
               "items": {
                 "*": {
-                  "idMensagem": "\u003dconcat(\u0027\u0027, @(3,idMensagem))",
                   "idExterno": "\u003dconcat(\u0027SOAP-TRE-VIAGEM-LIBERADA-\u0027,@(1,idMensagem),\u0027-\u0027,@(1,idViagem),\u0027-\u0027,@(1,numcarExterno))",
                   "idInterno": "\u003dconcat(\u0027\u0027, @(1,idMensagem))",
                   "tipoIdInterno": "TRE-VIAGEM-LIBERADA"
