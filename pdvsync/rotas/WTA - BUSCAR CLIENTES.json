@@ -92,7 +92,7 @@
 							   "name":"items.[&1].nome",
 							   "active":"items.[&1].situacao",
 							   "deliveryAddress":"items.[&1].endereco",
-							   "addressInfo":"items.[&1].complemento",
+							   "complementDeliveryAddress":"items.[&1].complemento",
 							   "deliveryDistrict":"items.[&1].bairro",
 							   "deliveryCity":"items.[&1].cidade",
 							   "deliveryState":"items.[&1].estado",
