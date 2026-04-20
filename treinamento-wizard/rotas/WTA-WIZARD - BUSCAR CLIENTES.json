@@ -1,5 +1,5 @@
-﻿{
-	"tabela": {
+{
+"tabela": {
 		"nome": "PCINTEGRACAOROTASERVICO",
 		"campos": [
 			{
@@ -21,7 +21,7 @@
 			{
 				"nome": "LAYOUTCOMUNICACAO",
 				"valor": {
-					"name": "WTA -Buscar Clientes",
+					"name": "WTA-WIZARD -Buscar Clientes",
 					"request": {
 						"method": "GET",
 						"header": [
