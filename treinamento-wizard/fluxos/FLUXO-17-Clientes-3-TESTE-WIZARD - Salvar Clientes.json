@@ -28,11 +28,11 @@
 			},
 			{
 				"nome": "IDDEPENDENTE",
-				"valor": "WTA -Buscar Clientes"
+				"valor": "WTA-WIZARD - Buscar Clientes"
 			},
 			{
 				"nome": "DESCRICAO",
-				"valor": "Clientes"
+				"valor": "Clientes-WEBHOOK"
 			}
 		]
 	}
