@@ -1,0 +1,16 @@
+﻿{
+	"tabela": {
+		"nome": "PCINTEGRACAOAGENDAMENTOFLUXO",
+		"campos": [
+			{
+				"nome": "IDAGENDAMENTO",
+				"valor": "TESTE-WIZARD - movimento caixas"
+			},
+			{
+				"nome": "IDFLUXO",
+				"valor": "Movimentacoes Caixa"
+			} 
+		]
+	}
+}
+

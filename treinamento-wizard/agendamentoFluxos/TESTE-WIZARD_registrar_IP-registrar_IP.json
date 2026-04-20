@@ -1,0 +1,15 @@
+﻿{
+	"tabela": {
+		"nome": "PCINTEGRACAOAGENDAMENTOFLUXO",
+		"campos": [
+			{
+				"nome": "IDAGENDAMENTO",
+				"valor": "TESTE-WIZARD - registrar IP"
+			},
+			{
+				"nome": "IDFLUXO",
+				"valor": "Registrar IP"
+			}
+		]
+	}
+}
