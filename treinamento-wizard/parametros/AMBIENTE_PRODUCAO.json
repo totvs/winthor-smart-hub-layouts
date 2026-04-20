@@ -1,5 +1,5 @@
-﻿{
-  "ambiente": "PRODUCAO",
+{
+"ambiente": "PRODUCAO",
   "parametrosVariaveis": [
     {
       "nome": "{{URL_ENVIAR_DADOS_PAGAMENTO}}",

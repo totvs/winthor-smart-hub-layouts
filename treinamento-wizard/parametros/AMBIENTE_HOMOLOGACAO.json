@@ -1,5 +1,5 @@
-﻿{
-	"ambiente" : "HOMOLOGACAO",
+{
+"ambiente" : "HOMOLOGACAO",
 	"parametrosVariaveis": [
 		{
 			"nome": "{{URL_ENVIAR_LOJAS}}",
