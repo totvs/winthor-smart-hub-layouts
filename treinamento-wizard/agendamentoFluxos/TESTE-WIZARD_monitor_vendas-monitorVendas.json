@@ -1,0 +1,15 @@
+﻿{
+	"tabela": {
+		"nome": "PCINTEGRACAOAGENDAMENTOFLUXO",
+		"campos": [
+			{
+				"nome": "IDAGENDAMENTO",
+				"valor": "TESTE-WIZARD - monitor vendas"
+			},
+			{
+				"nome": "IDFLUXO",
+				"valor": "Atualizar Status Venda Retaguarda"
+			}
+		]
+	}
+}
