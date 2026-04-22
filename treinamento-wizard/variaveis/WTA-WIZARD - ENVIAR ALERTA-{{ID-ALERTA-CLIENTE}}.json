@@ -8,27 +8,27 @@
 			},
 			{
 				"nome": "ID",
-				"valor": "TESTE-WIZARD - SALVAR CLIENTES-{{ID_INQUILINO}}"
+				"valor": "WTA-WIZARD - ENVIAR ALERTA-{{ID-ALERTA-CLIENTE}}"
 			},
 			{
 				"nome": "CHAVE",
-				"valor": "{{ID_INQUILINO}}"
+				"valor": "{{ID-ALERTA-CLIENTE}}"
 			},
 			{
 				"nome": "TIPOCHAVE",
-				"valor": "BODY"
+				"valor": "PARAMS"
 			},
 			{
 				"nome": "TIPOVALOR",
-				"valor": "STRING"
+				"valor": "SELECT"
 			},
 			{
 				"nome": "IDROTASERVICO",
-				"valor": "TESTE-WIZARD - SALVAR CLIENTES"
+				"valor": "WTA-WIZARD - ENVIAR ALERTA"
 			},
 			{
 				"nome": "VALOR",
-				"valor":"ADICIONAR_INQUILINO"
+				"valor": "SELECT id FROM pcintegracaoalerta WHERE nome = 'Informativo de Cliente'"
 			},
 			{
 				"nome": "CODEMPALTER",
@@ -40,11 +40,11 @@
 			},
 			{
 				"nome": "ORDENACAOWIZARD",
-				"valor": "3"
+				"valor": "5"
 			},
 			{
 				"nome": "DESCRICAOPARAM",
-				"valor": "Lista de inquilinos para envio"
+				"valor": "Consulta para id do alerta a ser enviado para o cliente"
 			}
 		]
 	}

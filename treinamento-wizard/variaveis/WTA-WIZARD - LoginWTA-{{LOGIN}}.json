@@ -33,6 +33,18 @@
 			{
 				"nome": "CODEMPALTER",
 				"valor": ""
+			},
+			{
+				"nome": "VISIVELWIZARD",
+				"valor": "S"
+			},
+			{
+				"nome": "ORDENACAOWIZARD",
+				"valor": "1"
+			},
+			{
+				"nome": "DESCRICAOPARAM",
+				"valor": "Login para autenticação na WTA"
 			}
 		]
 	}

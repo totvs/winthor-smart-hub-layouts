@@ -52,6 +52,10 @@
 								{
 									"key": "ignoreClientPDVOmni",
 									"value": "true"
+								},
+								{
+									"key": "finalCostumer",
+									"value": "s"
 								}
 							]
 						}

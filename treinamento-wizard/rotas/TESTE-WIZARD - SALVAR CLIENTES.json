@@ -26,10 +26,6 @@
 						"method": "POST",
 						"header": [
 							{
-								"key": "Authorization",
-								"value": "Bearer {{TOKEN}}"
-							},
-							{
 								"key": "Accept",
 								"value": "*/*"
 							},

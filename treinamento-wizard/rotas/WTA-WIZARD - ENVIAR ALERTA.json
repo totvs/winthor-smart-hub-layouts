@@ -8,7 +8,7 @@
 			},
 			{
 				"nome": "ID",
-				"valor": "WTA-WIZARD - LoginWTA"
+				"valor": "WTA-WIZARD - ENVIAR ALERTA"
 			},
 			{
 				"nome": "IDEMPRESAAPI",
@@ -16,41 +16,31 @@
 			},
 			{
 				"nome": "SERVICO",
-				"valor": "WTA-WIZARD - LoginWTA"
+				"valor": "WTA-WIZARD - ENVIAR ALERTA"
 			},
 			{
 				"nome": "LAYOUTCOMUNICACAO",
 				"valor": {
-					"name": "WTA - LoginWTA - Usuario Login",
+					"name": "WTA-WIZARD - Enviar Alerta",
 					"request": {
 						"method": "POST",
 						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							},
 							{
 								"key": "Content-Type",
 								"value": "application/json"
 							}
 						],
-						"body": [
-							{
-								"key": "login",
-								"value": "{{LOGIN}}"
-							},
-							{
-								"key": "senha",
-								"value": "{{SENHA}}"
-							}
-						],
 						"url": {
-							"raw": "{{URL_BASE}}/winthor/autenticacao/v1/login",
-							"host": [
-								"{{URL_BASE}}"
-							],
-							"path": [
-								"winthor",
-								"autenticacao",
-								"v1",
-								"login"
-							]
+							"raw": "{{URL_BASE}}/winthor/integracao/fulfillment/v1/alerta/{{ID-ALERTA-CLIENTE}}/disparar",
+							"query": []
 						}
 					},
 					"response": []
@@ -58,7 +48,14 @@
 			},
 			{
 				"nome": "LAYOUTTRANSFORMACAO",
-				"valor": ""
+				"valor": [
+					{
+						"operation": "default",
+						"spec": {
+							"status": 2
+						}
+					}
+				]
 			},
 			{
 				"nome": "ATIVO",
@@ -66,19 +63,19 @@
 			},
 			{
 				"nome": "AUTENTICADOR",
-				"valor": "S"
+				"valor": "N"
 			},
 			{
 				"nome": "DATASINCRONISMO",
-				"valor": "11-MAR-22"
+				"valor": "14-NOV-23"
 			},
 			{
 				"nome": "REFRESHTOKEN",
-				"valor": "S"
+				"valor": ""
 			},
 			{
 				"nome": "TIPOPROCESSO",
-				"valor": "BUSCAR"
+				"valor": "ENVIAR"
 			}
 		]
 	}
