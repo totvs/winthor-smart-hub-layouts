@@ -125,6 +125,17 @@
 						}
 					},
 					{
+						"operation": "modify-overwrite-beta",
+						"spec": {
+							"items": {
+								"*": {
+									"situacao": "=toInteger",
+									"administrador": "=toInteger"
+								}
+							}
+						}
+					},
+					{
 						"operation": "default",
 						"spec": {
 							"_attr_access": "items",
