@@ -1,0 +1,39 @@
+{
+"tabela": {
+		"nome": "PCINTEGRACAOVARIAVEIS",
+		"campos": [
+			{
+				"nome": "DTULTALTER",
+				"valor": ""
+			},
+			{
+				"nome": "ID",
+				"valor": "WTA-WIZARD - LoginWTA-{{LOGIN}}"
+			},
+			{
+				"nome": "CHAVE",
+				"valor": "{{LOGIN}}"
+			},
+			{
+				"nome": "TIPOCHAVE",
+				"valor": "BODY"
+			},
+			{
+				"nome": "TIPOVALOR",
+				"valor": "STRING"
+			},
+			{
+				"nome": "IDROTASERVICO",
+				"valor": "WTA-WIZARD - LoginWTA"
+			},
+			{
+				"nome": "VALOR",
+				"valor": "ADICIONAR_LOGIN_WTA"
+			},
+			{
+				"nome": "CODEMPALTER",
+				"valor": ""
+			}
+		]
+	}
+}

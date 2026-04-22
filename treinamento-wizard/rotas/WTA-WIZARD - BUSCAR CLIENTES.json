@@ -1,5 +1,5 @@
 {
-	"tabela": {
+"tabela": {
 		"nome": "PCINTEGRACAOROTASERVICO",
 		"campos": [
 			{
@@ -8,20 +8,20 @@
 			},
 			{
 				"nome": "ID",
-				"valor": "WTA - Buscar Clientes"
+				"valor": "WTA-WIZARD - Buscar Clientes"
 			},
 			{
 				"nome": "IDEMPRESAAPI",
-				"valor": "WINTHOR-WTA"
+				"valor": "WTA-WIZARD"
 			},
 			{
 				"nome": "SERVICO",
-				"valor": "WTA - Buscar Clientes"
+				"valor": "WTA-WIZARD - Buscar Clientes"
 			},
 			{
 				"nome": "LAYOUTCOMUNICACAO",
 				"valor": {
-					"name": "WTA -Buscar Clientes",
+					"name": "WTA-WIZARD -Buscar Clientes",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -73,9 +73,9 @@
 							   "cep_entrega":"=join('', @(1,cep_entrega_array))",
 							   "telefone_entrega_array":"=split('\\D',@(1,deliveryPhone))",
 							   "telefone_entrega":"=join('', @(1,telefone_entrega_array))",
-							   "idExterno":"=concat('pdvsync-cliente-',@(1,id),'-',@(1,lastChange))",
+							   "idExterno":"=concat('TESTE-WIZARD-cliente-',@(1,id),'-',@(1,lastChange))",
 							   "idInterno":"=concat('', @(1,id))",
-							   "tipoIdInterno":"PDVSYNC-CLIENTE"
+							   "tipoIdInterno":"TESTE-WIZARD-CLIENTE"
 							}
 						 }
 					  }
@@ -92,9 +92,9 @@
 							   "name":"items.[&1].nome",
 							   "active":"items.[&1].situacao",
 							   "deliveryAddress":"items.[&1].endereco",
-							   "complementDeliveryAddress":"items.[&1].complemento",
+							   "addressInfo":"items.[&1].complemento",
 							   "deliveryDistrict":"items.[&1].bairro",
-							   "deliveryCity":"items.[&1].cidade",
+							   "businessCity":"items.[&1].cidade",
 							   "deliveryState":"items.[&1].estado",
 							   "cep_entrega":"items.[&1].cep",
 							   "telefone_entrega":"items.[&1].telefone",
