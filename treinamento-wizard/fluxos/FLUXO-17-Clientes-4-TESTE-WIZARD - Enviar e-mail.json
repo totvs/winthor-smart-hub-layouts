@@ -12,15 +12,15 @@
 			},
 			{
 				"nome": "ORDEMEXECUCAO",
-				"valor": "3"
+				"valor": "4"
 			},
 			{
 				"nome": "IDROTASERVICO",
-				"valor": "TESTE-WIZARD - Salvar Clientes"
+				"valor": "WTA-WIZARD - ENVIAR ALERTA"
 			},
 			{
 				"nome": "IDINTEGRACAOCLASSEMETODO",
-				"valor": "EnvioIntegracaoStatusRecebidoLote"
+				"valor": "ConsultarStatusPosIntegracao"
 			},
 			{
 				"nome": "ATIVO",
@@ -28,7 +28,7 @@
 			},
 			{
 				"nome": "IDDEPENDENTE",
-				"valor": "WTA-WIZARD - Buscar Clientes"
+				"valor": ""
 			},
 			{
 				"nome": "DESCRICAO",
