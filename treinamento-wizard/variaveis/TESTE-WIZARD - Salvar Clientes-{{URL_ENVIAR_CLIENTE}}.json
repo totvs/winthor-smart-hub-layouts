@@ -1,0 +1,39 @@
+{
+"tabela": {
+		"nome": "PCINTEGRACAOVARIAVEIS",
+		"campos": [
+			{
+				"nome": "DTULTALTER",
+				"valor": ""
+			},
+			{
+				"nome": "ID",
+				"valor": "TESTE-WIZARD - SALVAR CLIENTES-{{URL_ENVIAR_CLIENTE}}"
+			},
+			{
+				"nome": "CHAVE",
+				"valor": "{{URL_ENVIAR_CLIENTE}}"
+			},
+			{
+				"nome": "TIPOCHAVE",
+				"valor": "BODY"
+			},
+			{
+				"nome": "TIPOVALOR",
+				"valor": "STRING"
+			},
+			{
+				"nome": "IDROTASERVICO",
+				"valor": "TESTE-WIZARD - SALVAR CLIENTES"
+			},
+			{
+				"nome": "VALOR",
+				"valor": "https://webhook.site/#!/view/98233281-52f4-4322-99d7-a240c78f2a61"
+			},
+			{
+				"nome": "CODEMPALTER",
+				"valor": ""
+			}
+		]
+	}
+}
