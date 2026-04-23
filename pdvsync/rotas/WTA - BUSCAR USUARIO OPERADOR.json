@@ -78,7 +78,8 @@
 									"idInterno":"=concat('', @(1,matricula))",
 							        "tipoIdInterno":"PDVSYNC-USUARIO-OPERADOR",
 									"cpf_array": "=split('\\D',@(1,cpf))",
-									"cpf_": "=join('', @(1,cpf_array))"
+									"cpf_": "=join('', @(1,cpf_array))",
+									"id_retaguarda": "=toString(@(1,matricula))"
 								}
 							}
 						}
@@ -88,10 +89,10 @@
 						"spec": {
 							"items": {
 								"*": {
-									"idExterno": "idExterno",	
+									"idExterno": "idExterno",
                                     "idInterno": "idInterno",
-							        "tipoIdInterno":"tipoIdInterno",									
-									"matricula": "items.[&1].idRetaguarda",
+							        "tipoIdInterno":"tipoIdInterno",
+									"id_retaguarda": "items.[&1].idRetaguarda",
 									"situacao": {
 										"ATIVO": {
 											"#1": "items.[&3].situacao"
@@ -124,6 +125,17 @@
 						}
 					},
 					{
+						"operation": "modify-overwrite-beta",
+						"spec": {
+							"items": {
+								"*": {
+									"situacao": "=toInteger",
+									"administrador": "=toInteger"
+								}
+							}
+						}
+					},
+					{
 						"operation": "default",
 						"spec": {
 							"_attr_access": "items",
@@ -132,7 +144,7 @@
 									"idInquilino": "{{ID_INQUILINO}}",
 									"idProprietario": "{{MASTER_ID_PROPRIETARIO}}",
 									"loteOrigem": "{{LOTE_ORIGEM}}",
-									"cpf": "12345678912", 
+									"cpf": "12345678912",
 									"administrador": 0,
 									"senhaCriptografada": "winthor"
 								}
