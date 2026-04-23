@@ -48,6 +48,10 @@
 								{
 									"key": "lastChange",
 									"value": "{{LAST_CHANGE}}"
+								},
+								{
+									"key": "initialSync",
+									"value": "{{INITIAL_SYNC}}"
 								}
 							]
 						}
