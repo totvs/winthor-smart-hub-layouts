@@ -109,9 +109,21 @@
 							"_attr_access": "items",
 							"items[]": {
 								"*": {
-									"idInquilino": "{{ID_INQUILINO}}",
-									"idProprietario": "{{MASTER_ID_PROPRIETARIO}}",
-									"loteOrigem": "{{LOTE_ORIGEM}}"
+									"IdInquilino": "{{ID_INQUILINO}}",
+									"IdProprietario": "{{MASTER_ID_PROPRIETARIO}}",
+									"LoteOrigem": "{{LOTE_ORIGEM}}"
+								}
+							}
+						}
+					},
+					{
+						"operation": "modify-overwrite-beta",
+						"spec": {
+							"items": {
+							"*": {
+								"IdRetaguarda": "=toString",
+								"IdRetaguardaAtividadePrincipal": "=toString",
+								"Situacao": "=toInteger"
 								}
 							}
 						}
