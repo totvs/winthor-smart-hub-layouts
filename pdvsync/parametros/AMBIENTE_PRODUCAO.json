@@ -141,7 +141,7 @@
     },
     {
       "nome": "{{URL_ENVIAR_STATUS_PREVENDA}}",
-      "valor": "https://pdvsync.varejo.totvs.com.br/comercial/api/retaguarda/v3/preVendaMensagens",
+      "valor": "https://pdvsync.varejo.totvs.com.br/comercial/api/retaguarda/v3/preVenda",
       "descricao": "PDVSync -Envia status pedido",
       "rota": "PDVSYNC - Envia status pedido"
     },
