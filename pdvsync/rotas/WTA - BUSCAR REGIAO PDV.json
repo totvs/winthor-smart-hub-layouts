@@ -35,7 +35,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{URL_BASE}}/winthor/cliente/v1/regiao",
+							"raw": "{{URL_BASE}}/winthor/integracao/cliente/v1/regiao",
 							"query": [
 								{
 									"key": "pagesize",
