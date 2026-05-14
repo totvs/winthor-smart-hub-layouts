@@ -109,6 +109,16 @@
 						}
 					},
 					{
+						"operation": "modify-overwrite-beta",
+						"spec": {
+							"items": {
+								"*": {
+									"tipoTransacao": "=toInteger"
+								}
+							}
+						}
+					},
+					{
 						"operation": "default",
 						"spec": {
 							"_attr_access": "items",
