@@ -90,14 +90,14 @@
 					"spec": {
 						"items": {
 							"*": {
-								"idExternoIcms": "=concat('pdvsync-icms-', @(1,id),'-', @(1,idProprietario),'-', @(1,dataUltimaAlteracao))",
-								"idExternoSt": "=concat('pdvsync-st-', @(1,id),'-', @(1,idProprietario),'-', @(1,dataUltimaAlteracao))",
+								"idExternoIcms": "=concat('MOCK-PDVSYNC-icms-', @(1,id),'-', @(1,idProprietario),'-', @(1,dataUltimaAlteracao))",
+								"idExternoSt": "=concat('MOCK-PDVSYNC-st-', @(1,id),'-', @(1,idProprietario),'-', @(1,dataUltimaAlteracao))",
 								"idRetaguardaIcms": "=concat(@(1,id),'-ICMS')",
 								"idRetaguardaSt": "=concat(@(1,id),'-ST')",
 								"idInternoIcms": "=concat(@(1,id),'-ICMS')",
 								"idInternoSt": "=concat(@(1,id),'-ST')",
-								"tipoIdInternoIcms": "PDVSYNC-ICMS",
-								"tipoIdInternoSt": "PDVSYNC-ICMS",
+								"tipoIdInternoIcms": "MOCK-PDVSYNC-ICMS",
+								"tipoIdInternoSt": "MOCK-PDVSYNC-ICMS",
 								"aliquota_check_modalidate": "=concat(@(1,aliquota),'')",
 								"aliquota_str": "=concat(@(1,aliquota), '')",
 								"aliquota_arr": "=split('\\.',@(1,aliquota_str))",
@@ -209,3 +209,5 @@
 		]
 	}
 }
+
+

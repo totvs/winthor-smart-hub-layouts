@@ -1,0 +1,41 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOVARIAVEIS",
+		"campos": [
+			{
+				"nome": "DTULTALTER",
+				"valor": ""
+			},
+			{
+				"nome": "ID",
+				"valor": "MOCK-PDVSYNC - ATUALIZAR STATUS CAIXA-{{URL_ATUALIZAR_STATUS_CAIXA}}"
+			},
+			{
+				"nome": "CHAVE",
+				"valor": "{{URL_ATUALIZAR_STATUS_CAIXA}}"
+			},
+			{
+				"nome": "TIPOCHAVE",
+				"valor": "BODY"
+			},
+			{
+				"nome": "TIPOVALOR",
+				"valor": "STRING"
+			},
+			{
+				"nome": "IDROTASERVICO",
+				"valor": "MOCK-PDVSYNC - ATUALIZAR STATUS CAIXA"
+			},
+			{
+				"nome": "VALOR",
+				"valor": "https://pdvsync.varejo.totvs.com.br/comercial/api/retaguarda/v3/caixaMensagens"
+			},
+			{
+				"nome": "CODEMPALTER",
+				"valor": ""
+			}
+		]
+	}
+}
+
+

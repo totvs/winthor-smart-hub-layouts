@@ -72,9 +72,9 @@
 						"spec": {
 							"items": {
 								"*": {
-									"idExterno": "=concat('pdvsync-ramo-atividade-', @(1,lastChangeDate))",
+									"idExterno": "=concat('MOCK-PDVSYNC-ramo-atividade-', @(1,lastChangeDate))",
 									"idInterno": "=concat('', @(1,branchActivityId))",
-									"tipoIdInterno": "PDVSYNC-RAMO-ATIVIDADE"
+									"tipoIdInterno": "MOCK-PDVSYNC-RAMO-ATIVIDADE"
 								}
 							}
 						}
@@ -153,3 +153,6 @@
 		]
 	}
 }
+
+
+

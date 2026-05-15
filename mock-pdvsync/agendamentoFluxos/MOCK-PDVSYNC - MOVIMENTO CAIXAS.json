@@ -1,0 +1,19 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOAGENDAMENTOFLUXO",
+		"campos": [
+			{
+				"nome": "IDAGENDAMENTO",
+				"valor": "MOCK-PDVSYNC - movimento caixas"
+			},
+			{
+				"nome": "IDFLUXO",
+				"valor": "Movimentacoes Caixa"
+			} 
+		]
+	}
+}
+
+
+
+

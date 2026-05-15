@@ -22,8 +22,8 @@
 				"nome": "LAYOUTCOMUNICACAO",
 				"valor": {
 					"idExterno": [
-						"pdvsync-dado-complementar-pagto-11",
-						"pdvsync-dado-complementar-pagto-12"
+						"MOCK-PDVSYNC-dado-complementar-pagto-11",
+						"MOCK-PDVSYNC-dado-complementar-pagto-12"
 					],
 					"_attr_access": "itens",
 					"itens": [
@@ -88,3 +88,5 @@
 		]
 	}
 }
+
+

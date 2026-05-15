@@ -16,7 +16,7 @@
 			},
 			{
 				"nome": "IDROTASERVICO",
-				"valor": "PDVSYNC - Encerrar variavel temporaria"
+				"valor": "MOCK-PDVSYNC - Encerrar variavel temporaria"
 			},
 			{
 				"nome": "IDINTEGRACAOCLASSEMETODO",
@@ -37,3 +37,5 @@
 		]
 	}
 }
+
+

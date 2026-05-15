@@ -29,7 +29,7 @@
 			},
 			{
 				"nome": "IDDEPENDENTE",
-				"valor": "PDVSYNC - Consultar status lote"
+				"valor": "MOCK-PDVSYNC - Consultar status lote"
 			},
 			{
 				"nome": "DESCRICAO",
@@ -38,3 +38,5 @@
 		]
 	}
 }
+
+

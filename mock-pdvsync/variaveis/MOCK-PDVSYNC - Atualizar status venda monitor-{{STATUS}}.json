@@ -1,0 +1,41 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOVARIAVEIS",
+		"campos": [
+			{
+				"nome": "DTULTALTER",
+				"valor": ""
+			},
+			{
+				"nome": "ID",
+				"valor": "MOCK-PDVSYNC - ATUALIZAR STATUS VENDA MONITOR-{{STATUS}}"
+			},
+			{
+				"nome": "CHAVE",
+				"valor": "{{STATUS}}"
+			},
+			{
+				"nome": "TIPOCHAVE",
+				"valor": "BODY"
+			},
+			{
+				"nome": "TIPOVALOR",
+				"valor": "INTEGER"
+			},
+			{
+				"nome": "IDROTASERVICO",
+				"valor": "MOCK-PDVSYNC - ATUALIZAR STATUS VENDA MONITOR"
+			},
+			{
+				"nome": "VALOR",
+				"valor": ":PCINTEGRACAOCORE.DADOSTRANSFORMADOS->statusPDV"
+			},
+			{
+				"nome": "CODEMPALTER",
+				"valor": ""
+			}
+		]
+	}
+}
+
+

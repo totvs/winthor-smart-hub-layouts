@@ -35,7 +35,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{URL_BASE}}/winthor/tributacao/v0/saida/tributacao/excecao/consultar/pdvsync",
+							"raw": "{{URL_BASE}}/winthor/tributacao/v0/saida/tributacao/excecao/consultar/MOCK-PDVSYNC",
 							"query": [
 								{
 									"key": "pageSize",
@@ -97,7 +97,7 @@
 									"tiposDetalheImpostoTmp": {
 										"*": {
 											"idExterno": "=concat('pdvsync-filtro-cfop-reformatributaria-', @(3,codigoTributacao),'-',@(1,tipoImposto),'-',@(3,cfop),'-',@(3,dataUltimaAlteracao))",
-											"tipoIdInterno": "PDVSYNC-FILTRO-CFOP-REFORMATRIBUTARIA",
+											"tipoIdInterno": "pdvsync-FILTRO-CFOP-REFORMATRIBUTARIA",
 											"idInterno": "=concat(@(3,codigoTributacao),'-',@(1,tipoImposto),'-',@(3,cfop))",
 											"idRetaguarda": "=concat(@(3,codigoTributacao),'-',@(1,tipoImposto),'-',@(3,cfop))",
 											"idRetaguardaImpostoFiscal": "=concat(@(3,codigoTributacao),'-',@(1,tipoImposto))",
@@ -197,3 +197,5 @@
 		]
 	}
 }
+
+

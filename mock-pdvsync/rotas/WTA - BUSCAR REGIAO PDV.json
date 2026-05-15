@@ -68,9 +68,9 @@
 						"spec": {
 							"items": {
 								"*": {
-									"idExterno": "=concat('pdvsync-regiao-', @(1,regionId),'-',@(1,branchId),'-',@(1,lastChangeDate))",
+									"idExterno": "=concat('MOCK-PDVSYNC-regiao-', @(1,regionId),'-',@(1,branchId),'-',@(1,lastChangeDate))",
 									"idInterno": "=concat(@(1,branchId),'-',@(1,regionId))",
-									"tipoIdInterno": "PDVSYNC-REGIAO-PDV",
+									"tipoIdInterno": "MOCK-PDVSYNC-REGIAO-PDV",
 									"idRetaguardaLoja": "@(1,branchId)"
 								}
 							}
@@ -161,3 +161,6 @@
 		]
 	}
 }
+
+
+

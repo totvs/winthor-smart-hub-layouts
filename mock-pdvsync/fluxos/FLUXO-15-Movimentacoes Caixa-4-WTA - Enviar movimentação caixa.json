@@ -28,7 +28,7 @@
 			},
 			{
 				"nome": "IDDEPENDENTE",
-				"valor": "PDVSync - Buscar movimentacoes caixa"
+				"valor": "MOCK-PDVSYNC - Buscar movimentacoes caixa"
 			},
 			{
 				"nome": "DESCRICAO",
@@ -37,3 +37,5 @@
 		]
 	}
 }
+
+

@@ -1,0 +1,41 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOVARIAVEIS",
+		"campos": [
+			{
+				"nome": "DTULTALTER",
+				"valor": ""
+			},
+			{
+				"nome": "ID",
+				"valor": "MOCK-PDVSYNC - ENVIA STATUS PEDIDO-{{URL_ENVIAR_STATUS_PREVENDA}}"
+			},
+			{
+				"nome": "CHAVE",
+				"valor": "{{URL_ENVIAR_STATUS_PREVENDA}}"
+			},
+			{
+				"nome": "TIPOCHAVE",
+				"valor": "BODY"
+			},
+			{
+				"nome": "TIPOVALOR",
+				"valor": "STRING"
+			},
+			{
+				"nome": "IDROTASERVICO",
+				"valor": "MOCK-PDVSYNC - ENVIA STATUS PEDIDO"
+			},
+			{
+				"nome": "VALOR",
+				"valor": "https://pdvsync.varejo.totvs.com.br/comercial/api/retaguarda/v3/preVenda"
+			},
+			{
+				"nome": "CODEMPALTER",
+				"valor": ""
+			}
+		]
+	}
+}
+
+

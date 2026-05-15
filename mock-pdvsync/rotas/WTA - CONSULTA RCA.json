@@ -71,7 +71,7 @@
 									"matricula_s": "=toString(@(1,codigousur))",
 									"dtUltAlter": "=toString(@(1,dtAlteracao))",
                                     "id_retarguada": "=concat('RCA-', @(1,matricula_s))",
-									"idExterno": "=concat('pdvsync-usuario-rca-', @(1,matricula_s),'-', @(1,dtAlteracao))",
+									"idExterno": "=concat('MOCK-PDVSYNC-usuario-rca-', @(1,matricula_s),'-', @(1,dtAlteracao))",
                                     "login_s": "=toString(@(1,codigousur))",
                                     "senha_s": "=toString(@(1,codigousur))"
                                 }
@@ -152,3 +152,6 @@
         "nome": "PCINTEGRACAOROTASERVICO"
     }
 }
+
+
+

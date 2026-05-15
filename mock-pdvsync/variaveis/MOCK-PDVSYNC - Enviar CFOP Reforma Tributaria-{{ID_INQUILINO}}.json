@@ -1,0 +1,42 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOVARIAVEIS",
+		"campos": [
+			{
+				"nome": "DTULTALTER",
+				"valor": ""
+			},
+			{
+				"nome": "ID",
+				"valor": "MOCK-PDVSYNC - ENVIAR CFOP REFORMA TRIBUTARIA-{{ID_INQUILINO}}"
+			},
+			{
+				"nome": "CHAVE",
+				"valor": "{{ID_INQUILINO}}"
+			},
+			{
+				"nome": "TIPOCHAVE",
+				"valor": "BODY"
+			},
+			{
+				"nome": "TIPOVALOR",
+				"valor": "STRING"
+			},
+			{
+				"nome": "IDROTASERVICO",
+				"valor": "MOCK-PDVSYNC - ENVIAR CFOP REFORMA TRIBUTARIA"
+			},
+			{
+				"nome": "VALOR",
+				"valor":"ADICIONAR_INQUILINO"
+			},
+			{
+				"nome": "CODEMPALTER",
+				"valor": ""
+			}
+		]
+	}
+	
+}
+
+

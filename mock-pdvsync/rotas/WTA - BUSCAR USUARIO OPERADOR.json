@@ -74,9 +74,9 @@
 						"spec": {
 							"items": {
 								"*": {
-									"idExterno": "=concat('pdvsync-usuario-operador-', @(1,matricula),'-', @(1,dtUltAlter))",
+									"idExterno": "=concat('MOCK-PDVSYNC-usuario-operador-', @(1,matricula),'-', @(1,dtUltAlter))",
 									"idInterno":"=concat('', @(1,matricula))",
-							        "tipoIdInterno":"PDVSYNC-USUARIO-OPERADOR",
+							        "tipoIdInterno":"MOCK-PDVSYNC-USUARIO-OPERADOR",
 									"cpf_array": "=split('\\D',@(1,cpf))",
 									"cpf_": "=join('', @(1,cpf_array))",
 									"id_retaguarda": "=toString(@(1,matricula))"
@@ -176,3 +176,5 @@
 		]
 	}
 }
+
+

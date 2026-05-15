@@ -70,9 +70,9 @@
 									"codigoNcm_": "=split('\\.', @(1,codigoNcm))",
 									"codigo_Ncm": "=join('', @(1,codigoNcm_))",
 									"codigo_Ncm2": "=substring(@(1,codigo_Ncm),0,8)",
-									"idExterno": "=concat('pdvsync-ncm-', @(1,id),'-', @(1,dataUltimaAtualizacao))",
+									"idExterno": "=concat('MOCK-PDVSYNC-ncm-', @(1,id),'-', @(1,dataUltimaAtualizacao))",
 									"idInterno":"=concat('', @(1,id))",
-							        "tipoIdInterno":"PDVSYNC-IMPOSTO-NCM",
+							        "tipoIdInterno":"MOCK-PDVSYNC-IMPOSTO-NCM",
 									"chave": null,
 									"fonte": "IBPT",
 									"situacao": 1,
@@ -165,3 +165,5 @@
 		]
 	}
 }
+
+

@@ -22,10 +22,10 @@
 				"nome": "LAYOUTCOMUNICACAO",
 				"valor": {
 					"idExterno": [
-						"pdvsync-perfil-0",
-						"pdvsync-perfil-1",
-						"pdvsync-perfil-2",
-						"pdvsync-perfil-3"
+						"MOCK-PDVSYNC-perfil-0",
+						"MOCK-PDVSYNC-perfil-1",
+						"MOCK-PDVSYNC-perfil-2",
+						"MOCK-PDVSYNC-perfil-3"
 					],
 					"_attr_access": "itens",
 					"itens": [
@@ -116,3 +116,5 @@
 		]
 	}
 }
+
+

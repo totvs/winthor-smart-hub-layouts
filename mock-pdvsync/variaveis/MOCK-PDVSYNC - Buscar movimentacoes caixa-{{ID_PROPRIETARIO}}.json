@@ -1,0 +1,41 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOVARIAVEIS",
+		"campos": [
+			{
+				"nome": "DTULTALTER",
+				"valor": ""
+			},
+			{
+				"nome": "ID",
+				"valor": "MOCK-PDVSYNC - BUSCAR MOVIMENTACOES CAIXA-{{ID_PROPRIETARIO}}"
+			},
+			{
+				"nome": "CHAVE",
+				"valor": "{{ID_PROPRIETARIO}}"
+			},
+			{
+				"nome": "TIPOCHAVE",
+				"valor": "BODY"
+			},
+			{
+				"nome": "TIPOVALOR",
+				"valor": "STRING"
+			},
+			{
+				"nome": "IDROTASERVICO",
+				"valor": "MOCK-PDVSYNC - BUSCAR MOVIMENTACOES CAIXA"
+			},
+			{
+				"nome": "VALOR",
+				"valor": "&listIdProprietario=ADICIONAR_ID_PROPRIETARIO&listIdProprietario=ADICIONAR_ID_PROPRIETARIO"
+			},
+			{
+				"nome": "CODEMPALTER",
+				"valor": ""
+			}
+		]
+	}
+}
+
+

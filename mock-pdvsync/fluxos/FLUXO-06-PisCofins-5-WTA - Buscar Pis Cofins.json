@@ -16,7 +16,7 @@
 			},
 			{
 				"nome": "IDROTASERVICO",
-				"valor": "PDVSYNC - Enviar Pis Cofins"
+				"valor": "MOCK-PDVSYNC - Enviar Pis Cofins"
 			},
 			{
 				"nome": "IDINTEGRACAOCLASSEMETODO",
@@ -37,3 +37,5 @@
 		]
 	}
 }
+
+

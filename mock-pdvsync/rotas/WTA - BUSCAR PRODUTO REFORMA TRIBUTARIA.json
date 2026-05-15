@@ -35,7 +35,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{URL_BASE}}/winthor/tributacao/v0/saida/tributacao/excecao/consultar/pdvsync",
+							"raw": "{{URL_BASE}}/winthor/tributacao/v0/saida/tributacao/excecao/consultar/MOCK-PDVSYNC",
 							"query": [
 								{
 									"key": "pageSize",
@@ -97,8 +97,8 @@
 								"*": {
 									"tiposDetalheImpostoTmp": {
 										"*": {
-											"idExterno": "=concat('pdvsync-filtro-produto-reformatributaria-', @(3,codigoTributacao),'-',@(1,tipoImposto),'-',@(3,embalagem),'-',@(3,codigoProduto),'-',@(3,dataUltimaAlteracao))",
-											"tipoIdInterno": "PDVSYNC-FILTRO-PRODUTO-REFORMATRIBUTARIA",
+											"idExterno": "=concat('MOCK-PDVSYNC-filtro-produto-reformatributaria-', @(3,codigoTributacao),'-',@(1,tipoImposto),'-',@(3,embalagem),'-',@(3,codigoProduto),'-',@(3,dataUltimaAlteracao))",
+											"tipoIdInterno": "MOCK-PDVSYNC-FILTRO-PRODUTO-REFORMATRIBUTARIA",
 											"idInterno": "=concat(@(3,codigoTributacao),'-',@(1,tipoImposto),'-',@(3,embalagem),'-',@(3,codigoProduto))",
 											"idRetaguarda": "=concat(@(3,codigoTributacao),'-',@(1,tipoImposto),'-',@(3,embalagem),'-',@(3,codigoProduto))",
 											"idRetaguardaImpostoFiscal": "=concat(@(3,codigoTributacao),'-',@(1,tipoImposto))",
@@ -198,3 +198,5 @@
 		]
 	}
 }
+
+

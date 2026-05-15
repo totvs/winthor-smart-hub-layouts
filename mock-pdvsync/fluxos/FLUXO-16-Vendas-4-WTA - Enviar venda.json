@@ -28,7 +28,7 @@
 			},
 			{
 				"nome": "IDDEPENDENTE",
-				"valor": "PDVSync - Buscar vendas"
+				"valor": "MOCK-PDVSYNC - Buscar vendas"
 			},
 			{
 				"nome": "DESCRICAO",
@@ -37,3 +37,5 @@
 		]
 	}
 }
+
+

@@ -1,0 +1,17 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOAGENDAMENTOFLUXO",
+		"campos": [
+			{
+				"nome": "IDAGENDAMENTO",
+				"valor": "MOCK-PDVSYNC - consultar status lote"
+			},
+			{
+				"nome": "IDFLUXO",
+				"valor": "Atualizar Status Lote Retaguarda"
+			}
+		]
+	}
+}
+
+

@@ -1,0 +1,41 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOVARIAVEIS",
+		"campos": [
+			{
+				"nome": "DTULTALTER",
+				"valor": ""
+			},
+			{
+				"nome": "ID",
+				"valor": "MOCK-PDVSYNC - RAC LOGINMOCK-PDVSYNC-{{URL_RAC_MOCK-PDVSYNC}}"
+			},
+			{
+				"nome": "CHAVE",
+				"valor": "{{URL_RAC_MOCK-PDVSYNC}}"
+			},
+			{
+				"nome": "TIPOCHAVE",
+				"valor": "BODY"
+			},
+			{
+				"nome": "TIPOVALOR",
+				"valor": "STRING"
+			},
+			{
+				"nome": "IDROTASERVICO",
+				"valor": "MOCK-PDVSYNC - RAC LOGINMOCK-PDVSYNC"
+			},
+			{
+				"nome": "VALOR",
+				"valor": "ADICIONAR_URL"
+			},
+			{
+				"nome": "CODEMPALTER",
+				"valor": ""
+			}
+		]
+	}
+}
+
+

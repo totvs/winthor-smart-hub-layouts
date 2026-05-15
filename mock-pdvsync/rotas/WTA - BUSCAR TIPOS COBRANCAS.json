@@ -35,7 +35,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{URL_BASE}}/winthor/venda/v0/tipos-cobrancas/pdv-sync",
+							"raw": "{{URL_BASE}}/winthor/venda/v0/tipos-cobrancas/MOCK-PDVSYNC",
 							"query": [
 								{
 									"key": "tamanho",
@@ -81,7 +81,7 @@
 						"spec": {
 							"items": {
 								"*": {
-									"idExterno": "=concat('pdvsync-cobranca-', @(1,id),'-',@(1,dataAtualizacao))",
+									"idExterno": "=concat('MOCK-PDVSYNC-cobranca-', @(1,id),'-',@(1,dataAtualizacao))",
 									"id": "=toUpper",
 									"id_verifica_troco": "@(1,id)",
 									"codigoSistemaExterno": "@(1,id)",
@@ -400,3 +400,5 @@
 		]
 	}
 }
+
+

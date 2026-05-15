@@ -75,7 +75,7 @@
 							   "telefone_entrega":"=join('', @(1,telefone_entrega_array))",
 							   "idExterno":"=concat('pdvsync-cliente-',@(1,id),'-',@(1,lastChange))",
 							   "idInterno":"=concat('', @(1,id))",
-							   "tipoIdInterno":"PDVSYNC-CLIENTE"
+							   "tipoIdInterno":"MOCK-PDVSYNC-CLIENTE"
 							}
 						 }
 					  }
@@ -193,3 +193,5 @@
 		]
 	}
 }
+
+

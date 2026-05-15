@@ -65,7 +65,7 @@
 						"*": {
 						  "idExterno": "=concat('pdvsync-politica-desconto-acrescimo-',@(1,campaignId),'-',@(1,lastChangeDate),'-',@(1,lastChangeDate))",
 						  "idInterno": "=concat(@(1,branchId),'-',@(1,campaignId))",
-						  "tipoIdInterno": "PDVSYNC-POLITICA-DESCONTO-ACRESCIMO"
+						  "tipoIdInterno": "MOCK-PDVSYNC-POLITICA-DESCONTO-ACRESCIMO"
 						}
 					  }
 					}
@@ -166,3 +166,5 @@
 		]
 	}
 }
+
+

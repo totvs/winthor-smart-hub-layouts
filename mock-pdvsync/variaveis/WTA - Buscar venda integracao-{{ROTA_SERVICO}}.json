@@ -28,7 +28,7 @@
 			},
 			{
 				"nome": "VALOR",
-				"valor": "SELECT ID FROM PCINTEGRACAOROTASERVICO WHERE SERVICO = 'PDVSYNC - Buscar vendas' AND ROWNUM = 1"
+				"valor": "SELECT ID FROM PCINTEGRACAOROTASERVICO WHERE SERVICO = 'MOCK-PDVSYNC - Buscar vendas' AND ROWNUM = 1"
 			},
 			{
 				"nome": "CODEMPALTER",
@@ -37,3 +37,5 @@
 		]
 	}
 }
+
+

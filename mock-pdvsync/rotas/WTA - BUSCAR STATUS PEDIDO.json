@@ -63,7 +63,7 @@
 								},
 								{
 									"key": "integrationOrigin",
-									"value": "PDVSYNC"
+									"value": "MOCK-PDVSYNC"
 								},
 								{
 									"key": "ignoreExcludedCustomers",
@@ -83,9 +83,9 @@
 						"spec": {
 							"items": {
 								"*": {
-									"idExterno": "=concat('pdvsync-status-prevenda-',@(1,orderId),'-',@(1,lastChange))",
+									"idExterno": "=concat('MOCK-PDVSYNC-status-prevenda-',@(1,orderId),'-',@(1,lastChange))",
 									"idInterno":"=concat('', @(1,orderId))",
-							        "tipoIdInterno":"PDVSYNC-STATUS-PEDIDO"
+							        "tipoIdInterno":"MOCK-PDVSYNC-STATUS-PEDIDO"
 								}
 							}
 						}
@@ -151,3 +151,5 @@
 		]
 	}
 }
+
+

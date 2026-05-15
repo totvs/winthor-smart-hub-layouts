@@ -1,0 +1,21 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOAGENDAMENTO",
+		"campos": [
+			{
+				"nome": "DESCRICAO",
+				"valor": "MOCK-PDVSYNC - vendas"
+			},
+			{
+				"nome": "AGENDAMENTOSEGUNDOS",
+				"valor": "300"
+			},
+			{
+				"nome": "DELAYINICIALSEGUNDOS",
+				"valor": "5"
+			}
+		]
+	}
+}
+
+

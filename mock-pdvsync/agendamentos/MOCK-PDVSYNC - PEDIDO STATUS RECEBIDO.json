@@ -1,0 +1,21 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOAGENDAMENTO",
+		"campos": [
+			{
+				"nome": "DESCRICAO",
+				"valor": "MOCK-PDVSYNC - pedido status recebido"
+			},
+			{
+				"nome": "AGENDAMENTOSEGUNDOS",
+				"valor": "300"
+			},
+			{
+				"nome": "DELAYINICIALSEGUNDOS",
+				"valor": "7"
+			}
+		]
+	}
+}
+
+

@@ -77,7 +77,7 @@
 						"*": {
 						  "idExterno": "=concat('pdvsync-preco-embalagem-', @(1,barCodeId),'-',@(1,productId),'-',@(1,branchId),'-',@(1,lastChangeDate))",
 						  "idInterno": "=concat(@(1,barCodeId),'-', @(1,productId),'-2017-',@(1,branchId))",
-						  "tipoIdInterno": "PDVSYNC-PRECO-EMBALAGEM",
+						  "tipoIdInterno": "MOCK-PDVSYNC-PRECO-EMBALAGEM",
 						  "idRetaguarda": "=concat(@(1,barCodeId),'-',@(1,productId),'-2017-',@(1,branchId))",
 						  "codigoProduto": "=toString(@(1,productId))",
 						  "dataHoraVigenciaInicial": "@(1,startDate)",
@@ -184,3 +184,5 @@
 		]
 	}
 }
+
+

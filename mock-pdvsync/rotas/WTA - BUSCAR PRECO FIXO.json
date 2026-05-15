@@ -71,9 +71,9 @@
 					"spec": {
 					  "items": {
 						"*": {
-						  "idExterno": "=concat('pdvsync-precofixo-', @(1,promotionId),'-',@(1,branchId),'-',@(1,lastChangeDate))",
+						  "idExterno": "=concat('MOCK-PDVSYNC-precofixo-', @(1,promotionId),'-',@(1,branchId),'-',@(1,lastChangeDate))",
 						  "idInterno": "=concat(@(1,branchId),'-',@(1,promotionId))",
-						  "tipoIdInterno": "PDVSYNC-PRECO-FIXO",
+						  "tipoIdInterno": "MOCK-PDVSYNC-PRECO-FIXO",
 						  "retaguardaProduto": "=concat(@(1,barCode),'-',@(1,productId))"
 						}
 					  }
@@ -169,3 +169,5 @@
 		]
 	}
 }
+
+

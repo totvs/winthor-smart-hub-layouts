@@ -64,7 +64,7 @@
 							"items": {
 								"*": {
 									"CEM": 100,
-									"idExterno": "=concat('pdvsync-piscofins-', @(1,codTribPisCofins),'-', @(1,dtUltAlt))",
+									"idExterno": "=concat('MOCK-PDVSYNC-piscofins-', @(1,codTribPisCofins),'-', @(1,dtUltAlt))",
 									"valorInverso": "=divide(1, @(1,CEM))",
 									"aliquotaPisPercentual": "=divideAndRound(4, @(1,aliquotaPis), @(1,valorInverso))",
 									"aliquotaCofinsPercentual": "=divideAndRound(4, @(1,aliquotaCofins), @(1,valorInverso))",
@@ -75,7 +75,7 @@
 									"aliquotaPis": "=join(',', @(1,aliquotaPisPercentualArr))",
 									"aliquotaCofins": "=join(',', @(1,aliquotaCofinsPercentualArr))",
 									"idInterno":"=concat('', @(1,codTribPisCofins))",
-							        "tipoIdInterno":"PDVSYNC-PIS-CONFINS"
+							        "tipoIdInterno":"MOCK-PDVSYNC-PIS-CONFINS"
 								}
 							}
 						}
@@ -138,3 +138,5 @@
 		]
 	}
 }
+
+

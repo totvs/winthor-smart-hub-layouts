@@ -69,7 +69,7 @@
 								"*": {
 									"idExterno": "=concat('pdvsync-operadora-', @(1,codcob),'-',@(1,codfilial),'-',@(1,ultimaAlteracao))",
 									"idInterno":"=concat('', @(1,codcob))",
-							        "tipoIdInterno":"PDVSYNC-OPERADORA"
+							        "tipoIdInterno":"MOCK-PDVSYNC-OPERADORA"
 								}
 							}
 						}
@@ -147,3 +147,5 @@
 		]
 	}
 }
+
+

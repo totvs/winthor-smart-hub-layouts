@@ -28,7 +28,7 @@
 			},
 			{
 				"nome": "IDDEPENDENTE",
-				"valor": "PDVSync - Buscar Pedidos RECEBIDO"
+				"valor": "MOCK-PDVSYNC - Buscar Pedidos RECEBIDO"
 			},
 			{
 				"nome": "DESCRICAO",
@@ -37,3 +37,5 @@
 		]
 	}
 }
+
+

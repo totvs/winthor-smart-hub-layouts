@@ -65,10 +65,10 @@
 							"*": {
 							  "cpf_cnpj_array": "=split('\\D',@(1,personIdentificationNumber))",
 							  "cpfCnpj": "=join('', @(1,cpf_cnpj_array))",
-							  "idExterno": "=concat('pdvsync-profissional-',@(1,professionalId),'-',@(1,lastChangeDate))",
+							  "idExterno": "=concat('MOCK-PDVSYNC-profissional-',@(1,professionalId),'-',@(1,lastChangeDate))",
 							  "idInterno": "=concat('PRO-',@(1,professionalId))",
 							  "idRetaguarda": "=concat('PRO-',@(1,professionalId))",
-							  "tipoIdInterno": "PDVSYNC-PROFISSIONAL",
+							  "tipoIdInterno": "MOCK-PDVSYNC-PROFISSIONAL",
 							  "login_s": "=concat('PRO-',@(1,professionalId))",
 							  "senha_s": "=concat('PRO-',@(1,professionalId))",
 							  "matricula_s": "=concat('PRO-',@(1,professionalId))"
@@ -136,3 +136,5 @@
 		]
 	}
 }
+
+

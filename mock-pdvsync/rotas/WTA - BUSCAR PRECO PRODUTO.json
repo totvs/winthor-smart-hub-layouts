@@ -79,9 +79,9 @@
 						"spec": {
 							"items": {
 								"*": {
-									"idExternoPreco": "=concat('pdvsync-preco-', @(1,skuId),'-',@(1,branchId),'-', @(1,lastChange))",
-									"idExternoPreco357": "=concat('pdvsync-preco-357-', @(1,fixedPriceId),'-', @(1,skuId),'-',@(1,branchId),'-', @(1,lastChange))",
-									"idExternoDesconto": "=concat('pdvsync-preco-desconto-', @(1,skuId),'-',@(1,branchId),'-', @(1,lastChange))",
+									"idExternoPreco": "=concat('MOCK-PDVSYNC-preco-', @(1,skuId),'-',@(1,branchId),'-', @(1,lastChange))",
+									"idExternoPreco357": "=concat('MOCK-PDVSYNC-preco-357-', @(1,fixedPriceId),'-', @(1,skuId),'-',@(1,branchId),'-', @(1,lastChange))",
+									"idExternoDesconto": "=concat('MOCK-PDVSYNC-preco-desconto-', @(1,skuId),'-',@(1,branchId),'-', @(1,lastChange))",
 									"situacao": 0,
 									"skuId__": "=split('-', @(1,productId))",
 									"skuID_": "=lastElement(@(1,skuId__))",
@@ -97,7 +97,7 @@
 									"idInterno357": "=concat(@(1,skuId),'-357-',@(1,fixedPriceId))",
 									"idInternoSku": "=concat('', @(1,skuId))",
 									"idInternoDesconto": "=concat(@(1,skuId),'-561-',@(1,discountPolicy.id))",
-							        "tipoIdInterno":"PDVSYNC-PRECO-PRODUTO"
+							        "tipoIdInterno":"MOCK-PDVSYNC-PRECO-PRODUTO"
 									
 								}
 							}
@@ -265,3 +265,5 @@
 		]
 	}
 }
+
+

@@ -32,11 +32,11 @@
 			},
 			{
 				"nome": "IDROTAERRO",
-				"valor": "PDVSYNC - CRIAR VARIAVEL TEMPORARIA"
+				"valor": "MOCK-PDVSYNC - CRIAR VARIAVEL TEMPORARIA"
 			},
 			{
 				"nome": "IDROTAEXEC",
-				"valor": "PDVSYNC - ENCERRAR VARIAVEL TEMPORARIA"
+				"valor": "MOCK-PDVSYNC - ENCERRAR VARIAVEL TEMPORARIA"
 			},
 			{
 				"nome": "HTTPSTATUS",
@@ -45,3 +45,5 @@
 		]
 	}
 }
+
+

@@ -35,7 +35,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{URL_BASE}}/winthor/tributacao/v0/saida/tributacao/consultar/pdvsync",
+							"raw": "{{URL_BASE}}/winthor/tributacao/v0/saida/tributacao/consultar/MOCK-PDVSYNC",
 							"query": [
 								{
 									"key": "pageSize",
@@ -195,8 +195,8 @@
 									"impostosTmp": {
 										"*": {
 											"idRetaguarda": "=concat(@(3,codigoTributacao),'-',@(1,tipoImposto))",
-											"idExterno": "=concat('pdvsync-imposto-rt-',@(3,codigoTributacao),'-',@(1,tipoImposto),'-',@(3,dataUltimaAlteracao))",
-											"tipoIdInterno": "PDVSYNC-IMPOSTO-RT",
+											"idExterno": "=concat('MOCK-PDVSYNC-imposto-rt-',@(3,codigoTributacao),'-',@(1,tipoImposto),'-',@(3,dataUltimaAlteracao))",
+											"tipoIdInterno": "MOCK-PDVSYNC-IMPOSTO-RT",
 											"idInterno": "=concat(@(3,codigoTributacao),'-',@(1,tipoImposto))",
 											"cst": "=concat('', @(3,cst))",
 											"descricaoCst": "=concat('', @(3,descricaoCst))",
@@ -280,3 +280,5 @@
 		]
 	}
 }
+
+

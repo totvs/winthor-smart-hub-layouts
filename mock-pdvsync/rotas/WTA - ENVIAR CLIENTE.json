@@ -39,7 +39,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{URL_BASE}}/winthor/varejo/matcon/v1/cliente/pdvsync",
+							"raw": "{{URL_BASE}}/winthor/varejo/matcon/v1/cliente/MOCK-PDVSYNC",
 							"query": []
 						},
 						"bodyraw": "{{CLIENT_JSON}}"
@@ -81,3 +81,5 @@
 		]
 	}
 }
+
+

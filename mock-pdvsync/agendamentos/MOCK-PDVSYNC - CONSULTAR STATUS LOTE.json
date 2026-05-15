@@ -1,0 +1,21 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOAGENDAMENTO",
+		"campos": [
+			{
+				"nome": "DESCRICAO",
+				"valor": "MOCK-PDVSYNC - consultar status lote"
+			},
+			{
+				"nome": "AGENDAMENTOSEGUNDOS",
+				"valor": "600"
+			},
+			{
+				"nome": "DELAYINICIALSEGUNDOS",
+				"valor": "5"
+			}
+		]
+	}
+}
+
+

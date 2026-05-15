@@ -63,9 +63,9 @@
 					"spec": {
 					  "items": {
 						"*": {
-						  "idExterno": "=concat('pdvsync-plano-pgmt-', @(1,codigo),'-',@(1,codigoFilial),'-',@(1,dataUltimaAtualizacao))",
+						  "idExterno": "=concat('MOCK-PDVSYNC-plano-pgmt-', @(1,codigo),'-',@(1,codigoFilial),'-',@(1,dataUltimaAtualizacao))",
 						  "idInterno": "=concat('', @(1,codigo))",
-						  "tipoIdInterno": "PDVSYNC-PLANO-PAGAMENTO",
+						  "tipoIdInterno": "MOCK-PDVSYNC-PLANO-PAGAMENTO",
 						  "codigoFilial": "=concat('', @(1,codigoFilial))",
 						  "codigo": "=toInteger(=concat('', @(1,codigo)))",
 						  "idInquilino": "{{ID_INQUILINO}}",
@@ -296,3 +296,5 @@
 		]
 	}
 }
+
+

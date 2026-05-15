@@ -1,0 +1,37 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAODADOSEMPRESA",
+		"campos": [
+			{
+				"nome": "TOKENTEMPOEXPIRACAO",
+				"valor": "1200"
+			},
+			{
+				"nome": "ID",
+				"valor": "MOCK-PDVSYNC"
+			},
+			{
+				"nome": "NOME",
+				"valor": "MOCK-PDVSYNC"
+			},
+			{
+				"nome": "URLBASE",
+				"valor": ""
+			},
+			{
+				"nome": "TOKENCLIENTE",
+				"valor": ""
+			}, 
+			{
+				"nome": "WTA",
+				"valor": "N"
+			},
+			{
+				"nome": "DTSOLICITACAOTOKEN",
+				"valor": "15-OCT-23"
+			}
+		]
+	} 
+}
+
+

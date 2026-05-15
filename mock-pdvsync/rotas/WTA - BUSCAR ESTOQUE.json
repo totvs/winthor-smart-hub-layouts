@@ -35,7 +35,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{URL_BASE}}/api/stock-vtex/v1/available/pdv-sync/list",
+							"raw": "{{URL_BASE}}/api/stock-vtex/v1/available/MOCK-PDVSYNC/list",
 							"query": [
 								{
 									"key": "pageSize",
@@ -94,7 +94,7 @@
 									"skuId__": "=split('-', @(1,productId))",
 									"skuID_": "=lastElement(@(1,skuId__))",
 									"idInterno":"=concat('', @(1,id_retaguarda))",
-							        "tipoIdInterno":"PDVSYNC-ESTOQUE"
+							        "tipoIdInterno":"MOCK-PDVSYNC-ESTOQUE"
 								}
 							}
 						}
@@ -156,3 +156,5 @@
 		]
 	}
 }
+
+

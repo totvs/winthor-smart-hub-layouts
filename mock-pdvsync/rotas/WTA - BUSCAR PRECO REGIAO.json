@@ -75,9 +75,9 @@
 						"spec": {
 							"items": {
 								"*": {
-									"idExterno201": "=concat('pdvsync-preco-regiao-', @(1,barCodeId),'-',@(1,productId),'-',@(1,regionId))",
+									"idExterno201": "=concat('MOCK-PDVSYNC-preco-regiao-', @(1,barCodeId),'-',@(1,productId),'-',@(1,regionId))",
 									"idInterno201": "=concat(@(1,barCodeId),'-', @(1,productId),'-201-',@(1,regionId))",
-									"tipoIdInterno": "PDVSYNC-PRECO-REGIAO",
+									"tipoIdInterno": "MOCK-PDVSYNC-PRECO-REGIAO",
 									"idRetaguarda201": "=concat(@(1,barCodeId),'-',@(1,productId),'-201-',@(1,regionId))",
 									"codigoProduto": "=toString(@(1,productId))",
 									"dataHoraVigenciaInicial": "@(1,startDate)",
@@ -231,3 +231,5 @@
 		]
 	}
 }
+
+

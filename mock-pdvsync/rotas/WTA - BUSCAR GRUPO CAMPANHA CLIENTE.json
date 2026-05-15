@@ -125,10 +125,10 @@
             "spec": {
               "items": {
                 "*": {
-                  "idExterno": "=concat('pdvsync-grupo-campanha-cliente-', @(1,lastChange))",
+                  "idExterno": "=concat('MOCK-PDVSYNC-grupo-campanha-cliente-', @(1,lastChange))",
                   "idInterno": "=concat('', @(1,idRetaguardaCliente))",
                   "idRetaguarda": "=concat(@(1,idRetaguardaGrupo), '-', @(1,idRetaguardaCliente))",
-                  "tipoIdInterno": "PDVSYNC-GRUPO-CAMPANHA-CLIENTE"
+                  "tipoIdInterno": "MOCK-PDVSYNC-GRUPO-CAMPANHA-CLIENTE"
                 }
               }
             }
@@ -189,3 +189,5 @@
     ]
   }
 }
+
+
