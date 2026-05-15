@@ -1,0 +1,282 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOROTASERVICO",
+		"campos": [
+			{
+				"nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+				"valor": "N"
+			},
+			{
+				"nome": "ID",
+				"valor": "WTA - Buscar Imposto Reforma Tributaria"
+			},
+			{
+				"nome": "IDEMPRESAAPI",
+				"valor": "WINTHOR-WTA"
+			},
+			{
+				"nome": "SERVICO",
+				"valor": "WTA - Buscar Imposto Reforma Tributaria"
+			},
+			{
+				"nome": "LAYOUTCOMUNICACAO",
+				"valor": {
+					"name": "WTA - Buscar Imposto Reforma Tributaria",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{URL_BASE}}/winthor/tributacao/v0/saida/tributacao/consultar/pdvsync",
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "{{PAGE_SIZE}}"
+								},
+								{
+									"key": "page",
+									"value": "{{PAGE}}"
+								},
+								{
+									"key": "lastChange",
+									"value": "{{LAST_CHANGE}}"
+								},
+								{
+									"key": "taxType",
+									"value": "{{TAX_TYPE}}"
+								},
+								{
+									"key": "branchId",
+									"value": "{{BRANCHID}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			},
+			{
+				"nome": "LAYOUTTRANSFORMACAO",
+				"valor": [
+					{
+						"operation": "shift",
+						"spec": {
+							"items": {
+								"*": {
+									"codigoTributacao": "items[&1].codigoTributacao",
+									"cst": "items[&1].cst",
+									"descricaoTributacao": "items.[&1].descricaoCst",
+									"classificacaoTributaria": "items.[&1].cclasstrib",
+									"ativo": {
+										"true": {
+											"#1": "items.[&3].situacao"
+										},
+										"*": {
+											"#0": "items.[&3].situacao"
+										}
+									},
+									"padrao": "items.[&1].padrao",
+									"dataInicioVigencia": "items.[&1].dataInicioVigencia",
+									"dataFimVigencia": "items.[&1].dataFimVigencia",
+									"dataUltimaAlteracao": "items.[&1].dataUltimaAlteracao",
+									"impostos": {
+										"*": {
+											"tipoDetalheImposto": "items[&3].impostosTmp[&1].tipoImposto",
+											"percentualAliquota": "items[&3].impostosTmp[&1].percentualAliquota",
+											"percentualReducaoAliquota": "items[&3].impostosTmp[&1].percentualReducaoAliquota"
+										}
+									},
+									"localConsumo": {
+										"BR": {
+											"#1058": "items.[&3].localConsumo"
+										},
+										"AC": {
+											"#12": "items.[&3].localConsumo"
+										},
+										"AL": {
+											"#27": "items.[&3].localConsumo"
+										},
+										"AM": {
+											"#13": "items.[&3].localConsumo"
+										},
+										"AP": {
+											"#16": "items.[&3].localConsumo"
+										},
+										"BA": {
+											"#29": "items.[&3].localConsumo"
+										},
+										"CE": {
+											"#23": "items.[&3].localConsumo"
+										},
+										"DF": {
+											"#53": "items.[&3].localConsumo"
+										},
+										"ES": {
+											"#32": "items.[&3].localConsumo"
+										},
+										"GO": {
+											"#52": "items.[&3].localConsumo"
+										},
+										"MA": {
+											"#21": "items.[&3].localConsumo"
+										},
+										"MG": {
+											"#31": "items.[&3].localConsumo"
+										},
+										"MS": {
+											"#50": "items.[&3].localConsumo"
+										},
+										"MT": {
+											"#51": "items.[&3].localConsumo"
+										},
+										"PA": {
+											"#15": "items.[&3].localConsumo"
+										},
+										"PB": {
+											"#25": "items.[&3].localConsumo"
+										},
+										"PE": {
+											"#26": "items.[&3].localConsumo"
+										},
+										"PI": {
+											"#22": "items.[&3].localConsumo"
+										},
+										"PR": {
+											"#41": "items.[&3].localConsumo"
+										},
+										"RJ": {
+											"#33": "items.[&3].localConsumo"
+										},
+										"RN": {
+											"#24": "items.[&3].localConsumo"
+										},
+										"RO": {
+											"#11": "items.[&3].localConsumo"
+										},
+										"RR": {
+											"#14": "items.[&3].localConsumo"
+										},
+										"RS": {
+											"#43": "items.[&3].localConsumo"
+										},
+										"SC": {
+											"#42": "items.[&3].localConsumo"
+										},
+										"SE": {
+											"#28": "items.[&3].localConsumo"
+										},
+										"SP": {
+											"#35": "items.[&3].localConsumo"
+										},
+										"TO": {
+											"#17": "items.[&3].localConsumo"
+										},
+										"*": {
+											"@(2,localConsumo)": "items.[&3].localConsumo"
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"operation": "modify-overwrite-beta",
+						"spec": {
+							"items": {
+								"*": {
+									"impostosTmp": {
+										"*": {
+											"idRetaguarda": "=concat(@(3,codigoTributacao),'-',@(1,tipoImposto))",
+											"idExterno": "=concat('pdvsync-imposto-rt-',@(3,codigoTributacao),'-',@(1,tipoImposto),'-',@(3,dataUltimaAlteracao))",
+											"tipoIdInterno": "PDVSYNC-IMPOSTO-RT",
+											"idInterno": "=concat(@(3,codigoTributacao),'-',@(1,tipoImposto))",
+											"cst": "=concat('', @(3,cst))",
+											"descricaoCst": "=concat('', @(3,descricaoCst))",
+											"cclasstrib": "=concat('', @(3,cclasstrib))",
+											"situacao": "=concat('', @(3,situacao))",
+											"padrao": "@(3,padrao)",
+											"dataInicioVigencia": "=concat('', @(3,dataInicioVigencia))",
+											"dataFimVigencia": "=concat('', @(3,dataFimVigencia))",
+											"localConsumo": "=concat('', @(3,localConsumo))"
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"operation": "shift",
+						"spec": {
+							"items": {
+								"*": {
+									"impostosTmp": {
+										"*": "items[]"
+									}
+								}
+							}
+						}
+					},
+					{
+						"operation": "modify-overwrite-beta",
+						"spec": {
+							"items": {
+								"*": {
+									"idInquilino": "{{ID_INQUILINO}}",
+									"idProprietario": "{{MASTER_ID_PROPRIETARIO}}",
+									"loteOrigem": "{{LOTE_ORIGEM}}"
+								}
+							}
+						}
+					},
+					{
+						"operation": "shift",
+						"spec": {
+							"items": {
+								"*": {
+									"@": "items[]",
+									"idExterno": "idExterno[]",
+									"idInterno": "idInterno[]",
+									"tipoIdInterno": "tipoIdInterno[]"
+								}
+							}
+						}
+					},
+					{
+						"operation": "default",
+						"spec": {
+							"_attr_access": "items"
+						}
+					}
+				]
+			},
+			{
+				"nome": "ATIVO",
+				"valor": "S"
+			},
+			{
+				"nome": "AUTENTICADOR",
+				"valor": "N"
+			},
+			{
+				"nome": "DATASINCRONISMO",
+				"valor": "14-NOV-23"
+			},
+			{
+				"nome": "REFRESHTOKEN",
+				"valor": ""
+			},
+			{
+				"nome": "TIPOPROCESSO",
+				"valor": "BUSCAR"
+			}
+		]
+	}
+}

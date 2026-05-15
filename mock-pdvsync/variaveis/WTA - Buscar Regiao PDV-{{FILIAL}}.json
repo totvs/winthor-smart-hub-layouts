@@ -1,0 +1,40 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOVARIAVEIS",
+		"campos": [
+			{
+				"nome": "DTULTALTER",
+				"valor": ""
+			},
+			{
+				"nome": "ID",
+				"valor": "WTA - BUSCAR REGIAO PDV-{{FILIAL}}"
+			},
+			{
+				"nome": "CHAVE",
+				"valor": "{{FILIAL}}"
+			},
+			{
+				"nome": "TIPOCHAVE",
+				"valor": "PARAMS"
+			},
+			{
+				"nome": "TIPOVALOR",
+				"valor": "STRING"
+			},
+			{
+				"nome": "IDROTASERVICO",
+				"valor": "WTA - BUSCAR REGIAO PDV"
+			},
+			{
+				"nome": "VALOR",
+				"valor": "ADICIONAR_FILIAL"
+			},
+			{
+				"nome": "CODEMPALTER",
+				"valor": ""
+			}
+		]
+	}
+	
+}

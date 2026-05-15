@@ -1,0 +1,82 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOROTASERVICO",
+		"campos": [
+			{
+				"nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+				"valor": "N"
+			},
+			{
+				"nome": "ID",
+				"valor": "PDVSYNC - Enviar ICMS"
+			},
+			{
+				"nome": "IDEMPRESAAPI",
+				"valor": "PDVSYNC"
+			},
+			{
+				"nome": "SERVICO",
+				"valor": "PDVSYNC - Enviar ICMS"
+			},
+			{
+				"nome": "LAYOUTCOMUNICACAO",
+				"valor": {
+					"name": "Enviar ICMS",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{URL_ENVIAR_ICMS}}",
+							"query": []
+						},
+						"bodyraw": "{{CLIENT_JSON}}"
+					}
+				}
+			},
+			{
+				"nome": "LAYOUTTRANSFORMACAO",
+				"valor": [
+					{
+						"operation": "default",
+						"spec": {
+							"status": 2
+						}
+					}
+				]
+			},
+			{
+				"nome": "ATIVO",
+				"valor": "S"
+			},
+			{
+				"nome": "AUTENTICADOR",
+				"valor": "N"
+			},
+			{
+				"nome": "DATASINCRONISMO",
+				"valor": "29-JAN-22"
+			},
+			{
+				"nome": "REFRESHTOKEN",
+				"valor": ""
+			},
+			{
+				"nome": "TIPOPROCESSO",
+				"valor": "ENVIAR"
+			}
+		]
+	}
+}

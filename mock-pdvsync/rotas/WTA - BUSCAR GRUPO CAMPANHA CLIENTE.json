@@ -1,0 +1,191 @@
+{
+  "tabela": {
+    "nome": "PCINTEGRACAOROTASERVICO",
+    "campos": [
+      {
+        "nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+        "valor": "N"
+      },
+      {
+        "nome": "ID",
+        "valor": "WTA - Buscar Grupo Campanha Cliente"
+      },
+      {
+        "nome": "IDEMPRESAAPI",
+        "valor": "WINTHOR-WTA"
+      },
+      {
+        "nome": "SERVICO",
+        "valor": "WTA - Buscar Grupo Campanha Cliente"
+      },
+      {
+        "nome": "LAYOUTCOMUNICACAO",
+        "valor": {
+          "name": "WTA -Buscar Grupo Campanha Cliente",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{TOKEN}}"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "url": {
+              "raw": "{{URL_BASE}}/winthor/cliente/v1/grupoCampanha",
+              "query": [
+                {
+                  "key": "pageSize",
+                  "value": "{{PAGE_SIZE}}"
+                },
+                {
+                  "key": "page",
+                  "value": "{{PAGE}}"
+                },
+                {
+                  "key": "lastChange",
+                  "value": "{{DATAALTERACAO}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      },
+      {
+        "nome": "LAYOUTTRANSFORMACAO",
+        "valor": [
+          {
+            "operation": "modify-overwrite-beta",
+            "spec": {
+              "items": {
+                "*": {
+                  "dadosTransformados": "=base64ToObject"
+                }
+              }
+            }
+          },
+          {
+            "operation": "shift",
+            "spec": {
+              "items": {
+                "*": {
+                  "groupCampaignItems": {
+                    "*": {
+                      "@(2,active)": "items.[&3].listRetaguarda[&1].situacao",
+                      "@(2,branchId)": "items.[&3].listRetaguarda[&1].idRetaguardaLoja",
+                      "@(2,groupId)": "items.[&3].listRetaguarda[&1].idRetaguardaGrupo",
+                      "@(2,lastChange)": "items.[&3].listRetaguarda[&1].lastChange",
+                      "itemId": "items.[&3].listRetaguarda[&1].idRetaguardaCliente"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          {
+            "operation": "shift",
+            "spec": {
+              "items": {
+                "*": {
+                  "listRetaguarda": {
+                    "*": "items[]"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "operation": "shift",
+            "spec": {
+              "idRetaguarda": "idRetaguarda",
+              "items": {
+                "*": {
+                  "idRetaguardaCliente": "items.[&1].idRetaguardaCliente",
+                  "idRetaguardaGrupo": "items.[&1].idRetaguardaGrupo",
+                  "idRetaguardaLoja": "items.[&1].idRetaguardaLoja",
+                  "lastChange": "items.[&1].lastChange",
+                  "situacao": {
+                    "false": {
+                      "#0": "items.[&3].situacao"
+                    },
+                    "true": {
+                      "#1": "items.[&3].situacao"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          {
+            "operation": "modify-overwrite-beta",
+            "spec": {
+              "items": {
+                "*": {
+                  "idExterno": "=concat('pdvsync-grupo-campanha-cliente-', @(1,lastChange))",
+                  "idInterno": "=concat('', @(1,idRetaguardaCliente))",
+                  "idRetaguarda": "=concat(@(1,idRetaguardaGrupo), '-', @(1,idRetaguardaCliente))",
+                  "tipoIdInterno": "PDVSYNC-GRUPO-CAMPANHA-CLIENTE"
+                }
+              }
+            }
+          },
+          {
+            "operation": "shift",
+            "spec": {
+              "idRetaguarda": "idRetaguarda",
+              "items": {
+                "*": {
+                  "idExterno": "idExterno[]",
+                  "idInterno": "idInterno[]",
+                  "idRetaguarda": "items.[&1].idRetaguarda",
+                  "idRetaguardaCliente": "items.[&1].idRetaguardaCliente",
+                  "idRetaguardaGrupo": "items.[&1].idRetaguardaGrupo",
+                  "idRetaguardaLoja": "items.[&1].idRetaguardaLoja",
+                  "situacao": "items.[&1].situacao",
+                  "tipoIdInterno": "tipoIdInterno[]"
+                }
+              }
+            }
+          },
+          {
+            "operation": "default",
+            "spec": {
+              "_attr_access": "items",
+              "items[]": {
+                "*": {
+                  "idInquilino": "{{ID_INQUILINO}}",
+                  "idProprietario": "{{MASTER_ID_PROPRIETARIO}}",
+                  "loteOrigem": "{{LOTE_ORIGEM}}"
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "nome": "ATIVO",
+        "valor": "S"
+      },
+      {
+        "nome": "AUTENTICADOR",
+        "valor": "N"
+      },
+      {
+        "nome": "DATASINCRONISMO",
+        "valor": "14-NOV-23"
+      },
+      {
+        "nome": "REFRESHTOKEN",
+        "valor": ""
+      },
+      {
+        "nome": "TIPOPROCESSO",
+        "valor": "BUSCAR"
+      }
+    ]
+  }
+}

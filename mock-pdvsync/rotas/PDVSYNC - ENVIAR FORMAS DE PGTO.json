@@ -1,0 +1,83 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOROTASERVICO",
+		"campos": [
+			{
+				"nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+				"valor": "N"
+			},
+			{
+				"nome": "ID",
+				"valor": "PDVSYNC - Enviar formas de pgto"
+			},
+			{
+				"nome": "IDEMPRESAAPI",
+				"valor": "PDVSYNC"
+			},
+			{
+				"nome": "SERVICO",
+				"valor": "PDVSYNC - Enviar formas de pgto"
+			},
+			{
+				"nome": "LAYOUTCOMUNICACAO",
+				"valor": {
+					"name": "PDVSYNC - Enviar formas de pagamentos (condicões de pgmt)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{URL_ENVIAR_FORMAS_PGMT}}",
+							"query": []
+						},
+						"bodyraw": "{{CLIENT_JSON}}"
+					},
+					"response": []
+				}
+			},
+			{
+				"nome": "LAYOUTTRANSFORMACAO",
+				"valor": [
+					{
+						"operation": "default",
+						"spec": {
+							"status": 2
+						}
+					}
+				]
+			},
+			{
+				"nome": "ATIVO",
+				"valor": "S"
+			},
+			{
+				"nome": "AUTENTICADOR",
+				"valor": "N"
+			},
+			{
+				"nome": "DATASINCRONISMO",
+				"valor": "17-MAR-23"
+			},
+			{
+				"nome": "REFRESHTOKEN",
+				"valor": ""
+			},
+			{
+				"nome": "TIPOPROCESSO",
+				"valor": "ENVIAR"
+			}
+		]
+	}
+}

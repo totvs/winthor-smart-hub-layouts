@@ -1,0 +1,76 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOROTASERVICO",
+		"campos": [
+			{
+				"nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+				"valor": "N"
+			},
+			{
+				"nome": "ID",
+				"valor": "PDVSYNC - Encerrar variavel temporaria"
+			},
+			{
+				"nome": "IDEMPRESAAPI",
+				"valor": "PDVSYNC"
+			},
+			{
+				"nome": "SERVICO",
+				"valor": "PDVSYNC - Encerrar variavel temporaria"
+			},
+			{
+				"nome": "LAYOUTCOMUNICACAO",
+				"valor": {
+					"name": "PDVSYNC - Encerrar variavel temporaria",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL_FECHAR_LOTE}}/{{INQUILINO}}/{{LOTE_ORIGEM}}",
+							"query": []
+						},
+						"body": []
+					},
+					"response": []
+				}
+			},
+			{
+				"nome": "LAYOUTTRANSFORMACAO",
+				"valor": ""
+			},
+			{
+				"nome": "ATIVO",
+				"valor": "S"
+			},
+			{
+				"nome": "AUTENTICADOR",
+				"valor": "N"
+			},
+			{
+				"nome": "DATASINCRONISMO",
+				"valor": "29-JAN-22"
+			},
+			{
+				"nome": "REFRESHTOKEN",
+				"valor": ""
+			},
+			{
+				"nome": "TIPOPROCESSO",
+				"valor": "ENVIAR"
+			}
+		]
+	}
+}

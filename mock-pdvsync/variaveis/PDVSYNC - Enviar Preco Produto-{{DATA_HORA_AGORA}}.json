@@ -1,0 +1,39 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOVARIAVEIS",
+		"campos": [
+			{
+				"nome": "DTULTALTER",
+				"valor": ""
+			},
+			{
+				"nome": "ID",
+				"valor": "PDVSYNC - ENVIAR PRECO PRODUTO-{{DATA_HORA_AGORA}}"
+			},
+			{
+				"nome": "CHAVE",
+				"valor": "{{DATA_HORA_AGORA}}"
+			},
+			{
+				"nome": "TIPOCHAVE",
+				"valor": "BODY"
+			},
+			{
+				"nome": "TIPOVALOR",
+				"valor": "SELECT"
+			},
+			{
+				"nome": "IDROTASERVICO",
+				"valor": "PDVSYNC - ENVIAR PRECO PRODUTO"
+			},
+			{
+				"nome": "VALOR",
+				"valor": "SELECT TO_CHAR (SYSDATE, 'YYYY-MM-DD\"T\"HH24:MI:SS') DT from dual"
+			},
+			{
+				"nome": "CODEMPALTER",
+				"valor": ""
+			}
+		]
+	}
+}

@@ -1,0 +1,39 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOFLUXOEXECUCAO",
+		"campos": [ {"nome" : "ID", "valor": ""},
+			{
+				"nome": "DTULTALTER",
+				"valor": ""
+			},
+			{
+				"nome": "CODEMPALTER",
+				"valor": ""
+			},
+			{
+				"nome": "ORDEMEXECUCAO",
+				"valor": "3"
+			},
+			{
+				"nome": "IDROTASERVICO",
+				"valor": "WTA - Buscar Venda Monitor"
+			},
+			{
+				"nome": "IDINTEGRACAOCLASSEMETODO",
+				"valor": "BuscaRotaNaoPagSubstVariaveis"
+			},
+			{
+				"nome": "ATIVO",
+				"valor": "N"
+			},
+			{
+				"nome": "IDDEPENDENTE",
+				"valor": "WTA - Buscar Venda Integracao"
+			},
+			{
+				"nome": "DESCRICAO",
+				"valor": "Atualizar Status Venda Retaguarda"
+			}
+		]
+	}
+}

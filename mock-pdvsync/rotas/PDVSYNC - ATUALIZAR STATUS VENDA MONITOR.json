@@ -1,0 +1,89 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOROTASERVICO",
+		"campos": [
+			{
+				"nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+				"valor": "N"
+			},
+			{
+				"nome": "ID",
+				"valor": "PDVSYNC - Atualizar status venda monitor"
+			},
+			{
+				"nome": "IDEMPRESAAPI",
+				"valor": "PDVSYNC"
+			},
+			{
+				"nome": "SERVICO",
+				"valor": "PDVSYNC - Atualizar status venda monitor"
+			},
+			{
+				"nome": "LAYOUTCOMUNICACAO",
+				"valor": {
+					"name": "PDVSYNC - Atualizar status venda monitor",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{URL_STATUS_VENDA_MONITOR}}",
+							"query": []
+						},
+						"bodyraw": [
+							{
+								"idMensagem": "{{IDMENSAGEM}}",
+								"observacao": "{{OBSERVACAO}}",
+								"status": "{{STATUS}}"
+							}
+						]						
+					},
+					"response": []
+				}
+			},
+			{
+				"nome": "LAYOUTTRANSFORMACAO",
+				"valor": [
+					{
+						"operation": "default",
+						"spec": {
+							"status": 2
+						}
+					}
+				]
+			},
+			{
+				"nome": "ATIVO",
+				"valor": "S"
+			},
+			{
+				"nome": "AUTENTICADOR",
+				"valor": "N"
+			},
+			{
+				"nome": "DATASINCRONISMO",
+				"valor": ""
+			},
+			{
+				"nome": "REFRESHTOKEN",
+				"valor": ""
+			},
+			{
+				"nome": "TIPOPROCESSO",
+				"valor": "ENVIAR"
+			}
+		]
+	}
+}

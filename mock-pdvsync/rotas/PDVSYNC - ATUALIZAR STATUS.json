@@ -1,0 +1,88 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOROTASERVICO",
+		"campos": [
+			{
+				"nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+				"valor": "N"
+			},
+			{
+				"nome": "ID",
+				"valor": "PDVSYNC - Atualizar Status"
+			},
+			{
+				"nome": "IDEMPRESAAPI",
+				"valor": "PDVSYNC"
+			},
+			{
+				"nome": "SERVICO",
+				"valor": "PDVSYNC - Atualizar Status"
+			},
+			{
+				"nome": "LAYOUTCOMUNICACAO",
+				"valor": {
+					"name": "PDVSYNC - Atualizar Status",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{URL_ATUALIZAR_STATUS_PEDIDO}}",
+							"query": []
+						},
+						"bodyraw": [
+							{
+								"idMensagem": "{{ID_MENSAGEM}}",
+								"status": "{{STATUS_INTEGRACAO}}"
+							}
+						]
+					},
+					"response": []
+				}
+			},
+			{
+				"nome": "LAYOUTTRANSFORMACAO",
+				"valor": [
+					{
+						"operation": "default",
+						"spec": {
+							"status": 2
+						}
+					}
+				]
+			},
+			{
+				"nome": "ATIVO",
+				"valor": "S"
+			},
+			{
+				"nome": "AUTENTICADOR",
+				"valor": "N"
+			},
+			{
+				"nome": "DATASINCRONISMO",
+				"valor": ""
+			},
+			{
+				"nome": "REFRESHTOKEN",
+				"valor": ""
+			},
+			{
+				"nome": "TIPOPROCESSO",
+				"valor": "ENVIAR"
+			}
+		]
+	}
+}

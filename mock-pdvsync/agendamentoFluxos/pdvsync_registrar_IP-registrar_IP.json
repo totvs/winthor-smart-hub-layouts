@@ -1,0 +1,15 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOAGENDAMENTOFLUXO",
+		"campos": [
+			{
+				"nome": "IDAGENDAMENTO",
+				"valor": "pdvsync - registrar IP"
+			},
+			{
+				"nome": "IDFLUXO",
+				"valor": "Registrar IP"
+			}
+		]
+	}
+}

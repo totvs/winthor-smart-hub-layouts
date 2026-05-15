@@ -1,0 +1,92 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOROTASERVICO",
+		"campos": [
+			{
+				"nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+				"valor": "N"
+			},
+			{
+				"nome": "ID",
+				"valor": "WTA - Atualizar status venda monitor"
+			},
+			{
+				"nome": "IDEMPRESAAPI",
+				"valor": "WINTHOR-WTA"
+			},
+			{
+				"nome": "SERVICO",
+				"valor": "WTA - Atualizar status venda monitor"
+			},
+			{
+				"nome": "LAYOUTCOMUNICACAO",
+				"valor": {
+					"name": "WTA - Atualizar status venda monitor",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{URL_BASE}}/winthor/integracao/fulfillment/v1/integracao",
+							"query": [
+								{
+									"key": "idInterno",
+									"value": "{{ID_INTERNO}}"
+								},							
+								{
+									"key": "status",
+									"value": "{{STATUS}}"
+								},
+								{
+									"key": "payloadConfirmacao",
+									"value": "{{PAYLOAD_CONFIRMACAO}}"
+								}
+							]
+						},
+						"bodyraw": ""
+					},
+					"response": []
+				}
+			},
+			{
+				"nome": "LAYOUTTRANSFORMACAO",
+				"valor": [
+					{
+						"operation": "default",
+						"spec": {
+							"status": "2"
+						}
+					}
+				]
+			},
+			{
+				"nome": "ATIVO",
+				"valor": "S"
+			},
+			{
+				"nome": "AUTENTICADOR",
+				"valor": "N"
+			},
+			{
+				"nome": "DATASINCRONISMO",
+				"valor": "13-NOV-23"
+			},
+			{
+				"nome": "REFRESHTOKEN",
+				"valor": "N"
+			},
+			{
+				"nome": "TIPOPROCESSO",
+				"valor": "ENVIAR"
+			}
+		]
+	}
+}

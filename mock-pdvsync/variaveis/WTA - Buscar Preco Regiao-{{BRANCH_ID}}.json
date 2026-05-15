@@ -1,0 +1,39 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOVARIAVEIS",
+		"campos": [
+			{
+				"nome": "DTULTALTER",
+				"valor": ""
+			},
+			{
+				"nome": "ID",
+				"valor": "WTA - BUSCAR PRECO REGIAO-{{BRANCH_ID}}"
+			},
+			{
+				"nome": "CHAVE",
+				"valor": "{{BRANCH_ID}}"
+			},
+			{
+				"nome": "TIPOCHAVE",
+				"valor": "PARAMS"
+			},
+			{
+				"nome": "TIPOVALOR",
+				"valor": "STRING"
+			},
+			{
+				"nome": "IDROTASERVICO",
+				"valor": "WTA - BUSCAR PRECO REGIAO"
+			},
+			{
+				"nome": "VALOR",
+				"valor": "ADICIONAR_FILIAL"
+			},
+			{
+				"nome": "CODEMPALTER",
+				"valor": ""
+			}
+		]
+	}
+}

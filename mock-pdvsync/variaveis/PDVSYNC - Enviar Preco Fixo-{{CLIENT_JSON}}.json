@@ -1,0 +1,39 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOVARIAVEIS",
+		"campos": [
+			{
+				"nome": "DTULTALTER",
+				"valor": ""
+			},
+			{
+				"nome": "ID",
+				"valor": "PDVSYNC - ENVIAR PRECO FIXO-{{CLIENT_JSON}}"
+			},
+			{
+				"nome": "CHAVE",
+				"valor": "{{CLIENT_JSON}}"
+			},
+			{
+				"nome": "TIPOCHAVE",
+				"valor": "BODY"
+			},
+			{
+				"nome": "TIPOVALOR",
+				"valor": "STRING"
+			},
+			{
+				"nome": "IDROTASERVICO",
+				"valor": "PDVSYNC - ENVIAR PRECO FIXO"
+			},
+			{
+				"nome": "VALOR",
+				"valor": ":PCINTEGRACAOCORE.DADOSTRANSFORMADOS"
+			},
+			{
+				"nome": "CODEMPALTER",
+				"valor": ""
+			}
+		]
+	}
+}

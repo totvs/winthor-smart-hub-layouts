@@ -1,0 +1,175 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOROTASERVICO",
+		"campos": [
+			{
+				"nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+				"valor": "N"
+			},
+			{
+				"nome": "ID",
+				"valor": "WTA - Buscar Filiais Lojas"
+			},
+			{
+				"nome": "IDEMPRESAAPI",
+				"valor": "WINTHOR-WTA"
+			},
+			{
+				"nome": "SERVICO",
+				"valor": "WTA - Buscar Filiais Lojas"
+			},
+			{
+				"nome": "LAYOUTCOMUNICACAO",
+				"valor": {
+					"name": "WTA - Buscar Filiais Lojas",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{URL_BASE}}/api/branch/v1/",
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "{{PAGE_SIZE}}"
+								},
+								{
+									"key": "page",
+									"value": "{{PAGE}}"
+								},
+								{
+									"key": "lastChange",
+									"value": "{{LAST_CHANGE}}"
+								},
+								{
+									"key": "id",
+									"value": "{{FILIAL}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			},
+			{
+				"nome": "LAYOUTTRANSFORMACAO",
+				"valor": [
+					{
+						"operation": "modify-overwrite-beta",
+						"spec": {
+							"items": {
+								"*": {
+									"idExterno": "=concat('pdvsync-loja-', @(1,id),'-', @(1,lastChange))"
+								}
+							}
+						}
+					},
+					{
+						"operation": "shift",
+						"spec": {
+							"items": {
+								"*": {
+									"id": {
+										"99": {
+											"@2": "ignore"
+										},
+										"*": {
+											"@2": "items[]"
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"operation": "shift",
+						"spec": {
+							"items": {
+								"*": {
+									"idExterno": "idExterno",								
+									"id": [
+										"items[&1].[0].numeroLoja",
+										"items[&1].[0].codigoIdentificacaoLoja",
+										"items[&1].[0].idRetaguarda"
+									],
+									"corporateName": [
+										"items[&1].[0].razaoSocial",
+										"items[&1].[0].rede"
+									],
+									"aliasName": "items[&1].[0].nomeFantasia",
+									"corporateIdentificationNumber": "items[&1].[0].cnpj",
+									"stateRegistration": "items[&1].[0].inscricaoEstadual",
+									"municipalRegistration": "items[&1].[0].inscricaoMunicipal",
+									"address": "items[&1].[0].endereco",
+									"addressNumber": "items[&1].[0].numero",
+									"addressComplement": "items[&1].[0].complemento",
+									"district": "items[&1].[0].bairro",
+									"city": "items[&1].[0].cidade",
+									"state": "items[&1].[0].estado",
+									"federativeUnit": "items[&1].[0].siglaUf",
+									"codStateIbge": "items[&1].[0].codigoUFIBGE",
+									"codCityIbge": "items[&1].[0].codigoMunicipioIbge",
+									"zipCode": "items[&1].[0].cep",
+									"phoneNumber": "items[&1].[0].telefone",
+									"optingSimplesNacional": {
+										"true": {
+											"#SimplesNacional": "items[&3].[0].regimeTributario"
+										},
+										"false": {
+											"#RegimeNormal": "items[&3].[0].regimeTributario"
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"operation": "default",
+						"spec": {
+							"_attr_access": "items",
+							"items[]": {
+								"*[]": {
+									"*": {
+										"idInquilino": "{{ID_INQUILINO}}",
+										"idProprietario": "{{MASTER_ID_PROPRIETARIO}}",
+										"loteOrigem": "{{LOTE_ORIGEM}}",
+										"situacao": 1,
+										"modeloFiscal": 2
+									}
+								}
+							}
+						}
+					}
+				]
+			},
+			{
+				"nome": "ATIVO",
+				"valor": "S"
+			},
+			{
+				"nome": "AUTENTICADOR",
+				"valor": "N"
+			},
+			{
+				"nome": "DATASINCRONISMO",
+				"valor": "21-SEP-22"
+			},
+			{
+				"nome": "REFRESHTOKEN",
+				"valor": ""
+			},
+			{
+				"nome": "TIPOPROCESSO",
+				"valor": "BUSCAR"
+			}
+		]
+	}
+}

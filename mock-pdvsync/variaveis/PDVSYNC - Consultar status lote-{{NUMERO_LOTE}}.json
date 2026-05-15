@@ -1,0 +1,39 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOVARIAVEIS",
+		"campos": [
+			{
+				"nome": "DTULTALTER",
+				"valor": ""
+			},
+			{
+				"nome": "ID",
+				"valor": "PDVSYNC - CONSULTAR STATUS LOTE-{{NUMERO_LOTE}}"
+			},
+			{
+				"nome": "CHAVE",
+				"valor": "{{NUMERO_LOTE}}"
+			},
+			{
+				"nome": "TIPOCHAVE",
+				"valor": "BODY"
+			},
+			{
+				"nome": "TIPOVALOR",
+				"valor": "STRING"
+			},
+			{
+				"nome": "IDROTASERVICO",
+				"valor": "PDVSYNC - CONSULTAR STATUS LOTE"
+			},
+			{
+				"nome": "VALOR",
+				"valor": ":PCINTEGRACAOCORE.DADOSTRANSFORMADOS->numeroLote"
+			},
+			{
+				"nome": "CODEMPALTER",
+				"valor": ""
+			}
+		]
+	}
+}

@@ -1,0 +1,39 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOVARIAVEIS",
+		"campos": [
+			{
+				"nome": "DTULTALTER",
+				"valor": ""
+			},
+			{
+				"nome": "ID",
+				"valor": "PDVSYNC - SALVAR CLIENTES-{{URL_ENVIAR_CLIENTE}}"
+			},
+			{
+				"nome": "CHAVE",
+				"valor": "{{URL_ENVIAR_CLIENTE}}"
+			},
+			{
+				"nome": "TIPOCHAVE",
+				"valor": "BODY"
+			},
+			{
+				"nome": "TIPOVALOR",
+				"valor": "STRING"
+			},
+			{
+				"nome": "IDROTASERVICO",
+				"valor": "PDVSYNC - SALVAR CLIENTES"
+			},
+			{
+				"nome": "VALOR",
+				"valor": "https://pdvsync.varejo.totvs.com.br/cliente/api/retaguarda/v3/clientes"
+			},
+			{
+				"nome": "CODEMPALTER",
+				"valor": ""
+			}
+		]
+	}
+}

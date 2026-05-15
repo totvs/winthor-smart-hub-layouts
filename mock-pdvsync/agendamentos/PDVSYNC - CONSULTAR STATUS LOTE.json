@@ -1,0 +1,19 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOAGENDAMENTO",
+		"campos": [
+			{
+				"nome": "DESCRICAO",
+				"valor": "pdvsync - consultar status lote"
+			},
+			{
+				"nome": "AGENDAMENTOSEGUNDOS",
+				"valor": "600"
+			},
+			{
+				"nome": "DELAYINICIALSEGUNDOS",
+				"valor": "5"
+			}
+		]
+	}
+}

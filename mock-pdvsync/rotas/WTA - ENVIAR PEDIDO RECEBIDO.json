@@ -1,0 +1,84 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOROTASERVICO",
+		"campos": [
+			{
+				"nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+				"valor": "N"
+			},
+			{
+				"nome": "ID",
+				"valor": "WTA - ENVIAR PEDIDO RECEBIDO"
+			},
+			{
+				"nome": "IDEMPRESAAPI",
+				"valor": "WINTHOR-WTA"
+			},
+			{
+				"nome": "SERVICO",
+				"valor": "WTA - ENVIAR PEDIDO RECEBIDO",
+				"valorAnterior":"WTA - ENVIAR VENDA RECEBIDO"
+			},
+			{
+				"nome": "LAYOUTCOMUNICACAO",
+				"valor": {
+					"name": "WTA - ENVIAR PEDIDO RECEBIDO",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{URL_BASE}}/winthor/varejo/matcon/v1/orders/pdvsync",
+							"query": []
+						},
+						"bodyraw": "{{CLIENT_JSON}}"
+					},
+					"response": []
+				}
+			},
+			{
+				"nome": "LAYOUTTRANSFORMACAO",
+				"valor": [
+					{
+						"operation": "default",
+						"spec": {
+							"status": 2
+						}
+					}
+				]
+			},
+			{
+				"nome": "ATIVO",
+				"valor": "S"
+			},
+			{
+				"nome": "AUTENTICADOR",
+				"valor": "N"
+			},
+			{
+				"nome": "DATASINCRONISMO",
+				"valor": "02-AUG-22"
+			},
+			{
+				"nome": "REFRESHTOKEN",
+				"valor": ""
+			},
+			{
+				"nome": "TIPOPROCESSO",
+				"valor": "ENVIAR"
+			}
+		]
+	}
+}

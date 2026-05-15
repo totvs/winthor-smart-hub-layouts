@@ -1,0 +1,15 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOAGENDAMENTOFLUXO",
+		"campos": [
+			{
+				"nome": "IDAGENDAMENTO",
+				"valor": "pdvsync - monitor vendas"
+			},
+			{
+				"nome": "IDFLUXO",
+				"valor": "Atualizar Status Venda Retaguarda"
+			}
+		]
+	}
+}
