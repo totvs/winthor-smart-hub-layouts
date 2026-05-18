@@ -129,6 +129,7 @@
 							   "squareId": "items.[&1].IdRetaguardaPraca",
 							   "regionId": "items.[&1].IdRetaguardaRegiao",
 							   "activityId": "items.[&1].IdRetaguardaRamoAtividade",
+							   "isBlocked": "items.[&1].Bloqueado",
 							   "wholesalePriceUses": {
 								 "N": {
 								   "#False": "items.[&3].UtilizaPrecoAtacado"
