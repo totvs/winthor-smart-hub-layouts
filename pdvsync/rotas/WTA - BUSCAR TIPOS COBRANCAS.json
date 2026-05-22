@@ -156,6 +156,7 @@
 									"codigoSistemaExterno": "items.[&1].codigoSistemaExterno",
 									"clienteConsumidor": "items.[&1].clienteConsumidor",
 									"validaLimiteCredito": "items.[&1].utilizaLimiteCredito",
+									"permiteVendaClienteBloqueado": "items.[&1].permiteVendaClienteBloqueado",
 									"cobAntecipada": "items.[&1].recebimentoAntecipado",
 									"codOperadoraCartao": {
 										"cartao_null": {
