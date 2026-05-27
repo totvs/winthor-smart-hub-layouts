@@ -270,6 +270,12 @@
       "valor": "https://pdvsync.varejo.totvs.com.br/imposto/api/retaguarda/v3/dadosdinamicos/down/29/1",
       "descricao": "PDVSYNC - Enviar CFOP Reforma Tributaria",
       "rota": "PDVSYNC - Enviar CFOP Reforma Tributaria"
+    },
+    {
+      "nome": "{{URL_ENVIAR_ENDERECO_ENTREGA_CLIENTE}}",
+      "valor": "https://pdvsync.varejo.totvs.com.br/dadosbasicos/api/retaguarda/v3/dadosdinamicos/down/56/1",
+      "descricao": "PDVSYNC - Salvar Endereco Entrega Client",
+      "rota": "PDVSYNC - Salvar Endereco Entrega Client"
     }
   ]
 }
