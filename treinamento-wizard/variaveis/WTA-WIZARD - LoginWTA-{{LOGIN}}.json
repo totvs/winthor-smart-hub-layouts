@@ -1,5 +1,5 @@
 {
-	"tabela": {
+"tabela": {
 		"nome": "PCINTEGRACAOVARIAVEIS",
 		"campos": [
 			{
@@ -8,11 +8,11 @@
 			},
 			{
 				"nome": "ID",
-				"valor": "PDVSYNC - ATUALIZAR STATUS VENDA MONITOR-{{STATUS}}"
+				"valor": "WTA-WIZARD - LoginWTA-{{LOGIN}}"
 			},
 			{
 				"nome": "CHAVE",
-				"valor": "{{STATUS}}"
+				"valor": "{{LOGIN}}"
 			},
 			{
 				"nome": "TIPOCHAVE",
@@ -20,19 +20,31 @@
 			},
 			{
 				"nome": "TIPOVALOR",
-				"valor": "INTEGER"
+				"valor": "STRING"
 			},
 			{
 				"nome": "IDROTASERVICO",
-				"valor": "PDVSYNC - ATUALIZAR STATUS VENDA MONITOR"
+				"valor": "WTA-WIZARD - LoginWTA"
 			},
 			{
 				"nome": "VALOR",
-				"valor": ":PCINTEGRACAOCORE.DADOSTRANSFORMADOS->statusPDV"
+				"valor": "ADICIONAR_LOGIN_WTA"
 			},
 			{
 				"nome": "CODEMPALTER",
 				"valor": ""
+			},
+			{
+				"nome": "VISIVELWIZARD",
+				"valor": "S"
+			},
+			{
+				"nome": "ORDENACAOWIZARD",
+				"valor": "1"
+			},
+			{
+				"nome": "DESCRICAOPARAM",
+				"valor": "Login para autenticação na WTA"
 			}
 		]
 	}

@@ -1,0 +1,39 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOVARIAVEIS",
+		"campos": [
+			{
+				"nome": "INITIALSYNC",
+				"valor": ""
+			},
+			{
+				"nome": "ID",
+				"valor": "WTA - BUSCAR DESCONTO E ACRESCIMO-{{INITIAL_SYNC}}"
+			},
+			{
+				"nome": "CHAVE",
+				"valor": "{{INITIAL_SYNC}}"
+			},
+			{
+				"nome": "TIPOCHAVE",
+				"valor": "BODY"
+			},
+			{
+				"nome": "TIPOVALOR",
+				"valor": "SELECT"
+			},
+			{
+				"nome": "IDROTASERVICO",
+				"valor": "WTA - BUSCAR DESCONTO E ACRESCIMO"
+			},
+			{
+				"nome": "VALOR",
+				"valor": "SELECT CASE WHEN COUNT(*) = 0 THEN 'TRUE' ELSE 'FALSE' END AS DT FROM PCINTEGRACAOCORE WHERE IDROTASERVICO = :IDROTASERVICO AND STATUS IN (2, 11, 12, 13) AND ROWNUM = 1"
+			},
+			{
+				"nome": "CODEMPALTER",
+				"valor": ""
+			}
+		]
+	}
+}

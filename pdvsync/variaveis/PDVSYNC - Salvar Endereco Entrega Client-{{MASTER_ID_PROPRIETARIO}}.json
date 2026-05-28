@@ -8,11 +8,11 @@
 			},
 			{
 				"nome": "ID",
-				"valor": "PDVSYNC - ATUALIZAR STATUS VENDA MONITOR-{{STATUS}}"
+				"valor": "PDVSYNC - SALVAR ENDERECO ENTREGA CLIENT-{{MASTER_ID_PROPRIETARIO}}"
 			},
 			{
 				"nome": "CHAVE",
-				"valor": "{{STATUS}}"
+				"valor": "{{MASTER_ID_PROPRIETARIO}}"
 			},
 			{
 				"nome": "TIPOCHAVE",
@@ -20,15 +20,15 @@
 			},
 			{
 				"nome": "TIPOVALOR",
-				"valor": "INTEGER"
+				"valor": "STRING"
 			},
 			{
 				"nome": "IDROTASERVICO",
-				"valor": "PDVSYNC - ATUALIZAR STATUS VENDA MONITOR"
+				"valor": "PDVSYNC - SALVAR ENDERECO ENTREGA CLIENT"
 			},
 			{
 				"nome": "VALOR",
-				"valor": ":PCINTEGRACAOCORE.DADOSTRANSFORMADOS->statusPDV"
+				"valor": "9999"
 			},
 			{
 				"nome": "CODEMPALTER",

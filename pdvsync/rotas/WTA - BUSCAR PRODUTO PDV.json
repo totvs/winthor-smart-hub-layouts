@@ -321,7 +321,7 @@
 								"id": "items[&4].fcps[&2].idRetaguarda",
 								"@(3,produto.codfilial)": "items.[&4].fcps[&2].idProprietario",
 								"@(1,fcp.percentualFcp.percentual_Fcp)": "items.[&4].fcps[&2].percentualFcp",
-								"@(1,fcp.codigoBeneficioFiscal.valor)": "items.[&4].fcps[&2].codigoBeneficioFiscal",
+								"@(1,fcp.codigoBeneficioFiscal)": "items.[&4].fcps[&2].codigoBeneficioFiscal",
 								"descontaDesoneracaoNf": "items.[&4].fcps[&2].descontaDesoneracaoNf",
 								"@(1,fcp.valorBaseFcp.valorBase_Fcp)": "items.[&4].fcps[&2].valorBaseFcp",
 								"@(1,fcp.motivoDesoneracaoIcms)": "items.[&4].fcps[&2].motivoDesoneracaoIcms"

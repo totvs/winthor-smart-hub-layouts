@@ -1,5 +1,5 @@
 {
-	"tabela": {
+"tabela": {
 		"nome": "PCINTEGRACAOVARIAVEIS",
 		"campos": [
 			{
@@ -8,11 +8,11 @@
 			},
 			{
 				"nome": "ID",
-				"valor": "PDVSYNC - ATUALIZAR STATUS VENDA MONITOR-{{STATUS}}"
+				"valor": "TESTE-WIZARD - SALVAR CLIENTES-{{CLIENT_JSON}}"
 			},
 			{
 				"nome": "CHAVE",
-				"valor": "{{STATUS}}"
+				"valor": "{{CLIENT_JSON}}"
 			},
 			{
 				"nome": "TIPOCHAVE",
@@ -20,15 +20,15 @@
 			},
 			{
 				"nome": "TIPOVALOR",
-				"valor": "INTEGER"
+				"valor": "STRING"
 			},
 			{
 				"nome": "IDROTASERVICO",
-				"valor": "PDVSYNC - ATUALIZAR STATUS VENDA MONITOR"
+				"valor": "TESTE-WIZARD - SALVAR CLIENTES"
 			},
 			{
 				"nome": "VALOR",
-				"valor": ":PCINTEGRACAOCORE.DADOSTRANSFORMADOS->statusPDV"
+				"valor": ":PCINTEGRACAOCORE.DADOSTRANSFORMADOS"
 			},
 			{
 				"nome": "CODEMPALTER",

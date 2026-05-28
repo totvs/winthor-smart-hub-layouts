@@ -141,7 +141,7 @@
     },
     {
       "nome": "{{URL_ENVIAR_STATUS_PREVENDA}}",
-      "valor": "https://pdvsync.varejo.totvs.com.br/comercial/api/retaguarda/v3/preVendaMensagens",
+      "valor": "https://pdvsync.varejo.totvs.com.br/comercial/api/retaguarda/v3/preVenda",
       "descricao": "PDVSync -Envia status pedido",
       "rota": "PDVSYNC - Envia status pedido"
     },
@@ -270,6 +270,12 @@
       "valor": "https://pdvsync.varejo.totvs.com.br/imposto/api/retaguarda/v3/dadosdinamicos/down/29/1",
       "descricao": "PDVSYNC - Enviar CFOP Reforma Tributaria",
       "rota": "PDVSYNC - Enviar CFOP Reforma Tributaria"
+    },
+    {
+      "nome": "{{URL_ENVIAR_ENDERECO_ENTREGA_CLIENTE}}",
+      "valor": "https://pdvsync.varejo.totvs.com.br/dadosbasicos/api/retaguarda/v3/dadosdinamicos/down/56/1",
+      "descricao": "PDVSYNC - Salvar Endereco Entrega Client",
+      "rota": "PDVSYNC - Salvar Endereco Entrega Client"
     }
   ]
 }
