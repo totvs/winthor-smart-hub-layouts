@@ -74,6 +74,7 @@
                         "tripReleaseRequests": {
                           "tripReleaseRequest": {
                             "*": {
+                              "@(3,messageId)": "publishReleasedTripTemp.[&4].trips.[&1].idMensagem",
                               "identifier": "publishReleasedTripTemp.[\u00264].trips.[\u00261].idViagem",
                               "vehicleId": "publishReleasedTripTemp.[\u00264].trips.[\u00261].idVeiculo",
                               "loads": {
@@ -124,12 +125,7 @@
                 "*": {
                   "idMensagem": "items.[\u00261].idMensagem",
                   "trips": {
-                    "*": {
-                      "idViagem": "items.[\u00263].idViagem",
-                      "idVeiculo": "items.[\u00263].idVeiculo",
-                      "numcarExterno": "items.[\u00263].numcarExterno",
-                      "idsPedidos": "items.[\u00263].idsPedidos"
-                    }
+                    "*": "items[]"
                   }
                 }
               }
