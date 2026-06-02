@@ -1,39 +1,51 @@
 {
-	"tabela": {
-		"nome": "PCINTEGRACAOVARIAVEIS",
-		"campos": [
-			{
-				"nome": "DTULTALTER",
-				"valor": ""
-			},
-			{
-				"nome": "ID",
-				"valor": "WTA - BUSCAR CFOP REFORMA TRIBUTARIA-{{BRANCHID}}"
-			},
-			{
-				"nome": "CHAVE",
-				"valor": "{{BRANCHID}}"
-			},
-			{
-				"nome": "TIPOCHAVE",
-				"valor": "BODY"
-			},
-			{
-				"nome": "TIPOVALOR",
-				"valor": "STRING"
-			},
-			{
-				"nome": "IDROTASERVICO",
-				"valor": "WTA - BUSCAR CFOP REFORMA TRIBUTARIA"
-			},
-			{
-				"nome": "VALOR",
-				"valor": "99"
-			},
-			{
-				"nome": "CODEMPALTER",
-				"valor": ""
-			}
-		]
-	}
+  "tabela": {
+    "nome": "PCINTEGRACAOVARIAVEIS",
+    "campos": [
+      {
+        "nome": "DTULTALTER",
+        "valor": ""
+      },
+      {
+        "nome": "ID",
+        "valor": "WTA - BUSCAR CFOP REFORMA TRIBUTARIA-{{BRANCHID}}"
+      },
+      {
+        "nome": "CHAVE",
+        "valor": "{{BRANCHID}}"
+      },
+      {
+        "nome": "TIPOCHAVE",
+        "valor": "BODY"
+      },
+      {
+        "nome": "TIPOVALOR",
+        "valor": "STRING"
+      },
+      {
+        "nome": "IDROTASERVICO",
+        "valor": "WTA - BUSCAR CFOP REFORMA TRIBUTARIA"
+      },
+      {
+        "nome": "VALOR",
+        "valor": "99"
+      },
+      {
+        "nome": "CODEMPALTER",
+        "valor": ""
+      },
+      {
+        "nome": "VISIVELWIZARD",
+        "valor": "S"
+      },
+      {
+        "nome": "ORDENACAOWIZARD",
+        "valor": 70
+      },
+      {
+        "nome": "DESCRICAOPARAM",
+        "valor": "Número da Filial"
+      }
+    ]
+  }
 }
