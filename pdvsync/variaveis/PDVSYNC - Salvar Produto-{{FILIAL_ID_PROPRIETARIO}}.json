@@ -1,39 +1,51 @@
 {
-	"tabela": {
-		"nome": "PCINTEGRACAOVARIAVEIS",
-		"campos": [
-			{
-				"nome": "DTULTALTER",
-				"valor": ""
-			},
-			{
-				"nome": "ID",
-				"valor": "PDVSYNC - SALVAR PRODUTO-{{FILIAL_ID_PROPRIETARIO}}"
-			},
-			{
-				"nome": "CHAVE",
-				"valor": "{{FILIAL_ID_PROPRIETARIO}}"
-			},
-			{
-				"nome": "TIPOCHAVE",
-				"valor": "BODY"
-			},
-			{
-				"nome": "TIPOVALOR",
-				"valor": "STRING"
-			},
-			{
-				"nome": "IDROTASERVICO",
-				"valor": "PDVSYNC - SALVAR PRODUTO"
-			},
-			{
-				"nome": "VALOR",
-				"valor": "ADICIONAR_FILIAL"
-			},
-			{
-				"nome": "CODEMPALTER",
-				"valor": ""
-			}
-		]
-	}
+  "tabela": {
+    "nome": "PCINTEGRACAOVARIAVEIS",
+    "campos": [
+      {
+        "nome": "DTULTALTER",
+        "valor": ""
+      },
+      {
+        "nome": "ID",
+        "valor": "PDVSYNC - SALVAR PRODUTO-{{FILIAL_ID_PROPRIETARIO}}"
+      },
+      {
+        "nome": "CHAVE",
+        "valor": "{{FILIAL_ID_PROPRIETARIO}}"
+      },
+      {
+        "nome": "TIPOCHAVE",
+        "valor": "BODY"
+      },
+      {
+        "nome": "TIPOVALOR",
+        "valor": "STRING"
+      },
+      {
+        "nome": "IDROTASERVICO",
+        "valor": "PDVSYNC - SALVAR PRODUTO"
+      },
+      {
+        "nome": "VALOR",
+        "valor": "ADICIONAR_FILIAL"
+      },
+      {
+        "nome": "CODEMPALTER",
+        "valor": ""
+      },
+      {
+        "nome": "VISIVELWIZARD",
+        "valor": "S"
+      },
+      {
+        "nome": "ORDENACAOWIZARD",
+        "valor": 39
+      },
+      {
+        "nome": "DESCRICAOPARAM",
+        "valor": "Número da Filial"
+      }
+    ]
+  }
 }
