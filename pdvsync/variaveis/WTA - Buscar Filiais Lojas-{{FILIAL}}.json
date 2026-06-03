@@ -1,39 +1,51 @@
 {
-	"tabela": {
-		"nome": "PCINTEGRACAOVARIAVEIS",
-		"campos": [
-			{
-				"nome": "DTULTALTER",
-				"valor": ""
-			},
-			{
-				"nome": "ID",
-				"valor": "WTA - BUSCAR FILIAIS LOJAS-{{FILIAL}}"
-			},
-			{
-				"nome": "CHAVE",
-				"valor": "{{FILIAL}}"
-			},
-			{
-				"nome": "TIPOCHAVE",
-				"valor": "BODY"
-			},
-			{
-				"nome": "TIPOVALOR",
-				"valor": "STRING"
-			},
-			{
-				"nome": "IDROTASERVICO",
-				"valor": "WTA - BUSCAR FILIAIS LOJAS"
-			},
-			{
-				"nome": "VALOR",
-				"valor": "ADICIONAR_FILIAL"
-			},
-			{
-				"nome": "CODEMPALTER",
-				"valor": ""
-			}
-		]
-	}
+  "tabela": {
+    "nome": "PCINTEGRACAOVARIAVEIS",
+    "campos": [
+      {
+        "nome": "DTULTALTER",
+        "valor": ""
+      },
+      {
+        "nome": "ID",
+        "valor": "WTA - BUSCAR FILIAIS LOJAS-{{FILIAL}}"
+      },
+      {
+        "nome": "CHAVE",
+        "valor": "{{FILIAL}}"
+      },
+      {
+        "nome": "TIPOCHAVE",
+        "valor": "BODY"
+      },
+      {
+        "nome": "TIPOVALOR",
+        "valor": "STRING"
+      },
+      {
+        "nome": "IDROTASERVICO",
+        "valor": "WTA - BUSCAR FILIAIS LOJAS"
+      },
+      {
+        "nome": "VALOR",
+        "valor": "ADICIONAR_FILIAL"
+      },
+      {
+        "nome": "CODEMPALTER",
+        "valor": ""
+      },
+      {
+        "nome": "VISIVELWIZARD",
+        "valor": "S"
+      },
+      {
+        "nome": "ORDENACAOWIZARD",
+        "valor": 48
+      },
+      {
+        "nome": "DESCRICAOPARAM",
+        "valor": "Número da Filial"
+      }
+    ]
+  }
 }
