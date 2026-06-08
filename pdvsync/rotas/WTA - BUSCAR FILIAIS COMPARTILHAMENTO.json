@@ -96,11 +96,11 @@
 								"*": {
 									"idExterno": "idExterno",	
 									"id": [
-										"items[&1].[0].idRetaguarda",
-										"items[&1].[0].idProprietario",
-										"items[&1].[0].idRetaguardaLoja"
+										"items[&1].[0].IdRetaguarda",
+										"items[&1].[0].IdProprietario",
+										"items[&1].[0].IdRetaguardaLoja"
 									],
-									"corporateName": "items[&1].[0].nomeCompartilhamento"
+									"corporateName": "items[&1].[0].NomeCompartilhamento"
 								}
 							}
 						}
@@ -113,10 +113,10 @@
 								"*[]": {
 									"*": {
 										"idInquilino": "{{ID_INQUILINO}}",
-										"idRetaguardaPai": "{{MASTER_ID_RETAGUARDA_PAI}}",
+										"IdRetaguardaPai": "{{MASTER_ID_RETAGUARDA_PAI}}",
 										"loteOrigem": "{{LOTE_ORIGEM}}",
 										"situacao": 0,
-										"nivel": 1
+										"Nivel": 1
 									}
 								}
 							}
