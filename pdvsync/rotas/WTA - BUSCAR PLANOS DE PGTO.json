@@ -154,7 +154,7 @@
                 "*": {
                   "condicoesPagtoRestricoes_rem": {
                     "*": {
-                      "situacao": 1,
+                      "Situacao": 1,
                       "IdRetaguardaCondicaoPagamento": "=concat('', @(3,codigo))",
                       "idRetaguardaCategoria": "=toString",
                       "idRetaguardaCliente": "=toString",
@@ -178,7 +178,7 @@
                   "condicoesPagtoRestricoes_rem": {
                     "*": {
                       "IdRetaguardaCondicaoPagamento": "items[&3].condicoesPagtoRestricoes[&1].&",
-                      "situacao": "items[&3].condicoesPagtoRestricoes[&1].&",
+                      "Situacao": "items[&3].condicoesPagtoRestricoes[&1].&",
                       "idRetaguardaCategoria": [
                         "items[&3].condicoesPagtoRestricoes[&1].&",
                         "items[&3].condicoesPagtoRestricoes[&1].idRetaguarda_rem"
@@ -275,7 +275,7 @@
                   "condicoesPagtoRestricoes": {
                     "*": {
                       "IdRetaguardaCondicaoPagamento": "items.[&3].condicoesPagtoRestricoes.[&1].&",
-                      "situacao": "items.[&3].condicoesPagtoRestricoes.[&1].&",
+                      "Situacao": "items.[&3].condicoesPagtoRestricoes.[&1].&",
                       "idRetaguarda": "items.[&3].condicoesPagtoRestricoes.[&1].&",
                       "idRetaguardaCategoria": "items.[&3].condicoesPagtoRestricoes.[&1].&",
                       "idRetaguardaCliente": "items.[&3].condicoesPagtoRestricoes.[&1].&",
