@@ -1,39 +1,51 @@
 {
-    "tabela": {
-        "nome": "PCINTEGRACAOVARIAVEIS",
-        "campos": [
-            {
-                "nome": "ID",
-                "valor": "COLENT - RAC LOGIN -{{SENHA_RAC}}"
-            },
-            {
-                "nome": "CHAVE",
-                "valor": "{{SENHA_RAC}}"
-            },
-            {
-                "nome": "TIPOCHAVE",
-                "valor": "BODY"
-            },
-            {
-                "nome": "TIPOVALOR",
-                "valor": "STRING"
-            },
-            {
-                "nome": "IDROTASERVICO",
-                "valor": "COLENT - RAC LOGIN"
-            },
-            {
-                "nome": "DTULTALTER",
-                "valor": ""
-            },
-            {
-                "nome": "CODEMPALTER",
-                "valor": ""
-            },
-            {
-                "nome": "VALOR",
-                "valor": "ADICIONAR_SUA_SENHA_RAC"
-            }
-        ]
-    }
+  "tabela": {
+    "nome": "PCINTEGRACAOVARIAVEIS",
+    "campos": [
+      {
+        "nome": "VISIVELWIZARD",
+        "valor": "S"
+      },
+      {
+        "nome": "ORDENACAOWIZARD",
+        "valor": ""
+      },
+      {
+        "nome": "DESCRICAOPARAM",
+        "valor": "É a senha do usuário que acessa o coleta entrega. O Mesmo utilizado via navegador Web."
+      },
+      {
+        "nome": "ID",
+        "valor": "COLENT - RAC LOGIN -{{SENHA_RAC}}"
+      },
+      {
+        "nome": "CHAVE",
+        "valor": "{{SENHA_RAC}}"
+      },
+      {
+        "nome": "TIPOCHAVE",
+        "valor": "BODY"
+      },
+      {
+        "nome": "TIPOVALOR",
+        "valor": "STRING"
+      },
+      {
+        "nome": "IDROTASERVICO",
+        "valor": "COLENT - RAC LOGIN"
+      },
+      {
+        "nome": "DTULTALTER",
+        "valor": ""
+      },
+      {
+        "nome": "CODEMPALTER",
+        "valor": ""
+      },
+      {
+        "nome": "VALOR",
+        "valor": "ADICIONAR_SUA_SENHA_RAC"
+      }
+    ]
+  }
 }
