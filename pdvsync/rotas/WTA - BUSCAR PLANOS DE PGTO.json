@@ -155,7 +155,7 @@
                   "condicoesPagtoRestricoes_rem": {
                     "*": {
                       "Situacao": 1,
-                      "IdRetaguardaCondicaoPagamento": "=concat('', @(3,codigo))",
+                      "idRetaguardaCondicaoPagamento": "=concat('', @(3,codigo))",
                       "idRetaguardaCategoria": "=toString",
                       "idRetaguardaCliente": "=toString",
                       "idRetaguardaDepartamento": "=toString",
@@ -177,7 +177,7 @@
                   "@": "items[]",
                   "condicoesPagtoRestricoes_rem": {
                     "*": {
-                      "IdRetaguardaCondicaoPagamento": "items[&3].condicoesPagtoRestricoes[&1].&",
+                      "idRetaguardaCondicaoPagamento": "items[&3].condicoesPagtoRestricoes[&1].&",
                       "Situacao": "items[&3].condicoesPagtoRestricoes[&1].&",
                       "idRetaguardaCategoria": [
                         "items[&3].condicoesPagtoRestricoes[&1].&",
@@ -220,7 +220,7 @@
                 "*": {
                   "condicoesPagtoRestricoes": {
                     "*": {
-                      "idRetaguarda": "=concat(@(1,IdRetaguardaCondicaoPagamento),'-', @(1,idRetaguarda_rem))"
+                      "idRetaguarda": "=concat(@(1,idRetaguardaCondicaoPagamento),'-', @(1,idRetaguarda_rem))"
                     }
                   }
                 }
@@ -261,7 +261,7 @@
                   "percentualAcrescimo": "items.[&1].taxa",
                   "diaFixo": "items.[&1].diaFixoPagamento",
                   "diasCarencia": "items.[&1].diasCarenciaPrimeiroVencimento",
-                  "numeroParcelasDiaFixo": "items.[&1].fixaNumeroparcelas",
+                  "numeroParcelasDiaFixo": "items.[&1].fixaNumeroParcelas",
                   "numeroParcelas": "items.[&1].quantidadeParcelas",
                   "valorMinimoPedido": "items.[&1].valorMinimoParcela",
                   "ativo": {
@@ -274,7 +274,7 @@
                   },
                   "condicoesPagtoRestricoes": {
                     "*": {
-                      "IdRetaguardaCondicaoPagamento": "items.[&3].condicoesPagtoRestricoes.[&1].&",
+                      "idRetaguardaCondicaoPagamento": "items.[&3].condicoesPagtoRestricoes.[&1].&",
                       "Situacao": "items.[&3].condicoesPagtoRestricoes.[&1].&",
                       "idRetaguarda": "items.[&3].condicoesPagtoRestricoes.[&1].&",
                       "idRetaguardaCategoria": "items.[&3].condicoesPagtoRestricoes.[&1].&",
