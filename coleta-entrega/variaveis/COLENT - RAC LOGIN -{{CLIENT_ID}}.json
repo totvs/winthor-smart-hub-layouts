@@ -4,7 +4,7 @@
     "campos": [
       {
         "nome": "VISIVELWIZARD",
-        "valor": "N"
+        "valor": "S"
       },
       {
         "nome": "ORDENACAOWIZARD",
@@ -12,7 +12,7 @@
       },
       {
         "nome": "DESCRICAOPARAM",
-        "valor": ""
+        "valor": "É o usuário que a API utiliza para fazer a conexão com o coleta entrega"
       },
       {
         "nome": "ID",
