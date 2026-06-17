@@ -112,7 +112,7 @@
 							"items[]": {
 								"*[]": {
 									"*": {
-										"idInquilino": "{{ID_INQUILINO}}",
+										"IdInquilino": "{{ID_INQUILINO}}",
 										"IdRetaguardaPai": "{{MASTER_ID_RETAGUARDA_PAI}}",
 										"loteOrigem": "{{LOTE_ORIGEM}}",
 										"situacao": 0,
