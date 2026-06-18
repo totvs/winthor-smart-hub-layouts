@@ -28,13 +28,13 @@
 					"itens": [
 						[
 							{
-								"idRetaguarda": "{{MASTER_ID_RETAGUARDA}}",
-								"idProprietario": "{{MASTER_ID_PROPRIETARIO}}",
-								"nomeCompartilhamento": "Master 01",
-								"nivel": 0,
-								"idRetaguardaPai": "",
-								"idRetaguardaLoja": "",
-								"idInquilino": "{{ID_INQUILINO}}",
+								"IdRetaguarda": "{{MASTER_ID_RETAGUARDA}}",
+								"IdProprietario": "{{MASTER_ID_PROPRIETARIO}}",
+								"NomeCompartilhamento": "Master 01",
+								"Nivel": 0,
+								"IdRetaguardaPai": "",
+								"IdRetaguardaLoja": "",
+								"IdInquilino": "{{ID_INQUILINO}}",
 								"loteOrigem": "{{LOTE_ORIGEM}}"
 							}
 						]
