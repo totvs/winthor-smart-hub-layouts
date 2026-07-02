@@ -29,6 +29,10 @@
 			{
 				"nome": "DTSOLICITACAOTOKEN",
 				"valor": "15-OCT-23"
+			},
+			{
+				"nome": "CONFIGURACAOERP",
+				"valor": [{"nome":"winthor-faturamento","id":"mr3jmo1nshk12u5","filial":"","permitirNulo":false,"tipo":"1","valorERP":"0.37.16.25","status":"1","valorEsperado":"0.37.16.25"},{"nome":"winthor-venda","id":"mr3jmo1nzpdo2ax","filial":"","permitirNulo":false,"tipo":"1","valorERP":"0.38.35.34","status":"1","valorEsperado":"0.38.35.34"}]
 			}
 		]
 	} 
