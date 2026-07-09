@@ -32,7 +32,7 @@
 			},
 			{
 				"nome": "CONFIGURACAOERP",
-				"valor": [{"nome":"winthor-faturamento","id":"mr3jmo1nshk12u5","filial":"","permitirNulo":false,"tipo":"1","valorERP":"0.37.16.25","status":"1","valorEsperado":"0.37.16.25"},{"nome":"winthor-venda","id":"mr3jmo1nzpdo2ax","filial":"","permitirNulo":false,"tipo":"1","valorERP":"0.38.35.34","status":"1","valorEsperado":"0.38.35.34"}]
+				"valor": [{"nome":"winthor-faturamento","id":"mr3jmo1nshk12u5","filial":"","permitirNulo":false,"tipo":"1","valorERP":"0.37.16.25","status":"1","valorEsperado":"0.37.16.25"},{"nome":"winthor-venda","id":"mr3jmo1nzpdo2ax","filial":"","permitirNulo":false,"tipo":"1","valorERP":"0.38.35.34","status":"1","valorEsperado":"0.38.35.34"},{"ajuda":"","valorERP":"","observacao":"","id":"mrdto698hg847qr","tipo":"1","nome":"winthor-cliente","filial":"","status":"3","permitirNulo":true,"valorEsperado":"0.38.0.5"},{"ajuda":"","valorERP":"","observacao":"","id":"mrdtp4n6vdyd5x9","tipo":"1","nome":"winthor-ferramenta-servidor","filial":"","status":"3","permitirNulo":true,"valorEsperado":"1.37.0.2"},{"ajuda":"","valorERP":"","observacao":"","id":"mrdtpm76s9a861d","tipo":"1","nome":"winthor-fornecedor","filial":"","status":"3","permitirNulo":true,"valorEsperado":"0.38.0.1"},{"ajuda":"","valorERP":"","observacao":"","id":"mrdtq6s89r23330","tipo":"1","nome":"winthor-varejo","filial":"","status":"3","permitirNulo":true,"valorEsperado":"1.37.0.2"}]
 			}
 		]
 	} 
