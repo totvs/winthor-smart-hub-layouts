@@ -39,9 +39,9 @@
     "filial": "",
     "permitirNulo": false,
     "tipo": "1",
-    "valorERP": "0.37.16.25",
+    "valorERP": "0.39.0.5",
     "status": "1",
-    "valorEsperado": "0.37.16.25"
+    "valorEsperado": "0.40.0.0"
   },
   {
     "nome": "winthor-financeiro",
