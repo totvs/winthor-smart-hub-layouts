@@ -76,6 +76,10 @@
 			{
 				"nome": "TIPOPROCESSO",
 				"valor": "ENVIAR"
+			},
+			{
+				"nome": "DISPONIVELURLROTAWTA",
+				"valor": "N"
 			}
 		]
 	}
