@@ -107,7 +107,7 @@
                     "produtosSimilares": {
                       "*": {
                         "idRetaguarda": "=concat(@(3,codigoDeBarra),'-',@(3,codigo))",
-                        "idRetaguardaSimilar": "=concat(@(1,codigoBarraSimil),'-',@(1,codSimil))",
+                        "idRetaguardaSimilar": "=concat(@(1,codigoBarraSimilar),'-',@(1,codigoSimilar))",
                         "situacao": "@(1,situacao)"
                       }
                     }
