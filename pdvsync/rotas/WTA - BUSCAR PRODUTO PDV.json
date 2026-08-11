@@ -419,7 +419,11 @@
       {
         "nome": "TIPOPROCESSO",
         "valor": "BUSCAR"
-      }
-    ]
-  }
+      },
+			{
+				"nome": "DISPONIVELURLROTAWTA",
+				"valor": "S"
+			}
+		]
+	}
 }
