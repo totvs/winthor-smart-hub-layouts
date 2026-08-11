@@ -102,11 +102,6 @@
                                                     "IdRetaguarda_arr": "=split('-POS',@(1,IdRetaguarda))",
                                                     "IdRetaguarda": "=join('',@(1,IdRetaguarda_arr))"
 
-                                                },
-                                                "VendaPagamentoTefs": {
-                                                    "*": {
-                                                        "NumeroAutorizacao": "=concat('0',@(1,NumeroAutorizacao))"
-                                                    }
                                                 }
                                             }
                                         }
@@ -395,6 +390,7 @@
                                                         "CodigoRede": "items.[&6].pagamentos[&3].codAdmCartao",
                                                         "NsuHost": "items.[&6].pagamentos[&3].nsuHost",
                                                         "NumeroAutorizacao": "items.[&6].pagamentos[&3].codAutorizacaoTef",
+                                                        "NsuSitef": "items.[&6].pagamentos[&3].nsuTef",
                                                         "NumeroBin": "items.[&6].pagamentos[&3].numCartao"
                                                     }
                                                 },
