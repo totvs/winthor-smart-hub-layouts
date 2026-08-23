@@ -1,0 +1,180 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOROTASERVICO",
+		"campos": [
+			{
+				"nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+				"valor": "N"
+			},
+			{
+				"nome": "ID",
+				"valor": "WTA - Buscar Quantidade Carga Inicial"
+			},
+			{
+				"nome": "IDEMPRESAAPI",
+				"valor": "WINTHOR-WTA"
+			},
+			{
+				"nome": "SERVICO",
+				"valor": "WTA - Buscar Quantidade Carga Inicial"
+			},
+			{
+				"nome": "LAYOUTCOMUNICACAO",
+				"valor": {
+					"name": "WTA - Buscar Quantidade Carga Inicial",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "/winthor/hub/carga/dados/v1/pdvsync/carga/{{FILIAL}}",
+							"query": [],
+							"host": [
+								"https:"
+							],
+							"path": []
+						}
+					},
+					"response": []
+				}
+			},
+			{
+				"nome": "LAYOUTTRANSFORMACAO",
+				"valor": [
+					{
+						"operation": "shift",
+						"spec": {
+							"data": {
+								"*": {
+									"totalRegistros": "items[&1].&",
+									"tipo": {
+										"0": {
+											"#Clientes": "items[&3].fluxo"
+										},
+										"1": {
+											"#Filiais Lojas": "items[&3].fluxo"
+										},
+										"2": {
+											"#Motivo": "items[&3].fluxo"
+										},
+										"3": {
+											"#Perfil": "items[&3].fluxo"
+										},
+										"4": {
+											"#Rca;Usuario Operador;Profissional": "items[&3].fluxo"
+										},
+										"5": {
+											"#FcpProduto": "items[&3].fluxo"
+										},
+										"6": {
+											"#Compartilhamento Master": "items[&3].fluxo"
+										},
+										"7": {
+											"#ICMS": "items[&3].fluxo"
+										},
+										"8": {
+											"#NCM CEST": "items[&3].fluxo"
+										},
+										"9": {
+											"#Pis/Cofins": "items[&3].fluxo"
+										},
+										"10": {
+											"#TributoNcm": "items[&3].fluxo"
+										},
+										"11": {
+											"#ClassificacaoProduto": "items[&3].fluxo"
+										},
+										"12": {
+											"#Produto": "items[&3].fluxo"
+										},
+										"13": {
+											"#Preco;Preco Regiao;Preco Embalagem": "items[&3].fluxo"
+										},
+										"14": {
+											"#Estoque": "items[&3].fluxo"
+										},
+										"15": {
+											"#Operadora Cartao": "items[&3].fluxo"
+										},
+										"16": {
+											"#Pagamento Dados Complementares": "items[&3].fluxo"
+										},
+										"17": {
+											"#Planos de pagamentos": "items[&3].fluxo"
+										},
+										"18": {
+											"#Cobrancas;Forma Pgto": "items[&3].fluxo"
+										},
+										"21": {
+											"#Grupo Campanha Cliente": "items[&3].fluxo"
+										},
+										"24": {
+											"#CanalVenda": "items[&3].fluxo"
+										},
+										"28": {
+											"#Preco Fixo": "items[&3].fluxo"
+										},
+										"55": {
+											"#Status pedido": "items[&3].fluxo"
+										},
+										"56": {
+											"#Endereco Entrega Cliente": "items[&3].fluxo"
+										},
+										"58": {
+											"#Ramo Atividade": "items[&3].fluxo"
+										},
+										"100": {
+											"#Regiao": "items[&3].fluxo"
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"operation": "default",
+						"spec": {
+							"_attr_access": "items"
+						}
+					}
+				]
+			},
+			{
+				"nome": "ATIVO",
+				"valor": "S"
+			},
+			{
+				"nome": "AUTENTICADOR",
+				"valor": "N"
+			},
+			{
+				"nome": "DATASINCRONISMO",
+				"valor": "21-SEP-22"
+			},
+			{
+				"nome": "REFRESHTOKEN",
+				"valor": ""
+			},
+			{
+				"nome": "TIPOPROCESSO",
+				"valor": "BUSCAR"
+			},
+			{
+				"nome": "DISPONIVELURLROTAWTA",
+				"valor": "N"
+			},
+			{
+				"nome": "QUANTCARGAINICIAL",
+				"valor": "S"
+			}
+		]
+	}
+}
