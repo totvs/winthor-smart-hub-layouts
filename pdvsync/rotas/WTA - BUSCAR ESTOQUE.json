@@ -94,7 +94,14 @@
 									"skuId__": "=split('-', @(1,productId))",
 									"skuID_": "=lastElement(@(1,skuId__))",
 									"idInterno":"=concat('', @(1,id_retaguarda))",
-							        "tipoIdInterno":"PDVSYNC-ESTOQUE"
+							        "tipoIdInterno":"PDVSYNC-ESTOQUE",
+									"batchStock": {
+										"*": {
+											"idRetaguardaLote": "=concat('', @(3,id_retaguarda))",
+											"idRetaguardaProduto": "=concat('', @(3,productId))"
+										}
+									}
+
 								}
 							}
 						}
@@ -111,7 +118,18 @@
 									"id_retaguarda": "items[&1].idRetaguarda",
 									"quantity": "items[&1].saldo",
 									"skuID_": "items[&1].codigoProduto",
-									"productId": "items[&1].idRetaguardaProduto"
+									"productId": "items[&1].idRetaguardaProduto",
+									"batchStock": {
+										"*": {
+											"situation": "items[&3].produtoLote[&1].situacao",
+											"quantity": "items[&3].produtoLote[&1].quantidade",
+											"batchNumber": "items[&3].produtoLote[&1].identificacaoLote",
+											"id_retaguarda": "items[&3].produtoLote[&1].estoqueIdRetaguarda",
+											"expirationDate": "items[&3].produtoLote[&1].dataValidade",
+											"idRetaguardaLote": "items[&3].produtoLote[&1].estoqueIdRetaguarda",
+											"idRetaguardaProduto": "items[&3].produtoLote[&1].idRetaguarda"
+										}
+									}
 								}
 							}
 						}
