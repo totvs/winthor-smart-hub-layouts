@@ -273,7 +273,7 @@
     },
     {
       "nome": "{{URL_ENVIAR_ENDERECO_ENTREGA_CLIENTE}}",
-      "valor": "https://pdvsync.varejo.totvs.com.br/dadosbasicos/api/retaguarda/v3/dadosdinamicos/down/56/1",
+      "valor": "https://pdvsync.varejo.totvs.com.br/cliente/api/retaguarda/v3/dadosdinamicos/down/56/1",
       "descricao": "PDVSYNC - Salvar Endereco Entrega Client",
       "rota": "PDVSYNC - Salvar Endereco Entrega Client"
     },
