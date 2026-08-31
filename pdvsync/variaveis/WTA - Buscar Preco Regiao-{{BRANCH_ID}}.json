@@ -45,6 +45,10 @@
       {
         "nome": "DESCRICAOPARAM",
         "valor": "Número da Filial"
+      },
+      {
+        "nome": "VISIVELCARGAINICIAL",
+        "valor": "S"
       }
     ]
   }

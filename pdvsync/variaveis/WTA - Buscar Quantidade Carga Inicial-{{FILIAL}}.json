@@ -8,7 +8,7 @@
       },
       {
         "nome": "ID",
-        "valor": "WTA - BUSCAR STATUS PEDIDO-{{FILIAL}}"
+        "valor": "WTA - BUSCAR QUANTIDADE CARGA INICIAL-{{FILIAL}}"
       },
       {
         "nome": "CHAVE",
@@ -24,7 +24,7 @@
       },
       {
         "nome": "IDROTASERVICO",
-        "valor": "WTA - BUSCAR STATUS PEDIDO"
+        "valor": "WTA - BUSCAR QUANTIDADE CARGA INICIAL"
       },
       {
         "nome": "VALOR",
@@ -36,11 +36,7 @@
       },
       {
         "nome": "VISIVELWIZARD",
-        "valor": "S"
-      },
-      {
-        "nome": "ORDENACAOWIZARD",
-        "valor": 57
+        "valor": "N"
       },
       {
         "nome": "DESCRICAOPARAM",
