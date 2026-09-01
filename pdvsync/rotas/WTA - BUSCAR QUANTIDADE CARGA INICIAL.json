@@ -35,7 +35,7 @@
 							}
 						],
 						"url": {
-							"raw": "/winthor/hub/carga/dados/v1/pdvsync/carga/{{FILIAL}}",
+							"raw": "{{URL_BASE}}/winthor/hub/carga/dados/v1/pdvsync/carga/{{FILIAL}}",
 							"query": [],
 							"host": [
 								"https:"
