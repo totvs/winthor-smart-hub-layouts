@@ -1,0 +1,39 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOVARIAVEIS",
+		"campos": [
+			{
+				"nome": "DTULTALTER",
+				"valor": ""
+			},
+			{
+				"nome": "ID",
+				"valor": "PDVSYNC - SALVAR GRUPO CAMPANHA-{{URL_ENVIAR_GRUPO_CAMPANHA}}"
+			},
+			{
+				"nome": "CHAVE",
+				"valor": "{{URL_ENVIAR_GRUPO_CAMPANHA}}"
+			},
+			{
+				"nome": "TIPOCHAVE",
+				"valor": "BODY"
+			},
+			{
+				"nome": "TIPOVALOR",
+				"valor": "STRING"
+			},
+			{
+				"nome": "IDROTASERVICO",
+				"valor": "PDVSYNC - SALVAR GRUPO CAMPANHA"
+			},
+			{
+				"nome": "VALOR",
+				"valor": "https://pdvsync-core-cliente-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/classificacoesproduto"
+			},
+			{
+				"nome": "CODEMPALTER",
+				"valor": ""
+			}
+		]
+	}
+}

@@ -1,0 +1,131 @@
+{
+  "tabela": {
+    "nome": "PCINTEGRACAOROTASERVICO",
+    "campos": [
+      {
+        "nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+        "valor": "N"
+      },
+      {
+        "nome": "ID",
+        "valor": "WTA - Buscar Grupo Campanha"
+      },
+      {
+        "nome": "IDEMPRESAAPI",
+        "valor": "WINTHOR-WTA"
+      },
+      {
+        "nome": "SERVICO",
+        "valor": "WTA - Buscar Grupo Campanha"
+      },
+      {
+        "nome": "LAYOUTCOMUNICACAO",
+        "valor": {
+          "name": "WTA - Buscar Grupo Campanha",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{TOKEN}}"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "url": {
+              "raw": "{{URL_BASE}}/winthor/cadastros/v1/grupo-campanha",
+              "query": [
+                {
+                  "key": "pageSize",
+                  "value": "{{PAGE_SIZE}}"
+                },
+                {
+                  "key": "page",
+                  "value": "{{PAGE}}"
+                },
+                {
+                  "key": "lastChange",
+                  "value": "{{DATAALTERACAO}}"
+                },
+                {
+                  "key": "groupId",
+                  "value": "{{GROUP_ID}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      },
+      {
+        "nome": "LAYOUTTRANSFORMACAO",
+        "valor": [
+          {
+            "operation": "shift",
+            "spec": {
+              "items": {
+                "*": {
+                  "groupId": "items.[&1].idRetaguarda",
+                  "description": "items.[&1].descricao",
+                  "active": {
+                    "false": {
+                      "#0": "items.[&3].situacao"
+                    },
+                    "true": {
+                      "#1": "items.[&3].situacao"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          {
+            "operation": "modify-overwrite-beta",
+            "spec": {
+              "items": {
+                "*": {
+                  "idRetaguarda": "=toString(@(1,idRetaguarda))"
+                }
+              }
+            }
+          },
+          {
+            "operation": "default",
+            "spec": {
+              "items": {
+                "*": {
+                  "idRetaguardaPai": null,
+                  "idInquilino": "{{ID_INQUILINO}}",
+                  "idProprietario": "{{MASTER_ID_PROPRIETARIO}}",
+                  "loteOrigem": "{{LOTE_ORIGEM}}"
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "nome": "ATIVO",
+        "valor": "S"
+      },
+      {
+        "nome": "AUTENTICADOR",
+        "valor": "N"
+      },
+      {
+        "nome": "DATASINCRONISMO",
+        "valor": "02-SEP-26"
+      },
+      {
+        "nome": "REFRESHTOKEN",
+        "valor": ""
+      },
+      {
+        "nome": "TIPOPROCESSO",
+        "valor": "BUSCAR"
+      }
+    ]
+  }
+}
