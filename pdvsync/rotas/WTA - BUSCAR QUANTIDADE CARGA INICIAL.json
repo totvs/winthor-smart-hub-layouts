@@ -50,88 +50,126 @@
 				"nome": "LAYOUTTRANSFORMACAO",
 				"valor": [
 					{
+						"operation": "modify-overwrite-beta",
+						"spec": {
+							"data": {
+								"*": {
+									"temp_array": "=split(' ', @(1,descricaoRota))"
+								}
+							}
+						}
+					},
+					{
+						"operation": "modify-overwrite-beta",
+						"spec": {
+							"data": {
+								"*": {
+									"descricaoRota": "=join('', @(1,temp_array))"
+								}
+							}
+						}
+					},
+					{
+						"operation": "modify-overwrite-beta",
+						"spec": {
+							"data": {
+								"*": {
+									"descricaoRota": "=toUpper(@(1,descricaoRota))"
+								}
+							}
+						}
+					},
+					{
 						"operation": "shift",
 						"spec": {
 							"data": {
 								"*": {
 									"totalRegistros": "items[&1].&",
-									"tipo": {
-										"0": {
+									"descricaoRota": "items[&1].&"
+								}
+							}
+						}
+					},
+					{
+						"operation": "shift",
+						"spec": {
+							"items": {
+								"*": {
+									"totalRegistros": "items[&1].&",
+									"descricaoRota": {
+										"WTA-BUSCARCLIENTES": {
 											"#Clientes": "items[&3].fluxo"
 										},
-										"1": {
+										"WTA-BUSCARFILIAISLOJAS": {
 											"#Filiais Lojas": "items[&3].fluxo"
 										},
-										"2": {
-											"#Motivo": "items[&3].fluxo"
-										},
-										"3": {
+										"WTA-BUSCARPERFILPADRAO": {
 											"#Perfil": "items[&3].fluxo"
 										},
-										"4": {
-											"#Rca;Usuario Operador;Profissional": "items[&3].fluxo"
+										"WTA-CONSULTARCA": {
+											"#Rca": "items[&3].fluxo"
 										},
-										"5": {
-											"#FcpProduto": "items[&3].fluxo"
+										"WTA-BUSCARPROFISSIONAIS": {
+											"#Profissional": "items[&3].fluxo"
 										},
-										"6": {
+										"WTA-BUSCARUSUARIOOPERADOR": {
+											"#Usuario Operador": "items[&3].fluxo"
+										},
+										"WTA-PDVSYNCCOMPARTILHAMENTOMASTER": {
 											"#Compartilhamento Master": "items[&3].fluxo"
 										},
-										"7": {
+										"WTA-BUSCARICMS": {
 											"#ICMS": "items[&3].fluxo"
 										},
-										"8": {
+										"WTA-BUSCARIMPOSTONCMPDV": {
 											"#NCM CEST": "items[&3].fluxo"
 										},
-										"9": {
+										"WTA-BUSCARPISCOFINS": {
 											"#Pis/Cofins": "items[&3].fluxo"
 										},
-										"10": {
-											"#TributoNcm": "items[&3].fluxo"
-										},
-										"11": {
-											"#ClassificacaoProduto": "items[&3].fluxo"
-										},
-										"12": {
+										"WTA-BUSCARPRODUTOPDV": {
 											"#Produto": "items[&3].fluxo"
 										},
-										"13": {
-											"#Preco;Preco Regiao;Preco Embalagem": "items[&3].fluxo"
+										"WTA-BUSCARPRECOPRODUTO": {
+											"#Preco": "items[&3].fluxo"
 										},
-										"14": {
+										"WTA-BUSCARPRECOREGIAO": {
+											"#Preco Regiao": "items[&3].fluxo"
+										},
+										"WTA-BUSCARPRECOEMBALAGEM": {
+											"#Preco Embalagem": "items[&3].fluxo"
+										},
+										"WTA-BUSCARESTOQUE": {
 											"#Estoque": "items[&3].fluxo"
 										},
-										"15": {
+										"WTA-BUSCAROPERADORAPDV": {
 											"#Operadora Cartao": "items[&3].fluxo"
 										},
-										"16": {
+										"WTA-DADOSPAGAMENTO": {
 											"#Pagamento Dados Complementares": "items[&3].fluxo"
 										},
-										"17": {
+										"WTA-BUSCARPLANOSDEPGTO": {
 											"#Planos de pagamentos": "items[&3].fluxo"
 										},
-										"18": {
-											"#Cobrancas;Forma Pgto": "items[&3].fluxo"
+										"WTA-BUSCARTIPOSCOBRANCAS": {
+											"#Cobrancas/Forma Pgto": "items[&3].fluxo"
 										},
-										"21": {
+										"WTA-BUSCARGRUPOCAMPANHACLIENTE": {
 											"#Grupo Campanha Cliente": "items[&3].fluxo"
 										},
-										"24": {
-											"#CanalVenda": "items[&3].fluxo"
-										},
-										"28": {
+										"WTA-BUSCARPRECOFIXO": {
 											"#Preco Fixo": "items[&3].fluxo"
 										},
-										"55": {
+										"WTA-BUSCARSTATUSPEDIDO": {
 											"#Status pedido": "items[&3].fluxo"
 										},
-										"56": {
+										"WTA-BUSCARENDERECOENTREGACLIENT": {
 											"#Endereco Entrega Cliente": "items[&3].fluxo"
 										},
-										"58": {
+										"WTA-BUSCARRAMOATIVIDADE": {
 											"#Ramo Atividade": "items[&3].fluxo"
 										},
-										"100": {
+										"WTA-BUSCARREGIAOPDV": {
 											"#Regiao": "items[&3].fluxo"
 										}
 									}
