@@ -50,8 +50,8 @@
                   "value": "{{DATAALTERACAO}}"
                 },
                 {
-                  "key": "groupId",
-                  "value": "{{GROUP_ID}}"
+                  "key": "groupType",
+                  "value": "{{GROUP_TYPE}}"
                 }
               ]
             }
@@ -69,6 +69,7 @@
                 "*": {
                   "groupId": "items.[&1].idRetaguarda",
                   "description": "items.[&1].descricao",
+                  "lastChange": "items.[&1].lastChange",
                   "active": {
                     "false": {
                       "#0": "items.[&3].situacao"
@@ -86,7 +87,25 @@
             "spec": {
               "items": {
                 "*": {
-                  "idRetaguarda": "=toString(@(1,idRetaguarda))"
+                  "idRetaguarda": "=toString",
+                  "idExterno": "=concat('pdvsync-grupo-campanha-', @(1,idRetaguarda), '-', @(1,lastChange))",
+                  "idInterno": "=concat('', @(1,idRetaguarda))",
+                  "tipoIdInterno": "PDVSYNC-GRUPO-CAMPANHA"
+                }
+              }
+            }
+          },
+          {
+            "operation": "shift",
+            "spec": {
+              "items": {
+                "*": {
+                  "idExterno": "idExterno[]",
+                  "idInterno": "idInterno[]",
+                  "tipoIdInterno": "tipoIdInterno[]",
+                  "idRetaguarda": "items.[&1].idRetaguarda",
+                  "descricao": "items.[&1].descricao",
+                  "situacao": "items.[&1].situacao"
                 }
               }
             }
@@ -94,7 +113,8 @@
           {
             "operation": "default",
             "spec": {
-              "items": {
+              "_attr_access": "items",
+              "items[]": {
                 "*": {
                   "idRetaguardaPai": null,
                   "idInquilino": "{{ID_INQUILINO}}",

@@ -8,11 +8,11 @@
 			},
 			{
 				"nome": "ID",
-				"valor": "WTA - BUSCAR GRUPO CAMPANHA ITENS-{{GROUP_ID}}"
+				"valor": "WTA - BUSCAR GRUPO CAMPANHA-{{GROUP_TYPE}}"
 			},
 			{
 				"nome": "CHAVE",
-				"valor": "{{GROUP_ID}}"
+				"valor": "{{GROUP_TYPE}}"
 			},
 			{
 				"nome": "TIPOCHAVE",
@@ -24,27 +24,15 @@
 			},
 			{
 				"nome": "IDROTASERVICO",
-				"valor": "WTA - BUSCAR GRUPO CAMPANHA ITENS"
+				"valor": "WTA - BUSCAR GRUPO CAMPANHA"
 			},
 			{
 				"nome": "VALOR",
-				"valor": "ADICIONAR_GRUPO_CAMPANHA"
+				"valor": "GP"
 			},
 			{
 				"nome": "CODEMPALTER",
 				"valor": ""
-			},
-			{
-				"nome": "VISIVELWIZARD",
-				"valor": "S"
-			},
-			{
-				"nome": "ORDENACAOWIZARD",
-				"valor": 68
-			},
-			{
-				"nome": "DESCRICAOPARAM",
-				"valor": "Código do Grupo de Campanha"
 			}
 		]
 	}

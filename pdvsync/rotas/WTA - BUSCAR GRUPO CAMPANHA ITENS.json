@@ -48,10 +48,6 @@
 								{
 									"key": "lastChange",
 									"value": "{{DATAALTERACAO}}"
-								},
-								{
-									"key": "groupId",
-									"value": "{{GROUP_ID}}"
 								}
 							]
 						}
@@ -67,14 +63,10 @@
 						"spec": {
 							"items": {
 								"*": {
-									"idRetaguarda": "=toString",
-									"idRetaguardaProduto": "=toString",
-									"idRetaguardaClassificacaoProduto": "=toString",
-									"situacao": "=toInteger",
-									"ordem": 1,
-									"idInquilino": "{{ID_INQUILINO}}",
-									"idProprietario": "{{MASTER_ID_PROPRIETARIO}}",
-									"loteOrigem": "{{LOTE_ORIGEM}}"
+									"idExterno": "=concat('pdvsync-grupo-campanha-itens-', @(1,idRetaguarda), '-', @(1,dataAlteracao))",
+									"idInterno": "=concat('', @(1,idRetaguarda))",
+									"tipoIdInterno": "PDVSYNC-GRUPO-CAMPANHA-ITENS",
+									"ordem": 1
 								}
 							}
 						}
@@ -84,14 +76,40 @@
 						"spec": {
 							"items": {
 								"*": {
-									"idRetaguarda": "[&1].idRetaguarda",
-									"situacao": "[&1].situacao",
-									"ordem": "[&1].ordem",
-									"idRetaguardaProduto": "[&1].idRetaguardaProduto",
-									"idRetaguardaClassificacaoProduto": "[&1].idRetaguardaClassificacaoProduto",
-									"loteOrigem": "[&1].loteOrigem",
-									"idProprietario": "[&1].idProprietario",
-									"idInquilino": "[&1].idInquilino"
+									"idExterno": "idExterno[]",
+									"idInterno": "idInterno[]",
+									"tipoIdInterno": "tipoIdInterno[]",
+									"idRetaguarda": "items.[&1].idRetaguarda",
+									"idRetaguardaProduto": "items.[&1].idRetaguardaProduto",
+									"idRetaguardaClassificacaoProduto": "items.[&1].idRetaguardaClassificacaoProduto",
+									"situacao": "items.[&1].situacao",
+									"ordem": "items.[&1].ordem"
+								}
+							}
+						}
+					},
+					{
+						"operation": "modify-overwrite-beta",
+						"spec": {
+							"items": {
+								"*": {
+									"idRetaguarda": "=toString",
+									"idRetaguardaProduto": "=toString",
+									"idRetaguardaClassificacaoProduto": "=toString",
+									"situacao": "=toInteger"
+								}
+							}
+						}
+					},
+					{
+						"operation": "default",
+						"spec": {
+							"_attr_access": "items",
+							"items[]": {
+								"*": {
+									"idInquilino": "{{ID_INQUILINO}}",
+									"idProprietario": "{{MASTER_ID_PROPRIETARIO}}",
+									"loteOrigem": "{{LOTE_ORIGEM}}"
 								}
 							}
 						}
