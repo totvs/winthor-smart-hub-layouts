@@ -1,0 +1,51 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOVARIAVEIS",
+		"campos": [
+			{
+				"nome": "DTULTALTER",
+				"valor": ""
+			},
+			{
+				"nome": "ID",
+				"valor": "WTA - BUSCAR GRUPO CAMPANHA ITENS-{{GROUP_ID}}"
+			},
+			{
+				"nome": "CHAVE",
+				"valor": "{{GROUP_ID}}"
+			},
+			{
+				"nome": "TIPOCHAVE",
+				"valor": "PARAMS"
+			},
+			{
+				"nome": "TIPOVALOR",
+				"valor": "STRING"
+			},
+			{
+				"nome": "IDROTASERVICO",
+				"valor": "WTA - BUSCAR GRUPO CAMPANHA ITENS"
+			},
+			{
+				"nome": "VALOR",
+				"valor": "ADICIONAR_GRUPO_CAMPANHA"
+			},
+			{
+				"nome": "CODEMPALTER",
+				"valor": ""
+			},
+			{
+				"nome": "VISIVELWIZARD",
+				"valor": "S"
+			},
+			{
+				"nome": "ORDENACAOWIZARD",
+				"valor": 68
+			},
+			{
+				"nome": "DESCRICAOPARAM",
+				"valor": "Código do Grupo de Campanha"
+			}
+		]
+	}
+}

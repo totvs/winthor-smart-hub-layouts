@@ -152,6 +152,12 @@
       "rota": "PDVSYNC - Salvar Grupo Campanha Cliente"
     },
     {
+      "nome": "{{URL_ENVIAR_GRUPO_CAMPANHA_ITENS}}",
+      "valor": "https://pdvsync.varejo.totvs.com.br/produto/api/retaguarda/v3/dadosdinamicos/down/75/1",
+      "descricao": "PDVSYNC - Salvar Grupo Campanha Itens",
+      "rota": "PDVSYNC - Salvar Grupo Campanha Itens"
+    },
+    {
       "nome": "{{URL_CONSULTA_VENDAS}}",
       "valor": "https://pdvsync.varejo.totvs.com.br/comercial/api/retaguarda/v3/vendaMensagens",
       "descricao": "PDVSync - Buscar vendas",
