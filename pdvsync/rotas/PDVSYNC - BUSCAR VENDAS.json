@@ -121,7 +121,8 @@
                         "spec": {
                             "data": {
                                 "*": {
-                                    "codCob": "items.[&1].codCob",
+                                    "observacao": "items.[&1].observacao",
+									"codCob": "items.[&1].codCob",
                                     "codPlPag": "items.[&1].codPlPag",
                                     "conteudo": {
                                         "#WSH-OMNISHOP": "items.[&2].pdvOrigem",

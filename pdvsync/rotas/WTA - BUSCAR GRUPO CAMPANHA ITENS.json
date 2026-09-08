@@ -1,0 +1,123 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOROTASERVICO",
+		"campos": [
+			{
+				"nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+				"valor": "N"
+			},
+			{
+				"nome": "ID",
+				"valor": "WTA - Buscar Grupo Campanha Itens"
+			},
+			{
+				"nome": "IDEMPRESAAPI",
+				"valor": "WINTHOR-WTA"
+			},
+			{
+				"nome": "SERVICO",
+				"valor": "WTA - Buscar Grupo Campanha Itens"
+			},
+			{
+				"nome": "LAYOUTCOMUNICACAO",
+				"valor": {
+					"name": "WTA - Buscar Grupo Campanha Itens",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{URL_BASE}}/winthor/cadastros/v1/grupo-campanha/itens",
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "{{PAGE_SIZE}}"
+								},
+								{
+									"key": "page",
+									"value": "{{PAGE}}"
+								},
+								{
+									"key": "lastChange",
+									"value": "{{DATAALTERACAO}}"
+								},
+								{
+									"key": "groupId",
+									"value": "{{GROUP_ID}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			},
+			{
+				"nome": "LAYOUTTRANSFORMACAO",
+				"valor": [
+					{
+						"operation": "modify-overwrite-beta",
+						"spec": {
+							"items": {
+								"*": {
+									"idRetaguarda": "=toString",
+									"idRetaguardaProduto": "=toString",
+									"idRetaguardaClassificacaoProduto": "=toString",
+									"situacao": "=toInteger",
+									"ordem": 1,
+									"idInquilino": "{{ID_INQUILINO}}",
+									"idProprietario": "{{MASTER_ID_PROPRIETARIO}}",
+									"loteOrigem": "{{LOTE_ORIGEM}}"
+								}
+							}
+						}
+					},
+					{
+						"operation": "shift",
+						"spec": {
+							"items": {
+								"*": {
+									"idRetaguarda": "[&1].idRetaguarda",
+									"situacao": "[&1].situacao",
+									"ordem": "[&1].ordem",
+									"idRetaguardaProduto": "[&1].idRetaguardaProduto",
+									"idRetaguardaClassificacaoProduto": "[&1].idRetaguardaClassificacaoProduto",
+									"loteOrigem": "[&1].loteOrigem",
+									"idProprietario": "[&1].idProprietario",
+									"idInquilino": "[&1].idInquilino"
+								}
+							}
+						}
+					}
+				]
+			},
+			{
+				"nome": "ATIVO",
+				"valor": "S"
+			},
+			{
+				"nome": "AUTENTICADOR",
+				"valor": "N"
+			},
+			{
+				"nome": "DATASINCRONISMO",
+				"valor": "08-SET-26"
+			},
+			{
+				"nome": "REFRESHTOKEN",
+				"valor": ""
+			},
+			{
+				"nome": "TIPOPROCESSO",
+				"valor": "BUSCAR"
+			}
+		]
+	}
+}

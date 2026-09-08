@@ -241,6 +241,12 @@
           "descricao": "PDVSYNC - Salvar Grupo Campanha",
           "rota": "PDVSYNC - Salvar Grupo Campanha"
         },
+        {
+          "nome": "{{URL_ENVIAR_GRUPO_CAMPANHA_ITENS}}",
+          "valor": "https://pdvsync-core-cliente-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/dadosdinamicos/down/75/1",
+          "descricao": "PDVSYNC - Salvar Grupo Campanha Itens",
+          "rota": "PDVSYNC - Salvar Grupo Campanha Itens"
+        },
 		{
 			"nome": "{{URL_ENVIAR_IMPOSTO_RT}}",
 			"valor": "https://pdvsync-core-imposto-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/dadosdinamicos/down/101/1",
