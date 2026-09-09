@@ -1,0 +1,175 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOROTASERVICO",
+		"campos": [
+			{
+				"nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+				"valor": "N"
+			},
+			{
+				"nome": "ID",
+				"valor": "WTA - Buscar Preco Promocional"
+			},
+			{
+				"nome": "IDEMPRESAAPI",
+				"valor": "WINTHOR-WTA"
+			},
+			{
+				"nome": "SERVICO",
+				"valor": "WTA - Buscar Preco Promocional"
+			},
+			{
+				"nome": "LAYOUTCOMUNICACAO",
+				"valor": {
+					"name": "WTA - Buscar Preco Promocional",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{URL_BASE}}/winthor/precos/v1/precos-ofertas",
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "{{PAGE_SIZE}}"
+								},
+								{
+									"key": "page",
+									"value": "{{PAGE}}"
+								},
+								{
+									"key": "lastChange",
+									"value": "{{LAST_CHANGE}}"
+								},
+								{
+									"key": "branchId",
+									"value": "{{BRANCH_ID}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			},
+			{
+				"nome": "LAYOUTTRANSFORMACAO",
+				"valor": [
+					{
+						"operation": "modify-overwrite-beta",
+						"spec": {
+							"items": {
+								"*": {
+									"idExterno": "=concat('pdvsync-precopromocional-', '-', @(1,promotionId), '-', @(1,branchId), '-', @(1,startDate))",
+									"idInterno": "=concat('', @(1,promotionId))",
+									"tipoIdInterno": "PDVSYNC-PRECOPROMOCIONAL"
+								}
+							}
+						}
+					},
+					{
+						"operation": "shift",
+						"spec": {
+							"items": {
+								"*": {
+									"tipoIdInterno": "tipoIdInterno",
+									"idExterno": "idExterno",
+									"idInterno": "idInterno",
+									"endDate": "items.[&1].DataHoraVigenciaFinal",
+									"startDate": "items.[&1].DataHoraVigenciaInicial",
+									"promotionId": "items.[&1].idRetaguarda",
+									"priority": {
+										"0": {
+											"#false": "items.[&3].Prioritaria"
+										},
+										"*": {
+											"#true": "items.[&3].Prioritaria"
+										}
+									},
+									"active": {
+										"true": {
+											"#1": "items.[&3].Situacao"
+										},
+										"*": {
+											"#0": "items.[&3].Situacao"
+										}
+									},
+									"offerPrice": "items.[&1].Valor",
+									"packingId": "items.[&1].IdRetaguardaProdutoEmbalagem",
+									"branchId": {
+										"99": {
+											"#{{MASTER_ID_PROPRIETARIO}}": [
+												"items.[&3].idProprietario",
+												"items.[&3].IdRetaguardaLoja"
+											]
+										},
+										"*": {
+											"@1": [
+												"items.[&3].idProprietario",
+												"items.[&3].IdRetaguardaLoja"
+											]
+										}
+									},
+									"productId": "items.[&1].IdRetaguardaProduto"
+								}
+							}
+						}
+					},
+					{
+						"operation": "modify-overwrite-beta",
+						"spec": {
+							"items": {
+								"*": {
+									"idRetaguarda": "=toString",
+									"Prioritaria": "=toBoolean",
+									"Situacao": "=toInteger",
+									"Valor": "=toDouble"
+								}
+							}
+						}
+					},
+					{
+						"operation": "default",
+						"spec": {
+							"_attr_access": "items",
+							"items[]": {
+								"*": {
+									"idInquilino": "{{ID_INQUILINO}}",
+									"loteOrigem": "{{LOTE_ORIGEM}}",
+									"UsarTodasEmbalagens": true
+								}
+							}
+						}
+					}
+				]
+			},
+			{
+				"nome": "ATIVO",
+				"valor": "S"
+			},
+			{
+				"nome": "AUTENTICADOR",
+				"valor": "N"
+			},
+			{
+				"nome": "DATASINCRONISMO",
+				"valor": "08-SET-26"
+			},
+			{
+				"nome": "REFRESHTOKEN",
+				"valor": ""
+			},
+			{
+				"nome": "TIPOPROCESSO",
+				"valor": "BUSCAR"
+			}
+		]
+	}
+}
