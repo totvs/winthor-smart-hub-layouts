@@ -8,11 +8,11 @@
 			},
 			{
 				"nome": "ID",
-				"valor": "PDVSYNC - ENVIAR PRECO PROMOCIONAL-{{MASTER_ID_PROPRIETARIO}}"
+				"valor": "PDVSYNC - ENVIAR PRECO OFERTA-{{CLIENT_JSON}}"
 			},
 			{
 				"nome": "CHAVE",
-				"valor": "{{MASTER_ID_PROPRIETARIO}}"
+				"valor": "{{CLIENT_JSON}}"
 			},
 			{
 				"nome": "TIPOCHAVE",
@@ -24,11 +24,11 @@
 			},
 			{
 				"nome": "IDROTASERVICO",
-				"valor": "PDVSYNC - ENVIAR PRECO PROMOCIONAL"
+				"valor": "PDVSYNC - ENVIAR PRECO OFERTA"
 			},
 			{
 				"nome": "VALOR",
-				"valor": "9999"
+				"valor": ":PCINTEGRACAOCORE.DADOSTRANSFORMADOS"
 			},
 			{
 				"nome": "CODEMPALTER",

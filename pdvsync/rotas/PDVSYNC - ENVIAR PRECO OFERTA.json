@@ -8,7 +8,7 @@
 			},
 			{
 				"nome": "ID",
-				"valor": "PDVSYNC - Enviar Preco Promocional"
+				"valor": "PDVSYNC - Enviar Preco Oferta"
 			},
 			{
 				"nome": "IDEMPRESAAPI",
@@ -16,12 +16,12 @@
 			},
 			{
 				"nome": "SERVICO",
-				"valor": "PDVSYNC - Enviar Preco Promocional"
+				"valor": "PDVSYNC - Enviar Preco Oferta"
 			},
 			{
 				"nome": "LAYOUTCOMUNICACAO",
 				"valor": {
-					"name": "PDVSYNC - Enviar Preco Promocional",
+					"name": "PDVSYNC - Enviar Preco Oferta",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -39,7 +39,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{URL_ENVIAR_PRECO_PROMOCIONAL}}",
+							"raw": "{{URL_ENVIAR_PRECO_OFERTA}}",
 							"query": []
 						},
 						"bodyraw": "{{CLIENT_JSON}}"

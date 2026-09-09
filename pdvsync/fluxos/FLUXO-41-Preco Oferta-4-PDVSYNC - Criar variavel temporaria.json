@@ -12,16 +12,16 @@
 			},
 			{
 				"nome": "ORDEMEXECUCAO",
-				"valor": "3",
-				"valorAnterior": "4"
+				"valor": "4",
+				"valorAnterior": "3"
 			},
 			{
 				"nome": "IDROTASERVICO",
-				"valor": "PDVSYNC - RAC LoginPDVSync"
+				"valor": "PDVSYNC - Criar variavel temporaria"
 			},
 			{
 				"nome": "IDINTEGRACAOCLASSEMETODO",
-				"valor": "AutenticadorRefreshTokenApi"
+				"valor": "CriaVariavelTemporaria"
 			},
 			{
 				"nome": "ATIVO",
@@ -33,7 +33,7 @@
 			},
 			{
 				"nome": "DESCRICAO",
-				"valor": "Preco Promocional"
+				"valor": "Preco Oferta"
 			}
 		]
 	}

@@ -8,7 +8,7 @@
       },
       {
         "nome": "ID",
-        "valor": "WTA - BUSCAR PRECO PROMOCIONAL-{{BRANCH_ID}}"
+        "valor": "WTA - BUSCAR PRECO OFERTA-{{BRANCH_ID}}"
       },
       {
         "nome": "CHAVE",
@@ -24,7 +24,7 @@
       },
       {
         "nome": "IDROTASERVICO",
-        "valor": "WTA - BUSCAR PRECO promocional"
+        "valor": "WTA - BUSCAR PRECO OFERTA"
       },
       {
         "nome": "VALOR",

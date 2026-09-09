@@ -12,15 +12,15 @@
 			},
 			{
 				"nome": "ORDEMEXECUCAO",
-				"valor": "2"
+				"valor": "5"
 			},
 			{
 				"nome": "IDROTASERVICO",
-				"valor": "WTA - Buscar Preco Promocional"
+				"valor": "PDVSYNC - Enviar Preco Oferta"
 			},
 			{
 				"nome": "IDINTEGRACAOCLASSEMETODO",
-				"valor": "BuscaRotaServicoPaginada"
+				"valor": "EnvioIntegracaoStatusRecebidoLote"
 			},
 			{
 				"nome": "ATIVO",
@@ -28,11 +28,11 @@
 			},
 			{
 				"nome": "IDDEPENDENTE",
-				"valor": ""
+				"valor": "WTA - Buscar Preco Oferta"
 			},
 			{
 				"nome": "DESCRICAO",
-				"valor": "Preco Promocional"
+				"valor": "Preco Oferta"
 			}
 		]
 	}

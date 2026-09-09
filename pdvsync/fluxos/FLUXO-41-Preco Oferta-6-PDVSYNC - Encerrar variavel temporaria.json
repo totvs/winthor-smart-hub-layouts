@@ -12,15 +12,15 @@
 			},
 			{
 				"nome": "ORDEMEXECUCAO",
-				"valor": "1"
+				"valor": "6"
 			},
 			{
 				"nome": "IDROTASERVICO",
-				"valor": "WTA - LoginWTA"
+				"valor": "PDVSYNC - Encerrar variavel temporaria"
 			},
 			{
 				"nome": "IDINTEGRACAOCLASSEMETODO",
-				"valor": "AutenticadorRefreshTokenApi"
+				"valor": "FinalizaVariavelTemporaria"
 			},
 			{
 				"nome": "ATIVO",
@@ -28,11 +28,11 @@
 			},
 			{
 				"nome": "IDDEPENDENTE",
-				"valor": ""
+				"valor": "WTA - Buscar Preco Oferta"
 			},
 			{
 				"nome": "DESCRICAO",
-				"valor": "Preco Promocional"
+				"valor": "Preco Oferta"
 			}
 		]
 	}

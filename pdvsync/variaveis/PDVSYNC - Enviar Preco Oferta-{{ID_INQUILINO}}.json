@@ -8,7 +8,7 @@
       },
       {
         "nome": "ID",
-        "valor": "PDVSYNC - ENVIAR PRECO PROMOCIONAL-{{ID_INQUILINO}}"
+        "valor": "PDVSYNC - ENVIAR PRECO OFERTA-{{ID_INQUILINO}}"
       },
       {
         "nome": "CHAVE",
@@ -24,7 +24,7 @@
       },
       {
         "nome": "IDROTASERVICO",
-        "valor": "PDVSYNC - ENVIAR PRECO PROMOCIONAL"
+        "valor": "PDVSYNC - ENVIAR PRECO OFERTA"
       },
       {
         "nome": "VALOR",

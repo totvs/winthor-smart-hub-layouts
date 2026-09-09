@@ -8,11 +8,11 @@
 			},
 			{
 				"nome": "ID",
-				"valor": "PDVSYNC - ENVIAR PRECO PROMOCIONAL-{{CLIENT_JSON}}"
+				"valor": "WTA - BUSCAR PRECO OFERTA-{{LAST_CHANGE}}"
 			},
 			{
 				"nome": "CHAVE",
-				"valor": "{{CLIENT_JSON}}"
+				"valor": "{{LAST_CHANGE}}"
 			},
 			{
 				"nome": "TIPOCHAVE",
@@ -20,15 +20,15 @@
 			},
 			{
 				"nome": "TIPOVALOR",
-				"valor": "STRING"
+				"valor": "SELECT"
 			},
 			{
 				"nome": "IDROTASERVICO",
-				"valor": "PDVSYNC - ENVIAR PRECO PROMOCIONAL"
+				"valor": "WTA - BUSCAR PRECO OFERTA"
 			},
 			{
 				"nome": "VALOR",
-				"valor": ":PCINTEGRACAOCORE.DADOSTRANSFORMADOS"
+				"valor": "SELECT TO_CHAR(NVL((SELECT MAX(DATACRIACAO) FROM PCINTEGRACAOCORE WHERE IDROTASERVICO = :IDROTASERVICO AND STATUS IN (2,11,12,13)), TO_DATE('01/01/1900', 'DD/MM/YYYY')) - (1/60/5), 'RRRR-MM-DD\"T\"HH24:MI:SS') DT FROM DUAL"
 			},
 			{
 				"nome": "CODEMPALTER",

@@ -8,11 +8,11 @@
 			},
 			{
 				"nome": "ID",
-				"valor": "WTA - BUSCAR PRECO PROMOCIONAL-{{LAST_CHANGE}}"
+				"valor": "PDVSYNC - ENVIAR PRECO OFERTA-{{URL_ENVIAR_PRECO_OFERTA}}"
 			},
 			{
 				"nome": "CHAVE",
-				"valor": "{{LAST_CHANGE}}"
+				"valor": "{{URL_ENVIAR_PRECO_OFERTA}}"
 			},
 			{
 				"nome": "TIPOCHAVE",
@@ -20,15 +20,15 @@
 			},
 			{
 				"nome": "TIPOVALOR",
-				"valor": "SELECT"
+				"valor": "STRING"
 			},
 			{
 				"nome": "IDROTASERVICO",
-				"valor": "WTA - BUSCAR PRECO PROMOCIONAL"
+				"valor": "PDVSYNC - ENVIAR PRECO OFERTA"
 			},
 			{
 				"nome": "VALOR",
-				"valor": "SELECT TO_CHAR(NVL((SELECT MAX(DATACRIACAO) FROM PCINTEGRACAOCORE WHERE IDROTASERVICO = :IDROTASERVICO AND STATUS IN (2,11,12,13)), TO_DATE('01/01/1900', 'DD/MM/YYYY')) - (1/60/5), 'RRRR-MM-DD\"T\"HH24:MI:SS') DT FROM DUAL"
+				"valor": "https://pdvsync.varejo.totvs.com.br/preco/api/retaguarda/v3/dadosdinamicos/down/28/3"
 			},
 			{
 				"nome": "CODEMPALTER",

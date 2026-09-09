@@ -8,11 +8,11 @@
 			},
 			{
 				"nome": "ID",
-				"valor": "PDVSYNC - ENVIAR PRECO PROMOCIONAL-{{URL_ENVIAR_PRECO_PROMOCIONAL}}"
+				"valor": "PDVSYNC - ENVIAR PRECO OFERTA-{{MASTER_ID_PROPRIETARIO}}"
 			},
 			{
 				"nome": "CHAVE",
-				"valor": "{{URL_ENVIAR_PRECO_PROMOCIONAL}}"
+				"valor": "{{MASTER_ID_PROPRIETARIO}}"
 			},
 			{
 				"nome": "TIPOCHAVE",
@@ -24,11 +24,11 @@
 			},
 			{
 				"nome": "IDROTASERVICO",
-				"valor": "PDVSYNC - ENVIAR PRECO PROMOCIONAL"
+				"valor": "PDVSYNC - ENVIAR PRECO OFERTA"
 			},
 			{
 				"nome": "VALOR",
-				"valor": "https://pdvsync.varejo.totvs.com.br/preco/api/retaguarda/v3/dadosdinamicos/down/28/3"
+				"valor": "9999"
 			},
 			{
 				"nome": "CODEMPALTER",

@@ -284,10 +284,10 @@
 			"rota": "PDVSYNC - Enviar Parametros Presidencia"
 		},
 		{
-			"nome": "{{URL_ENVIAR_PRECO_PROMOCIONAL}}",
+			"nome": "{{URL_ENVIAR_PRECO_OFERTA}}",
 			"valor": "https://pdvsync-core-preco-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/dadosdinamicos/down/28/2",
-			"descricao": "PDVSYNC - Enviar Preco Promocional",
-			"rota": "PDVSYNC - Enviar Preco Promocional"
+			"descricao": "PDVSYNC - Enviar Preco Oferta",
+			"rota": "PDVSYNC - Enviar Preco Oferta"
 		}
 	]
 }

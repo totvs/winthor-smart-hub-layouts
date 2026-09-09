@@ -8,7 +8,7 @@
 			},
 			{
 				"nome": "ID",
-				"valor": "WTA - Buscar Preco Promocional"
+				"valor": "WTA - Buscar Preco Oferta"
 			},
 			{
 				"nome": "IDEMPRESAAPI",
@@ -16,12 +16,12 @@
 			},
 			{
 				"nome": "SERVICO",
-				"valor": "WTA - Buscar Preco Promocional"
+				"valor": "WTA - Buscar Preco Oferta"
 			},
 			{
 				"nome": "LAYOUTCOMUNICACAO",
 				"valor": {
-					"name": "WTA - Buscar Preco Promocional",
+					"name": "WTA - Buscar Preco Oferta",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -67,9 +67,9 @@
 						"spec": {
 							"items": {
 								"*": {
-									"idExterno": "=concat('pdvsync-precopromocional-', '-', @(1,promotionId), '-', @(1,branchId), '-', @(1,startDate))",
+									"idExterno": "=concat('pdvsync-precooferta-', '-', @(1,promotionId), '-', @(1,branchId), '-', @(1,startDate))",
 									"idInterno": "=concat('', @(1,promotionId))",
-									"tipoIdInterno": "PDVSYNC-PRECOPROMOCIONAL"
+									"tipoIdInterno": "PDVSYNC-PRECOOFERTA"
 								}
 							}
 						}
