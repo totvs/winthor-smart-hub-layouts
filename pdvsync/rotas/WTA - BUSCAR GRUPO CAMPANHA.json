@@ -88,9 +88,9 @@
               "items": {
                 "*": {
                   "idRetaguarda": "=toString",
-                  "idExterno": "=concat('pdvsync-grupo-campanha-', @(1,idRetaguarda), '-', @(1,lastChange))",
+                  "idExterno": "=concat('pdvsync-classificacao-produto-', @(1,idRetaguarda), '-', @(1,lastChange))",
                   "idInterno": "=concat('', @(1,idRetaguarda))",
-                  "tipoIdInterno": "PDVSYNC-GRUPO-CAMPANHA"
+                  "tipoIdInterno": "PDVSYNC-CLASSIFICACAO-PRODUTO"
                 }
               }
             }

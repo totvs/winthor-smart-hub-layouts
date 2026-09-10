@@ -63,9 +63,11 @@
 						"spec": {
 							"items": {
 								"*": {
-									"idExterno": "=concat('pdvsync-grupo-campanha-itens-', @(1,idRetaguarda), '-', @(1,dataAlteracao))",
+									"idRetaguarda": "=concat(@(1,groupCampaignId), '-', @(1,productId), '-', @(1,barCode))",
+									"idExterno": "=concat('pdvsync-associacao-produto-classificado-', @(1,idRetaguarda), '-', @(1,lastChange))",
 									"idInterno": "=concat('', @(1,idRetaguarda))",
-									"tipoIdInterno": "PDVSYNC-GRUPO-CAMPANHA-ITENS",
+									"idRetaguardaProduto": "=concat(@(1, productId), '-', @(1, barCode))",
+									"tipoIdInterno": "PDVSYNC-ASSOCIACAO-PRODUTO-CLASSIFICADO",
 									"ordem": 1
 								}
 							}
@@ -81,8 +83,15 @@
 									"tipoIdInterno": "tipoIdInterno[]",
 									"idRetaguarda": "items.[&1].idRetaguarda",
 									"idRetaguardaProduto": "items.[&1].idRetaguardaProduto",
-									"idRetaguardaClassificacaoProduto": "items.[&1].idRetaguardaClassificacaoProduto",
-									"situacao": "items.[&1].situacao",
+									"groupCampaignId": "items.[&1].idRetaguardaClassificacaoProduto",
+									"active": {
+										"false": {
+											"#0": "items.[&3].situacao"
+										},
+										"true": {
+											"#1": "items.[&3].situacao"
+										}
+									},
 									"ordem": "items.[&1].ordem"
 								}
 							}
