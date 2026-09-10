@@ -77,6 +77,17 @@
                     "true": {
                       "#1": "items.[&3].situacao"
                     }
+                  },
+                  "branchId": {
+                    "99": {
+                      "#{{MASTER_ID_PROPRIETARIO}}": "items.[&3].idProprietario"
+                    },
+                    "": {
+                      "#{{MASTER_ID_PROPRIETARIO}}": "items.[&3].idProprietario"
+                    },
+                    "*": {
+                      "@1": "items.[&3].idProprietario"
+                    }
                   }
                 }
               }
@@ -105,7 +116,8 @@
                   "tipoIdInterno": "tipoIdInterno[]",
                   "idRetaguarda": "items.[&1].idRetaguarda",
                   "descricao": "items.[&1].descricao",
-                  "situacao": "items.[&1].situacao"
+                  "situacao": "items.[&1].situacao",
+                  "idProprietario": "items.[&1].idProprietario"
                 }
               }
             }
