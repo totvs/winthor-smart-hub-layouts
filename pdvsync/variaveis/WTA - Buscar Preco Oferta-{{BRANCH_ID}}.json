@@ -1,0 +1,55 @@
+{
+  "tabela": {
+    "nome": "PCINTEGRACAOVARIAVEIS",
+    "campos": [
+      {
+        "nome": "DTULTALTER",
+        "valor": ""
+      },
+      {
+        "nome": "ID",
+        "valor": "WTA - BUSCAR PRECO OFERTA-{{BRANCH_ID}}"
+      },
+      {
+        "nome": "CHAVE",
+        "valor": "{{BRANCH_ID}}"
+      },
+      {
+        "nome": "TIPOCHAVE",
+        "valor": "PARAMS"
+      },
+      {
+        "nome": "TIPOVALOR",
+        "valor": "STRING"
+      },
+      {
+        "nome": "IDROTASERVICO",
+        "valor": "WTA - BUSCAR PRECO OFERTA"
+      },
+      {
+        "nome": "VALOR",
+        "valor": "ADICIONAR_FILIAL"
+      },
+      {
+        "nome": "CODEMPALTER",
+        "valor": ""
+      },
+      {
+        "nome": "VISIVELWIZARD",
+        "valor": "S"
+      },
+      {
+        "nome": "ORDENACAOWIZARD",
+        "valor": 67
+      },
+      {
+        "nome": "DESCRICAOPARAM",
+        "valor": "Número da Filial"
+      },
+      {
+        "nome": "VISIVELCARGAINICIAL",
+        "valor": "S"
+      }
+    ]
+  }
+}
