@@ -71,17 +71,7 @@
 							    "tipo": "1",
 							    "valorERP": "0.37.16.25",
 							    "status": "1",
-							    "valorEsperado": "5.39.4.0"
-							  },
-					          {
-							    "nome": "servico-inexistente-teste",
-							    "id": "n581u33xtplpf65",
-							    "filial": "",
-							    "permitirNulo": false,
-							    "tipo": "1",
-							    "valorERP": "5.37.16.25",
-							    "status": "1",
-							    "valorEsperado": "5.39.4.0"
+							    "valorEsperado": "1.39.4.0"
 							  }
        				 ]
 			}
