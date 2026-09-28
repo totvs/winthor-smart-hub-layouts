@@ -121,7 +121,6 @@
                         "spec": {
                             "data": {
                                 "*": {
-                                    "observacao": "items.[&1].observacao",
 									"codCob": "items.[&1].codCob",
                                     "codPlPag": "items.[&1].codPlPag",
                                     "conteudo": {
@@ -230,7 +229,8 @@
                                         },
                                         "PreVenda": {
                                             "Id": "items.[&3].idPreVenda",
-                                            "IdRetaguarda": "items.[&3].numeroPedidoRIVendaAssistida"
+                                            "IdRetaguarda": "items.[&3].numeroPedidoRIVendaAssistida",
+                                            "Observacao": "items.[&3].Observacao"
                                         },
                                         "SituacaoVenda": "items.[&2].tipoMovimento",
                                         "SituacaoVendaMonitor": {
