@@ -69,7 +69,7 @@
                 "valorTotal": "items[&1].valorTotal",
                 "quantidadeTotalVolumes": "items[&1].quantidadeTotalVolumes",
                 "observacao": "items[&1].observacao",
-                "codigoReferenciaCliente:" "items[&1].codigoReferenciaCliente"
+                "codigoReferenciaCliente": "items[&1].codigoReferenciaCliente"
               }
             }
           },
