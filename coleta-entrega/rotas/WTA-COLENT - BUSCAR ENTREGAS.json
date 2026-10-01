@@ -1,1 +1,102 @@
-{"tabela":{"nome":"PCINTEGRACAOROTASERVICO","campos":[{"nome":"REFRESHTOKEN","valor":"N"},{"nome":"SOMENTEATUALIZARINTEGRACAOCORE","valor":"N"},{"nome":"ID","valor":"WTA-COLENT - Buscar Entregas"},{"nome":"IDEMPRESAAPI","valor":"WTA-COLETA-ENTREGA"},{"nome":"SERVICO","valor":"WTA-COLENT - Buscar Entregas"},{"nome":"LAYOUTCOMUNICACAO","valor":{"name":"WTA - COLENT - Buscar Entregas","request":{"method":"GET","header":[{"key":"Authorization","value":"Bearer {{TOKEN}}"}],"url":{"raw":"{{URL_BASE}}/logistica/apis/v1/entregas/buscar","query":[]}},"response":[]}},{"nome":"LAYOUTTRANSFORMACAO","valor":[{"operation":"modify-overwrite-beta","spec":{"*":{"idExterno":"=concat('coleta-entrega-entrega-numtransvenda-',@(1,friendlyId),'-',@(1,dataConsulta))"}}},{"operation":"shift","spec":{"*":{"idExterno":"idExterno","friendlyId":"items[&1].friendlyId","externalId":"items[&1].externalId","documento":"items[&1].documento","unidadeOperacionalId":"items[&1].unidadeOperacionalId","unidadeCadastroId":"items[&1].unidadeCadastroId","enderecoDestino":"items[&1].enderecoDestino","pesoTotalBruto":"items[&1].pesoTotalBruto","cubagemTotal":"items[&1].cubagemTotal","valorTotal":"items[&1].valorTotal","quantidadeTotalVolumes":"items[&1].quantidadeTotalVolumes","observacao":"items[&1].observacao"}}},{"operation":"default","spec":{"_attr_access":"items"}}]},{"nome":"ATIVO","valor":"S"},{"nome":"TIPOPROCESSO","valor":"BUSCAR"},{"nome":"AUTENTICADOR","valor":"N"},{"nome":"DATASINCRONISMO","valor":""}]}}
+{
+  "tabela": {
+    "nome": "PCINTEGRACAOROTASERVICO",
+    "campos": [
+      {
+        "nome": "REFRESHTOKEN",
+        "valor": "N"
+      },
+      {
+        "nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+        "valor": "N"
+      },
+      {
+        "nome": "ID",
+        "valor": "WTA-COLENT - Buscar Entregas"
+      },
+      {
+        "nome": "IDEMPRESAAPI",
+        "valor": "WTA-COLETA-ENTREGA"
+      },
+      {
+        "nome": "SERVICO",
+        "valor": "WTA-COLENT - Buscar Entregas"
+      },
+      {
+        "nome": "LAYOUTCOMUNICACAO",
+        "valor": {
+          "name": "WTA - COLENT - Buscar Entregas",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{TOKEN}}"
+              }
+            ],
+            "url": {
+              "raw": "{{URL_BASE}}/logistica/apis/v1/entregas/buscar",
+              "query": []
+            }
+          },
+          "response": []
+        }
+      },
+      {
+        "nome": "LAYOUTTRANSFORMACAO",
+        "valor": [
+          {
+            "operation": "modify-overwrite-beta",
+            "spec": {
+              "*": {
+                "idExterno": "=concat('coleta-entrega-entrega-numtransvenda-',@(1,friendlyId),'-',@(1,dataConsulta))"
+              }
+            }
+          },
+          {
+            "operation": "shift",
+            "spec": {
+              "*": {
+                "idExterno": "idExterno",
+                "friendlyId": "items[&1].friendlyId",
+                "externalId": "items[&1].externalId",
+                "documento": "items[&1].documento",
+                "unidadeOperacionalId": "items[&1].unidadeOperacionalId",
+                "unidadeCadastroId": "items[&1].unidadeCadastroId",
+                "enderecoDestino": "items[&1].enderecoDestino",
+                "pesoTotalBruto": "items[&1].pesoTotalBruto",
+                "cubagemTotal": "items[&1].cubagemTotal",
+                "valorTotal": "items[&1].valorTotal",
+                "quantidadeTotalVolumes": "items[&1].quantidadeTotalVolumes",
+                "observacao": "items[&1].observacao",
+                "codigoReferenciaCliente": "items[&1].codigoReferenciaCliente"
+              }
+            }
+          },
+          {
+            "operation": "default",
+            "spec": {
+              "_attr_access": "items"
+            }
+          }
+        ]
+      },
+      {
+        "nome": "ATIVO",
+        "valor": "S"
+      },
+      {
+        "nome": "TIPOPROCESSO",
+        "valor": "BUSCAR"
+      },
+      {
+        "nome": "AUTENTICADOR",
+        "valor": "N"
+      },
+      {
+        "nome": "DATASINCRONISMO",
+        "valor": ""
+      }
+    ]
+  }
+}
