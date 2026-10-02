@@ -1,0 +1,55 @@
+{
+  "tabela": {
+    "nome": "PCINTEGRACAOVARIAVEIS",
+    "campos": [
+      {
+        "nome": "DTULTALTER",
+        "valor": ""
+      },
+      {
+        "nome": "ID",
+        "valor": "WTA - Buscar Quantidade Carga Inicial-{{IGNORAR_SNAPSHOT}}"
+      },
+      {
+        "nome": "CHAVE",
+        "valor": "{{IGNORAR_SNAPSHOT}}"
+      },
+      {
+        "nome": "TIPOCHAVE",
+        "valor": "BODY"
+      },
+      {
+        "nome": "TIPOVALOR",
+        "valor": "STRING"
+      },
+      {
+        "nome": "IDROTASERVICO",
+        "valor": "WTA - Buscar Quantidade Carga Inicial"
+      },
+      {
+        "nome": "VALOR",
+        "valor": "TRUE"
+      },
+      {
+        "nome": "CODEMPALTER",
+        "valor": ""
+      },
+      {
+        "nome": "VISIVELWIZARD",
+        "valor": "N"
+      },
+      {
+        "nome": "ORDENACAOWIZARD",
+        "valor": 71
+      },
+      {
+        "nome": "DESCRICAOPARAM",
+        "valor": "Quando true, ignora o snapshot das rotas WSH e consulta sempre o /count"
+      },
+      {
+        "nome": "VISIVELCARGAINICIAL",
+        "valor": "N"
+      }
+    ]
+  }
+}

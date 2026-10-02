@@ -36,7 +36,12 @@
 						],
 						"url": {
 							"raw": "{{URL_BASE}}/winthor/hub/carga/dados/v1/pdvsync/carga/{{FILIAL}}",
-							"query": [],
+							"query": [
+								{
+									"key": "ignorarSnapshot",
+									"value": "{{IGNORAR_SNAPSHOT}}"
+								}
+							],
 							"host": [
 								"https:"
 							],
