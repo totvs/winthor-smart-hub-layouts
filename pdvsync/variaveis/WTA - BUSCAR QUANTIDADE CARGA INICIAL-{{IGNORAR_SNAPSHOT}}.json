@@ -36,7 +36,7 @@
       },
       {
         "nome": "VISIVELWIZARD",
-        "valor": "S"
+        "valor": "N"
       },
       {
         "nome": "ORDENACAOWIZARD",
@@ -48,7 +48,7 @@
       },
       {
         "nome": "VISIVELCARGAINICIAL",
-        "valor": "S"
+        "valor": "N"
       }
     ]
   }
