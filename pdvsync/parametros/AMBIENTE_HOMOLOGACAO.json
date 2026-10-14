@@ -99,7 +99,7 @@
 		},
 		{
 			"nome": "{{URL_ENVIAR_CONDICAO_PGMT}}",
-			"valor": "https://pdvsync-core-formapagto-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/condicaopagtos",
+			"valor": "https://pdvsync-core-formapagto-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/dadosdinamicos/down/17/2",
 			"descricao": "PDV-SYNC Enviar planos de pgmt",
 			"rota": "PDVSYNC - Enviar planos de pgto"
 		},
