@@ -259,6 +259,7 @@
                                                 "fatorConversao": {
                                                     "valor": "items.[&5].produtoEmbalagens[&2].quantidade"
                                                 },
+                                                "fatorPreco": "items.[&4].produtoEmbalagens[&1].fatorPreco",
                                                 "inativo": {
                                                     "false": {
                                                         "#1": "items.[&6].produtoEmbalagens[&3].situacao"
