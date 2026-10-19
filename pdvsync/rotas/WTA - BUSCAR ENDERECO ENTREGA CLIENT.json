@@ -73,8 +73,8 @@
 						"spec": {
 							"items": {
 								"*": {
-									"idExterno": "=concat('pdvsync-endereco-entrega-cliente-', @(1,lastChangeDate))",
-									"idInterno": "=concat('', @(1,id))",
+									"idExterno": "=concat('pdvsync-endereco-entrega-cliente-', @(1,id),'-', @(1,active) ,'-', @(1,lastChangeDate))",
+									"idInterno": "=concat('', @(1,id),'-', @(1,customerId))",
 									"tipoIdInterno": "PDVSYNC-BUSCA-ENDERECO-ENTREGA-CLIENTE"
 								}
 							}
