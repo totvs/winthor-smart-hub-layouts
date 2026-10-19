@@ -137,7 +137,9 @@
 								 "S": {
 								   "#True": "items.[&3].UtilizaPrecoAtacado"
 								 }
-							   }
+							   },
+							  "minimumExpirationLotPercentage": "items.[&1].vencimentoPercentual",
+							  "minimumExpirationLotDays": "items.[&1].vencimentoDias"
 							}
 						 }
 					  }
