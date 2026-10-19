@@ -128,7 +128,8 @@
 							"*": {
 							  "#false": "items.[&3].prioritaria"
 							}
-						  }
+						  },
+						  "productClassificationId": "items.[&1].regraDescontoAcrescimoItens[0].idRetaguardaClassificacaoProduto"
 						}
 					  }
 					}
