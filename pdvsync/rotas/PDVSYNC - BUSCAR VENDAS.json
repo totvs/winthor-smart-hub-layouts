@@ -230,7 +230,9 @@
                                         "PreVenda": {
                                             "Id": "items.[&3].idPreVenda",
                                             "IdRetaguarda": "items.[&3].numeroPedidoRIVendaAssistida",
-                                            "Observacao": "items.[&3].observacao"
+                                            "Observacao": "items.[&3].observacao",
+                                            "TipoPreVenda": "items.[&3].tipoPreVenda",
+                                            "Numero": "items.[&3].numero"
                                         },
                                         "SituacaoVenda": "items.[&2].tipoMovimento",
                                         "SituacaoVendaMonitor": {
