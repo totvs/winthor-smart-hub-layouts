@@ -1,0 +1,223 @@
+{
+	"tabela": {
+		"nome": "PCINTEGRACAOROTASERVICO",
+		"campos": [
+			{
+				"nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+				"valor": "N"
+			},
+			{
+				"nome": "ID",
+				"valor": "WTA - Buscar Quantidade Carga Inicial"
+			},
+			{
+				"nome": "IDEMPRESAAPI",
+				"valor": "WINTHOR-WTA"
+			},
+			{
+				"nome": "SERVICO",
+				"valor": "WTA - Buscar Quantidade Carga Inicial"
+			},
+			{
+				"nome": "LAYOUTCOMUNICACAO",
+				"valor": {
+					"name": "WTA - Buscar Quantidade Carga Inicial",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{URL_BASE}}/winthor/hub/carga/dados/v1/pdvsync/carga/{{FILIAL}}",
+							"query": [
+								{
+									"key": "ignorarSnapshot",
+									"value": "{{IGNORAR_SNAPSHOT}}"
+								}
+							],
+							"host": [
+								"https:"
+							],
+							"path": []
+						}
+					},
+					"response": []
+				}
+			},
+			{
+				"nome": "LAYOUTTRANSFORMACAO",
+				"valor": [
+					{
+						"operation": "modify-overwrite-beta",
+						"spec": {
+							"data": {
+								"*": {
+									"temp_array": "=split(' ', @(1,descricaoRota))"
+								}
+							}
+						}
+					},
+					{
+						"operation": "modify-overwrite-beta",
+						"spec": {
+							"data": {
+								"*": {
+									"descricaoRota": "=join('', @(1,temp_array))"
+								}
+							}
+						}
+					},
+					{
+						"operation": "modify-overwrite-beta",
+						"spec": {
+							"data": {
+								"*": {
+									"descricaoRota": "=toUpper(@(1,descricaoRota))"
+								}
+							}
+						}
+					},
+					{
+						"operation": "shift",
+						"spec": {
+							"data": {
+								"*": {
+									"totalRegistros": "items[&1].&",
+									"descricaoRota": "items[&1].&"
+								}
+							}
+						}
+					},
+					{
+						"operation": "shift",
+						"spec": {
+							"items": {
+								"*": {
+									"totalRegistros": "items[&1].&",
+									"descricaoRota": {
+										"WTA-BUSCARCLIENTES": {
+											"#Clientes": "items[&3].fluxo"
+										},
+										"WTA-BUSCARFILIAISLOJAS": {
+											"#Filiais Lojas": "items[&3].fluxo"
+										},
+										"WTA-BUSCARPERFILPADRAO": {
+											"#Perfil": "items[&3].fluxo"
+										},
+										"WTA-CONSULTARCA": {
+											"#Rca": "items[&3].fluxo"
+										},
+										"WTA-BUSCARPROFISSIONAIS": {
+											"#Profissional": "items[&3].fluxo"
+										},
+										"WTA-BUSCARUSUARIOOPERADOR": {
+											"#Usuario Operador": "items[&3].fluxo"
+										},
+										"WTA-PDVSYNCCOMPARTILHAMENTOMASTER": {
+											"#Compartilhamento Master": "items[&3].fluxo"
+										},
+										"WTA-BUSCARICMS": {
+											"#ICMS": "items[&3].fluxo"
+										},
+										"WTA-BUSCARIMPOSTONCMPDV": {
+											"#NCM CEST": "items[&3].fluxo"
+										},
+										"WTA-BUSCARPISCOFINS": {
+											"#Pis/Cofins": "items[&3].fluxo"
+										},
+										"WTA-BUSCARPRODUTOPDV": {
+											"#Produto": "items[&3].fluxo"
+										},
+										"WTA-BUSCARPRECOPRODUTO": {
+											"#Preco": "items[&3].fluxo"
+										},
+										"WTA-BUSCARPRECOREGIAO": {
+											"#Preco Regiao": "items[&3].fluxo"
+										},
+										"WTA-BUSCARPRECOEMBALAGEM": {
+											"#Preco Embalagem": "items[&3].fluxo"
+										},
+										"WTA-BUSCARESTOQUE": {
+											"#Estoque": "items[&3].fluxo"
+										},
+										"WTA-BUSCAROPERADORAPDV": {
+											"#Operadora Cartao": "items[&3].fluxo"
+										},
+										"WTA-DADOSPAGAMENTO": {
+											"#Pagamento Dados Complementares": "items[&3].fluxo"
+										},
+										"WTA-BUSCARPLANOSDEPGTO": {
+											"#Planos de pagamentos": "items[&3].fluxo"
+										},
+										"WTA-BUSCARTIPOSCOBRANCAS": {
+											"#Cobrancas/Forma Pgto": "items[&3].fluxo"
+										},
+										"WTA-BUSCARGRUPOCAMPANHACLIENTE": {
+											"#Grupo Campanha Cliente": "items[&3].fluxo"
+										},
+										"WTA-BUSCARPRECOFIXO": {
+											"#Preco Fixo": "items[&3].fluxo"
+										},
+										"WTA-BUSCARSTATUSPEDIDO": {
+											"#Status pedido": "items[&3].fluxo"
+										},
+										"WTA-BUSCARENDERECOENTREGACLIENT": {
+											"#Endereco Entrega Cliente": "items[&3].fluxo"
+										},
+										"WTA-BUSCARRAMOATIVIDADE": {
+											"#Ramo Atividade": "items[&3].fluxo"
+										},
+										"WTA-BUSCARREGIAOPDV": {
+											"#Regiao": "items[&3].fluxo"
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"operation": "default",
+						"spec": {
+							"_attr_access": "items"
+						}
+					}
+				]
+			},
+			{
+				"nome": "ATIVO",
+				"valor": "S"
+			},
+			{
+				"nome": "AUTENTICADOR",
+				"valor": "N"
+			},
+			{
+				"nome": "DATASINCRONISMO",
+				"valor": "21-SEP-22"
+			},
+			{
+				"nome": "REFRESHTOKEN",
+				"valor": ""
+			},
+			{
+				"nome": "TIPOPROCESSO",
+				"valor": "BUSCAR"
+			},
+			{
+				"nome": "DISPONIVELURLROTAWTA",
+				"valor": "N"
+			},
+			{
+				"nome": "QUANTCARGAINICIAL",
+				"valor": "S"
+			}
+		]
+	}
+}

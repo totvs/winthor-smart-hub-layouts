@@ -1,0 +1,51 @@
+{
+"tabela": {
+		"nome": "PCINTEGRACAOVARIAVEIS",
+		"campos": [
+			{
+				"nome": "DTULTALTER",
+				"valor": ""
+			},
+			{
+				"nome": "ID",
+				"valor": "WTA-WIZARD - ENVIAR ALERTA-{{ID-ALERTA-CLIENTE}}"
+			},
+			{
+				"nome": "CHAVE",
+				"valor": "{{ID-ALERTA-CLIENTE}}"
+			},
+			{
+				"nome": "TIPOCHAVE",
+				"valor": "PARAMS"
+			},
+			{
+				"nome": "TIPOVALOR",
+				"valor": "SELECT"
+			},
+			{
+				"nome": "IDROTASERVICO",
+				"valor": "WTA-WIZARD - ENVIAR ALERTA"
+			},
+			{
+				"nome": "VALOR",
+				"valor": "SELECT id FROM pcintegracaoalerta WHERE nome = 'Informativo de Cliente'"
+			},
+			{
+				"nome": "CODEMPALTER",
+				"valor": ""
+			},
+			{
+				"nome": "VISIVELWIZARD",
+				"valor": "S"
+			},
+			{
+				"nome": "ORDENACAOWIZARD",
+				"valor": "5"
+			},
+			{
+				"nome": "DESCRICAOPARAM",
+				"valor": "Consulta para id do alerta a ser enviado para o cliente"
+			}
+		]
+	}
+}

@@ -33,6 +33,10 @@
 			{
 				"nome": "CODEMPALTER",
 				"valor": ""
+			},
+			{
+				"nome": "VISIVELCARGAINICIAL",
+				"valor": "N"
 			}
 		]
 	}

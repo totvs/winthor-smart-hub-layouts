@@ -123,6 +123,7 @@
             "spec" : {
               "publishReleasedTripTemp" : {
                 "*": {
+                  "idMensagem": "items.[\u00261].idMensagem",
                   "trips": {
                     "*": "items[]"
                   }

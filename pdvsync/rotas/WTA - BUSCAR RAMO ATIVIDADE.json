@@ -35,7 +35,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{URL_BASE}}/winthor/cliente/v1/ramoatividade",
+							"raw": "{{URL_BASE}}/winthor/integracao/cliente/v1/ramoatividade",
 							"query": [
 								{
 									"key": "pageSize",

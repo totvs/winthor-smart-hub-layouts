@@ -1,0 +1,51 @@
+{
+"tabela": {
+		"nome": "PCINTEGRACAOVARIAVEIS",
+		"campos": [
+			{
+				"nome": "DTULTALTER",
+				"valor": ""
+			},
+			{
+				"nome": "ID",
+				"valor": "WTA-WIZARD - LoginWTA-{{SENHA}}"
+			},
+			{
+				"nome": "CHAVE",
+				"valor": "{{SENHA}}"
+			},
+			{
+				"nome": "TIPOCHAVE",
+				"valor": "BODY"
+			},
+			{
+				"nome": "TIPOVALOR",
+				"valor": "STRING"
+			},
+			{
+				"nome": "IDROTASERVICO",
+				"valor": "WTA-WIZARD - LoginWTA"
+			},
+			{
+				"nome": "VALOR",
+				"valor": "ADICIONAR_SENHA_WTA"
+			},
+			{
+				"nome": "CODEMPALTER",
+				"valor": ""
+			},
+			{
+				"nome": "VISIVELWIZARD",
+				"valor": "S"
+			},
+			{
+				"nome": "ORDENACAOWIZARD",
+				"valor": "2"
+			},
+			{
+				"nome": "DESCRICAOPARAM",
+				"valor": "Senha para autenticação na WTA"
+			}
+		]
+	}
+}

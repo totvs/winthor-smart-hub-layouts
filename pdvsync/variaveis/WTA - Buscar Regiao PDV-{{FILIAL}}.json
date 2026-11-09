@@ -28,11 +28,15 @@
 			},
 			{
 				"nome": "VALOR",
-				"valor": "ADICIONAR_FILIAL"
+				"valor": "99"
 			},
 			{
 				"nome": "CODEMPALTER",
 				"valor": ""
+			},
+			{
+				"nome": "VISIVELCARGAINICIAL",
+				"valor": "N"
 			}
 		]
 	}

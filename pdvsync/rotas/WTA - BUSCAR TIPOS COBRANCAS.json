@@ -105,7 +105,10 @@
 											"#CRED": "items.[&3].idRetaguarda"
 										},
 										"*": {
-											"@1": "items.[&3].idRetaguarda"
+											"@1": [
+												"items.[&3].idRetaguarda",
+												"items.[&3].formaPagtoModeloFiscal[0].idRetaguarda"
+											]
 										}
 									},
 									"codFilial": {
@@ -118,12 +121,21 @@
 									},
 									"cobranca": "items.[&1].descricaofiscal",
 									"descricao": "items.[&1].descricao",
+									"codCobSefaz": "items.[&1].formaPagtoModeloFiscal[0].codigoFiscal",
+									"descricaoCobSefaz": "items.[&1].formaPagtoModeloFiscal[0].descricaoFiscal",
+									"#NFCe": "items.[&1].formaPagtoModeloFiscal[0].modeloFiscal",
 									"exportaecf": {
 										"N": {
-											"#0": "items.[&3].situacao"
+											"#0": [
+												"items[&3].situacao",
+												"items[&3].formaPagtoModeloFiscal[0].situacao"
+											]
 										},
 										"*": {
-											"#1": "items.[&3].situacao"
+											"#1": [
+												"items[&3].situacao",
+												"items[&3].formaPagtoModeloFiscal[0].situacao"
+											]
 										}
 									},
 									"id_verifica_troco": {
@@ -144,6 +156,7 @@
 									"codigoSistemaExterno": "items.[&1].codigoSistemaExterno",
 									"clienteConsumidor": "items.[&1].clienteConsumidor",
 									"validaLimiteCredito": "items.[&1].utilizaLimiteCredito",
+									"permiteVendaClienteBloqueado": "items.[&1].permiteVendaClienteBloqueado",
 									"cobAntecipada": "items.[&1].recebimentoAntecipado",
 									"codOperadoraCartao": {
 										"cartao_null": {
@@ -227,6 +240,8 @@
 											"@(2,situacao)": "items[&3][1].situacao",
 											"@(2,codigoSistemaExterno)": "items[&3][1].codigoSistemaExterno",
 											"@(2,clienteConsumidor)": "items[&3][1].clienteConsumidor",
+											"@(2,utilizaLimiteCredito)": "items[&3][1].utilizaLimiteCredito",
+											"@(2,permiteVendaClienteBloqueado)": "items[&3][1].permiteVendaClienteBloqueado",
 											"@(2,formasPagtoOperadoras)": {
 												"*": {
 													"situacao": "items[&5][1].formasPagtoOperadoras[&1].situacao",
@@ -350,6 +365,11 @@
 							"items": {
 								"*": {
 									"situacao": "=toInteger",
+									"formaPagtoModeloFiscal": {
+										"*": {
+											"situacao": "=toInteger"
+										}
+									},
 									"formasPagtoOperadoras": {
 										"*": {
 											"situacao": "=toInteger"
