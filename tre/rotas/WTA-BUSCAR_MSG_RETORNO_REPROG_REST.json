@@ -80,6 +80,23 @@
               }
             }
           },
+          
+          {
+            "operation": "modify-overwrite-beta",
+            "spec": {
+              "*": {
+                "idMensagem": "\u003dtoInteger(@(1,idMensagem))"
+              }
+            }
+          },
+          {
+            "operation": "modify-overwrite-beta",
+            "spec": {
+              "*": {
+                "idMensagem": "\u003dtoInteger(@(1,idMensagem))"
+              }
+            }
+          },
           {
             "operation": "modify-overwrite-beta",
             "spec": {
