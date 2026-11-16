@@ -36,7 +36,16 @@
             ],
             "url": {
               "raw": "{{URL_BASE}}/logistica/apis/v1/entregas/buscar",
-              "query": []
+              "query": [
+                {
+                  "key": "page",
+                  "value": "{{PAGE}}"
+                },
+                {
+                  "key": "pageSize",
+                  "value": "{{PAGE_SIZE}}"
+                }
+              ]
             }
           },
           "response": []
