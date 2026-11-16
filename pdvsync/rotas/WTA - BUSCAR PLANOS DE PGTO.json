@@ -263,7 +263,14 @@
                   "diasCarencia": "items.[&1].diasCarenciaPrimeiroVencimento",
                   "numeroParcelasDiaFixo": "items.[&1].fixaNumeroParcelas",
                   "numeroParcelas": "items.[&1].quantidadeParcelas",
-                  "valorMinimoPedido": "items.[&1].valorMinimoParcela",
+                  "formaParcelamento": {
+                    "V": {
+                      "@(2,valorMinimoPedido)": "items.[&3].valorMinimoParcela"
+                    },
+                    "*": {
+                      "@(2,valorMinimoPedido)": "items.[&3].valorMinimoPedido"
+                    }
+                  },
                   "ativo": {
                     "true": {
                       "#1": "items.[&3].situacao"
