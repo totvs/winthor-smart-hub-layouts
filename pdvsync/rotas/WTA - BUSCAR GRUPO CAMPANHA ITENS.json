@@ -63,10 +63,10 @@
 						"spec": {
 							"items": {
 								"*": {
-									"idRetaguarda": "=concat(@(1,groupCampaignId), '-', @(1,productId), '-', @(1,barCode))",
+									"idRetaguarda": "=concat(@(1,groupCampaignId), '-', @(1,barCode), '-', @(1,productId))",
 									"idExterno": "=concat('pdvsync-associacao-produto-classificado-', @(1,idRetaguarda), '-', @(1,lastChange))",
 									"idInterno": "=concat('', @(1,idRetaguarda))",
-									"idRetaguardaProduto": "=concat(@(1,productId), '-', @(1,barCode))",
+									"idRetaguardaProduto": "=concat(@(1,barCode), '-', @(1,productId))",
 									"tipoIdInterno": "PDVSYNC-ASSOCIACAO-PRODUTO-CLASSIFICADO",
 									"ordem": 1
 								}
