@@ -1,0 +1,100 @@
+{
+  "tabela": {
+    "nome": "PCINTEGRACAOROTASERVICO",
+    "campos": [
+      {
+        "nome": "SOMENTEATUALIZARINTEGRACAOCORE",
+        "valor": "N"
+      },
+      {
+        "nome": "ID",
+        "valor": "PDVSYNC - Enviar Endpoints"
+      },
+      {
+        "nome": "IDEMPRESAAPI",
+        "valor": "PDVSYNC"
+      },
+      {
+        "nome": "SERVICO",
+        "valor": "PDVSYNC - Enviar Endpoints"
+      },
+      {
+        "nome": "LAYOUTCOMUNICACAO",
+        "valor": {
+          "name": "PDVSYNC - Enviar Endpoints",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{TOKEN}}"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{URL_ENVIAR_METADADOS}}",
+              "query": []
+            },
+            "bodyraw": "{{CLIENT_JSON}}"
+          },
+          "response": []
+        }
+      },
+      {
+        "nome": "LAYOUTTRANSFORMACAO",
+        "valor": [
+          {
+            "operation": "default",
+            "spec": {
+              "idInquilino": "{{ID_INQUILINO}}",
+              "metadata": {
+                "EndpointLimiteCredito": "/winthor/integracao/cliente/v1/limite-credito/pdvsync",
+                "EndpointPreVendaEnvio": "/winthor/varejo/matcon/v1/orders/pdvsync",
+                "EndpointCreditoConsumo": "/winthor/varejo/v1/credito-cliente",
+                "EndpointNotaSaidaEnvio": "/api/stock-vtex/v1/available/pdv-sync",
+                "EndpointCreditoConsulta": "/winthor/varejo/v1/credito-cliente/list",
+                "EndpointEstoqueConsulta": "/api/stock-vtex/v1/available/pdv-sync",
+                "EndpointIdentificadorPDV": "/winthor/varejo/matcon/v1/pdv/detalhepdv",
+                "EndpointNotaEntradaEnvio": "/winthor/varejo/matcon/v1/orders/pdvsync",
+                "EndpointPreVendaAtualiza": "/winthor/varejo/matcon/v1/orders/pdvsync",
+                "EndpointReservaEstoqueEnvio": "/winthor/varejo/matcon/v1/orders/pdvsync",
+                "EndpointLimiteCreditoDetalhe": "/winthor/integracao/cliente/v1/limite-credito/detalhado/pdvsync",
+                "EndpointFormasCondicoesCliente": "/winthor/integracao/cliente/v1/payments/pdvsync",
+                "EndpointPreVendaConsultaPedido": "/winthor/varejo/matcon/v1/orders/pdvsync/consulta",
+                "EndpointNotificaRetaguardaNovaLoja": null,
+                "EndpointPreVendaConsultaListaPedido": "/winthor/varejo/matcon/v1/orders/pdvsync/consulta"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "nome": "ATIVO",
+        "valor": "S"
+      },
+      {
+        "nome": "AUTENTICADOR",
+        "valor": "N"
+      },
+      {
+        "nome": "DATASINCRONISMO",
+        "valor": ""
+      },
+      {
+        "nome": "REFRESHTOKEN",
+        "valor": ""
+      },
+      {
+        "nome": "TIPOPROCESSO",
+        "valor": "ENVIAR"
+      }
+    ]
+  }
+}
