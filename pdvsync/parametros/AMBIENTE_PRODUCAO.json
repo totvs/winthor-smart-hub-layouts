@@ -303,7 +303,7 @@
     },
     {
       "nome": "{{URL_ENVIAR_METADADOS}}",
-      "valor": "https://pdvsync.varejo.totvs.com.br/pdvsyncserver/api/v3/inquilinos/metadata",
+      "valor": "https://pdvsync-core-controle-qa-ywc7q7nxya-uc.a.run.app/api/pdvsyncserver/v3/inquilinos/metadata",
       "descricao": "PDVSYNC - Enviar Metadados URLs",
       "rota": "PDVSYNC - Enviar Endpoints"
     }

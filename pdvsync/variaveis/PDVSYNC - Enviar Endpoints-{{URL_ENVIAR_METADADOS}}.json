@@ -28,7 +28,7 @@
 			},
 			{
 				"nome": "VALOR",
-				"valor": "https://pdvsync.varejo.totvs.com.br/pdvsyncserver/api/v3/inquilinos/metadata"
+				"valor": "https://pdvsync-core-controle-qa-ywc7q7nxya-uc.a.run.app/api/pdvsyncserver/v3/inquilinos/metadata"
 			},
 			{
 				"nome": "CODEMPALTER",
