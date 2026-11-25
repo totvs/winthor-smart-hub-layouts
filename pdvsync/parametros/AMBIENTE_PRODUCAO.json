@@ -243,7 +243,7 @@
     },
     {
       "nome": "{{URL_ENVIAR_DESCONTO_ACRESCIMO}}",
-      "valor": "https://pdvsync.varejo.totvs.com.br/preco/api/retaguarda/v3/dadosdinamicos/down/59/1",
+      "valor": "https://pdvsync.varejo.totvs.com.br/preco/api/retaguarda/v3/dadosdinamicos/down/59/2",
       "descricao": "PDV-SYNC Enviar Desconto Acrescimo",
       "rota": "PDVSYNC - Enviar Desconto e Acrescimo"
     },

@@ -129,7 +129,11 @@
 							  "#false": "items.[&3].prioritaria"
 							}
 						  },
-						  "productClassificationId": "items.[&1].regraDescontoAcrescimoItens[0].idRetaguardaClassificacaoProduto"
+						  "productClassificationId": [
+						    "items.[&1].regraDescontoAcrescimoItens[0].idRetaguardaClassificacaoProduto",
+						    "items.[&1].regraDescontoAcrescimoItens[0].idRetaguarda"
+						  ],
+						  "#1": "items.[&1].regraDescontoAcrescimoItens[0].situacao"
 						}
 					  }
 					}
