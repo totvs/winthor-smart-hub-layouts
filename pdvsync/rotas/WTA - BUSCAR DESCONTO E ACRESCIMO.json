@@ -67,6 +67,7 @@
 					"spec": {
 					  "items": {
 						"*": {
+						  "idRetaguarda": "=concat(@(1,campaignId),'-',@(1,productClassificationId))",
 						  "idExterno": "=concat('pdvsync-politica-desconto-acrescimo-',@(1,campaignId),'-',@(1,lastChangeDate),'-',@(1,lastChangeDate))",
 						  "idInterno": "=concat(@(1,branchId),'-',@(1,campaignId))",
 						  "tipoIdInterno": "PDVSYNC-POLITICA-DESCONTO-ACRESCIMO"
@@ -112,7 +113,7 @@
 						  "skuId": "items.[&1].idRetaguardaProduto",
 						  "packingId": "items.[&1].idRetaguardaProdutoEmbalagem",
 						  "allPackages": "items.[&1].usarTodasEmbalagens",
-						  "campaignId": "items.[&1].idRetaguarda",
+						  "idRetaguarda": "items.[&1].idRetaguarda",
 						  "active": {
 							"true": {
 							  "#1": "items.[&3].situacao"
@@ -134,6 +135,20 @@
 						    "items.[&1].regraDescontoAcrescimoItens[0].idRetaguarda"
 						  ],
 						  "#1": "items.[&1].regraDescontoAcrescimoItens[0].situacao"
+						}
+					  }
+					}
+				  },
+				  {
+					"operation": "modify-overwrite-beta",
+					"spec": {
+					  "items": {
+						"*": {
+						  "regraDescontoAcrescimoItens": {
+							"*": {
+							  "situacao": "=toInteger"
+							}
+						  }
 						}
 					  }
 					}
