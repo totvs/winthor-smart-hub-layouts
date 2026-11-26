@@ -266,9 +266,6 @@
                   "formaParcelamento": {
                     "V": {
                       "@(2,valorMinimoPedido)": "items.[&3].valorMinimoParcela"
-                    },
-                    "*": {
-                      "@(2,valorMinimoPedido)": "items.[&3].valorMinimoPedido"
                     }
                   },
                   "ativo": {
