@@ -62,94 +62,174 @@
 			{
 				"nome": "LAYOUTTRANSFORMACAO",
 				"valor": [
-				  {
-					"operation": "modify-overwrite-beta",
-					"spec": {
-					  "items": {
-						"*": {
-						  "idExterno": "=concat('pdvsync-politica-desconto-acrescimo-',@(1,campaignId),'-',@(1,lastChangeDate),'-',@(1,lastChangeDate))",
-						  "idInterno": "=concat(@(1,branchId),'-',@(1,campaignId))",
-						  "tipoIdInterno": "PDVSYNC-POLITICA-DESCONTO-ACRESCIMO"
-						}
-					  }
-					}
-				  },
-				  {
-					"operation": "shift",
-					"spec": {
-					  "items": {
-						"*": {
-						  "idExterno": "idExterno[]",
-						  "idInterno": "idInterno",
-						  "tipoIdInterno": "tipoIdInterno",
-						  "regionId": "items.[&1].idRetaguardaRegiao",
-						  "squareId": "items.[&1].idRetaguardaPraca",
-						  "branchActivityId": "items.[&1].idRetaguardaRamoAtividade",
-						  "clientNetId": "items.[&1].idRetaguardaRede",
-						  "clientId": "items.[&1].idRetaguardaCliente",
-						  "supplierId": "items.[&1].idRetaguardaFornecedor",
-						  "codeCategory": "items.[&1].idRetaguardaCategoria",
-						  "codeSubCategory": "items.[&1].idRetaguardaSubCategoria",
-						  "codeDepartment": "items.[&1].idRetaguardaDepartamento",
-						  "brandcode": "items.[&1].idRetaguardaMarca",
-						  "codeSection": "items.[&1].idRetaguardaSecao",
-						  "restrictionTermTypeCode": "items.[&1].idRetaguardaRestricaoPagamentoCondicao",
-						  "paymentTermId": "items.[&1].idRetaguardaPagamentoCondicao",
-						  "startQtd": "items.[&1].quantidadeInicial",
-						  "endQtd": "items.[&1].quantidadeFinal",
-						  "startDate": "items.[&1].DataHoraVigenciaInicial",
-						  "endDate": "items.[&1].DataHoraVigenciaFinal",
-						  "percentageValue": "items.[&1].valor",
-						  "type": "items.[&1].tipo",
-						  "branchId": {
-							"99": {
-							  "#{{MASTER_ID_PROPRIETARIO}}": "items[&3].idProprietario"
-							},
-							"*": {
-							  "@1": "items[&3].idProprietario"
+					{
+						"operation": "modify-overwrite-beta",
+						"spec": {
+							"items": {
+								"*": {
+									"chaveCampanha": "=concat(@(1,branchId),'-',@(1,campaignId))",
+									"baseIdExterno": "=concat('pdvsync-politica-desconto-acrescimo-',@(1,campaignId),'-',@(1,lastChangeDate),'-',@(1,lastChangeDate))",
+									"baseIdInterno": "=concat(@(1,branchId),'-',@(1,campaignId))",
+									"tipoIdInterno": "PDVSYNC-POLITICA-DESCONTO-ACRESCIMO",
+									"campaignIdStr": "=toString(@(1,campaignId))",
+									"sufixoItem": "=concat('-',@(1,productClassificationId))",
+									"idRetaguardaItem": "=concat(@(1,campaignId),'-',@(1,productClassificationId))",
+									"situacaoItem": "=toInteger(1)"
+								}
 							}
-						  },
-						  "skuId": "items.[&1].idRetaguardaProduto",
-						  "packingId": "items.[&1].idRetaguardaProdutoEmbalagem",
-						  "allPackages": "items.[&1].usarTodasEmbalagens",
-						  "campaignId": "items.[&1].idRetaguarda",
-						  "active": {
-							"true": {
-							  "#1": "items.[&3].situacao"
-							},
-							"*": {
-							  "#0": "items.[&3].situacao"
-							}
-						  },
-						  "priority": {
-							"S": {
-							  "#true": "items.[&3].prioritaria"
-							},
-							"*": {
-							  "#false": "items.[&3].prioritaria"
-							}
-						  },
-						  "productClassificationId": [
-						    "items.[&1].regraDescontoAcrescimoItens[0].idRetaguardaClassificacaoProduto",
-						    "items.[&1].regraDescontoAcrescimoItens[0].idRetaguarda"
-						  ],
-						  "#1": "items.[&1].regraDescontoAcrescimoItens[0].situacao"
 						}
-					  }
-					}
-				  },
-				  {
-					"operation": "default",
-					"spec": {
-					  "_attr_access": "items",
-					  "items[]": {
-						"*": {
-						  "idInquilino": "{{ID_INQUILINO}}",
-						  "loteOrigem": "{{LOTE_ORIGEM}}"
+					},
+					{
+						"operation": "shift",
+						"spec": {
+							"items": {
+								"*": {
+									"baseIdExterno": "grouped.@(1,chaveCampanha).baseIdExterno",
+									"baseIdInterno": "grouped.@(1,chaveCampanha).baseIdInterno",
+									"tipoIdInterno": "grouped.@(1,chaveCampanha).tipoIdInterno",
+									"regionId": "grouped.@(1,chaveCampanha).item.idRetaguardaRegiao",
+									"squareId": "grouped.@(1,chaveCampanha).item.idRetaguardaPraca",
+									"branchActivityId": "grouped.@(1,chaveCampanha).item.idRetaguardaRamoAtividade",
+									"clientNetId": "grouped.@(1,chaveCampanha).item.idRetaguardaRede",
+									"clientId": "grouped.@(1,chaveCampanha).item.idRetaguardaCliente",
+									"supplierId": "grouped.@(1,chaveCampanha).item.idRetaguardaFornecedor",
+									"codeCategory": "grouped.@(1,chaveCampanha).item.idRetaguardaCategoria",
+									"codeSubCategory": "grouped.@(1,chaveCampanha).item.idRetaguardaSubCategoria",
+									"codeDepartment": "grouped.@(1,chaveCampanha).item.idRetaguardaDepartamento",
+									"brandcode": "grouped.@(1,chaveCampanha).item.idRetaguardaMarca",
+									"codeSection": "grouped.@(1,chaveCampanha).item.idRetaguardaSecao",
+									"restrictionTermTypeCode": "grouped.@(1,chaveCampanha).item.idRetaguardaRestricaoPagamentoCondicao",
+									"paymentTermId": "grouped.@(1,chaveCampanha).item.idRetaguardaPagamentoCondicao",
+									"startQtd": "grouped.@(1,chaveCampanha).item.quantidadeInicial",
+									"endQtd": "grouped.@(1,chaveCampanha).item.quantidadeFinal",
+									"startDate": "grouped.@(1,chaveCampanha).item.DataHoraVigenciaInicial",
+									"endDate": "grouped.@(1,chaveCampanha).item.DataHoraVigenciaFinal",
+									"percentageValue": "grouped.@(1,chaveCampanha).item.valor",
+									"type": "grouped.@(1,chaveCampanha).item.tipo",
+									"branchId": {
+										"99": {
+											"#{{MASTER_ID_PROPRIETARIO}}": "grouped.@(3,chaveCampanha).item.idProprietario"
+										},
+										"*": {
+											"@1": "grouped.@(3,chaveCampanha).item.idProprietario"
+										}
+									},
+									"skuId": "grouped.@(1,chaveCampanha).item.idRetaguardaProduto",
+									"packingId": "grouped.@(1,chaveCampanha).item.idRetaguardaProdutoEmbalagem",
+									"allPackages": "grouped.@(1,chaveCampanha).item.usarTodasEmbalagens",
+									"campaignIdStr": "grouped.@(1,chaveCampanha).item.idRetaguarda",
+									"active": {
+										"true": {
+											"#1": "grouped.@(3,chaveCampanha).item.situacao"
+										},
+										"*": {
+											"#0": "grouped.@(3,chaveCampanha).item.situacao"
+										}
+									},
+									"priority": {
+										"S": {
+											"#true": "grouped.@(3,chaveCampanha).item.prioritaria"
+										},
+										"*": {
+											"#false": "grouped.@(3,chaveCampanha).item.prioritaria"
+										}
+									},
+									"productClassificationId": {
+										"*": {
+											"@1": "grouped.@(3,chaveCampanha).item.regraDescontoAcrescimoItens.[&3].idRetaguardaClassificacaoProduto",
+											"@(2,idRetaguardaItem)": "grouped.@(3,chaveCampanha).item.regraDescontoAcrescimoItens.[&3].idRetaguarda",
+											"@(2,situacaoItem)": "grouped.@(3,chaveCampanha).item.regraDescontoAcrescimoItens.[&3].situacao",
+											"@(2,sufixoItem)": "grouped.@(3,chaveCampanha).sufixos[]"
+										}
+									}
+								}
+							}
 						}
-					  }
+					},
+					{
+						"operation": "cardinality",
+						"spec": {
+							"grouped": {
+								"*": {
+									"baseIdExterno": "ONE",
+									"baseIdInterno": "ONE",
+									"tipoIdInterno": "ONE",
+									"sufixos": "MANY",
+									"item": {
+										"*": "ONE",
+										"regraDescontoAcrescimoItens": "MANY"
+									}
+								}
+							}
+						}
+					},
+					{
+						"operation": "shift",
+						"spec": {
+							"grouped": {
+								"*": "rows[]"
+							}
+						}
+					},
+					{
+						"operation": "default",
+						"spec": {
+							"rows[]": {
+								"*": {
+									"sufixos": [
+										""
+									]
+								}
+							}
+						}
+					},
+					{
+						"operation": "modify-overwrite-beta",
+						"spec": {
+							"rows": {
+								"*": {
+									"sufixoUnificado": "=join('',@(1,sufixos))",
+									"idExternoFinal": "=concat(@(1,baseIdExterno),@(1,sufixoUnificado))",
+									"idInternoFinal": "=concat(@(1,baseIdInterno),@(1,sufixoUnificado))"
+								}
+							}
+						}
+					},
+					{
+						"operation": "shift",
+						"spec": {
+							"rows": {
+								"*": {
+									"idExternoFinal": "idExterno[]",
+									"idInternoFinal": "idInterno[]",
+									"tipoIdInterno": "tipoIdInterno[]",
+									"item": "items[]"
+								}
+							}
+						}
+					},
+					{
+						"operation": "modify-overwrite-beta",
+						"spec": {
+							"items": {
+								"*": {
+									"regraDescontoAcrescimoItens": "=recursivelySquashNulls"
+								}
+							}
+						}
+					},
+					{
+						"operation": "default",
+						"spec": {
+							"_attr_access": "items",
+							"items[]": {
+								"*": {
+									"idInquilino": "{{ID_INQUILINO}}",
+									"loteOrigem": "{{LOTE_ORIGEM}}"
+								}
+							}
+						}
 					}
-				  }
 				]
 			},
 			{
